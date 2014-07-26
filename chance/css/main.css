@@ -500,13 +500,13 @@ body.red:before {
 .partners .h2 {
 	margin: 0 0 22px 0;
 	padding: 5px 0 0 4px;
-	color: #12256f;
 }
 .partners ul {
 	height: 70px;
 	margin: 0;
 	padding: 0 18px;
 	list-style: none;
+    text-align: center;
 	z-index: 5;
 }
 .partners ul:before {
@@ -528,11 +528,12 @@ body.red:before {
 	overflow: hidden;
 	position: absolute;
 	right: 0;
+    top: 76px;
 	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 1) 100%);
 }
 .partners ul li {
-	margin: 0 29px 0 0;
-	float: left;
+	margin: 0 14px;
+	display: inline-block;
 }
 .partners ul li a {
 	width: 61px;
@@ -868,20 +869,20 @@ body.red:before {
 .battle .h2 {
 	margin: 0 0 12px 0;
 }
-.block_photo_gallery ul {
+.block_photo_gallery .photos{
 	width: 960px;
 	margin: 0 -20px 0 0;
 	padding: 0;
 	list-style: none;
 }
-.block_photo_gallery ul:after {
+.block_photo_gallery .photos:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 }
-.block_photo_gallery ul li {
+.block_photo_gallery .photos li {
 	width: 302px;
 	float: left;
 	margin: 0 17px 34px 0;
@@ -928,12 +929,15 @@ body.red:before {
 }
 .block_photo_gallery .scroll {
 	margin: 0;
-	padding: 0 22px;
+	padding: 0;
+    position: relative;
+    text-align: center;
 }
 .block_photo_gallery .scroll li {
 	width: 56px;
 	height: 56px;
-	margin: 0 4px 0 0;
+	margin: 0;
+    display: inline-block;
 	background: #9bcef3;
 	border: 2px solid #fff;
 }
@@ -942,35 +946,28 @@ body.red:before {
 	height: 56px;
 	display: block;
 }
-.block_photo_gallery .scroll .switch_left {
-	width: 21px;
-	height: 41px;
-	margin: 8px 0 0 -22px;
-	display: block;
-	background: url(../img/sprite.png) -250px -230px no-repeat;
-	border: none;
-	position: absolute;
+.block_photo_gallery .scroll .switch{
+    width: 21px;
+    height: 42px;
+    margin: 0;
+    display: block;
+    background: url(../img/sprite.png) -250px -230px no-repeat;
+    border: none;
+    position: absolute;
+    top: 8px;
 }
-.block_photo_gallery .scroll .switch_left a {
-	width: 21px;
-	height: 41px;
-	display: block;
+.block_photo_gallery .scroll .switch a {
+    width: 21px;
+    height: 42px;
+    display: block;
 }
 .block_photo_gallery .scroll .switch_right {
-	width: 21px;
-	height: 42px;
-	margin: 8px 0 0 0;
-	display: block;
-	background: url(../img/sprite.png) -280px -230px no-repeat;
-	border: none;
-	position: absolute;
-	right: 0;
+	background-position: -280px -230px;
+    right: 0;
 }
-.block_photo_gallery .scroll .switch_right a {
-	width: 21px;
-	height: 41px;
-	display: block;
-}
+
+
+
 
 /* block_our_projects ===================================*/
 
@@ -1056,6 +1053,7 @@ body.red:before {
 }
 .block_our_projects .nav_bottom ul li a {
 	display: block;
+    transition: all .3s ease;
 }
 .block_our_projects .nav_bottom .close_nav {
 	margin: 14px -18px 0 0;
@@ -1192,6 +1190,7 @@ body.red:before {
 .footer .nav_footer ul li a {
 	color: #f8f8f8;
 	font-size: 13px;
+    transition: all .5s ease;
 }
 .footer .contacts_footer {
 	margin: 0;
@@ -1219,7 +1218,7 @@ body.red:before {
 .footer .contacts_footer .social_footer ul li {
 	width: 30px;
 	height: 30px;
-	margin: 0 8px 0 0;
+	margin: 0 4px;
 	float: left;
 	background: url(../img/sprite.png) -600px -30px no-repeat;
 }
@@ -1230,6 +1229,7 @@ body.red:before {
 	width: 30px;
 	height: 30px;
 	display: block;
+    transition: all .3s ease;
 }
 .footer .contacts_footer .social_footer .ok_footer {
 	background-position: -640px -30px;
@@ -1263,6 +1263,7 @@ body.red:before {
 .footer .record a {
 	font-weight: bold;
 	color: #fff;
+    transition: all .5s ease;
 }
 
 /* ==========================================================================
