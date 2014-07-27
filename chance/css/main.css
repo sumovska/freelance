@@ -147,6 +147,13 @@ body.red:before {
 	clear: both;
 	overflow: hidden;
 }
+
+.h1 {
+	margin: 22px 0 28px 0;
+	font-weight: bold;
+	font-size: 37px;
+	letter-spacing: -0.02em;
+}
 .h2 {
 	margin: 0;
 	font-size: 37px;
@@ -700,18 +707,16 @@ body.red:before {
 .samples li {
 	width: 300px;
 	float: left;
-	margin: 0 19px 0 0;
+	margin: 0 19px 8px 0;
 }
 .projects .samples li p {
 	margin: 0 0 16px 0;
 }
-.samples li .photo{
+.samples li .photo {
 	width: 300px;
 	height: 275px;
-	position: relative;
-}
-.projects .samples li .photo {
 	margin: 0 0 11px 0;
+	position: relative;
 }
 .samples li .photo:after {
 	width: 300px;
@@ -727,18 +732,31 @@ body.red:before {
 .samples li .pic {
 	display: block;
 }
-.projects .samples li .heading {
+.samples li .heading {
 	margin: 0 0 11px -2px;
 	font-size: 22px;
 	line-height: 46px;
 	font-weight: bold;
 	letter-spacing: 0.09em;
 }
-.projects .samples li .look {
+.samples li .look {
 	color: #9f0000;
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: 0.09em;
+}
+.samples .date {
+	margin: 0;
+	font-size: 14px;
+	letter-spacing: 0.02em;
+}
+.samples .title-link {
+	margin: 0 0 22px 0;
+	font-size: 22px;
+	color: #000;
+	display: block;
+	font-weight: bold;
+	letter-spacing: 0.08em;
 }
 
 /* image-slider ========================================*/
@@ -877,7 +895,7 @@ body.red:before {
 .block-comments .comments li p {
 	margin: 0;
 }
-.user-photo{
+.user-photo {
 	width: 83px;
 	height: 83px;
 	margin: 0 0 6px 0;
@@ -983,49 +1001,48 @@ body.red:before {
 	left: 15px;
 }
 
-/* gallery-photo ==================================*/
+/* Gallery ==================================*/
 
-.gallery-photo {
+.gallery {
 	width: 100%;
 	padding: 0 0 212px 0;
 	font-size: 14px;
 }
-.gallery-photo .h2 {
+.gallery .h2 {
 	margin: 0 0 56px 0;
 }
-.gallery-photo .photo {
+.gallery .photo {
 	width: 960px;
 	margin: 0 -20px 0 0;
 	padding: 0;
 	list-style: none;
 }
-.gallery-photo .photo:after {
+.gallery .photo:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 }
-.gallery-photo .photo li {
+.gallery .photo li {
 	width: 302px;
 	float: left;
 	margin: 0 17px 34px 0;
 }
-.gallery-photo .photo .pic{
+.gallery .photo .pic {
 	width: 270px;
 	height: 270px;
 	padding: 15px;
 	position: relative;
-	background: rgb(219,219,219); /* Old browsers */
-	background: -moz-linear-gradient(left,  rgba(219,219,219,1) 0%, rgba(255,255,255,1) 53%, rgba(240,240,240,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(219,219,219,1)), color-stop(53%,rgba(255,255,255,1)), color-stop(100%,rgba(240,240,240,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* IE10+ */
-	background: linear-gradient(to right,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* W3C */
-
+	background: rgb(219, 219, 219); /* Old browsers */
+	background: -moz-linear-gradient(left, rgba(219, 219, 219, 1) 0%, rgba(255, 255, 255, 1) 53%, rgba(240, 240, 240, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(219, 219, 219, 1)), color-stop(53%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(240, 240, 240, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(219, 219, 219, 1) 0%, rgba(255, 255, 255, 1) 53%, rgba(240, 240, 240, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(219, 219, 219, 1) 0%, rgba(255, 255, 255, 1) 53%, rgba(240, 240, 240, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(219, 219, 219, 1) 0%, rgba(255, 255, 255, 1) 53%, rgba(240, 240, 240, 1) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(219, 219, 219, 1) 0%, rgba(255, 255, 255, 1) 53%, rgba(240, 240, 240, 1) 100%); /* W3C */
 }
-.gallery-photo .photo .pic:after {
+.gallery .photo .pic:after {
 	width: 308px;
 	height: 24px;
 	content: "\0020";
@@ -1037,7 +1054,7 @@ body.red:before {
 	right: -8px;
 	background: url(../img/shadow-photo.png) 0 0 no-repeat
 }
-.gallery-photo .photo .img{
+.gallery .photo .img {
 	width: 270px;
 	height: 270px;
 	display: block;
@@ -1058,10 +1075,10 @@ body.red:before {
 	left: 2px;
 	background: url(../img/sprite.png) -40px 0 no-repeat;
 }
-.gallery-photo .date {
+.gallery .date {
 	margin: -10px 0 14px 0;
 }
-.gallery-photo .name {
+.gallery .name {
 	font-size: 22px;
 	color: #000;
 	font-weight: bold;
@@ -1070,30 +1087,30 @@ body.red:before {
 
 /* slider-photo ==================================*/
 
-.slider-photo {
+.gallery-photo {
 	padding: 0 0 676px 0;
 }
-.slider-photo .h2 {
+.gallery-photo .h2 {
 	margin: 0 0 14px 0;
 }
-.slider-photo .date {
+.gallery-photo .date {
 	margin: 0 0 24px 0;
 	letter-spacing: 0.02em;
 }
-.slider-photo .title {
+.gallery-photo .title {
 	margin: 0 0 22px 0;
 	font-size: 37px;
 	line-height: 22px;
 	font-weight: bold;
 	letter-spacing: -0.02em;
 }
-.slider-photo .screen .carousel {
+.gallery-photo .screen .carousel {
 	height: 622px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.slider-photo .screen .carousel:after {
+.gallery-photo .screen .carousel:after {
 	width: 100%;
 	height: 200px;
 	content: "\0020";
@@ -1101,19 +1118,19 @@ body.red:before {
 	clear: both;
 	overflow: hidden;
 }
-.slider-photo .screen .carousel li {
+.gallery-photo .screen .carousel li {
 	float: left;
 }
-.slider-photo .screen .carousel .img {
+.gallery-photo .screen .carousel .img {
 	width: 938px;
 	height: 622px;
 	margin: 0 auto 36px;
 	display: block;
 }
-.slider-photo .screen .bx-wrapper {
+.gallery-photo .screen .bx-wrapper {
 	position: relative;
 }
-.slider-photo .screen .bx-controls {
+.gallery-photo .screen .bx-controls {
 	width: 57px;
 	height: 57px;
 	position: absolute;
@@ -1123,15 +1140,15 @@ body.red:before {
 	border-radius: 6px;
 	transition: all .4s ease;
 }
-.slider-photo .screen .bx-controls:hover {
+.gallery-photo .screen .bx-controls:hover {
 	background-color: rgba(0, 0, 0, 0.35);
 }
-.slider-photo .screen .bx-controls-direction {
+.gallery-photo .screen .bx-controls-direction {
 	width: 57px;
 	height: 57px;
 	position: relative;
 }
-.slider-photo .screen .bx-controls-direction a {
+.gallery-photo .screen .bx-controls-direction a {
 	width: 20px;
 	height: 20px;
 	margin: 0;
@@ -1142,20 +1159,20 @@ body.red:before {
 	border: none;
 	position: absolute;
 }
-.slider-photo .screen .bx-controls-direction .bx-prev {
+.gallery-photo .screen .bx-controls-direction .bx-prev {
 	background-position: -320px -230px;
 	left: 13px;
 	bottom: 10px;
 }
-.slider-photo .screen .bx-controls-direction .bx-next {
+.gallery-photo .screen .bx-controls-direction .bx-next {
 	right: 9px;
 	top: 12px;
 }
-.slider-photo .scroll .bx-wrapper {
+.gallery-photo .scroll .bx-wrapper {
 	width: 900px;
 	position: relative;
 }
-.slider-photo .scroll .carousel {
+.gallery-photo .scroll .carousel {
 	height: 58px;
 	margin: 0;
 	padding: 0;
@@ -1163,7 +1180,7 @@ body.red:before {
 	text-align: center;
 	list-style: none;
 }
-.slider-photo .scroll .carousel:after {
+.gallery-photo .scroll .carousel:after {
 	width: 100%;
 	height: 200px;
 	content: "\0020";
@@ -1171,16 +1188,16 @@ body.red:before {
 	clear: both;
 	overflow: hidden;
 }
-.slider-photo .scroll .carousel li {
+.gallery-photo .scroll .carousel li {
 	float: left;
 }
-.slider-photo .scroll .carousel li .pic {
+.gallery-photo .scroll .carousel li .pic {
 	max-width: 56px;
 	height: 56px;
 	display: block;
 	border: 2px solid #fff;
 }
-.slider-photo .scroll .bx-controls-direction a {
+.gallery-photo .scroll .bx-controls-direction a {
 	width: 21px;
 	height: 42px;
 	margin: -21px 0 0 0;
@@ -1192,23 +1209,23 @@ body.red:before {
 	position: absolute;
 	top: 50%;
 }
-.slider-photo .scroll .bx-controls-direction .bx-prev {
+.gallery-photo .scroll .bx-controls-direction .bx-prev {
 	background-position: -280px -230px;
 	right: -20px;
 }
-.slider-photo .scroll .bx-controls-direction .bx-next {
+.gallery-photo .scroll .bx-controls-direction .bx-next {
 	left: -20px;
 }
 
-/* our-projects ===================================*/
+/* Projects ===================================*/
 
-.our-projects {
+.projects-all {
 	width: 100%;
 }
-.our-projects .h2 {
+.projects-all .h2 {
 	margin: 0 0 42px 0;
 }
-.our-projects .wrapper:after {
+.projects-all .wrapper:after {
 	width: 100%;
 	height: 200px;
 	content: "\0020";
@@ -1216,29 +1233,7 @@ body.red:before {
 	clear: both;
 	overflow: hidden;
 }
-.our-projects .samples {
-	padding: 0 0 266px 0;
-}
-.our-projects .samples li {
-	margin-bottom: 8px;
-}
-.our-projects .samples li .photo{
-	margin: 0 0 20px 0;
-}
-.our-projects .samples .date {
-	margin: 0 0 13px 0;
-	font-size: 14px;
-	letter-spacing: 0.02em;
-}
-.our-projects .samples .title-link {
-	margin: 0 0 22px 0;
-	font-size: 22px;
-	color: #000;
-	display: block;
-	font-weight: bold;
-	letter-spacing: 0.08em;
-}
-.our-projects .navigation {
+.projects-all .navigation {
 	width: 146px;
 	height: 164px;
 	padding: 20px 34px;
@@ -1251,26 +1246,26 @@ body.red:before {
 	border: 1px solid rgba(220, 220, 220, 0.42);
 	border-radius: 11px;
 }
-.our-projects .navigation:after {
+.projects-all .navigation:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 }
-.our-projects .navigation .links {
+.projects-all .navigation .links {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.our-projects .navigation .links li a {
+.projects-all .navigation .links li a {
 	display: block;
 	transition: all .4s ease;
 }
-.our-projects .navigation .links li a:hover {
+.projects-all .navigation .links li a:hover {
 	color: #fff;
 }
-.our-projects .navigation .close-nav {
+.projects-all .navigation .close-nav {
 	margin: 14px -18px 0 0;
 	width: 9px;
 	height: 9px;
@@ -1279,34 +1274,18 @@ body.red:before {
 	background: url(../img/sprite.png) -70px 0 no-repeat;
 }
 
-/* battle-royal ===================================*/
+/* Project ===================================*/
 
-.battle-royal .h2 {
+.project .h2 {
 	margin: 0 0 36px 0;
 }
-.battle-royal .title {
-	margin: 22px 0 28px 0;
-	font-weight: bold;
-	font-size: 37px;
-	letter-spacing: -0.02em;
-}
-.battle-royal .cover {
+.project-cover {
 	width: 940px;
 	height: 355px;
 	margin: 0 0 20px 0;
 	position: relative;
 }
-.battle-royal .cover:before {
-	width: 100%;
-	height: 1px;
-	content: "\0020";
-	display: block;
-	margin: 0;
-	position: absolute;
-	top: -10px;
-	background: url(../img/temp/border.jpg) 50% 0 repeat-x;
-}
-.battle-royal .cover:after {
+.project-cover:after {
 	width: 940px;
 	height: 18px;
 	content: "\0020";
@@ -1316,18 +1295,8 @@ body.red:before {
 	bottom: -18px;
 	background: url(../img/shadow-battle.png) 0 0 no-repeat;
 }
-.battle-royal .pic {
+.project-cover .pic {
 	display: block;
-}
-.battle-royal .describe {
-	margin: 0 0 124px 0;
-}
-.battle-royal .describe p {
-	margin: 0 0 22px 0;
-	letter-spacing: -0.01em;
-}
-.battle-royal .describe .up {
-	text-transform: uppercase;
 }
 
 /* block-about ==================================*/

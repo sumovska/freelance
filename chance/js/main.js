@@ -22,14 +22,14 @@ $(document).ready(function () {
 		maxSlides: 6,
 		slideMargin: 5
 	});
-	$('.slider-photo .screen .carousel').bxSlider({
+	$('.gallery-photo .screen .carousel').bxSlider({
 		auto: true,
 		pager: false,
 		pause: 5000,
 		speed: 700,
 		useCSS: false
 	});
-	$('.slider-photo .scroll .carousel').bxSlider({
+	$('.gallery-photo .scroll .carousel').bxSlider({
 		infiniteLoop: false,
 		pager: false,
 		slideWidth: 115,
