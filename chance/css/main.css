@@ -117,7 +117,7 @@ body:before {
 	background: url(../img/header.jpg) 50% 0 no-repeat;
 }
 body.red {
-	background: url(../img/fon/body_red.jpg) 50% 0 repeat;
+	background: url(../img/body-red.jpg) 50% 0 repeat;
 }
 body.red:before {
 	width: 100%;
@@ -128,7 +128,7 @@ body.red:before {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: url(../img/fon/header_red.jpg) 50% 0 no-repeat;
+	background: url(../img/header-red.jpg) 50% 0 no-repeat;
 }
 /* ==========================================================================
    Author's custom styles
@@ -331,7 +331,7 @@ body.red:before {
 }
 
 .red .image-carousel .bx-wrapper .mask-top, .red .image-carousel .bx-wrapper .mask-left, .red .image-carousel .bx-wrapper .mask-right, .red .image-carousel .bx-wrapper .mask-bottom {
-	background-image: url(../img/mask_red.png);
+	background-image: url(../img/mask-red.png);
 }
 .image-carousel .carousel {
 	width: 948px;
@@ -664,48 +664,68 @@ body.red:before {
 	height: 9px;
 	content: "\0020";
 	display: block;
-	margin: -29px 0 0 0;
+	margin: 0;
 	position: absolute;
-	background: url(../img/line.png) 50% 0 repeat-x;
+	top: -9px;
+	background: url(../img/project-border.png) 0 0 repeat-x;
 }
 .projects:after {
 	width: 100%;
 	height: 8px;
-	margin: 30px 0 0 0;
+	margin: 0;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 	position: absolute;
-	background: url(../img/line_bottom.png) 50% 0 repeat-x;
+	bottom: -8px;
+	background: url(../img/project-border.png) 0 -9px repeat-x;
 }
 .projects .h2 {
 	margin: 3px 0 26px 0;
 }
-.projects .samples {
+.samples {
 	width: 960px;
 	margin: 0 -20px 0 0;
 	padding: 0;
 	list-style: none;
 }
-.projects .samples:after {
+.samples:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 }
-.projects .samples li {
-	width: 302px;
-	margin: 0 17px 0 0;
+.samples li {
+	width: 300px;
 	float: left;
+	margin: 0 19px 0 0;
 }
 .projects .samples li p {
 	margin: 0 0 16px 0;
 }
-.projects .samples li .pic {
-	display: block;
+.samples li .photo{
+	width: 300px;
+	height: 275px;
+	position: relative;
+}
+.projects .samples li .photo {
 	margin: 0 0 11px 0;
+}
+.samples li .photo:after {
+	width: 300px;
+	height: 21px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	position: absolute;
+	bottom: -21px;
+	background: url(../img/shadow.png) 0 0 no-repeat;
+}
+.samples li .pic {
+	display: block;
 }
 .projects .samples li .heading {
 	margin: 0 0 11px -2px;
@@ -831,7 +851,7 @@ body.red:before {
 	display: block;
 	margin: -23px 0 0 0;
 	position: absolute;
-	background: url(../img/reviews_top.png) 0 0 repeat-x;
+	background: url(../img/reviews-top.png) 0 0 repeat-x;
 }
 .block-comments .h2 {
 	margin: 4px 0 28px -8px;
@@ -857,8 +877,17 @@ body.red:before {
 .block-comments .comments li p {
 	margin: 0;
 }
-.block-comments .comments li .pic {
+.user-photo{
+	width: 83px;
+	height: 83px;
 	margin: 0 0 6px 0;
+}
+.user-photo .pic {
+	width: 75px;
+	height: 75px;
+	display: block;
+	border: 5px solid #e0e0e0;
+	border-radius: 42px;
 }
 .block-comments .comments li .user-name {
 	margin: 0 0 12px 0;
@@ -981,6 +1010,37 @@ body.red:before {
 	width: 302px;
 	float: left;
 	margin: 0 17px 34px 0;
+}
+.gallery-photo .photo .pic{
+	width: 270px;
+	height: 270px;
+	padding: 15px;
+	position: relative;
+	background: rgb(219,219,219); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(219,219,219,1) 0%, rgba(255,255,255,1) 53%, rgba(240,240,240,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(219,219,219,1)), color-stop(53%,rgba(255,255,255,1)), color-stop(100%,rgba(240,240,240,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(219,219,219,1) 0%,rgba(255,255,255,1) 53%,rgba(240,240,240,1) 100%); /* W3C */
+
+}
+.gallery-photo .photo .pic:after {
+	width: 308px;
+	height: 24px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	position: absolute;
+	bottom: -24px;
+	right: -8px;
+	background: url(../img/shadow-photo.png) 0 0 no-repeat
+}
+.gallery-photo .photo .img{
+	width: 270px;
+	height: 270px;
+	display: block;
 }
 .date {
 	margin: 0;
@@ -1156,34 +1216,21 @@ body.red:before {
 	clear: both;
 	overflow: hidden;
 }
-.our-projects .example {
-	width: 960px;
-	margin: 0 -20px 0 0;
+.our-projects .samples {
 	padding: 0 0 266px 0;
-	list-style: none;
 }
-.our-projects .example:after {
-	width: 100%;
-	content: "\0020";
-	display: block;
-	clear: both;
-	overflow: hidden;
+.our-projects .samples li {
+	margin-bottom: 8px;
 }
-.our-projects .example li {
-	width: 300px;
-	float: left;
-	margin: 0 19px 12px 0;
-}
-.our-projects .example .pic {
+.our-projects .samples li .photo{
 	margin: 0 0 20px 0;
-	display: block;
 }
-.our-projects .example .date {
+.our-projects .samples .date {
 	margin: 0 0 13px 0;
 	font-size: 14px;
 	letter-spacing: 0.02em;
 }
-.our-projects .example .title-link {
+.our-projects .samples .title-link {
 	margin: 0 0 22px 0;
 	font-size: 22px;
 	color: #000;
@@ -1243,17 +1290,34 @@ body.red:before {
 	font-size: 37px;
 	letter-spacing: -0.02em;
 }
-.battle-royal .title:after {
+.battle-royal .cover {
+	width: 940px;
+	height: 355px;
+	margin: 0 0 20px 0;
+	position: relative;
+}
+.battle-royal .cover:before {
 	width: 100%;
 	height: 1px;
 	content: "\0020";
 	display: block;
-	margin: 18px 0 0 0;
+	margin: 0;
 	position: absolute;
+	top: -10px;
 	background: url(../img/temp/border.jpg) 50% 0 repeat-x;
 }
+.battle-royal .cover:after {
+	width: 940px;
+	height: 18px;
+	content: "\0020";
+	display: block;
+	margin: 0;
+	position: absolute;
+	bottom: -18px;
+	background: url(../img/shadow-battle.png) 0 0 no-repeat;
+}
 .battle-royal .pic {
-	margin: 0 0 4px 0;
+	display: block;
 }
 .battle-royal .describe {
 	margin: 0 0 124px 0;
@@ -1418,7 +1482,7 @@ body.red:before {
 	width: 192px;
 	height: 86px;
 	float: left;
-	background: url(../img/logo/logo-footer.png) 0 0 no-repeat;
+	background: url(../img/author.png) 0 0 no-repeat;
 }
 .footer .registration {
 	margin: 6px 0 14px 8px;
