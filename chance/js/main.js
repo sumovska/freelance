@@ -3,20 +3,24 @@
 
 /* On document ready */
 $(document).ready(function () {
-	$('.image-carousel .carousel').bxSlider({
+	var imageCarousel = $('.image-carousel .carousel');
+	imageCarousel.bxSlider({
 		controls: false,
 		auto: true,
 		pause: 5000,
 		speed: 700,
-		useCSS: false
+		useCSS: false,
+		onSliderLoad: function (currentIndex) {
+			$(imageCarousel).closest('.bx-wrapper').append('<i class="mask-top"></i><i class="mask-left"></i><i class="mask-right"></i><i class="mask-bottom"></i>');
+		}
 	});
 	$('.block-partners .carousel').bxSlider({
 		infiniteLoop: false,
 		pager: false,
 		slideWidth: 115,
 		minSlides: 6,
-    	maxSlides: 6,
-    	slideMargin: 5
+		maxSlides: 6,
+		slideMargin: 5
 	});
 	$('.slider-photo .screen .carousel').bxSlider({
 		auto: true,
@@ -30,7 +34,7 @@ $(document).ready(function () {
 		pager: false,
 		slideWidth: 115,
 		minSlides: 14,
-    	maxSlides: 14,
-    	slideMargin: 5
+		maxSlides: 14,
+		slideMargin: 5
 	});
 })

@@ -24,6 +24,10 @@ html {
 	text-shadow: none;
 }
 
+p, pre {
+	margin: 22px 0;
+}
+
 hr {
 	display: block;
 	height: 1px;
@@ -97,8 +101,9 @@ a {
 a:hover {
 	text-decoration: none;
 }
+
 body {
-	background: url(../img/fon/body.jpg) 50% 0 repeat;
+	background: url(../img/body.jpg) 50% 0 repeat;
 }
 body:before {
 	width: 100%;
@@ -109,7 +114,7 @@ body:before {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: url(../img/fon/header.jpg) 50% 0 no-repeat;
+	background: url(../img/header.jpg) 50% 0 no-repeat;
 }
 body.red {
 	background: url(../img/fon/body_red.jpg) 50% 0 repeat;
@@ -154,6 +159,12 @@ body.red:before {
 .red .h2 {
 	color: #9f0000;
 }
+.h4 {
+	margin: 0 0 18px 0;
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 32px;
+}
 
 /* header ===============================================*/
 
@@ -168,13 +179,13 @@ body.red:before {
 	width: 374px;
 	height: 108px;
 	margin: 0;
-    position: absolute;
-    top: 54px;
-    left: 38px;
+	position: absolute;
+	top: 54px;
+	left: 38px;
 	text-indent: -1000px;
 	overflow: hidden;
 	float: left;
-	background: url(../img/logo/logo.png) 0 0 no-repeat;
+	background: url(../img/logo.png) 0 0 no-repeat;
 }
 .header .logo a {
 	width: 374px;
@@ -185,9 +196,9 @@ body.red:before {
 	width: 100px;
 	height: 19px;
 	margin: 0;
-    position: absolute;
-    top: 52px;
-    right: 290px;
+	position: absolute;
+	top: 52px;
+	right: 290px;
 	line-height: 18px;
 	background: #d6d6d6;
 	border-radius: 9px;
@@ -214,9 +225,9 @@ body.red:before {
 .header .nav {
 	width: 414px;
 	margin: 0;
-    position: absolute;
-    top: 84px;
-    right: -28px;
+	position: absolute;
+	top: 84px;
+	right: -28px;
 	font-size: 20px;
 	color: #c7c7c7;
 }
@@ -268,20 +279,59 @@ body.red:before {
 	overflow: hidden;
 	position: relative;
 }
-.image-carousel .bx-wrapper:after {
+.image-carousel .bx-wrapper .mask-top {
 	width: 948px;
-	height: 470px;
+	height: 60px;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 	position: absolute;
 	top: 0;
-	background: url(../img/before/mask.png) 0 0 no-repeat;
+	background: url(../img/mask.png) 0 0 no-repeat;
 	z-index: 4;
 }
-.red .image-carousel .bx-wrapper:after {
-	background-image: url(../img/before/mask_red.png);
+.image-carousel .bx-wrapper .mask-bottom {
+	width: 948px;
+	height: 140px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	background: url(../img/mask.png) 0 -330px no-repeat;
+	z-index: 4;
+}
+.image-carousel .bx-wrapper .mask-left {
+	width: 10px;
+	height: 270px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	background: url(../img/mask.png) 0 -60px no-repeat;
+	z-index: 4;
+}
+.image-carousel .bx-wrapper .mask-right {
+	width: 10px;
+	height: 270px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	position: absolute;
+	top: 60px;
+	right: 0;
+	background: url(../img/mask.png) 100% -60px no-repeat;
+	z-index: 4;
+}
+
+.red .image-carousel .bx-wrapper .mask-top, .red .image-carousel .bx-wrapper .mask-left, .red .image-carousel .bx-wrapper .mask-right, .red .image-carousel .bx-wrapper .mask-bottom {
+	background-image: url(../img/mask_red.png);
 }
 .image-carousel .carousel {
 	width: 948px;
@@ -313,11 +363,11 @@ body.red:before {
 	position: relative;
 	z-index: 2;
 }
-.image-carousel .carousel li .caption{
-    position: absolute;
-    top: 54px;
-    left: 34px;
-    z-index: 5;
+.image-carousel .carousel li .caption {
+	position: absolute;
+	top: 54px;
+	left: 34px;
+	z-index: 5;
 }
 .image-carousel .carousel li span {
 	display: block;
@@ -336,7 +386,7 @@ body.red:before {
 	background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 30%, rgba(142, 142, 142, 1) 100%);
 	transition: all .3s ease;
 }
-.link:hover {
+.link:hover, .image-carousel .carousel li a:hover .link {
 	background: rgba(142, 142, 142, 1);
 	background: linear-gradient(to bottom, rgba(142, 142, 142, 1) 0%, rgba(142, 142, 142, 1) 30%, rgba(238, 238, 238, 1) 100%);
 }
@@ -478,8 +528,8 @@ body.red:before {
 	margin: 0 0 28px 0;
 	position: relative;
 }
-.red .about .h2{
-    color: #fff;
+.red .about .h2 {
+	color: #fff;
 }
 .about .describe {
 	margin: 0 0 26px 0;
@@ -490,9 +540,9 @@ body.red:before {
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: bold;
-    color: #fff;
+	color: #fff;
 	letter-spacing: 0.1em;
-    transition: all .3s ease;
+	transition: all .3s ease;
 }
 
 /* block-partners =======================================*/
@@ -501,42 +551,43 @@ body.red:before {
 	width: 100%;
 }
 .partners {
-	width: 944px;
+	width: 942px;
 	height: 188px;
-	margin: 0 -2px 102px -4px;
+	margin: 0 -1px 102px -1px;
 	background: #fff;
 	position: relative;
 	border-radius: 44px;
 }
 .partners:before {
-	width: 944px;
+	width: 942px;
 	height: 16px;
 	content: "\0020";
 	display: block;
-	margin: -16px 0 0 36px;
 	position: absolute;
-	background: url(../img/before/top_partners.png) 0 0 no-repeat;
+	top: -16px;
+	left: 0;
+	background: url(../img/partners.png) 0 0 no-repeat;
 }
 .partners:after {
-	width: 100%;
-	height: 86px;
+	width: 942px;
+	height: 78px;
 	margin: 0;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 	position: absolute;
-    bottom: -86px;
-    left: 30px;
-	background: url(../img/before/bottom_partners.png) 0 0 no-repeat;
+	bottom: -78px;
+	left: 0;
+	background: url(../img/partners.png) 0 -16px no-repeat;
 }
 .partners .h2 {
 	margin: 0 0 22px 0;
 	padding: 5px 0 0 4px;
 }
 .partners .bx-wrapper {
-    width:760px;
-    margin:0 auto;
+	width: 760px;
+	margin: 0 auto;
 }
 .partners .carousel {
 	height: 70px;
@@ -572,42 +623,41 @@ body.red:before {
 	display: inline-block;
 }
 .partners .carousel li .pic {
-    max-width:115px;
-    height: 70px;
-    margin: 0 auto;
-    display: block;
+	max-width: 115px;
+	height: 70px;
+	margin: 0 auto;
+	display: block;
 }
-.partners .bx-controls-direction a{
+.partners .bx-controls-direction a {
 	width: 61px;
 	height: 62px;
-    margin: 0;
+	margin: 0;
 	position: absolute;
 	background: url(../img/sprite.png) -100px -230px no-repeat;
-    overflow: hidden;
-    text-indent: -1000px;
-    transition: all .3s ease;
+	overflow: hidden;
+	text-indent: -1000px;
+	transition: all .3s ease;
 	z-index: 7;
 }
 .partners .bx-controls-direction a:hover {
 	opacity: 0.6;
 }
 .partners .bx-controls-direction .bx-prev {
-    top: 66px;
-    left: 15px;
+	top: 66px;
+	left: 15px;
 }
 .partners .bx-controls-direction .bx-next {
-    top: 66px;
-    right: 12px;
+	top: 66px;
+	right: 12px;
 	background-position: -170px -230px;
 }
-
 
 /* projects =====================================*/
 
 .projects {
 	padding: 20px 0 30px 0;
 	position: relative;
-	background: url(../img/fon/content.jpg) 0 0 repeat;
+	background: url(../img/content.jpg) 0 0 repeat;
 }
 .projects:before {
 	width: 100%;
@@ -616,7 +666,7 @@ body.red:before {
 	display: block;
 	margin: -29px 0 0 0;
 	position: absolute;
-	background: url(../img/before/line.png) 50% 0 repeat-x;
+	background: url(../img/line.png) 50% 0 repeat-x;
 }
 .projects:after {
 	width: 100%;
@@ -627,13 +677,13 @@ body.red:before {
 	clear: both;
 	overflow: hidden;
 	position: absolute;
-	background: url(../img/before/line_bottom.png) 50% 0 repeat-x;
+	background: url(../img/line_bottom.png) 50% 0 repeat-x;
 }
 .projects .h2 {
 	margin: 3px 0 26px 0;
 }
 .projects .samples {
-    width: 960px;
+	width: 960px;
 	margin: 0 -20px 0 0;
 	padding: 0;
 	list-style: none;
@@ -665,10 +715,10 @@ body.red:before {
 	letter-spacing: 0.09em;
 }
 .projects .samples li .look {
-    color: #9f0000;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.09em;
+	color: #9f0000;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.09em;
 }
 
 /* image-slider ========================================*/
@@ -685,11 +735,11 @@ body.red:before {
 	letter-spacing: 0.035em;
 }
 .image-slider .slider {
-    height: 294px; 
-    margin: 0;
-    padding: 0;
+	height: 294px;
+	margin: 0;
+	padding: 0;
 	position: relative;
-    list-style: none;
+	list-style: none;
 }
 
 /* switch =============================*/
@@ -715,8 +765,8 @@ body.red:before {
 */
 
 .image-slider .slider .pic {
-    width: 790px;
-    height: 294px;
+	width: 790px;
+	height: 294px;
 	display: block;
 	margin: 0 auto;
 	position: relative;
@@ -726,8 +776,8 @@ body.red:before {
 	width: 150px;
 	margin: 0;
 	position: absolute;
-    top: 140px;
-    left: 300px;
+	top: 140px;
+	left: 300px;
 	color: #fff;
 	font-size: 18px;
 	line-height: 19px;
@@ -772,7 +822,7 @@ body.red:before {
 	height: 344px;
 	padding: 20px 0 14px 0;
 	line-height: 18px;
-	background: url(../img/fon/reviews.jpg) 0 0 repeat;
+	background: url(../img/reviews.jpg) 0 0 repeat;
 }
 .block-comments:before {
 	width: 100%;
@@ -781,7 +831,7 @@ body.red:before {
 	display: block;
 	margin: -23px 0 0 0;
 	position: absolute;
-	background: url(../img/before/reviews_top.png) 0 0 repeat-x;
+	background: url(../img/reviews_top.png) 0 0 repeat-x;
 }
 .block-comments .h2 {
 	margin: 4px 0 28px -8px;
@@ -805,20 +855,20 @@ body.red:before {
 	float: left;
 }
 .block-comments .comments li p {
-    margin: 0;
+	margin: 0;
 }
 .block-comments .comments li .pic {
 	margin: 0 0 6px 0;
 }
 .block-comments .comments li .user-name {
-    margin: 0 0 12px 0;
-    line-height: 20px;
-    font-weight: bold;
-    letter-spacing: 0.065em;
+	margin: 0 0 12px 0;
+	line-height: 20px;
+	font-weight: bold;
+	letter-spacing: 0.065em;
 }
 .block-comments .comments li .comment {
-    font-size: 14px;
-    font-weight: 300;
+	font-size: 14px;
+	font-weight: 300;
 }
 .block-comments .comments li .read {
 	display: block;
@@ -826,11 +876,8 @@ body.red:before {
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: 0.07em;
-    transition: all .5s ease;
+	transition: all .5s ease;
 }
-
-
-
 
 /* block-reviews ========================================*/
 
@@ -848,16 +895,16 @@ body.red:before {
 	list-style: none;
 }
 .block-reviews .reviews:after {
-    width: 100%;
-    content: "\0020";
-    display: block;
-    clear: both;
-    overflow: hidden;
+	width: 100%;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
 }
 .block-reviews .reviews li {
-    width: 460px;
+	width: 460px;
 	margin: 0 0 30px 0;
-    float: left;
+	float: left;
 }
 .block-reviews .user {
 	margin: 0;
@@ -961,127 +1008,125 @@ body.red:before {
 	letter-spacing: 0.1em;
 }
 
-
-
 /* slider-photo ==================================*/
 
 .slider-photo {
-    padding: 0 0 676px 0;
+	padding: 0 0 676px 0;
 }
 .slider-photo .h2 {
-    margin: 0 0 14px 0;
+	margin: 0 0 14px 0;
 }
 .slider-photo .date {
-    margin: 0 0 24px 0;
-    letter-spacing: 0.02em;
+	margin: 0 0 24px 0;
+	letter-spacing: 0.02em;
 }
 .slider-photo .title {
-    margin: 0 0 22px 0;
-    font-size: 37px;
-    line-height: 22px;
-    font-weight: bold;
-    letter-spacing: -0.02em;
+	margin: 0 0 22px 0;
+	font-size: 37px;
+	line-height: 22px;
+	font-weight: bold;
+	letter-spacing: -0.02em;
 }
-.slider-photo .screen .carousel{
-    height: 622px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.slider-photo .screen .carousel {
+	height: 622px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 .slider-photo .screen .carousel:after {
-    width: 100%;
-    height: 200px;
-    content: "\0020";
-    display: block;
-    clear: both;
-    overflow: hidden;
+	width: 100%;
+	height: 200px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
 }
-.slider-photo .screen .carousel li{
-    float: left;
+.slider-photo .screen .carousel li {
+	float: left;
 }
-.slider-photo .screen .carousel .img{
-    width: 938px;
-    height: 622px;
+.slider-photo .screen .carousel .img {
+	width: 938px;
+	height: 622px;
 	margin: 0 auto 36px;
 	display: block;
 }
-.slider-photo .screen .bx-wrapper{
-    position: relative;
+.slider-photo .screen .bx-wrapper {
+	position: relative;
 }
-.slider-photo .screen .bx-controls{
-    width: 57px;
-    height: 57px;
-    position: absolute;
-    top: 18px;
-    right: 26px;
-    background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 6px;
-    transition: all .4s ease;
+.slider-photo .screen .bx-controls {
+	width: 57px;
+	height: 57px;
+	position: absolute;
+	top: 18px;
+	right: 26px;
+	background-color: rgba(0, 0, 0, 0.15);
+	border-radius: 6px;
+	transition: all .4s ease;
 }
-.slider-photo .screen .bx-controls:hover{
-    background-color: rgba(0, 0, 0, 0.35);
+.slider-photo .screen .bx-controls:hover {
+	background-color: rgba(0, 0, 0, 0.35);
 }
-.slider-photo .screen .bx-controls-direction{
-    width: 57px;
-    height: 57px;
-    position: relative;
+.slider-photo .screen .bx-controls-direction {
+	width: 57px;
+	height: 57px;
+	position: relative;
 }
-.slider-photo .screen .bx-controls-direction a{
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    display: block;
-    overflow: hidden;
-    text-indent: -1000px;
-    background: url(../img/sprite.png) -340px -230px no-repeat;
-    border: none;
-    position: absolute;
+.slider-photo .screen .bx-controls-direction a {
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	display: block;
+	overflow: hidden;
+	text-indent: -1000px;
+	background: url(../img/sprite.png) -340px -230px no-repeat;
+	border: none;
+	position: absolute;
 }
 .slider-photo .screen .bx-controls-direction .bx-prev {
-    background-position: -320px -230px;
-    left: 13px;
-    bottom: 10px;
+	background-position: -320px -230px;
+	left: 13px;
+	bottom: 10px;
 }
-.slider-photo .screen .bx-controls-direction .bx-next{
-    right: 9px;
-    top: 12px; 
+.slider-photo .screen .bx-controls-direction .bx-next {
+	right: 9px;
+	top: 12px;
 }
 .slider-photo .scroll .bx-wrapper {
-    width:900px;
-    position:relative;
+	width: 900px;
+	position: relative;
 }
 .slider-photo .scroll .carousel {
-    height: 58px;
+	height: 58px;
 	margin: 0;
-    padding: 0;
+	padding: 0;
 	position: relative;
 	text-align: center;
-    list-style: none;
+	list-style: none;
 }
 .slider-photo .scroll .carousel:after {
-    width: 100%;
-    height: 200px;
-    content: "\0020";
-    display: block;
-    clear: both;
-    overflow: hidden;
+	width: 100%;
+	height: 200px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
 }
-.slider-photo .scroll .carousel li{
+.slider-photo .scroll .carousel li {
 	float: left;
 }
-.slider-photo .scroll .carousel li .pic{
+.slider-photo .scroll .carousel li .pic {
 	max-width: 56px;
 	height: 56px;
 	display: block;
-    border: 2px solid #fff;
+	border: 2px solid #fff;
 }
-.slider-photo .scroll .bx-controls-direction a{
+.slider-photo .scroll .bx-controls-direction a {
 	width: 21px;
 	height: 42px;
 	margin: -21px 0 0 0;
 	display: block;
-    overflow: hidden;
-    text-indent: -1000px;
+	overflow: hidden;
+	text-indent: -1000px;
 	background: url(../img/sprite.png) -250px -230px no-repeat;
 	border: none;
 	position: absolute;
@@ -1091,11 +1136,9 @@ body.red:before {
 	background-position: -280px -230px;
 	right: -20px;
 }
-.slider-photo .scroll .bx-controls-direction .bx-next{
-    left: -20px;
+.slider-photo .scroll .bx-controls-direction .bx-next {
+	left: -20px;
 }
-
-
 
 /* our-projects ===================================*/
 
@@ -1173,12 +1216,12 @@ body.red:before {
 	padding: 0;
 	list-style: none;
 }
-.our-projects .navigation .links li a{
+.our-projects .navigation .links li a {
 	display: block;
 	transition: all .4s ease;
 }
 .our-projects .navigation .links li a:hover {
-    color: #fff;
+	color: #fff;
 }
 .our-projects .navigation .close-nav {
 	margin: 14px -18px 0 0;
@@ -1189,41 +1232,39 @@ body.red:before {
 	background: url(../img/sprite.png) -70px 0 no-repeat;
 }
 
-
 /* battle-royal ===================================*/
 
 .battle-royal .h2 {
-    margin: 0 0 36px 0;
+	margin: 0 0 36px 0;
 }
 .battle-royal .title {
-    margin: 22px 0 28px 0;
-    font-weight: bold;
-    font-size: 37px;
-    letter-spacing: -0.02em;
+	margin: 22px 0 28px 0;
+	font-weight: bold;
+	font-size: 37px;
+	letter-spacing: -0.02em;
 }
 .battle-royal .title:after {
-    width: 100%;
-    height: 1px;
-    content: "\0020";
-    display: block;
-    margin: 18px 0 0 0;
-    position: absolute;
-    background: url(../img/before/border.jpg) 50% 0 repeat-x;
+	width: 100%;
+	height: 1px;
+	content: "\0020";
+	display: block;
+	margin: 18px 0 0 0;
+	position: absolute;
+	background: url(../img/temp/border.jpg) 50% 0 repeat-x;
 }
 .battle-royal .pic {
-    margin: 0 0 4px 0;
+	margin: 0 0 4px 0;
 }
 .battle-royal .describe {
-    margin: 0 0 124px 0;
+	margin: 0 0 124px 0;
 }
 .battle-royal .describe p {
-    margin: 0 0 22px 0;
-    letter-spacing: -0.01em;
+	margin: 0 0 22px 0;
+	letter-spacing: -0.01em;
 }
 .battle-royal .describe .up {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
-
 
 /* block-about ==================================*/
 
@@ -1233,20 +1274,6 @@ body.red:before {
 .block-about .h2 {
 	margin: 0 0 38px;
 }
-.block-about .bold {
-	margin: 0 0 18px 0;
-	font-weight: bold;
-	font-size: 25px;
-	line-height: 32px;
-}
-.block-about .bold .name {
-    text-transform: uppercase;
-}
-.block-about .describe {
-	margin: 0 0 20px 0;
-	line-height: 20px;
-}
-
 
 /* footer ===============================================*/
 
@@ -1256,7 +1283,7 @@ body.red:before {
 	padding: 60px 0 0 0;
 	color: #f8f8f8;
 	line-height: 17px;
-	background: url(../img/fon/footer.jpg) 50% 0 repeat-x;
+	background: url(../img/footer.jpg) 50% 0 repeat-x;
 	cursor: default;
 }
 .red .footer {
@@ -1317,7 +1344,7 @@ body.red:before {
 	line-height: 16px;
 }
 .footer .nav-footer p {
-    margin: 0 0 10px 0;
+	margin: 0 0 10px 0;
 }
 .footer .nav-footer .nav {
 	margin: 0;
@@ -1330,7 +1357,7 @@ body.red:before {
 	transition: all .3s ease;
 }
 .footer .nav-footer .nav li a:hover {
-    color: #c7c7c7;
+	color: #c7c7c7;
 }
 .footer .info {
 	width: 510px;
@@ -1362,7 +1389,7 @@ body.red:before {
 	margin: 0 4px;
 	float: left;
 	background: url(../img/sprite.png) -600px -30px no-repeat;
-    transition: all .3s ease;
+	transition: all .3s ease;
 }
 .footer .info .social-footer .small-icons li:hover {
 	opacity: 0.6;
