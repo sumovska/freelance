@@ -759,78 +759,21 @@ body.red:before {
 	letter-spacing: 0.08em;
 }
 
-/* image-slider ========================================*/
+/* image-swiper ========================================*/
 
-.image-slider {
+.image-swiper {
 	padding: 54px 0 0 0;
 	margin: 0 0 60px 0;
 }
-.image-slider .h2 {
+.image-swiper .h2 {
 	margin: 0 0 17px 0;
 	position: relative;
 	color: #fff;
 	font-size: 40px;
 	letter-spacing: 0.035em;
 }
-.image-slider .slider {
-	height: 294px;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	list-style: none;
-}
 
-/* switch =============================*/
-/*.image-slider .slider .switch-left {
-	width: 21px;
-	height: 42px;
-	display: block;
-	margin: 116px 0 0 38px;
-	position: absolute;
-	background: url(../img/sprite.png) 0 -240px no-repeat;
-	z-index: 7;
-}
-.image-slider .slider .switch-right {
-	width: 22px;
-	height: 41px;
-	margin: -180px 40px 0 0;
-	display: block;
-	position: absolute;
-	right: 0;
-	background: url(../img/sprite.png) -30px -240px no-repeat;
-	z-index: 7;
-}
-*/
-
-.image-slider .slider .pic {
-	width: 790px;
-	height: 294px;
-	display: block;
-	margin: 0 auto;
-	position: relative;
-	z-index: 4;
-}
-.image-slider .slider .sign {
-	width: 150px;
-	margin: 0;
-	position: absolute;
-	top: 140px;
-	left: 300px;
-	color: #fff;
-	font-size: 18px;
-	line-height: 19px;
-	text-transform: uppercase;
-	font-weight: bold;
-	z-index: 7;
-}
-.image-slider .slider .sign p {
-	margin: 0 0 6px 0;
-}
-.image-slider .slider .sign p span {
-	padding: 0 6px;
-	background-color: rgba(0, 0, 0, 0.7);
-}
-.image-slider .link {
+.image-swiper .link {
 	width: 372px;
 	height: 50px;
 	padding: 16px 0 0 0;
@@ -841,7 +784,7 @@ body.red:before {
 	font-weight: 900;
 	z-index: 7;
 }
-.image-slider .link a {
+.image-swiper .link a {
 	width: 372px;
 	height: 44px;
 	display: block;
@@ -904,8 +847,9 @@ body.red:before {
 	width: 75px;
 	height: 75px;
 	display: block;
+	position: relative;
 	border: 5px solid #e0e0e0;
-	border-radius: 42px;
+	border-radius: 50%;
 }
 .block-comments .comments li .user-name {
 	margin: 0 0 12px 0;
@@ -929,7 +873,7 @@ body.red:before {
 /* block-reviews ========================================*/
 
 .block-reviews {
-	padding: 0 0 628px 0;
+	padding: 0 0 300px 0;
 	line-height: 20px;
 }
 .block-reviews:after {
@@ -1088,7 +1032,7 @@ body.red:before {
 /* slider-photo ==================================*/
 
 .gallery-photo {
-	padding: 0 0 676px 0;
+	margin: 0 0 300px 0;
 }
 .gallery-photo .h2 {
 	margin: 0 0 14px 0;
@@ -1125,8 +1069,27 @@ body.red:before {
 	display: block;
 }
 .gallery-photo .scroll .bx-wrapper {
-	width: 900px;
+	width: 860px;
 	position: relative;
+}
+.gallery-photo .scroll .bx-wrapper:after, .gallery-photo .scroll .bx-wrapper:before {
+	width: 56px;
+	height: 56px;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	background: url('../img/gallery.png') no-repeat 0 0;
+}
+.gallery-photo .scroll .bx-wrapper:after {
+	left: -10px;
+}
+.gallery-photo .scroll .bx-wrapper:before {
+	right: -10px;
+	background-position: -56px 0;
 }
 .gallery-photo .scroll .carousel {
 	height: 58px;
@@ -1164,13 +1127,14 @@ body.red:before {
 	border: none;
 	position: absolute;
 	top: 50%;
-}
-.gallery-photo .scroll .bx-controls-direction .bx-prev {
-	background-position: -280px -230px;
-	right: -20px;
+	outline: none;
 }
 .gallery-photo .scroll .bx-controls-direction .bx-next {
-	left: -20px;
+	background-position: -280px -230px;
+	right: -40px;
+}
+.gallery-photo .scroll .bx-controls-direction .bx-prev {
+	left: -40px;
 }
 
 /* Projects ===================================*/
@@ -1262,6 +1226,254 @@ body.red:before {
 }
 .block-about .h2 {
 	margin: 0 0 38px;
+}
+
+/* SWIPER ==================================*/
+/*
+ * Swiper 2.6.1
+ * Mobile touch slider and framework with hardware accelerated transitions
+ *
+ * http://www.idangero.us/sliders/swiper/
+ *
+ * Copyright 2010-2014, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ *
+ * Licensed under GPL & MIT
+ *
+ * Released on: May 6, 2014
+*/
+.swiper-container {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	/* Fix of Webkit flickering */
+	z-index: 1;
+}
+.swiper-wrapper {
+	position: relative;
+	width: 100%;
+	-webkit-transition-property: -webkit-transform, left, top;
+	-webkit-transition-duration: 0s;
+	-webkit-transform: translate3d(0px, 0, 0);
+	-webkit-transition-timing-function: ease;
+	-moz-transition-property: -moz-transform, left, top;
+	-moz-transition-duration: 0s;
+	-moz-transform: translate3d(0px, 0, 0);
+	-moz-transition-timing-function: ease;
+	-o-transition-property: -o-transform, left, top;
+	-o-transition-duration: 0s;
+	-o-transform: translate3d(0px, 0, 0);
+	-o-transition-timing-function: ease;
+	-o-transform: translate(0px, 0px);
+	-ms-transition-property: -ms-transform, left, top;
+	-ms-transition-duration: 0s;
+	-ms-transform: translate3d(0px, 0, 0);
+	-ms-transition-timing-function: ease;
+	transition-property: transform, left, top;
+	transition-duration: 0s;
+	transform: translate3d(0px, 0, 0);
+	transition-timing-function: ease;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+/* ===============================================================
+Your custom styles, here you need to specify container's and slide's
+sizes, pagination, etc.
+================================================================*/
+.swiper {
+	width: 788px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.swiper-container {
+	width: 1140px;
+	height: 255px;
+	padding: 30px 0 40px;
+	margin: 0 -176px;
+}
+.swiper-slide {
+	width: 400px;
+	height: 235px;
+	border: 10px solid #fff;
+	box-sizing: border-box;
+	background-size: cover;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.swiper-slide a { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1 }
+.swiper-slide-active {
+	/* Specific active slide styling: */
+}
+.swiper-slide-visible {
+	/* Specific visible slide styling: */
+}
+
+.swiper-prev {
+	width: 21px;
+	height: 42px;
+	display: block;
+	position: absolute;
+	top: 135px;
+	left: 30px;
+	cursor: pointer;
+	background: url(../img/sprite.png) 0 -240px no-repeat;
+	z-index: 7;
+}
+.swiper-next {
+	width: 22px;
+	height: 41px;
+	display: block;
+	position: absolute;
+	top: 135px;
+	right: 30px;
+	cursor: pointer;
+	background: url(../img/sprite.png) -30px -240px no-repeat;
+	z-index: 7;
+}
+
+.swiper .info {
+	width: 150px;
+	margin: 0;
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	color: #fff;
+	font-size: 17px;
+	line-height: 18px;
+	text-transform: uppercase;
+	font-weight: bold;
+	z-index: 7;
+}
+.swiper .info span {
+	padding: 0 6px 1px;
+	margin: 0 0 2px 0;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.swiper-container {
+}
+.reflection {
+	width: 100%;
+	height: 15px;
+	padding: 0 10px;
+	position: absolute;
+	left: -10px;
+	bottom: -26px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0)));
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+}
+.swiper-slide a { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1 }
+/* ===============================================================
+Pagination Styles
+================================================================*/
+.swiper-pagination-switch {
+	/* Stylize pagination button: */
+}
+.swiper-active-switch {
+	/* Specific active button style: */
+}
+.swiper-visible-switch {
+	/* Specific visible button style: */
+}
+
+/*
+ * Swiper 3D Flow 2.1.0
+ * 3D Flow plugin for Swiper
+ *
+ * http://www.idangero.us/sliders/swiper/plugins/3dflow.php
+ *
+ * Copyright 2010-2014, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ *
+ * Licensed under GPL & MIT
+ *
+ * Released on: January 28, 2014
+*/
+.swiper-container, .swiper-wrapper, .swiper-slide {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.swiper-container {
+	-webkit-perspective: 1200px;
+	-moz-perspective: 1200px;
+	-o-perspective: 1200px;
+	perspective: 1200px;
+}
+.swiper-wrapper {
+	/* Windows 8 IE 10 fix */
+	-ms-perspective: 1200px;
+}
+
+.swiper-slide-shadow-left, .swiper-slide-shadow-right, .swiper-slide-shadow-top, .swiper-slide-shadow-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+.swiper-slide-shadow-left {
+	background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))); /* Safari 4+, Chrome */
+	background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 16+, IE10, Opera 12.50+ */
+}
+.swiper-slide-shadow-right {
+	background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))); /* Safari 4+, Chrome */
+	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 16+, IE10, Opera 12.50+ */
+}
+.swiper-slide-shadow-top {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))); /* Safari 4+, Chrome */
+	background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 16+, IE10, Opera 12.50+ */
+}
+.swiper-slide-shadow-bottom {
+	background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))); /* Safari 4+, Chrome */
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Firefox 16+, IE10, Opera 12.50+ */
 }
 
 /* footer ===============================================*/
