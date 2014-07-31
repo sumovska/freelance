@@ -1,0 +1,1029 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Verdana', Arial, Tahoma, sans-serif;
+    background: #e8e5e3 url(../img/html.png) 50% 0 no-repeat;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0 0 30px 0;
+}
+a {
+    color: #1f5aa6;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    width: 1218px;
+    margin: 0 auto;
+    font: 14px/22px 'Verdana', Helvetica, Helvetica Neue, Arial;
+    background: #fff;
+}
+
+.wrapper {
+    width: 980px;
+    min-height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.wrapper:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+} 
+.red {
+    color: #fc4349;
+}
+.bg-red {
+    background: #fc4349;
+}
+.bg-blue {
+    background: #14a6dc;
+}
+.h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: normal;
+}
+.h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+}
+.h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #d9d9d9;
+    font-weight: normal;
+}
+.h5 {
+    margin: 0;
+    font-size: 12px;
+    color: #9e9e9e;
+    font-weight: normal;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+/* Header ========================================================================== */
+
+
+/* Header-top ============================== */
+
+.header-top {
+    height: 40px;
+    font-size: 12px;
+    border-bottom: 2px solid #a4a4a4;
+}
+.header-top .sign-in {
+    color: #1f2730;
+    position: absolute;
+    top: 10px;
+    left: 64px;
+}
+.header-top .sign-in:before {
+    width: 12px;
+    height: 12px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: -18px;
+    top: 5px;
+    background: url(../img/sprite.png) 0 0 no-repeat;
+}
+.header-top .social {
+    position: absolute;
+    top: 13px;
+    left: 410px;
+    list-style: none;
+    text-align: center;
+}
+.header-top .social:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.header-top .social li{
+    width: 16px;
+    height: 16px;
+    margin: 0 4px 0 0;
+    float: left;
+    background: url(../img/sprite.png) -20px 0 no-repeat;
+}
+.header-top .social li a{
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+.header-top .social .tw {
+    background-position: -40px 0;
+}
+.header-top .social .vk {
+    background-position: -60px 0;
+}
+.header-top .social .ok {
+    background-position: -80px 0;
+}
+.header-top .nav-top {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    list-style: none;
+}
+.header-top .nav-top:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.header-top .nav-top li {
+    float: left;
+}
+.header-top .nav-top li a:after {
+    width: 1px;
+    height: 13px;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #e2e4e5;
+}
+.header-top .nav-top li:last-child :after{
+    background: none;
+}
+.header-top .nav-top li a {
+    padding: 0 16px;
+    color: #1480dc;
+    position: relative;
+}
+
+
+/* Header-middle ============================== */
+
+.header-middle {
+    height: 66px;
+}
+.header-middle .logo {
+    width: 115px;
+    height: 35px;
+    margin: 0;
+    position: absolute;
+    top: 14px;
+    left: 37px;
+    background: url(../img/logo.png) 0 0 no-repeat;
+}
+.header-middle .slogan {
+    margin: 0;
+    color: #99999d;
+    font-size: 12px;
+    position: absolute;
+    top: 33px;
+    left: 159px;
+    font-style: italic;
+}
+.header-middle .phone {
+    width: 230px;
+    margin: 0;
+    position: absolute;
+    top: 22px;
+    left: 327px;
+    text-align: right;
+    font-size: 11px;
+    line-height: 6px;
+    letter-spacing: -0.02em;
+}
+.header-middle .phone .number {
+    display: block;
+    font-size: 18px;
+    line-height: 11px;
+    color: #1480dc;
+    font-weight: bold;
+}
+.header-middle .callback {
+    width: 150px;
+    margin: 0;
+    padding-left: 13px;
+    position: absolute;
+    font-size: 12px;
+    line-height: 13px;
+    top: 22px;
+    left: 569px;
+    border-left: 1px solid #c9c9c9;
+}
+.header-middle .search {
+    display: block;
+    position: absolute;
+    top: 19px;
+    right: 21px;
+}
+.header-middle .search p {
+    margin: 0;
+    font-size: 13px;
+    color: #1f2730;
+}
+.header-middle .search input[type="text"] {
+    width: 199px;
+    height: 13px;
+    padding: 7px 9px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    background: url(../img/search.png) no-repeat 96%; 
+}
+
+
+
+/* Block-nav ================================================= */
+
+.block-nav {
+    height: 60px;
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    line-height: 16px;
+    color: #fff;
+}
+.nav {
+    height: 60px;
+    background: url(../img/nav.jpg) 0 0 repeat-x;
+}
+.nav:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.nav .links {
+    width: 620px; 
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    letter-spacing: -0.02em;
+}
+.nav .links:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+@-moz-document url-prefix() {
+    .nav .links{
+        letter-spacing: -0.008em;
+    }   
+}
+.nav .links li {
+    padding: 0 18px;
+    float: left;
+    border-right: 1px dotted #4fcdff;
+}
+.nav .links li:last-child {
+    border-right: none;
+} 
+.nav .links li a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #33729b;
+    transition: all .3s ease;
+}
+.nav .links li a:hover {
+    color: #4fcdff;
+}
+.nav .orders {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size: 12px;
+    color: #4f7c9d;
+}
+.nav .orders:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.nav .orders .color {
+    color: #fff;
+    font-weight: bold;
+}
+.nav .orders .cart {
+    padding: 0 22px 0 48px;
+    margin: 0;
+    float: left;
+    position: relative;
+}
+.nav .orders .cart:before {
+    width: 16px;
+    height: 16px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    background: url(../img/sprite.png) -120px 0 no-repeat;
+}
+.nav .orders .customs {
+    padding: 0 30px 0 18px;
+    margin: 0;
+    float: left;
+    position: relative;
+}
+.nav .orders .customs:before {
+    width: 8px;
+    height: 18px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 6px;
+    top: 0;
+    background: url(../img/sprite.png) -140px 0 no-repeat;
+}
+
+
+
+/* Content ================================================= */
+
+.content {
+    position: relative;
+    min-height: 636px;
+}
+.content .background {
+    width: 1218px;
+    height: 584px;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 4;
+}
+.content .background .bx-wrapper {
+    width: 1218px !important;
+    height: 584px;
+    overflow: hidden;
+    position: relative;
+}
+.content .background .carousel {
+    width: 10000px;
+    list-style: none;
+}
+.content .background .carousel:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.content .background .carousel li {
+    float: left;
+}
+
+
+/* Product ================================ */
+
+.product {
+    width: 640px;
+    float: left;
+    margin: 0 20px 0 0;
+    position: relative;
+    z-index: 8;
+}
+.product .search-box {
+    width: 620px;
+    height: 112px;
+    padding: 32px 0 0 20px;
+    margin: 0 0 40px 0;
+    background-image: url(../img/search.jpg);
+}
+.product .search-box a {
+    width: 620px;
+    height: 38px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+.product .search-box a span {
+    width: 187px;
+    height: 30px;
+    padding: 8px 0 0 17px;
+    display: block;
+    float: left;
+}
+.product .search-box a .figure {
+    background: #464655;
+    position: relative;
+}
+.product .search-box a .figure:after {
+    width: 0;
+    height: 0;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 37px solid #000;
+    border-left: 11px solid transparent;
+}
+.product .search-box a .link {
+    border-top: 1px solid rgba( 255, 255, 255, 0.5); 
+    position: relative;
+}
+.product .search-box a .link:before {
+    width: 1px;
+    height: 37px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: -moz-linear-gradient(top,  rgba(251,251,251,1) 0%, rgba(251,251,251,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,251,251,1)), color-stop(100%,rgba(251,251,251,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* W3C */
+    opacity: 0.5;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#00fbfbfb',GradientType=0 ); /* IE6-9 */
+}
+.product .search-box a .link:active {
+    background: #464655;
+}
+.product .search-box input[type="text"] {
+    display: block;
+    width: 560px;
+    height: 16px;
+    padding: 16px 18px;
+    color: #566473;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    background: url(../img/search.png) no-repeat 98%; 
+    background-color: rgba( 255, 255, 255, 0.9);
+}
+.product .kind {
+    margin-left: 52px;
+    position: relative;
+    text-transform: uppercase;
+    list-style: none;
+}
+.product .kind:before {
+    width: 17px;
+    height: 12px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: -22px;
+    top: 3px;
+    background: url(../img/sprite.png) -160px 0 no-repeat;
+} 
+.product .kind:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.product .kind li {
+    float: left;
+    padding: 0 6px;
+    margin-right: 8px; 
+    position: relative;
+}
+.product .kind li:after {
+    width: 7px;
+    height: 13px;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    position: absolute;
+    bottom: 3px;
+    right: -7px;
+    background: url(../img/sprite.png) -150px 0 no-repeat;
+}
+.product .kind li a{
+    float: left;
+    color: #444444;
+}
+
+/* Side-bar ================================ */
+
+.side-bar {
+    width: 320px;
+    float: right;
+    background: rgba(8,112,198,0);
+    background: -moz-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(8,112,198,0)), color-stop(100%, rgba(8,112,198,1)));
+    background: -webkit-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
+    background: -o-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
+    background: -ms-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
+    background: linear-gradient(to right, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
+    background-color: rgba( 20, 166, 220, 0.8); 
+    position: relative;
+    opacity: 0.8;
+    z-index: 8;
+}
+.side-bar .news {
+    padding: 10px 40px 22px 20px;
+    list-style: none;
+    font-size: 13px;
+    line-height: 19px;
+}
+.side-bar .news li {
+    margin: 0 0 24px 0;
+}
+.side-bar .news .title {
+    padding: 0 0 0 26px;
+    margin: 0 0 18px 0;
+}
+.side-bar .news li a {
+    color: #fff;
+}
+.side-bar .news .title a{
+    text-decoration: none;
+} 
+.side-bar .news .title a:hover {
+    text-decoration: underline;
+} 
+
+
+
+/* Full-proposion ======================================================== */
+
+.full-proposion {
+    height: 322px;
+    position: relative;
+    background: url(../img/proposion.jpg) 0 0 repeat;
+}
+.proposion {
+    width: 1000px;
+    padding-left: 20px;
+    margin: -86px -20px 0 0;
+    list-style: none;
+    position: absolute;
+    z-index: 8;
+    cursor: default;
+}
+.proposion:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.proposion .h2 {
+    margin-bottom: 22px; 
+    color: #40a8dd;
+}
+.proposion li {
+    width: 220px;
+    min-height: 306px;
+    margin-right: 20px;
+    float: left;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: relative;
+}
+.proposion li:hover .add {
+    display: block;
+}
+.proposion li .sale {
+    width: 57px;
+    height: 22px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 2px;
+    left:2px;
+}
+.proposion li .pic {
+    width: 220px;
+    height: 200px;
+    display: block;
+}
+.proposion li .price {
+    padding: 0 14px;
+}
+.proposion li .title-link {
+    display: block;
+    line-height: 18px;
+    color: #122025;
+}
+.proposion li .cost {
+    margin: 0;
+    position: absolute;
+    bottom: 8px;
+    font-size: 11px;
+    left: 14px;
+}
+.proposion li .cost .red{
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.proposion li .add {
+    width: 105px;
+    height: 30px;
+    padding-top: 9px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    background: #1f5aa6;
+}
+
+
+
+/* Full-item ======================================================== */
+
+.full-item {
+    width: 1218px;
+    padding: 54px 0 36px 0;
+    background: url(../img/item.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+.full-item .h3 {
+    margin-bottom: 26px;
+    color: #1f5aa6;
+}
+.full-item .pack {
+    width: 960px;
+    padding-left: 20px;
+}
+.full-item .pack:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.full-item .pack .item {
+    width: 270px;
+    margin: 0 50px 40px 0;
+    float: left;
+    line-height: 20px;
+}
+.full-item .pack .item .img-link {
+    width: 230px;
+    height: 130px;
+    margin-bottom: 16px; 
+    display: block;
+    position: relative;
+    z-index: 8;
+}
+.full-item .pack .item .img-link:after {
+    width: 239px;
+    height: 144px;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin: 0;
+    position: absolute;
+    left: 4px;
+    top: 0;
+    background: url(../img/car-before.png) 0 0 no-repeat;
+    z-index: -1;
+}
+.full-item .pack .item .pic {
+    width: 230px;
+    height: 130px;
+    display: block;
+    box-shadow: 9px 9px 10px rgba( 115, 131, 148, 0.75);
+}
+.full-item .pack .item .link {
+    color: #000;
+    display: block;
+}
+ 
+
+/* footer ======================================================== */
+
+
+.footer {
+    width: 1218px;
+    height: 250px;
+    font-size: 13px;
+    color: #8e98ab;
+    background: url(../img/footer.jpg) 0 0 no-repeat;
+}
+.footer:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.footer .logo-footer {
+    width: 80px;
+    height: 24px;
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    background: url(../img/logo-footer.png) 0 0 no-repeat;
+}
+.footer .slogan {
+    width: 184px;
+    font-size: 12px;
+    line-height: 15px;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+}
+.footer .copyright {
+    font-size: 12px;
+    position: absolute;
+    top: 158px;
+    left: 18px;
+}
+.footer .copyright:before {
+    width: 126px;
+    height: 2px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: -24px;
+    background: rgba( 119, 132, 144, 0.3);
+}
+.footer .nav-footer {
+    position: absolute;
+    top: 33px;
+    left: 338px;
+}
+.footer .nav-footer:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.footer .nav-footer ul {
+    min-width: 222px;
+    margin: 0;
+    float: left;
+    list-style: none;
+}
+.footer .nav-footer .h4 {
+    margin-bottom: 12px;
+}
+.footer .nav-footer li a {
+    color: #8e98ab;
+}
+.footer .contacts {
+    position: absolute;
+    top: 38px;
+    right: 22px;
+    text-align: right;
+}
+.contacts .phone {
+    width: 201px;
+    height: 21px;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f5aa6;
+    overflow: hidden;
+    text-indent: 2000px;
+    background: url(../img/sprite.png) 0 -30px no-repeat;
+}
+.contacts .address {
+    display: block;
+    position: relative;
+}
+.contacts .address:before {
+    width: 20px;
+    height: 18px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 60px;
+    top: 0;
+    background: url(../img/sprite.png) -180px 0 no-repeat;
+}
+.footer .author {
+    position: absolute;
+    top: 182px;
+    right: 22px;
+    color: #d4d4d4;
+}
+.footer .author a {
+    color: #d4d4d4;
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
