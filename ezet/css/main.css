@@ -79,7 +79,7 @@ textarea {
 body {
     width: 1218px;
     margin: 0 auto;
-    font: 14px/22px 'Verdana', Helvetica, Helvetica Neue, Arial;
+    font: 14px/20px 'Verdana', Helvetica, Helvetica Neue, Arial;
     background: #fff;
 }
 
@@ -107,14 +107,38 @@ body {
 }
 .h2 {
     margin: 0;
+    position: relative;
     font-size: 30px;
     line-height: 30px;
     font-weight: normal;
 }
+.h2:before {
+    width: 550px;
+    height: 1px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    background: rgba( 175, 175, 175, 1);
+}
 .h3 {
     margin: 0;
+    position: relative;
     font-size: 24px;
     font-weight: normal;
+}
+.h3:before {
+    width: 608px;
+    height: 1px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    background: rgba( 44, 62, 80, 0.1);
 }
 .h4 {
     margin: 0;
@@ -137,12 +161,14 @@ body {
 
 /* Header ========================================================================== */
 
+.header {
+    font-size: 12px;
+}
 
 /* Header-top ============================== */
 
 .header-top {
     height: 40px;
-    font-size: 12px;
     border-bottom: 2px solid #a4a4a4;
 }
 .header-top .sign-in {
@@ -213,6 +239,14 @@ body {
 .header-top .nav-top li {
     float: left;
 }
+.header-top .nav-top li:last-child :after{
+    background: none;
+}
+.header-top .nav-top li a {
+    padding: 0 16px;
+    color: #1480dc;
+    position: relative;
+}
 .header-top .nav-top li a:after {
     width: 1px;
     height: 13px;
@@ -225,14 +259,7 @@ body {
     right: 0;
     background-color: #e2e4e5;
 }
-.header-top .nav-top li:last-child :after{
-    background: none;
-}
-.header-top .nav-top li a {
-    padding: 0 16px;
-    color: #1480dc;
-    position: relative;
-}
+
 
 
 /* Header-middle ============================== */
@@ -252,7 +279,6 @@ body {
 .header-middle .slogan {
     margin: 0;
     color: #99999d;
-    font-size: 12px;
     position: absolute;
     top: 33px;
     left: 159px;
@@ -280,9 +306,8 @@ body {
     width: 150px;
     margin: 0;
     padding-left: 13px;
+    line-height: 12px;
     position: absolute;
-    font-size: 12px;
-    line-height: 13px;
     top: 22px;
     left: 569px;
     border-left: 1px solid #c9c9c9;
@@ -442,6 +467,40 @@ body {
     overflow: hidden;
     position: relative;
 }
+.content .background .bx-controls {
+    width: 70px;
+    height: 40px;
+    position: absolute;
+    bottom: 92px;
+    right: 140px;
+    z-index: 10;
+}
+.content .background .bx-controls:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.content .background .bx-controls a {
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: left;
+    position: relative;
+    text-indent: -1000px;
+    overflow: hidden;
+    margin-left: 1px;
+    background: url(../img/sprite.png) -210px 0 no-repeat;
+    background-color: #1f5aa6;
+    z-index: 10;
+}
+.content .background .bx-controls a:hover {
+    background-color: #2c3e50;
+}
+.content .background .bx-controls .bx-next {
+    background-position: -240px 0;
+}
 .content .background .carousel {
     width: 10000px;
     list-style: none;
@@ -518,14 +577,8 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background: -moz-linear-gradient(top,  rgba(251,251,251,1) 0%, rgba(251,251,251,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,251,251,1)), color-stop(100%,rgba(251,251,251,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%); /* W3C */
+    background: linear-gradient(to bottom,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%);
     opacity: 0.5;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#00fbfbfb',GradientType=0 ); /* IE6-9 */
 }
 .product .search-box a .link:active {
     background: #464655;
@@ -594,11 +647,6 @@ body {
     width: 320px;
     float: right;
     background: rgba(8,112,198,0);
-    background: -moz-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(8,112,198,0)), color-stop(100%, rgba(8,112,198,1)));
-    background: -webkit-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
-    background: -o-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
-    background: -ms-linear-gradient(left, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
     background: linear-gradient(to right, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
     background-color: rgba( 20, 166, 220, 0.8); 
     position: relative;
@@ -654,7 +702,7 @@ body {
     overflow: hidden;
 }
 .proposion .h2 {
-    margin-bottom: 22px; 
+    margin: 0 120px 22px 0; 
     color: #40a8dd;
 }
 .proposion li {
@@ -727,10 +775,6 @@ body {
     background: url(../img/item.jpg) 0 0 no-repeat;
     background-size: cover;
 }
-.full-item .h3 {
-    margin-bottom: 26px;
-    color: #1f5aa6;
-}
 .full-item .pack {
     width: 960px;
     padding-left: 20px;
@@ -741,6 +785,19 @@ body {
     display: block;
     clear: both;
     overflow: hidden;
+}
+.full-item .pack .h3 {
+    margin: 0 110px 26px 0;
+    position: relative;
+    color: #1f5aa6;
+}
+.full-item .pack .all {
+    float: right;
+    font-size: 12px;
+    color: #1f5aa6;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .full-item .pack .item {
     width: 270px;
@@ -790,8 +847,19 @@ body {
     height: 250px;
     font-size: 13px;
     color: #8e98ab;
+    position: relative;
     background: url(../img/footer.jpg) 0 0 no-repeat;
 }
+.footer .wrapper:before {
+    width: 960px;
+    height:6px;
+    content: "\0020";
+    display: block;
+    margin: 0 20px;
+    position: absolute;
+    top: -6px;
+    background: #1f5aa6;
+} 
 .footer:after {
     width: 100%;
     content: "\0020";
@@ -802,23 +870,26 @@ body {
 .footer .logo-footer {
     width: 80px;
     height: 24px;
+    margin: 0;
     position: absolute;
-    top: 24px;
+    top: 26px;
     left: 22px;
     background: url(../img/logo-footer.png) 0 0 no-repeat;
 }
 .footer .slogan {
     width: 184px;
+    margin: 0;
     font-size: 12px;
     line-height: 15px;
     position: absolute;
-    top: 70px;
+    top: 72px;
     left: 20px;
 }
 .footer .copyright {
+    margin: 0;
     font-size: 12px;
     position: absolute;
-    top: 158px;
+    top: 160px;
     left: 18px;
 }
 .footer .copyright:before {
@@ -829,23 +900,15 @@ body {
     margin: 0;
     position: absolute;
     left: 0;
-    top: -24px;
+    top: -20px;
     background: rgba( 119, 132, 144, 0.3);
 }
 .footer .nav-footer {
     position: absolute;
-    top: 33px;
-    left: 338px;
-}
-.footer .nav-footer:after {
-    width: 100%;
-    content: "\0020";
-    display: block;
-    clear: both;
-    overflow: hidden;
+    top: 34px;
 }
 .footer .nav-footer ul {
-    min-width: 222px;
+    min-width: 170px;
     margin: 0;
     float: left;
     list-style: none;
@@ -856,9 +919,15 @@ body {
 .footer .nav-footer li a {
     color: #8e98ab;
 }
+.footer .about {
+    left: 338px;
+}
+.footer .products {
+    right: 250px;
+}
 .footer .contacts {
     position: absolute;
-    top: 38px;
+    top: 40px;
     right: 22px;
     text-align: right;
 }
