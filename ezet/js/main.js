@@ -8,7 +8,15 @@ $(document).ready(function () {
 		auto: true,
 		pause: 5000,
 		speed: 700,
-		useCSS: false,
+		useCSS: false
+	});
+	/*$('.similar-products .ware ').bxSlider({
+		infiniteLoop: false,
+		pager: false,
+		slideWidth: 220,
+		minSlides: 4,
+		maxSlides: 4,
+		margin: 10*/
 	});
 })
 
