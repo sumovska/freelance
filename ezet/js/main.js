@@ -3,7 +3,7 @@
 
 /* On document ready */
 $(document).ready(function () {
-	$('.content .background .carousel').bxSlider({
+	$('.block-content .background .carousel').bxSlider({
 		pager: false,
 		auto: true,
 		pause: 5000,
@@ -16,7 +16,14 @@ $(document).ready(function () {
 		slideWidth: 220,
 		minSlides: 4,
 		maxSlides: 4,
-		margin: 10*/
+		margin: 10
+	});*/
+	$('.full .products .carousel').bxSlider({
+		infiniteLoop: false,
+		pager: false,
+		slideWidth: 220,
+		minSlides: 4,
+		maxSlides: 4,
 	});
 })
 

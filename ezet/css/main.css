@@ -31,7 +31,7 @@ ul {
 p {
     margin: 0 0 30px 0;
 }
-h2, h3, h4 {
+h2, h3, h4, h5, h6 {
     margin: 0 0 16px 0;
 }
 a {
@@ -84,6 +84,7 @@ body {
     margin: 0 auto;
     font: 14px/20px 'Verdana', Helvetica, Helvetica Neue, Arial;
     background: #fff;
+    box-shadow: 0 0 100px 10px rgba( 93, 93, 93, 0.60);
 }
 
 .wrapper {
@@ -101,11 +102,20 @@ body {
 }
 
 
+/* Side-box ===================== */
+
+.side-box {
+    background: rgba(8,112,198,0);
+    background: linear-gradient(to right, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
+    background-color: rgba( 20, 166, 220, 0.8); 
+    position: relative;
+    opacity: 0.8;
+}
+
+
 /* Ware ===================== */
 
 .ware {
-    width: 1000px;
-    margin: 0 auto;
     list-style: none;
 }
 .ware:after {
@@ -161,6 +171,18 @@ body {
     background: #1f5aa6;
 }
 
+.carousel {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.carousel:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
 
 
 
@@ -188,7 +210,7 @@ body {
    color: #949494;
 }
 .h2 {
-    position: relative;
+    margin: 0 0 22px 0;
     font-size: 30px;
     line-height: 30px;
     color: #40a8dd;
@@ -209,12 +231,10 @@ body {
     font-size: 19px;
     line-height: 22px;
     color: #000000;
+    font-weight: normal;
 }
 .h6 {
-    margin: 0;
-    font-size: 12px;
-    color: #9e9e9e;
-    font-weight: normal;
+    
 }
 
 
@@ -236,6 +256,7 @@ body {
     border-bottom: 2px solid #a4a4a4;
 }
 .header-top .sign-in {
+    margin: 0;
     position: absolute;
     top: 10px;
     left: 64px;
@@ -413,7 +434,6 @@ body {
 
 .block-nav {
     height: 60px;
-    margin: 0;
     font-size: 16px;
     line-height: 16px;
     color: #fff;
@@ -520,17 +540,19 @@ body {
 
 
 
-/* Content ================================================= */
+/* Block-Content ================================================= */
 
-.content {
+.block-content {
     padding: 20px 0;
     position: relative;
     min-height: 636px;
 }
-.content-contacts {
+.content-main {
+    position: relative;
     background: url(../img/proposion.jpg) 0 0 repeat;
+    z-index: 8;
 }
-.content .background {
+.block-content .background {
     width: 1218px;
     height: 584px;
     margin: 0;
@@ -540,13 +562,13 @@ body {
     overflow: hidden;
     z-index: 4;
 }
-.content .background .bx-wrapper {
+.block-content .background .bx-wrapper {
     width: 1218px !important;
     height: 584px;
     overflow: hidden;
     position: relative;
 }
-.content .background .bx-controls {
+.block-content .background .bx-controls {
     width: 70px;
     height: 40px;
     position: absolute;
@@ -554,14 +576,14 @@ body {
     right: 140px;
     z-index: 10;
 }
-.content .background .bx-controls:after {
+.block-content .background .bx-controls:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.content .background .bx-controls a {
+.block-content .background .bx-controls a {
     width: 30px;
     height: 30px;
     display: block;
@@ -574,63 +596,63 @@ body {
     background-color: #1f5aa6;
     z-index: 10;
 }
-.content .background .bx-controls a:hover {
+.block-content .background .bx-controls a:hover {
     background-color: #2c3e50;
 }
-.content .background .bx-controls .bx-next {
+.block-content .background .bx-controls .bx-next {
     background-position: -240px 0;
 }
-.content .background .carousel {
+.block-content .background .carousel {
     width: 10000px;
     list-style: none;
 }
-.content .background .carousel:after {
+.block-content .background .carousel:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.content .background .carousel li {
+.block-content .background .carousel li {
     float: left;
 }
 
 
-/* Product ================================ */
+/* Content ================================ */
 
-.product {
+.content {
     width: 640px;
     float: left;
     margin: 0 20px 0 0;
     position: relative;
     z-index: 8;
 }
-.product .search-box {
+.content .search-box {
     width: 620px;
     height: 112px;
     padding: 32px 0 0 20px;
     margin: 0 0 40px 0;
     background-image: url(../img/search.jpg);
 }
-.product .search-box a {
+.content .search-box a {
     width: 620px;
     height: 38px;
     display: block;
     text-decoration: none;
     color: #fff;
 }
-.product .search-box a span {
+.content .search-box a span {
     width: 187px;
     height: 30px;
     padding: 8px 0 0 17px;
     display: block;
     float: left;
 }
-.product .search-box a .figure {
+.content .search-box a .type-1 {
     background: #464655;
     position: relative;
 }
-.product .search-box a .figure:after {
+.content .search-box a .type-1:after {
     width: 0;
     height: 0;
     content: "\0020";
@@ -643,11 +665,11 @@ body {
     border-top: 37px solid #000;
     border-left: 11px solid transparent;
 }
-.product .search-box a .link {
+.content .search-box a .type-2 {
     border-top: 1px solid rgba( 255, 255, 255, 0.5); 
     position: relative;
 }
-.product .search-box a .link:before {
+.content .search-box a .type-2:before {
     width: 1px;
     height: 37px;
     content: "\0020";
@@ -659,10 +681,10 @@ body {
     background: linear-gradient(to bottom,  rgba(251,251,251,1) 0%,rgba(251,251,251,0) 100%);
     opacity: 0.5;
 }
-.product .search-box a .link:active {
+.content .search-box a .type-2:active {
     background: #464655;
 }
-.product .search-box input[type="text"] {
+.content .search-box input[type="text"] {
     display: block;
     width: 560px;
     height: 16px;
@@ -673,13 +695,13 @@ body {
     background: url(../img/search.png) no-repeat 98%; 
     background-color: rgba( 255, 255, 255, 0.9);
 }
-.product .kind {
+.content .kind {
     margin-left: 52px;
     position: relative;
     text-transform: uppercase;
     list-style: none;
 }
-.product .kind:before {
+.content .kind:before {
     width: 17px;
     height: 12px;
     content: "\0020";
@@ -690,20 +712,20 @@ body {
     top: 3px;
     background: url(../img/sprite.png) -160px 0 no-repeat;
 } 
-.product .kind:after {
+.content .kind:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.product .kind li {
+.content .kind li {
     float: left;
     padding: 0 6px;
     margin-right: 8px; 
     position: relative;
 }
-.product .kind li:after {
+.content .kind li:after {
     width: 7px;
     height: 13px;
     content: "\0020";
@@ -715,7 +737,7 @@ body {
     right: -7px;
     background: url(../img/sprite.png) -150px 0 no-repeat;
 }
-.product .kind li a{
+.content .kind li a{
     float: left;
     color: #444444;
 }
@@ -725,18 +747,16 @@ body {
 .side-bar {
     width: 320px;
     float: right;
-    background: rgba(8,112,198,0);
-    background: linear-gradient(to right, rgba(8,112,198,0) 0%, rgba(8,112,198,1) 100%);
-    background-color: rgba( 20, 166, 220, 0.8); 
-    position: relative;
-    opacity: 0.8;
-    z-index: 8;
 }
 .side-bar .news {
-    padding: 10px 40px 22px 20px;
-    list-style: none;
     font-size: 13px;
     line-height: 19px;
+    position: relative;
+    z-index: 8;
+}
+.side-bar .news .side-box {
+    padding: 10px 40px 22px 20px;
+    list-style: none;
 }
 .side-bar .news li {
     margin: 0 0 24px 0;
@@ -756,21 +776,23 @@ body {
 } 
 
 
-/* Side-bar-card ================================ */
+/* Side-card ================================ */
 
-.side-bar-card {
+.side-card {
     width: 240px;
     margin-right: 18px;
     float: left;
+}
+.side-card .side-catalog {
     line-height: 30px;
     text-transform: uppercase;
 }
-.side-bar-card .catalog {
+.side-card .side-catalog .side-box {
     padding: 16px 8px 26px 8px;
     position: relative;
     list-style: none;
 }
-.side-bar-card .catalog:before {
+.side-card .side-catalog .side-box:before {
     width: 17px;
     height: 12px;
     content: "\0020";
@@ -781,82 +803,152 @@ body {
     top: 12px;
     background: url(../img/sprite.png) -270px 0 no-repeat;
 } 
-.side-bar-card li {
+.side-card li {
     transition: all .3s ease;
 }
-.side-bar-card li:hover {
+.side-card li:hover {
     background: rgba( 76, 194, 255, 0.8);
 }
-.side-bar-card li a {
+.side-card li a {
     width: 198px;
     padding-left: 22px;
     display: block;
     color: #fff;
 }
-.side-bar-card li a:hover {
+.side-card li a:hover {
     color: #033466;
 }
 
 
+/* Filter ================================ */
 
-/* Directory-file ================================ */
+.filter {
+    width: 220px;
+    padding: 12px 10px;
+    background: #fff;
+    font-size: 13px;
+    box-shadow: 0 0 18px rgba( 0, 0, 0, 0.13);
+}
+.filter .h5 {
+    margin: 0 0 8px 18px;
+}
+.filter .model {
+    padding: 4px 18px 10px 18px;
+    margin-bottom: 11px;
+    background-color: #f0f8fb;
+}
+.filter .model span {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.filter .model label {
+    margin-bottom: 8px;
+    display: block; 
+    text-transform: none;
+}
+.filter input[type="text"] {
+    width: 167px;
+    height: 12px;
+    padding: 6px 8px;
+    outline: none;
+    background: url(../img/search.png) no-repeat 96%;
+    background-color: #fff; 
+    border: 1px solid #969696;
+}
+.filter input[type="submit"] {
+    width: 105px;
+    height: 38px;
+    padding: 0 9px 0 26px;
+    margin-right: 2px;
+    outline: none;
+    color: #fff;
+    background: #d5d5d5;
+    border: none;
+}
+.filter input[type="submit"]:hover {
+    background: #1f5aa6;
+}
+.filter .button {
+    position: relative;
+}
+.filter .button:before {
+    width: 10px;
+    height: 9px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    background: url(../img/sprite.png) -390px 0 no-repeat;
+} 
+.filter .pick:before {
+    width: 14px;
+    background-position: -410px 0;
+}
 
 
-.directory-file {
+
+/* Content-right ================================ */
+
+
+.content-right {
     width: 722px;
     padding-top: 10px;
     float: right;
     font-size: 12px;
     line-height: 16px;
 }
-.directory-file a {
+.content-right a {
     color: #2c2c2c;
 }
-.directory-file .breadcrumbs {
-    margin-bottom: 16px;
+.breadcrumbs {
+    margin-bottom: 10px;
     font-size: 12px;
 }
-.directory-file .about {
+.content-right .about {
     margin-bottom: 17px;
 }
-.directory-file .about:after {
+.content-right .about:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.directory-file .about .pic {
+.content-right .about .pic {
     width: 450px;
     height: 452px;
     display: block;
     border: 1px solid #fff;
 }
-.directory-file .about .picture .carousel {
+.content-right .about .picture .carousel {
     list-style: none;
 }
-.directory-file .about .picture .carousel li {
+.content-right .about .picture .carousel li {
     float: left;
 }
-.directory-file .about .picture {
+.content-right .about .picture {
     width: 452px;
     float: left;
 }
-.directory-file .about .picture .carousel li .pic {
+.content-right .about .picture .carousel li .pic {
     width: 102px;
     height: 75px;
     display: block;
 }
-.directory-file .about .describe {
+.content-right .about .describe {
     width: 240px;
     float: right;
 }
-.directory-file .about .describe .heading {
+.content-right .about .describe .heading {
     font-size: 19px;
     font-weight: bold;
     color: #3a8ed2;
 }
-.directory-file .about .describe .red {
+.content-right .about .describe .red {
     font-size: 16px;
 }
 .crossed { 
@@ -864,19 +956,19 @@ body {
     font-size: 16px;
     text-decoration: line-through;
 } 
-.directory-file .about .describe .cart {
+.content-right .about .describe .cart {
     margin-bottom: 7px;
     font-size: 16px;
     text-align: center;
 }
-.directory-file .about .describe .cart:after {
+.content-right .about .describe .cart:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.directory-file .about .describe .add {
+.content-right .about .describe .add {
     width: 208px;
     height: 24px;
     padding-top: 12px;
@@ -887,11 +979,11 @@ body {
     font-weight: bold;
     background-color: #e2e2e2;
 }
-.directory-file .about .describe .add:hover {
+.content-right .about .describe .add:hover {
     color: #fff;
     background-color: #1f5aa6;
 }
-.directory-file .about .describe .select {
+.content-right .about .describe .select {
     width: 53px;
     height: 22px;
     margin-right: 3px;
@@ -900,21 +992,21 @@ body {
     float: left;
     border: 1px solid #afafaf;
 }
-.directory-file .about .describe .add-now {
+.content-right .about .describe .add-now {
     width: 150px;
     float: left;
 }
-.directory-file .about .describe .links {
+.content-right .about .describe .links {
     font-size: 12px;
     line-height: 15px;
     text-align: center;
 }
-.directory-file .about .describe .links a {
+.content-right .about .describe .links a {
     padding: 17px 0;
     position: relative;
     display: block;
 }
-.directory-file .about .describe .links a:before {
+.content-right .about .describe .links a:before {
     width: 16px;
     height: 16px;
     content: "\0020";
@@ -928,7 +1020,7 @@ body {
 .links .quick-order {
     border-bottom: 2px solid #e5e5e5;
 }
-.directory-file .about .describe .links .ask:before {
+.content-right .about .describe .links .ask:before {
     background-position: -310px 0;
 }
 
@@ -980,7 +1072,7 @@ body {
     background: url(../img/sprite.png) -330px 0 no-repeat;
 }
 .contact-us .heading {
-    margin-bottom: 10px;
+    margin: 0 0 10px 10px;
 }
 .contact-us .map {
     width: 678px;
@@ -1012,11 +1104,46 @@ body {
 
 /* Catalog ================================ */
 
+.catalog {
+    margin-bottom: 22px;
+    padding-right: 20px;
+    position: relative;
+}
+.catalog .h3 {
+    margin-bottom: 32px;
+}
+.catalog .sorting {
+    margin: 0;
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    font-size: 11px;
+}
+.catalog .sorting a {
+    padding-right: 36px;
+    position: relative;
+    display: block;
+}
+.catalog .sorting a:before {
+    width: 28px;
+    height: 28px;
+    content: "\0020";
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 8px;
+    bottom: -6px;
+    background: url(../img/sprite.png) -350px 0 no-repeat;
+    background-color: #16a7dc;
+    border-radius: 15px;
+}
 .catalog .ware {
     width: 720px;
-    margin: 0 auto;
+    margin: 0 auto 6px;
 }
-
+.catalog .ware li {
+    margin-bottom: 18px;
+}
 .catalog .pager {
 
 }
@@ -1027,14 +1154,46 @@ body {
     clear: both;
     overflow: hidden;
 }
+.catalog .number {
+    list-style: none;
+}
+.catalog .number:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
 .catalog .number-page {
-    min-width: 150px;
+    font-size: 15px;
     float: left;
+}
+.catalog .number li {
+    margin: 0 0 0 12px;
+    float: left;  
+}
+.catalog .number li a {
+    color: #2c2c2c;
+    font-weight: bold;
+}
+.catalog .number li .active {
+    color: #1f5aa6;
+    text-decoration: none;
+}
+.catalog .number li .arrow {
+    text-decoration: none;
 }
 .catalog .number-amount {
-    min-width: 150px;
-    float: left;
+    font-size: 12px;
+    float: right;
 }
+.full .products .bx-wrapper {
+    min-width: 960px !important;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 
 
 
@@ -1043,17 +1202,15 @@ body {
     margin-bottom: 32px;
 }
 
-/* Full-proposion ======================================================== */
+/* Block-proposion ======================================================== */
 
-.full-proposion {
+.block-proposion {
     height: 322px;
     position: relative;
     background: url(../img/proposion.jpg) 0 0 repeat;
 }
 .proposion {
-    width: 1000px;
-    padding-left: 20px;
-    margin: -86px -20px 0 0;
+    margin: -86px 0 0 20px;
     position: absolute;
     z-index: 8;
     cursor: default;
@@ -1065,48 +1222,39 @@ body {
     clear: both;
     overflow: hidden;
 }
-.proposion .h2 {
-    margin: 0 120px 22px 0; 
-}
-.proposion .h2:before {
-    width: 550px;
-    height: 1px;
-    content: "\0020";
-    display: block;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    bottom: 20%;
-    background: rgba( 175, 175, 175, 1);
+.proposion .ware {
+    width: 960px;
+    margin: 0 -20px 0 0;
 }
 
 
 
 
-/* Full-item ======================================================== */
 
-.full-item {
+/* Block-tips ======================================================== */
+
+.block-tips {
     width: 1218px;
     padding: 54px 0 36px 0;
     background: url(../img/item.jpg) 0 0 no-repeat;
     background-size: cover;
 }
-.full-item .pack {
+.block-tips .tips {
     width: 960px;
     padding-left: 20px;
 }
-.full-item .pack:after {
+.block-tips .tips:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.full-item .pack .h4 {
+.block-tips .tips .h4 {
     margin: 0 110px 26px 0;
     position: relative;
 }
-.full-item .pack .h4:before {
+.block-tips .tips .h4:before {
     width: 608px;
     height: 1px;
     content: "\0020";
@@ -1117,21 +1265,22 @@ body {
     bottom: 20%;
     background: rgba( 44, 62, 80, 0.1);
 }
-.full-item .pack .all {
-    float: right;
+.block-tips .tips .all {
     font-size: 12px;
     color: #1f5aa6;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 14px;
 }
-.full-item .pack .item {
+.block-tips .tips .item {
     width: 270px;
     margin: 0 50px 40px 0;
     float: left;
-    line-height: 20px;
 }
-.full-item .pack .item .img-link {
+.block-tips .tips .item a {
+    color: #000;
+}
+.block-tips .tips .item .img-link {
     width: 230px;
     height: 130px;
     margin-bottom: 16px; 
@@ -1139,7 +1288,7 @@ body {
     position: relative;
     z-index: 8;
 }
-.full-item .pack .item .img-link:after {
+.block-tips .tips .item .img-link:after {
     width: 239px;
     height: 144px;
     content: "\0020";
@@ -1153,15 +1302,16 @@ body {
     background: url(../img/car-before.png) 0 0 no-repeat;
     z-index: -1;
 }
-.full-item .pack .item .pic {
+.block-tips .tips .item .pic {
     width: 230px;
     height: 130px;
     display: block;
     box-shadow: 9px 9px 10px rgba( 115, 131, 148, 0.75);
 }
-.full-item .pack .item .link {
-    color: #000;
-    display: block;
+.block-tips .tips .item .date {
+    margin: 0;
+    font-size: 12px;
+    color: #9e9e9e;
 }
  
 
@@ -1260,7 +1410,7 @@ body {
     right: 22px;
     text-align: right;
 }
-.contacts .phone {
+.footer .contacts .phone {
     width: 201px;
     height: 21px;
     display: block;
@@ -1271,11 +1421,11 @@ body {
     text-indent: 2000px;
     background: url(../img/sprite.png) 0 -30px no-repeat;
 }
-.contacts .address {
+.footer .contacts .address {
     display: block;
     position: relative;
 }
-.contacts .address:before {
+.footer .contacts .address:before {
     width: 20px;
     height: 18px;
     content: "\0020";
@@ -1287,6 +1437,7 @@ body {
     background: url(../img/sprite.png) -180px 0 no-repeat;
 }
 .footer .author {
+    margin: 0;
     position: absolute;
     top: 182px;
     right: 22px;
