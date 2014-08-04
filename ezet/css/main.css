@@ -100,7 +100,9 @@ body {
     clear: both;
     overflow: hidden;
 }
-
+.wrapper-small {
+    width: 940px;
+}
 
 /* Side-box ===================== */
 
@@ -127,7 +129,7 @@ body {
 }
 .ware li {
     width: 220px;
-    min-height: 306px;
+    height: 306px;
     margin-right: 20px;
     float: left;
     background: #fff;
@@ -139,7 +141,8 @@ body {
 }
 .ware .pic {
     width: 220px;
-    height: 200px;
+    height: 191px;
+    margin-bottom: 10px;
     display: block;
 }
 .ware .price {
@@ -175,6 +178,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
+    list-style: none;
 }
 .carousel:after {
     width: 100%;
@@ -183,8 +187,16 @@ body {
     clear: both;
     overflow: hidden;
 }
+.carousel li {
+    float: left;
+}
 
-
+.box-fon {
+    padding: 24px;
+    margin-bottom: 30px;
+    background: #fff;
+    box-shadow: 0 0 5px 1px rgba( 0, 0, 0, 0.18)
+}
 
 /* checkbox ===================== */
 
@@ -224,7 +236,7 @@ body {
 .h4 {
     position: relative;
     color: #1f5aa6;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: normal;
 }
 .h5 {
@@ -543,14 +555,10 @@ body {
 /* Block-Content ================================================= */
 
 .block-content {
+    min-height: 616px;
     padding: 20px 0;
-    position: relative;
-    min-height: 636px;
-}
-.content-main {
-    position: relative;
-    background: url(../img/proposion.jpg) 0 0 repeat;
-    z-index: 8;
+    margin-bottom: 16px; 
+    position: relative;   
 }
 .block-content .background {
     width: 1218px;
@@ -561,6 +569,9 @@ body {
     bottom: 0;
     overflow: hidden;
     z-index: 4;
+}
+.block-content .background .carousel li {
+    margin: 0 20px 0 0;
 }
 .block-content .background .bx-wrapper {
     width: 1218px !important;
@@ -604,7 +615,6 @@ body {
 }
 .block-content .background .carousel {
     width: 10000px;
-    list-style: none;
 }
 .block-content .background .carousel:after {
     width: 100%;
@@ -613,8 +623,14 @@ body {
     clear: both;
     overflow: hidden;
 }
-.block-content .background .carousel li {
-    float: left;
+
+/* Content-main !!! ================================ */
+
+.content-main {
+    margin-bottom: 14px;
+    position: relative;
+    background: url(../img/proposion.jpg) 0 0 repeat;
+    z-index: 8;
 }
 
 
@@ -783,7 +799,8 @@ body {
     margin-right: 18px;
     float: left;
 }
-.side-card .side-catalog {
+.side-card .side-catalog { 
+    margin-bottom: 20px;
     line-height: 30px;
     text-transform: uppercase;
 }
@@ -866,6 +883,7 @@ body {
     color: #fff;
     background: #d5d5d5;
     border: none;
+    transition: all .3s ease;
 }
 .filter input[type="submit"]:hover {
     background: #1f5aa6;
@@ -895,83 +913,88 @@ body {
 
 
 .content-right {
-    width: 722px;
+    width: 720px;
     padding-top: 10px;
     float: right;
-    font-size: 12px;
-    line-height: 16px;
 }
 .content-right a {
     color: #2c2c2c;
 }
 .breadcrumbs {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     font-size: 12px;
+    line-height: 16px;
 }
-.content-right .about {
-    margin-bottom: 17px;
+.content-right .box-fon {
+    padding: 0 24px 10px 24px;
 }
-.content-right .about:after {
+.content-right .box-fon .row {
+    margin: 0 -24px 17px -24px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.content-right .box-fon .row:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.content-right .about .pic {
-    width: 450px;
-    height: 452px;
-    display: block;
-    border: 1px solid #fff;
-}
-.content-right .about .picture .carousel {
-    list-style: none;
-}
-.content-right .about .picture .carousel li {
-    float: left;
-}
-.content-right .about .picture {
+.content-right .box-fon .picture {
     width: 452px;
     float: left;
+    position: relative;
 }
-.content-right .about .picture .carousel li .pic {
+.content-right .box-fon .pic {
+    width: 450px;
+    height: 450px;
+    display: block;
+    border-: 1px solid #fff;
+}
+.content-right .box-fon .picture .carousel li {
+    margin: 0;
+}
+.content-right .box-fon .picture .carousel li .pic {
     width: 102px;
-    height: 75px;
+    height: 74px;
     display: block;
 }
-.content-right .about .describe {
+.content-right .box-fon .describe {
     width: 240px;
     float: right;
 }
-.content-right .about .describe .heading {
-    font-size: 19px;
+.content-right .box-fon .describe .h5 {
+    margin: 9px 0;
     font-weight: bold;
     color: #3a8ed2;
 }
-.content-right .about .describe .red {
-    font-size: 16px;
+.content-right .box-fon .describe .code {
+    margin-bottom: 44px;
+}
+.content-right .box-fon .describe .price {
+    margin-bottom: 16px;
 }
 .crossed { 
     color: #757575; 
     font-size: 16px;
     text-decoration: line-through;
 } 
-.content-right .about .describe .cart {
+.content-right .box-fon .describe .cart {
     margin-bottom: 7px;
     font-size: 16px;
     text-align: center;
 }
-.content-right .about .describe .cart:after {
+.content-right .box-fon .describe .cart:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.content-right .about .describe .add {
+.content-right .box-fon .describe .add {
     width: 208px;
-    height: 24px;
-    padding-top: 12px;
+    height: 26px;
+    padding-top: 8px;
     display: block;
     color: #575757;
     text-decoration: none;
@@ -979,34 +1002,36 @@ body {
     font-weight: bold;
     background-color: #e2e2e2;
 }
-.content-right .about .describe .add:hover {
+.content-right .box-fon .describe .add:hover {
     color: #fff;
     background-color: #1f5aa6;
 }
-.content-right .about .describe .select {
+.content-right .box-fon .describe .add-now {
+    width: 150px;
+    height: 30px;
+    padding-top: 10px;
+    float: left;
+}
+.content-right .box-fon .describe .select {
     width: 53px;
-    height: 22px;
+    height: 24px;
     margin-right: 3px;
     padding-top: 12px; 
     display: block;
     float: left;
     border: 1px solid #afafaf;
 }
-.content-right .about .describe .add-now {
-    width: 150px;
-    float: left;
-}
-.content-right .about .describe .links {
+.content-right .box-fon .describe .links {
     font-size: 12px;
     line-height: 15px;
     text-align: center;
 }
-.content-right .about .describe .links a {
-    padding: 17px 0;
+.content-right .box-fon .describe .links a {
+    padding: 16px 0;
     position: relative;
     display: block;
 }
-.content-right .about .describe .links a:before {
+.content-right .box-fon .describe .links a:before {
     width: 16px;
     height: 16px;
     content: "\0020";
@@ -1014,24 +1039,27 @@ body {
     margin: 0;
     position: absolute;
     left: 44px;
-    top: 17px;
+    top: 16px;
     background: url(../img/sprite.png) -290px 0 no-repeat;
 }
 .links .quick-order {
+    margin-bottom: 6px;
     border-bottom: 2px solid #e5e5e5;
 }
-.content-right .about .describe .links .ask:before {
+.content-right .box-fon .describe .links .ask:before {
     background-position: -310px 0;
 }
 
-.link {
-    height: 25px;
+.link-description {
+    height: 24px;
+    padding-top: 6px;
+    margin: 0 0 14px -14px;
     border-bottom: 1px solid #e7e7e7;
 }
-.link a {
-    padding: 10px 16px;
+.link-description a {
+    padding: 7px 17px;
 }
-.link a:hover {
+.link-description a:hover {
     background-color: #e7e7e7;
 }
 
@@ -1115,23 +1143,22 @@ body {
 .catalog .sorting {
     margin: 0;
     position: absolute;
-    top: 4px;
-    right: 12px;
+    top: 6px;
+    right: 54px;
     font-size: 11px;
 }
 .catalog .sorting a {
-    padding-right: 36px;
     position: relative;
     display: block;
 }
 .catalog .sorting a:before {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     content: "\0020";
     display: block;
     margin: 0;
     position: absolute;
-    right: 8px;
+    right: -32px;
     bottom: -6px;
     background: url(../img/sprite.png) -350px 0 no-repeat;
     background-color: #16a7dc;
@@ -1139,25 +1166,22 @@ body {
 }
 .catalog .ware {
     width: 720px;
-    margin: 0 auto 6px;
+    margin: 0 auto 4px;
 }
 .catalog .ware li {
     margin-bottom: 18px;
 }
-.catalog .pager {
-
-}
-.catalog .pager:after {
+.pager:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.catalog .number {
+.pager .number {
     list-style: none;
 }
-.catalog .number:after {
+.pager .number:after {
     width: 100%;
     content: "\0020";
     display: block;
@@ -1165,52 +1189,94 @@ body {
     overflow: hidden;
 }
 
-.catalog .number-page {
+.pager .number-page {
     font-size: 15px;
     float: left;
 }
-.catalog .number li {
+.pager .number li {
     margin: 0 0 0 12px;
     float: left;  
 }
-.catalog .number li a {
+.pager .number li a {
     color: #2c2c2c;
     font-weight: bold;
 }
-.catalog .number li .active {
+.pager .number li .active {
     color: #1f5aa6;
     text-decoration: none;
 }
-.catalog .number li .arrow {
+.pager .number li .arrow {
     text-decoration: none;
 }
-.catalog .number-amount {
+.pager .number-amount {
     font-size: 12px;
     float: right;
 }
-.full .products .bx-wrapper {
+
+
+
+/* Block-products ======================================================== */
+
+.block-products {
+    margin-bottom: 36px;
+}
+.block-products .bx-wrapper {
     min-width: 960px !important;
     margin: 0 auto;
     overflow: hidden;
 }
-
-
-
-
-
 .products {
     margin-bottom: 32px;
 }
+.block-products .ware {
+    width: 960px;
+    margin: 0 -10px;
+}
+.block-products .ware .cost {
+    font-size: 13px;
+}
+.carousel li {
+    margin: 0 10px;
+}
+.block-products .bx-controls a {
+    width: 20px;
+    height: 58px;
+    display: block;
+    text-indent: -1000px;
+    overflow: hidden;
+    position: absolute;
+    background: url(../img/sprite.png) 0 -60px no-repeat;
+}
+.block-products .products .bx-controls .bx-prev {
+    top: 150px;
+    left: -26px;
+}
+.block-products .products .bx-controls .bx-next {
+    top: 150px;
+    right: -26px;
+    background-position: -30px -60px;
+}
+.block-products .recommend .bx-controls .bx-prev {
+    bottom: 150px;
+    left: -26px;
+}
+.block-products .recommend .bx-controls .bx-next {
+    bottom: 150px;
+    right: -26px;
+    background-position: -30px -60px;
+}
 
-/* Block-proposion ======================================================== */
+
+
+/* Block-proposion ======================================================== */ 
 
 .block-proposion {
-    height: 322px;
+    height: 306px;
     position: relative;
     background: url(../img/proposion.jpg) 0 0 repeat;
 }
 .proposion {
-    margin: -86px 0 0 20px;
+    margin: -102px 0 0 20px;
     position: absolute;
     z-index: 8;
     cursor: default;
@@ -1308,12 +1374,40 @@ body {
     display: block;
     box-shadow: 9px 9px 10px rgba( 115, 131, 148, 0.75);
 }
-.block-tips .tips .item .date {
+.date {
     margin: 0;
     font-size: 12px;
     color: #9e9e9e;
 }
- 
+
+
+.news .box-fon {
+    list-style: none;
+}
+.news .box-fon .link-caption {
+    color: #000;
+}
+.news .box-fon .pic {
+    width: 164px;
+    height: 93px;
+    margin: 10px 16px 16px 0;
+    display: block;
+    float: left;
+}
+
+
+
+
+.our-logo {
+    width: 100%;
+    height: 192px;
+    color: #8e98ab;
+    background: url(../img/fon-about.jpg) 0 0 no-repeat;
+}
+.our-logo .pic-logo {
+    display: block;
+    
+}
 
 /* footer ======================================================== */
 

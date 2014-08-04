@@ -18,7 +18,14 @@ $(document).ready(function () {
 		maxSlides: 4,
 		margin: 10
 	});*/
-	$('.full .products .carousel').bxSlider({
+	$('.block-products .products .ware .carousel').bxSlider({
+		infiniteLoop: false,
+		pager: false,
+		slideWidth: 220,
+		minSlides: 4,
+		maxSlides: 4,
+	});
+	$('.block-products .recommend .ware .carousel').bxSlider({
 		infiniteLoop: false,
 		pager: false,
 		slideWidth: 220,
