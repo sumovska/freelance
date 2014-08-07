@@ -28,15 +28,6 @@ $(document).ready(function () {
 		maxSlides: 4,
 		moveSlides: 1
 	});
-
-
-	$('.full .products .carousel').bxSlider({
-		infiniteLoop: false,
-		pager: false,
-		slideWidth: 220,
-		minSlides: 4,
-		maxSlides: 4
-	});
 });
 
 $(window).load(function () {
