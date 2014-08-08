@@ -90,67 +90,105 @@
             <div class="main-block">
                 <p class="breadcrumbs">
                     <span><a href="index.html">Главная</a></span>
-                    Вход и регистрация
+                    <span><a href="cart.html">Корзина</a></span>
+                    Доставка и оплата
                 </p>
-                <div class="block-login">
-                    <h3 class="h3">Вход и регистрация</h3>
-                    <div class="login">
-                        <div class="sign-in">
-                            <form class="action">
-                                <p class="form">
-                                    <label class="heading">Вход в личный кабинет</label>
-                                    <input type="text" placeholder="Логин">
-                                    <input type="text" placeholder="Пароль">
-                                    <input type="submit" value="Войти">
-                                    <span>
-                                        <input type="checkbox">
-                                        запомнить на сайте
-                                    </span>
-                                    <a class="link" href="#">Не помню пароль</a>
-                                </p>
-                            </form>
-                            <div class="info">
-                                <span>При регистрации на сайте вам предоставляется</span>
-                                <ul class="list">
-                                    <li>История заказов</li>
-                                    <li>История поиска</li>
-                                    <li>Скачивание прайс-листов</li>
-                                    <li>Скидки по подписке</li>
-                                </ul>
-                            </div>     
-                        </div>
-                        <div class="sign-up">
-                            <form>
-                                <p class="form">
-                                    <label class="heading">Регистрация</label>
-                                    <span class="require">
-                                        <input type="text" placeholder="Логин">
-                                    </span>
-                                    <span class="require">
-                                        <input type="text" placeholder="Пароль">
-                                    </span>
-                                    <select class="city">
-                                       <option selected="">Город</option>
-                                       <option>Город</option>
-                                       <option>Город</option>
-                                       <option>Город</option>
-                                       <option>Город</option>
-                                    </select>
-                                    <input type="text" placeholder="Улица">
-                                    <input type="submit" value="Зарегистрироваться">
-                                    <em class="note"><span class="require"></span> &nbsp;&nbsp; - обязательные поля для заполнения</em>
-                                </p>      
-                            </form>
-                            <div class="info">
-                                <span class="heading">Регистрация через соцсети</span>
-                                <ul class="list">
-                                    <li class="fb"><a href="#"></a></li>
-                                    <li class="tw"><a href="#"></a></li>
-                                    <li class="vk"><a href="#"></a></li>
-                                    <li class="ok"><a href="#"></a></li>
-                                </ul> 
-                            </div>      
-                        </div>
+                <div class="block-delivery">
+                    <h3 class="h3">Доставка и оплата</h3>
+                    <div class="delivery">
+                        <form class="action">
+                            <p class="heading">Информация о покупателе</p>
+                            <p class="custom-info">
+                                <input type="text" placeholder="ФИО">
+                                <input type="text" placeholder="Телефон 8 (800) 800-00-00">
+                                <input type="text" placeholder="E-mail">
+                            </p>
+                            <p class="address">
+                               <label class="heading">Адрес доставки</label>
+                                <select class="city">
+                                    <option selected="">Город</option>
+                                    <option>Город</option>
+                                    <option>Город</option>
+                                    <option>Город</option>
+                                </select>    
+                            </p>
+                            <p class="service">
+                                <label class="heading">Служба доставки</label>
+                                <span class="check">
+                                    <input type="checkbox">
+                                    Самовывоз
+                                </span>
+                                <span class="check">
+                                    <input type="checkbox">
+                                    Курьер <br>
+                                    <em>(при выборе курьера идет расчет расстояния и стоимости доставки: Доставка в пределах МКАД – 500 руб Доставка по МО – 1000 руб)</em>
+                                </span>
+                                <label>Способ оплаты</label>
+                                <span class="check">
+                                    <input type="checkbox">
+                                    Наличными
+                                </span>
+                                <span class="check">
+                                    <input type="checkbox">
+                                    Безналичный перевод
+                                </span>
+                                <span class="check">
+                                    <input type="checkbox">
+                                    Банковский перевод(оплата через квитанцию «сбербанка»)
+                                </span>  
+                            </p>
+                            <p class="heading">Состав заказа</p>
+                            <table>
+                                <tr>
+                                    <td class="cell-1">№</td>
+                                    <td class="cell-2">Описание</td>
+                                    <td class="cell-3">Кол-во</td>
+                                    <td class="cell-4">Цена</td>
+                                    <td class="cell-5">Сумма</td>
+                                    <td class="cell-6">Отложить</td>
+                                    <td class="cell-7">Удалить</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-1">1</td>
+                                    <td class="cell-2">
+                                        <img src="img/table/pic-1.jpg" alt="">
+                                        <a href="#">Набор для Ford Transit</a>
+                                    </td>
+                                    <td class="cell-3">1</td>
+                                    <td class="cell-4">2235,00</td>
+                                    <td class="cell-5">2011,00</td>
+                                    <td class="cell-6"></td>
+                                    <td class="cell-7">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-1">2</td>
+                                    <td class="cell-2">
+                                        <img src="img/table/pic-2.jpg" alt="">
+                                        <a href="#">Диск тормозной для Ford Transit</a>
+                                    </td>
+                                    <td class="cell-3">4</td>
+                                    <td class="cell-4">1235,00</td>
+                                    <td class="cell-5">4940,00</td>
+                                    <td class="cell-6"></td>
+                                    <td class="cell-7">X</td>
+                                </tr>
+                                <tr>
+                                    <td>Итого:</td>
+                                    <td>6951,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Доставка в пределах МКАД – 500 руб</td>
+                                </tr>
+                                <tr>
+                                    <td>Итого с доставкой 7 451,00 руб</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit" value="Оформить заказ">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>   
                     </div>
                 </div>
             </div>  
