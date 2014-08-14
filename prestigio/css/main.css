@@ -1,0 +1,528 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    font: 16px/18px 'OpenSans', Arial, Tahoma, sans-serif;
+    font-weight: 300;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+p {
+    margin: 0 0 18px 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body {
+    background-color: #0a1c2f;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/opensans-light-webfont.eot');
+    src: url('../fonts/opensans-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-light-webfont.woff') format('woff'), url('../fonts/opensans-light-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-regular-webfont.woff') format('woff'), url('../fonts/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/opensans-semibold-webfont.eot');
+    src: url('../fonts/opensans-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-semibold-webfont.woff') format('woff'), url('../fonts/opensans-semibold-webfont.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/opensans-bold-webfont.eot');
+    src: url('../fonts/opensans-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-bold-webfont.woff') format('woff'), url('../fonts/opensans-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto-medium-webfont.eot');
+    src: url('../fonts/opensans-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-medium-webfont.woff') format('woff'), url('../fonts/roboto-medium-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   _Headings
+   ========================================================================== */
+.h1 {
+    font-size: 30px;
+    line-height: normal;
+    color: #fff;
+    font-weight: 600;
+}
+.h5 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+
+/* ==========================================================================
+   _Wrapper
+   ========================================================================== */
+.wrapper {
+    width: 960px;
+    margin: 0 auto; 
+}
+.wrapper:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.button {
+    padding-top: 17px;
+    display: block;
+    text-align: center;
+    font:18px/15px bold Arial, Tahoma, sans-serif;
+    letter-spacing: .055em;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color .3s ease;
+}
+
+/* ==========================================================================
+   _Header
+   ========================================================================== */
+.header {
+    height: 133px;
+    position: relative;
+}
+.header .logo {
+    width: 260px;
+    height: 84px;
+    margin: 0;
+    display: block;
+    text-indent: -1000px;
+    overflow: hidden;
+    background: url(../img/logo.png) 0 0 no-repeat;
+    position: absolute;
+    top: 23px;
+    left: 30px;
+}
+.header .button-request {
+    width: 265px;
+    height: 33px;
+    position: absolute;
+    top: 39px;
+    right: 40px;
+    background-color: #f5833c;
+    transition: background-color .3s ease;
+}
+.header .button-request:hover {
+    background-color: #f59c3c;
+} 
+
+/* ==========================================================================
+   _Promo
+   ========================================================================== */
+.promo {
+    padding: 73px 48px 12px 61px;
+    position: relative;
+    background: url(../img/promo.jpg) 0 0 no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+.promo .h1 {
+    margin: 0;
+    position: absolute;
+    top: 16px;
+    left: 61px;
+    letter-spacing: .005em;
+}
+
+.promo .carousel {
+    width: 10000px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    list-style: none;
+}
+.promo .carousel:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+}
+.promo .carousel .slider {
+    width: 851px;
+    margin-right: 48px;
+    position: relative;
+    float: left;
+}
+.promo .carousel .describe {
+    padding-top: 5px;
+    margin-bottom: 23px;
+    float: left;
+}
+.promo .carousel .describe .icons {
+    margin: 0 0 13px 0;
+    padding: 0;
+    list-style: none;
+}
+.promo .carousel .describe .icons:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.promo .carousel .describe .icons li {
+    margin: 0 7px 0 0;
+    float: left;
+}
+.promo .carousel .describe .icons li .pic {
+    width: 53px;
+    height: 53px;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.07)
+}
+
+.promo .carousel .describe .price {
+    width: 184px;
+    margin-bottom: 17px;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 300;
+}
+.promo .carousel .describe .price p {
+    margin: 0;
+}
+.promo .carousel .describe .price .sum {
+    margin: 0 0 12px 0;
+    font-size: 40px;
+    line-height: 22px;
+    font-weight: 600;
+}
+.promo .carousel .describe .price del {
+    font-size: 16px;
+}
+.promo .carousel .describe .price ins {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.promo .carousel .describe .button-buy {
+    width: 179px;
+    height: 33px;
+    background-color: #a9cf51;
+}
+.promo .carousel .describe .button-buy:hover {
+    background-color: #8ccf51;
+}
+
+.promo .carousel .picture {
+    width: 558px;
+    height: 282px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 68px;
+}
+
+.promo .carousel .text {
+    clear: both;
+}
+
+/* ==========================================================================
+   _Actions
+   ========================================================================== */
+.actions {
+    padding: 14px 23px 24px 0;
+    font-size: 24px;
+    line-height: 30px;
+    background-color: #19bfcf;
+}
+.actions:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+}
+.actions .h1 {
+    margin: 0 0 20px 0; 
+    line-height: 35px;
+}
+.actions .more {
+    width: 430px;
+    float: right;
+}
+.actions .button-action {
+    width: 266px;
+    height: 33px;
+    margin-top: 25px; 
+    color: #19bfcf;
+    background-color: #fff;
+}
+.actions .button-action:hover {
+    background-color: #e9e9e9;
+}
+
+
+
+/* ==========================================================================
+   _Video-block
+   ========================================================================== */
+.video-block {
+    min-height: 500px;
+    position: relative;
+    background-color: #123458;
+}
+.video-block .h1 {
+    font-weight: 300;
+}
+.video-block .describe {
+    width: 180px;
+    height: 180px;
+    padding: 30px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #0a1c2f;
+}
+
+/* ==========================================================================
+   _Apps-block
+   ========================================================================== */
+.apps-block .apps {
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: #9ac0d6;
+    list-style: none;
+}
+.apps-block .apps:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+}
+.apps-block .apps .h5 {
+    color: #fff;
+}
+.apps-block .apps li {
+    width: 188px;
+    padding: 26px;
+    float: left;
+}
+.apps-block .apps .app-1 { background: rgba( 3, 106, 166, 0.5);}
+.apps-block .apps .app-2 { background: rgba( 4, 114, 178, 0.5);}
+.apps-block .apps .app-3 { background: rgba( 4, 123, 191, 0.5);}
+.apps-block .apps .app-4 { background: rgba( 4, 139, 217, 0.5);}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
