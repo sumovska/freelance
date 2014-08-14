@@ -18,7 +18,7 @@
 <body>
 	<header class="header">
 		<div class="wrapper">
-			<p class="login">Вход и регистрация</p>
+			<p class="login"><a href="login.html">Вход и регистрация</a></p>
 			<p class="logo"><a href="index.html">Ezet</a></p>
 			<p class="slogan">Запчасти для иномарок</p>
 			<ul class="social">
@@ -30,7 +30,7 @@
 			<ul class="nav">
 				<li><a href="about.html">О компании</a></li>
 				<li><a href="news.html">Новости</a></li>
-				<li><a href="#">Доставка и оплата</a></li>
+				<li><a href="confirm.html">Доставка и оплата</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 			<p class="phone"><span class="number">+7 (495) 786-75-00 </span><br>многоканальный</p>
@@ -65,8 +65,8 @@
 				</ul>
 			</nav>
 			<p class="toggle"><a href="#">Меню</a></p>
-			<p class="bookmarks"><a href="#">163</a></p>
-			<div class="cart"><a href="cart.html"><span class="color">20</span><span class="hidden"> товаров на <span class="color">403 545</span> руб</span></a></div>
+			<p class="bookmarks">163</p>
+			<div class="cart"><span class="color">20</span><span class="hidden"> товаров на <span class="color">403 545</span> руб</span></div>
 		</div>
 	</div>
 
@@ -78,74 +78,103 @@
 					<li class="toggle-profile"><a href="#submenu-profile"></a></li>
 				</ul>
 				<ul class="submenu submenu-profile" id="submenu-profile">
-					<li>Профиль</li>
-					<li><a href="cart.html">Корзина</a></li>
-					<li>История заказов</li>
-					<li>История поисков</li>
+					<li><a href="#">Профиль</a></li>
+					<li class="active"><a href="cart.html">Корзина</a></li>
+					<li><a href="#">История заказов</a></li>
+					<li><a href="#">История поисков</a></li>
 					<li><a href="#">Отложенные товары</a></li>
-					<li>Скачать прайс-лист</li>
-					<li>Подписка</li>
+					<li><a href="#">Скачать прайс-лист</a></li>
+					<li><a href="#">Подписка</a></li>
+					<li class="sub"><a href="index.html">Выход</a></li>
 				</ul>
 			</aside>
 
 			<section class="content">
-				<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Вход и регистрация</p>
-				<h1 class="h1">Вход и регистрация</h1>
-				<div class="block block-login">
-					<div class="form-default form-login">
-						<div class="form">
-							<form action="#" method="post">
-								<h2 class="h5">Вход в личный кабинет</h2>
-								<p class="line"><input type="text" value="" placeholder="Логин"></p>
-								<p class="line"><input type="password" value="" placeholder="Пароль"></p>
-								<p class="line">
-									<input type="submit" value="Войти">
-									<label class="checkbox"><input type="checkbox" value="">запомнить на сайте</label>
-								</p>
-								<p class="forgot"><a href="#">Не помню пароль</a></p>
-							</form>
+				<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="cart.html">Корзина</a></span> Доставка и оплата</p>
+				<h1 class="h1">Доставка и оплата</h1>
+				<div class="block block-cart">
+					<form action="#" method="post">
+						<div class="form-default form-confirm">
+							<h2 class="h5">Информация о покупателе</h2>
+							<div class="section-top">
+								<div class="form">
+									<p class="line required"><input type="text" value="" placeholder="ФИО"></p>
+									<p class="line required"><input type="text" value="" placeholder="Телефон 8 (800) 800-00-00"></p>
+									<p class="line required"><input type="email" value="" placeholder="E-mail"></p>
+									<h2 class="h5">Адрес доставки</h2>
+									<p class="line">
+										<label>
+											<select>
+												<option value="" selected="selected">Город</option>
+												<option value="1">Москва</option>
+												<option value="2">Санкт-Петербург</option>
+												<option value="3">Екатеринбург</option>
+											</select>
+										</label>
+									</p>
+								</div>
+							</div>
+							<div class="full">
+								<h2 class="h5">Служба доставки</h2>
+								<ul class="checkbox-list">
+									<li class="line"><label class="checkbox"><input type="checkbox" value="">Самовывоз</label></li>
+									<li class="line"><label class="checkbox"><input type="checkbox" value="" checked="checked">Курьер <br><em>(при выборе курьера идет расчет расстояния и стоимости доставки: <br>Доставка в пределах МКАД – 500 руб <br>Доставка по МО – 1000 руб)</em></label></li>
+								</ul>
+								<h2 class="h5">Способ оплаты</h2>
+								<ul class="checkbox-list">
+									<li class="line"><label class="checkbox"><input type="checkbox" value="" checked="checked">Наличными</label></li>
+									<li class="line"><label class="checkbox"><input type="checkbox" value="">Безналичный перевод</label></li>
+									<li class="line"><label class="checkbox"><input type="checkbox" value="">Банковский перевод(оплата через квитанцию «сбербанка»)</label></li>
+								</ul>
+							</div>
 						</div>
-						<div class="info">
-							<p>При регистрации на сайте вам предоставляется</p>
-							<ul class="list">
-								<li>История заказов</li>
-								<li>История поиска</li>
-								<li>Скачивание прайс-листов</li>
-								<li>Скидки по подписке</li>
-							</ul>
+						<h5 class="h5">Состав заказа</h5>
+						<div class="cart-space">
+							<table class="cart-table">
+							<thead>
+							<tr>
+								<th class="td-number">№</th>
+								<th class="td-item" colspan="2">Описание</th>
+								<th class="td-col">Кол-во</th>
+								<th class="td-price">Цена</th>
+								<th class="td-total">Сумма</th>
+								<th class="td-bookmark">Отложить</th>
+								<th class="td-delete">Удалить</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td class="td-number">1</td>
+								<td class="td-pic"><a href="item.html"><img class="pic" src="img/temp/item-1.jpg" alt=""></a></td>
+								<td class="td-item"><a href="item.html">Набор для Ford Transit</a></td>
+								<td class="td-col"><label><input type="text" value="1"></label></td>
+								<td class="td-price"><span>2 235,00</span></td>
+								<td class="td-total"><span>2 011,00</span></td>
+								<td class="td-bookmark"><a href="#"></a></td>
+								<td class="td-delete"><a href="#"></a></td>
+							</tr>
+							<tr>
+								<td class="td-number">2</td>
+								<td class="td-pic"><a href="item.html"><img class="pic" src="img/temp/item-2.jpg" alt=""></a></td>
+								<td class="td-item"><a href="item.html">Диск тормозной ля Ford Transit</a></td>
+								<td class="td-col"><label><input type="text" value="1"></label></td>
+								<td class="td-price"><span>1 235,00</span></td>
+								<td class="td-total"><span>4 940,00</span></td>
+								<td class="td-bookmark"><a href="#"></a></td>
+								<td class="td-delete"><a href="#"></a></td>
+							</tr>
+							</tbody>
+							<tfoot>
+							<tr>
+								<td colspan="8"><span class="pre">Итого:</span> <span class="total">6 951,00</span></td>
+							</tr>
+							</tfoot>
+							</table>
 						</div>
-					</div>
-					<div class="form-default form-register">
-						<div class="form">
-							<form action="#" method="post">
-								<h2 class="h5">Регистрация</h2>
-								<p class="line required"><input type="text" value="" placeholder="Логин"></p>
-								<p class="line required"><input type="password" value="" placeholder="Пароль"></p>
-								<p class="line">
-									<label>
-										<select>
-											<option value="" selected="selected">Город</option>
-											<option value="1">Москва</option>
-											<option value="2">Санкт-Петербург</option>
-											<option value="3">Екатеринбург</option>
-										</select>
-									</label>
-								</p>
-								<p class="line"><input type="text" value="" placeholder="Улица"></p>
-								<p class="line"><input type="submit" value="Зарегистрироваться"></p>
-								<p class="legend"><span class="red">*</span> - обязательные поля для заполнения</p>
-							</form>
-						</div>
-						<div class="info">
-							<h3 class="h5">Регистрация через соцсети</h3>
-							<ul class="social">
-								<li class="fb"><a href="#"></a></li>
-								<li class="tw"><a href="#"></a></li>
-								<li class="vk"><a href="#"></a></li>
-								<li class="ok"><a href="#"></a></li>
-							</ul>
-						</div>
-					</div>
+						<p>Доставка в пределах МКАД &ndash; <strong>500</strong> руб</p>
+						<p class="cart-total">Итого&nbsp;с&nbsp;доставкой <strong>7&nbsp;451,00</strong>&nbsp;руб</p>
+						<p class="center"><input type="submit" value="Оформить заказ"></p>
+					</form>
 				</div>
 			</section>
 		</div>
@@ -162,7 +191,7 @@
 					<li><a href="about.html">О компании</a></li>
 					<li><a href="news.html">Новости</a></li>
 					<li><a href="#">Отзывы</a></li>
-					<li><a href="#">Доставка и оплата</a></li>
+					<li><a href="confirm.html">Доставка и оплата</a></li>
 					<li><a href="contacts.html">Контакты</a></li>
 				</ul>
 			</div>

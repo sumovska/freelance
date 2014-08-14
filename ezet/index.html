@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>Ezet</title>
@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/main.css">
 
 	<!--[if lt IE 9]>
-		<script src="js/vendor/html5shiv.js"></script>
+	<script src="js/vendor/html5shiv.js"></script>
 	<![endif]-->
 </head>
 <body>
@@ -30,11 +30,11 @@
 			<ul class="nav">
 				<li><a href="about.html">О компании</a></li>
 				<li><a href="news.html">Новости</a></li>
-				<li><a href="delivery.html">Доставка и оплата</a></li>
+				<li><a href="#">Доставка и оплата</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 			<p class="phone"><span class="number">+7 (495) 786-75-00 </span><br>многоканальный</p>
-			<p class="callback"><a href="#">Заказать обратный<br> звонок</a></p>
+			<p class="callback"><a href="#popup-callback" class="fancybox">Заказать обратный<br> звонок</a></p>
 			<div class="search">
 				<form action="#" method="post">
 					<p class="line">
@@ -56,17 +56,17 @@
 					<li>
 						<a href="catalog.html">Аксессуары</a>
 						<ul>
-							<li><a href="catalog.html">О компании</a></li>
-							<li><a href="catalog.html">Новости</a></li>
-							<li><a href="catalog.html">Доставка и оплата</a></li>
-							<li><a href="catalog.html">Контакты</a></li>
+							<li><a href="about.html">О компании</a></li>
+							<li><a href="news.html">Новости</a></li>
+							<li><a href="#">Доставка и оплата</a></li>
+							<li><a href="contacts.html">Контакты</a></li>
 						</ul>
 					</li>
 				</ul>
 			</nav>
 			<p class="toggle"><a href="#">Меню</a></p>
-			<p class="bookmarks">163</p>
-			<div class="cart"><span class="color">20</span><span class="hidden"> товаров на <span class="color">403 545</span> руб</span></div>
+			<p class="bookmarks"><a href="#">163</a></p>
+			<div class="cart"><a href="cart.html"><span class="color">20</span><span class="hidden"> товаров на <span class="color">403 545</span> руб</span></a></div>
 		</div>
 	</div>
 
@@ -79,13 +79,13 @@
 						<li><a href="#searchbox-name">По наименованию</a></li>
 					</ul>
 					<p class="line">
-						<input type="text" class="searchbox-article" placeholder="Поиск по артикулу" value="">
-						<input type="text" class="searchbox-name" placeholder="Поиск по наименованию" value="" disabled="disabled">
+						<input type="text" id="searchbox-article" class="searchbox-article" placeholder="Поиск по артикулу" value="">
+						<input type="text" id="searchbox-name" class="searchbox-name" placeholder="Поиск по наименованию" value="" disabled="disabled">
 						<input type="submit" value="" title="Искать">
 					</p>
 				</form>
 			</div>
-			<div class="news">
+			<section class="news">
 				<h4 class="heading"><a href="news.html">Новости</a></h4>
 				<ul class="list">
 					<li><a href="news.html">Волновая тень нейтрализует квазар, в итоге возможно появление обратной связи и самовозбуждение систем</a> <span class="date">12 апреля</span></li>
@@ -94,25 +94,25 @@
 					<li><a href="news.html">В соответствии с принципом неопределенности, кристаллическая решетка асферично ускоряет фронт</a><br> <span class="date">20 февраля</span></li>
 				</ul>
 				<a class="toggle" href="#"></a>
-			</div>
+			</section>
 			<ul class="maker-list">
-				<li><a href="#">bmw original</a></li>
-				<li><a href="#">fiat original</a></li>
-				<li><a href="#">ford connect</a></li>
-				<li><a href="#">ford focus</a></li>
-				<li><a href="item.html">ford transit</a></li>
-				<li><a href="#">hyundai caunty</a></li>
-				<li><a href="#">veco</a></li>
-				<li><a href="#">mazda original</a></li>
-				<li><a href="#">mercedes original</a></li>
-				<li><a href="#">peugeot</a></li>
-				<li><a href="#">skf</a></li>
-				<li><a href="#">vag original</a></li>
+				<li><a href="catalog.html">BMW ORIGINAL</a></li>
+				<li><a href="catalog.html">FIAT ORIGINAL</a></li>
+				<li><a href="catalog.html">FORD CONNECT</a></li>
+				<li><a href="catalog.html">FORD FOCUS</a></li>
+				<li><a href="catalog.html">FORD TRANSIT</a></li>
+				<li><a href="catalog.html">HYUNDAI CAUNTY</a></li>
+				<li><a href="catalog.html">VECO</a></li>
+				<li><a href="catalog.html">MAZDA ORIGINAL</a></li>
+				<li><a href="catalog.html">MERCEDES ORIGINAL</a></li>
+				<li><a href="catalog.html">PEUGEOT</a></li>
+				<li><a href="catalog.html">SKF</a></li>
+				<li><a href="catalog.html">VAG ORIGINAL</a></li>
 			</ul>
 		</div>
 	</section>
 
-	<section class="special">
+	<section class="featured featured-index">
 		<div class="wrapper">
 			<h2 class="h2">Спецпредложения</h2>
 			<div class="carousel">
@@ -194,7 +194,7 @@
 
 	<section class="articles">
 		<div class="wrapper">
-			<h4 class="h4">Советы и статьи</h4>
+			<h2 class="h2">Советы и статьи</h2>
 			<a class="all" href="#">Все статьи</a>
 			<ul class="list">
 				<li>
@@ -227,7 +227,7 @@
 					<li><a href="about.html">О компании</a></li>
 					<li><a href="news.html">Новости</a></li>
 					<li><a href="#">Отзывы</a></li>
-					<li><a href="delivery.html">Доставка и оплата</a></li>
+					<li><a href="#">Доставка и оплата</a></li>
 					<li><a href="contacts.html">Контакты</a></li>
 				</ul>
 			</div>
@@ -250,6 +250,40 @@
 			<p class="author">Разработка сайта &ndash; <a href="#">StepUp</a></p>
 		</div>
 	</footer>
+
+	<div id="popup-callback" class="popup">
+		<div class="form-default form-callback">
+			<form action="#" method="post">
+				<p class="heading">
+					<strong>Закажите обратный звонок</strong>
+					и мы вам перезвоним
+				</p>
+				<p class="line required"><input type="text" value="" placeholder="ФИО"></p>
+				<p class="line required"><input type="text" value="" placeholder="Телефон 8 (800) 800-00-00"></p>
+				<p class="line">
+					<label class="for">Удобное время</label>
+					<label>
+						<select>
+							<option value="" selected="selected">С</option>
+							<option value="1">9:00</option>
+							<option value="2">10:00</option>
+							<option value="3">11:00</option>
+						</select>
+					</label>
+					<label>
+						<select>
+							<option value="" selected="selected">До</option>
+							<option value="1">14:00</option>
+							<option value="2">16:00</option>
+							<option value="3">18:00</option>
+						</select>
+					</label>
+				</p>
+				<p class="line line-submit"><input type="submit" value="Отправить"></p>
+				<p class="legend"><span class="red">*</span> - обязательные поля для заполнения</p>
+			</form>
+		</div>
+	</div>
 
 	<script src="js/vendor/jquery-1.11.0.min.js"></script>
 	<script src="js/plugins.js"></script>
