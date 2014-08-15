@@ -402,15 +402,15 @@ body.red:before {
 	height: 46px;
 	margin: -4px 0 0 2px;
 	padding: 19px 5px 0 6px;
+	font-family: 'Circe Bold', Arial, Tahoma, sans-serif;
 	font-size: 26px;
 	line-height: 32px;
+	font-weight: 900;
 }
 .image-carousel .carousel li a .link span {
 	color: #56534b;
-	background: -webkit-linear-gradient(#56534b, #a5a298);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	letter-spacing: 0.058em;
+	letter-spacing: 0.05em;
+	text-shadow: 1px 1px 0 #d3d2d2;
 }
 
 .image-carousel .bx-controls {
@@ -714,13 +714,13 @@ body.red:before {
 	float: left;
 	margin: 0 19px 8px 0;
 }
-.projects .samples li p {
-	margin: 0 0 16px 0;
+.projects p {
+	margin: 0 0 38px 0;
 }
-.samples li .photo {
+.samples li p.photo {
 	width: 300px;
 	height: 275px;
-	margin: 0 0 11px 0;
+	margin: 0 0 24px 0;
 	position: relative;
 }
 .samples li .photo:after {
@@ -737,16 +737,18 @@ body.red:before {
 .samples li .pic {
 	display: block;
 }
-.samples li .heading {
-	margin: 0 0 11px -2px;
-	font-size: 22px;
-	font-weight: bold;
+.samples p.heading {
+	margin: 0 0 21px 0;
+	font-size: 24px;
+	font-family: 'Circe Bold', Arial, Tahoma, sans-serif;
+	font-weight: 900;
 }
 .samples li .look {
 	color: #9f0000;
 	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 0.09em;
+	font-family: 'Circe Bold', Arial, Tahoma, sans-serif;
+	font-weight: 900;
+	letter-spacing: 0.05em;
 }
 .samples .date {
 	margin: 0;
@@ -783,8 +785,9 @@ body.red:before {
 	margin: -5px auto;
 	position: relative;
 	font-size: 26px;
-	line-height: 32px;
+	line-height: 40px;
 	font-weight: 900;
+	font-family: 'Circe Bold', Arial, Tahoma, sans-serif;
 	z-index: 7;
 }
 .image-swiper .link a {
@@ -792,11 +795,9 @@ body.red:before {
 	height: 44px;
 	display: block;
 	text-decoration: none;
-	letter-spacing: 0.09em;
+	letter-spacing: 0.05em;
 	color: #56534b;
-	background: -webkit-linear-gradient(#56534b, #a5a298);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	text-shadow: 1px 1px 0 #d3d2d2;
 }
 
 /* block-comments ==============================================*/
@@ -893,10 +894,13 @@ body.red:before {
 }
 .block-reviews .reviews {
 	width: 460px;
-	margin: 0;
+	margin: 0 0 0 20px;
 	padding: 0;
 	list-style: none;
 	float: left;
+}
+.block-reviews .reviews:first-child {
+	margin-left: 0;
 }
 .block-reviews .reviews li {
 	width: 460px;
@@ -1067,7 +1071,7 @@ body.red:before {
 	overflow: hidden;
 }
 .gallery-photo .picture .img {
-	width: 938px;
+	max-width: 938px;
 	height: 622px;
 	margin: 0 auto;
 	display: block;
@@ -1096,7 +1100,7 @@ body.red:before {
 	background-position: -56px 0;
 }
 .gallery-photo .scroll .carousel {
-	height: 58px;
+	height: 60px;
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -1112,8 +1116,8 @@ body.red:before {
 	overflow: hidden;
 }
 .gallery-photo .scroll .carousel li {
-	width: 56px;
-	height: 56px;
+	width: 60px;
+	height: 60px;
 	float: left;
 }
 .gallery-photo .scroll .carousel li .img {
@@ -1121,6 +1125,9 @@ body.red:before {
 	height: 56px;
 	display: block;
 	border: 2px solid #fff;
+}
+.gallery-photo .scroll .carousel li.active .img {
+	border-color: #9bcef3;
 }
 .gallery-photo .scroll .bx-controls-direction a {
 	width: 21px;

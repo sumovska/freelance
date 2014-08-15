@@ -25,12 +25,20 @@ $(document).ready(function () {
 		slideMargin: 5
 	});
 
-	$('.gallery-photo .scroll .carousel').bxSlider({
-		infiniteLoop: false,
-		pager: false,
-		slideWidth: 56,
-		maxSlides: 14,
-		slideMargin: 5
+	$('.gallery-photo').each(function () {
+		var _self = $(this);
+		$('.carousel a', this).click(function () {
+			$('.picture .img', _self).attr('src', $(this).attr('href'));
+			$(this).closest('li').addClass('active').siblings('.active').removeClass('active');
+			return false;
+		});
+		$('.carousel', this).bxSlider({
+			infiniteLoop: false,
+			pager: false,
+			slideWidth: 56,
+			maxSlides: 14,
+			slideMargin: 5
+		});
 	});
 
 	$('.swiper').each(function () {
