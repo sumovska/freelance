@@ -12,13 +12,13 @@
         });
     });
 
-/* Tabs-catalog-nav */
-    $('.tabs-catalog-nav').each(function () {
+/* Tabs_leg */
+    $('.legend_tabs').each(function () {
         var _self = this;
         $('a', this).click(function () {
             var where = $(this).prop('href').replace(/^.*#(.*)/, "$1");
-            $(this).closest('li').addClass('active').siblings('li').removeClass('active');
-            $(_self).siblings('.' + where).removeClass('tab-hidden').siblings('.tab-catalog-nav').addClass('tab-hidden');
+            $(this).closest('li').addClass('current').siblings('li').removeClass('current');
+            $(_self).siblings('.' + where).removeClass('tab-hidden').siblings('.tab-catalog').addClass('tab-hidden');
             return false;
         });
     });

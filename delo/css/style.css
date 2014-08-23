@@ -5048,7 +5048,7 @@ a.label:hover {
 
 /* 
   After ==========================*/
-.tabs-nav:after, .tab-nav:after, .tabs-catalog-nav:after, .tab-catalog-nav .list:after, .tab-catalog-nav .links:after {
+.tabs-nav:after, .tab-nav:after, .tab-catalog .list:after, .tab-catalog .links:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
@@ -5102,8 +5102,7 @@ a.label:hover {
 	border-top: 1px solid #8b7543;
 }
 .tab-nav figure {
-	padding: 3px 11px 7px 11px;
-	margin: 0 1px;
+	padding: 10px 7px 10px 5px;
 	float: left;
 	position: relative;
 	border-bottom: 1px solid #6f5929;
@@ -5120,7 +5119,9 @@ a.label:hover {
 	border-right: 1px solid #8b7543;
 }
 .tab-nav figure .link {
-	padding: 23px 12px 12px;
+	width: 108px;
+	height: 120px;
+	padding-top: 16px;
 	display: block;
 	color: #fff;
 	text-decoration: none;
@@ -5139,72 +5140,37 @@ a.label:hover {
 }
 
 /*============================
-	Tabs-catalog-nav
+	Tab-catalog
 ============================*/
-.tabs-catalog-nav {
-	width: 420px;
-	margin: 0 auto 23px;
-	list-style: none;
-	text-align: center;
-	font-size: 14px;
-	line-height: 18px;
-}
-.tabs-catalog-nav li {
-	width: 115px;
-	float: left;
-	background-color: #f3e274;
-}
-.tabs-catalog-nav li:first-child {
-	border-radius: 4px 0 0 4px;
-}
-.tabs-catalog-nav li:last-child {
-	border-radius: 0 4px 4px 0;
-}
-.tabs-catalog-nav li.active {
-	background-color: #9c8f5a;
-}
-.tabs-catalog-nav li a {
-	padding: 5px 0;
-	display: block;
-	text-decoration: none;
-	color: #333333;
-	transition: color .3s ease;
-}
-.tabs-catalog-nav li a:hover {
-	color: #fff;
-}
-.tabs-catalog-nav li.active a {
-	color: #fff;
-}
-
-.tab-catalog-nav {
+.tab-catalog {
 	padding: 16px;
 	margin: 0 0 16px 0;
 	background-color: #e8dbbb;
 }
-.tab-catalog-nav .list {
+.tab-catalog .list {
 	width: 860px;
 	padding: 0;
 	margin: 0 -20px -32px 0;
 	list-style: none;
 }
-.tab-catalog-nav .card-block {
+.tab-catalog .card-block {
 	width: 248px;
 	height: 438px;
 	margin: 0 32px 33px 0;
+	position: relative;
 	font-size: 14px;
 	line-height: 18px;
-	position: relative;
 	float: left;
-	background-color: #fff;
 	letter-spacing: -.01em;
 }
-
-.tab-catalog-nav .card-block .card {
+.tab-catalog .card-block:hover {
+	box-shadow: 0 0 10px rgba( 0, 0, 0, 0.3)
+}
+.tab-catalog .card-block .card {
 	padding: 13px;
 	z-index: 4;
 }
-.tab-catalog-nav .card-block .links {
+.tab-catalog .card-block .links {
 	min-width: 40px;
 	padding: 0;
 	margin: 0;
@@ -5214,7 +5180,7 @@ a.label:hover {
 	left: 8px;
 	z-index: 8;
 }
-.tab-catalog-nav .card-block .links li {
+.tab-catalog .card-block .links li {
 	width: 10px;
 	height: 10px;
 	margin-right: 4px;
@@ -5223,44 +5189,58 @@ a.label:hover {
 	background: linear-gradient(to bottom,  rgba(169,53,53,1) 0%,rgba(232,114,114,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a93535', endColorstr='#e87272',GradientType=0 ); /* IE6-9 */
 }
-.tab-catalog-nav .card-block .links li.orange { background: linear-gradient(to bottom,  rgba(180,121,59,1) 0%,rgba(242,182,121,1) 100%);}
-.tab-catalog-nav .card-block .links li.green { background: linear-gradient(to bottom,  rgba(94,152,42,1) 0%,rgba(156,214,104,1) 100%);}
-.tab-catalog-nav .card-block .links li a {
+.tab-catalog .card-block .links li.orange { background: linear-gradient(to bottom,  rgba(180,121,59,1) 0%,rgba(242,182,121,1) 100%);}
+.tab-catalog .card-block .links li.green { background: linear-gradient(to bottom,  rgba(94,152,42,1) 0%,rgba(156,214,104,1) 100%);}
+.tab-catalog .card-block .links li a {
 	width: 10px;
 	height: 10px;
 	display: block;
 }
-.tab-catalog-nav .card-block .pic {
+.tab-catalog .card-block .pic {
 	width: 248px;
 	height: 248px;
 	margin: -13px -13px 11px;
 	display: block;
 	position: relative;
 }
-.tab-catalog-nav .card-block .pic:after {
-    content: "\0020"; 
-    position: absolute;
-    left: 117px;
-    bottom: 0;
-    border: 8px solid transparent;
-    border-bottom: 8px solid #fff;
-   }
-.tab-catalog-nav .card-block .pic img {
+.tab-catalog .card-block .pic img {
 	width:100%;
 	display:block;
 }
-.tab-catalog-nav .card-block .link {
+
+.tab-catalog .card-block .tabs {
+	width: 248px;
+	height: 190px;
+	padding: 13px;
+	margin: -11px 0 0 -13px;
+	position: relative;
+	background-color: #fff;
+	transition: background-color .3s ease;
+}
+.tab-catalog .card-block .tabs:after {
+	left: 50%;
+	border-width: 9px;
+	border-bottom-color: #fff;
+}
+.tab-catalog .card-block:hover .tabs {
+	background-color: #ffcb00;
+}
+.tab-catalog .card-block:hover .tabs:after{
+	border-bottom-color: #ffcb00;
+}
+
+.tab-catalog .card-block .link {
 	margin: 0 0 12px 0;
 	letter-spacing: -.01em;
 }
-.tab-catalog-nav .card-block .link a{
+.tab-catalog .card-block .link a{
 	font-size: 12px;
 	line-height: normal;
 }
-.tab-catalog-nav .card-block .link a {
+.tab-catalog .card-block .link a {
 	color: #4f646d;
 }
-.tab-catalog-nav .card-block .shop-name {
+.tab-catalog .card-block .shop-name {
 	margin: 0 0 9px 0;
 	display: block;
 	font-size: 18px;
@@ -5268,7 +5248,7 @@ a.label:hover {
 	font-weight: bold; 
 	color: #3c5f84;
 }
-.tab-catalog-nav .card-block .price {
+.tab-catalog .card-block .price {
 	min-width: 85px;
 	height: 30px;
 	padding: 6px 9px 0;
@@ -5279,8 +5259,14 @@ a.label:hover {
 	font-size: 21px;
 	text-align: center;
 	background-color: #ffcc00;
+	transition: color .3s ease;
 }
-.tab-catalog-nav .card-block .rating {
+.tab-catalog .card-block:hover .price{
+	color: #ffcb00; 
+	background-color: #fff;
+}
+
+.tab-catalog .card-block .rating {
 	width: 104px;
 	height: 20px;
 	position: absolute;
@@ -5288,10 +5274,17 @@ a.label:hover {
 	right: 17px; 
 	background: url(../img/rating.png) 0 0 no-repeat;
 }
-.tab-catalog-nav .card-block .rating-1 { background-position: -86px 0}
-.tab-catalog-nav .card-block .rating-2 { background-position: -64px 0}
-.tab-catalog-nav .card-block .rating-3 { background-position: -42px 0}
-.tab-catalog-nav .card-block .rating-4 { background-position: -22px 0}
+.tab-catalog .card-block .rating-1 { background-position: -86px 0}
+.tab-catalog .card-block .rating-2 { background-position: -64px 0}
+.tab-catalog .card-block .rating-3 { background-position: -42px 0}
+.tab-catalog .card-block .rating-4 { background-position: -22px 0}
+.tab-catalog .card-block:hover .rating {
+	background: url(../img/rating.png) 0 -20px no-repeat;
+}
+.tab-catalog .card-block:hover .rating-1 { background-position: -86px -20px}
+.tab-catalog .card-block:hover .rating-2 { background-position: -64px -20px}
+.tab-catalog .card-block:hover .rating-3 { background-position: -42px -20px}
+.tab-catalog .card-block:hover .rating-4 { background-position: -22px -20px}
 
 
 .filter {
@@ -5339,21 +5332,72 @@ a.label:hover {
 	border-top: 3px solid #eae1d7;
 	outline: none;
 }
-.button-closed {
+
+.buttons {
+	padding: 16px 0;
+	background-color: #fff;
+	text-align: center;
+}
+.buttons .btn-closed {
 	width: 52px;
 	height: 42px;
 	margin-right: 10px; 
-	display: block;
-	float: left;
-	outline: none;
-	border: none;
-	border-radius: 2px;
+	box-shadow: 0 3px #5e4c24;
 	background: #735c2b url(../img/button-closed.png) 50% no-repeat;
 }
-.buttons {
-	padding-top: 16px;
+.buttons .btn-closed:hover {
+	background: #735c2b url(../img/button-closed.png) 50% no-repeat;
+}
+
+/*============================
+  Tabs-panel           
+============================*/
+.tabs-panel {
+	width: 100%;
+	background-color: #7f662f;
+}
+.tabs-panel .buy {
+	width: 410px;
+	float: right;
+	background-color: #8a7037;
+}
+.tabs-panel .link span {
+	color: #ded9d0;
+}
+.tabs-panel .li-right {
+	width: 410px;
+	float: right;
+	background-color: #8a7037;
+	font-size: 30px;
+}
+.tabs-panel .li-right span {
+	margin: 0 16px;
+}
+.tabs-panel .li-right .btn {
+	padding: 10px 0;
+}
+.tabs-panel .li-right .btn-comment {
+	width: 52px;
+	height: 42px;
+	margin-right: 10px; 
+	box-shadow: 0 3px #5e4c24;
+	background: #735c2b url(../img/button-comment.png) 50% no-repeat;
+}
+.tabs-panel .li-right .btn-comment:hover {
+	background: #735c2b url(../img/button-comment.png) 50% no-repeat;
+}
+
+/*============================
+  Block-fashion          
+============================*/
+.block-fashion .describe {
+	padding: 20px;
 	background-color: #fff;
-	text-align: center;
+}
+.block-fashion .describe .pic {
+	display: block;
+	margin-right: 24px;
+	float: left;
 }
 
 /*============================
