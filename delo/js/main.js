@@ -12,6 +12,17 @@ $('.tabs-nav').each(function () {
 	});
 });
 
+/* Tab-sample */
+$('.legend_tabs').each(function () {
+	var _self = this;
+	$('a', this).click(function () {
+		var where = $(this).prop('href').replace(/^.*#(.*)/, "$1");
+		$(this).closest('li').addClass('current').siblings('li').removeClass('current');
+		$(_self).siblings('.' + where).removeClass('tab-hidden').siblings('.tab-sample').addClass('tab-hidden');
+		return false;
+	});
+});
+
 /* Tabs_leg */
 $('.legend_tabs').each(function () {
 	var _self = this;
