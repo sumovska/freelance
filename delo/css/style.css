@@ -5209,7 +5209,7 @@ a.label-novelty:hover {
 }
 .block_solutions .samples .tabs_leg li a {
 	background-color: #e9e5d0;
-	border-right-color: #e3d9bc; 
+	border-right-color: #e3d9bc;
 }
 .block_solutions .samples .tabs_leg li a:hover {
 	color: #333333;
@@ -5278,7 +5278,7 @@ a.label-novelty:hover {
 	margin-right: 22px;
 	display: block;
 	float: left;
-	position: 
+	position:
 }
 
 .block_solutions .samples .tab-feature .cell .name {
@@ -5306,7 +5306,7 @@ a.label-novelty:hover {
 	border-bottom: 1px solid #94886e;
 }
 .block_solutions .block-reviews .content_block_item .item:last-child:after {
-	border: none; 
+	border: none;
 }
 .block_solutions .block-reviews .pure-u-1-2 .text {
 	width: 240px;
@@ -5658,63 +5658,180 @@ a.label-novelty:hover {
 
 /* ================= Catalog ================= */
 .filter {
-	height: 156px;
+	width: 100%;
+	margin-bottom: 50px;
+}
+.filter:after, .filter .col:after, .filter .form:after, .filter .radiobox-group:after, .filter .line:after {
+	width: 100%;
+	content: "\0020";
+	display: block;
+	clear: both;
+}
+.filter .form {
+	width: 100%;
 	position: relative;
 	background: #a58c50;
 }
-.filter:after {
+.filter .form:before {
+	margin-left: -9px;
 	content: "\0020";
 	position: absolute;
 	left: 50%;
 	bottom: -18px;
-	border: 9px solid transparent;
-	border-top: 9px solid #a58c50;
+	border-style: solid;
+	border-width: 9px;
+	border-color: #a58c50 transparent transparent transparent;
 }
-.filter .side-left {
-	margin: 24px 0 24px 24px;
-	padding: 0 24px 0 0;
+.filter .col {
+	width: 50%;
+	padding: 14px 24px;
+	float: right;
+}
+.filter .col:first-child {
 	float: left;
-	border-right: 1px solid #907a46;
 }
-.filter .side-right {
-	margin: 24px 0 24px 0;
-	padding: 0 0 0 24px;
+.filter .line {
+	padding: 15px 0;
+	margin: 0;
+	display: block;
+}
+
+.filter .default-slider {
+	height: 31px;
+}
+.filter .default-slider .item {
+	height: 10px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: none;
+	background: #7f662f linear-gradient(to bottom, #6c5728 0%, #7f662f 50%, #7f662f 100%);
+}
+.filter .default-slider .noUi-base {
+	border-radius: 5px;
+	background: #7f662f linear-gradient(to bottom, #6c5728 0%, #7f662f 50%, #7f662f 100%);
+}
+.filter .default-slider .noUi-origin {
+	border-radius: 5px;
+	box-shadow: none;
+	background: none;
+}
+.filter .default-slider .noUi-connect {
+	background: #e8d037 linear-gradient(to bottom, #edda46 0%, #e8d037 100%);
+}
+.filter .default-slider .noUi-handle {
+	width: 16px;
+	height: 16px;
+	border: 1px solid #e6e0d5;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+	top: -3px;
+	left: -8px;
+	background: #d9d1c1;
+}
+.filter .default-slider .noUi-handle .tp {
+	width: 80px;
+	margin-left: -26px;
+	display: block;
+	position: absolute;
+	top: 18px;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: bold;
+	color: #fff;
+	cursor: default;
+	text-align: center;
+}
+.filter .default-slider .noUi-handle:before, .filter .default-slider .noUi-handle:after {
+	display: none;
+}
+.filter .default-slider .noUi-background {
+	border-radius: 5px;
+	background: #7f662f linear-gradient(to bottom, #6c5728 0%, #7f662f 50%, #7f662f 100%);
+}
+
+.filter .radiobox-group {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 18px;
+	color: #333;
+	background: #d8d2c1;
+}
+.filter .radiobox-group .radiobox {
+	width: 50%;
+	padding: 5px;
 	float: left;
-	border-left: 1px solid #ad9761;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
 }
-.filter .side-left .styled {
-	width: 373px;
+.filter .radiobox-group .radiobox-checked {
+	color: #e7cd23;
+	background: #6f5929;
 }
-.filter .side-left .styled .jq-selectbox__trigger {
+.filter .radiobox-group .radiobox input {
+	position: absolute;
+	top: -50px;
+	left: -50px;
+}
+
+.filter .styled {
+	width: 100%;
+	display: block;
+}
+.filter .styled .jq-selectbox__trigger {
 	background: #fff;
 	border: none;
 	box-shadow: none;
 }
-.filter .side-left .styled .jq-selectbox__trigger .jq-selectbox__trigger-arrow {
+.filter .styled .jq-selectbox__trigger .jq-selectbox__trigger-arrow {
 	border-top: 5px solid #000;
 }
-.filter .side-right input[type="text"] {
-	width: 176px;
-	padding: 10px 10px 10px 14px;
-	margin-right: 16px;
+.filter input.input-text {
+	width: 45%;
+	padding: 10px 14px;
+	font-size: 14px;
 	color: #213239;
 	border: none;
 	border-top: 3px solid #eae1d7;
 	outline: none;
+	display: block;
+	float: left;
+}
+.filter .input-number {
+	width: 45%;
+	display: inline-block;
+	float: right;
+}
+.filter .input-number input.input-text {
+	width: 100%;
+	margin: 0;
 }
 
-.buttons {
-	padding: 16px 0;
-	background-color: #fff;
+.filter .buttons {
+	padding: 17px 0;
+	margin: 0;
 	text-align: center;
+	clear: both;
+	background: #fff;
 }
-.buttons .btn-closed {
+.filter .buttons .btn {
+	height: 42px;
+	margin: 0 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.filter .buttons .btn-closed {
 	width: 52px;
 	height: 42px;
-	margin-right: 10px;
 	box-shadow: 0 3px #5e4c24;
 	background: #735c2b url(../img/button-closed.png) 50% no-repeat;
 }
-.buttons .btn-closed:hover {
+.filter .buttons .btn-closed:hover {
 	background: #735c2b url(../img/button-closed.png) 50% no-repeat;
 }
