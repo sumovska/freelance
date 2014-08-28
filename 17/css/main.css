@@ -3,8 +3,19 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+/* 
+   Fonts
+	===================================== */
 body {
   font-family: Arial, Tahoma, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+}
+.h2 {
+	font-family: 'Roboto Condensed', Arial, Tahoma, sans-serif;
+	margin-bottom: 27px;
+	font-weight: 300;
 }
 @font-face {
   font-family: 'Roboto Condensed';
@@ -20,8 +31,22 @@ body {
   font-weight: 300;
   font-style: normal;
 }
+.text-gray {
+	color: #525252;
+}
+.text-gray-lighter {
+	color: #8e8e8e;
+}
+.text-olive {
+	color: #a7c02a;
+}
+.bg-white {
+	background-color: #fff;
+}
 
-
+/* 
+   Jumbotron-index
+	===================================== */
 .jumbotron-index {
 	margin: 100px 0 46px 0;
 	padding: 10px 0 0 0;
@@ -49,67 +74,49 @@ body {
 	left: 0;
 	background: url('../img/jumbotron-border.png') 0 -25px repeat-x;
 }
-.block-video .row {
-	padding-left: 20px;
-	margin: 0;
-}
-.block-video .col-md-4 {
-	text-align: center;
-}
 
-.block-video .col-form {
-	width: 30.5%;
-	padding-top: 2px;
+/* 
+   Block-video
+	===================================== */
+.block-video {
+	padding-left: 20px;
 }
-.block-video .col-form .h2 {
-	margin-bottom: 27px;
-	font-family: 'Roboto Condensed', Arial, Tahoma, sans-serif;
-	font-weight: 300;
+.block-video .form {
+	padding-bottom: 40px;
 }
-.block-video .col-form .input-name .form-control {
+.block-video .form .btn {
+	width: 100%;
+}
+.block-video .form .form-control {
 	font-size: 14px;
 	padding: 10px 12px;
 }
-.block-video .col-form .input-name .input-group-addon {
+.block-video .form .input-group-addon {
 	padding: 10px 14px;
 }
-.block-video .col-form .btn-success {
+
+.block-video .form .btn-warning {
 	font-size: 18px;
 	padding: 8px 12px;
 }
-.block-video .col-form .btn-warning {
-	font-size: 18px;
-	padding: 8px 12px;
-}
-.block-video .col-md-12 {
+.block-video .form .box-btn {
 	padding: 26px;
 	margin: 0 0 24px 0;
-	background-color: #fff;
 }
-.block-video .col-md-12 .input-group {
+.block-video .form .box-btn .btn-success {
+	font-size: 18px;
+	padding: 8px 12px;
+}
+.block-video .form .box-btn .input-group {
 	margin-bottom: 12px;
-}
-
-.block-video .col-md-12 .btn {
-	width: 100%;
 }
 .block-video .video {
 	padding-left: 6px;
 }
 
-.block-text {
-	padding: 0 54px;
-	font-size: 15px;
-	line-height: 24px;
-}
-
-.block-states {
-	background-color: #fff;
-}
-.block-states .h2 {
-	font-family: 'Roboto Condensed', Arial, Tahoma, sans-serif;
-	font-weight: 300;
-}
+/* 
+   Block-states
+	===================================== */
 .block-states .btn-group .btn {
 	margin-right: 10px;
 }
@@ -122,6 +129,7 @@ body {
 .block-states .line-headings {
 	background-color: #e3e3e3;
 }
+
 
 
 
