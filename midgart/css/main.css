@@ -150,6 +150,10 @@ a:hover {
     font-weight: normal;
 }
 .h3 {
+    font-size: 20px;
+    font-weight: normal;
+}
+.h4 {
     font-size: 18px;
     font-weight: normal;
 }
@@ -203,6 +207,10 @@ a:hover {
     font-weight: normal;
     text-decoration: none;
     border-bottom: 1px dashed #00c2f6;
+    transition: border .4s ease; 
+}
+.header .contacts .mail:hover {
+    border: none;
 }
 .header .contacts .mail:before {
     width: 20px;
@@ -242,6 +250,10 @@ a:hover {
     color: #898989;
     text-decoration: none;
     border-bottom: 1px dashed #898989;
+    transition: border .4s ease; 
+}
+.header .phone .link:hover {
+    border: none;
 }
 .header .phone-2 {
     left: 654px;
@@ -349,22 +361,26 @@ a:hover {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 30px;
-    left: 78px;
+    top: 14px;
+    left: 70px;
     list-style: none;
+    letter-spacing: -.02em;
+}
+.footer .nav .h2 {
+    margin: 0 0 14px 0;
+}
+.footer .nav .h2 a {
+    text-decoration: underline;
+    border: none;
+}
+.footer .nav .h2 a:hover {
+    text-decoration: none;
 }
 .footer .nav-service {
     left: 420px;
 }
 .footer .nav-equipment {
-    left: 724px;
-}
-.footer .nav:after {
-    width: 100%;
-    content: "\0020";
-    display: block;
-    clear: both;
-    overflow: hidden;
+   left: 714px;
 }
 .footer .nav li {
     margin: 0 0 4px 0;
@@ -380,17 +396,20 @@ a:hover {
 .footer .nav li a:hover {
     border-color: #67bb4b;
 }
-.footer .nav .h2 {
-    margin: 0 0 14px 0;
-}
 .footer .address {
-    width: 160px;
-    font-style: normal;
+    right: 75px;
+    top: 16px;
     position: absolute;
-    top: 0;
-    right: 0;
+    font-style: normal;
+    letter-spacing: -.04em;
 }
-
+.footer .address .text {
+    margin-top: 14px;
+    line-height: 22px;
+}
+.footer .address .mail {
+    color: #343434;
+}
 .footer .copyright {
     position: absolute;
     top: 187px;
@@ -430,7 +449,8 @@ a:hover {
 .footer .author {
     position: absolute;
     top: 187px;
-    right: 80px;
+    right: 82px;
+    letter-spacing: -.03em;
 }
 
 /* 
@@ -553,7 +573,12 @@ a:hover {
     background-color: #eee18f;
     border-radius: 12px;
     box-shadow: 0 4px 1px #e5d051;
+    transition: background-color .3s ease;
 }
+.image-carousel .callback input[type="submit"]:hover {
+    background-color: #e5d051;
+}
+
 
 /* 
    _Samples
@@ -569,6 +594,9 @@ a:hover {
     display: block;
     clear: both;
     overflow: hidden;
+}
+.samples-service {
+    margin-top: 40px;
 }
 
 .samples .sample {
@@ -637,7 +665,7 @@ a:hover {
     border-left-color: #68bc4c;
 }
 
-.samples .sample .link .h3 {
+.samples .sample .link .h4 {
     margin-bottom: 12px;
     font-family: 'PFBeauSans Pro', Arial, Tahoma, sans-serif;
 }
@@ -667,7 +695,7 @@ a:hover {
     margin: 0 -30px 18px -30px;
     display: block;
 }
-.news .col .h3 {
+.news .col .h4 {
     margin: 15px 0 2px 0;
     letter-spacing: -.03em;
 }
@@ -717,6 +745,8 @@ a:hover {
 .portfolio .img-link .pic {
     display: block;
 }
+
+
 
 /* ==========================================================================
    Media Queries
