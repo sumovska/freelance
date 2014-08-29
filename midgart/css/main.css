@@ -132,6 +132,11 @@ a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+/* 
+   _Wrapper
+   ==============================================*/
+
 .wrapper {
     width: 1110px;
     margin: 0 auto;
@@ -145,6 +150,9 @@ a:hover {
     overflow: hidden;
 }
 
+/* 
+   _Font
+   ==============================================*/
 .h2 {
     font-size: 24px;
     font-weight: normal;
@@ -161,6 +169,10 @@ a:hover {
 .text-green {
     color: #6ac345;
 }
+
+/* 
+   _After
+   ==============================================*/
 
 /* 
    _Header
@@ -588,8 +600,8 @@ a:hover {
    _Samples
    ==============================================*/
 .samples {
-    margin: 0 0 30px 0;
-    font-size: 12px;
+    margin: 0 0 31px 0;
+    font-size: 14px;
     font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
 }
 .samples:after {
@@ -626,16 +638,15 @@ a:hover {
 }
 
 .samples .sample .link{
-    width: 150px;
+    width: 152px;
     height: 180px;
     margin: 0;
-    padding: 20px 18px;
+    padding: 22px 16px 18px 18px;
     position: relative;
     display: block;
     float: left;
     color: #343434;
     background-color: #f6f6f6;
-    letter-spacing: -.046em;
     text-decoration: none;
     transition: background-color .5s ease, color .5s ease; 
 }
@@ -671,40 +682,90 @@ a:hover {
 
 .samples .sample .link .h4 {
     margin-bottom: 12px;
+    position: relative;
     font-family: 'PF BeauSans Pro', Arial, Tahoma, sans-serif;
+}
+.samples .sample .link .h4:before {
+    width: 32px;
+    height: 2px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: -6px;
+    left: 3px;
+    background: #bfbfbf;
+    transition: background .5s ease;
+}
+.samples .sample .link:hover .h4:before {
+    background: #8acb74;
 }
 
 /* 
    _News
    ==============================================*/
 .news {
-    width: 504px;
     margin: 0 0 0 26px;
     float: left;
 }
 .news .h2 {
     margin: 0 0 38px 18px;
+    position: relative;
     text-align: center;
 }
+.news .h2:before {
+    width: 58px;
+    height: 3px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: -19px;
+    left: 218px;
+    background: #68bc4c;
+    transition: background .5s ease;
+}
 .news .col {
-    width: 174px;
-    padding: 0 30px 0 30px;
-    margin: 0 0 0 18px;
+    width: 172px;
+    padding: 0 31px 11px 31px;
+    margin: 0 0 0 16px;
     float: left;
-    font-size: 11px;
+    font-size: 14px;
     background-color: #f6f6f6;
+    border: 1px solid #e7e7e7;
 }
 .news .col .picture {
     width: 234px;
-    margin: 0 -30px 18px -30px;
+    margin: 0 -32px 18px -32px;
     display: block;
+    border-left: 1px solid #929292;
+    border-right: 1px solid #929292;
 }
-.news .col .h4 {
-    margin: 15px 0 2px 0;
+.news .col .top {
+    padding: 0 0 4px 27px;
+    margin: 14px -30px 16px -30px;
+    position: relative;
+    border-bottom: 1px solid #e7e7e7;
+}
+.news .col .top:before {
+    width: 52px;
+    height: 3px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background: #68bc4c;
+    transition: background .5s ease;
+}
+.news .col .top .h4 {
+    margin: 0 0 2px 0;
     letter-spacing: -.03em;
 }
-.news .col .date {
-    margin: 0 0 14px 0;
+.news .col .top .date {
+    margin: 0;
+    font-size: 12px;
     color: #898989;
 }
 .news .col .text {
@@ -721,7 +782,20 @@ a:hover {
 }
 .portfolio .h2 {
     margin: 0 0 38px 18px;
+    position: relative;
     text-align: center;
+}
+.portfolio .h2:before {
+    width: 58px;
+    height: 3px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: -19px;
+    left: 218px;
+    background: #68bc4c;
+    transition: background .5s ease;
 }
 .portfolio .img-link {
     width: 236px;
