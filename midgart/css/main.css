@@ -67,7 +67,7 @@ a:hover {
     text-decoration: none;
 }
 @font-face {
-    font-family: 'PFBeauSans Pro';
+    font-family: 'PF BeauSans Pro';
     src: url('pfbeausanspro-thin-webfont.eot');
     src: url('pfbeausanspro-thin-webfont.eot?#iefix') format('embedded-opentype'),
          url('pfbeausanspro-thin-webfont.woff') format('woff'),
@@ -76,7 +76,7 @@ a:hover {
     font-style: normal;
 }
 @font-face {
-    font-family: 'PFBeauSans Pro';
+    font-family: 'PF BeauSans Pro';
     src: url('pfbeausanspro-light-webfont.eot');
     src: url('pfbeausanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
          url('pfbeausanspro-light-webfont.woff') format('woff'),
@@ -85,7 +85,7 @@ a:hover {
     font-style: normal;
 }
 @font-face {
-    font-family: 'PFBeauSans Pro';
+    font-family: 'PF BeauSans Pro';
     src: url('pfbeausanspro-regular-webfont.eot');
     src: url('pfbeausanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('pfbeausanspro-regular-webfont.woff') format('woff'),
@@ -94,7 +94,7 @@ a:hover {
     font-style: normal;
 }
 @font-face {
-    font-family: 'PTSans Narrow';
+    font-family: 'PT Sans Narrow';
     src: url('PTSans-Narrow.eot') format('embedded-opentype');
     src: url('PTSans-Narrow.woff') format('woff'), 
          url('PTSans-Narrow.ttf') format('truetype'), 
@@ -156,6 +156,10 @@ a:hover {
 .h4 {
     font-size: 18px;
     font-weight: normal;
+}
+
+.text-green {
+    color: #6ac345;
 }
 
 /* 
@@ -586,7 +590,7 @@ a:hover {
 .samples {
     margin: 0 0 30px 0;
     font-size: 12px;
-    font-family: 'PTSans Narrow', Arial, Tahoma, sans-serif;
+    font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
 }
 .samples:after {
     width: 100%;
@@ -596,7 +600,7 @@ a:hover {
     overflow: hidden;
 }
 .samples-service {
-    margin-top: 40px;
+    margin-top: 39px;
 }
 
 .samples .sample {
@@ -667,7 +671,7 @@ a:hover {
 
 .samples .sample .link .h4 {
     margin-bottom: 12px;
-    font-family: 'PFBeauSans Pro', Arial, Tahoma, sans-serif;
+    font-family: 'PF BeauSans Pro', Arial, Tahoma, sans-serif;
 }
 
 /* 
@@ -704,7 +708,7 @@ a:hover {
     color: #898989;
 }
 .news .col .text {
-    font-family: 'PTSans Narrow', Arial, Tahoma, sans-serif;
+    font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
 }
 
 /* 
@@ -746,6 +750,101 @@ a:hover {
     display: block;
 }
 
+/* 
+   _Block-service
+   ==============================================*/
+.block-service {
+    font-size: 20px;
+    font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
+}
+.block-service .h2 {
+    margin: 0 0 40px 0;
+}
+.block-service .list {
+    padding: 0 0 0 54px;
+    margin: 0 0 36px;
+    list-style: none;
+}
+.block-service .list li {
+    margin: 0 0 20px 0;
+    position: relative;
+} 
+.block-service .list li:before {
+    width: 27px;
+    height: 27px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -6px;
+    left: -40px;
+    text-align: center;
+    color: #fff;
+    background: url(../img/sprite.png) -280px 0 no-repeat;
+    border-radius: 50%;
+}
+.block-service .lines {
+    width: 880px;
+    padding: 0;
+    margin: 0 0 56px 0;
+    list-style: none;
+    font-size: 16px;
+    font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
+}
+.block-service .lines li {
+    margin: 0 0 19px 0;
+}
+
+.title-links {
+    padding: 0;
+    margin: 0 0 44px;
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+}
+.title-links li {
+    margin: 0 10px;
+   display: inline-block;
+}
+.title-links li a {
+    text-decoration: none;
+    border-bottom: 1px dashed #6cc449;
+    transition: border .3s ease;
+}
+.title-links li a:hover {
+    border-bottom: none;
+}
+
+
+.content-service .h2 {
+    margin: 0 0 46px 0;
+}
+
+/* 
+   _Tabs
+   ==============================================*/
+.tabs {
+    padding: 0;
+    margin: 0 0 38px 0;
+    list-style: none;
+    font-size: 20px;
+    font-family: 'Roboto', Arial, Tahoma, sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+.tabs li {
+    margin: 0 12px;
+    display: inline-block;
+}
+.tabs li a {
+    text-decoration: none;
+    border-bottom: 1px dashed #6cc449;
+    transition: border .3s ease, font-weight .3s ease;
+}
+.tabs li a:hover {
+    border-bottom: none;
+    font-weight: normal;
+}
 
 
 /* ==========================================================================
