@@ -1,90 +1,92 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Seventeen</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/main.css">
 
-        <!--[if lt IE 9]>
-            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
+	<!--[if lt IE 9]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="navbar navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Включить навигацию</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="img/logo.png" alt="Superdom"></a>
+				</div>
+				<nav class="navbar-collapse collapse">
+					<ul class="navbar-list navbar-contacts">
+						<li><a href="mailto:jamesgetz@gmail.com" class="email">jamesgetz@gmail.com</a></li>
+						<li><a href="#" class="skype">james_getz</a></li>
+					</ul>
+					<ul class="navbar-nav">
+						<li><a href="#">F.A.Q.</a></li>
+						<li><a href="#">About us</a></li>
+					</ul>
+					<div class="navbar-buttons">
+						<span class="balance">Your balance: <strong>17$</strong></span>
+						<a href="#" class="link"><span class="glyphicon glyphicon-plus"></span>Funds</a>
+						<a href="#" class="link link-grey"><span class="glyphicon glyphicon-signal"></span>Stats</a>
+					</div>
+					<ul class="navbar-list navbar-links">
+						<li><a href="#" class="profile">jamesgetz</a></li>
+						<li><a href="#" class="logout">Logout</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron jumbotron-index">
-      <div class="container block-video">
-        <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4 text-center form">
-          <h2 class="h2">Create you qieries</h2>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 box-btn bg-white">
-            <div class="input-group input-group-lg">
-              <span class="input-group-addon bg-white"><img src="img/ie.png" alt=""></span>
-              <input type="text" class="form-control" placeholder="sape.ru">
-            </div>
-            <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add queries</button>
-          </div>
-          <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-thumbs-up"></span> Give me recomendations!</button>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 video">
-          <div class="embed-responsive embed-responsive-4by3">
-            <iframe class="embed-responsive-item" width="100%" height="394" src="http://www.youtube.com/embed/3JluqTojuME" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
+	<div class="index">
+		<div class="container">
+			<div class="row">
+				<div class="query col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<h2 class="h2">Create you queries</h2>
+					<div class="form">
+						<form action="#">
+							<div class="input-group input-group-lg">
+								<span class="input-group-addon bg-white"><img src="img/ie.png" alt=""></span>
+								<input type="text" class="form-control" placeholder="sape.ru">
+							</div>
+							<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add queries</button>
+						</form>
+					</div>
+					<p class="recomendations"><a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-thumbs-up"></span> Give me recomendations!</a></p>
+				</div>
+				<div class="video col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<iframe src="http://www.youtube.com/embed/3JluqTojuME" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <p class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">If you want to advance your site to Google Top, first of all you need to perform a text optimization of its pages to make them relevant to queries according to Google. Our service will instantly provide you with BEST RECOMMENDATIONS to optimize your pages, all you need is to click a couple of buttons.</p>
-    
+	<div class="index-text">
+		<div class="container">
+			<div class="row">
+				<div class="space col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<p>If you want to advance your site to Google Top, first of all you need to perform a text optimization of its pages to make them relevant to queries according to Google. Our service will instantly provide you with BEST RECOMMENDATIONS to optimize your pages, all you need is to click a couple of buttons.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    
-
-      <hr>
-
-      <footer>
-        
-      </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+	<script src="js/vendor/jquery-1.11.0.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
 </html>
