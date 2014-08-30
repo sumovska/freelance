@@ -466,7 +466,13 @@ a:hover {
 	position: absolute;
 	top: 187px;
 	right: 82px;
+    color: #343434;
+    text-decoration: none;
 	letter-spacing: -.03em;
+    transition: text-decoration .3s ease;
+}
+.footer .author:hover {
+    text-decoration: underline;
 }
 
 /* 
@@ -626,28 +632,28 @@ a:hover {
 	overflow: hidden;
 }
 
-.samples .sample .pic {
+.samples .sample .link .pic {
 	width: 184px;
 	height: 220px;
 	float: left;
 	display: block;
 	transition: display .5s ease;
 }
-.samples .sample .pic-right {
+.samples .sample .link .pic-right {
 	float: right;
 }
-.samples .sample .pic-hidden {
+.samples .sample .link .pic-hidden {
 	display: none;
 	transition: display .5s ease;
 }
-.samples .sample:hover .pic-visible {
+.samples .sample .link:hover .pic-visible {
 	display: none;
 }
-.samples .sample:hover .pic-hidden {
+.samples .sample .link:hover .pic-hidden {
 	display: block;
 }
 
-.samples .sample .link {
+.samples .sample .link .describe {
 	width: 152px;
 	height: 180px;
 	margin: 0;
@@ -660,11 +666,11 @@ a:hover {
 	text-decoration: none;
 	transition: background-color .5s ease, color .5s ease;
 }
-.samples .sample:hover .link {
+.samples .sample .link:hover .describe {
 	color: #fff;
 	background-color: #68bc4c;
 }
-.samples .sample .link:before {
+.samples .sample .link .describe:before {
 	content: "\0020";
 	display: block;
 	overflow: hidden;
@@ -675,41 +681,42 @@ a:hover {
 	border-right: 10px solid #f6f6f6;
 	transition: border-color .5s ease;
 }
-.samples .sample:hover .link:before {
+.samples .sample .link:hover .describe:before {
 	border-right-color: #68bc4c;
 }
 
-.samples .sample .link-left:before {
+.samples .sample .link .describe-left:before {
 	top: 20px;
 	left: 186px;
 	border: 10px solid transparent;
 	border-left: 10px solid #f6f6f6;
 	border-right: none;
 }
-.samples .sample:hover .link-left:before {
+.samples .sample .link:hover .describe-left:before {
 	border-left-color: #68bc4c;
 }
 
-.samples .sample .link .h4 {
+.samples .sample .link .describe .h4 {
+    display: block;
 	margin: 0 -16px 12px 0;
 	font-family: 'PF BeauSans Pro', Arial, Tahoma, sans-serif;
 }
-.samples .sample .link .h4:before {
+.samples .sample .link .describe .h4:before {
 	width: 32px;
 	height: 2px;
 	bottom: -6px;
 	left: 3px;
 	background: #bfbfbf;
 }
-.samples .sample:hover .link .h4:before {
+.samples .sample .link:hover .describe .h4:before {
 	background: #8acb74;
 }
 
-.samples .sample .review {
+.samples .sample .link .review {
 	margin: 38px 0 0 4px;
 	position: relative;
 }
-.samples .sample .review:before {
+.samples .sample .link .review:before {
 	width: 17px;
 	height: 13px;
 	content: "\0020";
@@ -720,10 +727,10 @@ a:hover {
 	left: -16px;
 	background: url(../img/sprite.png) -170px -100px no-repeat;
 }
-.samples .sample:hover .review:before {
+.samples .sample .link:hover .review:before {
 	background: url(../img/sprite.png) -170px -120px no-repeat;
 }
-.samples .sample .review:after {
+.samples .sample .link .review:after {
 	width: 17px;
 	height: 13px;
 	content: "\0020";
@@ -735,7 +742,7 @@ a:hover {
 	right: -6px;
 	background: url(../img/sprite.png) -200px -100px no-repeat;
 }
-.samples .sample:hover .review:after {
+.samples .sample .link:hover .review:after {
 	background: url(../img/sprite.png) -200px -120px no-repeat;
 }
 
@@ -796,7 +803,13 @@ a:hover {
 }
 .news .col .top .h4 {
 	margin: 0 0 2px 0;
+    color: #343434;
+    text-decoration: none;
 	letter-spacing: -.03em;
+    transition: text-decoration .3s ease;
+}
+.news .col .top .h4:hover {
+    text-decoration: underline;
 }
 .news .col .top .date {
 	margin: 0;
