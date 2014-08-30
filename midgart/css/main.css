@@ -170,6 +170,22 @@ a:hover {
     color: #6ac345;
 }
 
+.border-title {
+    position: relative;
+}
+.border-title:before {
+    width: 58px;
+    height: 3px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #68bc4c;
+    transition: background .5s ease;
+}
+
 /* 
    _After
    ==============================================*/
@@ -612,7 +628,7 @@ a:hover {
     overflow: hidden;
 }
 .samples-service {
-    margin-top: 39px;
+    margin-top: 38px;
 }
 
 .samples .sample {
@@ -632,9 +648,20 @@ a:hover {
     height: 220px;
     float: left;
     display: block;
+    transition: display .5s ease;
 }
 .samples .sample .pic-right {
     float: right;
+}
+.samples .sample .pic-hidden {
+    display: none; 
+    transition: display .5s ease;
+}
+.samples .sample:hover .pic-visible {
+    display: none;
+}
+.samples .sample:hover .pic-hidden {
+    display: block;
 }
 
 .samples .sample .link{
@@ -650,7 +677,7 @@ a:hover {
     text-decoration: none;
     transition: background-color .5s ease, color .5s ease; 
 }
-.samples .sample .link:hover {
+.samples .sample:hover .link{
     color: #fff;
     background-color: #68bc4c;
 }
@@ -665,7 +692,7 @@ a:hover {
     border-right: 10px solid #f6f6f6;
     transition: border-color .5s ease; 
 }
-.samples .sample .link:hover:before{
+.samples .sample:hover .link:before{
     border-right-color: #68bc4c;
 }
 
@@ -676,30 +703,75 @@ a:hover {
     border-left: 10px solid #f6f6f6;
     border-right: none;
 }
-.samples .sample .link-left:hover:before{
+.samples .sample:hover .link-left:before{
     border-left-color: #68bc4c;
 }
 
 .samples .sample .link .h4 {
-    margin-bottom: 12px;
-    position: relative;
+    margin: 0 -16px 12px 0;
     font-family: 'PF BeauSans Pro', Arial, Tahoma, sans-serif;
 }
 .samples .sample .link .h4:before {
     width: 32px;
     height: 2px;
+    bottom: -6px;
+    left: 3px;
+    background: #bfbfbf;
+}
+.samples .sample:hover .link .h4:before {
+    background: #8acb74;
+}
+
+.samples .sample .review {
+    margin: 38px 0 0 4px;
+    position: relative;
+}
+.samples .sample .review:before {
+    width: 17px;
+    height: 13px;
     content: "\0020";
     display: block;
     overflow: hidden;
     position: absolute;
+    top: -8px;
+    left: -16px;
+    background: url(../img/sprite.png) -170px -100px no-repeat;
+}
+.samples .sample:hover .review:before {
+    background: url(../img/sprite.png) -170px -120px no-repeat;
+}
+.samples .sample .review:after {
+    width: 17px;
+    height: 13px;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    position: absolute;
     bottom: -6px;
-    left: 3px;
-    background: #bfbfbf;
-    transition: background .5s ease;
+    right: -6px;
+    background: url(../img/sprite.png) -200px -100px no-repeat;
 }
-.samples .sample .link:hover .h4:before {
-    background: #8acb74;
+.samples .sample:hover .review:after {
+    background: url(../img/sprite.png) -200px -120px no-repeat;
 }
+
+/* 
+   _block-details
+   ==============================================*/
+.block-details {
+
+}
+.block-details .line {
+}
+.block-details .col .heading {
+    padding: 18px 20px;
+    margin: 0 0 3px 0;
+    color: #fff;
+    background: #68bc4c;
+    outline: none;
+}
+
 
 /* 
    _News
@@ -710,20 +782,11 @@ a:hover {
 }
 .news .h2 {
     margin: 0 0 38px 18px;
-    position: relative;
     text-align: center;
 }
 .news .h2:before {
-    width: 58px;
-    height: 3px;
-    content: "\0020";
-    display: block;
-    overflow: hidden;
-    position: absolute;
     bottom: -19px;
     left: 218px;
-    background: #68bc4c;
-    transition: background .5s ease;
 }
 .news .col {
     width: 172px;
@@ -744,20 +807,11 @@ a:hover {
 .news .col .top {
     padding: 0 0 4px 27px;
     margin: 14px -30px 16px -30px;
-    position: relative;
     border-bottom: 1px solid #e7e7e7;
 }
 .news .col .top:before {
     width: 52px;
-    height: 3px;
-    content: "\0020";
-    display: block;
-    overflow: hidden;
-    position: absolute;
     bottom: -2px;
-    left: 0;
-    background: #68bc4c;
-    transition: background .5s ease;
 }
 .news .col .top .h4 {
     margin: 0 0 2px 0;
@@ -782,20 +836,11 @@ a:hover {
 }
 .portfolio .h2 {
     margin: 0 0 38px 18px;
-    position: relative;
     text-align: center;
 }
 .portfolio .h2:before {
-    width: 58px;
-    height: 3px;
-    content: "\0020";
-    display: block;
-    overflow: hidden;
-    position: absolute;
     bottom: -19px;
     left: 218px;
-    background: #68bc4c;
-    transition: background .5s ease;
 }
 .portfolio .img-link {
     width: 236px;
@@ -825,6 +870,31 @@ a:hover {
 }
 
 /* 
+   _Tabs
+   ==============================================*/
+.tabs .tab-link{
+    padding: 0;
+    margin: 0 0 38px 0;
+    list-style: none;
+    font-size: 20px;
+    font-family: 'Roboto', Arial, Tahoma, sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+.tabs .tab-link li {
+    margin: 0 12px;
+    display: inline-block;
+}
+.tabs .tab-link li a {
+    text-decoration: none;
+    border-bottom: 1px dashed #6cc449;
+    transition: border .3s ease;
+}
+.tabs .tab-link li a:hover {
+    border: none;
+}
+
+/* 
    _Block-service
    ==============================================*/
 .block-service {
@@ -832,7 +902,11 @@ a:hover {
     font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
 }
 .block-service .h2 {
-    margin: 0 0 40px 0;
+    margin: 0 0 46px 0;
+    font-family: 'PF BeauSans Pro', Arial, Tahoma, sans-serif;
+}
+.block-service .h2:before {
+    bottom: -19px;
 }
 .block-service .list {
     padding: 0 0 0 54px;
@@ -869,6 +943,9 @@ a:hover {
     margin: 0 0 19px 0;
 }
 
+/* 
+   _Title-links
+   ==============================================*/
 .title-links {
     padding: 0;
     margin: 0 0 44px;
@@ -889,35 +966,78 @@ a:hover {
     border-bottom: none;
 }
 
-
-.content-service .h2 {
-    margin: 0 0 46px 0;
+/* 
+   _Block-catalog
+   ==============================================*/
+.block-catalog {
+    margin: 26px -20px 20px 0;
+}
+.block-catalog:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.block-catalog .item {
+    width: 255px;
+    padding: 6px;
+    margin: 0 14px 2px 0;
+    float: left;
+    border: 2px solid transparent;
+    transition: border .3s ease;
+}
+.block-catalog .item:hover {
+    border: 2px solid #67bb4b;
+}
+.block-catalog .item:nth-child(4n) {
+    margin-right: 0;
+}
+.block-catalog .item .link {
+    text-decoration: none;
+}
+.block-catalog .item .name {
+    height: 61px;
+    padding: 12px 0 0 0;
+    position: relative;
+    text-align: center;
+    font-family: 'Roboto', Arial, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #6cc449;
+    border: 1px solid #e8e8e8;
+    transition: font-weight .3s ease;
+}
+.block-catalog .item:hover .name {
+    font-weight: normal;
+}
+.block-catalog .item .name:before {
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -20px;
+    left: 46%;
+    border: 10px solid transparent;  
+    border-bottom: 10px solid #fff;
 }
 
 /* 
-   _Tabs
+   _Block-gallery
    ==============================================*/
-.tabs {
-    padding: 0;
-    margin: 0 0 38px 0;
-    list-style: none;
-    font-size: 20px;
-    font-family: 'Roboto', Arial, Tahoma, sans-serif;
-    font-weight: 300;
+.block-gallery {
+    margin: 0 -38px 76px 8px; 
+}
+.block-gallery .h2 {
+    margin: 0 0 67px 0;
     text-align: center;
 }
-.tabs li {
-    margin: 0 12px;
-    display: inline-block;
+.block-gallery .border-title:before {
+    bottom: -28px;
+    left: 530px;
 }
-.tabs li a {
-    text-decoration: none;
-    border-bottom: 1px dashed #6cc449;
-    transition: border .3s ease, font-weight .3s ease;
-}
-.tabs li a:hover {
-    border-bottom: none;
-    font-weight: normal;
+.block-gallery .gallery img {
+    margin: 0 25px 30px 0;
 }
 
 
