@@ -10,7 +10,7 @@ textarea {
 
 html {
 	color: #343434;
-	font: 16px/19px 'PT Sans', Arial, Tahoma, sans-serif;
+	font: 16px/19px 'PT Sans Narrow', Arial, Tahoma, sans-serif;
 }
 
 ::-moz-selection {
@@ -620,10 +620,16 @@ h1, h2, h3, h4, h5, h6,
 }
 .content-index {
     padding: 0;
-    margin: 0; 
+    margin: 0;
+    position: relative;
+    font-family: 'PT Sans', Arial, Tahoma, sans-serif;
 }
 .content-index:after {
     border-color: transparent;
+}
+
+.content-about {
+    font-family: 'PT Sans', Arial, Tahoma, sans-serif;
 }
 
 /* 
@@ -756,9 +762,6 @@ h1, h2, h3, h4, h5, h6,
 /*
    _Samples
    ==============================================*/
-.samples-about {
-    margin-top: 72px; 
-}
 .samples {
 	margin: 0 0 28px;
 }
@@ -768,6 +771,9 @@ h1, h2, h3, h4, h5, h6,
 	display: block;
 	clear: both;
 	overflow: hidden;
+}
+.samples-about {
+    margin: 72px 0 30px 0; 
 }
 
 .samples .h2 {
@@ -920,6 +926,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
+
 /*
    _Col-info
    ==============================================*/
@@ -1039,7 +1046,6 @@ h1, h2, h3, h4, h5, h6,
 .block-service {
     margin: 0 0 56px 0;
 	font-size: 20px;
-	font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
 }
 .block-service .h2 {
 	margin: 0 0 46px 0;
@@ -1092,9 +1098,10 @@ h1, h2, h3, h4, h5, h6,
 	list-style: none;
 	font-size: 20px;
 	text-align: center;
+    font-family: 'PF BeauSans Pro', Arial, Tahoma, sans-serif;
 }
 .title-links li {
-	margin: 0 9px;
+	margin: 0 5px;
 	display: inline-block;
 }
 .title-links li a {
@@ -1171,7 +1178,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-.block-catalog .item .heading {
+.block-catalog .item .h6 {
     margin-bottom: 27px;
     display: block;
     font-size: 18px;
@@ -1217,12 +1224,25 @@ h1, h2, h3, h4, h5, h6,
     width: 254px;
     margin-bottom: 4px;
 }
+.catalog-parts .item .description {
+    background-color: transparent;
+}
+.catalog-parts .item .description .describe {
+    height: 115px;
+    display: block;
+    overflow: hidden;
+}
+.catalog-parts .item:hover .description {
+    color: #fff;
+    background-color: #6ac345;
+}
+
 
 .catalog-equipment .item {
     width: 350px;
     font-size: 14px;
 }
-.catalog-equipment .item img {
+.catalog-equipment .item .pic {
     width: 350px;
     margin-bottom: 9px;
 }
