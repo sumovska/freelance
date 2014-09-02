@@ -16,3 +16,18 @@ $(document).ready(function () {
 		moveSlides: 1
 	});
 });
+
+
+/* On document ready */
+$(document).ready(function () {
+	$('.parts-carousel .parts').bxSlider({
+		infiniteLoop: false,
+		useCSS: false,
+		pager: false,
+		slideWidth: 272,
+		minSlides: 4,
+		maxSliders: 4,
+		moveSlides: 1
+	});
+});
+
