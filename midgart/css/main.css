@@ -126,6 +126,9 @@ a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+    min-width: 1170px;
+}
 
 /* 
    _Wrapper
@@ -693,10 +696,10 @@ h1, h2, h3, h4, h5, h6,
 	background: url(../img/sprite.png) -180px 0 no-repeat;
 }
 .image-carousel .bx-controls-direction .bx-prev {
-	left: -80px;
+	left: 0;
 }
 .image-carousel .bx-controls-direction .bx-next {
-	right: -80px;
+	right: 0;
 	background-position: -230px 0;
 }
 
@@ -1079,7 +1082,6 @@ h1, h2, h3, h4, h5, h6,
 }
 .block-service .h2 {
 	margin: 0 0 46px 0;
-	font-family: 'PF BeauSans Pro', Arial, Tahoma, sans-serif;
 }
 .block-service .h-line:before {
 	bottom: -19px;
@@ -1200,7 +1202,7 @@ h1, h2, h3, h4, h5, h6,
     overflow: hidden;
     position: absolute;
     top: -19px;
-    left: 46.3%;
+    left: 115px;
     border: 9px solid transparent;
     border-bottom: 9px solid #e8e8e8;
     z-index: -1;
@@ -1291,33 +1293,36 @@ h1, h2, h3, h4, h5, h6,
 .catalog-equipment .item .h6 {
     margin-bottom: 36px;
 }
-.catalog-equipment .item .description {
+.catalog-equipment .item .text {
+    min-height: 500px;
     padding: 25px 10px 11px 28px;
-    background-color: transparent;
+    position: relative;
+    border: 1px solid #898989;
     font-size: 16px;
     line-height: 19px;
 }
-.catalog-equipment .item .description:before {
-    left: 166px;
-}
-.catalog-equipment .item .description:after {
-    left: 165px;
-}
-.catalog-equipment .item:hover .description {
-    border-color: #898989;
-}
-.catalog-equipment .item:hover .description:before {
-    border-bottom-color: #fff;
-}
-.catalog-equipment .item:hover .description:after {
-    border-bottom-color: #898989;
-}
-.catalog-equipment .item .description .text {
-    height: 486px;
+.catalog-equipment .item .text:before {
+    content: "\0020";
     display: block;
     overflow: hidden;
+    position: absolute;
+    top: -20px;
+    left: 166px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #fff;
 }
-.catalog-equipment .item .description .h-line {
+.catalog-equipment .item .text:after {
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -22px;
+    left: 165px;
+    border: 11px solid transparent;
+    border-bottom: 11px solid #898989;
+    z-index: -1;
+}
+.catalog-equipment .item .text .h-line {
     display: block;
     margin: 0 0 10px;
 }
