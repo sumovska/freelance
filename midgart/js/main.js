@@ -15,11 +15,6 @@ $(document).ready(function () {
 		minSlides: 1,
 		moveSlides: 1
 	});
-});
-
-
-/* On document ready */
-$(document).ready(function () {
 	$('.parts-carousel .parts').bxSlider({
 		infiniteLoop: false,
 		useCSS: false,
@@ -29,4 +24,10 @@ $(document).ready(function () {
 		maxSliders: 4,
 		moveSlides: 1
 	});
+	$('.faq .heading').click(function(){
+		$(this).closest('.line').toggleClass('active');
+		return false;
+	});
 });
+
+
