@@ -1,4 +1,3 @@
-
 /*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true */
 /*global window, console, document, $, jQuery, PIE */
 
@@ -24,7 +23,7 @@ $(document).ready(function () {
 		maxSliders: 4,
 		moveSlides: 1
 	});
-	$('.faq .heading').click(function(){
+	$('.faq .heading').click(function () {
 		$(this).closest('.line').toggleClass('active');
 		return false;
 	});
