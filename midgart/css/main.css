@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .header .nav li {
 	padding: 14px 17px 9px 16px;
-    margin: 0 10px;
+    margin: 0 8px;
 	float: left;
 	border-radius: 3px;
 	border: 2px solid transparent;
@@ -879,7 +879,7 @@ h1, h2, h3, h4, h5, h6,
     padding-left: 4px;
     overflow: hidden;
     display: block;
-    font: 12px/19px 'PT Sans', Arial, Tahoma, sans-serif;
+    font: 13px/19px 'PT Sans', Arial, Tahoma, sans-serif;
 }
 
 /* 
@@ -976,8 +976,17 @@ h1, h2, h3, h4, h5, h6,
 .col-info .h2 {
     margin: 0 0 40px;
 }
+
 .col-info .h-line:before {
     bottom: -19px;
+}
+.col-info .h2 a{
+    color: #343434;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+.col-info .h2 a:hover {
+    color: #898989;
 }
 
 .col-news {
@@ -989,7 +998,7 @@ h1, h2, h3, h4, h5, h6,
     padding: 0 0 11px;
     margin: 0 8px 24px;
     float: left;
-    font-size: 14px;
+    font-size: 15px;
     background-color: #f6f6f6;
     border: 1px solid #e7e7e7;
 }
@@ -1109,17 +1118,7 @@ h1, h2, h3, h4, h5, h6,
 	background: url(../img/sprite.png) -280px 0 no-repeat;
 	border-radius: 50%;
 }
-.block-service .lines {
-	width: 880px;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	font-size: 16px;
-	font-family: 'PT Sans Narrow', Arial, Tahoma, sans-serif;
-}
-.block-service .lines li {
-	margin: 0 0 19px 0;
-}
+
 
 /* 
    _Title-links
@@ -1339,6 +1338,10 @@ h1, h2, h3, h4, h5, h6,
 }
 .block-gallery .gallery .pic {
 	margin: 0 27px 30px 0;
+    transition: opacity .3s ease;
+}
+.block-gallery .gallery .pic:hover {
+    opacity: 0.8;
 }
 
 /* 
