@@ -1,16 +1,54 @@
-.img-link:before {
-	-ms-box-sizing: border-box; 
-    box-sizing: border-box;
+@font-face {
+	font-family: 'PF BeauSans Pro Thin';
+	src: url('../fonts/PFBeauSansPro/pfbeausanspro-thin-webfont.eot');
+	src: url('../fonts/PFBeauSansPro/pfbeausanspro-thin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PFBeauSansPro/pfbeausanspro-thin-webfont.woff') format('woff'), url('../fonts/PFBeauSansPro/pfbeausanspro-thin-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
-.img-link:hover:before {
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-	filter:alpha(opacity=70)
+@font-face {
+	font-family: 'PF BeauSans Pro Light';
+	src: url('../fonts/PFBeauSansPro/pfbeausanspro-light-webfont.eot');
+	src: url('../fonts/PFBeauSansPro/pfbeausanspro-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PFBeauSansPro/pfbeausanspro-light-webfont.woff') format('woff'), url('../fonts/PFBeauSansPro/pfbeausanspro-light-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
+
+.image-carousel .callback { font-family: 'PF BeauSans Pro Thin', Arial, Tahoma, sans-serif; }
+.header .contacts, .header .nav, .footer { font-family: 'PF BeauSans Pro Light', Arial, Tahoma, sans-serif; }
+
+div { zoom: 1; }
+
+.img-link:before { display: none; }
+.img-link > .before { filter: alpha(opacity=32); }
+.img-link:hover > .before { filter: alpha(opacity=70); }
+
+.block-catalog .item .name:before, .before, .catalog-equipment .item .text:before { display: none; }
+
 .block-gallery .gallery .pic:hover {
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter:alpha(opacity=80)
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
 }
 .image-carousel .callback {
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter:alpha(opacity=80)
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80)
 }
+
+body { *cursor: default; }
+.image-carousel .bx-pager-item { *display: inline; }
+.samples .sample { *width: 370px; }
+.samples .sample * { *cursor: pointer; }
+.col-news .item-2 .text { *max-height: 348px; }
+.img-link > .before { *bottom: 6px; }
+.faq .heading * { *cursor: pointer; }
+.faq .heading > .before { *top: 12px; }
+.tabs .tab-link li { *display: inline; }
+.tabs .tab-link li a { *zoom: 1; }
+.block-service .list li > .before { *top: -2px; }
+.title-links li { *display: inline; }
+.title-links li a { *zoom: 1; }
+.block-catalog .item .name > .after { *top: -40px; }
+.block-catalog .item .h6 { *zoom: 1; }
+.block-catalog .item .link-description * { *cursor: pointer; }
+.catalog-equipment .item .text > .before { *top: -39px; }
+.catalog-equipment .item .text > .after { *top: -41px; }
+.block-catalog .item .name > .after, .block-catalog .item .name > .before { display: none; }
