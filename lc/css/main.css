@@ -58,6 +58,7 @@ p {
     margin: 0 0 20px 0;
 }
 a {
+    color: #532426;
     transition: text-decoration .3s ease;
 }
 a:hover {
@@ -415,26 +416,25 @@ body {
 .catalog-heading .full {
     padding-top: 3px;
     float: right;
-    color: #532426;
 }
 
 /* 
    _Сarousel
    ======================================*/
-.carousel {
+.production .carousel {
     width: 984px;
     padding: 0 0 0 11px;
     margin: 0 0 22px 0;
     overflow: hidden;
 }
-.carousel .bx-wrapper {
+.production .carousel .bx-wrapper {
     max-width: 100% !important;
     min-height: 344px !important;
 }
-.carousel .bx-wrapper .bx-viewport {
+.production .carousel .bx-wrapper .bx-viewport {
     min-height: 344px !important;
 }
-.carousel .bx-controls-direction a {
+.production .carousel .bx-controls-direction a {
     width: 16px;
     height: 79px;
     text-indent: -1000px;
@@ -443,20 +443,23 @@ body {
     top: 160px;
     background: url(../img/sprite.png) 0 -50px no-repeat;
 }
-.carousel .bx-controls-direction .bx-prev {
+.production .carousel .bx-controls-direction .bx-prev {
     left: -16px;
 }
-.carousel .bx-controls-direction .bx-next {
+.production .carousel .bx-controls-direction .bx-next {
     right: -18px;
     background-position: -20px -50px;
 }
+.production .carousel .catalog {
+    width: 10000px !important;
+}
+
 
 /* 
    _Catalog
    ======================================*/
 .catalog {
-    width: 10000px !important;
-    padding: 6px 0 20px 0;
+    padding: 6px 0 0 0;
     margin: 0;
     list-style: none;
 }
@@ -470,7 +473,7 @@ body {
     width: 202px;
     min-height: 300px;
     padding: 6px 6px 0 7px;
-    margin: 0 33px 0 0;
+    margin: 0 33px 33px 0;
     position: relative;
     float: left;
     font-size: 14px;
@@ -602,6 +605,16 @@ body {
     background: url(../img/btn-bg2.jpg) 0 0 no-repeat;
 }
 
+
+
+.catalog-full {
+    height: 2160px;
+    overflow: hidden;
+    margin: 0 -33px 0 0;
+}
+.catalog-full .item {
+    margin-bottom: 54px;
+}
 
 /* 
    _About
@@ -780,7 +793,6 @@ body {
     list-style: none;
 }
 .submenu > li > a {
-    color: #a91218;
     text-decoration: none;
     font-weight: bold;
 }
@@ -810,9 +822,6 @@ body {
     top: 8px;
     background: #fe8c0f;
 }
-.submenu > li > ul > li > a {
-    color: #a91218;
-}
 .submenu > li > ul > li > ul {
     margin: 0;
     padding: 2px 0 0 14px;
@@ -831,7 +840,7 @@ body {
    _Main
    ======================================*/
 .main {
-    width: 724px;
+    width: 730px;
     float: right;
 }
 
@@ -849,23 +858,30 @@ body {
 }
 .proposion .link a {
     text-decoration: none;
+    transition: color .3s ease;
+}
+.proposion .link a:hover {
+    color: #fe8c0f;
 }
 
-.filter {
-    margin: 0;
-    padding: 0;
-    text-align: right;
-    list-style: none;
+.main {
     font-size: 12px;
     font-family: Arial, Tahoma, sans-serif;
+}
+.sorting {
+    margin: 0 0 11px;
+}
+.main .line {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     color: #666666;
 }
-.filter li {
-    padding: 0 4px;
+.main .line li {
     display: inline-block;
     position: relative;
 }
-.filter li:after {
+.main .line li:after {
     width: 1px;
     height: 12px;
     content: "\0020";
@@ -874,16 +890,89 @@ body {
     position: absolute;
     clear: both;
     position: absolute;
-    top: 3px;
-    right: 0;
+    top: 4px;
+    right: -4px;
     background: #532426;
 }
-.filter li.active {
+.main .line li:last-child:after {
+    display: none;
+}
+
+.main .line-type {
+    margin: 0 0 12px;
+    padding: 0 3px 0 0;
+    text-align: right;
+    
+}
+.main .line-type li {
+    margin: 0 6px 0 0;
+    
+}
+.main .line-type li.active {
     color: #921d21;
 }
-.filter li a {
-    color: #532426;
+
+.main .line-pager {
+    position: relative;
+    text-align: center;
 }
+.main .line-pager:before {
+    width: 238px;
+    height: 1px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    background: #bebebe;
+}
+.main .line-pager:after {
+    width: 238px;
+    height: 1px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    background: #bebebe;
+}
+.main .line-pager li {
+    padding: 0 13px 0 0;
+}
+.main .line-pager li:after {
+    right: 4px;
+    background: #a4a4a4;
+}
+
+.main .line-amount {
+    width: 240px;
+    margin: -10px 0 10px 0;
+    float: left;
+}
+.main .line-amount li {
+    padding: 0 3px;
+}
+.main .line-amount .title {
+    padding: 0;
+}
+.main .line-amount .title:after {
+    display: none;
+}
+.main .line-amount .active {
+    color: #532426;
+    background: #e9d5d5;
+}
+.main .all {
+    margin: -10px 15px 10px 0;
+    float: right;
+}
+.main .selected {
+    margin: 0;
+    clear: both;
+}
+
 
 /* ==========================================================================
    Media Queries
