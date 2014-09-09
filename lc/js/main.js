@@ -17,5 +17,7 @@ $(document).ready(function () {
 		$(this).closest('li').toggleClass('active');
 		return false;
 	});
+	$('.catalog .item .sale .new-price').prepend('<i class="before"></i>');
+	$('').append('<i class="after"></i>');
 });
 
