@@ -19,5 +19,6 @@ $(document).ready(function () {
 	});
 	$('.catalog .item .sale .new-price').prepend('<i class="before"></i>');
 	$('').append('<i class="after"></i>');
+	$('.community-group .member-link:nth-child(3n)').addClass('nth-child-3n');
 });
 
