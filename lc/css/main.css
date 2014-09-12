@@ -101,9 +101,30 @@ body {
     
 }
 
+
+/* 
+   _H-border
+   ======================================*/
 .h-border {
-    border-bottom: 2px dotted #f8860a;
+    position: relative;
 }
+.h-border:before {
+    width: 100%;
+    height: 2px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    background: url(../img/sprite.png) 0 -150px repeat-x;
+}
+.h-border-gray:before {
+    background-position: 0 -160px;
+}
+.h-border-white:before {
+    background-position: 0 -170px;
+}
+
 
 /* 
    _Btn
@@ -114,11 +135,10 @@ body {
     padding-top: 4px;
     display: inline-block;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: normal;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: -.06em;
     color: #fff;
     background: url(../img/btn-bg.jpg) 0 0 repeat-x;
     border-radius: 4px;
@@ -336,26 +356,37 @@ body {
 .header .cart {
     position: absolute;
     top: 83px;
-    right: 26px;
-    color: #fff;
+    right: 25px;
     font-size: 18px;
     line-height: 18px;
     text-shadow:  1px 1px 1px #818079;
 }
-.header .cart .text {
-    padding-left: 58px;
-    position: relative;
+.header .cart .link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
 }
-.header .cart .text:before {
+.header .cart .link .text {
+    position: relative;
+    color: #fff;
+    transition: color .3s ease;
+}
+.header .cart .link .text:before {
     width: 52px;
     height: 40px;
     content: "\0020";
     display: block;
     overflow: hidden;
     position: absolute;
-    top: 6px;
-    left: 0;
+    left: -58px;
+    top: 8px;
     background: url(../img/sprite.png) 0 0 no-repeat;
+}
+.header .cart .link:hover .text{
+    color: #edb6b6;
+}
+.header .cart .link .icon {
+    
 }
 .header .cart .amount {
     display: block;
@@ -412,6 +443,7 @@ body {
     display: block;
     overflow: hidden;
 }
+
 .footer .contacts {
     margin: 0;
     position: absolute;
@@ -419,6 +451,7 @@ body {
     left: 20px;
     letter-spacing: .003em;
 }
+
 .footer .author {
     position: absolute;
     top:11px;
@@ -430,6 +463,7 @@ body {
 .footer .author:hover {
     color: #ffe6e6;
 }
+
 .footer .link {
     width: 224px;
     height: 30px;
@@ -443,28 +477,35 @@ body {
 
 
 /* 
-   _Catalog-heading
+   _Shop-title
    ======================================*/
-.catalog-heading {
+.shop-title {
     padding: 0 0 5px 0;
-    margin: 0 20px 13px 24px;
+    margin: 0 20px 15px 24px;
     position: relative;
 }
-.catalog-heading:after {
+.shop-title:after {
     width: 100%;
     content: "\0020";
     display: block;
     overflow: hidden;
     clear: both;
 }
-.catalog-heading .breadcrumbs {
+
+.shop-title .breadcrumbs {
     margin: 0;
     float: left;
 }
-.catalog-heading .breadcrumbs .h2 {
-    position: relative;
+.shop-title .breadcrumbs .h2 {
+    position: relative;    
 }
-.catalog-heading .breadcrumbs .h2:after {
+.shop-title .breadcrumbs .link {
+    text-decoration: none;
+}
+.shop-title .breadcrumbs .link:hover {
+    text-decoration: underline;
+}
+.shop-title .breadcrumbs .h2:after {
     width: 11px;
     margin: 0 3px -3px;
     content: "/";
@@ -472,16 +513,17 @@ body {
     overflow: hidden;
     color: #c9c9c9;
 }
-.catalog-heading .breadcrumbs .h2:last-child:after{
+.shop-title .breadcrumbs .h2:last-child:after{
     display: none;
 }
-.catalog-heading .full {
+
+.shop-title .full {
     padding-top: 3px;
     float: right;
 }
 
 /* 
-   _Сarousel
+   _Production > carousel
    ======================================*/
 .production .carousel {
     width: 984px;
@@ -532,10 +574,11 @@ body {
     display: inline-block;
     overflow: hidden;
 }
+
 .catalog .item {
     width: 202px;
-    min-height: 300px;
-    padding: 6px 6px 0 7px;
+    min-height: 298px;
+    padding: 7px 6px 0 7px;
     margin: 0 33px 33px 0;
     position: relative;
     float: left;
@@ -577,11 +620,7 @@ body {
 .catalog .item:hover:after {
     background-position: 0 -28px; 
 }
-.catalog .item .link {
-    color: #666666;
-    display: block;
-    text-decoration: none;
-}
+
 .catalog .item .sale {
     position: absolute;
     top: -2px;
@@ -627,32 +666,47 @@ body {
     border: 10px solid transparent;
     border-top: 10px solid #de8002;
 }
+
 .catalog .item .pic {
-    width: 203px;
+    width: 150px;
     height: 210px;
     margin: 0 auto 4px;
     position: relative;
     display: block;
     border-top: 1px solid #efefef;
 }
-.catalog .item .name {
+
+.catalog .item .title-link {
+    display: block;
     padding-left: 11px;
     display: block;
     color: #666;
-}
-.catalog .item .name .brand {
-    margin: 0 0 6px 0;
-    display: block;
-    color: #666;
-    text-decoration: underline;
-}
-.catalog .item .brand:hover {
     text-decoration: none;
 }
+.catalog .item .title-link .brand {
+    margin: 0 0 5px 0;
+    display: block;
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: -.1em;
+}
+.catalog .item .title-link .brand:hover {
+    text-decoration: none;
+}
+.catalog .item .title-link .name {
+    text-decoration: none;
+    transition: text-decoration .3s ease;
+}
+.catalog .item .title-link .name:hover {
+    text-decoration: underline;
+}
+
 .catalog .item .price {
     display: block;
     font-size: 15px;
     font-weight: 500;
+    color: #a91218;
     position: absolute;
     bottom: 8px;
     left: 20px;
@@ -669,7 +723,9 @@ body {
 }
 
 
-
+/* 
+   _Catalog-full on Catalog-page
+   ======================================*/
 .catalog-full {
     height: 2160px;
     overflow: hidden;
@@ -689,6 +745,7 @@ body {
     border-top: 8px solid #eea424;
     box-shadow: 0 5px 5px rgba( 0, 0, 0, 0.2);
 }
+
 .about .h3 {
     padding-bottom: 6px;
     font-weight: normal;
@@ -696,10 +753,19 @@ body {
     letter-spacing: 0.05em;
     border-color: #fff;
 }
+
 .about .describe {
     padding: 0 0 0 48px;
     font: 14px/17px Arial, Tahoma, sans-serif;
 }
+.about .describe:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
 .about .describe .text {
     width: 462px;
     float: left;
@@ -737,7 +803,6 @@ body {
 /* 
    _New-items
    ======================================*/
-
 .new-items .unit .headlines {
     list-style: none;
 }
@@ -748,45 +813,41 @@ body {
     overflow: hidden;
     clear: both;
 }
-.new-items .unit .link {
+.new-items .unit .headlines .item .link {
     display: block;
     color: #6e6e6e;
     font: 14px/17px Arial, Tahoma, sans-serif;
 }
 
+
+/* 
+   _New-items on Index-page
+   ======================================*/
 .new-items-index {
     padding-bottom: 12px;
 }
-.new-items-index .catalog-heading {
+.new-items-index .shop-title {
     padding-bottom: 3px;
     margin-bottom: 9px;
 }
 .new-items-index .unit {
     width: 490px;
     float: left;
-}
-.new-items-index .unit-1 {
     margin-right: 4px;
-}
-.new-items-index .unit-2 {
-    width: 496px;
 }
 .new-items-index .unit .headlines {
     padding: 0 0 0 20px;
 }
-.new-items-index .unit-2 .headlines {
-    padding: 0 0 0 25px;
-}
-.new-items-index .unit .item {
+.new-items-index .unit .headlines .item {
     width: 132px;
     margin: 0 21px 0 0;
     float: left;
 }
-.new-items-index .unit .link .pic {
+.new-items-index .unit .headlines .item .link .pic {
     margin-bottom: 11px;
     display: block;
 }
-.new-items-index .unit .link .name {
+.new-items-index .unit .headlines .item .link .name {
     height: 50px;
     display: block;
     overflow: hidden;
@@ -797,22 +858,15 @@ body {
    _Brand-navigation
    ======================================*/
 .brand-navigation {
-    margin: 0 0 24px;
-}
-.brand-navigation .h2 {
-    margin: 0 0 14px;
-    font-weight: normal;
-}
-.brand-navigation .links{
     width: 100%;
     height: 29px;
     padding: 6px 0 0 0; 
-    margin: 0;
+    margin: 0 0 24px;
     font: 14px/20px Arial, Tahoma, sans-serif;
     border-radius: 3px;
     background: linear-gradient(to bottom,  rgba(165,18,23,1) 0%,rgba(121,14,18,1) 100%);
 }
-.brand-navigation .links:after {
+.brand-navigation ul:after {
     width: 100%;
     content: "\0020";
     display: block;
@@ -820,12 +874,13 @@ body {
     position: absolute;
     clear: both;
 }
-.brand-navigation .links li {
+
+.brand-navigation li {
     padding: 0 19px 9px;
     position: relative;
     float: left;
 }
-.brand-navigation .links li:after {
+.brand-navigation li:after {
     width: 1px;
     height: 17px;
     content: "\0020";
@@ -838,22 +893,23 @@ body {
     right: 0;
     background: #fe8c0f;
 }
-.brand-navigation .links .title {
+.brand-navigation .title {
     padding-left: 9px;
     color: #fe8c0f;
 }
-.brand-navigation .links li a {
+.brand-navigation li a {
     display: block;
     color: #fff;
     text-decoration: none;
     transition: color .3s ease;
 }
-.brand-navigation .links li a:hover {
+.brand-navigation li a:hover {
     color: #ffe6e6;
 }
-.brand-navigation .links > li > ul {
-    width: 566px;
-    padding: 12px 0 7px 16px;
+
+.brand-navigation .drop-down {
+    min-width: 570px;
+    padding: 12px 0 16px 12px;
     display: none;
     background: #a51217;
     border: 1px solid #fe8c0f;
@@ -863,10 +919,7 @@ body {
     font-size: 16px;
     z-index: 4;
 }
-.brand-navigation .links li:hover > ul {
-    display: block;
-}
-.brand-navigation .links > li > ul:after {
+.brand-navigation .drop-down:after {
     width: 100%;
     content: "\0020";
     display: block;
@@ -874,22 +927,29 @@ body {
     position: absolute;
     clear: both;
 }
-.brand-navigation .links > li > ul > li {
-    margin: 0 7px 0 0;
+.brand-navigation li.active .drop-down {
+    display: block;
+}
+.brand-navigation .drop-down-1 {
+    min-width: 760px; 
+}
+.brand-navigation .drop-down li {
+    margin: 0 24px 0 0;
+    padding: 0 0 0 22px;
     float: left;
     position: relative;
 }
-.brand-navigation .links > li > ul > li:after {
+.brand-navigation .drop-down li:after {
     display: none;
 }
-.brand-navigation .links > li > ul > li a {
+.brand-navigation .drop-down li a {
     position: relative;
     transition: color .3s ease;
 }
-.brand-navigation .links > li > ul > li a:hover {
+.brand-navigation .drop-down li a:hover {
     color: #fe8c0f;
 }
-.brand-navigation .links > li > ul > li a:before {
+.brand-navigation .drop-down li a:before {
     width: 16px;
     height: 2px;
     content: "\0020";
@@ -901,10 +961,25 @@ body {
     background: #e9d2d2;
     transition: background .3s ease;
 }
-.brand-navigation .links > li > ul > li a:hover:before {
+.brand-navigation .drop-down li a:hover:before {
     background: #fe8c0f;
 }
 
+.brand-navigation .drop-down-1 .order {
+    margin: 0 0 0 54px;
+    font-size: 14px;
+}
+.brand-navigation .drop-down-1 .order a:before {
+    width: 19px;
+    height: 19px;
+    top: 0px;
+    left: -26px;
+    background: url(../img/sprite.png) -200px 0;
+    transition: none; 
+}
+.brand-navigation .drop-down-1 .order a:hover:before {
+    background: url(../img/sprite.png) -170px 0;
+}
 
 /* 
    _Submenu
@@ -913,7 +988,6 @@ body {
     width: 228px;
     float: left;
 }
-
 .sidebar .h-top {
     padding: 2px 0 9px 8px;
     margin: 0 0 4px;
@@ -1113,10 +1187,6 @@ body {
     color: #e3e3e3;
 }
 
-
-
-
-
 .community-group {
     width: 220px;
     min-height: 250px;
@@ -1207,7 +1277,7 @@ body {
     color: #595959;
     letter-spacing: .03em;
 }
-.sidebar .new-items .unit .catalog-heading {
+.sidebar .new-items .unit .shop-title {
     padding: 0 0 3px 0;
     margin: 0 0 0 6px;
     border-color: #b8b8b8;
@@ -1370,131 +1440,20 @@ body {
 
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    *text-indent: -9999px;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
 
 /* ==========================================================================
-   Print styles
+   _PRINT STYLES
    ========================================================================== */
-
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+    * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; }
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3 { page-break-after: avoid; }
 }
