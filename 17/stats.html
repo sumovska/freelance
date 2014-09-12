@@ -1,255 +1,267 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>SeoStandard</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/main.css">
 
-        <!--[if lt IE 9]>
-            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
+	<!--[if lt IE 9]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="navbar navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Включить навигацию</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Superdom"></a>
+				</div>
+				<nav class="navbar-collapse collapse">
+					<ul class="navbar-list navbar-contacts">
+						<li><a href="mailto:jamesgetz@gmail.com" class="email">jamesgetz@gmail.com</a></li>
+						<li><a href="#" class="skype">james_getz</a></li>
+					</ul>
+					<ul class="navbar-nav">
+						<li><a href="#">F.A.Q.</a></li>
+						<li><a href="#">About us</a></li>
+					</ul>
+					<div class="navbar-buttons">
+						<span class="balance"><a href="#" data-toggle="modal" data-target="#modal-balance">Your balance: <strong>17$</strong></a></span>
+						<a href="#" class="link"><span class="glyphicon glyphicon-plus"></span>Funds</a>
+						<a href="stats.html" class="link link-grey"><span class="glyphicon glyphicon-signal"></span>Stats</a>
+					</div>
+					<ul class="navbar-list navbar-links">
+						<li><a href="#" class="profile">jamesgetz</a></li>
+						<li><a href="#" class="logout">Logout</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron block-states bg-white">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
-          <h2 class="h2">Finansial stats</h2>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-              July
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">july</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">june</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">May</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">April</a></li>
-            </ul>
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
-              2014
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
-              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">2014</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2013</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2012</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2011</a></li>
-            </ul>
-            <button type="button" class="btn btn-success">Apply</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 line line-headings">
-        <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3 h4 text-gray"><strong>Date</strong></div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 h4 text-gray"><strong>Spent</strong></div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 h4 text-gray"><strong>Received</strong></div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 h4 text-gray"><strong>End-of-day balance</strong></div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 line">
-        <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3">
-          <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-               27 July 2014
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">july</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">june</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">May</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">April</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 text-danger">20</div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 text-olive">30</div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-gray-lighter">30</div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 line">
-        <div class="col col-xs-5 col-sm-5 col-md-3 col-lg-3">
-          <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-               27 July 2014
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">july</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">june</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">May</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">April</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col col-xs-2 col-sm-2 col-md-3 col-lg-3"></div>
-        <div class="col col-xs-2 col-sm-2 col-md-3 col-lg-3 text-olive">30</div>
-        <div class="col col-xs-3 col-sm-3 col-md-3 col-lg-3 text-gray-lighter">30</div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 line">
-        <div class="col col-xs-5 col-sm-5 col-md-3 col-lg-3">
-          <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-               27 July 2014
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">july</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">june</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">May</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">April</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col col-xs-2 col-sm-2 col-md-3 col-lg-3 text-danger">40</div>
-        <div class="col col-xs-2 col-sm-2 col-md-3 col-lg-3 text-gray-lighter text-olive">100</div>
-        <div class="col col-xs-3 col-sm-3 col-md-3 col-lg-3 text-gray-lighter">30</div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 line">
-        <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3">
-          <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-               21 July 2014
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">july</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">june</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">May</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">April</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 text-danger">20</div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3"></div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-gray-lighter">30</div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 line">
-        <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3">
-          <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-               15 July 2014
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">july</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">june</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">May</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">April</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 text-danger">20</div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3"></div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-gray-lighter">30</div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 line">
-        <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3">
-          <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-               15 July 2014
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">1. Change for project: Facebook.com</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">20</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                  </div>
-                </a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">1. Change for project: Facebook.com</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">20</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                  </div>
-                </a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">1. Change for project: Facebook.com</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">20</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                  </div>
-                </a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">1. Change for project: Facebook.com</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">20</div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 text-danger">40</div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 text-olive">30</div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-gray-lighter">30</div>
-      </div>
-    </div>
+	<article class="content container">
+		<header class="heading row">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+				<h1 class="h1">Financial stats</h1>
+			</div>
+			<div class="filter col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<div class="dropdown-month btn-group">
+					<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">July<span class="caret"></span></button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">January</a></li>
+						<li><a href="#">February</a></li>
+						<li><a href="#">March</a></li>
+						<li><a href="#">April</a></li>
+						<li><a href="#">May</a></li>
+						<li><a href="#">June</a></li>
+						<li><a href="#">July</a></li>
+						<li><a href="#">August</a></li>
+						<li><a href="#">September</a></li>
+						<li><a href="#">October</a></li>
+						<li><a href="#">November</a></li>
+						<li><a href="#">December</a></li>
+					</ul>
+				</div>
+				<div class="dropdown-year btn-group">
+					<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">2014<span class="caret"></span></button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">2014</a></li>
+						<li><a href="#">2013</a></li>
+						<li><a href="#">2012</a></li>
+						<li><a href="#">2011</a></li>
+						<li><a href="#">2010</a></li>
+					</ul>
+				</div>
+				<button type="button" class="btn btn-submit btn-sm btn-sm-xs btn-success">Apply</button>
+			</div>
+		</header>
+		<section class="catalog">
+			<header class="heading row">
+				<div class="col col-date col-xs-4">Date</div>
+				<div class="col col-spent col-xs-2">Spent</div>
+				<div class="col col-received col-xs-3">Received</div>
+				<div class="col col-balance col-xs-3">End-of-day balance</div>
+			</header>
+			<div class="item">
+				<div class="row">
+					<div class="col col-date col-xs-4"><a href="#" class="toggle"></a>27 july 2014</div>
+					<div class="col col-spent col-xs-2">20</div>
+					<div class="col col-received col-xs-3">30</div>
+					<div class="col col-balance col-xs-3">30</div>
+				</div>
+				<div class="row area">
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>1.</var> Change for project: <strong>Facebook.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>2.</var> Change for project: <strong>Vk.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>3.</var> PayPal payment</span>
+						<span class="col col-spent col-xs-2"></span>
+						<span class="col col-received col-xs-3">100</span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-date col-xs-4"><a href="#" class="toggle"></a>27 july 2014</div>
+					<div class="col col-spent col-xs-2">20</div>
+					<div class="col col-received col-xs-3">30</div>
+					<div class="col col-balance col-xs-3">30</div>
+				</div>
+				<div class="row area">
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>1.</var> Change for project: <strong>Facebook.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>2.</var> Change for project: <strong>Vk.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>3.</var> PayPal payment</span>
+						<span class="col col-spent col-xs-2"></span>
+						<span class="col col-received col-xs-3">100</span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+				</div>
+			</div>
+			<div class="item active">
+				<div class="row">
+					<div class="col col-date col-xs-4"><a href="#" class="toggle"></a>27 july 2014</div>
+					<div class="col col-spent col-xs-2">20</div>
+					<div class="col col-received col-xs-3">30</div>
+					<div class="col col-balance col-xs-3">30</div>
+				</div>
+				<div class="row area">
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>1.</var> Change for project: <strong>Facebook.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>2.</var> Change for project: <strong>Vk.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>3.</var> PayPal payment</span>
+						<span class="col col-spent col-xs-2"></span>
+						<span class="col col-received col-xs-3">100</span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-date col-xs-4"><a href="#" class="toggle"></a>27 july 2014</div>
+					<div class="col col-spent col-xs-2">20</div>
+					<div class="col col-received col-xs-3">30</div>
+					<div class="col col-balance col-xs-3">30</div>
+				</div>
+				<div class="row area">
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>1.</var> Change for project: <strong>Facebook.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>2.</var> Change for project: <strong>Vk.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>3.</var> PayPal payment</span>
+						<span class="col col-spent col-xs-2"></span>
+						<span class="col col-received col-xs-3">100</span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-date col-xs-4"><a href="#" class="toggle"></a>27 july 2014</div>
+					<div class="col col-spent col-xs-2">20</div>
+					<div class="col col-received col-xs-3">30</div>
+					<div class="col col-balance col-xs-3">30</div>
+				</div>
+				<div class="row area">
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>1.</var> Change for project: <strong>Facebook.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>2.</var> Change for project: <strong>Vk.com</strong></span>
+						<span class="col col-spent col-xs-2">20</span>
+						<span class="col col-received col-xs-3"></span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+					<a href="#" class="line">
+						<span class="col col-date col-xs-4"><var>3.</var> PayPal payment</span>
+						<span class="col col-spent col-xs-2"></span>
+						<span class="col col-received col-xs-3">100</span>
+						<span class="col col-balance col-xs-3"></span>
+					</a>
+				</div>
+			</div>
+		</section>
+	</article>
 
-    
+	<!-- Modal Balance -->
+	<div class="modal modal-balance fade" id="modal-balance" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+					<p class="h4">Billing information</p>
+					<p>To make it easy to buy icons as you go along, you can deposit an amount of cash in US dollars to your account. Once deposited, buying an icon or an icon set is a one-click action.</p>
+					<p class="current">Current balance: 17.53 USD</p>
+					<form class="form-paypal" action="projects.html">
+						<p class="donate"><img src="img/paypal.png" alt="Paypal"> donate with paypal</p>
+						<label class="line"><input class="input-login" type="text" value="" placeholder="Login Paypal"></label>
+						<label class="line"><input class="input-password" type="password" value="" placeholder="Password"></label>
+						<p class="submit"><input type="submit" class="btn btn-sm btn-success" value="Login to PayPal&trade;"></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
-      <hr>
-
-      <footer>
-       
-      </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+	<script src="js/vendor/jquery-1.11.0.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
 </html>

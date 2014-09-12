@@ -26,6 +26,21 @@ $(window).load(function () {
 	});
 });
 
+$(window).scroll(function () {
+	var tabs = $('.tabs-fixed'), space = $('.tabs-space');
+	if (!tabs.hasClass('tabs-fixed-on') && ($(window).scrollTop() > (tabs.offset().top))) {
+		space.height(tabs.height()).show();
+		tabs.width(tabs.width()).height(tabs.height()).addClass('tabs-fixed-on');
+	}
+	if (tabs.hasClass('tabs-fixed-on') && ($(window).scrollTop() < (space.offset().top))) {
+		space.height('auto').hide();
+		tabs.width('auto').height('auto').removeClass('tabs-fixed-on');
+	}
+});
+$(window).resize(function () {
+	$('tabs-fixed-on').width($('.content').width());
+});
+
 $(document).ready(function () {
 	updateContainer();
 	$(window).resize(function () {
@@ -166,34 +181,67 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
-	$(".f_modal").fancybox({
-		href: '#slider_soul-modal',
-		fitToView: true,
-		autoResize: true,
-		autoCenter: true,
-		scrolling: 'no',
-		width: '97%',
-		//maxWidth    : '95%',
-		height: '97%',
-		autoSize: false,
-		closeClick: false,
-		closeBtn: true,
-		padding: 0,
-		margin: 0,
-		wrapCSS: 'fancymod',
-		//modal 		: true,
-		//type 		: 'html',
+	$(".fancybox-thumb").fancybox({
+		fitToView: false,
+		padding: [50, 75, 50, 200],
+		margin: 20,
+		topRatio: 0,
+		wrapCSS: 'fancybox-gallery',
+		prevEffect: 'none',
+		nextEffect: 'none',
 		helpers: {
+			media: {},
 			title: {
-				type: 'inside',
+				type: null
+			},
+			thumbs: {
+				width: 60,
+				height: 40,
 				position: 'top'
 			},
 			overlay: {
-				locked: false
+				css: {
+					'background': 'rgba(0, 0, 0, 0.9)'
+				}
 			}
 		},
-		tpl: {
-			closeBtn: '<a title="Close" class="fancybox-item fancybox-close close_modal slider_soul-close" href="javascript:;">&times;</a>'
+		afterShow: function () {
+			var fancy = $('body > #fancybox-thumbs');
+
+			function checkDOMChange() {
+				fancy = $('body > #fancybox-thumbs');
+				if (fancy.length > 0) {
+					fire();
+				} else {
+					setTimeout(checkDOMChange, 100);
+				}
+			}
+
+			function fire() {
+				var current, vid;
+				fancy = $('body > #fancybox-thumbs');
+				current = fancy.clone().prependTo('.fancybox-gallery .fancybox-skin');
+				current.removeProp('id').addClass('fancybox-thumbs').wrap('<div class="fancybox-sidebar"></div>');
+				$('li', current).eq(fancyCurrent).addClass('active').siblings('li.active').removeClass('active');
+				$("img[src*='video.jpg']", current).closest('li').addClass('video');
+				if ($('.video', current).length > 0) {
+					vid = current.clone().insertAfter(current);
+					vid.addClass('fancybox-video').find('ul').empty().append($('.video', current).clone());
+					$('.video', current).remove();
+				}
+			}
+
+			if (fancy.length > 0) {
+				fire();
+			} else {
+				setTimeout(checkDOMChange, 100);
+			}
+		},
+		afterLoad: function (current) {
+			window.fancyCurrent = current.index;
+			$('html, body').animate({
+				scrollTop: 0
+			}, 300, 'swing');
 		}
 	});
 
@@ -323,462 +371,464 @@ jQuery(document).ready(function ($) {
  * Graph
  */
 $(function () {
-	Highcharts.setOptions({
-		lang: {
-			months: [ "Январь" , "Февраль" , "Март" , "Апрель" , "Май" , "Июнь" , "Июль" , "Август" , "Сентябрь" , "Октябрь" , "Ноябрь" , "Декабрь"],
-			shortMonths: [ "Январь" , "Февраль" , "Март" , "Апрель" , "Май" , "Июнь" , "Июль" , "Август" , "Сентябрь" , "Октябрь" , "Ноябрь" , "Декабрь"]
-		},
-		plotOptions: {
-			series: {
-				fillOpacity: 0.5,
-				lineWidth: 1
-			}
-		},
-		credits: {
-			enabled: false
-		},
-		xAxis: {
-			labels: {
-				style: {
-					color: '#bcbcbc',
-					fontSize: '10px'
-				},
-				y: 20
-			}
-		},
-		yAxis: {
-			labels: {
-				style: {
-					color: '#bcbcbc',
-					fontSize: '10px'
+	if (typeof Highcharts !== 'undefined') {
+		Highcharts.setOptions({
+			lang: {
+				months: [ "Январь" , "Февраль" , "Март" , "Апрель" , "Май" , "Июнь" , "Июль" , "Август" , "Сентябрь" , "Октябрь" , "Ноябрь" , "Декабрь"],
+				shortMonths: [ "Январь" , "Февраль" , "Март" , "Апрель" , "Май" , "Июнь" , "Июль" , "Август" , "Сентябрь" , "Октябрь" , "Ноябрь" , "Декабрь"]
+			},
+			plotOptions: {
+				series: {
+					fillOpacity: 0.5,
+					lineWidth: 1
 				}
 			},
-			gridLineColor: '#ebebeb'
-		}
-	});
-
-	var chart1 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'container',
-			type: 'line'
-		},
-		title: {
-			text: 'text title',
-			style: {
-				display: 'none'
-			}
-		},
-		/*subtitle: {
-		 text: 'Irregular time data in Highcharts JS'
-		 },*/
-		legend: {
-			enabled: false
-		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: { // don't display the dummy year
-				month: '%b \'%Y'
-			}
-		},
-		yAxis: {
-			title: {
+			credits: {
 				enabled: false
 			},
-			min: 0
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-					Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
-			}
-		},
-
-		series: [
-			{
-				// name: 'Winter 2007-2008',
-				data: [
-					[Date.UTC(2013, 9, 27), 0   ],
-					[Date.UTC(2013, 10, 10), 3 ],
-					[Date.UTC(2013, 11, 18), 5 ],
-					[Date.UTC(2013, 12, 2), 7 ],
-					[Date.UTC(2014, 1, 5), 9 ]
-				],
-				color: '#37c0c8'
+			xAxis: {
+				labels: {
+					style: {
+						color: '#bcbcbc',
+						fontSize: '10px'
+					},
+					y: 20
+				}
 			},
-			{
-				// name: 'Winter 2008-2009',
-				data: [
-					[Date.UTC(2013, 9, 18), 0   ],
-					[Date.UTC(2013, 10, 26), 2 ],
-					[Date.UTC(2013, 11, 1), 4],
-					[Date.UTC(2013, 12, 11), 7],
-					[Date.UTC(2014, 1, 20), 8]
-				],
-				color: '#376ebc'
+			yAxis: {
+				labels: {
+					style: {
+						color: '#bcbcbc',
+						fontSize: '10px'
+					}
+				},
+				gridLineColor: '#ebebeb'
 			}
-		]
-	});
+		});
 
-	var chart2 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'container2',
-			type: 'area'
-		},
-		title: {
-			text: 'text title',
-			style: {
-				display: 'none'
-			}
-		},
-		/*subtitle: {
-		 text: 'Irregular time data in Highcharts JS'
-		 },*/
-		legend: {
-			enabled: false
-		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: { // don't display the dummy year
-				month: '%e. %b'
-			}
-		},
-		yAxis: {
+		var chart1 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container',
+				type: 'line'
+			},
 			title: {
+				text: 'text title',
+				style: {
+					display: 'none'
+				}
+			},
+			/*subtitle: {
+			 text: 'Irregular time data in Highcharts JS'
+			 },*/
+			legend: {
 				enabled: false
 			},
-			min: 0
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-					Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
-			}
-		},
+			xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: { // don't display the dummy year
+					month: '%b \'%Y'
+				}
+			},
+			yAxis: {
+				title: {
+					enabled: false
+				},
+				min: 0
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
+				}
+			},
 
-		series: [
-			{
-				// name: 'Winter 2007-2008',
-				data: [
-					[Date.UTC(2013, 9, 27), 0   ],
-					[Date.UTC(2013, 10, 10), 3 ],
-					[Date.UTC(2013, 11, 18), 5 ],
-					[Date.UTC(2013, 12, 2), 7 ],
-					[Date.UTC(2014, 1, 5), 9 ]
-				],
-				color: '#376ebc'
-			}
-		]
-	});
+			series: [
+				{
+					// name: 'Winter 2007-2008',
+					data: [
+						[Date.UTC(2013, 9, 27), 0   ],
+						[Date.UTC(2013, 10, 10), 3 ],
+						[Date.UTC(2013, 11, 18), 5 ],
+						[Date.UTC(2013, 12, 2), 7 ],
+						[Date.UTC(2014, 1, 5), 9 ]
+					],
+					color: '#37c0c8'
+				},
+				{
+					// name: 'Winter 2008-2009',
+					data: [
+						[Date.UTC(2013, 9, 18), 0   ],
+						[Date.UTC(2013, 10, 26), 2 ],
+						[Date.UTC(2013, 11, 1), 4],
+						[Date.UTC(2013, 12, 11), 7],
+						[Date.UTC(2014, 1, 20), 8]
+					],
+					color: '#376ebc'
+				}
+			]
+		});
 
-	var chart3 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'container3',
-			type: 'line'
-		},
-		title: {
-			text: 'text title',
-			style: {
-				display: 'none'
-			}
-		},
-		/*subtitle: {
-		 text: 'Irregular time data in Highcharts JS'
-		 },*/
-		legend: {
-			enabled: false
-		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: { // don't display the dummy year
-				month: '%e. %b'
-			}
-		},
-		yAxis: {
+		var chart2 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container2',
+				type: 'area'
+			},
 			title: {
+				text: 'text title',
+				style: {
+					display: 'none'
+				}
+			},
+			/*subtitle: {
+			 text: 'Irregular time data in Highcharts JS'
+			 },*/
+			legend: {
 				enabled: false
 			},
-			labels: {
-				format: '+{value}%'
+			xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: { // don't display the dummy year
+					month: '%e. %b'
+				}
 			},
-			min: 0
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-					Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
-			}
-		},
+			yAxis: {
+				title: {
+					enabled: false
+				},
+				min: 0
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
+				}
+			},
 
-		series: [
-			{
-				// name: 'Winter 2007-2008',
-				data: [
-					[Date.UTC(2013, 9, 27), 0   ],
-					[Date.UTC(2013, 10, 10), 100 ],
-					[Date.UTC(2013, 11, 18), 150 ],
-					[Date.UTC(2013, 12, 2), 200 ],
-					[Date.UTC(2014, 1, 5), 300 ]
-				],
-				color: '#37c0c8'
+			series: [
+				{
+					// name: 'Winter 2007-2008',
+					data: [
+						[Date.UTC(2013, 9, 27), 0   ],
+						[Date.UTC(2013, 10, 10), 3 ],
+						[Date.UTC(2013, 11, 18), 5 ],
+						[Date.UTC(2013, 12, 2), 7 ],
+						[Date.UTC(2014, 1, 5), 9 ]
+					],
+					color: '#376ebc'
+				}
+			]
+		});
+
+		var chart3 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container3',
+				type: 'line'
 			},
-			{
-				// name: 'Winter 2008-2009',
-				data: [
-					[Date.UTC(2013, 9, 18), 50   ],
-					[Date.UTC(2013, 10, 26), 140 ],
-					[Date.UTC(2013, 11, 1), 150],
-					[Date.UTC(2013, 12, 11), 220],
-					[Date.UTC(2014, 1, 20), 340]
-				],
-				color: '#376ebc'
-			}
-		]
-	});
-	var chart4 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'container4',
-			type: 'line'
-		},
-		title: {
-			text: 'text title',
-			style: {
-				display: 'none'
-			}
-		},
-		/*subtitle: {
-		 text: 'Irregular time data in Highcharts JS'
-		 },*/
-		legend: {
-			enabled: false
-		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: { // don't display the dummy year
-				month: '%b \'%Y'
-			}
-		},
-		yAxis: {
 			title: {
+				text: 'text title',
+				style: {
+					display: 'none'
+				}
+			},
+			/*subtitle: {
+			 text: 'Irregular time data in Highcharts JS'
+			 },*/
+			legend: {
 				enabled: false
 			},
-			min: 0
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-					Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
-			}
-		},
-
-		series: [
-			{
-				// name: 'Winter 2007-2008',
-				data: [
-					[Date.UTC(2013, 9, 27), 0   ],
-					[Date.UTC(2013, 10, 10), 3 ],
-					[Date.UTC(2013, 11, 18), 5 ],
-					[Date.UTC(2013, 12, 2), 7 ],
-					[Date.UTC(2014, 1, 5), 9 ]
-				],
-				color: '#37c0c8'
+			xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: { // don't display the dummy year
+					month: '%e. %b'
+				}
 			},
-			{
-				// name: 'Winter 2008-2009',
-				data: [
-					[Date.UTC(2013, 9, 18), 0   ],
-					[Date.UTC(2013, 10, 26), 2 ],
-					[Date.UTC(2013, 11, 1), 4],
-					[Date.UTC(2013, 12, 11), 7],
-					[Date.UTC(2014, 1, 20), 8]
-				],
-				color: '#376ebc'
-			}
-		]
-	});
-	var chart5 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'container5',
-			type: 'line'
-		},
-		title: {
-			text: 'text title',
-			style: {
-				display: 'none'
-			}
-		},
-		/*subtitle: {
-		 text: 'Irregular time data in Highcharts JS'
-		 },*/
-		legend: {
-			enabled: false
-		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: { // don't display the dummy year
-				month: '%b \'%Y'
-			}
-		},
-		yAxis: {
+			yAxis: {
+				title: {
+					enabled: false
+				},
+				labels: {
+					format: '+{value}%'
+				},
+				min: 0
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
+				}
+			},
+
+			series: [
+				{
+					// name: 'Winter 2007-2008',
+					data: [
+						[Date.UTC(2013, 9, 27), 0   ],
+						[Date.UTC(2013, 10, 10), 100 ],
+						[Date.UTC(2013, 11, 18), 150 ],
+						[Date.UTC(2013, 12, 2), 200 ],
+						[Date.UTC(2014, 1, 5), 300 ]
+					],
+					color: '#37c0c8'
+				},
+				{
+					// name: 'Winter 2008-2009',
+					data: [
+						[Date.UTC(2013, 9, 18), 50   ],
+						[Date.UTC(2013, 10, 26), 140 ],
+						[Date.UTC(2013, 11, 1), 150],
+						[Date.UTC(2013, 12, 11), 220],
+						[Date.UTC(2014, 1, 20), 340]
+					],
+					color: '#376ebc'
+				}
+			]
+		});
+		var chart4 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container4',
+				type: 'line'
+			},
 			title: {
+				text: 'text title',
+				style: {
+					display: 'none'
+				}
+			},
+			/*subtitle: {
+			 text: 'Irregular time data in Highcharts JS'
+			 },*/
+			legend: {
 				enabled: false
 			},
-			min: 0
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-					Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
-			}
-		},
-
-		series: [
-			{
-				// name: 'Winter 2007-2008',
-				data: [
-					[Date.UTC(2013, 9, 27), 0   ],
-					[Date.UTC(2013, 10, 10), 3 ],
-					[Date.UTC(2013, 11, 18), 5 ],
-					[Date.UTC(2013, 12, 2), 7 ],
-					[Date.UTC(2014, 1, 5), 9 ]
-				],
-				color: '#37c0c8'
+			xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: { // don't display the dummy year
+					month: '%b \'%Y'
+				}
 			},
-			{
-				// name: 'Winter 2008-2009',
-				data: [
-					[Date.UTC(2013, 9, 18), 0   ],
-					[Date.UTC(2013, 10, 26), 2 ],
-					[Date.UTC(2013, 11, 1), 4],
-					[Date.UTC(2013, 12, 11), 7],
-					[Date.UTC(2014, 1, 20), 8]
-				],
-				color: '#376ebc'
-			}
-		]
-	});
-	var chart6 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'container6',
-			type: 'line'
-		},
-		title: {
-			text: 'text title',
-			style: {
-				display: 'none'
-			}
-		},
-		/*subtitle: {
-		 text: 'Irregular time data in Highcharts JS'
-		 },*/
-		legend: {
-			enabled: false
-		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: { // don't display the dummy year
-				month: '%b \'%Y'
-			}
-		},
-		yAxis: {
+			yAxis: {
+				title: {
+					enabled: false
+				},
+				min: 0
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
+				}
+			},
+
+			series: [
+				{
+					// name: 'Winter 2007-2008',
+					data: [
+						[Date.UTC(2013, 9, 27), 0   ],
+						[Date.UTC(2013, 10, 10), 3 ],
+						[Date.UTC(2013, 11, 18), 5 ],
+						[Date.UTC(2013, 12, 2), 7 ],
+						[Date.UTC(2014, 1, 5), 9 ]
+					],
+					color: '#37c0c8'
+				},
+				{
+					// name: 'Winter 2008-2009',
+					data: [
+						[Date.UTC(2013, 9, 18), 0   ],
+						[Date.UTC(2013, 10, 26), 2 ],
+						[Date.UTC(2013, 11, 1), 4],
+						[Date.UTC(2013, 12, 11), 7],
+						[Date.UTC(2014, 1, 20), 8]
+					],
+					color: '#376ebc'
+				}
+			]
+		});
+		var chart5 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container5',
+				type: 'line'
+			},
 			title: {
+				text: 'text title',
+				style: {
+					display: 'none'
+				}
+			},
+			/*subtitle: {
+			 text: 'Irregular time data in Highcharts JS'
+			 },*/
+			legend: {
 				enabled: false
 			},
-			min: 0
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-					Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
-			}
-		},
-
-		series: [
-			{
-				// name: 'Winter 2007-2008',
-				data: [
-					[Date.UTC(2013, 9, 27), 0   ],
-					[Date.UTC(2013, 10, 10), 3 ],
-					[Date.UTC(2013, 11, 18), 5 ],
-					[Date.UTC(2013, 12, 2), 7 ],
-					[Date.UTC(2014, 1, 5), 9 ]
-				],
-				color: '#37c0c8'
+			xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: { // don't display the dummy year
+					month: '%b \'%Y'
+				}
 			},
-			{
-				// name: 'Winter 2008-2009',
-				data: [
-					[Date.UTC(2013, 9, 18), 0   ],
-					[Date.UTC(2013, 10, 26), 2 ],
-					[Date.UTC(2013, 11, 1), 4],
-					[Date.UTC(2013, 12, 11), 7],
-					[Date.UTC(2014, 1, 20), 8]
-				],
-				color: '#376ebc'
-			}
-		]
-	});
-	var chart7 = new Highcharts.Chart({
-		chart: {
-			renderTo: 'container7',
-			type: 'line'
-		},
-		title: {
-			text: 'text title',
-			style: {
-				display: 'none'
-			}
-		},
-		/*subtitle: {
-		 text: 'Irregular time data in Highcharts JS'
-		 },*/
-		legend: {
-			enabled: false
-		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: { // don't display the dummy year
-				month: '%e. %b'
-			}
-		},
-		yAxis: {
+			yAxis: {
+				title: {
+					enabled: false
+				},
+				min: 0
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
+				}
+			},
+
+			series: [
+				{
+					// name: 'Winter 2007-2008',
+					data: [
+						[Date.UTC(2013, 9, 27), 0   ],
+						[Date.UTC(2013, 10, 10), 3 ],
+						[Date.UTC(2013, 11, 18), 5 ],
+						[Date.UTC(2013, 12, 2), 7 ],
+						[Date.UTC(2014, 1, 5), 9 ]
+					],
+					color: '#37c0c8'
+				},
+				{
+					// name: 'Winter 2008-2009',
+					data: [
+						[Date.UTC(2013, 9, 18), 0   ],
+						[Date.UTC(2013, 10, 26), 2 ],
+						[Date.UTC(2013, 11, 1), 4],
+						[Date.UTC(2013, 12, 11), 7],
+						[Date.UTC(2014, 1, 20), 8]
+					],
+					color: '#376ebc'
+				}
+			]
+		});
+		var chart6 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container6',
+				type: 'line'
+			},
 			title: {
+				text: 'text title',
+				style: {
+					display: 'none'
+				}
+			},
+			/*subtitle: {
+			 text: 'Irregular time data in Highcharts JS'
+			 },*/
+			legend: {
 				enabled: false
 			},
-			labels: {
-				format: '+{value}%'
+			xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: { // don't display the dummy year
+					month: '%b \'%Y'
+				}
 			},
-			min: 0
-		},
-		tooltip: {
-			formatter: function () {
-				return '<b>' + this.series.name + '</b><br/>' +
-					Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
-			}
-		},
+			yAxis: {
+				title: {
+					enabled: false
+				},
+				min: 0
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
+				}
+			},
 
-		series: [
-			{
-				// name: 'Winter 2007-2008',
-				data: [
-					[Date.UTC(2013, 9, 27), 0   ],
-					[Date.UTC(2013, 10, 10), 100 ],
-					[Date.UTC(2013, 11, 18), 150 ],
-					[Date.UTC(2013, 12, 2), 200 ],
-					[Date.UTC(2014, 1, 5), 300 ]
-				],
-				color: '#37c0c8'
+			series: [
+				{
+					// name: 'Winter 2007-2008',
+					data: [
+						[Date.UTC(2013, 9, 27), 0   ],
+						[Date.UTC(2013, 10, 10), 3 ],
+						[Date.UTC(2013, 11, 18), 5 ],
+						[Date.UTC(2013, 12, 2), 7 ],
+						[Date.UTC(2014, 1, 5), 9 ]
+					],
+					color: '#37c0c8'
+				},
+				{
+					// name: 'Winter 2008-2009',
+					data: [
+						[Date.UTC(2013, 9, 18), 0   ],
+						[Date.UTC(2013, 10, 26), 2 ],
+						[Date.UTC(2013, 11, 1), 4],
+						[Date.UTC(2013, 12, 11), 7],
+						[Date.UTC(2014, 1, 20), 8]
+					],
+					color: '#376ebc'
+				}
+			]
+		});
+		var chart7 = new Highcharts.Chart({
+			chart: {
+				renderTo: 'container7',
+				type: 'line'
 			},
-			{
-				// name: 'Winter 2008-2009',
-				data: [
-					[Date.UTC(2013, 9, 18), 50   ],
-					[Date.UTC(2013, 10, 26), 140 ],
-					[Date.UTC(2013, 11, 1), 150],
-					[Date.UTC(2013, 12, 11), 220],
-					[Date.UTC(2014, 1, 20), 340]
-				],
-				color: '#376ebc'
-			}
-		]
-	});
+			title: {
+				text: 'text title',
+				style: {
+					display: 'none'
+				}
+			},
+			/*subtitle: {
+			 text: 'Irregular time data in Highcharts JS'
+			 },*/
+			legend: {
+				enabled: false
+			},
+			xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: { // don't display the dummy year
+					month: '%e. %b'
+				}
+			},
+			yAxis: {
+				title: {
+					enabled: false
+				},
+				labels: {
+					format: '+{value}%'
+				},
+				min: 0
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%e. %b. %Y', this.x) + ': ' + this.y + ' m';
+				}
+			},
+
+			series: [
+				{
+					// name: 'Winter 2007-2008',
+					data: [
+						[Date.UTC(2013, 9, 27), 0   ],
+						[Date.UTC(2013, 10, 10), 100 ],
+						[Date.UTC(2013, 11, 18), 150 ],
+						[Date.UTC(2013, 12, 2), 200 ],
+						[Date.UTC(2014, 1, 5), 300 ]
+					],
+					color: '#37c0c8'
+				},
+				{
+					// name: 'Winter 2008-2009',
+					data: [
+						[Date.UTC(2013, 9, 18), 50   ],
+						[Date.UTC(2013, 10, 26), 140 ],
+						[Date.UTC(2013, 11, 1), 150],
+						[Date.UTC(2013, 12, 11), 220],
+						[Date.UTC(2014, 1, 20), 340]
+					],
+					color: '#376ebc'
+				}
+			]
+		});
+	}
 });

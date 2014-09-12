@@ -9,16 +9,23 @@
 /*====================================================================================*/
 @font-face {
 	font-family: 'Roboto Condensed';
-	src: url('../fonts/roboto-condensed-webfont.eot');
-	src: url('../fonts/roboto-condensed-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-condensed-webfont.woff') format('woff'), url('../fonts/roboto-condensed-webfont.ttf') format('truetype');
+	src: url('../fonts/roboto-condensed-light.eot');
+	src: url('../fonts/roboto-condensed-light.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-condensed-light.woff') format('woff'), url('../fonts/roboto-condensed-light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto Condensed';
+	src: url('../fonts/roboto-condensed.eot');
+	src: url('../fonts/roboto-condensed.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-condensed.woff') format('woff'), url('../fonts/roboto-condensed.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Roboto Condensed';
-	src: url('../fonts/robotocondensed-light-webfont.eot');
-	src: url('../fonts/robotocondensed-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/robotocondensed-light-webfont.woff') format('woff'), url('../fonts/robotocondensed-light-webfont.ttf') format('truetype');
-	font-weight: 300;
+	src: url('../fonts/roboto-condensed-bold.eot');
+	src: url('../fonts/roboto-condensed-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-condensed-bold.woff') format('woff'), url('../fonts/roboto-condensed-bold.ttf') format('truetype');
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -26,12 +33,41 @@
 /* 02 GLOBAL SETTINGS
 /*====================================================================================*/
 body {
-	padding-top: 150px;
+	padding-top: 122px;
 	font: 15px/24px Arial, Tahoma, sans-serif;
+	color: #5c5c5c;
+}
+a {
+	color: #2cb1ce;
+	text-decoration: underline;
+}
+a:hover {
+	color: inherit;
+	text-decoration: none;
+}
+h1, .h1 {
+	margin: 0 0 25px 0;
+	font-family: 'Roboto Condensed', Arial, Tahoma, sans-serif;
+	font-size: 40px;
+	font-weight: 300;
 }
 h2, .h2 {
+	margin: 0 0 20px 0;
 	font-family: 'Roboto Condensed', Arial, Tahoma, sans-serif;
+	font-size: 30px;
 	font-weight: 300;
+}
+h3, .h3 {
+	margin: 0 0 20px 0;
+	font-family: 'Roboto Condensed', Arial, Tahoma, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+h4, .h4 {
+	margin: 0 0 20px 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
 }
 
 /*====================================================================================*/
@@ -43,6 +79,9 @@ h2, .h2 {
 	box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 	z-index: 10;
 	background: #fff;
+}
+.navbar a {
+	text-decoration: none;
 }
 .navbar > .container {
 	position: relative;
@@ -145,11 +184,20 @@ h2, .h2 {
 	cursor: default;
 }
 .navbar .navbar-buttons .balance {
-	padding: 7px 0 9px 35px;
+	padding: 7px 0 9px 0;
 	display: block;
 	font-size: 14px;
 }
-.navbar .navbar-buttons .balance:before {
+.navbar .navbar-buttons .balance a {
+	padding-left: 35px;
+	display: inline-block;
+	color: #5c5c5c;
+	transition: color .3s ease;
+}
+.navbar .navbar-buttons .balance a:hover {
+	color: #a7c02a;
+}
+.navbar .navbar-buttons .balance a:before {
 	width: 20px;
 	height: 20px;
 	content: "\0020";
@@ -210,23 +258,127 @@ h2, .h2 {
 /*====================================================================================*/
 .btn {
 	padding: 10px 12px;
-	border: none;
+	border-radius: 5px;
+	text-align: center;
 	font-size: 18px;
-	color: #fff;
 	transition: background-color .3s ease;
+	text-decoration: none;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
 	outline: none;
 }
 .btn-success {
+	border: none;
+	color: #fff;
 	background-color: #9ec023;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
 	background-color: #8ead20;
 }
 .btn-warning {
+	border: none;
 	background-color: #f59020;
 }
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
 	background-color: #e3851e;
 }
+.btn-danger {
+	border: none;
+	background-color: #c52828;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+	background-color: #de2d2d;
+}
+
+.btn-group > .dropdown-toggle {
+	width: 100%;
+	padding: 9px 11px;
+}
+
+.btn-lg { font-size: 22px; }
+.btn-sm { font-size: 15px; padding: 7px 14px; }
+.btn-sm-xs { padding: 4px 12px; }
+.btn-sm-xs .glyphicon-plus { font-size: 12px; top: 0; left: -1px; }
+.btn-xs { font-size: 12px; }
+
+.btn-group > .btn {
+	border-color: #a0a0a0;
+	color: #707070;
+}
+.btn-group > .btn-sm.dropdown-toggle {
+	padding: 3px 34px 3px 13px;
+	text-align: left;
+}
+.btn-group > .btn.dropdown-toggle .caret {
+	width: 9px;
+	height: 5px;
+	border: none;
+	margin-top: -2px;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	background: url('../img/sprite.png') no-repeat -106px -8px;
+}
+.btn-group > .dropdown-menu {
+	min-width: 84px;
+	margin-top: 1px;
+	text-align: left;
+}
+
+/*====================================================================================*/
+/* 06 MODAL
+/*====================================================================================*/
+.modal-content {
+	box-shadow: none;
+}
+.modal-header {
+	height: 0;
+	padding: 0;
+	border-bottom: none;
+	min-height: 0;
+}
+.modal-header .close {
+	outline: none;
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	z-index: 20;
+}
+.modal-body {
+	padding: 25px 25px 10px;
+}
+.modal-body:after {
+	width: 100%;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+.modal-footer {
+	margin-top: 0;
+	padding: 0 15px 15px;
+	text-align: center;
+	border-top: none;
+}
+
+/*====================================================================================*/
+/* 07 FORM
+/*====================================================================================*/
+input[type="text"], input[type="password"] {
+	padding: 5px 6px 6px;
+	border: 1px solid #a0a0a0;
+	border-radius: 5px;
+	outline: none;
+	display: inline-block;
+	font: 13px Arial, Tahoma, sans-serif;
+	color: #5c5c5c;
+	background: #fff;
+}
+input[type="text"][disabled="disabled"] {
+	border-color: #eaeaea;
+	background: #eaeaea;
+}
+::-webkit-input-placeholder { color: #5c5c5c; }
+:-moz-placeholder { color: #5c5c5c; }
+::-moz-placeholder { color: #5c5c5c; }
+:-ms-input-placeholder { color: #5c5c5c; }

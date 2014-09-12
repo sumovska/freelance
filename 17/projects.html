@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>SeoStandard</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--[if lt IE 9]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="navbar navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Включить навигацию</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Superdom"></a>
+				</div>
+				<nav class="navbar-collapse collapse">
+					<ul class="navbar-list navbar-contacts">
+						<li><a href="mailto:jamesgetz@gmail.com" class="email">jamesgetz@gmail.com</a></li>
+						<li><a href="#" class="skype">james_getz</a></li>
+					</ul>
+					<ul class="navbar-nav">
+						<li><a href="#">F.A.Q.</a></li>
+						<li><a href="#">About us</a></li>
+					</ul>
+					<div class="navbar-buttons">
+						<span class="balance"><a href="#" data-toggle="modal" data-target="#modal-balance">Your balance: <strong>17$</strong></a></span>
+						<a href="#" class="link"><span class="glyphicon glyphicon-plus"></span>Funds</a>
+						<a href="stats.html" class="link link-grey"><span class="glyphicon glyphicon-signal"></span>Stats</a>
+					</div>
+					<ul class="navbar-list navbar-links">
+						<li><a href="#" class="profile">jamesgetz</a></li>
+						<li><a href="#" class="logout">Logout</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<article class="content container">
+		<header class="heading row">
+			<div class="col-xs-12">
+				<h1 class="h1">My projects</h1>
+				<div class="project-details">
+					<p>You have: <a href="#">17 unFinished reccommendations</a> (last check: 12 nov 2014, 18:00) <a href="#" class="refresh">refresh now</a></p>
+					<p>You have: <a href="#" class="red">1 projects expired</a>, <a href="#">extend</a></p>
+				</div>
+			</div>
+		</header>
+		<div class="tabs row">
+			<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+				<ul class="nav nav-tabs">
+					<li class="icon"><a href="#"><span class="glyphicon glyphicon-green glyphicon-ok"></span><span class="layer">facebook.com</span></a></li>
+					<li class="icon"><a href="#"><span class="glyphicon glyphicon-ok"></span><span class="layer">vk.com</span></a></li>
+					<li class="icon active"><a href="#"><span class="glyphicon glyphicon-red glyphicon-alert">!</span><span class="layer">domen.ru</span></a></li>
+					<li class="icon"><a href="#"><span class="glyphicon glyphicon-ok"></span><span class="layer">domen.ru</span></a></li>
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				<a href="#" class="btn btn-new-project btn-sm btn-sm-xs btn-danger" data-toggle="modal" data-target="#modal-expired"><span class="glyphicon glyphicon-plus"></span> New project</a>
+			</div>
+		</div>
+		<section class="catalog">
+			<div class="pre">
+				<div class="row">
+					<div class="col col-xs-8 col-md-4">
+						<input class="check-all" type="checkbox" value="">
+						<a href="#" class="btn btn-query btn-sm btn-sm-xs btn-success" data-toggle="modal" data-target="#modal-recommendations"><span class="glyphicon glyphicon-plus"></span> Queries</a>
+					</div>
+					<div class="col col-buttons col-xs-12 col-md-8">
+						<a class="refresh" href="#">refresh all</a>
+						<span class="export"><a href="#" class="js">Экспорт информации</a> (?)</span>
+						<span class="graph"><a href="#" class="js">График роста</a> (?)</span>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Nelson Mandela</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/dom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-green col-xs-1">100%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item active">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Paul Walker</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/tom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-orange col-xs-1">75%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">iPhone 5s</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/rom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">30%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Cory Monteith</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/gnom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">30%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Harlem Shake</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/vzlom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">10%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Boston Marathon</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/rom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">5%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Nelson Mandela</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/dom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">25%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Paul Walker</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/tom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">15%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">iPhone 5s</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/rom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">30%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Cory Monteith</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/gnom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">30%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Harlem Shake</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/vzlom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">10%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-name col-xs-4"><label><input type="checkbox" value="">Boston Marathon</label></div>
+					<div class="col col-type col-xs-2"><a href="#">/rom</a></div>
+					<div class="col col-position col-xs-1">Position</div>
+					<div class="col col-shop col-xs-2"><a href="#" class="toggle"></a><a href="#" class="js js-toggle">shop recoms</a></div>
+					<div class="col col-percent col-percent-red col-xs-1">5%</div>
+					<div class="col col-actions col-xs-2">
+						<ul class="actions">
+							<li class="settings"><a href="#"></a></li>
+							<li class="refresh"><a href="#"></a></li>
+							<li class="stat"><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row area">
+					<div class="col-xs-12 area-font">
+						1. Your need to add BlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						2. Your need to delete BlaBlaBlaBlaBlaBla in BlaBlaBlaBla 3 times<br>
+						3. Your need to increase BlaBlaBlaBla in BlaBlaBlaBla to 2C2<br>
+						4. Your need to add BlaBlaBlaBla in BlaBlaBlaBlaBlaBla 3 times
+					</div>
+				</div>
+			</div>
+		</section>
+		<a href="#" class="btn btn-more btn-sm btn-sm-xs btn-success"><span class="glyphicon glyphicon-plus"></span> More&hellip;</a>
+	</article>
+
+	<!-- Modal Recommendations -->
+	<div class="modal modal-recommendations fade" id="modal-recommendations" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="form-recommendations" action="projects.html">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="col">
+							<p class="h3">Enter queries</p>
+							<p class="pre">(Feel in field minimum for example: buy watches <br>or: rent a car online) </p>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+						</div>
+						<div class="col">
+							<p class="h3">Enter relevant pages</p>
+							<p class="pre">
+								<label class="checkbox checkbox-toggle"><input type="checkbox" value="">Let us deFine it automatically</label>
+								(cheсk if your site is in Google - You can change<br> pages later in queries settings)
+							</p>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+							<label class="line"><input type="text" value=""></label>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-sm btn-success" value="Add queries">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Balance -->
+	<div class="modal modal-balance fade" id="modal-balance" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+					<p class="h4">Billing information</p>
+					<p>To make it easy to buy icons as you go along, you can deposit an amount of cash in US dollars to your account. Once deposited, buying an icon or an icon set is a one-click action.</p>
+					<p class="current">Current balance: 17.53 USD</p>
+					<form class="form-paypal" action="projects.html">
+						<p class="donate"><img src="img/paypal.png" alt="Paypal"> donate with paypal</p>
+						<label class="line"><input class="input-login" type="text" value="" placeholder="Login Paypal"></label>
+						<label class="line"><input class="input-password" type="password" value="" placeholder="Password"></label>
+						<p class="submit"><input type="submit" class="btn btn-sm btn-success" value="Login to PayPal&trade;"></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Expired -->
+	<div class="modal modal-expired fade" id="modal-expired" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+					<p>This project was expired.</p>
+					<p class="continue"><a href="#"><span class="glyphicon glyphicon-arrow-right"></span>Continue work!</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery-1.11.0.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
