@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5, h6,
 .header .phone {
 	color: #898989;
 	position: absolute;
-	top: 22px;
+	top: 21px;
 	left: 318px;
 	letter-spacing: -.03em;
 }
@@ -395,16 +395,42 @@ h1, h2, h3, h4, h5, h6,
 	left: 654px;
 }
 .header .phone .number {
-	width: 162px;
-	height: 24px;
-	margin: 0 0 3px 0;
+	width: 133px;
+	padding: 5px 0 0 29px;
+	margin: 0 0 4px 0;
 	display: block;
 	text-indent: -1000px;
 	overflow: hidden;
-	background: url(../img/sprite.png) 0 -30px no-repeat;
+	position: relative;
+	background: url(../img/phone-1.png) 29px 5px no-repeat;
+	background-size: 133px auto;
 }
 .header .phone .number-2 {
-	background-position: 0 -60px;
+	background: url(../img/phone-2.png) 29px 5px no-repeat;
+	background-size: 133px auto;
+}
+.header .phone .number:before, .header .phone .number > .before {
+	width: 15px;
+	height: 20px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border: 2px solid #1f1f1f;
+}
+.header .phone .number:after, .header .phone .number > .after {
+	width: 7px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	bottom: 3px;
+	left: 6px;
+	border-top: 1px solid #6f6f6f;
+	border-bottom: 1px solid #5f5f5f;
 }
 
 .header .order {
@@ -564,8 +590,8 @@ h1, h2, h3, h4, h5, h6,
 	padding: 0;
 	margin: 0;
 	position: absolute;
-	top: 172px;
-	left: 494px;
+	top: 174px;
+	left: 496px;
 	list-style: none;
 }
 .footer .social li {
@@ -574,12 +600,13 @@ h1, h2, h3, h4, h5, h6,
 	margin: 0 3px;
 	display: block;
 	float: left;
-	background: url(../img/sprite.png) 0 -100px no-repeat;
+	background: url(../img/sprite.png) 0 -15px no-repeat;
+	background-size: 175px auto;
 	transition: opacity .3s ease;
 }
-.footer .social li.tw { background-position: -40px -100px }
-.footer .social li.vk { background-position: -80px -100px }
-.footer .social li.google { background-position: -120px -100px }
+.footer .social li.tw { background-position: -40px -15px; }
+.footer .social li.vk { background-position: 0 -55px; }
+.footer .social li.google { background-position: -40px -55px; }
 .footer .social li:hover {
 	opacity: 0.5;
 }
