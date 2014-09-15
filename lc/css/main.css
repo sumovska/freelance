@@ -11,7 +11,8 @@ html, button, input, select, textarea {
 }
 html {
     height: 100%;
-    font: 16px/20px Arial, Tahoma, sans-serif;
+    color: #666;
+    font: 14px/20px Arial, Tahoma, sans-serif;
     background: #f3f2e4;
 }
 audio, canvas, img, video {
@@ -61,7 +62,7 @@ textarea {
    ========================================================================== */
 ul {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 50px;
 }
 p {
     margin: 0 0 20px 0;
@@ -101,6 +102,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #f8860a;
 }
 
+
+
 /* ==========================================================================
    _LAYOUT
    ========================================================================== */
@@ -108,10 +111,37 @@ body {
     min-width: 1200px;
     
 }
+.wrapper {
+    width: 994px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.block {
+    padding: 20px;
+    position: relative;
+    background: #fff;
+}
+.sidebar {
+    width: 228px;
+    float: left;
+}
+.content {
+    width: 730px;
+    float: right;
+}
+
+.wrapper:after, .block:after, .sidebar:after, .content:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
 
 
 /* 
-   _H-border
+   _H-border (dotted-bottom-border)
    ======================================*/
 .h-border {
     position: relative;
@@ -134,7 +164,7 @@ body {
 }
 
 /* 
-   _Bullet-list
+   _Bullet-list (ul with circle-bullet)
    ======================================*/
 .bullet-list {
     list-style: none;
@@ -158,7 +188,22 @@ body {
 }
 
 /* 
-   _Btn
+   _Table-price
+   ======================================*/
+.table-price .distance {
+    font-size: 18px;
+}
+.table-price .price {
+    font-size: 14px;
+    padding: 4px 21px 8px 21px;
+}
+.table-price td {
+    padding: 4px 14px 8px 14px;
+    border: 1px solid #cacaca;
+}
+
+/* 
+   _Buttons
    ======================================*/
 .btn {
     width: 111px;
@@ -176,11 +221,79 @@ body {
     transition: color .3s ease;
 }
 .btn-pick {
-    background: url(../img/btn-bg-3.jpg) 0 0 repeat-x;
+    background-position: 0 -23px;
+}
+.btn-back {
+    background-position: 0 -46px;
 }
 .btn:hover {
     color: #ae1917;
-    background: url(../img/btn-bg2.jpg) 0 0 no-repeat;
+    background: #ffc527;
+    box-shadow: inset 1px 1px 2px rgba( 148, 114, 23, 1);
+}
+
+.btn-submit {
+    padding: 5px 17px;
+    margin: 0;
+    height: 23px;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 3px;
+    background: url(../img/btn-bg.jpg) 0 0 repeat-x;
+    font-family: 'Calibri', Arial, Tahoma, sans-serif;
+}
+.btn-submit-pick {
+    background-position: 0 -23px;
+}
+.btn-submit-back {
+    background-position: 0 -46px;
+}
+.btn-submit-close {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    margin: 0; 
+    display: inline-block;
+    background-position: 0 -46px;
+    border-radius: 50%;
+}
+
+/* 
+   _Input[type="text"]
+   ======================================*/
+.btn-text {
+    padding: 6px;
+    margin: 0;
+    display: inline-block;
+    border: none;
+    outline: none;
+    color: #2e2e2e;
+    font-size: 14px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: inset 1px 2px 2px rgba( 150, 150, 150, 1);
+}
+.btn-text-border {
+    border: 1px solid #e3e3e3;
+}
+
+
+/*
+   _Attention
+   ======================================*/
+.attention {
+    padding: 7px 30px 6px 20px;
+    margin: 0 0 14px;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: -.003em;
+    text-align: center;
+    background: #fe8c0f;
 }
 
 /* 
@@ -270,38 +383,6 @@ body {
 }
 
 /* 
-   _Wrapper
-   ======================================*/
-.wrapper {
-    width: 994px;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-.wrapper:after {
-    width: 100%;
-    content: "\0020";
-    display: block;
-    clear: both;
-    overflow: hidden;
-}
-
-/* 
-   _Block
-   ======================================*/
-.block {
-    position: relative;
-    background: #fff;
-}
-.block:after {
-    width: 100%;
-    content: "\0020";
-    display: block;
-    clear: both;
-    overflow: hidden;
-}
-
-/* 
    _Header
    ======================================*/
 .header {
@@ -310,7 +391,7 @@ body {
     position: relative;
     color: #cacaca;
     background-color: #401517;
-    font-family: 'Calibri', Arial, Tahoma, sans-serif;
+    font: 16px/20px 'Calibri', Arial, Tahoma, sans-serif;
 }
 .header:before {
     width: 100%;
@@ -579,6 +660,7 @@ body {
     float: left;
 }
 .shop-title .full {
+    font-size: 16px;
     padding-top: 3px;
     float: right;
 }
@@ -610,6 +692,7 @@ body {
    _Breadrumbs
    ======================================*/
 .breadcrumbs {
+    margin: 0 0 12px;
     font-size: 12px;
     color: #532426;
     text-align: right;
@@ -690,7 +773,6 @@ body {
     border-radius: 2px 2px 0 0;
     border: 2px solid transparent;
     border-bottom: none;
-    color: #666666;
     background-color: #fff;
 }
 .catalog .item:hover {
@@ -832,25 +914,28 @@ body {
 
 
 /* 
-   _Catalog-2
+   _Catalog-small
    ======================================*/
-.catalog-2 {
+.catalog-small {
+    padding: 0;
+    margin: 0 0 4px;
+    clear: both;
     text-align: center;
     list-style: none;
 }
-.catalog-2 .item {
+.catalog-small .item {
     width: 251px;
     min-height: 164px;
     margin: 0 26px 22px;
     display: inline-block;
     background: transparent;
 }
-.catalog-2 .item .pic {
+.catalog-small .item .pic {
     margin: 0 0 8px;
     display: block;
 
 }
-.catalog-2 .item .name {
+.catalog-small .item .name {
     display: block;
     line-height: 14px;
     margin: 0 0 8px;
@@ -862,8 +947,9 @@ body {
    _About
    ======================================*/
 .about {
-    margin: 28px 0 24px;
+    margin: 24px 0;
     padding-bottom: 4px;
+    color: #2e2e2e;
     background-color: #f4c64e;
     border-top: 8px solid #eea424;
     box-shadow: 0 5px 5px rgba( 0, 0, 0, 0.2);
@@ -987,9 +1073,11 @@ body {
     height: 29px;
     padding: 6px 0 0 0; 
     margin: 0 0 24px;
-    font: 14px/20px Arial, Tahoma, sans-serif;
     border-radius: 3px;
     background: linear-gradient(to bottom,  rgba(165,18,23,1) 0%,rgba(121,14,18,1) 100%);
+}
+.brand-navigation ul {
+    padding: 0;
 }
 .brand-navigation ul:after {
     width: 100%;
@@ -1109,20 +1197,17 @@ body {
 /* 
    _Submenu
    ======================================*/
-.sidebar {
-    width: 228px;
-    float: left;
-}
 .sidebar .h-top {
     padding: 2px 0 9px 8px;
-    margin: 0 0 4px;
+    margin: 0 0 6px;
     font-weight: normal;
 }
 
 .submenu {
     padding: 0 0 7px;
     margin: 0 0 28px;
-    font: 13px/34px Arial, Tahoma, sans-serif;
+    font-size: 13px;
+    line-height: 34px;
     list-style: none;
 }
 .submenu > li {
@@ -1335,7 +1420,6 @@ body {
     margin: 0 0 39px;
     font-size: 12px;
     background: #fff;
-    font-family: Arial, Tahoma, sans-serif;
 }
 .community-group .head {
     width: 208px;
@@ -1367,11 +1451,10 @@ body {
     letter-spacing: .03em;
 }
 .community-group .amount {
-    margin: 0 0 4px;
-    text-align: center;
-    font-weight: bold;
+    margin: 0 0 7px;
 }
 .community-group .members {
+    padding: 0;
     margin: 0 11px 4px;
 }
 .community-group .member-link {
@@ -1451,13 +1534,8 @@ body {
 
 
 /* 
-   _Content
-   ======================================*/
-.content {
-    width: 730px;
-    float: right;
-}
-
+   _Proposion
+   =================================*/
 .proposion {
     padding: 0;
     margin: 0 0 14px;
@@ -1481,7 +1559,7 @@ body {
 
 .sorting {
     margin: 0 0 14px;
-    font: 12px/20px Arial, Tahoma, sans-serif;
+    font-size: 12px;
 }
 .sorting .line {
     padding: 0;
@@ -1547,23 +1625,14 @@ body {
     margin: 0;
     clear: both;
 }
-.attention {
-    padding: 7px 30px 6px 20px;
-    margin: 0 0 14px;
-    color: #fff;
-    font-family: Arial, Tahoma, sans-serif;
-    font-size: 18px;
-    letter-spacing: -.003em;
-    text-align: center;
-    background: #fe8c0f;
-}
 
 /*
    _Text-about
    ======================================*/
 .text-about {
     padding: 28px 18px 0;
-    font: 12px/14px Arial, Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 
@@ -1572,14 +1641,7 @@ body {
    ======================================*/
 .block-inform {
     padding: 24px 20px 20px 20px;
-    font-size: 14px;
-    color: #666;
     line-height: 19px;
-    font-family: Arial, Tahoma, sans-serif;
-}
-
-.block-inform .h4 {
-    font-family: Arial, Tahoma, sans-serif;
 }
 
 .block-inform .inform-nav {
@@ -1626,97 +1688,26 @@ body {
     text-decoration: underline;
 }
 
+.block-inform .crumbs-title .name:after {
+    margin: 0 4px -4px;
+}
+
 .block-inform .table-price {
     margin: 0 0 0 84px;
     float: right;
 }
-.block-inform .table-price .distance {
-    font-size: 18px;
-}
-.block-inform .table-price .price {
-    font-size: 14px;
-    padding: 4px 21px 8px 21px;
-}
-.block-inform .table-price td {
-    padding: 4px 14px 8px 14px;
-    border: 1px solid #cacaca;
-}
 
+.block-inform .attention-small {
+    margin-right: 14px; 
+    float: left;
+}
 
 /* 
-   _Block-cart
+   _Block-item
    ======================================*/
-
-.block-cart {
-    padding: 22px 10px 10px 39px;
-}
-.block-cart .table-calculation {
-    font-family: Arial, Tahoma, sans-serif;
-}
-.block-cart .table-calculation caption {
-    color: #a91218;
-    text-align: left;
-    font-size: 18px;
-    margin: 0 0 17px 2px;
-}
-.block-cart .table-calculation td {
-    padding: 4px;
-    border: 1px solid #cacaca;
-}
-.block-cart .table-calculation .title {
-    font-size: 18px;
-    color: #f8860a;
-    text-align: center;
-}
-.block-cart .table-calculation .img {
-    padding: 8px 20px;
-    margin: 0 auto;
-    display: block;
-}
-.block-cart .table-calculation .name {
-    padding: 0 49px 0 11px;
-}
-.block-cart .table-calculation .name-link {
-    font-size: 12px;
-    display: block;
-    color: #532426;
-}
-.block-cart .table-calculation .article {
-    color: #666666;
-    font-size: 14px;
-}
-.block-cart .table-calculation .price {
-    padding: 0 14px;
-    font-size: 15px;
-    color: #a91218;
-    text-align: center;
-}
-.block-cart .table-calculation .amount {
-    padding: 0 24px;
-}
-.block-cart .table-calculation input[type="text"] {
-    width: 67px;
-    height: 30px;
-    margin: 0 auto;
-    display: block;
-    outline: none;
-    color: #666666;
-    font-size: 14px;
-    border-radius: 6px;
-    text-align: center;
-    border: 1px solid #e3e3e3;
-    box-shadow: inset 1px 1px 4px rgba( 150, 150, 150, 1);
-}
-.block-cart .table-calculation .delete {
-    padding: 0 38px;
-}
-.block-cart .table-calculation input[type="checkbox"] {
-    margin: 0 auto;
-    display: block;
-}
-
 .block-item {
-    padding: 23px 20px 20px 50px;
+    padding: 18px 4px 8px 50px;
+    margin: 0 0 26px;
     font-size: 14px;
 }
 .block-item .picture {
@@ -1742,10 +1733,10 @@ body {
 .block-item .info .name-link:hover {
     text-decoration: underline;
 }
-.block-item .info .describe {
+.block-item .info .product {
     position: relative;
 }
-.block-item .info .describe:after {
+.block-item .info .product:after {
     width: 100%;
     content: "\0020";
     display: block;
@@ -1800,14 +1791,249 @@ body {
     left: 3px;
     background: url(../img/sprite.png) -110px 0 no-repeat;
 }
-
+.block-item .describe {
+    margin: 0 0 29px;
+    clear: left;
+}
 .block-item .note {
     width: 200px;
-    height: 200px;
+    margin: -20px 14px 0 22px;
+    padding: 19px 0 17px 0;
+    float: right;
     font-size: 21px;
-    line-height: normal;
-    border: 1px dotted #f8860a;
+    text-align: center;
+    line-height: 50px;
+    border: 2px dotted #f8860a;
 }
+
+
+/* 
+   _Block-absent
+   ======================================*/
+.block-absent {
+    padding-bottom: 14px; 
+    margin-bottom: 36px;
+    font-size: 14px;
+}
+.block-absent .item {
+    margin-bottom: 0;
+}
+.block-absent .search input[type="text"] {
+    width: 260px;
+    margin: 0 14px 0 8px;
+    border: 1px solid #e3e3e3;
+}
+.block-absent .search input[type="submit"] {
+    text-transform: none;
+}
+
+/* 
+   _trending
+   ======================================*/
+.trending {
+    padding-bottom: 25px;
+    margin-bottom: 28px;
+    border-bottom: 3px solid #fe8c0f;
+}
+.trending .h4 {
+    margin-bottom: 10px;
+}
+.trending .assess {
+    width: 418px;
+    float: right;
+    line-height: 48px;
+    margin-top: -14px;
+}
+.trending .assess .btn {
+    width: 144px;
+}
+.trending .assess .rating {
+    bottom: -10px;
+}
+.trending .links {
+    list-style: none;
+    padding: 0 0 0 39px;
+    font-size: 12px;
+}
+
+
+/* 
+   _Block-reviews
+   ======================================*/
+.block-reviews {
+    font-size: 14px;
+    line-height: 14px;
+    padding-bottom: 25px;
+    margin-bottom: 28px;
+    border-bottom: 3px solid #fe8c0f;
+}
+.block-reviews .h4 {
+    margin-bottom: 18px;
+}
+.block-reviews .reviews {
+    padding: 0;
+    list-style: none;
+    line-height: 20px;
+}
+.block-reviews .reviews .item {
+    margin-bottom: 16px;
+}
+.block-reviews .comment {
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+    line-height: 14px;
+    text-align: justify;
+}
+.send-review {
+    width: 418px;
+    margin-left: 20px;
+    float: right;
+}
+.send-review .h4 {
+    margin-bottom: 14px;
+    display: block;
+}
+.send-review .name {
+    margin-bottom: 13px;
+    display: block;
+}
+.send-review input[type="text"] {
+    width: 100%;
+    margin-top: 10px;
+}
+.send-review textarea[name="text"] {
+    width: 100%;
+    margin-top: 10px;
+    height: 146px;
+}
+.send-review input[type="submit"] {
+    width: 116px;
+    float: right;
+}
+
+
+/* 
+   _Other-sections
+   ======================================*/
+.other-sections {
+    margin-bottom: 20px;
+    list-style: none;
+    font-size: 12px;
+    line-height: 26px;
+}
+.other-sections li {
+    position: relative;
+}
+.other-sections li:before {
+    width: 19px;
+    height: 19px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 2px;
+    left: -34px;
+    background: url(../img/sprite.png) -170px 0;
+}
+
+/* 
+   _Block-cart
+   ======================================*/
+.block-cart {
+    padding: 22px 10px 10px 39px;
+}
+.block-cart .table-calculation {
+    margin: 0 0 16px;
+}
+.block-cart .table-calculation .table-title {
+    color: #a91218;
+    text-align: left;
+    font-size: 18px;
+    margin: 0 0 17px 2px;
+}
+.block-cart .table-calculation td {
+    padding: 5px;
+    border: 1px solid #cacaca;
+}
+.block-cart .table-calculation .title {
+    font-size: 18px;
+    color: #f8860a;
+    text-align: center;
+}
+.block-cart .table-calculation .img {
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+.block-cart .table-calculation .name {
+    padding: 0 49px 0 11px;
+}
+.block-cart .table-calculation .name .name-link {
+    font-size: 12px;
+    display: block;
+    color: #532426;
+}
+.block-cart .table-calculation .name .article {
+    color: #666666;
+    font-size: 14px;
+}
+.block-cart .table-calculation .price {
+    padding: 0 14px;
+    font-size: 15px;
+    color: #a91218;
+    text-align: center;
+}
+.block-cart .table-calculation .amount {
+    padding: 0 27px;
+}
+.block-cart .table-calculation input[type="text"] {
+    width: 52px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    border: 1px solid #e3e3e3;
+}
+.block-cart .table-calculation .delete {
+    padding: 0 38px;
+}
+.block-cart .table-calculation input[type="checkbox"] {
+    margin: 0 auto;
+    display: block;
+}
+
+
+.to-continue {
+    padding: 20px 20px 20px 44px;
+    margin-bottom: 44px;
+    background: #ededef;
+}
+.input-field .name {
+    margin-right: 28px; 
+    display: inline-block;
+    vertical-align: top;
+}
+.input-field .name input[type="text"] {
+    width: 258px;
+    padding-left: 11px;
+    color: #666;
+    margin-top: 9px;
+    display: block;
+}
+.input-field .name .required {
+    border: 1px solid #dd0e05;
+}
+.to-continue .btn:hover {
+    color: #fff;
+    background: url(../img/btn-bg.jpg) 0 0 repeat-x;
+}
+.input-field .phone-number input[type="submit"] {
+    margin: 0 0 0 6px;
+}
+.to-continue .continue {
+    margin-right: 40px;
+    float: right;
+}
+
 
 
 /* ==========================================================================

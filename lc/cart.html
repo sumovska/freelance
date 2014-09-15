@@ -66,7 +66,7 @@
 
 				<div class="block block-cart">
 					<table class="table-calculation">
-						<caption>Ваши товары в корзине</caption>
+						<caption class="table-title">Ваши товары в корзине</caption>
 						<tr class="title">
 							<td>&nbsp</td>
 							<td>Название</td>
@@ -82,7 +82,7 @@
 							</td>
 							<td class="price">1060 руб.</td>
 							<td class="amount">
-								<input type="text" value="12">
+								<input class="btn-text" type="text" value="12">
 							</td>
 							<td>
 								<input type="checkbox" checked="">
@@ -96,7 +96,7 @@
 							</td>
 							<td class="price">60 руб.</td>
 							<td class="amount">
-								<input type="text" value="12">
+								<input class="btn-text" type="text" value="12">
 							</td>
 							<td>
 								<input type="checkbox">
@@ -110,7 +110,7 @@
 							</td>
 							<td class="price">235 руб.</td>
 							<td class="amount">
-								<input type="text" value="12">
+								<input class="btn-text" type="text" value="12">
 							</td>
 							<td>
 								<input type="checkbox">
@@ -124,13 +124,57 @@
 							</td>
 							<td class="price">1060 руб.</td>
 							<td class="amount">
-								<input type="text" value="12">
+								<input class="btn-text" type="text" value="12">
 							</td>
 							<td>
 								<input type="checkbox">
 							</td>
 						</tr>
+						<tr class="text-orange">
+							<td class="text-right h4" colspan="2">Стоимость доставки</td>
+							<td class="text-center h4">240 руб</td>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td class="text-right" colspan="2">Итого:</td>
+							<td class="text-center"><strong>1888 руб.</strong></td>
+							<td colspan="2"><em>включая доставку</em></td>
+						</tr>
+						<tr>
+							<td class="text-right" colspan="2">Дата доставки:</td>
+							<td class="text-red text-center"><strong>26.08.2014</strong></td>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td class="text-right" colspan="2">До бесплатной доставки осталось:</td>
+							<td class="text-center">1112 руб.</td>
+							<td colspan="2"></td>
+						</tr>
 					</table>
+					<form action="#">
+						<p class="text-center">
+							<input class="btn-submit btn-submit-pick" type="submit" value="пересчитать">
+						</p>
+					</form>
+				</div>
+				<div class="block to-continue">
+					<p class="h4 text-red">Для продолжения заказа введите:</p>
+					<p class="input-field">
+						<label class="name">
+							Имя
+							<input class="btn-text" type="text" placeholder="Светлана">
+						</label>
+						<label class="name">
+							Фамилия
+							<input class="btn-text" type="text">
+						</label>
+						<label class="name">
+							Телефон
+							<input class="btn-text" type="text">
+						</label>
+					</p>
+					<input class="btn-submit btn-submit-back" type="submit" value="вернуться">
+					<a href="cart-continue.html" class="btn continue">продолжить</a>
 				</div>
 
 			</div>

@@ -23,6 +23,7 @@ $(document).ready(function () {
 	});
 	$('.catalog .item .sale .new-price').prepend('<i class="before"></i>');
 	$('').append('<i class="after"></i>');
+	$('..crumbs-title .name:last-child').addClass('last-child');
 	$('.community-group .member-link:nth-child(3n)').addClass('nth-child-3n');
 });
 
