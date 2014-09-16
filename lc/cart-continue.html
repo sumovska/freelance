@@ -66,69 +66,94 @@
 
 				<div class="block block-cart block-cart-continue">
 					<p class="h4 text-red">5. Завершение заказа</p>
-					<p class="input-field">
-						<label class="name">
-							<span class="text-orange">Фамилия</span>
-							<input class="btn-text required" type="text" placeholder="Иванова">
-						</label>
-						<label class="name text-orange">
-							Имя
-							<input class="btn-text required" type="text" placeholder="Светлана">
-						</label>
-						<label class="name text-orange">
-							Отчество
-							<input class="btn-text required" type="text">
-						</label>
-					</p>
-					<p class="input-field">
-						<label class="name phone-number">
-							<span class="text-orange">Ваши телефоны:</span> <br> <br>
-							<span class="text-red h4">8 (495) 546-78-18</span>
-							<input class="btn-submit btn-submit-close" type="submit" value="x"> <br>
-							<span class="text-red h4">8 (495) 546-78-18</span>
-							<input class="btn-submit btn-submit-close" type="submit" value="x"> 
-						</label>
-						<label class="name">
-							<span class="text-orange">Добавить телефоны</span> <br>
-							<em>в формате 8 (ххх) ххх-хх-хх</em>
-							<span>моб.</span>
-							<input class="btn-text btn-text-border" type="text" value="">
-							<span>раб.</span>
-							<input class="btn-text btn-text-border" type="text" value="">
-							<span>дом.</span>
-							<input class="btn-text btn-text-border" type="text" value=""> 
-							<em>рекомендуем оставить несколько номеров</em> <br>
-							<span class="text-center"><input class="btn-submit btn-submit-pick" type="submit" value="добавить"></span>
-						</label>
-						<label class="name">
-							<span class="text-orange">E-mail</span>
-							<input class="btn-text required" type="text" value="">
-						</label>
-					</p>
-					<p class="h4"></p>
-					<label>
-						c
-						<select></select>
-					</label>
-					<label>
-						до
-						<select></select>
-					</label>
-					<span class="text-red">/ минимальный промежуток - 4 часа</span>
-					<label>
-						Дополнительные примечания и просьбы к заказу
-						<textarea name="text"></textarea>
-					</label>
-					<p class="h4">
-						<span class="text-orange">Выбранный адрес:</span>
-						<span class="text-red">самовывоз (Китай город)</span>
-					</p>
-					<p>
-						<span class="">Расчетная дата прибытия заказа на пункт самовывоза: <span class="h4"> 26.08.2014</span></span>
-						<span>Стоимость заказа: <span class="h4">1127 руб.</span>  (включая стоимость самовывоза <span class="h4">0 руб.</span> )</span>
-					</p>
-					<input class="btn-submit" type="submit" value="завершить">
-					<em>для завершения заказа необходимо заполнить все поля отмеченные красным</em>
+					<form>
+						<p class="input-field">
+							<label class="name">
+								<span class="text-orange">Фамилия</span>
+								<input class="btn-text btn-required" type="text" placeholder="Иванова">
+							</label>
+							<label class="name text-orange">
+								Имя
+								<input class="btn-text btn-required" type="text" placeholder="Светлана">
+							</label>
+							<label class="name text-orange">
+								Отчество
+								<input class="btn-text btn-required" type="text">
+							</label>
+						</p>
+						<div class="input-field">
+							<p class="name phone-number">
+								<span class="text-orange">Ваши телефоны:</span> 
+								<label class="text-red h4">
+									8 (495) 546-78-18
+									<input class="btn-submit btn-submit-close" type="submit" value="x">
+								</label>
+								<label class="text-red h4">
+									8 (912) 000-77-12
+									<input class="btn-submit btn-submit-close" type="submit" value="x">
+								</label>
+							</p>
+							<p class="name">
+								<span class="heading">
+									<span class="text-orange">Добавить телефоны</span> <br>
+									<em class="note">в формате 8 (ххх) ххх-хх-хх</em>
+								</span>
+								<span class="line">
+									<label for="number-1">моб.</label>
+									<input class="btn-text btn-text-border" type="text" value="" id="number-1">
+								</span>
+								<span class="line">
+									<label for="number-2">раб.</label>
+									<input class="btn-text btn-text-border" type="text" value="" id="number-2">
+								</span>
+								<span class="line">
+									<label for="number-3">дом.</label>
+									<input class="btn-text btn-text-border" type="text" value="" id="number-3">
+								</span>
+								<span class="heading"><em class="text-center note">рекомендуем оставить несколько номеров</em></span>
+								<input class="btn-submit btn-submit-pick" type="submit" value="добавить">
+							</p>
+							<p class="name">
+								<label>
+									<span class="text-orange">E-mail</span>
+									<input class="btn-text btn-required" type="text" value="">
+								</label>
+							</p>
+							<p class="text-orange">Желаемое время приезда курьера</p>
+							<p>
+								<label class="text-red">
+									c
+									<select></select>
+								</label>
+								<label>
+									до
+									<select></select>
+								</label>
+								<em class="text-red">/ минимальный промежуток - 4 часа</em>
+							</p>
+							<p>
+								<label class="name">
+									<strong>Дополнительные примечания и просьбы к заказу</strong>
+									<textarea class="btn-text btn-text-border field-com" name="text"></textarea>
+								</label>
+							</p>
+							<p class="h4">
+								<span class="text-orange">Выбранный адрес:</span>
+								<span class="text-red">самовывоз (Китай город)</span>
+							</p>
+							<p>
+								<p class="">Расчетная дата прибытия заказа на пункт самовывоза: <span class="h4"> 26.08.2014</span></p>
+								<p>Стоимость заказа: <span class="h4">1127 руб.</span>  (включая стоимость самовывоза <span class="h4">0 руб.</span> )</p>
+							</p>
+							<p class="text-center"><input class="btn-submit" type="submit" value="завершить">
+							<p class="text-center note"><em>для завершения заказа необходимо заполнить все поля отмеченные красным</em></p>
+						</div>
+					</div>
+				</form>
+						
+						
+					
+					
 				</div>
 
 			</div>

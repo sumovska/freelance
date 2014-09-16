@@ -103,7 +103,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 /* ==========================================================================
    _LAYOUT
    ========================================================================== */
@@ -164,11 +163,10 @@ body {
 }
 
 /* 
-   _Bullet-list (ul with circle-bullet)
-   ======================================*/
+   _Ul-list    Bullet-list (ul with circle-bullet)
+   =========================================*/
 .bullet-list {
     list-style: none;
-    padding: 0 0 0 48px;
     margin-bottom: 10px;
 }
 .bullet-list li {
@@ -186,6 +184,26 @@ body {
     border-radius: 50%;
     background: #a91218;
 }
+
+.checkmark-list {
+    list-style: none;
+    margin-bottom: 10px;
+}
+.checkmark-list li {
+    position: relative;
+}
+.checkmark-list li:before {
+     width: 19px;
+    height: 19px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 2px;
+    left: -34px;
+    background: url(../img/sprite.png) -170px 0;
+}
+
 
 /* 
    _Table-price
@@ -231,6 +249,11 @@ body {
     background: #ffc527;
     box-shadow: inset 1px 1px 2px rgba( 148, 114, 23, 1);
 }
+.btn-hover {
+    color: #ae1917;
+    background: #ffc527;
+    box-shadow: inset 1px 1px 2px rgba( 148, 114, 23, 1);
+}
 
 .btn-submit {
     padding: 5px 17px;
@@ -262,6 +285,11 @@ body {
     background-position: 0 -46px;
     border-radius: 50%;
 }
+.btn-submit-hover {
+    color: #ae1917;
+    background: #ffc527;
+    box-shadow: inset 1px 1px 2px rgba( 148, 114, 23, 1);
+}
 
 /* 
    _Input[type="text"]
@@ -280,6 +308,9 @@ body {
 }
 .btn-text-border {
     border: 1px solid #e3e3e3;
+}
+.btn-required {
+    border: 1px solid #dd0e05;
 }
 
 
@@ -1698,7 +1729,7 @@ body {
 }
 
 .block-inform .attention-small {
-    margin-right: 14px; 
+    margin: 0 14px 4px; 
     float: left;
 }
 
@@ -1918,30 +1949,16 @@ body {
    ======================================*/
 .other-sections {
     margin-bottom: 20px;
-    list-style: none;
     font-size: 12px;
     line-height: 26px;
 }
-.other-sections li {
-    position: relative;
-}
-.other-sections li:before {
-    width: 19px;
-    height: 19px;
-    content: "\0020";
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    top: 2px;
-    left: -34px;
-    background: url(../img/sprite.png) -170px 0;
-}
+
 
 /* 
    _Block-cart
    ======================================*/
 .block-cart {
-    padding: 22px 10px 10px 39px;
+    padding: 22px 10px 10px 55px;
 }
 .block-cart .table-calculation {
     margin: 0 0 16px;
@@ -2001,38 +2018,74 @@ body {
     display: block;
 }
 
-
 .to-continue {
     padding: 20px 20px 20px 44px;
     margin-bottom: 44px;
     background: #ededef;
+}
+.to-continue .btn:hover {
+    color: #fff;
+    background: url(../img/btn-bg.jpg) 0 0 repeat-x;
+}
+.to-continue .continue {
+    margin-right: 40px;
+    float: right;
+}
+
+/* 
+   _Input-field
+   ======================================*/
+.input-field {
+    margin-bottom: 40px;
+}
+.input-field .note {
+    font-size: 12px;
 }
 .input-field .name {
     margin-right: 28px; 
     display: inline-block;
     vertical-align: top;
 }
-.input-field .name input[type="text"] {
+.input-field .name .heading {
+    display: block;
+    margin: 0 0 6px 42px;
+}
+.input-field .name .btn-text {
     width: 258px;
     padding-left: 11px;
     color: #666;
     margin-top: 9px;
     display: block;
 }
-.input-field .name .required {
-    border: 1px solid #dd0e05;
+.input-field .name .field-com {
+    width: 890px;
+    height: 150px;
 }
-.to-continue .btn:hover {
-    color: #fff;
-    background: url(../img/btn-bg.jpg) 0 0 repeat-x;
+.input-field .phone-number {
+    margin-right: 96px;
 }
-.input-field .phone-number input[type="submit"] {
-    margin: 0 0 0 6px;
+.input-field .phone-number span {
+    display: block;
+    margin-bottom: 7px;
 }
-.to-continue .continue {
-    margin-right: 40px;
-    float: right;
+.input-field .phone-number label {
+    display: block;
+    margin-bottom: 8px;
 }
+.input-field .phone-number .btn-submit {
+    margin: 0 0 0 3px;
+}
+.input-field .line {
+    display: block;
+}
+.input-field .line label {
+    
+}
+.input-field .line .btn-text {
+    display: inline-block;
+    margin-left: 4px; 
+}
+
 
 
 
