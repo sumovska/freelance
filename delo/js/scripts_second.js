@@ -24,6 +24,30 @@ $(window).load(function () {
 			}
 		});
 	});
+	$(".slider_soul-thumb ul").each(function () {
+		$(this).carouFredSel({
+			items: {
+				visible: 5,
+				width: 60,
+				height: "variable"
+			},
+			responsive: true,
+			circular: false,
+			infinite: false,
+			auto: false,
+			swipe: {
+				onTouch: true
+			},
+			prev: {
+				button: ".slider_soul-thumb .prev",
+				key: "left"
+			},
+			next: {
+				button: ".slider_soul-thumb .next",
+				key: "right"
+			}
+		});
+	});
 });
 
 $(window).scroll(function () {
@@ -280,6 +304,48 @@ jQuery(document).ready(function ($) {
 	$(".pinned").pin({
 		containerSelector: ".container"
 		//minWidth: 940
+	});
+
+	$('.solutions-category').each(function () {
+		$('a', this).click(function () {
+			var li = $(this).closest('li');
+			li.toggleClass('active').siblings('.active').removeClass('active');
+			if (li.is('.active')) {
+				$('.filter').slideDown();
+			} else {
+				$('.filter').slideUp();
+			}
+			return false;
+		})
+	});
+
+	$('.input-number').each(function () {
+		function convert(v) {
+			if (v === 1) {
+				v = v + ' шаблон';
+			} else if ((v > 1) && (v < 5)) {
+				v = v + ' шаблона';
+			} else {
+				v = v + ' шаблонов';
+			}
+			return v;
+		}
+
+		var _self = $(this), input = $('input', this), up = $('.up', this), down = $('.down', this);
+		up.click(function () {
+			var v = +input.val().split(' ')[0];
+			v = convert(v + 1);
+			$('input', _self).val(v);
+			return false;
+		});
+		down.click(function () {
+			var v = +input.val().split(' ')[0];
+			if (v > 0) {
+				v = convert(v - 1);
+				$('input', _self).val(v);
+			}
+			return false;
+		});
 	});
 
 });
