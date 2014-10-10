@@ -1,517 +1,458 @@
-
 <!DOCTYPE html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>LC</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Love and care</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
 
-		<!--[if lt IE 9]>
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-            <link rel="stylesheet" href="css/ie.css">
-        <![endif]-->
-	</head>
-	<body>
+	<!--[if lt IE 9]>
+	<script src="js/vendor/html5shiv.js"></script>
+	<link rel="stylesheet" href="css/ie.css">
+	<![endif]-->
+</head>
+<body>
 
-
-		<!-- Header -->
-		<header class="header">
-			<div class="wrapper">
-				<p class="logo"><a href="index.html">LC</a></p>
-				<ul class="nav-info">
-					<li><a href="#">О компании</a></li>
-					<li><a href="#">Как купить</a></li>
-					<li><a href="#">Доставка</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a href="#">Личный кабинет</a></li>
+	<!-- HEADER -->
+	<header class="header">
+		<div class="wrapper">
+			<p class="logo"><a href="index.html">LC</a></p>
+			<ul class="menu">
+				<li><a href="article.html">О компании</a></li>
+				<li><a href="article.html">Как купить</a></li>
+				<li><a href="article.html">Доставка</a></li>
+				<li><a href="article.html">Контакты</a></li>
+				<li><a href="article.html">Личный кабинет</a></li>
+			</ul>
+			<nav class="nav">
+				<ul>
+					<li><a href="catalog.html">Косметика <br>и парфюмерия</a></li>
+					<li><a href="catalog.html">Бытовая <br>химия</a></li>
+					<li><a href="catalog.html">Эфирные <br>масла</a></li>
+					<li><a href="catalog.html">Сувенирная <br>лавка</a></li>
 				</ul>
-				<ul class="nav-products">
-					<li><a href="#">Косметика <br> и парфюмерия</a></li>
-					<li><a href="#">Бытовая <br> химия</a></li>
-					<li><a href="#">Эфирные <br> масла</a></li>
-					<li><a href="#">Сувенирная <br> лавка</a></li>
+			</nav>
+			<div class="cart">
+				<a class="link" href="cart.html">
+					<span class="text">Ваша <br>корзина</span>
+					<span class="amount">Товаров: 1 шт.</span>
+				</a>
+			</div>
+			<div class="search">
+				<form action="#" method="post">
+					<p class="line">
+						<label>Найти товар</label>
+						<input type="text" placeholder="cумка avon" value="">
+						<input type="submit" value="" title="Искать">
+					</p>
+				</form>
+			</div>
+		</div>
+	</header>
+	<!-- /HEADER -->
+
+	<!-- WRAPPER -->
+	<div class="wrapper">
+		<!-- CONTENT -->
+		<section class="content">
+			<!-- PROPOSITION -->
+			<ul class="proposition">
+				<li class="link"><a class="h-red" href="#">Спецпредложения</a></li>
+				<li class="link"><a class="h-red" href="#">Новинки</a></li>
+				<li class="link"><a class="h-red" href="#">Ищете подарок?</a></li>
+			</ul>
+
+			<!-- BREADCRUMBS -->
+			<p class="breadcrumbs"><a class="link" href="#">Главная</a> <a class="link" href="#">Доставка</a></p>
+
+			<!-- BLOCK_ARTICLE -->
+			<div class="block block-article">
+				<h1 class="h5 h-red">Страница с типографикой, пример заголовка</h1>
+				<section class="article-nav">
+					<h2 class="h4 h-border">Содержание страницы</h2>
+					<p class="heading">Доставка</p>
+					<ul class="links">
+						<li><a href="#">Курьером по Москве</a></li>
+						<li><a href="#">Стоимость доставки</a></li>
+						<li><a href="#">Доставка в пределах МКАД</a></li>
+						<li><a href="#">За пределы МКАД</a></li>
+						<li><a href="#">Доставка товара на выбор</a></li>
+					</ul>
+					<p class="heading">Заказ</p>
+					<ul class="links">
+						<li><a href="#">Предоплата</a></li>
+						<li><a href="#">Размещение заказа</a></li>
+						<li><a href="#">Подтверждение заказа</a></li>
+						<li><a href="#">Изменение заказа</a></li>
+					</ul>
+				</section>
+				<p class="h6 h-orange">Размещая заказ в нашем магазине, вы подтверждаете, что ознакомились и согласны с данными правилами. Магазин оставляет за собой право изменять данные правила без предварительного уведомления.</p>
+				<br><br>
+				<h2 id="anchor-1" class="h5 h-red">Заголовок <span class="h-grey">/</span> <span class="h-orange">Более сложный в некоторых случаях</span></h2>
+				<p>Доставка по Москве в пределах МКАД и до 10 км от МКАД выполняется в будние дни курьером на автомобиле. Доставка осуществляется после предварительного звонка от курьера и строго по указанному адресу:</p>
+				<ul class="list-default">
+					<li>на домашний адрес - до квартиры</li>
+					<li>на территорию предприятий, бизнес-центров, бизнес-парков - до КПП / проходной</li>
+					<li>на территорию торговых и выставочных центров, рынков – до центрального входа</li>
 				</ul>
-				<div class="cart">
-					<a class="link" href="#">
-						<span class="text">Ваша <br> корзина</span> <br>
-						<span class="amount">Товаров: 1 шт.</span>
-					</a> 
-				</div>
-				<form action="">
-					<p class="search">
+				<p><strong>Пример выделенного текста внутри страницы</strong>, в выбранный вами промежуток длительностью не менее 4 часов. Пожалуйста, примите во внимание, что задаваемый временной промежуток является желательным, а не обязательным, т.к. на маршруте у курьера могут возникнуть непредвиденные задержки.</p>
+				<h2 class="h5 h-red">Пример таблицы, серые бортики и текст внутри.</h2>
+				<table class="delivery-price">
+				<tr>
+					<td class="h-orange distance">до 5 км</td>
+					<td class="price">50 руб</td>
+				</tr>
+				<tr>
+					<td class="h-orange distance">от 5 до 10 км</td>
+					<td class="price">100 руб</td>
+				</tr>
+				<tr>
+					<td class="h-orange distance">от 10 до 25 км</td>
+					<td class="price">15 руб/км</td>
+				</tr>
+				</table>
+				<h2 class="h5 h-red">Пример выделения чего-то важного внутри текста визуально.</h2>
+				<p class="warning-area">
+					<span class="warning">НЕ ПРОИЗВОДИТСЯ!</span>
+					Из санитарно-гигиенических соображений, а также для сохранности товарного вида продукции и обеспечения надлежащих условий хранения.
+				</p>
+				<p>Обычный текст Изменить адрес, время и день доставки можно до 18:00 накануне дня доставки, по тел <strong class="h-red">(Выделение важного, например телефона в тексте (495) 971-81-87.</strong></p>
+				<h2 class="h5 h-red">Кнопки в разном состоянии</h2>
+				<br><br>
+				<form action="#" method="post">
+					<p>
+						<label><input type="submit" value="Купить"></label>
+						<label><input class="submit-orange" type="submit" value="Вернуться"></label>
+						<label><input class="submit-grey" type="submit" value="Выбери вариант"></label>
+					</p>
+					<p>
+						<a class="button" href="item.html">купить</a>
+						<a class="button button-orange" href="item.html">Вернуться</a>
+						<a class="button button-grey" href="item.html">Выбери вариант</a>
+					</p>
+					<p>
+						<label><input type="text" value="Текст внутри"></label>
+					</p>
+					<p>
+						<label><input class="error" type="text" value="Выделение поля обязательного для заполнения"></label>
+					</p>
+					<p>
+						<label><input type="checkbox" value="0" checked></label>
+						<label><input type="checkbox" value="1"></label>
+					</p>
+					<p>
+						<label><input type="radio" value="0" name="radio" checked></label>
+						<label><input type="radio" value="1" name="radio"></label>
+					</p>
+					<p>
 						<label>
-							Найти товар
-							<input type="text" placeholder="cумка avon">
-							<input type="submit">
+							<select>
+								<option value="0" selected>Текст</option>
+								<option value="1">Текст</option>
+								<option value="2">Текст</option>
+							</select>
 						</label>
 					</p>
 				</form>
-			</div>   
-		</header>
+			</div>
+			<!-- /BLOCK_ARTICLE -->
+		</section>
+		<!-- /CONTENT -->
 
-		<div class="container">
-			<div class="wrapper">
-			
-				<aside class="sidebar">
-					<h2 class="h2 text-orange h-border h-top">Каталог</h2>
+		<!-- SIDEBAR -->
+		<aside class="sidebar">
+			<h2 class="h2 h-orange h-border">Каталог</h2>
 
-					<!-- Submenu -->
-					<ul class="submenu h-border">
+			<!-- ALL_PRODUCTS -->
+			<div class="all-products">
+				<p class="all"><a href="#">Все товары</a></p>
+				<p class="all-items"><a href="#">Все товары от avon</a></p>
+				<p class="delivery">Доставка: 18.08.2014</p>
+				<p class="order-code"><a href="#">Заказ по кодам из каталога</a></p>
+			</div>
+
+			<!-- SUBMENU -->
+			<ul class="submenu h-border">
+				<li>
+					<a href="catalog.html">Серии</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
 						<li>
-							<a class="open-list" href="#">ВСЕ ТОВАРЫ</a>
-							<ul class="all-products">
-								<li class="title"><a href="#">ВСЕ ТОВАРЫ ОТ AVON</a></li>
-								<li class="delivery"><a href="#">ДОСТАВКА: 18.08.2014</a></li>
-								<li class="order-code"><a href="#">ЗАКАЗ ПО КОДАМ ИЗ КАТАЛОГА</a></li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">СЕРИИ</a>
+							<a href="catalog.html">Губы (6)</a>
 							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">ДЕКОРАТИВНАЯ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">УХОД ЗА КОЖЕЙ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-								<li><a class="open-list" href="#">Декольте и бюст (8)</a></li>
-								<li><a class="open-list" href="#">Интимная гигиена (23)</a></li>
-								<li><a class="open-list" href="#">Лицо (типы кожи) (809)</a></li>
-								<li><a class="open-list" href="#">Лицо (средства) (828)</a></li>
-								<li><a class="open-list" href="#">Ноги (104)</a></li>
-								<li><a class="open-list" href="#">Против целлюлита (26)</a></li>
-								<li><a class="open-list" href="#">Руки (212)</a></li>
-								<li><a class="open-list" href="#">Наборы (201)</a></li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">УХОД ЗА ВОЛОСАМИ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">УКЛАДКА ВОЛОС</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">БЫТОВАЯ ХИМИЯ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">АКСЕССУАРЫ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">ЗДОРОВЬЕ И ГИГИЕНА</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">ПАРФЮМ ЖЕНСКИЙ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">МУЖСКАЯ КОСМЕТИКА</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">ПАРФЮМ МУЖСКОЙ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">ДЕТСКАЯ КОСМЕТИКА</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">НИЖНЕЕ БЕЛЬЕ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="open-list" href="#">БЛАГОТВОРИТЕЛЬНОСТЬ</a>
-							<ul>
-								<li><a class="open-list" href="#">Все тело (790)</a></li>
-								<li><a class="open-list" href="#">Глаза (102)</a></li>
-								<li>
-									<a class="open-list" href="#">Губы (6)</a>
-									<ul>
-										<li><a href="#">маска (2)</a></li>
-										<li><a href="#">набор по уходу (1)</a></li>
-										<li><a href="#">солнцезащита для лица (1)</a></li>
-									</ul>
-								</li>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
 							</ul>
 						</li>
 					</ul>
-
-					<form action="">
-						<p class="subscribe">
-							<span class="h2 text-orange text-center">Подпишитесь!</span>
-							<span class="text">Новинки, скидки, предложения!</span>
-							<input type="text" placeholder="Ваш е-mail">
-							<input type="submit" value="подписаться">
-						</p>
-					</form>
-
-					<div class="community-group">
-						<a class="head" href="#">
-							<span class="pic"><img src="img/icons/icon-1.jpg" alt=""></span>
-							<span class="text">Любовь и забота - инт...</span>
-							<span class="logo"><img src="img/icons/icon-2.jpg" alt=""></span>
-						</a>
-						<p class="amount">279 учасников</p>
-						<ul class="members">
-							<li class="member-link">
-								<a href="#">
-									<img src="img/photos/photo-1.jpg" alt="">
-									<span class="name">Елена</span>
-								</a>
-							</li>
-							<li class="member-link">
-								<a href="#">
-									<img class="photo" src="img/photos/photo-2.jpg" alt="">
-									<span class="name">Ксения</span>
-								</a>
-							</li>
-							<li class="member-link">
-								<a href="#">
-									<img class="photo" src="img/photos/photo-3.jpg" alt="">
-									<span class="name">Елена</span>
-								</a>
-							</li>
-							<li class="member-link">
-								<a href="#">
-									<img class="photo" src="img/photos/photo-4.jpg" alt="">
-									<span class="name">Александр</span>
-								</a>
-							</li>
-							<li class="member-link">
-								<a href="#">
-									<img class="photo" src="img/photos/photo-5.jpg" alt="">
-									<span class="name">Надежда</span>
-								</a>
-							</li>
-							<li class="member-link">
-								<a href="#">
-									<img class="photo" src="img/photos/photo-6.jpg" alt="">
-									<span class="name">Марина</span>
-								</a>
-							</li>
-						</ul>
-						<a class="subscribe-link" href="#">Подписаться на новости</a>
-					</div>
-
-					<!-- New-items -->
-					<div class="new-items">
-
-						<div class="unit">
-							<div class="shop-title h-border h-border-gray">
-								<span class="h2">Новости магазина</span>
-							</div>
-							<ul class="headlines">
-								<li class="item">
-									<a class="link" href="#">
-										<img class="pic" src="img/catalog/pic-1s.jpg" alt="">
-										<span class="name">Новый каталог Avon: Sale</span>
-									</a>
-								</li>
-								<li class="item">
-									<a class="link" href="#">
-										<img class="pic" src="img/catalog/pic-2s.jpg" alt="">
-										<span class="name">Новинки июля 2014 от Pupa</span>
-									</a>
-								</li>
+				</li>
+				<li>
+					<a href="catalog.html">Декоративная</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
 							</ul>
-							<div class="shop-title h-border h-border-gray">
-								<a class="full" href="#">все новости</a>
-							</div>
-						</div>
-						<div class="unit">
-							<div class="shop-title h-border h-border-gray">
-								<span class="h2">Новые статьи</span>
-							</div>
-							<ul class="headlines">
-								<li class="item">
-									<a class="link" href="#">
-										<img class="pic" src="img/catalog/pic-3s.jpg" alt="">
-										<span class="name">Новинки июля 2014 от Bourjois</span>
-									</a>
-								</li>
-								<li class="item">
-									<a class="link" href="#">
-										<img class="pic" src="img/catalog/pic-4s.jpg" alt="">
-										<span class="name">Красота для отдыха. Mary Kay</span>
-									</a>
-								</li>
+						</li>
+					</ul>
+				</li>
+				<li class="open">
+					<a href="catalog.html">Уход за кожей</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li class="open">
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
 							</ul>
-							<div class="shop-title h-border h-border-gray">
-								<a class="full" href="#">все статьи</a>
-							</div>
-						</div>
-					</div>
+						</li>
+						<li><a href="catalog.html">Декольте и бюст (8)</a></li>
+						<li><a href="catalog.html">Интимная гигиена (23)</a></li>
+						<li><a href="catalog.html">Лицо (типы кожи) (809)</a></li>
+						<li><a href="catalog.html">Лицо (средства) (828)</a></li>
+						<li><a href="catalog.html">Ноги (104)</a></li>
+						<li><a href="catalog.html">Против целлюлита (26)</a></li>
+						<li><a href="catalog.html">Руки (212)</a></li>
+						<li><a href="catalog.html">Наборы (201)</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Уход за волосами</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Укладка волос</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Бытовая химия</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Аксессуары</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Здоровье и гигиенА</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Парфюм женский</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Мужская косметика</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Парфюм мужской</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Детская косметика</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Нижнее белье</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="catalog.html">Благотворительность</a>
+					<ul>
+						<li><a href="catalog.html">Все тело (790)</a></li>
+						<li><a href="catalog.html">Глаза (102)</a></li>
+						<li>
+							<a href="catalog.html">Губы (6)</a>
+							<ul>
+								<li><a href="catalog.html">маска (2)</a></li>
+								<li><a href="catalog.html">набор по уходу (1)</a></li>
+								<li><a href="catalog.html">солнцезащита для лица (1)</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!-- /SUBMENU -->
 
-				</aside>
+			<!-- SUBSCRIBE -->
+			<div class="subscribe">
+				<form action="#" method="post">
+					<label class="title">
+						<strong>Подпишитесь!</strong>
+						Новинки, скидки, предложения!
+					</label>
+					<input type="text" placeholder="Ваш е-mail">
+					<input type="submit" value="Подписаться">
+				</form>
+			</div>
+			<!-- /SUBSCRIBE -->
 
-			    <section class="content">
-			       	<ul class="proposion">
-			       		<li class="link"><a class="text-red" href="#">Спецпредложения</a></li>
-			       		<li class="link"><a class="text-red" href="#">Новинки</a></li>
-			       		<li class="link"><a class="text-red" href="#">Ищете подарок?</a></li>
-			       	</ul>
-			       	
-			       	<p class="breadcrumbs">
-			       		<a class="link" href="#">Главная</a>
-			       		<a class="link" href="#">Доставка</a>
-			       	</p>
+			<!-- SOCIAL -->
+			<div class="social">
+				<img src="img/temp/vk.png" alt="">
+			</div>
+		</aside>
+		<!-- /SIDEBAR -->
+	</div>
+	<!-- /WRAPPER -->
 
-			       	<div class="block block-inform">
-			       		<div class="inform-nav arrow-box">
-			       			<p class="h4 h-border">Содержание страницы</p>
-			       			<p class="heading">Доставка</p>
-			       			<ul class="links">
-			       				<li><a href="#сourier">Курьером по Москве</a></li>
-			       				<li><a href="#postage">Москва, стоимость доставки</a></li>
-			       				<li><a href="#terms">Сроки доставки</a></li>
-			       				<li><a href="#pickup">Самовывоз</a></li>
-			       				<li><a href="#mail">Товары почтой</a></li>
-			       				<li><a href="#choose">Доставка товара на выбор</a></li>
-			       			</ul>
-			       			<p class="heading">Заказ</p>
-			       			<ul class="links">
-			       				<li><a href="#prepay">Предоплата</a></li>
-			       				<li><a href="#placing">Размещение заказа</a></li>
-			       				<li><a href="#confirmation">Подтверждение заказа</a></li>
-			       				<li><a href="#change">Изменение заказа</a></li>
-			       				<li><a href="#safety">Сохранность персональных данных</a></li>
-			       				<li><a href="#discounts">Скидки и бонусы</a></li>
-			       				<li><a href="#claim">Претензии, недостача, пересортица</a></li>
-			       				<li><a href="#return">Отказ и возврат продукции</a></li>
-			       			</ul>
-			       		</div>
-			       		<p class="h4 text-red">Страница с типографикой, пример заголовка</p>
-			       		<p class="text-orange">Выделение какого-то важного текста цветом Размещая заказ в нашем магазине, вы подтверждаете, что ознакомились и согласны с данными правилами. Магазин оставляет за собой право изменять данные правила без предварительного уведомления.</p>
-			       		<p class="crumbs-title">
-	                        <span class="h4 text-red name">Заголовок</span>
-	                        <span class="h4 text-orange name" id="сourier">Более сложный в некоторых случаях</span>
-                    	</p>
-                    	<p class="text-red">Доставка по Москве в пределах МКАД и до 10 км от МКАД выполняется в будние дни курьером на автомобиле. Доставка осуществляется после предварительного звонка от курьера и строго по указанному адресу:</p>
-                    	<ul class="bullet-list">
-                    		<li>на домашний адрес - до квартиры</li>
-                    		<li>на территорию предприятий, бизнес-центров, бизнес-парков - до КПП / проходной</li>
-                    		<li>на территорию торговых и выставочных центров, рынков – до центрального входа</li>
-                    	</ul>
-                    	<p><strong>Пример выделенного текста внутри страницы</strong>, в выбранный вами промежуток длительностью не менее 4 часов. Пожалуйста, примите во внимание, что задаваемый временной промежуток является желательным, а не обязательным, т.к. на маршруте у курьера могут возникнуть непредвиденные задержки.</p>
-                    	<p class="h4 text-red">Пример таблицы, серые бортики и текст внутри.</p>
-	                    <table class="table-price">
-                        	<tr>
-                        		<td class="text-orange distance">до 5 км</td>
-                        		<td class="price">50 руб</td>
-                        	</tr>
-                        	<tr>
-                        		<td class="text-orange distance">от 5 до 10 км</td>
-                        		<td class="price">100 руб</td>
-                        	</tr>
-							<tr>
-                        		<td class="text-orange distance">от 10 до 25 км</td>
-                        		<td class="price">15 руб/км</td>
-                        	</tr>
-                        </table>
-                        <p class="h4 text-red">Пример выделения чего-то важного внутри текста визуально.</p>
-	                    <p><span class="attention attention-small">НЕ ПРОИЗВОДИТСЯ!</span>Обычный текст <a href="#">это обычная ссылка внутри текста и в письме</a>, которое мы присылаем на e-mail.</p>
-	                    <p>Обычный текст Изменить адрес, время и день доставки можно до 18:00 накануне дня доставки, по тел <strong class="text-red">(Выделение важного, например телефона в тексте (495) 971-81-87.</strong></p>
-	                    <p class="h4 text-red">Кнопки в разном состоянии</p>
-	                    <form action="#">
-	                    	<p>
-	                    		<label>
-	                    			<input class="" type="submit">
-	                    			<em>Нажатая кнопка</em>
-	                    		</label>
-	                    		<label>
-	                    			<input class="" type="submit">
-	                    			<em>Комментарии к чему-то</em>
-	                    		</label>
-	                    		<label>
-	                    			<input class="" type="submit">
-	                    		</label>
-	                    		<label>
-	                    			<input class="" type="submit">
-	                    		</label>
-	                    		<label>
-	                    			<input class="" type="submit">
-	                    			<em>вспомогательные кнопки</em>
-	                    		</label>
-
-	                    	</p>
-	                    </form>
-	                    
-		    	</div>
-		    </div>
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="contacts">
+				<span class="address">Москва, Огородный проезд, д.20 с.5</span>
+				<span class="phone">(495) 971-81-87 (с 11 до 18 часов)</span>
+			</p>
+			<ul class="counters">
+				<li><a href="#"><img src="img/temp/counter-1.png" alt=""></a></li>
+				<li><a href="#"><img src="img/temp/counter-2.png" alt=""></a></li>
+				<li><a href="#"><img src="img/temp/counter-3.png" alt=""></a></li>
+			</ul>
+			<p class="author"><a href="http://google.com" target="_blank">дизайн сайта<img src="img/author.png" alt=""></a>
 		</div>
+	</footer>
+	<!-- /FOOTER -->
 
-       
-		<!-- Footer -->
-        <footer class="footer">
-            <div class="wrapper">
-                <p class="contacts">Москва, Огородный проезд, д.20 с.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (495) 971-81-87 (с 11 до 18 часов)</p>
-                <a class="link" href="#"></a>
-                <a class="author" href="#">
-                    <span>дизайн сайта</span> &nbsp;
-                    <img src="img/author.jpg" alt="">
-                </a>
-            </div>
-        </footer>
+	<!-- CHAT -->
+	<div class="chat">
+		<div class="form">
+			<form action="#" method="post">
+				<label class="for" for="chat-input">Войти в чат под именем:</label>
+				<input id="chat-input" type="text" value="">
+				<input type="submit" value="Войти">
+				<label class="small">Рабочее время операторов - будни с 11:00 до 18:00 (Москва)</label>
+			</form>
+		</div>
+		<a href="#" class="toggle">Операторы онлайн</a>
+	</div>
+	<!-- /CHAT -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+	<script src="js/vendor/jquery-1.11.0.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Love and care</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--[if lt IE 9]>
+	<script src="js/vendor/html5shiv.js"></script>
+	<link rel="stylesheet" href="css/ie.css">
+	<![endif]-->
+</head>
+<body>
+
+	<!-- HEADER -->
+	<header class="header">
+		<div class="wrapper">
+			<p class="logo"><a href="index.html">LC</a></p>
+			<ul class="menu">
+				<li><a href="article.html">О компании</a></li>
+				<li><a href="article.html">Как купить</a></li>
+				<li><a href="article.html">Доставка</a></li>
+				<li><a href="article.html">Контакты</a></li>
+				<li><a href="article.html">Личный кабинет</a></li>
+			</ul>
+			<nav class="nav">
+				<ul>
+					<li><a href="catalog.html">Косметика <br>и парфюмерия</a></li>
+					<li><a href="catalog.html">Бытовая <br>химия</a></li>
+					<li><a href="catalog.html">Эфирные <br>масла</a></li>
+					<li><a href="catalog.html">Сувенирная <br>лавка</a></li>
+				</ul>
+			</nav>
+			<div class="cart">
+				<a class="link" href="cart.html">
+					<span class="text">Ваша <br>корзина</span>
+					<span class="amount">Товаров: 1 шт.</span>
+				</a>
+			</div>
+			<div class="search">
+				<form action="#" method="post">
+					<p class="line">
+						<label>Найти товар</label>
+						<input type="text" placeholder="cумка avon" value="">
+						<input type="submit" value="" title="Искать">
+					</p>
+				</form>
+			</div>
+		</div>
+	</header>
+	<!-- /HEADER -->
+
+	<!-- WRAPPER -->
+	<div class="wrapper">
+
+		<!-- BREADCRUMBS -->
+		<p class="breadcrumbs"><a class="link" href="index.html">Главная</a> <a class="link" href="cart.html">Ваша корзина</a></p>
+
+		<!-- BLOCK_CHECKOUT -->
+		<div class="block block-checkout">
+			<h1 class="h4">Завершение заказа</h1>
+			<form action="#" method="post">
+				<div class="line">
+					<div class="col">
+						<label for="cart-surname" class="for">Фамилия</label>
+						<input id="cart-surname" class="error" type="text" value="">
+					</div>
+					<div class="col">
+						<label for="cart-name" class="for">Имя</label>
+						<input id="cart-name" class="error" type="text" value="">
+					</div>
+					<div class="col">
+						<label for="cart-lastname" class="for">Отчество</label>
+						<input id="cart-lastname" class="error" type="text" value="">
+					</div>
+				</div>
+				<div class="line">
+					<div class="col phones">
+						<label class="for">Ваши телефоны:</label>
+						<p class="phone">8 (495) 546-78-18<a class="button button-close" href="#"></a></p>
+						<p class="phone">8 (912) 000-77-12<a class="button button-close" href="#"></a></p>
+					</div>
+					<div class="col phones-add">
+						<label class="for">Добавить телефоны</label>
+						<em class="format">в формате 8 (ххх) ххх-хх-хх</em>
+						<label class="phone"><span>моб.</span><input type="text" value=""></label>
+						<label class="phone"><span>раб.</span><input type="text" value=""></label>
+						<label class="phone"><span>дом.</span><input type="text" value=""></label>
+						<em class="more">рекомендуем оставить несколько номеров</em>
+						<button class="button-orange add">Добавить</button>
+					</div>
+					<div class="col">
+						<label for="cart-email" class="for">E-mail</label>
+						<input id="cart-email" class="error" type="text" value="">
+						<label class="for"></label>
+					</div>
+				</div>
+				<div class="line time">
+					<label class="for" for="checkout-time-from">Желаемое время приезда курьера</label>
+					<label class="or">c</label>
+					<select id="checkout-time-from">
+						<option value="0" selected>&nbsp;</option>
+						<option value="1">10:00</option>
+						<option value="2">12:00</option>
+					</select>
+					<label class="or" for="checkout-time-to">до</label>
+					<select id="checkout-time-to">
+						<option value="0" selected>&nbsp;</option>
+						<option value="1">10:00</option>
+						<option value="2">12:00</option>
+					</select>
+					<label class="or">/ минимальный промежуток &ndash; 4 часа</label>
+				</div>
+				<div class="line">
+					<label class="for" for="checkout-time-additional">Дополнительные примечания и просьбы к заказу</label>
+					<textarea id="checkout-time-additional" cols="10" rows="5"></textarea>
+				</div>
+				<div class="line total">
+					<p class="h4"><span class="h-orange">Выбранный адрес:</span><span class="h-red">самовывоз (Китай город)</span></p>
+					<p>Расчетная дата прибытия заказа на пункт самовывоза: <span class="h4"> 26.08.2014</span></p>
+					<p>Стоимость заказа: <span class="h4">1127 руб.</span>  (включая стоимость самовывоза <span class="h4">0 руб.</span> )</p>
+				</div>
+				<div class="line submit">
+					<input type="submit" value="завершить">
+					<em>для завершения заказа необходимо заполнить все поля отмеченные красным</em>
+				</div>
+			</form>
+		</div>
+		<!-- /BLOCK_CHECKOUT -->
+	</div>
+	<!-- /WRAPPER -->
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="contacts">
+				<span class="address">Москва, Огородный проезд, д.20 с.5</span>
+				<span class="phone">(495) 971-81-87 (с 11 до 18 часов)</span>
+			</p>
+			<ul class="counters">
+				<li><a href="#"><img src="img/temp/counter-1.png" alt=""></a></li>
+				<li><a href="#"><img src="img/temp/counter-2.png" alt=""></a></li>
+				<li><a href="#"><img src="img/temp/counter-3.png" alt=""></a></li>
+			</ul>
+			<p class="author"><a href="http://google.com" target="_blank">дизайн сайта<img src="img/author.png" alt=""></a>
+		</div>
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- CHAT -->
+	<div class="chat">
+		<div class="form">
+			<form action="#" method="post">
+				<label class="for" for="chat-input">Войти в чат под именем:</label>
+				<input id="chat-input" type="text" value="">
+				<input type="submit" value="Войти">
+				<label class="small">Рабочее время операторов - будни с 11:00 до 18:00 (Москва)</label>
+			</form>
+		</div>
+		<a href="#" class="toggle">Операторы онлайн</a>
+	</div>
+	<!-- /CHAT -->
+
+	<script src="js/vendor/jquery-1.11.0.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
