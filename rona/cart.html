@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.ico">
 
 	<!--[if lt IE 9]>
 	<script src="js/vendor/html5shiv.js"></script>
@@ -19,13 +20,15 @@
 	<header class="header">
 		<div class="wrapper">
 			<p class="logo"><a href="index.html"></a></p>
-			<ul class="nav">
-				<li class="active">Каталог</li>
-				<li><a href="delivery.html">Оплата и доставка</a></li>
-				<li><a href="#">Прайс</a></li>
-				<li><a href="contacts.html">Контакты</a></li>
-				<li><a href="cooperation.html">Сотрудничество</a></li>
-			</ul>
+			<nav class="nav">
+				<ul>
+					<li><a href="catalog.html">Каталог</a></li>
+					<li><a href="delivery.html">Оплата и доставка</a></li>
+					<li><a href="http://rona-shop.ru/excel/price.xls">Прайс</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="cooperation.html">Сотрудничество</a></li>
+				</ul>
+			</nav>
 			<div class="search">
 				<form action="#" method="post">
 					<p class="line">
@@ -34,30 +37,26 @@
 					</p>
 				</form>
 			</div>
-			<div class="basket">
-				<a class="check" href="cart.html">Оформить</a>
-			</div>
+			<div class="cart"><a class="check" href="cart.html">Оформить</a></div>
 		</div>
-		<div class="banner-top">
-			<div class="img"></div>
-		</div>
+		<div class="image"><img src="img/temp/banner-top.jpg" alt=""></div>
 	</header>
 
-	<div class="container">
-		<div class="wrapper">
-			<h1 class="h1 text-center">Корзина</h1>
+	<div class="full">
+		<h1 class="h1 text-center">Корзина</h1>
+		<form action="order.html" method="post">
 			<table class="block-cart">
 			<tr class="cap">
 				<td></td>
-				<td width="35%" class="name">Товар</td>
+				<td class="name">Товар</td>
 				<td>Цена</td>
-				<td width="10%">Количество</td>
+				<td>Количество</td>
 				<td>Стоимость</td>
 				<td>Удалить</td>
 			</tr>
 			<tr>
-				<td><a href="#"><img class="pic" src="img/catalog/pic-28.jpg" alt=""></a></td>
-				<td class="name"><a href="#"><strong>Бокалы Sensual для Бургундского вина, 890 ml</strong></a></td>
+				<td><a href="item.html"><img class="pic" src="img/temp/catalog/pic-28.jpg" alt=""></a></td>
+				<td class="name"><a href="item.html"><strong>Бокалы Sensual для Бургундского вина, 890 ml</strong></a></td>
 				<td>11100,00 руб</td>
 				<td class="amount text-left"><p><input type="text" value="1"> шт</p></td>
 				<td>11100,00 руб</td>
@@ -70,27 +69,26 @@
 			</tr>
 			</table>
 			<div class="checkout">
-				<form>
-					<p class="text-center">
-						<input type="submit" value="Пересчитать корзину">
-						<input type="submit" value="Оформить заказ">
-					</p>
-				</form>
+				<p class="text-center">
+					<input type="submit" value="Пересчитать корзину">
+					<input type="submit" value="Оформить заказ">
+				</p>
 			</div>
-			<br> <br> <br>
-			<ul class="wares-nav">
-				<li><a href="http://rona-shop.ru/bokaly-dlya-vina/"><strong>Все винные бокалы</strong></a></li>
-				<li><a href="http://rona-shop.ru/vinnye-aksessuary/"><strong>Винные аксесуары</strong></a></li>
-				<li><a href="http://rona-shop.ru/kuvshiny-dekantery/"><strong>Декантеры</strong></a></li>
-				<li><a href="http://rona-shop.ru/aeratory-dlya-vina/"><strong>Аэраторы</strong></a></li>
-				<li><a href="http://rona-shop.ru/posuda-ruchnoi-raboty/"><strong>Посуда ручной работы</strong></a></li>
-			</ul>
-			<div class="banner-bottom"></div>
-		</div>
+		</form>
 	</div>
 
 	<footer class="footer">
-		<p class="text-center">Наш телефон в Москве: 8(495)796-02-51. Все материалы сайта Rona-Shop.ru защищены. Полное, либо частичное копирование информации запрещено.</p>
+		<nav class="nav">
+			<ul>
+				<li><a href="catalog.html"><strong>Все винные бокалы</strong></a></li>
+				<li><a href="catalog.html"><strong>Винные аксесуары</strong></a></li>
+				<li><a href="catalog.html"><strong>Декантеры</strong></a></li>
+				<li><a href="catalog.html"><strong>Аэраторы</strong></a></li>
+				<li><a href="catalog.html"><strong>Посуда ручной работы</strong></a></li>
+			</ul>
+		</nav>
+		<div class="banner"><img src="img/temp/banner.jpg" alt=""></div>
+		<p class="copyright">Наш телефон в Москве: 8(495)796-02-51. Все материалы сайта Rona-Shop.ru защищены. Полное, либо частичное копирование информации запрещено.</p>
 	</footer>
 
 	<script src="js/vendor/jquery-1.11.0.min.js"></script>

@@ -6,14 +6,19 @@
 /* ==========================================================================
    _BOILERPLATE
    ========================================================================== */
-html, button, input, select, textarea {
-	color: #222;
-}
 html {
 	height: 100%;
-	color: #858585;
 	font: 14px/16px Tahoma, Helvetica, sans-serif;
-	background: #000 url(../img/background-body.jpg) repeat 50% 0;
+	color: #858585;
+	background: #000 url('../img/html.png') repeat 50% 0;
+}
+body {
+	width: 910px;
+	min-height: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	background: url('../img/body.jpg') no-repeat 50% 250px;
 }
 audio, canvas, img, video {
 	vertical-align: middle;
@@ -48,7 +53,6 @@ ul {
 	padding: 0 0 0 30px;
 }
 p {
-	line-height: normal;
 	margin: 0 0 16px 0;
 }
 a {
@@ -84,6 +88,9 @@ h1, h2, h3, h4, h5, h6 {
 .text-center {
 	text-align: center;
 }
+.text-justify {
+	text-align: justify;
+}
 .text-left {
 	text-align: left;
 }
@@ -92,6 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .breadcrumbs {
 	margin: 0 0 23px;
+	cursor: default;
 }
 
 /* _H-LINE (Заголовок с линиями) */
@@ -107,57 +115,66 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    _LAYOUT
    ========================================================================== */
-body {
-	width: 1200px;
-}
 .wrapper {
-	width: 946px;
+	width: 910px;
 	height: 100%;
 	margin: 0 auto;
 	position: relative;
 }
 .sidebar {
-	width: 224px;
+	width: 194px;
+	margin-bottom: 20px;
 	float: left;
 }
 .content {
-	width: 700px;
+	width: 654px;
+	margin-bottom: 20px;
 	float: right;
 }
-.wrapper:after, .sidebar:after, .content:after {
+.full {
+	clear: both;
+}
+.wrapper:after, .sidebar:after, .content:after, .full:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
 	clear: both;
 	overflow: hidden;
 }
-.container .wrapper {
-	padding-top: 20px;
-	background: url(../img/container.jpg) no-repeat 50% 0;
-}
-
 /* ==========================================================================
    _HEADER
    ========================================================================== */
 .header {
 	height: 250px;
-	margin: 0;
-	position: relative;
+	margin-bottom: 20px;
 }
-.header .wrapper {
-	z-index: 4;
-}
-.header .wrapper:before {
-	width: 100%;
-	height: 50px;
+.header:before {
+	height: 250px;
 	content: "\0020";
 	display: block;
-	overflow: hidden;
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	background: url(../img/headback.jpg) 0 0 no-repeat;
+	z-index: 1;
+	background: #000 url('../img/header.jpg') no-repeat 50% 0;
+}
+.header:after {
+	width: 100%;
+	height: 150px;
+	content: "\0020";
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100px;
+	z-index: 2;
+	background: #acb6b9 url('../img/header-bg.jpg') 50% 100% repeat-x;
+	cursor: default;
+}
+.header .wrapper {
+	position: relative;
+	z-index: 5;
 }
 .header .logo {
 	width: 239px;
@@ -166,7 +183,7 @@ body {
 	display: block;
 	position: absolute;
 	top: 0;
-	left: 7px;
+	left: -21px;
 	background: url(../img/logo.png) 0 0 no-repeat;
 }
 .header .logo a {
@@ -175,13 +192,15 @@ body {
 	display: block;
 }
 .header .nav {
-	margin: 0;
-	padding: 0;
-	list-style: none;
 	position: absolute;
-	left: 246px;
+	left: 216px;
 	top: 0;
 	cursor: default;
+}
+.header .nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 .header .nav li {
 	float: left;
@@ -194,6 +213,9 @@ body {
 	background: linear-gradient(to bottom, rgba(134, 1, 4, 1) 0%, rgba(206, 2, 5, 1) 100%);
 }
 .header .nav li a {
+	padding: 10px;
+	margin: -10px;
+	display: block;
 	color: #fff;
 	text-decoration: none;
 	transition: color .3s ease;
@@ -201,9 +223,12 @@ body {
 .header .nav li a:hover {
 	color: #db1317;
 }
+.header .nav li.active a:hover {
+	color: #fff;
+}
 .header .search {
 	position: absolute;
-	left: 28px;
+	left: 0;
 	top: 216px;
 }
 .header .line {
@@ -226,17 +251,17 @@ body {
 	float: right;
 	border: none;
 	cursor: pointer;
-	background: url(../img/search.png) 0 0 no-repeat;
+	background: url('../img/search.png') 0 0 no-repeat;
 }
-.header .basket {
+.header .cart {
 	width: 135px;
 	height: 58px;
 	position: absolute;
 	top: 120px;
 	right: 71px;
-	background: url(../img/cart-bg.png) 0 -39px no-repeat;
+	background: url('../img/cart.png') 0 -39px no-repeat;
 }
-.header .basket:before {
+.header .cart:before {
 	width: 140px;
 	height: 5px;
 	content: "\0020";
@@ -249,7 +274,7 @@ body {
 	border-radius: 6px;
 	z-index: 0;
 }
-.header .basket .check {
+.header .cart .check {
 	padding-right: 45px;
 	color: #aaa;
 	font-family: Helvetica, Tahoma, sans-serif;
@@ -258,10 +283,10 @@ body {
 	bottom: 16px;
 	left: 12px;
 }
-.header .basket .check:hover {
+.header .cart .check:hover {
 	text-decoration: none;
 }
-.header .basket .check:before {
+.header .cart .check:before {
 	width: 29px;
 	height: 25px;
 	content: "\0020";
@@ -272,50 +297,90 @@ body {
 	right: 0;
 	background: url(../img/sprite.png) 0 0 no-repeat;
 }
-.header .banner-top {
-	width: 100%;
+.header .image {
+	min-width: 910px;
 	height: 150px;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: #acb6b9 url(../img/bannerback.jpg) 50% 0 repeat-x;
-	cursor: default;
-}
-.header .banner-top:before {
-	width: 100%;
-	height: 50px;
-	content: "\0020";
-	display: block;
 	overflow: hidden;
-	position: relative;
-	top: -50px;
+	position: absolute;
 	left: 0;
 	right: 0;
-	background: #000;
+	top: 100px;
+	z-index: 3;
 }
-.header .banner-top .img {
-	width: 100%;
+.header .image img {
 	height: 150px;
-	display: block;
+	margin-left: -540px;
 	position: absolute;
+	left: 50%;
 	top: 0;
-	left: 0;
-	background: url(../img/banner-top.jpg) 50% 0 no-repeat;
+	display: block;
 }
 
 /* ==========================================================================
    _FOOTER
    ========================================================================== */
 .footer {
-	height: 80px;
-	margin-top: 14px;
+	width: 100%;
+	padding: 30px 0;
+	clear: both;
+	position: relative;
+}
+.footer:after, .footer .nav:after, .footer .nav ul:after {
+	width: 100%;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+.footer .nav {
+	position: relative;
+}
+.footer .nav ul {
+	padding: 0;
+	margin: 0 0 28px;
+	list-style: none;
+	text-align: center;
+}
+.footer .nav li {
+	padding: 0 14px;
+	display: inline-block;
+	position: relative;
+}
+.footer .nav li:first-of-type:before, .footer .nav li:after {
+	content: "|";
+	color: #858585;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	right: -5px;
+	top: -1px;
+}
+.footer .nav li:first-of-type:before {
+	right: auto;
+	left: -5px;
+}
+
+.footer .banner {
+	margin: 0 -17px 30px;
+}
+.footer .banner img {
+	width: 904px;
+	height: 150px;
+	display: block;
+}
+
+.footer .copyright {
+	margin: 0;
+	display: block;
+	position: relative;
+	text-align: center;
 }
 
 /* ==========================================================================
-   _SIDEBAR
+   _SUBMENU
    ========================================================================== */
 .submenu {
+	padding: 0;
 	margin: 0 0 48px;
 	list-style: none;
 }
@@ -419,7 +484,7 @@ body {
 	bottom: -7px;
 	left: 0;
 	right: 0;
-	background: url(../img/submenu-border.png) 0 0 no-repeat;
+	background: url('../img/submenu.png') 0 0 no-repeat;
 }
 .submenu-main > li > ul > li:last-child:after {
 	display: none;
@@ -461,30 +526,30 @@ body {
 }
 
 /* News (Новости) */
-.news {
+.articles {
 	list-style: none;
 }
-.news .item {
-	padding: 10px 5px 7px 15px;
+.articles .item {
+	padding: 10px 10px 7px 15px;
 	background: rgba(255, 255, 255, .04);
 	margin-bottom: 6px;
 }
-.news .item-heading {
+.articles .item-heading {
 	padding: 8px 0 8px 15px;
 	font-size: 16px;
 	color: #fff;
 	font-family: Helvetica, Tahoma, sans-serif;
 	font-weight: 500;
 }
-.news .item .title-link {
+.articles .item .title-link {
 	margin: 0 0 3px;
 	display: block;
 	letter-spacing: .02em;
 }
-.news .item .date {
+.articles .item .date {
 	margin: 0 0 14px;
 }
-.news .item .text {
+.articles .item .text {
 	line-height: 18px;
 }
 
@@ -527,77 +592,35 @@ body {
 	overflow: hidden;
 	clear: both;
 }
-.pager .active {
-	color: white;
-	background: #a00;
+.pager .pre {
+	margin-right: 6px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: default;
 }
 .pager .page {
 	width: 24px;
 	height: 24px;
+	margin-right: 4px;
 	position: relative;
 	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 24px;
 	font-size: 16px;
-}
-.pager a {
-	background: #484848;
-	text-decoration: none;
-	color: white;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
-}
-
-/* ==========================================================================
-   _WARES-NAV (Навигация по видам изделий)
-   ========================================================================== */
-.wares-nav {
-	padding: 0;
-	margin: 0 0 28px;
-	list-style: none;
+	line-height: 24px;
 	text-align: center;
+	color: #fff;
+	vertical-align: middle;
+	text-decoration: none;
+	background: #484848;
+	transition: color .2s ease, background-color .2s ease;
 }
-.wares-nav:after {
-	width: 100%;
-	content: "\0020";
-	display: block;
-	overflow: hidden;
-	clear: both;
+.pager .page:hover {
+	color: #a00;
+	background: #fff;
 }
-.wares-nav li {
-	margin: 0 14px;
-	display: inline-block;
-	position: relative;
-}
-.wares-nav li:before {
-	width: 3px;
-	height: 14px;
-	content: "\0020";
-	display: block;
-	overflow: hidden;
-	position: absolute;
-	left: -16px;
-	top: 2px;
-	background: url(../img/sprite.png) -40px 0 no-repeat;
-}
-.wares-nav li:last-child:after {
-	width: 3px;
-	height: 14px;
-	content: "\0020";
-	display: block;
-	overflow: hidden;
-	position: absolute;
-	right: -16px;
-	top: 2px;
-	background: url(../img/sprite.png) -40px 0 no-repeat;
-}
-
-/* BANNER-BOTTOM (Нижний баннер) */
-.banner-bottom {
-	width: 904px;
-	height: 150px;
-	margin: 0 auto;
-	background: url(../img/banner-bottom.jpg) 0 0 no-repeat;
+.pager .page.active {
+	color: #fff;
+	cursor: default;
+	background: #a00;
 }
 
 /* ==========================================================================
@@ -607,8 +630,9 @@ body {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	cursor: default;
 }
-.catalog:after {
+.catalog:after, .catalog .item:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
@@ -621,6 +645,9 @@ body {
 	float: left;
 	font-size: 12px;
 	text-align: center;
+}
+.catalog .item:nth-child(3n + 1) {
+	clear: left;
 }
 .catalog .item .img-link {
 	width: 133px;
@@ -700,8 +727,8 @@ body {
 	margin: 0 0 30px 12px;
 }
 .block-item .info {
+	width: 295px;
 	float: left;
-	width: 300px;
 }
 .block-item .info .describe {
 	margin-bottom: 30px;
@@ -906,7 +933,6 @@ body {
 /* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
-
 @media print {
 	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
 	a, a:visited { text-decoration: underline; }
@@ -920,26 +946,3 @@ body {
 	p, h2, h3 { orphans: 3; widows: 3; }
 	h2, h3 { page-break-after: avoid; }
 }
-
-/* ==========================================================================
-   _RESPONSIVE
-   ========================================================================== */
-@media (max-width: 1218px) {
-	body { width: 100%; }
-}
-@media (max-width: 1023px) {
-	.wrapper { width: 768px; }
-	.sidebar { display: none; }
-	.content { width: 100%; }
-}
-@media (max-width: 767px) {
-
-}
-@media (max-width: 567px) {
-
-}
-@media (max-width: 479px) {
-
-}
-
-

@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.ico">
 
 	<!--[if lt IE 9]>
 	<script src="js/vendor/html5shiv.js"></script>
@@ -19,95 +20,104 @@
 	<header class="header">
 		<div class="wrapper">
 			<p class="logo"><a href="index.html"></a></p>
-			<ul class="nav">
-				<li class="active">Каталог</li>
-				<li><a href="#">Оплата и доставка</a></li>
-				<li><a href="#">Прайс</a></li>
-				<li><a href="#">Контакты</a></li>
-				<li><a href="#">Сотрудничество</a></li>
-			</ul>
-		</div>
-		<div class="banner-top">
-			<div class="img"></div>
-		</div>
-	</header>
-
-	<div class="container">
-		<div class="wrapper">
-			<h1 class="h1 text-center">Оформление вашего заказа</h1>
-			<div class="block-order">
-				<form action="#">
-					<div class="fill fill-contact">
-						<p class="heading">Контактная информация</p>
-						<p>
-							<label class="name">Ваше имя<span class="require">*</span></label>
-							<input type="text">
-						</p>
-						<p>
-							<label class="name">Ваш e-mail<span class="require">*</span></label>
-							<input type="text">
-						</p>
-						<p>
-							<label class="name">Ваш телефон<span class="require">*</span></label>
-							<input type="text">
-						</p>
-						<p>
-							<label class="name">Ваш адрес<span class="require">*</span></label>
-							<input type="text">
-						</p>
-					</div>
-					<div class="fill">
-						<p class="heading">Способы доставки</p>
-						<p class="line">
-							<input type="radio" name="type">
-							<label><strong>Курьером по Москве</strong></label> <br>
-							<span class="describe">При заказе от 5000 руб доставка по Москве - бесплатно!</span>
-						</p>
-						<p class="line">
-							<input type="radio" name="type">
-							<label><strong>Самовывоз</strong></label> <br>
-							<span class="describe">Магазин Rona-Shop.ru, м. Перово</span>
-						</p>
-						<p class="line">
-							<input type="radio" name="type">
-							<label><strong>В регионы транспортной компанией</strong></label>
-						</p>
-					</div>
-					<div class="fill fill-pay">
-						<p class="heading">Способы оплаты</p>
-						<p class="line">
-							<input type="radio" name="pay">
-							<label>Наличными</label>
-						</p>
-						<p class="line">
-							<input type="radio" name="pay">
-							<label>Оплата картой Visa или MasterCard</label>
-						</p>
-					</div>
-					<div class="fill fill-comment">
-						<p class="line">
-							<label class="heading">Комментарии к заказу</label>
-							<textarea></textarea>
-						</p>
-					</div>
-					<p class="check">
-						<input type="submit" value="Оформить заказ">
+			<nav class="nav">
+				<ul>
+					<li><a href="catalog.html">Каталог</a></li>
+					<li><a href="delivery.html">Оплата и доставка</a></li>
+					<li><a href="http://rona-shop.ru/excel/price.xls">Прайс</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="cooperation.html">Сотрудничество</a></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<form action="#" method="post">
+					<p class="line">
+						<input type="text" placeholder="Поиск" value="">
+						<input type="submit" value="" title="Искать">
 					</p>
 				</form>
 			</div>
-			<ul class="wares-nav">
-				<li><a href="#"><strong>Все винные бокалы</strong></a></li>
-				<li><a href="#"><strong>Винные аксесуары</strong></a></li>
-				<li><a href="#"><strong>Декантеры</strong></a></li>
-				<li><a href="#"><strong>Аэраторы</strong></a></li>
-				<li><a href="#"><strong>Посуда ручной работы</strong></a></li>
-			</ul>
-			<div class="banner-bottom"></div>
+			<div class="cart"><a class="check" href="cart.html">Оформить</a></div>
 		</div>
-	</div>
+		<div class="image"><img src="img/temp/banner-top.jpg" alt=""></div>
+	</header>
+
+	<section class="full">
+		<h1 class="h1 text-center">Оформление вашего заказа</h1>
+		<div class="block-order">
+			<form action="#">
+				<div class="fill fill-contact">
+					<p class="heading">Контактная информация</p>
+					<p>
+						<label class="name">Ваше имя<span class="require">*</span></label>
+						<input type="text">
+					</p>
+					<p>
+						<label class="name">Ваш e-mail<span class="require">*</span></label>
+						<input type="text">
+					</p>
+					<p>
+						<label class="name">Ваш телефон<span class="require">*</span></label>
+						<input type="text">
+					</p>
+					<p>
+						<label class="name">Ваш адрес<span class="require">*</span></label>
+						<input type="text">
+					</p>
+				</div>
+				<div class="fill">
+					<p class="heading">Способы доставки</p>
+					<p class="line">
+						<input type="radio" name="type">
+						<label><strong>Курьером по Москве</strong></label> <br>
+						<span class="describe">При заказе от 5000 руб доставка по Москве - бесплатно!</span>
+					</p>
+					<p class="line">
+						<input type="radio" name="type">
+						<label><strong>Самовывоз</strong></label> <br>
+						<span class="describe">Магазин Rona-Shop.ru, м. Перово</span>
+					</p>
+					<p class="line">
+						<input type="radio" name="type">
+						<label><strong>В регионы транспортной компанией</strong></label>
+					</p>
+				</div>
+				<div class="fill fill-pay">
+					<p class="heading">Способы оплаты</p>
+					<p class="line">
+						<input type="radio" name="pay">
+						<label>Наличными</label>
+					</p>
+					<p class="line">
+						<input type="radio" name="pay">
+						<label>Оплата картой Visa или MasterCard</label>
+					</p>
+				</div>
+				<div class="fill fill-comment">
+					<p class="line">
+						<label class="heading">Комментарии к заказу</label>
+						<textarea></textarea>
+					</p>
+				</div>
+				<p class="check">
+					<input type="submit" value="Оформить заказ">
+				</p>
+			</form>
+		</div>
+	</section>
 
 	<footer class="footer">
-		<p class="text-center">Наш телефон в Москве: 8(495)796-02-51. Все материалы сайта Rona-Shop.ru защищены. Полное, либо частичное копирование информации запрещено.</p>
+		<nav class="nav">
+			<ul>
+				<li><a href="catalog.html"><strong>Все винные бокалы</strong></a></li>
+				<li><a href="catalog.html"><strong>Винные аксесуары</strong></a></li>
+				<li><a href="catalog.html"><strong>Декантеры</strong></a></li>
+				<li><a href="catalog.html"><strong>Аэраторы</strong></a></li>
+				<li><a href="catalog.html"><strong>Посуда ручной работы</strong></a></li>
+			</ul>
+		</nav>
+		<div class="banner"><img src="img/temp/banner.jpg" alt=""></div>
+		<p class="copyright">Наш телефон в Москве: 8(495)796-02-51. Все материалы сайта Rona-Shop.ru защищены. Полное, либо частичное копирование информации запрещено.</p>
 	</footer>
 
 	<script src="js/vendor/jquery-1.11.0.min.js"></script>
