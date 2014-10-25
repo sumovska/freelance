@@ -103,14 +103,15 @@ p {
    Author's custom styles
    ========================================================================== */
 body {
-    width: 1280px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 .wrapper {
     width: 1170px;
     margin: 0 auto;
     position: relative;
 }
-.wrapper:after, .header:after, .footer:after {
+.wrapper:after, .header:after, .footer:after, .sidebar:after {
     width: 100%;
     content: "\0020";
     display: block;
@@ -206,13 +207,14 @@ body {
     height: 400px;
     position: relative;
     color: #fff;
+    line-height: 46px;
     background: url(../img/banner.jpg) 0 0 no-repeat;
+    z-index: 5;
 }
 .banner .title {
     margin: 0;
     position: absolute;
     top: 152px;
-    line-height: 46px;
 }
 
 /* ==========================================================================
@@ -221,21 +223,23 @@ body {
 .navigation {
     width: 100%;
     margin: 0 0 40px;
+    position: relative;
+    z-index: 5;
 }
-.navigation .links {
+.navigation ul {
     margin: 0;
     padding: 0;
     font-size: 16px;
     text-align: center;
 }
-.navigation .links:after {
+.navigation ul:after {
     width: 100%;
     content: "\0020";
     display: block;
     clear: both;
     overflow: hidden;
 }
-.navigation .links li {
+.navigation ul li {
     width: 194px;
     height: 150px;
     margin: 0;
@@ -244,7 +248,7 @@ body {
     background: #fff;
     border-right: 1px solid #ecf0f6;
 }
-.navigation .links li:before {
+.navigation ul li:before {
     width: 100px;
     height: 60px;
     margin-left: -50px;
@@ -256,28 +260,28 @@ body {
     left: 50%;
     background: url(../img/icons/icon-1.png) 0 0 no-repeat;
 }
-.navigation .links .info:before { background: url(../img/icons/icon-2.png) 0 0 no-repeat; }
-.navigation .links .partners:before { background: url(../img/icons/icon-3.png) 0 0 no-repeat; }
-.navigation .links .question:before { background: url(../img/icons/icon-4.png) 0 0 no-repeat; }
-.navigation .links .reviews:before { background: url(../img/icons/icon-5.png) 0 0 no-repeat; }
-.navigation .links .contacts:before { background: url(../img/icons/icon-6.png) 0 0 no-repeat; }
-.navigation .links .news:hover:before { background: url(../img/icons/icon-1.png) 0 -60px no-repeat; }
-.navigation .links .info:hover:before { background: url(../img/icons/icon-2.png) 0 -60px no-repeat; }
-.navigation .links .partners:hover:before { background: url(../img/icons/icon-3.png) 0 -60px no-repeat; }
-.navigation .links .question:hover:before { background: url(../img/icons/icon-4.png) 0 -60px no-repeat; }
-.navigation .links .reviews:hover:before { background: url(../img/icons/icon-5.png) 0 -60px no-repeat; }
-.navigation .links .contacts:hover:before { background: url(../img/icons/icon-6.png) 0 -60px no-repeat; }
-.navigation .links .active {
+.navigation .info:before { background: url(../img/icons/icon-2.png) 0 0 no-repeat; }
+.navigation .partners:before { background: url(../img/icons/icon-3.png) 0 0 no-repeat; }
+.navigation .question:before { background: url(../img/icons/icon-4.png) 0 0 no-repeat; }
+.navigation .reviews:before { background: url(../img/icons/icon-5.png) 0 0 no-repeat; }
+.navigation .contacts:before { background: url(../img/icons/icon-6.png) 0 0 no-repeat; }
+.navigation .news:hover:before { background: url(../img/icons/icon-1.png) 0 -60px no-repeat; }
+.navigation .info:hover:before { background: url(../img/icons/icon-2.png) 0 -60px no-repeat; }
+.navigation .partners:hover:before { background: url(../img/icons/icon-3.png) 0 -60px no-repeat; }
+.navigation .question:hover:before { background: url(../img/icons/icon-4.png) 0 -60px no-repeat; }
+.navigation .reviews:hover:before { background: url(../img/icons/icon-5.png) 0 -60px no-repeat; }
+.navigation .contacts:hover:before { background: url(../img/icons/icon-6.png) 0 -60px no-repeat; }
+.navigation .active {
     color: #00bdf6;
 }
-.navigation .links .active {
+.navigation .active {
     height: 45px;
     padding-top: 105px;
 }
-.navigation .links .active:before {
+.navigation .active:before {
     background: url(../img/icons/icon-2.png) 0 -60px no-repeat; 
 }
-.navigation .links li a {
+.navigation ul li a {
     width: 194px;
     height: 45px;
     padding-top: 105px;
@@ -285,7 +289,7 @@ body {
     color: #9eabba;
     text-decoration: none;
 }
-.navigation .links li:hover a {
+.navigation ul li:hover a {
     color: #00bdf6;
 }
 
@@ -386,7 +390,6 @@ body {
     margin: 0;
 }
 
-
 .block-about .picture {
     width: 600px;
     height: 290px;
@@ -479,7 +482,6 @@ body {
     border-color: transparent #f4f4ea transparent transparent;
 }
 .sideblock .item {
-    margin: 0 0 10px;
     padding: 14px 15px 12px 19px;
     border-bottom:  1px solid #dde5e9;
 }
@@ -518,7 +520,7 @@ body {
 .block-headings .h4 { margin: 0 0 4px; }
 
 /* ==========================================================================
-   BLOCKQUOTE
+   BLOCKQUOTE (Цитата)
    ========================================================================== */
 .blockquote {
     margin: 0 0 35px;
@@ -543,6 +545,7 @@ body {
     background: url(../img/sprite.png) -100px 0 no-repeat;
 }
 .blockquote .author {
+    width: 360px;
     display: block;
     font-size: 14px;
     text-align: right;
@@ -554,7 +557,7 @@ body {
    ========================================================================== */
 .block-alert {
     width: 810px;
-    margin: 0 0 53px;
+    margin: 0 0 52px;
 }
 .alertblock {
     padding: 14px;
@@ -702,7 +705,7 @@ body {
    PAGER (Нумерация страниц)
    ========================================================================== */
 .pager {
-    margin: 0 0 59px;
+    margin: 0 0 58px;
     padding: 0;
     list-style: none;
     line-height: 26px;
@@ -716,7 +719,7 @@ body {
     overflow: hidden;
 }
 .pager li {
-    padding: 5px 10px;
+    padding: 4px 10px 6px;
     float: left;
     border-radius: 5px;
 }
@@ -729,7 +732,6 @@ body {
     color: #00bdf6;
     text-decoration: underline;
 }
-
 .pager .active {
     background: #d2dae1;
 }
@@ -737,10 +739,9 @@ body {
     color: #414a54;
     text-decoration: none;
 }
-
 .pager .next {
     margin-right: 11px;
-    padding: 5px 10px 5px 7px;
+    padding: 4px 10px 6px 7px;
     background: #00bdf6;
     transition: background .3s ease;
 }
@@ -903,7 +904,7 @@ input[type="submit"]:hover {
 .inactive .google { background-position: -90px -60px; }
 
 /* ==========================================================================
-   ICONS (Иконки социальных сетей)
+   FORMS (Формы)
    ========================================================================== */
 .block-forms p {
     margin: 0 0 10px; 
@@ -962,6 +963,62 @@ textarea {
     font-family: 'PT Serif', Arial, Tahoma, sans-serif;
     border: 1px solid #cbcbcb;
     border-radius: 5px;
+}
+.block-example {
+    width: 300px;
+    float: left;
+}
+.block-text {
+    width: 500px;
+    margin: 0 43px 0 0;
+    float: left;
+}
+.block-text .lid {font-size: 18px;
+    color: #c2c2c2;
+}
+.small-text {
+    font-size: 12px;
+}
+.xsmall-text {
+    color: #88929d;
+    font-size: 11px;
+}
+
+
+@media (max-width: 767px) {
+   .wrapper { width: 100%; min-width: 0; max-width: 640px; }
+   .header .logo:before { display: none; }
+   .header .contact { width: 14%; top: 29px; left: 16.8%; }
+   .header .contact:before { top: 6px; }
+   .header .contact .text { display: none; }
+   .header .callback { width: 18.75%; left: 42.9%; }
+   .banner { height: 190px; line-height: 30px; background: url(../img/bannersmall.jpg) 0 0 no-repeat; }
+   .banner .title { top: 79px; left: 5.3%; }
+   .banner .title .h1 { font-size: 30px; }
+   .banner .title .h2 { font-size: 18px; }
+   .navigation { margin-bottom: 31px; }
+   .navigation ul li { width: 33%; }
+   .navigation ul li a { width: 100%; }
+   .sidebar { width: 100%; margin: 0 0 32px; float: none; }
+   .submenu { width: 65%; margin: 0 auto 30px; padding-bottom: 24px; text-align: center; }
+   .submenu .h3 { margin: 0; }
+   .submenu .list { display: none; }
+   .sideblock { width: 48%; margin: 0 2.5% 0 0; float: left; }
+   .content { width: 582px; }
+   .infodoc { margin: 0 0 2px; }
+   .infodoc .describe { width: 516px; margin: 0 0 0 26px; float: none; }
+   .infodoc .blockquote { width: 460px; margin-bottom: 25px; }
+   .infodoc .photo { width: 62%; float: none; margin: 0 auto 40px; }
+   .attention { width: 86.4%; margin: 0 0 41px 4.4%; padding: 2.18% 2.18% 2.18% 5.4%; }
+   .block-about .picture { width: 98%; height: 290px; margin: 0 0 24px 0.9%; }
+   .block-about .name { padding-left: 3.6%; }
+   .block-about .text { padding: 0 10% 0 4.2%; }
+   .footer .nav-footer li { margin-right: 8%; }
+   .footer .copyright { top: 40px; }
+   .footer .phone { top: 46px; }
+   .footer .footer-nav { width: 100%; left: 0; }
+   .footer .footer-nav li { margin: 0 7.5% 0 0; }
+   .footer .footer-nav li:last-child { margin: 0; }
 }
     
 
