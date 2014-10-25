@@ -45,53 +45,36 @@
 	<section class="full">
 		<h1 class="h1 text-center">Оформление вашего заказа</h1>
 		<div class="block-order">
-			<form action="#">
+			<form action="order-thanks.html" method="post">
 				<div class="fill fill-contact">
 					<p class="heading">Контактная информация</p>
 					<p>
-						<label class="name">Ваше имя<span class="require">*</span></label>
-						<input type="text">
+						<label for="input-name" class="name">Ваше имя<span class="require">*</span></label>
+						<input id="input-name" type="text" value="">
 					</p>
 					<p>
-						<label class="name">Ваш e-mail<span class="require">*</span></label>
-						<input type="text">
+						<label for="input-email" class="name">Ваш e-mail<span class="require">*</span></label>
+						<input id="input-email" type="text" value="">
 					</p>
 					<p>
-						<label class="name">Ваш телефон<span class="require">*</span></label>
-						<input type="text">
+						<label for="input-phone" class="name">Ваш телефон<span class="require">*</span></label>
+						<input id="input-phone" type="text" value="">
 					</p>
 					<p>
-						<label class="name">Ваш адрес<span class="require">*</span></label>
-						<input type="text">
+						<label for="input-address" class="name">Ваш адрес<span class="require">*</span></label>
+						<input id="input-address" type="text" value="">
 					</p>
 				</div>
 				<div class="fill">
 					<p class="heading">Способы доставки</p>
-					<p class="line">
-						<input type="radio" name="type">
-						<label><strong>Курьером по Москве</strong></label> <br>
-						<span class="describe">При заказе от 5000 руб доставка по Москве - бесплатно!</span>
-					</p>
-					<p class="line">
-						<input type="radio" name="type">
-						<label><strong>Самовывоз</strong></label> <br>
-						<span class="describe">Магазин Rona-Shop.ru, м. Перово</span>
-					</p>
-					<p class="line">
-						<input type="radio" name="type">
-						<label><strong>В регионы транспортной компанией</strong></label>
-					</p>
+					<p class="line"><label class="radiobox"><input type="radio" name="type" value="1" checked> <strong>Курьером по Москве</strong> <span class="describe">При заказе от 5000 руб доставка по Москве - бесплатно!</span></label></p>
+					<p class="line"><label class="radiobox"><input type="radio" name="type" value="2"> <strong>Самовывоз</strong> <span class="describe">Магазин Rona-Shop.ru, м. Перово</span></label></p>
+					<p class="line"><label class="radiobox"><input type="radio" name="type" value="3"> <strong>В регионы транспортной компанией</strong></label></p>
 				</div>
 				<div class="fill fill-pay">
 					<p class="heading">Способы оплаты</p>
-					<p class="line">
-						<input type="radio" name="pay">
-						<label>Наличными</label>
-					</p>
-					<p class="line">
-						<input type="radio" name="pay">
-						<label>Оплата картой Visa или MasterCard</label>
-					</p>
+					<p class="line"><label class="radiobox"><input type="radio" name="pay" value="1" checked> Наличными</label></p>
+					<p class="line"><label class="radiobox"><input type="radio" name="pay" value="2"> Оплата картой Visa или MasterCard</label></p>
 				</div>
 				<div class="fill fill-comment">
 					<p class="line">
@@ -109,7 +92,7 @@
 	<footer class="footer">
 		<nav class="nav">
 			<ul>
-				<li><a href="catalog.html"><strong>Все винные бокалы</strong></a></li>
+				<li><a href="catalog-in.html"><strong>Все винные бокалы</strong></a></li>
 				<li><a href="catalog.html"><strong>Винные аксесуары</strong></a></li>
 				<li><a href="catalog.html"><strong>Декантеры</strong></a></li>
 				<li><a href="catalog.html"><strong>Аэраторы</strong></a></li>
