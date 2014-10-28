@@ -77,6 +77,21 @@ h4, .h4 {
     box-sizing: border-box;
 }
 
+.h-line {
+    position: relative;
+}
+.h-line:before {
+    width: 590px;
+    height: 5px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    background: #00c8fc;
+}
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -279,7 +294,7 @@ body {
 .about {
     margin: 0 0 78px;
 }
-.about .pic-logo {
+.about .logo {
     margin: 26px 0 0 136px;
     float: right;
 }
@@ -348,20 +363,6 @@ body {
     padding: 13px 0 0 0;
     position: relative;
 }
-.news .h3 {
-    position: relative;
-}
-.news .h3:before {
-    width: 590px;
-    height: 5px;
-    content: "\0020";
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    top: -25px;
-    left: 0;
-    background: #00c8fc;
-}
 .news .list {
     margin: 0;
     padding: 0;
@@ -390,6 +391,9 @@ body {
     color: #111;
     text-decoration: none;
 }
+.news .list .h4:hover {
+    text-decoration: underline;
+}
 .news .list .date {
     margin: 0 0 14px;
     font-size: 10px;
@@ -408,21 +412,6 @@ body {
 }
 .partners .h3 {
     margin: 0 0 21px;
-}
-.partners:before {
-    width: 1280px;
-    height: 765px;
-    content: "\0020";
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    top: 200px;
-    margin: 0 -40px;
-    background: #00c8fc;
-    z-index: -1;
-}
-.partners .h3 {
-    position: relative;
 }
 .partners .h3:before {
     width: 590px;
