@@ -65,4 +65,12 @@ $(document).ready(function () {
 		});
 	});
 
+	$(".gallery a").fancybox({
+		autoSize: false,
+		fitToView: false,
+		width: 'auto',
+		height: 'auto',
+		padding: 0
+	});
+
 });
