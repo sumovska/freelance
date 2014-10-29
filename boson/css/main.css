@@ -1,0 +1,549 @@
+/*!
+ * Project: Boson
+ * File: Main styles
+ */
+
+html, button, input, select, textarea {
+    color: #111;
+}
+html {
+    font: 13px/18px 'PT Sans', Helvetica, Arial, sans-serif;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+audio, canvas, img, video {
+    vertical-align: middle;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+
+
+@font-face {
+    font-family: 'Helios Cond';
+    src: url('../fonts/he_cn-webfont.eot');
+    src: url('../fonts/he_cn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/he_cn-webfont.woff') format('woff'),
+         url('../fonts/he_cn-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../fonts/pts55f-webfont.eot');
+    src: url('../fonts/pts55f-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pts55f-webfont.woff') format('woff'),
+         url('../fonts/pts55f-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+p {
+    margin: 0 0 26px;
+}
+a {
+    color: #00aef0;
+    text-decoration: underline;
+    transition: text-decoration .3s ease;
+}
+a:hover {
+    text-decoration: none;
+}
+h2, .h2 {
+    font: 24px/36px 'Helios Cond', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+h3, .h3 {
+    font: 21px/36px 'Helios Cond', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+h4, .h4 {
+    font: 18px/36px 'Helios Cond', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.h-line {
+    position: relative;
+}
+.h-line:before {
+    width: 49.08%;
+    height: 5px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    background: #00c8fc;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+    max-width: 1600px;
+    margin: 0 auto;
+    background: #f8f8f8 url(../img/bg.png) 0 0 repeat;
+}
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+}
+.wrapper:after, .header:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   _HEADER
+   ========================================================================== */
+.header {
+    height: 70px;
+    margin: 0;
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+    background: #111;
+    font: bold 10px/18px 'Helios Cond', Helvetica, Arial, sans-serif;
+}
+.header .logo {
+    width: 105px;
+    height: 17px;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 26px;
+    left: 1.9%;
+    text-indent: -1000px;
+    background: url(../img/logo.png) 0 0 no-repeat;
+}
+.header .nav {
+    position: absolute;
+    left: 36.6%;
+    top: 26px; 
+}
+.header .nav ul {
+    margin: 0;
+    padding: 0;
+}
+.header .nav li {
+    display: inline-block;
+    margin: 0 13px;
+}
+.header .nav li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    letter-spacing: .2em;
+    transition: opacity .3s ease;
+}
+.header .nav li a:hover {
+    opacity: .8;
+}
+.header .callback {
+    position: absolute;
+    top: 26px;
+    left: 89%;
+    color: #fff;
+    font-size: 9px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    transition: opacity .3s ease;
+}
+.header .callback:before {
+    width: 16px;
+    height: 12px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 3px;
+    left: -26px;
+    background: url(../img/sprite.png) 0 0 no-repeat;
+}
+.header .callback:hover {
+    opacity: .8;
+}
+
+/* ==========================================================================
+   _INDEX
+   ========================================================================== */
+.index {
+    margin: 0 0 61px;
+    height: 830px;
+    text-align: center;
+    position: relative;
+    background: url(../img/banner.jpg) 0 0 no-repeat;
+}
+.index .h2 {
+    margin: 0 0 40px;
+    padding: 318px 0 0 0;
+    color: #fff;
+}
+.index .link {
+    width: 214px;
+    margin: 0 18px;
+    padding: 7px 0 5px 0;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font: 10px/18px 'Helios Cond', Helvetica, Arial, sans-serif;
+    border: 2px solid #fff;
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+.index .link:hover {
+    opacity: .8;
+}
+
+/* ==========================================================================
+   _FOOTER
+   ========================================================================== */
+.footer {
+    height: 204px;
+    margin: 0;
+    color: #fff;
+    position: relative;
+    background: #00b0ef;
+}
+.footer:before {
+    width: 590px;
+    height: 5px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 16px;
+    background: #00c8fc;
+}
+.footer .nav {
+    position: absolute;
+    left: 12.5%;
+    top: 31px;
+    font: 10px/18px 'Helios Cond', Helvetica, Arial, sans-serif;
+}
+.footer .nav ul {
+    margin: 0;
+    padding: 0;
+}
+.footer .nav li {
+    margin: 0 14px;
+    display: inline-block;
+}
+.footer .nav li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    transition: opacity .3s ease;
+}
+.footer .nav li a:hover {
+    opacity: .8;
+}
+.footer .contacts {
+    width: 87.5%;
+    position: absolute;
+    top: 82px;
+    left: 12.5%;
+}
+.footer .contacts ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer .contacts ul:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.footer .contacts ul li {
+    width: 25%;
+    float: left;
+}
+.footer .contacts ul li a {
+    color: #fff;
+    display: block;
+}
+.footer .contacts .h4 {
+    margin: 0 0 6px;
+}
+
+/* ==========================================================================
+   _ABOUT
+   ========================================================================== */
+.about {
+    margin: 0 0 78px;
+}
+.about .logo {
+    margin: 26px 0 26px 136px;
+    float: right;
+}
+.about .h3 {
+    margin: 0 0 24px;
+}
+.about .link {
+    padding-left: 19px;
+    position: relative;
+    text-transform: uppercase;
+    color: #898989;
+    font: 10px/18px 'Helios Cond', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+.about .link:hover {
+    color: #00aef0;
+}
+.about .link:before {
+    width: 6px;
+    height: 8px;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 2px;
+    left: -2px;
+    background: url(../img/sprite.png) -30px 0 no-repeat;
+}
+
+/* ==========================================================================
+   _INFO
+   ========================================================================== */
+.info {
+    margin: 0 0 42px;
+}
+.info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.info ul:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+.info ul li {
+    width: 23.66%;
+    margin: 0 1.66% 0 0;
+    float: left;
+}
+.info ul li:last-child {
+    margin-right: 0;
+}
+.info .icon {
+    margin: 0 0 19px;
+}
+.info .h3 {
+    margin: 0 0 16px;
+}
+
+/* ==========================================================================
+   _NEWS
+   ========================================================================== */
+.news {
+    margin: 0 0 51px;
+    padding: 13px 0 0 0;
+    position: relative;
+}
+.news .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.news .list:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+.news .list .item {
+    width: 32.08%;
+    margin: 0 1.66% 0 0;
+    float: left;
+}
+.news .list .item:last-child {
+    margin: 0;
+}
+.news .list .pic {
+    margin: 0 0 8px;
+    display: block;
+}
+.news .list .pic img {
+    width: 100%;
+    display: block;
+}
+.news .list .h4 {
+    color: #111;
+    text-decoration: none;
+}
+.news .list .h4:hover {
+    text-decoration: underline;
+}
+.news .list .date {
+    margin: 0 0 14px;
+    font-size: 10px;
+    line-height: 10px;
+    color: #898989;
+    letter-spacing: .3em;
+}
+
+/* ==========================================================================
+   _PARTNERS
+   ========================================================================== */
+.partners {
+    margin: 0 0 77px;
+    padding-top: 13px;
+    position: relative;
+}
+.partners .h3 {
+    margin: 0 0 21px;
+}
+.partners .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.partners .list:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+.partners .list li {
+    width: 49.16%;
+    margin: 0 1.66% 22px 0;
+    padding: 50px 100px;
+    float: left;
+    text-align: center;
+    background: #fff;
+}
+.partners .list li:nth-child(2n) {
+    margin-right: 0;
+}
+.partners .list .logo {
+    margin: 0 0 25px;
+}
+.partners .list .text {
+    margin: 0 0 20px;
+}
+.partners .list .site {
+    color: #898989;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .36em;
+    font: 10px/18px 'Helios Cond', Helvetica, Arial, sans-serif;
+    transition: color .3s ease;
+}
+.partners .list .site:hover {
+    color: #00aef0;
+}
+
+/* ==========================================================================
+   _CLIENTS
+   ========================================================================== */
+.clients {
+    margin: 0 0 33px;
+}
+.clients .h3 {
+    margin: 0 0 12px;
+}
+.clients .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.clients .list:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+.clients .list li {
+    width: 176px !important;
+    margin: 0 50px 0 0;
+    text-align: center;
+    float: left;
+}
+.clients .list li:after {
+    width: 100%;
+    content: "\0020";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+.clients .list li a {
+    margin: 0 0 18px;
+    display: block;
+}
+.clients .list li a {
+    display: inline-block;
+}
+.clients .bx-wrapper {
+    max-width: 1114px !important;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important;}
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; }
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3 { page-break-after: avoid; }
+}
