@@ -511,8 +511,27 @@ body {
 }
 .clients .bx-wrapper {
     max-width: 1114px !important;
+    position: relative;
 }
-
+.clients .bx-controls {
+    position: absolute;
+    top: 50%;
+}
+.clients .bx-controls a {
+    width: 14px;
+    height: 19px;
+    display: block;
+    overflow: hidden;
+    text-indent: -1000px;
+    background: url(../img/sprite.png) 0 -20px no-repeat;
+}
+.clients .bx-controls a.bx-prev {
+    right: 0;
+}
+.clients .bx-controls a.bx-next {
+    left: 0;
+    background-position: -30px -20px;
+}
 
 /* ==========================================================================
    Media Queries
