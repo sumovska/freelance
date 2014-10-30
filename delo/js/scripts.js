@@ -42,6 +42,10 @@ function updateContainer() {
     }
 }
 
+$(function() {
+	$('.sd_menu li:has(ul)').doubleTapToGo();
+});
+
 jQuery(document).ready(function($) {
 
 	$(".respons_img").responsiveImg({
@@ -56,7 +60,7 @@ jQuery(document).ready(function($) {
 	});
 
 	if(!Modernizr.svg) {
-	  $('img[src*="svg"]').attr('src', function() {  
+	  $('img[src*="svg"]').attr('src', function() {
 	    return $(this).attr('src').replace('.svg', '.png');
 	  });
 	}
@@ -67,10 +71,10 @@ jQuery(document).ready(function($) {
 	$('.bar').each(function() {
      var bar = $(this);
      setTimeout( function() { bar.find('.progress').addClass('easing-long').css('width', bar.attr('data-percent') + '%' ); });
-    }); 
+    });
 	$('.bar').each(function() {
 	     var bar = $(this);
-	     bar.find('.progress').removeClass('easing-long').css('width', 0 ); 
+	     bar.find('.progress').removeClass('easing-long').css('width', 0 );
 	});
 
     $(".btn-vacansy").click(function() {
@@ -81,7 +85,7 @@ jQuery(document).ready(function($) {
     	$(".top_lang").slideToggle("slow");
     	$(this).toggleClass("active"); return false;
     });
-	
+
 	$(".work_pairs").masonry({
 		itemSelector: ".pair_box",
 		"isFitWidth": true
@@ -102,10 +106,10 @@ jQuery(document).ready(function($) {
 
 });
 
-(function($) {  
-	$(function() {  
-		$('.styled').styler();  
-	})  
+(function($) {
+	$(function() {
+		$('.styled').styler();
+	})
 })(jQuery)
 
 //  The function to change the class
@@ -118,7 +122,7 @@ var changeClass = function (r,className1,className2) {
         r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
     }
     return r.className;
-};  
+};
 //  Creating our button for smaller screens
 var menuElements = document.getElementById('menu');
 menuElements.insertAdjacentHTML('beforeBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"></button>');
@@ -128,14 +132,14 @@ document.getElementById('menutoggle').onclick = function() {
 }
 // document click to hide the menu
 // http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
-document.onclick = function(e) {
+/*document.onclick = function(e) {
     var mobileButton = document.getElementById('menutoggle'),
         buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
- 
+
     if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
         changeClass(mobileButton, 'navtoogle active', 'navtoogle');
     }
-}
+}*/
 
 // Bind normal buttons
 Ladda.bind( '.ladda-button', { timeout: 2000 } );
@@ -182,3 +186,10 @@ jQuery(document).ready(function($) {
     var className = $(".name_block_wr").attr("class");
     $("#scrollUp").addClass(className);
 });
+
+/*
+	VIEWPORT BUG FIX
+	iOS viewport scaling bug fix, by @mathias, @cheeaun and @jdalton
+*/
+
+;(function(e){function o(){s.content="width=device-width,minimum-scale="+i[0]+",maximum-scale="+i[1];e.removeEventListener(n,o,true)}var t="addEventListener",n="gesturestart",r="querySelectorAll",i=[1,1],s=r in e?e[r]("meta[name=viewport]"):[];if((s=s[s.length-1])&&t in e){o();i=[.25,1.6];e[t](n,o,true)}})(document);
