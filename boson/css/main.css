@@ -808,6 +808,7 @@ textarea {
 }
 .block-projects .item {
     width: 284px;
+    min-height: 392px;
     margin: 0 20px 20px 0;
     padding: 0 30px 50px;
     float: left;
@@ -815,15 +816,10 @@ textarea {
     background: #fff;
     transition: background .3s ease;
 }
-.block-projects .item-big {
-    width: 589px;
-    min-height: 600px;
-    margin: 0 22px 22px 0;
+.block-projects .item:hover {
+    background: #00aef0;
 }
-.block-projects .item:nth-child(6n) {
-    margin-right: 0;
-}
-.block-projects .item-big:nth-child(2n) {
+.block-projects .item:nth-child(4n) {
     margin-right: 0;
 }
 .block-projects .item .link {
@@ -831,9 +827,6 @@ textarea {
     display: block;
     color: #111;
     text-decoration: none;
-}
-.block-projects .item:hover {
-    background: #00aef0;
 }
 .block-projects .item:hover .link {
     color: #fff;
@@ -844,19 +837,12 @@ textarea {
     margin: 0 -30px;
     display: block;
 }
-.block-projects .item-big .pic {
-    width: 589px;
-    height: 400px;
-}
 .block-projects .item .h4 {
     margin: 0 0 14px;
     display: block;
     font-weight: bold;
     line-height: 24px;
     letter-spacing: -.044em;
-}
-.block-projects .item-big .h4 {
-    line-height: 36px;
 }
 .block-projects .item .agency {
     width: 122px;
@@ -872,9 +858,6 @@ textarea {
 }
 .block-projects .item:hover .agency {
     background: #00aef0;
-}
-.block-projects .item .agency:hover {
-    background: rgba( 255, 255, 255, 0);
 }
 .block-projects .item .agency img {
     width: 61px;
@@ -898,7 +881,21 @@ textarea {
     background-position: -80px 0;
 }
 
-
+.top-projects .item {
+    width: 589px;
+    min-height: 600px;
+    margin: 0 22px 22px 0;
+}
+.top-projects .item:nth-child(2n) {
+    margin-right: 0;
+}
+.top-projects .item .pic {
+    width: 589px;
+    height: 400px;
+}
+.top-projects .item .h4 {
+    line-height: 36px;
+}
 
 /* ==========================================================================
    Media Queries
