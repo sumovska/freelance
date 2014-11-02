@@ -464,45 +464,41 @@ textarea {
    ========================================================================== */
 .news {
 	margin: 0 0 51px;
-	padding: 13px 0 0 0;
-	position: relative;
-}
-.news .list {
-	margin: 0;
 	padding: 0;
-	list-style: none;
+	position: relative;
+    list-style: none;
 }
-.news .list:after {
+.news:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
 	overflow: hidden;
 	clear: both;
 }
-.news .list .item {
+.news .item {
 	width: 32.08%;
 	margin: 0 1.66% 0 0;
 	float: left;
 }
-.news .list .item:last-child {
+.news .item:nth-child(3n) {
 	margin: 0;
 }
-.news .list .pic {
+.news .pic {
 	margin: 0 0 8px;
 	display: block;
 }
-.news .list .pic img {
+.news .pic img {
 	width: 100%;
 	display: block;
 }
-.news .list .h4 {
+.news .h4 {
 	color: #111;
 	text-decoration: none;
 }
-.news .list .h4:hover {
+.news .h4:hover {
 	text-decoration: underline;
 }
-.news .list .date {
+.news .date {
 	margin: 0 0 14px;
 	font-size: 10px;
 	line-height: 10px;
@@ -511,29 +507,22 @@ textarea {
 }
 
 /* ==========================================================================
-   _PARTNERS
+   _AGENCIES
    ========================================================================== */
-.partners {
+.agencies {
 	margin: 0 0 77px;
-	padding-top: 13px;
-	position: relative;
-}
-.partners .h3 {
-	margin: 0 0 21px;
-}
-.partners .list {
-	margin: 0;
 	padding: 0;
-	list-style: none;
+    position: relative;
+    list-style: none;
 }
-.partners .list:after {
+.agencies:after {
 	width: 100%;
 	content: "\0020";
 	display: block;
 	overflow: hidden;
 	clear: both;
 }
-.partners .list li {
+.agencies li {
 	width: 49.16%;
 	margin: 0 1.66% 22px 0;
 	padding: 50px 100px;
@@ -541,16 +530,16 @@ textarea {
 	text-align: center;
 	background: #fff;
 }
-.partners .list li:nth-child(2n) {
+.agencies li:nth-child(2n) {
 	margin-right: 0;
 }
-.partners .list .logo {
+.agencies .logo {
 	margin: 0 0 25px;
 }
-.partners .list .text {
+.agencies .text {
 	margin: 0 0 20px;
 }
-.partners .list .site {
+.agencies .site {
 	color: #898989;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -558,7 +547,7 @@ textarea {
 	font: 10px/18px 'HeliosC', Helvetica, Arial, sans-serif;
 	transition: color .3s ease;
 }
-.partners .list .site:hover {
+.agencies .site:hover {
 	color: #00aef0;
 }
 
@@ -893,6 +882,18 @@ textarea {
 }
 .top-projects .item .h4 {
     line-height: 36px;
+}
+
+/* ==========================================================================
+   _BLOCK-CONTACTS
+   ========================================================================== */
+.block-contacts {
+    margin: 0 -40px -70px;
+}
+.block-contacts .map {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 /* ==========================================================================
