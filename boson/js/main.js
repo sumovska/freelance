@@ -103,7 +103,5 @@ function scrollEvent() {
 		}
 	}
 	lastScrollTop = current;
-	if (!scrolling) {
-		return false;
-	}
+	return scrolling;
 }
