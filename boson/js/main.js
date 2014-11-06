@@ -3,15 +3,21 @@
 
 /* On document ready */
 $(document).ready(function () {
+	FastClick.attach(document.body);
 
 	/* Инициализация блока видео */
 	if ($('.index').length > 0) {
 		window.video = $('.index .video .resize').eq(0);
-		window.video.css({
-			'width': 'auto',
-			'top': '50%',
-			'left': '50%'
-		});
+		window.video.one("load",function () {
+			window.video.hide().addClass('loaded').fadeIn(100);
+			window.video.css({
+				'width': 'auto',
+				'top': '50%',
+				'left': '50%'
+			});
+		}).each(function () {
+				if (this.complete) $(this).load();
+			});
 		$('.index .down').click(function () {
 			$(window).scrollTop(5);
 			return false;

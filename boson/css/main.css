@@ -202,10 +202,10 @@ textarea {
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: .2em;
-	transition: color .3s ease;
 }
 .footer .nav li a:hover {
-	color: #00c8fc;
+	color: #555;
+	text-decoration: underline;
 }
 .footer .contacts {
 	margin: 0;
@@ -233,7 +233,7 @@ textarea {
 }
 .footer .contacts .h {
 	margin: 0 0 6px;
-	font: bold 18px/32px 'HeliosC', Helvetica, Arial, sans-serif;
+	font: 18px/32px 'HeliosC', Helvetica, Arial, sans-serif;
 	letter-spacing: -.01em;
 }
 .footer .contacts .org {
@@ -307,22 +307,25 @@ textarea {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	line-height: 40px;
+	line-height: 20px;
 	text-align: center;
 }
 .header .nav li {
+	padding: 10px 0;
 	display: inline-block;
 	margin: 0 13px;
 }
 .header .nav li a {
+	padding-left: 2px;
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: .2em;
-	transition: opacity .3s ease;
+	border-bottom: 1px solid transparent;
+	transition: border-color .2s ease;
 }
 .header .nav li a:hover {
-	opacity: .8;
+	border-bottom-color: #fff;
 }
 .header .callback {
 	position: absolute;
@@ -374,10 +377,10 @@ textarea {
 	opacity: .9;
 	background: url('../img/sprite.png') no-repeat -20px 0;
 	background-size: 50px auto;
-	transition: opacity .2s ease;
+	transition: bottom .2s ease;
 }
 .index .down:hover {
-	opacity: 1;
+	bottom: 25px;
 }
 .index .video {
 	overflow: hidden;
@@ -386,12 +389,17 @@ textarea {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	background: #000;
 }
 .index .video .resize {
 	width: 100%;
 	height: 100%;
 	display: block;
+	visibility: hidden;
 	position: absolute;
+}
+.index .video .resize.loaded {
+	visibility: visible;
 }
 .index .text {
 	margin-top: -73px;
@@ -405,6 +413,7 @@ textarea {
 .index .h2 {
 	margin: 0 0 38px;
 	color: #fff;
+	font-weight: normal;
 }
 .index .line {
 	margin: 0;
@@ -562,6 +571,14 @@ textarea {
 .news .item:nth-child(3n + 1) {
 	clear: left;
 }
+.news li a {
+	display: block;
+	color: #111;
+	text-decoration: none;
+}
+.news li a:hover {
+	text-decoration: underline;
+}
 .news .pic {
 	margin: 0 0 17px;
 	display: block;
@@ -570,8 +587,14 @@ textarea {
 	width: 100%;
 	display: block;
 }
+.news li a:hover .pic img {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	filter: gray;
+	-webkit-filter: grayscale(75%);
+}
 .news .name {
 	margin: 0 0 6px 0;
+	display: block;
 	font: bold 18px 'HeliosC', Helvetica, Arial, sans-serif;
 	letter-spacing: -.05em;
 }
@@ -718,6 +741,13 @@ textarea {
 	height: 106px;
 	margin: 0 auto 20px;
 	display: block;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	filter: gray;
+	-webkit-filter: grayscale(100%);
+}
+.clients .list a:hover img {
+	filter: none;
+	-webkit-filter: none;
 }
 .clients .list li:after {
 	width: 100%;
@@ -831,6 +861,7 @@ textarea {
 .top .h3 {
 	margin: 0 0 35px;
 	letter-spacing: -.03em;
+	font-weight: normal;
 }
 .top .slogan {
 	font: bold 16px/24px 'HeliosC', Helvetica, Arial, sans-serif;
@@ -1240,6 +1271,7 @@ textarea {
 	.header .nav ul { padding: 100px 50px; display: none; font-size: 14px; line-height: 50px; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(0, 0, 0, .9); }
 	.header .nav ul li { width: 200px; margin: 0 auto; display: block; }
 	.header .nav li a { display: block; }
+	.header .nav li a:hover { border-bottom-color: transparent; }
 	.header .callback { display: none; }
 	.top { height: auto; }
 	.top .wrapper { padding-top: 30px; min-height: 250px; }
@@ -1257,6 +1289,8 @@ textarea {
 	.agencies .card { padding-left: 65px; padding-right: 65px; }
 	.services li { width: 100%; }
 	.projects .item { width: 100%; }
+	.projects .item .link { min-height: 0; padding-bottom: 40px; }
+	.projects .item:hover .link { padding-bottom: 88px; }
 	.block-project .info { min-height: 0; margin: 0; padding-right: 0; }
 	.block-project .info .pic { width: 75%; margin: 0 auto 60px; position: relative; top: auto; right: auto; }
 	.block-project .info .h3:before { width: 49%; }
