@@ -1,0 +1,884 @@
+/*!
+ * Project: Duckling
+ * File: Main styles
+ * Author: Sergiy Miroshnychenko
+ */
+
+/* ==========================================================================
+   _FONTS
+   ========================================================================== */
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url(http://fonts.gstatic.com/s/ubuntucondensed/v6/DBCt-NXN57MTAFjitYxdrEdb2OcoT90fJMMHwFkEyU4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(http://fonts.gstatic.com/s/ubuntu/v7/EOw89wVWpfqz-OXHFsgbz-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(http://fonts.gstatic.com/s/ubuntu/v7/0bJAQfNpYDMK5gdvWOS2DXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://fonts.gstatic.com/s/ubuntu/v7/4z2U46_RRLOfkoHsWJG3v7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+/* ==========================================================================
+   _HTML
+   ========================================================================== */
+* {
+	box-sizing: border-box;
+}
+html {
+	width: 100%;
+	height: 100%;
+	font: 20px/normal 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
+	color: #333;
+}
+body {
+	max-width: 1600px;
+	min-width: 1260px;
+	height: 100%;
+	margin: 0 auto;
+	background: #fff url('../img/body.png') 50% 0 repeat;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+audio, canvas, img, video {
+	vertical-align: middle;
+}
+/* ==========================================================================
+   _LAYOUT
+   ========================================================================== */
+.wrapper {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.block {
+	background: #f5f5ea;
+}
+.wrapper:after, .block:after {
+	width: 100%;
+	content: "\0020";
+	display: block;
+	clear: both;
+	overflow: hidden;
+}
+
+/* ==========================================================================
+   _TEXT
+   ========================================================================== */
+p {
+	margin: 0 0 24px;
+}
+ul, ol {
+	margin: 0 0 24px 0;
+}
+a {
+	color: #333;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0 0 24px;
+}
+.h1 {
+	margin-bottom: 46px;
+	font: bold 90px 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+.h2 {
+	font-size: 72px;
+	font-weight: normal;
+}
+.h3 {
+	font-size: 60px;
+	font-weight: normal;
+}
+.h4 {
+	font: bold 48px 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+.h5 {
+	font-size: 28px;
+	font-weight: normal;
+}
+.text-center {
+	text-align: center;
+}
+
+/* ============================================================
+   _REF-CLEAR (link with border and with transparent background)
+   ============================================================ */
+.ref-clear {
+	width: 464px;
+	height: 104px;
+	margin: 0;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-size: 48px;
+	line-height: 86px;
+	background: transparent; 
+	border: 4px solid #333;
+	border-radius: 9px;
+	transition: color .5s ease, border-color .5s ease;
+}
+.ref-clear:hover {
+	color: #ec691f;
+	border-color: #ec691f;
+}
+
+/* ==========================================
+   REF-ORANGE (link with orange background)
+   ========================================== */
+.ref-orange {
+	width: 260px;
+	height: 40px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+	background-color: #ec691f;
+	border-radius: 10px;
+	transition: background-color .3s ease;
+}
+.ref-orange:hover {
+	background-color: #fc9130; 
+}
+
+/* ==========================================================================
+   _FORMS
+   ========================================================================== */
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+textarea {
+	resize: vertical;
+}
+
+/* ==========================================================================
+   _FOOTER
+   ========================================================================== */
+.footer {
+	height: 456px;
+	font: 24px 'Ubuntu', Helvetica, Arial, sans-serif;
+	background: #f5f5ea;
+}
+.footer .logo {
+	width: 205px;
+	height: 51px;
+	margin: 0; 
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: 3px;
+	opacity: .8;
+}
+.footer .logo a {
+	width: 205px;
+	height: 51px;
+	display: block;
+}
+.footer .copyright {
+	width: 380px;
+	margin: 0;
+	position: absolute;
+	top: 113px;
+	left: 0;
+	letter-spacing: -.007em;
+}
+.footer .contacts {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 196px;
+	left: 0;
+}
+.footer .contacts li {
+	margin-bottom: 50px;
+}
+.footer .contacts li a {
+	padding-left: 60px;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.footer .contacts li a:hover {
+	color: #fc9130;
+}
+.footer .contacts li a:before {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../img/sprite.png) -50px -70px no-repeat;
+	background-size: 100px auto; 
+}
+.footer .contacts li a.adr:before { width: 32px; height: 52px; left: 2px; background-position: 0 -105px; }
+.footer .contacts li a.tel:before { width: 36px; height: 33px; }
+.footer .contacts li a.email:before { width: 38px; height: 27px; background-position: -50px -115px; }
+.footer .nav {
+	position: absolute;
+	top: 70px;
+	left: 460px;
+}
+.footer .nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.footer .nav ul li {
+	margin: 0 0 48px 0;
+	transition: text-decoration .3s ease;
+}
+.footer .widget {
+	position: absolute;
+	top: 68px;
+	right: 38px;
+}
+
+/* ==========================================================================
+   _HEADER
+   ========================================================================== */
+.header {
+	height: 138px;
+	position: relative;
+	z-index: 10;
+}
+.header .logo {
+	width: 205px;
+	height: 51px;
+	margin: 0; 
+	display: block;
+	position: absolute;
+	top: 19px;
+	left: 0;
+	opacity: .8;
+}
+.header .logo a {
+	width: 205px;
+	height: 51px;
+	display: block;
+}
+.header .slogan {
+	margin: 0;
+	text-align: center;
+	font-size: 18px;
+	line-height: 22px;
+	position: absolute;
+	top: 76px;
+	left: 40px;
+}
+.header .callback {
+	position: absolute;
+	top: 20px;
+	left: 625px;
+}
+.header .callback .title {
+	margin: 0; 
+	position: absolute;
+	left: -268px;
+	top: 32px;
+	letter-spacing: -.008em;
+}
+.header .callback .title:after {
+	width: 48px;
+	height: 21px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: 5px;
+	right: -63px;
+	background: url(../img/sprite.png) -90px -50px no-repeat;
+}
+.header .callback .phone {
+	padding-left: 46px;
+	margin: 0 0 8px;
+	position: relative;
+	font: bold 30px/34px 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+.header .callback .phone:before {
+	width: 36px;
+	height: 26px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 4px;
+	background: url(../img/sprite.png) 0 0 no-repeat;
+	background-size: 100px auto;
+}
+.header .callback .link {
+	margin: 0;
+	font: 18px/37px 'Ubuntu', Helvetica, Arial, sans-serif;
+	text-align: center;
+	letter-spacing: -.02em;
+}
+.header .profile {
+	position: absolute;
+	top: 27px;
+	right: 0;
+}
+.header .profile .link {
+	margin: 0;
+	position: relative;
+	transition: text-decoration .3s ease;
+}
+.header .profile .link:before {
+	width: 19px;
+	height: 19px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	background: url(../img/sprite.png) -45px 0 no-repeat;
+	background-size: 100px auto;
+	z-index: 4;
+}
+.header .profile .link:hover {
+	text-decoration: underline;
+}
+.header .profile .link a {
+	padding: 0 22px 0 26px;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	z-index: 8;
+}
+.header .profile .link a:before, .header .profile .link a:after {
+	width: 10px;
+	height: 2px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	background: #333;
+	transition: background-color .3s ease;
+}
+.header .profile .link a:before {
+	top: 12px;
+	right: 6px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.header .profile .link a:after {
+	top: 12px;
+	right: 0;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.header .search {
+	position: absolute;
+	top: 67px;
+	right: 0;
+}
+.header .search input[type="text"] {
+	width: 157px;
+	height: 29px;
+	padding: 8px 13px;
+	display: block;
+	outline: none;
+	font-size: 12px;
+	color: #333;
+	position: relative;
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	border: 1px solid #333;
+	border-radius: 7px;
+	background: transparent;
+}
+.header .search input[type="submit"] {
+	width: 19px;
+	height: 19px;
+	display: block;
+	outline: none;
+	position: absolute;
+	top: 6px;
+	right: 8px;
+	border: none;
+	background: url(../img/sprite.png) -75px 0 no-repeat;
+	background-size: 100px auto;
+}
+
+/* ==========================================================================
+   _NAVIGATION
+   ========================================================================== */
+.nav {
+	position: relative;
+	z-index: 10;
+}
+.nav .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	font-size: 24px;
+	line-height: 43px;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
+.nav .list li {
+	padding: 0 15px;
+	display: inline-block;
+	position: relative;
+}
+.nav .list li:first-of-type {
+	padding-left: 0;
+}
+.nav .list li:last-of-type {
+	padding-right: 0;
+	padding-left: 64px;
+}
+.nav .list li:last-of-type:after {
+	display: none;
+} 
+.nav .list li:after {
+	width: 23px;
+	height: 23px;
+	display: inline-block;
+	content: '/';
+	clear: both;
+	color: #333;
+	position: absolute;
+	right: -12px;
+}
+.nav .list li a {
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.nav .list li a:hover {
+	color: #fc9130;
+}
+.nav .list li.cart:before {
+	width: 31px;
+	height: 25px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 23px;
+	top: 8px;
+	background: url(../img/sprite.png) 0 -35px no-repeat;
+	background-size: 100px auto;
+}
+
+/* ==========================================================================
+   _INDEX
+   ========================================================================== */
+.index {
+	min-height: 100%;
+	margin: -183px 0 0 0;
+	padding: 256px 0 94px 0;
+	text-align: center;
+	position: relative;
+	background: #fff url(../img/index.jpg) 0 0 no-repeat;
+	background-size: cover;
+	z-index: 5;
+	cursor: default;
+}
+.index .ref-clear {
+	display: inline-block;
+	font-weight: bold;
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+
+/* ==========================================================================
+   _INFO
+   ========================================================================== */
+.info {
+	margin: 0;
+	padding: 50px 0 20px;
+	list-style: none;
+}
+.info:after {
+	width: 100%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.info li {
+	width: 250px;
+	margin: 0 66px 0 0;
+	float: left;
+}
+.info li:nth-child(4n) {
+	margin-right: 0;
+}
+.info .icon {
+	margin: 0 auto 7px;
+	display: block;
+}
+.info .h {
+	margin: 0 0 16px;
+	display: block;
+	font-size: 30px;
+	text-align: center;
+	color: #ec691f;
+}
+
+/* ==========================================================================
+   _WEAR
+   ========================================================================== */
+.block-wear {
+	margin: 0 0 24px 0;
+}
+.wear{
+	margin: 0;
+	padding: 55px 0 0 0;
+	list-style: none;
+}
+.wear:after {
+	width: 100%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.wear li {
+	width: 220px;
+	min-height: 334px;
+	margin: 0 106px 36px 0;
+	text-align: center;
+	float: left;
+}
+.wear li:nth-child(4n) {
+	margin-right: 0;
+}
+.wear li:nth-child(4n+1) {
+	clear: left;
+}
+.wear .link {
+	display: block;
+	text-decoration: none;
+}
+.wear .pic {
+	margin-bottom: 24px;
+	transition: transform .2s ease;
+}
+.wear .pic:hover {
+	transform: scale(1.03) ;
+}
+.wear .h {
+	display: block;
+	font-size: 36px;
+	transition: text-decoration .3s ease;
+}
+.wear .h:hover {
+	text-decoration: underline;
+}
+
+/* ==========================================================================
+   _ABOUT
+   ========================================================================== */
+.block-about {
+	margin: 0 0 46px 0;
+	padding: 31px 0 6px 0;
+}
+
+/* ==========================================================================
+   _WORK
+   ========================================================================== */
+.block-work {
+	margin: 0 0 65px 0;
+}
+.block-work .h2 {
+	margin: 0 0 84px 0;
+}
+
+/* ==========================================================================
+   _REVIEWS
+   ========================================================================== */
+.block-reviews {
+	margin: 0 0 79px 0;
+}
+.block-reviews .h2 {
+	margin: 0 0 46px 0; 
+}
+.reviews {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-size: 18px;
+}
+.reviews:after {
+	width: 100%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.reviews li {
+	width: 298px;
+	margin: 0 153px 0 0;
+	float: left;
+}
+.reviews li:nth-child(3n) {
+	margin-right: 0;
+}
+.reviews .comment {
+	width: 298px;
+	margin: 0 0 16px 0;
+	position: relative;
+	background: #f5f5ea;
+	border: 1px solid #d0d0c5;
+	border-radius: 1px;
+}
+.reviews .comment:before {
+	width: 0;
+	height: 0;
+	content: ' ';
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	bottom: -15px;
+	left: 24px;
+	border-style: solid;
+	border-width: 0 18px 15px 0;
+	border-color: transparent #d0d0c6 transparent transparent;
+}
+.reviews .comment:after {
+	width: 0;
+	height: 0;
+	content: ' ';
+	display: block;
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	bottom: -13px;
+	left: 25px;
+	border-style: solid;
+	border-width: 0 16px 13px 0;
+	border-color: transparent #f5f5ea transparent transparent;
+}
+.reviews .comment .text {
+	width: 298px;
+	min-height: 204px;
+	margin: 0;
+	padding: 40px 12px 40px;
+	position: relative;
+}
+.reviews .comment .text:before, .reviews .comment .text:after {
+	width: 25px;
+	height: 18px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	background: url(../img/sprite.png) -40px -40px no-repeat;
+	background-size: 100px auto;
+}
+.reviews .comment .text:before {
+	top: 16px;
+	left: 12px;
+}
+.reviews .comment .text:after {
+	bottom: 12px;
+	right: 16px;
+	background-position: -75px -40px;
+}
+.reviews .comment .rating {
+	margin: 0 0 4px 0;
+	display: block;
+	position: relative;
+	color: #feac33; 
+	font-size: 28px;
+	line-height: 34px;
+	letter-spacing: -.02em;
+}
+.reviews .comment .more {
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-style: italic;
+}
+.reviews .user {
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	line-height: 26px;
+}
+.reviews .user .photo {
+	width: 48px;
+	height: 48px;
+	margin: 7px 12px 3px 0;
+	display: block;
+	float: left;
+	border-radius: 50%;
+}
+.reviews .user .date {
+	display: block;
+	font-size: 14px;
+	color: #999;
+}
+
+/* ==========================================================================
+   _DOCUMENTS
+   ========================================================================== */
+.block-doc {
+	margin: 0 0 50px;
+	padding: 24px 0 20px 0;
+	font-size: 24px;
+}
+.block-doc:after {
+	width: 100%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-doc .describe {
+	width: 410px;
+	float: left;
+}
+.block-doc .describe .par-1 {
+	margin-bottom: 94px;
+}
+.block-doc .title {
+	font-size: 48px;
+}
+.block-doc .describe .ref-orange {
+	width: 270px;
+	height: 74px;
+	margin: 0 auto;
+	font-size: 36px;
+	line-height: 68px;
+	border-radius: 5px;
+}
+.block-doc .sertificate {
+	width: 598px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: right;
+}
+.block-doc .sertificate li {
+	margin: 0 70px 44px 0;
+	float: left;
+}
+.block-doc .sertificate li:nth-child(3n) {
+	margin-right: 0;
+}
+.block-doc .sertificate li:nth-child(3n+1) {
+	clear: left;
+}
+
+/* ==========================================================================
+   _GALLERY
+   ========================================================================== */
+.block-gallery {
+	margin: 0 0 60px 0;
+}
+.gallery {
+	margin: 0;
+	padding: 7px 0 0 0;
+	float: left;
+	list-style: none;
+	text-align: center;
+	font-size: 18px;
+}
+.gallery li {
+	width: 184px;
+	margin: 0 20px 0 0;
+	display: inline-block;
+}
+.gallery .link {
+	text-decoration: none;
+}
+.gallery .pic {
+	width: 184px;
+	height: 124px;
+	margin: 0 0 15px 0;
+	display: block;
+	border: 2px solid #eee;
+	border-radius: 1px;
+	transition: border-color .2s ease;
+}
+.gallery .pic:hover {
+	border-color: #b7b7b7;
+}
+.gallery .name {
+	transition: text-decoration .3s ease;
+}
+.gallery .name:hover {
+	text-decoration: underline;
+}
+.block-gallery .text {
+	width: 504px;
+	float: right;
+	font-size: 24px;
+}
+
+/* ==========================================================================
+   _QUESTIONS
+   ========================================================================== */
+.block-questions {
+	margin: 0 0 42px; 
+	font-size: 24px;
+}
+.block-questions .text {
+	width: 640px;
+	margin-right: 56px;
+	float: left;
+}
+.block-questions .text .h2 {
+	margin: 0 0 30px 0;
+}
+.block-questions .ask {
+	float: left;
+}
+.block-questions .ask .ref-clear {
+	width: 345px;
+	height: 93px;
+	margin-top: 74px;
+	line-height: 76px;
+	border-width: 3px;
+}
+
+/* ==========================================================================
+   _PRINT STYLES
+   ========================================================================== */
+@media print {
+	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; }
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
+}
