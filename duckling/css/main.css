@@ -150,9 +150,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
    REF-ORANGE (link with orange background)
    ========================================== */
 .ref-orange {
-	width: 260px;
-	height: 40px;
-	display: block;
 	text-decoration: none;
 	text-align: center;
 	color: #fff;
@@ -342,6 +339,11 @@ textarea {
 	text-align: center;
 	letter-spacing: -.02em;
 }
+.header .callback .link .ref-orange {
+	width: 260px;
+	height: 40px;
+	display: block;
+}
 .header .profile {
 	position: absolute;
 	top: 27px;
@@ -352,7 +354,7 @@ textarea {
 	position: relative;
 	transition: text-decoration .3s ease;
 }
-.header .profile .link:before {
+.header .profile .link:before, .header .profile .link:after {
 	width: 19px;
 	height: 19px;
 	display: block;
@@ -361,9 +363,22 @@ textarea {
 	position: absolute;
 	top: 2px;
 	left: 0;
+	opacity: 1;
 	background: url(../img/sprite.png) -45px 0 no-repeat;
 	background-size: 100px auto;
 	z-index: 4;
+	transition: opacity .3s ease;
+}
+.header .profile .link:after {
+	opacity: 0;
+	background-position: -75px 0;
+	z-index: 5;
+}
+.header .profile .link:hover:before {
+	opacity: 0;
+}
+.header .profile .link:hover:after {
+	opacity: 1;
 }
 .header .profile .link a {
 	padding: 0 22px 0 26px;
@@ -436,7 +451,7 @@ textarea {
 	top: 5px;
 	right: 8px;
 	border: none;
-	background: url(../img/sprite.png) -75px 0 no-repeat;
+	background: url(../img/sprite.png) -75px -25px no-repeat;
 	background-size: 100px auto;
 }
 
@@ -523,6 +538,21 @@ textarea {
 }
 .nav .list li.cart a:hover:after {
 	opacity: 1;
+}
+.nav .list li.cart span {
+	width: 16px;
+	height: 16px;
+	display: block;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: -6px;
+	left: 32px;
+	background: #ec691f;
+	border-radius: 50%;
+	z-index: 3;
 }
 
 /* ==========================================================================
@@ -657,46 +687,73 @@ textarea {
 }
 
 /* ==========================================================================
-   _WORK
+   _PROCESS
    ========================================================================== */
-.block-work {
+.process {
 	margin: 0 0 65px 0;
 }
-.block-work .h2 {
+.process .h2 {
 	margin: 0 0 84px 0;
+}
+.process .list {
+	margin: 16px 0 0 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+.process .list li {
+	width: 200px;
+	margin: 0 18px;
+	display: inline-block;
+	vertical-align: top;
+}
+.process .list .h {
+	margin: 0 0 4px;
+	display: block;
+}
+.process .list .text {
+	display: block;
+	font-size: 15px;
+	line-height: 18px;
+}
+.process .list .ref-orange {
+	padding: 0px 6px 2px;
+	font-size: 13px;
+	line-height: 14px;	
 }
 
 /* ==========================================================================
    _REVIEWS
    ========================================================================== */
-.block-reviews {
+.reviews {
 	margin: 0 0 79px 0;
 }
-.block-reviews .h2 {
+.reviews .h2 {
 	margin: 0 0 46px 0;
 }
-.reviews {
+.reviews .list {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 	font-size: 18px;
 }
-.reviews:after {
+.reviews .list:after {
 	width: 100%;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.reviews li {
+.reviews .list li {
 	width: 298px;
 	margin: 0 153px 0 0;
 	float: left;
 }
-.reviews li:nth-child(3n) {
+.reviews .list li:nth-child(3n) {
 	margin-right: 0;
 }
-.reviews .comment {
+.reviews .list .comment {
 	width: 298px;
 	margin: 0 0 16px 0;
 	position: relative;
@@ -704,7 +761,7 @@ textarea {
 	border: 1px solid #d0d0c5;
 	border-radius: 1px;
 }
-.reviews .comment:before {
+.reviews .list .comment:before {
 	width: 0;
 	height: 0;
 	content: ' ';
@@ -717,7 +774,7 @@ textarea {
 	border-width: 0 18px 15px 0;
 	border-color: transparent #d0d0c6 transparent transparent;
 }
-.reviews .comment:after {
+.reviews .list .comment:after {
 	width: 0;
 	height: 0;
 	content: ' ';
@@ -731,33 +788,33 @@ textarea {
 	border-width: 0 16px 13px 0;
 	border-color: transparent #f5f5ea transparent transparent;
 }
-.reviews .comment .text {
+.reviews .list .comment .text {
 	width: 298px;
 	min-height: 204px;
 	margin: 0;
 	padding: 40px 12px 40px;
 	position: relative;
 }
-.reviews .comment .text:before, .reviews .comment .text:after {
+.reviews .list .comment .text:before, .reviews .list .comment .text:after {
 	width: 25px;
 	height: 18px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	background: url(../img/sprite.png) -40px -40px no-repeat;
+	background: url(../img/sprite.png) -40px -155px no-repeat;
 	background-size: 100px auto;
 }
-.reviews .comment .text:before {
+.reviews .list .comment .text:before {
 	top: 16px;
 	left: 12px;
 }
-.reviews .comment .text:after {
+.reviews .list .comment .text:after {
 	bottom: 12px;
 	right: 16px;
-	background-position: -75px -40px;
+	background-position: -75px -155px;
 }
-.reviews .comment .rating {
+.reviews .list .comment .rating {
 	margin: 0 0 4px 0;
 	display: block;
 	position: relative;
@@ -766,15 +823,15 @@ textarea {
 	line-height: 34px;
 	letter-spacing: -.02em;
 }
-.reviews .comment .more {
+.reviews .list .comment .more {
 	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 	font-style: italic;
 }
-.reviews .user {
+.reviews .list .user {
 	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 	line-height: 26px;
 }
-.reviews .user .photo {
+.reviews .list .user .photo {
 	width: 48px;
 	height: 48px;
 	margin: 7px 12px 3px 0;
@@ -782,7 +839,7 @@ textarea {
 	float: left;
 	border-radius: 50%;
 }
-.reviews .user .date {
+.reviews .list .user .date {
 	display: block;
 	font-size: 14px;
 	color: #999;
@@ -791,61 +848,62 @@ textarea {
 /* ==========================================================================
    _DOCUMENTS
    ========================================================================== */
-.block-doc {
+.documents {
 	margin: 0 0 50px;
 	padding: 24px 0 20px 0;
 	font-size: 24px;
 }
-.block-doc:after {
+.documents:after {
 	width: 100%;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.block-doc .describe {
+.documents .describe {
 	width: 410px;
 	float: left;
 }
-.block-doc .describe .par-1 {
+.documents .describe .par-1 {
 	margin-bottom: 94px;
 }
-.block-doc .title {
+.documents .title {
 	font-size: 48px;
 }
-.block-doc .describe .ref-orange {
+.documents .describe .ref-orange {
 	width: 270px;
 	height: 74px;
+	display: block;
 	margin: 0 auto;
 	font-size: 36px;
 	line-height: 68px;
 	border-radius: 5px;
 }
-.block-doc .sertificate {
+.documents .sertificate {
 	width: 598px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	float: right;
 }
-.block-doc .sertificate li {
+.documents .sertificate li {
 	margin: 0 70px 44px 0;
 	float: left;
 }
-.block-doc .sertificate li:nth-child(3n) {
+.documents .sertificate li:nth-child(3n) {
 	margin-right: 0;
 }
-.block-doc .sertificate li:nth-child(3n+1) {
+.documents .sertificate li:nth-child(3n+1) {
 	clear: left;
 }
 
 /* ==========================================================================
    _GALLERY
    ========================================================================== */
-.block-gallery {
+.gallery {
 	margin: 0 0 60px 0;
 }
-.gallery {
+.gallery .list {
 	margin: 0;
 	padding: 7px 0 0 0;
 	float: left;
@@ -853,15 +911,15 @@ textarea {
 	text-align: center;
 	font-size: 18px;
 }
-.gallery li {
+.gallery .list li {
 	width: 184px;
 	margin: 0 20px 0 0;
 	display: inline-block;
 }
-.gallery .link {
+.gallery .list .link {
 	text-decoration: none;
 }
-.gallery .pic {
+.gallery .list .pic {
 	width: 184px;
 	height: 124px;
 	margin: 0 0 15px 0;
@@ -870,16 +928,16 @@ textarea {
 	border-radius: 1px;
 	transition: border-color .2s ease;
 }
-.gallery .pic:hover {
+.gallery .list .pic:hover {
 	border-color: #b7b7b7;
 }
-.gallery .name {
+.gallery .list .name {
 	transition: text-decoration .3s ease;
 }
-.gallery .name:hover {
+.gallery .list .name:hover {
 	text-decoration: underline;
 }
-.block-gallery .text {
+.gallery .text {
 	width: 504px;
 	float: right;
 	font-size: 24px;
@@ -888,22 +946,22 @@ textarea {
 /* ==========================================================================
    _QUESTIONS
    ========================================================================== */
-.block-questions {
+.questions {
 	margin: 0 0 42px;
 	font-size: 24px;
 }
-.block-questions .text {
+.questions .text {
 	width: 640px;
 	margin-right: 56px;
 	float: left;
 }
-.block-questions .text .h2 {
+.questions .text .h2 {
 	margin: 0 0 30px 0;
 }
-.block-questions .ask {
+.questions .ask {
 	float: left;
 }
-.block-questions .ask .ref-clear {
+.questions .ask .ref-clear {
 	width: 345px;
 	height: 93px;
 	margin-top: 74px;
