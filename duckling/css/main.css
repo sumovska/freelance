@@ -8,28 +8,28 @@
    _FONTS
    ========================================================================== */
 @font-face {
-  font-family: 'Ubuntu Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url(http://fonts.gstatic.com/s/ubuntucondensed/v6/DBCt-NXN57MTAFjitYxdrEdb2OcoT90fJMMHwFkEyU4.woff) format('woff');
+	font-family: 'Ubuntu Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url(http://fonts.gstatic.com/s/ubuntucondensed/v6/DBCt-NXN57MTAFjitYxdrEdb2OcoT90fJMMHwFkEyU4.woff) format('woff');
 }
 @font-face {
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Ubuntu'), url(http://fonts.gstatic.com/s/ubuntu/v7/EOw89wVWpfqz-OXHFsgbz-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Ubuntu'), url(http://fonts.gstatic.com/s/ubuntu/v7/EOw89wVWpfqz-OXHFsgbz-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
 }
 @font-face {
-  font-family: 'Ubuntu';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(http://fonts.gstatic.com/s/ubuntu/v7/0bJAQfNpYDMK5gdvWOS2DXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+	font-family: 'Ubuntu';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(http://fonts.gstatic.com/s/ubuntu/v7/0bJAQfNpYDMK5gdvWOS2DXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
 }
 @font-face {
-  font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://fonts.gstatic.com/s/ubuntu/v7/4z2U46_RRLOfkoHsWJG3v7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://fonts.gstatic.com/s/ubuntu/v7/4z2U46_RRLOfkoHsWJG3v7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 
 /* ==========================================================================
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	text-decoration: none;
 	font-size: 48px;
 	line-height: 86px;
-	background: transparent; 
+	background: transparent;
 	border: 4px solid #333;
 	border-radius: 9px;
 	transition: color .5s ease, border-color .5s ease;
@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	transition: background-color .3s ease;
 }
 .ref-orange:hover {
-	background-color: #fc9130; 
+	background-color: #fc9130;
 }
 
 /* ==========================================================================
@@ -187,7 +187,7 @@ textarea {
 .footer .logo {
 	width: 205px;
 	height: 51px;
-	margin: 0; 
+	margin: 0;
 	display: block;
 	position: absolute;
 	top: 40px;
@@ -236,7 +236,7 @@ textarea {
 	top: 0;
 	left: 0;
 	background: url(../img/sprite.png) -50px -70px no-repeat;
-	background-size: 100px auto; 
+	background-size: 100px auto;
 }
 .footer .contacts li a.adr:before { width: 32px; height: 52px; left: 2px; background-position: 0 -105px; }
 .footer .contacts li a.tel:before { width: 36px; height: 33px; }
@@ -268,11 +268,12 @@ textarea {
 	height: 138px;
 	position: relative;
 	z-index: 10;
+	cursor: default;
 }
 .header .logo {
 	width: 205px;
 	height: 51px;
-	margin: 0; 
+	margin: 0;
 	display: block;
 	position: absolute;
 	top: 19px;
@@ -299,7 +300,7 @@ textarea {
 	left: 625px;
 }
 .header .callback .title {
-	margin: 0; 
+	margin: 0;
 	position: absolute;
 	left: -268px;
 	top: 32px;
@@ -364,15 +365,17 @@ textarea {
 	background-size: 100px auto;
 	z-index: 4;
 }
-.header .profile .link:hover {
-	text-decoration: underline;
-}
 .header .profile .link a {
 	padding: 0 22px 0 26px;
 	position: relative;
 	display: block;
 	text-decoration: none;
 	z-index: 8;
+	transition: color .3s ease;
+}
+.header .profile .link a:hover {
+	color: #ec691f;
+	text-decoration: none;
 }
 .header .profile .link a:before, .header .profile .link a:after {
 	width: 10px;
@@ -383,6 +386,9 @@ textarea {
 	position: absolute;
 	background: #333;
 	transition: background-color .3s ease;
+}
+.header .profile .link a:hover:before, .header .profile .link a:hover:after {
+	background: #ec691f;
 }
 .header .profile .link a:before {
 	top: 12px;
@@ -427,7 +433,7 @@ textarea {
 	display: block;
 	outline: none;
 	position: absolute;
-	top: 6px;
+	top: 5px;
 	right: 8px;
 	border: none;
 	background: url(../img/sprite.png) -75px 0 no-repeat;
@@ -441,31 +447,39 @@ textarea {
 	position: relative;
 	z-index: 10;
 }
+.nav .wrapper {
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
 .nav .list {
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	text-align: center;
 	font-size: 24px;
 	line-height: 43px;
-	border-top: 1px solid #333;
-	border-bottom: 1px solid #333;
+	display: table;
 }
 .nav .list li {
-	padding: 0 15px;
-	display: inline-block;
+	padding: 0 16px 0 14px;
+	display: table-cell;
 	position: relative;
 }
 .nav .list li:first-of-type {
 	padding-left: 0;
 }
-.nav .list li:last-of-type {
+.nav .list li.cart {
 	padding-right: 0;
-	padding-left: 64px;
 }
-.nav .list li:last-of-type:after {
+.nav .list li.cart:after {
 	display: none;
-} 
+}
+.nav .list li.cart a {
+	padding-left: 50px;
+	position: relative;
+	z-index: 2;
+}
 .nav .list li:after {
 	width: 23px;
 	height: 23px;
@@ -475,6 +489,8 @@ textarea {
 	color: #333;
 	position: absolute;
 	right: -12px;
+	top: 0;
+	z-index: -1;
 }
 .nav .list li a {
 	text-decoration: none;
@@ -483,132 +499,161 @@ textarea {
 .nav .list li a:hover {
 	color: #fc9130;
 }
-.nav .list li.cart:before {
+.nav .list li.cart a:before, .nav .list li.cart a:after {
 	width: 31px;
 	height: 25px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	left: 23px;
-	top: 8px;
+	left: 8px;
+	top: 0;
+	z-index: -1;
 	background: url(../img/sprite.png) 0 -35px no-repeat;
 	background-size: 100px auto;
+	transition: opacity .3s ease;
+}
+.nav .list li.cart a:after {
+	opacity: 0;
+	background-position: 0 -70px;
+	z-index: 1;
+}
+.nav .list li.cart a:hover:before {
+	opacity: 0;
+}
+.nav .list li.cart a:hover:after {
+	opacity: 1;
 }
 
 /* ==========================================================================
    _INDEX
    ========================================================================== */
 .index {
-	min-height: 100%;
+	min-height: 748px;
 	margin: -183px 0 0 0;
-	padding: 256px 0 94px 0;
+	padding: 256px 0 50px 0;
 	text-align: center;
 	position: relative;
-	background: #fff url(../img/index.jpg) 0 0 no-repeat;
+	background: #fff url(../img/index.jpg) 50% 50% no-repeat;
 	background-size: cover;
 	z-index: 5;
 	cursor: default;
 }
 .index .ref-clear {
-	display: inline-block;
+	margin: 90px auto 0;
+	display: block;
 	font-weight: bold;
 	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
-
 /* ==========================================================================
    _INFO
    ========================================================================== */
-.info {
-	margin: 0;
-	padding: 50px 0 20px;
+.features {
+	cursor: default;
+	background: #f5f5ea;
+}
+.features .list {
+	margin: 0 -40px;
+	padding: 50px 0;
 	list-style: none;
 }
-.info:after {
+.features .list:after {
 	width: 100%;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.info li {
-	width: 250px;
-	margin: 0 66px 0 0;
+.features .list li {
+	width: 25%;
+	padding: 0 40px;
 	float: left;
 }
-.info li:nth-child(4n) {
+.features .list li:nth-child(4n) {
 	margin-right: 0;
 }
-.info .icon {
-	margin: 0 auto 7px;
+.features .list .icon {
+	height: 110px;
+	margin: 0 auto 20px;
 	display: block;
 }
-.info .h {
+.features .list .h3 {
 	margin: 0 0 16px;
 	display: block;
 	font-size: 30px;
 	text-align: center;
 	color: #ec691f;
 }
+.features .list p {
+	margin: 0;
+}
 
 /* ==========================================================================
-   _WEAR
+   _CATALOG
    ========================================================================== */
-.block-wear {
-	margin: 0 0 24px 0;
+.catalog {
 }
-.wear{
-	margin: 0;
+.catalog .list {
+	margin: 0 -40px;
 	padding: 55px 0 0 0;
 	list-style: none;
 }
-.wear:after {
+.catalog .list:after {
 	width: 100%;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.wear li {
-	width: 220px;
+.catalog .list li {
+	width: 25%;
+	padding: 0 40px 65px;
 	min-height: 334px;
-	margin: 0 106px 36px 0;
 	text-align: center;
 	float: left;
 }
-.wear li:nth-child(4n) {
+.catalog .list li:nth-child(4n) {
 	margin-right: 0;
 }
-.wear li:nth-child(4n+1) {
+.catalog .list li:nth-child(4n+1) {
 	clear: left;
 }
-.wear .link {
+.catalog .list .link {
 	display: block;
 	text-decoration: none;
 }
-.wear .pic {
+.catalog .list .pic {
+	border-radius: 14px;
 	margin-bottom: 24px;
-	transition: transform .2s ease;
+	-webkit-transition: -webkit-transform .2s ease-out;
+	-webkit-transform: scale(1);
+	transition: transform .2s ease-out;
+	transform: scale(1);
 }
-.wear .pic:hover {
-	transform: scale(1.03) ;
+.catalog .list .link:hover .pic {
+	-webkit-transform: scale(1.07);
+	transform: scale(1.07);
 }
-.wear .h {
+.catalog .list .h {
 	display: block;
 	font-size: 36px;
-	transition: text-decoration .3s ease;
+	transition: color .3s ease;
 }
-.wear .h:hover {
-	text-decoration: underline;
+.catalog .list .link:hover .h {
+	color: #ec691f;
 }
 
 /* ==========================================================================
    _ABOUT
    ========================================================================== */
-.block-about {
-	margin: 0 0 46px 0;
-	padding: 31px 0 6px 0;
+.about {
+	margin: 0 0 40px 0;
+	padding: 30px 0;
+	background: #f5f5ea;
+}
+.about p:last-of-type {
+	margin: 0;
 }
 
 /* ==========================================================================
@@ -628,7 +673,7 @@ textarea {
 	margin: 0 0 79px 0;
 }
 .block-reviews .h2 {
-	margin: 0 0 46px 0; 
+	margin: 0 0 46px 0;
 }
 .reviews {
 	padding: 0;
@@ -716,7 +761,7 @@ textarea {
 	margin: 0 0 4px 0;
 	display: block;
 	position: relative;
-	color: #feac33; 
+	color: #feac33;
 	font-size: 28px;
 	line-height: 34px;
 	letter-spacing: -.02em;
@@ -844,7 +889,7 @@ textarea {
    _QUESTIONS
    ========================================================================== */
 .block-questions {
-	margin: 0 0 42px; 
+	margin: 0 0 42px;
 	font-size: 24px;
 }
 .block-questions .text {
