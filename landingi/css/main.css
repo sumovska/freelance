@@ -8,46 +8,45 @@
    _FONTS
    ========================================================================== */
 @font-face {
-    font-family: 'Neris';
-    src: url('neris-thin-webfont.eot');
-    src: url('neris-thin-webfont.eot?#iefix') format('embedded-opentype'),
-         url('neris-thin-webfont.woff') format('woff'),
-         url('neris-thin-webfont.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
+	font-family: 'Neris';
+	src: url('../fonts/neris-thin-webfont.eot');
+	src: url('../fonts/neris-thin-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/neris-thin-webfont.woff') format('woff'),
+	url('../fonts/neris-thin-webfont.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
 
 }
 @font-face {
-    font-family: 'Neris';
-    src: url('../fonts/neris-light-webfont.eot');
-    src: url('../fonts/neris-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/neris-light-webfont.woff') format('woff'),
-         url('../fonts/neris-light-webfont.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+	font-family: 'Neris';
+	src: url('../fonts/neris-light-webfont.eot');
+	src: url('../fonts/neris-light-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/neris-light-webfont.woff') format('woff'),
+	url('../fonts/neris-light-webfont.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
 
 }
 @font-face {
-    font-family: 'Neris';
-    src: url('../fonts/neris-semibold-webfont.eot');
-    src: url('../fonts/neris-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/neris-semibold-webfont.woff') format('woff'),
-         url('../fonts/neris-semibold-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Neris';
+	src: url('../fonts/neris-semibold-webfont.eot');
+	src: url('../fonts/neris-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/neris-semibold-webfont.woff') format('woff'),
+	url('../fonts/neris-semibold-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 
 }
 @font-face {
-    font-family: 'Neris';
-    src: url('../fonts/neris-black-webfont.eot');
-    src: url('../fonts/neris-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/neris-black-webfont.woff') format('woff'),
-         url('../fonts/neris-black-webfont.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+	font-family: 'Neris';
+	src: url('../fonts/neris-black-webfont.eot');
+	src: url('../fonts/neris-black-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/neris-black-webfont.woff') format('woff'),
+	url('../fonts/neris-black-webfont.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
 
 }
-
 /* ==========================================================================
    _HTML
    ========================================================================== */
@@ -64,6 +63,7 @@ body {
 	max-width: 1600px;
 	height: 100%;
 	margin: 0 auto;
+	cursor: default;
 }
 hr {
 	display: block;
@@ -92,7 +92,6 @@ audio, canvas, img, video {
 	clear: both;
 	overflow: hidden;
 }
-
 /* ==========================================================================
    _TEXT
    ========================================================================== */
@@ -123,7 +122,6 @@ h3, .h3 {
 	font-size: 24px;
 	font-weight: normal;
 }
-
 /* ==========================================================================
    _BOOKING (link-action with yellow bg)
    ========================================================================== */
@@ -138,7 +136,6 @@ h3, .h3 {
 .booking:hover {
 	background: #deb50f;
 }
-
 /* ==========================================================================
    _FORMS
    ========================================================================== */
@@ -150,7 +147,6 @@ fieldset {
 textarea {
 	resize: vertical;
 }
-
 /* ==========================================================================
    _FOOTER
    ========================================================================== */
@@ -207,7 +203,6 @@ textarea {
 .header .call .tel:hover {
 	color: #deb50f;
 }
-
 /* ==========================================================================
    _INDEX
    ========================================================================== */
@@ -232,6 +227,10 @@ textarea {
 	line-height: 34px;
 	font-weight: 500;
 	letter-spacing: .094em;
+	text-transform: uppercase;
+}
+.index .slogan p {
+	margin: 0;
 }
 .index .info {
 	margin: 0 0 60px 0;
@@ -299,7 +298,6 @@ textarea {
 	line-height: 26px;
 	letter-spacing: .02em;
 }
-
 /* ==========================================================================
    _INTEREST
    ========================================================================== */
@@ -325,15 +323,30 @@ textarea {
 	line-height: 49px;
 	letter-spacing: .03em;
 }
-
 /* ==========================================================================
    _POPUP
    ========================================================================== */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	background: rgba(0, 0, 0, .6);
+}
+.popup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+	background: #1a1b1c;
+}
 .popup-callback {
-	width: 391px;
-	height: 460px;
-	margin: 0 auto;
-	padding: 22px 24px 24px 24px;
+	width: 400px;
+	padding: 25px;
 	text-align: center;
 	background: #1a1b1c;
 }
@@ -352,9 +365,8 @@ textarea {
 	margin: 0 0 20px 0;
 }
 .popup-callback .line input[type="text"] {
-	width: 348px;
-	height: 49px;
-	padding: 18px;
+	width: 100%;
+	padding: 14px 17px 12px;
 	font-size: 18px;
 	color: #1a1b1c;
 	border: none;
@@ -379,7 +391,6 @@ textarea {
 	color: #3d3d3d;
 	letter-spacing: -.011em;
 }
-
 /* ==========================================================================
    _RESPONSIVE
    ========================================================================== */
@@ -398,7 +409,6 @@ textarea {
 }
 @media (max-width: 479px) {
 }
-
 /* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
