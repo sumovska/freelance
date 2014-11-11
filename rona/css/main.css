@@ -931,13 +931,19 @@ h1, h2, h3, h4, h5, h6 {
 	width: 20px;
 	height: 20px;
 	display: inline-block;
-	background: url(../img/sprite.png) -60px 0 no-repeat;
-	border-radius: 3px;
 }
 .block-item .info .social li a {
 	width: 20px;
 	height: 20px;
 	display: block;
+	opacity: .8;
+	transition: opacity .3s ease;
+}
+.block-item .info .social li a:hover {
+	opacity: 1;
+}
+.block-item .info .social li a img {
+	border-radius: 5px;
 }
 .block-item .info .social li.tw { background-position: -90px 0; }
 .block-item .info .social li.ok { background-position: -120px 0; }
