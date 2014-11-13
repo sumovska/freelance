@@ -1,0 +1,398 @@
+/*!
+ * Project: 
+ * File: Main styles
+ * Author: Sergiy Miroshnychenko
+ */
+
+/* ==========================================================================
+   _HTML
+   ========================================================================== */
+* {
+	box-sizing: border-box;
+}
+html {
+	width: 100%;
+	height: 100%;
+	font: 13px/20px Arial, Tahoma, sans-serif;
+	color: #000;
+}
+body {
+	width: 1088px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+	background: #c9d3e2;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+audio, canvas, img, video {
+	vertical-align: middle;
+}
+/* ==========================================================================
+   _LAYOUT
+   ========================================================================== */
+.container {
+	width: 1060px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba( 121, 127, 136, 1);
+}
+.container:after {
+	height: 39px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.wrapper {
+	width: 100%;
+}
+.content {
+	width: 720px;
+	float: left;
+}
+.sidebar {
+	width: 216px;
+	float: right;
+}
+.content:after, .sidebar:after, .wrapper:after {
+	width: 100%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+
+/* ==========================================================================
+   _TEXT
+   ========================================================================== */
+p {
+	margin: 0 0 20px;
+}
+ul, ol {
+	margin: 0 0 20px 0;
+}
+a {
+	color: #4884d9;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0 0 24px;
+}
+/* ==========================================================================
+   _FORMS
+   ========================================================================== */
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+textarea {
+	resize: vertical;
+}
+/* ==========================================================================
+   _FOOTER
+   ========================================================================== */
+.footer {
+	height: 39px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #2d3033;
+	z-index: 5;
+}
+.footer .nav {
+	position: absolute;
+	top: 12px;
+	left: 42px;
+}
+.footer .nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.footer .nav ul li {
+	margin: 0 20px 0 0;
+	float: left;
+	letter-spacing: .005em;
+}
+.footer .nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.footer .nav ul li a:hover {
+	color: #cccccc;
+}
+
+/* ==========================================================================
+   _HEADER
+   ========================================================================== */
+.header {
+	height: 149px;
+	border-bottom: 3px solid #85a8da;
+}
+.header .login {
+	margin: 0;
+	position: absolute;
+	top: 16px;
+	right: 40px;
+	font-size: 12px;
+	letter-spacing: .02em;
+}
+.header .login .private {
+	padding-left: 12px;
+	position: relative;
+}
+.header .login .private:before, .header .login .private:after {
+	width: 8px;
+	height: 10px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	opacity: 1;
+	background: url(../img/sprite.png) -30px 0 no-repeat;
+	background-size: 50px auto;
+	z-index: 4;
+	transition: opacity .3s ease;
+}
+.header .login .private:hover:before {
+	opacity: 0;
+}
+.header .login .private:after {
+	opacity: 0;
+	background-position: -40px 0;
+	z-index: 5;
+}
+.header .login .private:hover:after {
+	opacity: 1;
+}
+.header .request {
+	margin: 0;
+	font-size: 16px;
+	position: absolute;
+	top: 108px;
+	right: 40px;
+}
+.header .request a {
+	padding-left: 36px;
+	position: relative;
+}
+.header .request a:before, .header .request a:after {
+	width: 24px;
+	height: 25px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: -4px;
+	left: 0;
+	opacity: 1;
+	background: url(../img/sprite.png) 0 0 no-repeat;
+	background-size: 50px auto;
+	z-index: 4;
+	transition: opacity .3s ease;
+}
+.header .request a:hover:before {
+	opacity: 0;
+}
+.header .request a:after {
+	opacity: 0;
+	background-position: 0 -30px;
+	z-index: 5;
+}
+.header .request a:hover:after {
+	opacity: 1;
+}
+
+/* ==========================================================================
+   _REQUESTS
+   ========================================================================== */
+.requests {
+	margin: 0 0 26px;
+}
+.requests .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.requests .list:after {
+	width: 100%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.requests .list li {
+	width: 245px;
+	padding: 20px 0;
+	float: left;
+	border-bottom: 1px solid #cccccc;
+}
+.requests .list .h {
+	margin-bottom: 0;
+	letter-spacing: -.02em;
+}
+.requests .list .h .name {
+	color: #978080;
+	text-decoration: none;
+}
+.requests .list .h .name:hover {
+	text-decoration: underline;
+}
+.requests .list .pic {
+	margin: 5px 5px 4px 0;
+	float: left;
+}
+.requests .list .text {
+	margin: 0;
+	font-size: 12px;
+	letter-spacing: .02em;
+}
+
+/* ==========================================================================
+   _FILTER
+   ========================================================================== */
+.filter .city {
+	margin-bottom: 1px;
+	padding: 4px 0 5px 0;
+	font-size: 12px;
+	position: relative;
+}
+.filter .city:after {
+	width: 140px;
+	height: 1px;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #cccccc;
+}
+.filter .city p {
+	margin: 0 0 4px 0;
+}
+.filter .checkbox-list {
+	margin: 0 0 14px;
+	padding: 0;
+	list-style: none;
+	line-height: 26px;
+}
+.filter .checkbox-list .line {
+	margin-bottom: 4px;
+	position: relative;
+}
+.filter .checkbox-list .line:after {
+	width: 140px;
+	height: 1px;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #cccccc;
+}
+.filter .checkbox-list .checkbox {
+	display: block;
+}
+.filter .checkbox-list .checkbox input[type="checkbox"] {
+	margin-right: 6px;
+}
+.filter .submit input[type="submit"] {
+	padding: 0 0 2px 0;
+	color: #4884d9;
+	border: none;
+	border-bottom: 1px dashed #b6d0f3;
+	background: transparent;
+	transition: border .3s ease;
+}
+.filter .submit input[type="submit"]:hover {
+	border: none;
+}
+
+/* ==========================================================================
+   _ORDERS
+   ========================================================================== */
+.orders .item {
+	margin-bottom: 24px;
+	border-bottom: 1px solid #cccccc;
+}
+.orders .item:after {
+	width: 100%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.orders .left {
+	width: 360px;
+	float: left;
+}
+.orders .left .h {
+	margin: 0 0 4px 0;
+	font-size: 18px;
+	letter-spacing: .02em;
+}
+.orders .left .h .date {
+	font-size: 13px; 
+}
+.orders .left dl {
+	margin: 0;
+	line-height: 22px;
+}
+.orders .left dl dt {
+	padding-right: 10px;
+	float: left;
+	font-weight: bold;
+}
+.orders .left dl dd {
+	margin: 0;
+}
+.orders .right {
+	width: 170px;
+	float: right;
+	text-align: right;
+}
+.orders .right .name {
+margin-top: 9px;
+margin-bottom: 42px;
+line-height: 16px;
+}
+.orders .right .amount {
+	margin: 0 0 2px;
+}
+
+/* ==========================================================================
+   _PRINT STYLES
+   ========================================================================== */
+@media print {
+	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; }
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
+}
