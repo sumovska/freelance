@@ -863,6 +863,20 @@ textarea {
 	letter-spacing: -.03em;
 	font-weight: normal;
 }
+.top .text-about {
+	width: 100%;
+	padding-right: 40%;
+	position: relative;
+}
+.top .text-about .logo {
+	width: 40%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.top .text-about .logo img {
+	width: 100%;
+}
 .top .slogan {
 	font: bold 16px/24px 'HeliosC', Helvetica, Arial, sans-serif;
 }
@@ -1220,6 +1234,97 @@ textarea {
 }
 
 /* ==========================================================================
+   _PAGE-ABOUT
+   ========================================================================== */
+.page-about {
+	margin: 0 0 32px 0;
+}
+.page-about .describe {
+	padding-right: 36%;
+	position: relative;
+}
+.page-about .pic {
+	width: 32%;
+	position: absolute;
+	top: 4px;
+	right: 0;
+}
+.page-about .pic img {
+	width: 100%;
+}
+/* ==========================================================================
+   _BLOCK-EVENT
+   ========================================================================== */
+.block-event {
+	margin: 72px 0 0 0;
+}
+.block-event .date {
+	margin: 0 0 22px;
+	color: #fff;
+	letter-spacing: -.04em;
+	font: 16px 'HeliosC', Helvetica, Arial, sans-serif;
+}
+.block-event .date span {
+	padding: 2px 0 1px;
+	box-shadow: 4px 0 0 #00aef0, -4px 0 0 #00aef0;
+	background: #00aef0;
+}
+.block-event .section {
+	font: 10px 'HeliosC', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	color: #898989;
+	letter-spacing: .22em;
+}
+.block-event .text {
+	padding-right: 30%;
+	position: relative;
+}
+.block-event .text .blockquote {
+	width: 30%;
+	margin: 0;
+	position:  absolute;
+	top: 0;
+	right: 0;
+}
+.block-event .text .blockquote:before {
+	width: 37px;
+	height: 28px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: url(../img/sprite.png) 0 -80px no-repeat;
+}
+.block-event .text .blockquote .line:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-event .text .blockquote .photo {
+	margin: 0 10px 0 0;
+	float: left;
+	border-radius: 50%;
+}
+.block-event .text .blockquote .name {
+	margin: 10px 0 0 0;
+	font-size: 10px;
+	line-height: 18px;
+	float: left;
+	text-transform: uppercase;
+	letter-spacing: .3em;
+}
+.block-event .text .blockquote .name .gray {
+	color: #898989;
+}
+.block-event .text .quote {
+	font-style: italic;
+	line-height: 21px;
+}
+
+/* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
 @media print {
@@ -1248,6 +1353,10 @@ textarea {
 	.projects .item .link { min-height: 408px; }
 	.projects-top .item { width: 440px; }
 	.index .down { display: none; }
+	.page-about .describe { padding-right: 46%; }
+	.page-about .describe .pic { width: 40%; }
+	.block-event .text { padding-right: 40%; }
+	.block-event .text .blockquote { width: 40%; }
 }
 @media (max-width: 1023px) {
 	.wrapper { width: 688px; }
@@ -1255,6 +1364,8 @@ textarea {
 	.header .callback:before { left: 0; }
 	.clients .bx-wrapper { width: 720px !important; margin-left: -16px !important; margin-right: -16px !important; }
 	.top .text { width: 80%; }
+	.top .text-about { padding-right: 50%; }
+	.top .text-about .logo { width: 50%; }
 	.agencies .card { padding-left: 35px; padding-right: 35px; }
 	.services > li { width: 50%; }
 	.services li:nth-child(2n + 1) { clear: left; }
@@ -1264,6 +1375,8 @@ textarea {
 	.projects .item:nth-child(2n+1) { clear: left; }
 	.projects .item .link { min-height: 461px; }
 	.projects-top .item { width: 100%; margin-right: 0; }
+	.block-event .text { padding-right: 50%; }
+	.block-event .text .blockquote { width: 40%; }
 }
 @media (max-width: 767px) {
 	.wrapper { width: 100%; }
@@ -1278,6 +1391,8 @@ textarea {
 	.top .h3 { font-size: 18px; line-height: 26px; }
 	.top .slogan { font-size: 14px; line-height: 20px; }
 	.top .text { width: 100%; }
+	.top .text-about { padding-right: 0; }
+	.top .text-about .logo { width: 75%; margin: 0 auto 30px; position: relative; top: auto; right: auto;}
 	.clients .bx-wrapper { width: 480px !important; margin-left: auto !important; margin-right: auto !important; }
 	.about { padding-right: 0; }
 	.about .logo { width: 75%; margin: 0 auto 30px; position: relative; top: auto; right: auto; }
@@ -1295,15 +1410,20 @@ textarea {
 	.block-project .info { min-height: 0; margin: 0; padding-right: 0; }
 	.block-project .info .pic { width: 75%; margin: 0 auto 60px; position: relative; top: auto; right: auto; }
 	.block-project .info .h3:before { width: 49%; }
+	.page-about .describe { padding-right: 0; }
+	.page-about .describe .pic { width: 75%; margin: 0 auto 30px; position: relative; top: auto; right: auto;}
+	.block-event .text { padding-right: 0; }
+	.block-event .text .blockquote { width: 75%; margin: 0 auto 30px; position: relative; top: auto; right: auto; }
 	.footer .nav { display: none; }
 	.footer .contacts li { width: 50%; padding-bottom: 20px; }
-}
+	
 @media (max-width: 575px) {
 	body { padding: 0 20px; }
 	.h-line:before { width: 100%; }
 	.header .logo { left: 20px; }
 	.header .nav .toggle { right: 20px; }
 	.top, .index, .block-agencies { margin-left: -20px; margin-right: -20px; }
+	.top .text-about .logo { width: 100%; }
 	.block-agencies { padding-left: 20px; padding-right: 20px; }
 	.info ul li { width: 100%; float: none; padding-right: 0; text-align: center; }
 	.info .icon { margin-left: auto; margin-right: auto; }
@@ -1319,6 +1439,8 @@ textarea {
 	.project-carousel .bx-pager { bottom: 10px; }
 	.project-carousel .bx-controls-direction a.bx-prev { left: 10px; }
 	.project-carousel .bx-controls-direction a.bx-next { right: 10px; }
+	.page-about .describe .pic { width: 100%; }
+	.block-event .text .blockquote { width: 100%; }
 	.footer { margin-left: -20px; margin-right: -20px; }
 	.footer .contacts li { width: 100%; float: none; text-align: center; }
 	.block-contacts { margin: 0 -20px; }
