@@ -30,7 +30,7 @@
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 		</nav>
-		<a class="callback" href="#">Обратная связь</a>
+		<a class="callback js-popup" href="#popup-callback">Обратная связь</a>
 	</header>
 
 	<div class="content">
@@ -46,7 +46,7 @@
 						<li><img src="img/temp/project-b-2.jpg" alt=""></li>
 					</ul>
 				</div>
-				<div class="text">
+				<div class="event">
 					<blockquote class="blockquote">
 						<p class="line">
 							<img class="photo" src="img/temp/user-1.jpg" alt="">
@@ -87,7 +87,7 @@
 				</li>
 				<li>
 					<p class="h">Пишите</p>
-					<p><a class="email" href="mailto:hello@boson.ru">hello@boson.ru</a><br> <a href="#">Форма обратной связи</a></p>
+					<p><a class="email" href="mailto:hello@boson.ru">hello@boson.ru</a><br> <a class="js-popup" href="#popup-callback">Форма обратной связи</a></p>
 				</li>
 				<li>
 					<p class="h">Следите</p>
@@ -96,6 +96,20 @@
 			</ul>
 		</div>
 	</footer>
+
+	<div class="popup popup-callback">
+		<form action="#">
+			<a class="close" href="#"></a>
+			<p class="heading">Обращайтесь, мы будем рады!</p>
+			<div class="field">
+				<p class="line"><input type="text" value="" placeholder="Ваше имя"></p>
+				<p class="line"><input type="text" value="" placeholder="E-mail"></p>
+				<p class="line"><select><option>Тема</option></select></p>
+				<textarea>Сообщение</textarea>
+			</div>
+			<p class="line line-button"><input class="booking" type="submit" value="Отправить"></p>
+		</form>
+	</div>
 
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>

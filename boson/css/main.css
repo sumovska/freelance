@@ -1256,7 +1256,7 @@ textarea {
    _BLOCK-EVENT
    ========================================================================== */
 .block-event {
-	margin: 72px 0 0 0;
+	margin: 70px 0 0 0;
 }
 .block-event .date {
 	margin: 0 0 22px;
@@ -1275,18 +1275,18 @@ textarea {
 	color: #898989;
 	letter-spacing: .22em;
 }
-.block-event .text {
+.block-event .event {
 	padding-right: 30%;
 	position: relative;
 }
-.block-event .text .blockquote {
+.block-event .event .blockquote {
 	width: 30%;
 	margin: 0;
 	position:  absolute;
 	top: 0;
 	right: 0;
 }
-.block-event .text .blockquote:before {
+.block-event .event .blockquote:before {
 	width: 37px;
 	height: 28px;
 	display: block;
@@ -1297,18 +1297,18 @@ textarea {
 	right: 0;
 	background: url(../img/sprite.png) 0 -80px no-repeat;
 }
-.block-event .text .blockquote .line:after {
+.block-event .event .blockquote .line:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.block-event .text .blockquote .photo {
+.block-event .event .blockquote .photo {
 	margin: 0 10px 0 0;
 	float: left;
 	border-radius: 50%;
 }
-.block-event .text .blockquote .name {
+.block-event .event .blockquote .name {
 	margin: 10px 0 0 0;
 	font-size: 10px;
 	line-height: 18px;
@@ -1316,12 +1316,140 @@ textarea {
 	text-transform: uppercase;
 	letter-spacing: .3em;
 }
-.block-event .text .blockquote .name .gray {
+.block-event .event .blockquote .name .gray {
 	color: #898989;
 }
-.block-event .text .quote {
+.block-event .event .quote {
 	font-style: italic;
 	line-height: 21px;
+}
+
+/* ==========================================================================
+   _POPUP
+   ========================================================================== */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	background: #00aeef;
+}
+.popup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+}
+.popup-callback {
+	width: 480px;
+	text-align: center;
+	color: #fff;
+}
+.popup-callback .close {
+	width: 22px;
+	height: 22px;
+	margin: 0 auto 60px;
+	display: block;
+	position: relative;
+}
+.popup-callback .close:before, .popup-callback .close:after {
+	width: 5px;
+	height: 22px;
+	border-radius: 1px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	background: #fff;
+	transition: opacity .3s ease;
+}
+.popup-callback .close:before {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.popup-callback .close:after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.popup-callback .close:hover:before, .popup-callback .close:hover:after {
+	opacity: .8;
+}
+.popup-callback .heading {
+	margin: 0 0 60px 0;
+	font: 24px/36px 'HeliosC', Helvetica, Arial, sans-serif;
+}
+.popup-callback .field {
+	width: 100%;
+	height: 100%;
+	margin: 0 0 64px;
+	padding-right: 52%;
+	position: relative;
+}
+.popup-callback .line {
+	margin: 0 0 20px 0;
+}
+.popup-callback .field textarea {
+	width: 48%;
+	height: 142px;
+	padding: 11px 9px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: .22em;
+	font-family: 'HeliosC', Helvetica, Arial, sans-serif;
+	background: transparent;
+	border-radius: 2px;
+	border: 2px solid #fff;
+}
+.popup-callback .line input[type="text"] {
+	width: 100%;
+	padding: 11px 5px 10px;
+	font-size: 10px;
+	color: #fff;
+	border: none;
+	outline: none;
+	letter-spacing: .22em;
+	text-transform: uppercase;
+	font-family: 'HeliosC', Helvetica, Arial, sans-serif;
+	background: transparent;
+	border-radius: 2px;
+	border: 2px solid #fff;
+}
+.popup-callback .line-button {
+	margin: 0 0 10px 0;
+}
+.popup-callback .line-button input[type="submit"] {
+	width: 214px;
+	height: 34px;
+	margin: 0 auto;
+	display: block;
+	outline: none;
+	font-size: 10px;
+	border: 2px solid transparent;
+	color: #00aeef;
+	text-transform: uppercase;
+	letter-spacing: .22em;
+	background: #fff;
+	border-radius: 2px;
+	transition: background .3s ease, color .3s ease, border-color .3s ease;
+}
+.popup-callback .line-button input[type="submit"]:hover {
+	background: transparent;
+	color: #fff;
+	border-color: #fff;
 }
 
 /* ==========================================================================
@@ -1355,8 +1483,8 @@ textarea {
 	.index .down { display: none; }
 	.page-about .describe { padding-right: 46%; }
 	.page-about .describe .pic { width: 40%; }
-	.block-event .text { padding-right: 40%; }
-	.block-event .text .blockquote { width: 40%; }
+	.block-event .event { padding-right: 40%; }
+	.block-event .event .blockquote { width: 40%; }
 }
 @media (max-width: 1023px) {
 	.wrapper { width: 688px; }
@@ -1375,8 +1503,8 @@ textarea {
 	.projects .item:nth-child(2n+1) { clear: left; }
 	.projects .item .link { min-height: 461px; }
 	.projects-top .item { width: 100%; margin-right: 0; }
-	.block-event .text { padding-right: 50%; }
-	.block-event .text .blockquote { width: 40%; }
+	.block-event .event { padding-right: 50%; }
+	.block-event .event .blockquote { width: 40%; }
 }
 @media (max-width: 767px) {
 	.wrapper { width: 100%; }
@@ -1412,10 +1540,13 @@ textarea {
 	.block-project .info .h3:before { width: 49%; }
 	.page-about .describe { padding-right: 0; }
 	.page-about .describe .pic { width: 75%; margin: 0 auto 30px; position: relative; top: auto; right: auto;}
-	.block-event .text { padding-right: 0; }
-	.block-event .text .blockquote { width: 75%; margin: 0 auto 30px; position: relative; top: auto; right: auto; }
+	.block-event .event { padding-right: 0; }
+	.block-event .event .blockquote { width: 75%; margin: 0 auto 30px; position: relative; top: auto; right: auto; }
 	.footer .nav { display: none; }
 	.footer .contacts li { width: 50%; padding-bottom: 20px; }
+	.popup-callback .heading { margin-bottom: 20px; }
+	.popup-callback .field { margin-bottom: 20px; padding-right: 0; }
+	.popup-callback .field textarea { width: 100%; height: 100px; margin: 0 auto; position: relative; top: auto; right: auto; }
 	
 @media (max-width: 575px) {
 	body { padding: 0 20px; }
@@ -1440,7 +1571,8 @@ textarea {
 	.project-carousel .bx-controls-direction a.bx-prev { left: 10px; }
 	.project-carousel .bx-controls-direction a.bx-next { right: 10px; }
 	.page-about .describe .pic { width: 100%; }
-	.block-event .text .blockquote { width: 100%; }
+	.block-event { margin-top: 30px; }
+	.block-event .event .blockquote { width: 100%; }
 	.footer { margin-left: -20px; margin-right: -20px; }
 	.footer .contacts li { width: 100%; float: none; text-align: center; }
 	.block-contacts { margin: 0 -20px; }
