@@ -11,25 +11,25 @@
 	font-family: 'Ubuntu Condensed';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url(http://fonts.gstatic.com/s/ubuntucondensed/v6/DBCt-NXN57MTAFjitYxdrEdb2OcoT90fJMMHwFkEyU4.woff) format('woff');
+	src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url('../fonts/ubuntu-c-webfont.eot?#iefix') format('embedded-opentype'), url('http://fonts.gstatic.com/s/ubuntucondensed/v6/DBCt-NXN57MTAFjitYxdrEdb2OcoT90fJMMHwFkEyU4.woff') format('woff');
 }
 @font-face {
 	font-family: 'Ubuntu';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Ubuntu'), url(http://fonts.gstatic.com/s/ubuntu/v7/EOw89wVWpfqz-OXHFsgbz-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+	src: local('Ubuntu'), url('../fonts/ubuntu-r-webfont.eot?#iefix') format('embedded-opentype'), url('http://fonts.gstatic.com/s/ubuntu/v7/EOw89wVWpfqz-OXHFsgbz-vvDin1pK8aKteLpeZ5c0A.woff') format('woff');
 }
 @font-face {
 	font-family: 'Ubuntu';
 	font-style: italic;
 	font-weight: 400;
-	src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(http://fonts.gstatic.com/s/ubuntu/v7/0bJAQfNpYDMK5gdvWOS2DXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+	src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url('../fonts/ubuntu-ri-webfont.eot?#iefix') format('embedded-opentype'), url('http://fonts.gstatic.com/s/ubuntu/v7/0bJAQfNpYDMK5gdvWOS2DXYhjbSpvc47ee6xR_80Hnw.woff') format('woff');
 }
 @font-face {
 	font-family: 'Ubuntu';
 	font-style: normal;
 	font-weight: 700;
-	src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://fonts.gstatic.com/s/ubuntu/v7/4z2U46_RRLOfkoHsWJG3v7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+	src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url('../fonts/ubuntu-b-webfont.eot?#iefix') format('embedded-opentype'), url('http://fonts.gstatic.com/s/ubuntu/v7/4z2U46_RRLOfkoHsWJG3v7O3LdcAZYWl9Si6vvxL-qU.woff') format('woff');
 }
 
 /* ==========================================================================
@@ -45,7 +45,6 @@ html {
 	color: #333;
 }
 body {
-	max-width: 1600px;
 	min-width: 1260px;
 	height: 100%;
 	margin: 0 auto;
@@ -265,7 +264,7 @@ textarea {
 .header {
 	height: 138px;
 	position: relative;
-	z-index: 10;
+	z-index: 11;
 	cursor: default;
 }
 .header .logo {
@@ -349,6 +348,7 @@ textarea {
 	position: absolute;
 	top: 27px;
 	right: 0;
+	z-index: 100;
 }
 .header .profile .link {
 	margin: 0;
@@ -421,6 +421,40 @@ textarea {
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+}
+.header .profile-open .link a:before {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.header .profile-open .link a:after {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.header .profile .sub {
+	min-width: 160px;
+	padding: 0;
+	margin: 0;
+	border: 2px solid #000;
+	border-radius: 5px;
+	display: none;
+	position: absolute;
+	top: 30px;
+	right: 0;
+	list-style: none;
+	background: #fff;
+}
+.header .profile .sub a {
+	padding: 5px 15px;
+	display: block;
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.header .profile .sub a:hover {
+	color: #ec691f;
 }
 .header .search {
 	position: absolute;
@@ -601,6 +635,7 @@ textarea {
    ========================================================================== */
 .features {
 	cursor: default;
+	overflow: hidden;
 	background: #f5f5ea;
 }
 .features .list {
@@ -627,6 +662,7 @@ textarea {
 	height: 110px;
 	margin: 0 auto 20px;
 	display: block;
+	color: red;
 }
 .features .list .h3 {
 	margin: 0 0 16px;
@@ -643,6 +679,7 @@ textarea {
    _CATALOG
    ========================================================================== */
 .catalog {
+	overflow: hidden;
 }
 .catalog .list {
 	margin: 0 -40px;
@@ -711,6 +748,7 @@ textarea {
    ========================================================================== */
 .process {
 	margin: 0 0 65px 0;
+	overflow: hidden;
 	cursor: default;
 }
 .process .h2 {

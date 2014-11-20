@@ -41,4 +41,15 @@ $(document).ready(function () {
 		nextEffect: 'fade',
 		closeBtn: false
 	});
+
+	/* Дропдаун */
+	$('.header .profile').each(function () {
+		var _self = $(this);
+		$('.link', _self).click(function () {
+			$('.sub', _self).fadeToggle(200, function () {
+				_self.toggleClass('profile-open');
+			});
+			return false;
+		});
+	});
 });
