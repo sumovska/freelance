@@ -35,7 +35,7 @@ $(document).ready(function () {
 		moveSlides: 1
 	});
 
-	$('.project-carousel .carousel').bxSlider();
+	$('.gallery .carousel').bxSlider();
 
 	$('.header .nav').each(function () {
 		var _self = $(this);
