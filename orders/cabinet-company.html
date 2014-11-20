@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Orders</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/main.css">
+	<!--[if lt IE 9]>
+	<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="navbar">
+		<div class="container">
+			<div class="row">
+				<p class="login"><a class="private" href="cabinet.html">Личный кабинет</a>&nbsp;&nbsp;(<a href="#">выйти</a>)</p>
+				<p class="request"><a href="#">Добавить заявку</a></p>
+			</div>
+		</div>
+	</header>
+
+	<article class="content">
+
+		<div class="row">
+			<section class="col-xs-9">
+				<h2>Контактные предприятия</h2>
+
+				<form action="#" role="form" class="form-horizontal form-default">
+					<div class="form-group">
+						<div class="col-xs-5 col-xs-offset-1">
+							<h3>Тип вашей компании</h3>
+							<div class="radio">
+								<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Покупатель</label>
+							</div>
+							<div class="radio">
+								<label><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Поставщик металлопроката</label>
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-11 col-xs-offset-1">
+							<h3>Реквизиты</h3>
+							<p>Информация заполняется автоматически по Идентификаціонному Номеру Налогоплательщика</p>
+						</div>
+						<div class="col-xs-5 col-xs-offset-1">
+							<input type="text" class="form-control" id="form-phone" placeholder="ИНН вашей организации">
+						</div>
+						<div class="col-xs-3">
+							<label class="control-label label-blue"><a href="#" class="js">проверить</a></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-11 col-xs-offset-1">
+							<p>
+								Компания:<br>
+								ОКВЭД:<br>
+								Адрес:<br>
+								Директор:<br>
+								КПП:<br>
+								ОГРН:<br>
+								Состяние:<br>
+							</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-2 col-xs-offset-1">
+							<button type="submit" class="btn btn-default">Сохранить</button>
+						</div>
+					</div>
+				</form>
+			</section>
+
+			<aside class="col-xs-3 sidebar">
+				<p class="access">
+					<span class="text">Уровень доступа компании</span>
+					<span class="bar" style="width:20%;"></span>
+				</p>
+				<ul class="submenu">
+					<li class="active"><a href="#" data-toggle="modal" data-target="#modal-auth">Авторизация</a></li>
+					<li><a href="cabinet-contact.html">Контактные данные</a></li>
+					<li><a href="cabinet-company.html">Карточка предприятия</a></li>
+					<li><a href="#">Юридические документы</a></li>
+				</ul>
+			</aside>
+		</div>
+	</article>
+
+	<footer class="footer">
+		<div class="container">
+			<nav class="nav">
+				<ul>
+					<li><a href="#">Информация о сервисе</a></li>
+					<li><a href="#">Реклама и услуги</a></li>
+					<li><a href="#">Поддержка</a></li>
+					<li><a href="#">Публичная оферта</a></li>
+					<li><a href="#">Контакты</a></li>
+					<li><a href="#">Добавить свою компанию</a></li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+
+	<!-- Modal Auth -->
+	<div class="modal modal-auth fade" id="modal-auth" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="row">
+						<div class="col-xs-4">
+							<h2 class="modal-title">Авторизация</h2>
+						</div>
+						<div class="col-xs-5 modal-link">
+							<a href="#" class="js" data-toggle="modal" data-target="#modal-recover" data-dismiss="modal">Восстановить пароль</a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body">
+					<form action="#" role="form" class="form-horizontal form-default">
+						<div class="form-group">
+							<label for="modal-email" class="col-xs-3 control-label">Логин:</label>
+							<div class="col-xs-8">
+								<input type="email" class="form-control" id="modal-email" placeholder="Электронная почта">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="modal-password" class="col-xs-3 control-label">Пароль:</label>
+							<div class="col-xs-8">
+								<input type="password" class="form-control" id="modal-password" placeholder="Введите пароль">
+							</div>
+							<div class="col-xs-8 col-xs-offset-3">
+								<label class="control-label label-red">неверный логин или пароль</label>
+							</div>
+							<div class="col-xs-8 col-xs-offset-3">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> Запомнить
+									</label>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<div class="row">
+						<div class="col-xs-9 col-xs-offset-3">
+							<button type="button" class="btn btn-default">Войти</button>
+							<a href="register.html" class="btn btn-default">Зарегистрироваться</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Recover -->
+	<div class="modal modal-recover fade" id="modal-recover" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="row">
+						<div class="col-xs-6">
+							<h2 class="modal-title">Восстановить пароль</h2>
+						</div>
+						<div class="col-xs-4 modal-link">
+							<a href="#" class="js" data-toggle="modal" data-target="#modal-auth" data-dismiss="modal">Авторизация</a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body">
+					<form action="#" role="form" class="form-horizontal form-default">
+						<div class="form-group">
+							<label for="modal-recover-email" class="col-xs-3 control-label">Логин:</label>
+							<div class="col-xs-8">
+								<input type="email" class="form-control" id="modal-recover-email" placeholder="Электронная почта">
+							</div>
+							<div class="col-xs-8 col-xs-offset-3">
+								<label class="control-label error-label">неверный логин</label>
+							</div>
+							<div class="col-xs-8 col-xs-offset-3">
+								<span>На указанный e-mail будет выслана инструкция по смене пароля</span>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<div class="row">
+						<div class="col-xs-9 col-xs-offset-3">
+							<button type="button" class="btn btn-default">Восстановить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

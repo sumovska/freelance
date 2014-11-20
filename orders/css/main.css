@@ -1,149 +1,85 @@
 /*!
- * Project: 
+ * Project: Orders
  * File: Main styles
  * Author: Sergiy Miroshnychenko
  */
 
 /* ==========================================================================
-   _HTML
-   ========================================================================== */
-* {
-	box-sizing: border-box;
-}
-html {
-	width: 100%;
-	height: 100%;
-	font: 13px/20px Arial, Tahoma, sans-serif;
-	color: #000;
-}
-body {
-	width: 1088px;
-	height: 100%;
-	margin: 0 auto;
-	position: relative;
-	background: #c9d3e2;
-}
-hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 0 0 1em 0;
-	padding: 0;
-}
-audio, canvas, img, video {
-	vertical-align: middle;
-}
-/* ==========================================================================
    _LAYOUT
    ========================================================================== */
-.container {
-	width: 1060px;
+.content {
+	width: 1050px;
 	min-height: 100%;
+	padding: 175px 40px 80px;
 	margin: 0 auto;
-	padding: 0 40px;
 	position: relative;
 	background: #fff;
 	box-shadow: 0 1px 4px rgba(121, 127, 136, 1);
 }
-.container:after {
-	height: 39px;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.wrapper {
-	width: 100%;
-}
-.content {
-	width: 720px;
-	float: left;
-}
 .sidebar {
-	width: 216px;
-	float: right;
-}
-.content:after, .sidebar:after, .wrapper:after {
-	width: 100%;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-/* ==========================================================================
-   _TEXT
-   ========================================================================== */
-p {
-	margin: 0 0 20px;
-}
-ul, ol {
-	margin: 0 0 20px 0;
-}
-a {
-	color: #4884d9;
-	text-decoration: underline;
-}
-a:hover {
-	text-decoration: none;
-}
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-	margin: 0 0 24px;
-}
-/* ==========================================================================
-   _FORMS
-   ========================================================================== */
-fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-textarea {
-	resize: vertical;
+	min-height: 320px;
+	border-left: 1px solid #ccc;
 }
 /* ==========================================================================
    _FOOTER
    ========================================================================== */
 .footer {
-	height: 39px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: #2d3033;
+	height: 40px;
+	margin-top: -40px;
+	position: relative;
 	z-index: 5;
+}
+.footer .container {
+	width: 1050px !important;
+	min-height: 100%;
+	position: relative;
+	background: #2d3033;
 }
 .footer .nav {
 	position: absolute;
-	top: 12px;
-	left: 42px;
+	top: 0;
+	left: 35px;
 }
 .footer .nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	overflow: hidden;
 }
 .footer .nav ul li {
-	margin: 0 20px 0 0;
+	margin: 0;
 	float: left;
 	letter-spacing: .005em;
 }
 .footer .nav ul li a {
+	padding: 10px;
+	display: block;
 	color: #fff;
 	text-decoration: none;
-	transition: color .3s ease;
+	transition: color .2s ease, background-color .2s ease;
 }
+.footer .nav ul li a:after { display: none; }
 .footer .nav ul li a:hover {
-	color: #ccc;
+	color: #2d3033;
+	background: #fff;
 }
 /* ==========================================================================
-   _HEADER
+   _NAVBAR
    ========================================================================== */
-.header {
-	height: 149px;
+.navbar {
+	height: 151px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+.navbar .container {
+	min-height: 100%;
+	position: relative;
 	border-bottom: 3px solid #85a8da;
 }
-.header .login {
+.navbar .login {
 	margin: 0;
 	position: absolute;
 	top: 16px;
@@ -151,11 +87,11 @@ textarea {
 	font-size: 12px;
 	letter-spacing: .02em;
 }
-.header .login .private {
+.navbar .login .private {
 	padding-left: 12px;
 	position: relative;
 }
-.header .login .private:before, .header .login .private:after {
+.navbar .login .private:before {
 	width: 8px;
 	height: 10px;
 	display: block;
@@ -168,31 +104,30 @@ textarea {
 	background: url(../img/sprite.png) -30px 0 no-repeat;
 	background-size: 50px auto;
 	z-index: 4;
-	transition: opacity .3s ease;
+	transition: opacity .2s ease;
 }
-.header .login .private:hover:before {
-	opacity: 0;
-}
-.header .login .private:after {
-	opacity: 0;
+.navbar .login .private:hover:before {
 	background-position: -40px 0;
-	z-index: 5;
 }
-.header .login .private:hover:after {
-	opacity: 1;
+.navbar .login .private:after {
+	left: 12px;
 }
-.header .request {
+.navbar .request {
 	margin: 0;
 	font-size: 16px;
 	position: absolute;
 	top: 108px;
 	right: 40px;
 }
-.header .request a {
+.navbar .request a {
 	padding-left: 34px;
 	position: relative;
 }
-.header .request a:before {
+.navbar .request a:after {
+	bottom: 0;
+	left: 34px;
+}
+.navbar .request a:before {
 	width: 24px;
 	height: 25px;
 	display: block;
@@ -207,40 +142,38 @@ textarea {
    _REQUESTS
    ========================================================================== */
 .requests {
-	margin: 0 0 26px;
-}
-.requests .list {
-	margin: 0;
 	padding: 0;
-	list-style: none;
+	margin: -25px 0 25px 0;
 }
-.requests .list:after {
+.requests .item {
+	padding: 20px 10px 20px 0;
+	border-bottom: 1px solid #ccc;
+}
+.requests .item:after {
 	width: 100%;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.requests .list li {
-	width: 245px;
-	padding: 20px 0;
-	float: left;
-	border-bottom: 1px solid #ccc;
-}
-.requests .list .h {
+.requests .item .h {
 	margin-bottom: 0;
 	letter-spacing: -.02em;
 }
-.requests .list .h .name {
+.requests .item .h .name {
 	color: #978080;
 	text-decoration: none;
 }
-.requests .list .pic {
+.requests .item .pic {
 	margin: 5px 5px 4px 0;
 	float: left;
 }
-.requests .list .text {
-	margin: 0;
+.requests .item .pic a:after { display: none; }
+.requests .item .text {
+	max-height: 60px;
+	margin: 0 0 0 55px;
+	display: block;
+	overflow: hidden;
 	font-size: 12px;
 	letter-spacing: .02em;
 }
@@ -249,7 +182,7 @@ textarea {
    ========================================================================== */
 .filter .city {
 	margin-bottom: 1px;
-	padding: 4px 0 5px 0;
+	padding: 4px 0 1px 0;
 	font-size: 12px;
 	position: relative;
 }
@@ -268,12 +201,13 @@ textarea {
 	margin: 0 0 4px 0;
 }
 .filter .checkbox-list {
-	margin: 0 0 14px;
+	margin: 0 0 5px;
 	padding: 0;
 	list-style: none;
 	line-height: 26px;
 }
 .filter .checkbox-list .line {
+	padding-bottom: 2px;
 	margin-bottom: 4px;
 	position: relative;
 }
@@ -289,72 +223,148 @@ textarea {
 	background: #ccc;
 }
 .filter .checkbox-list .checkbox {
+	min-height: 0;
+	margin: 0;
 	display: block;
 }
 .filter .checkbox-list .checkbox input[type="checkbox"] {
-	margin-right: 6px;
+	position: relative;
+	top: 2px;
 }
 .filter .submit input[type="submit"] {
-	padding: 0 0 2px 0;
+	height: 20px;
+	padding: 0;
 	color: #4884d9;
 	border: none;
 	border-bottom: 1px dashed #b6d0f3;
 	background: transparent;
-	transition: border .3s ease;
+	transition: border-color .2s ease, color .2s ease;
 }
 .filter .submit input[type="submit"]:hover {
-	border: none;
+	border-color: transparent;
+	color: #ca0413;
 }
 /* ==========================================================================
    _ORDERS
    ========================================================================== */
 .orders .item {
-	margin-bottom: 24px;
+	padding: 0;
+	margin: 0 0 24px 0;
 	border-bottom: 1px solid #ccc;
 }
-.orders .item:after {
-	width: 100%;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.orders .left {
-	width: 360px;
-	float: left;
-}
+.orders .left { padding-left: 0; }
 .orders .left .h {
-	margin: 0 0 4px 0;
+	margin: 0 0 1px 0;
 	font-size: 18px;
 	letter-spacing: .02em;
 }
 .orders .left .h .date {
 	font-size: 13px;
+	position: relative;
+	top: -2px;
+	left: 4px;
 }
 .orders .left dl {
 	margin: 0;
-	line-height: 22px;
 }
 .orders .left dl dt {
 	padding-right: 10px;
 	float: left;
 	font-weight: bold;
+	line-height: 22px;
 }
 .orders .left dl dd {
 	margin: 0;
+	line-height: 22px;
 }
 .orders .right {
-	width: 170px;
-	float: right;
+	padding-right: 0;
 	text-align: right;
 }
 .orders .right .name {
-	margin-top: 9px;
-	margin-bottom: 42px;
-	line-height: 16px;
+	margin-top: 7px;
+	margin-bottom: 44px;
+	line-height: 15px;
 }
 .orders .right .amount {
-	margin: 0 0 2px;
+	margin: 0 0 3px;
+	line-height: 20px;
+}
+/* ==========================================================================
+   _FORM-DEFAULT
+   ========================================================================== */
+.form-default .form-group {
+	margin-bottom: 20px;
+}
+.form-default .control-label {
+	padding-right: 0;
+}
+/* ==========================================================================
+   _SUBMENU
+   ========================================================================== */
+.submenu {
+	padding: 5px;
+	margin: 0;
+	list-style: none;
+	line-height: 26px;
+	position: relative;
+}
+.submenu:after {
+	width: 50%;
+	height: 1px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: #ccc;
+}
+.submenu a {
+	color: #808080;
+}
+.submenu .active a {
+	color: #101010;
+}
+.submenu a:hover {
+	color: #ca0413;
+}
+.submenu a:after {
+	display: none;
+}
+/* ==========================================================================
+   _ACCESS
+   ========================================================================== */
+.access {
+	padding: 8px;
+	border: 1px solid #dfdfdf;
+	color: #000;
+	cursor: default;
+	position: relative;
+	text-align: center;
+}
+.access .text {
+	position: relative;
+	z-index: 5;
+}
+.access .bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	display: block;
+	z-index: 1;
+	background: #85a8da;
+}
+/* ==========================================================================
+   _MODAL
+   ========================================================================== */
+.modal-auth .modal-dialog,
+.modal-recover .modal-dialog {
+	width: 420px;
+}
+.modal-recover .modal-header .modal-title {
+	white-space: nowrap;
 }
 /* ==========================================================================
    _PRINT STYLES
