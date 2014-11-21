@@ -7,7 +7,7 @@ $(document).ready(function () {
 	$('.slider .carousel').bxSlider({
 		infiniteLoop: false,
 		useCSS: false,
-		/*auto: true,*/
+		auto: true,
 		speed: 700,
 		pager: false,
 		slideWidth: 1260,
