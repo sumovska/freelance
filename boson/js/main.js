@@ -3,12 +3,17 @@
 
 /* On document ready */
 $(document).ready(function () {
+
+	/* Forms */
+	$('input, select').styler();
+
+	/* Fastclick for mobile devices */
 	FastClick.attach(document.body);
 
 	/* Инициализация блока видео */
 	if ($('.index').length > 0) {
 		window.video = $('.index .video .resize').eq(0);
-		window.video.one("load",function () {
+		window.video.one("load", function () {
 			window.video.hide().addClass('loaded').fadeIn(100);
 			window.video.css({
 				'width': 'auto',
@@ -16,8 +21,8 @@ $(document).ready(function () {
 				'left': '50%'
 			});
 		}).each(function () {
-				if (this.complete) $(this).load();
-			});
+			if (this.complete) $(this).load();
+		});
 		$('.index .down').click(function () {
 			$(window).scrollTop(5);
 			return false;
@@ -41,7 +46,10 @@ $(document).ready(function () {
 		var _self = $(this);
 		$(this).append('<a class="toggle" href="#"></a>');
 		$('.toggle', this).click(function () {
-			$('ul', _self).fadeToggle(200);
+			if ($('.nav-space', _self).length === 0) {
+				$('ul', _self).wrap('<div class="nav-space"></div>')
+			}
+			$('.nav-space', _self).fadeToggle(200);
 			$('body').toggleClass('body-nav-open');
 			return false;
 		});
@@ -50,27 +58,30 @@ $(document).ready(function () {
 	$('body').bind("click touchstart", function (e) {
 		if ($(this).hasClass('body-nav-open')) {
 			if (($(e.target).is('.nav ul'))) {
-				$(e.target).fadeOut(200);
+				$(e.target).closest('.nav-space').fadeOut(200);
 				$('body').removeClass('body-nav-open');
 			}
 		}
 	});
 
 	/* Popup */
-	$('body').append('<div class="overlay"></div>');
-	$('.overlay').click(function () {
-		var _self = $(this);
-		$('.popup').fadeOut(300, 'swing', function () {
-			_self.fadeOut(300, 'swing');
-		});
-	});
+	$('.popup').wrap('<div class="overlay"><div class="overlay-in"></div></div>');
 	$('.js-popup').click(function () {
 		var where = $('.' + $(this).attr('href').replace(/^.*#(.*)/, "$1"));
 		$('.overlay').fadeIn(300, 'swing', function () {
-			where.css('margin-left', -Math.floor(where.outerWidth() / 2)).css('margin-top', -Math.floor(where.outerHeight() / 2));
-			where.fadeIn(300, 'swing');
+			where.animate({opacity: 1}, 300, 'swing');
+			$('html').addClass('popup-open');
 		});
 		return false;
+	});
+	$('.js-close').click(function () {
+		closePopups();
+		return false;
+	});
+	$(document).keyup(function(e) {
+		if(e.keyCode== 27) {
+			closePopups();
+		}
 	});
 
 });
@@ -96,6 +107,14 @@ window.scrolling = true;
 $(window).on('scroll touchmove', function () {
 	return scrollEvent();
 });
+
+function closePopups() {
+	$('.popup').animate({opacity: 0}, 300, 'swing', function () {
+		$('.overlay').fadeOut(300, 'swing', function () {
+			$('html').removeClass('popup-open');
+		});
+	});
+}
 
 /* Обработчики скролла */
 function scrollEvent() {

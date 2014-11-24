@@ -29,7 +29,7 @@
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 		</nav>
-		<a class="callback" href="#">Обратная связь</a>
+		<a class="callback js-popup" href="#popup-callback">Обратная связь</a>
 	</header>
 
 	<div class="content">
@@ -73,7 +73,7 @@
 					<li><a href="agencies.html">Агентства</a></li>
 					<li><a href="news.html">Новости</a></li>
 					<li><a href="contacts.html">Контакты</a></li>
-					<li><a href="job.html">Вакансии</a></li>
+					<li><a href="#">Вакансии</a></li>
 				</ul>
 			</nav>
 			<ul class="contacts vcard">
@@ -97,6 +97,34 @@
 			</ul>
 		</div>
 	</footer>
+
+	<div class="popup popup-callback">
+		<a class="close js-close" href="#"></a>
+		<p class="heading">Обращайтесь, мы будем рады!</p>
+		<form action="#" class="form form-blue">
+			<div class="col">
+				<p class="line"><input type="text" value="" placeholder="Ваше имя"></p>
+				<p class="line"><input type="text" value="" placeholder="E-mail"></p>
+				<p class="line">
+					<select>
+						<option selected>тема</option>
+						<option selected>тема</option>
+						<option selected>Тема</option>
+						<option selected>тема</option>
+						<option selected>тема</option>
+					</select>
+				</p>
+			</div>
+			<div class="col">
+				<p class="line">
+					<textarea placeholder="Сообщение"></textarea>
+				</p>
+			</div>
+			<p class="line line-submit">
+				<input type="submit" value="Отправить">
+			</p>
+		</form>
+	</div>
 
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
