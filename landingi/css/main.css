@@ -706,6 +706,55 @@ textarea {
 /* ==========================================================================
    _RESPONSIVE
    ========================================================================== */
+.reviews {
+	padding: 44px 0;
+}
+.reviews .h3 {
+	margin: 0 0 34px 0;
+	text-transform: uppercase;
+}
+.reviews .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	font-size: 13px;
+	line-height: 20px;
+}
+.reviews .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.reviews .list li {
+	width: 33.3%;
+	margin-bottom: 24px;
+	padding: 0 16px;
+	float: left;
+}
+.reviews .list li:nth-child(3n+1) {
+	clear: left;
+}
+.reviews .list .photo {
+	width: 113px;
+	height: 113px;
+	margin: 0 auto 14px;
+	display: block;
+	border-radius: 50%;
+}
+.reviews .list .comment {
+	margin: 0 0 12px 0;
+}
+.reviews .list .name {
+	font-size: 14px;
+	font-weight: 400;
+	color: #070708;
+	letter-spacing: .03em;
+}
+/* ==========================================================================
+   _RESPONSIVE
+   ========================================================================== */
 @media (max-width: 1279px) {
 	.wrapper { width: 940px; }
 }
@@ -732,6 +781,9 @@ textarea {
 	.service .list li:nth-child(3n+1) { clear: none; }
 	.price .info .col { width: 75%; margin: 0 auto 40px; float: none; }
 	.price .info .col .booking { width: 50%; margin: 0 auto; }
+	.reviews .list li { width: 50%; }
+	.reviews .list li:nth-child(3n+1) { clear: none; }
+	.reviews .list li:nth-child(2n+1) { clear: left; }
 }
 @media (max-width: 575px) {
 	.header .call { font-size: 10px; }
@@ -740,7 +792,8 @@ textarea {
 	.projects .h3 { margin-bottom: 40px; }
 	.projects .list li { margin: 0 10px 20px; float: none; }
 	.price .info .col .booking { width: 75%; }
-
+	.reviews .list li { width: 100%; }
+	.reviews .list li:nth-child(2n+1) { clear: none; }
 }
 @media (max-width: 479px) {
 }
