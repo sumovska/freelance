@@ -18,16 +18,20 @@ $(document).ready(function () {
 		});
 		return false;
 	});
-	$('.index .carousel').bxSlider({
-		infiniteLoop: true,
-		controls: false,
-		pager: false,
-		slideWidth: 1170,
-		slideMargin: 0,
-		speed: 700
-	});
-	$('.carousel').bxSlider({
-	  pagerCustom: '.pager'
+
+	$('.index').each(function () {
+		$('.carousel', this).bxSlider({
+			controls: false,
+			pagerCustom: '.pager',
+			adaptiveHeight: true
+		});
+		$('.item .about').each(function () {
+			var _self = $(this);
+			$('.more', this).click(function () {
+				$(this).next('.toggle').fadeToggle(400);
+				return false;
+			});
+		});
 	});
 });
 
