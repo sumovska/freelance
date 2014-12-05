@@ -227,9 +227,16 @@ textarea {
    _HEADER
    ========================================================================== */
 .header {
-	height: 100px;
-	margin-bottom: 18px;
-	position: relative;
+	height: 80px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	cursor: default;
+}
+.header-fixed {
+	background: rgba( 255, 255, 255, .8);
 }
 .header .wrapper {
 	position: relative;
@@ -324,6 +331,7 @@ textarea {
    ========================================================================== */
 .index .h4 {
 	margin: 0 0 32px;
+	padding-top: 118px; 
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: .077em;
@@ -764,6 +772,68 @@ textarea {
 .questions .link {
 	margin: 0 40px;
 	display: inline-block;
+}
+/* ==========================================================================
+   _POPUP
+   ========================================================================== */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	background: rgba(92, 92, 92, .6);
+}
+.popup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+	background: #edeeeb;
+}
+.popup-callback {
+	width: 400px;
+	padding: 25px;
+	text-align: center;
+	background: #edeeeb;
+	border-radius: 5px;
+}
+.popup-callback .heading {
+	margin: 0 0 40px;
+	line-height: 30px;
+	font-size: 36px;
+	color: #1b1b1b;
+	display: block;
+}
+.popup-callback .line {
+	margin: 0 0 20px 0;
+}
+.popup-callback .line input[type="text"] {
+	width: 100%;
+	padding: 14px 17px 12px;
+	font-size: 14px;
+	color: #1a1b1c;
+	outline: none;
+	background: transparent;
+	border-radius: 4px;
+	border: 2px solid #a2a2a2;
+}
+.popup-callback .line-button {
+	margin: 0 0 10px 0;
+}
+.popup-callback .line-button input[type="submit"] {
+	width: 320px;
+	height: 56px;
+	margin: 0 auto;
+	display: block;
+	outline: none;
+	font-size: 14px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
 }
 /* ==========================================================================
    _RESPONSIVE
