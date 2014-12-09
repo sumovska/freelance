@@ -5,13 +5,8 @@
 $(document).ready(function () {
 	/* Index page carousel */
 	$('.slider .carousel').bxSlider({
-		infiniteLoop: false,
 		useCSS: false,
-		auto: true,
-		speed: 700,
-		slideWidth: 1260,
-		minSlides: 1,
-		moveSlides: 1
+		slideWidth: 1260
 	});
 	$('body').append('<div class="overlay"></div>');
 	$('.overlay').click(function () {
