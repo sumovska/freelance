@@ -491,9 +491,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background-size: 50px auto;
 }
 .index .down:hover, .index .down:focus {
-	-webkit-animation: pulsate .5s infinite;
-	animation: pulsate .5s infinite;
-	-moz-animation: pulsate .5s infinite;
+	-webkit-animation: pulsate 1s infinite;
+	animation: pulsate 1s infinite;
+	-moz-animation: pulsate 1s infinite;
 }
 @-webkit-keyframes pulsate {
 	0% { bottom: 25px; }
@@ -788,6 +788,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding: 50px 100px 45px;
 	text-align: center;
 	background: #fff;
+	transition: background-color .3s ease;
+}
+.agencies .card:hover {
+	background-color: #ddd;
 }
 .agencies .logo {
 	max-width: 100%;
@@ -1212,6 +1216,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	text-align: center;
 	background: #fff url(../img/icons/services-1.png) -117px 20px no-repeat;
 	background-size: 200px 200px;
+	transition: background-color .3s ease;
+}
+.services .item:hover {
+	background-color: #ddd;
 }
 .services li:nth-child(2) .item { background-image: url('../img/icons/services-2.png'); }
 .services li:nth-child(3) .item { background-image: url('../img/icons/services-3.png'); }
