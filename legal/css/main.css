@@ -123,6 +123,7 @@ audio, canvas, img, video {
 	left: 8px;
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 }
 .next:after {
@@ -130,6 +131,7 @@ audio, canvas, img, video {
 	right: 8px;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 }
 .next:hover, .next:focus {
@@ -363,17 +365,6 @@ textarea {
 	z-index: 5;
 	display: table;
 	overflow: hidden;
-	background: #3e444d;
-}
-.index:before {
-	content: ' ';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: -1;
 	background: #3e444d url('../img/index.jpg') no-repeat 50% 50%;
 	background-size: cover;
 }
@@ -1078,7 +1069,7 @@ textarea {
    _MAP
    ========================================================================== */
 .map {
-	height: 590px;
+	height: 420px;
 	position: relative;
 	z-index: 10;
 	background: #fff;
