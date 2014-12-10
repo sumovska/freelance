@@ -18,6 +18,27 @@ $(document).ready(function () {
 		auto: true,
 		pager: false
 	});
+	/* Block-recent-projects carousel */
+	$('.block-recent-projects .slider .carousel').bxSlider({
+		auto: true,
+		pager: false
+	});
+	/* Block-partners carousel */
+	$('.block-partners .slider .carousel').bxSlider({
+		infiniteLoop: true,
+		auto: true,
+		pager: false,
+		controls: false,
+		minSlides: 6
+	});
+	$('.block-services').each(function () {
+		var _self = $(this);
+		$('.show', this).click(function () {
+			$(this).hide();
+			$('.list', _self).css({'height': 'auto'});
+			return false;
+		});
+	});
 });
 
 $(window).on('scroll touchmove', function () {
@@ -33,6 +54,4 @@ function scrollEvent() {
 	} else {
 		$('.header').removeClass('header-fixed');
 	}
-	lastScrollTop = current;
-	return scrolling;
 }

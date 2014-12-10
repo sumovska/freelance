@@ -25,7 +25,7 @@ $(document).ready(function () {
 	});
 	$('.news .unit .text').each(function () {
 		var _self = $(this);
-		$('.link', this).click(function () {
+		$('.link', this).toggleClass(function () {
 			_self.toggleClass('text-open');
 			$('.hidden', _self).slideToggle(400);
 			return false;
