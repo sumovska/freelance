@@ -1663,34 +1663,122 @@ textarea {
 }
 .contacts .entryform {
 	width: 565px;
+	margin: 0 auto 20px;
 	padding-top: 50px;
-	margin: 0 auto;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #e2e3e5;
 }
 .contacts .entryform .line {
+	width: 100%;
 	margin: 0 0 15px;
 }
-.contacts .entryform input[type="text"] {
-	width: 258px;
+.contacts .entryform .line:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.contacts .entryform .line-50 {
+	width: 50%;
+	padding-right: 22px;
+	float: left;
+	clear: none;
+}
+.contacts .entryform .line-50:nth-child(2n) {
+	padding-right: 0;
+	padding-left: 22px;
+}
+.contacts .entryform .line input[type="text"] {
+	width: 100%;
 	height: 30px;
-	margin: 0 44px 0 0;
+	margin: 0;
 	padding: 8px 20px;
 	display: inline-block;
 	font-size: 13px;
 	color: #454f5d;
 	outline: none;
 }
-.contacts .entryform input[type="text"]:nth-child(2) {
-	margin-right: 0;
-}
-.contacts .entryform textarea {
+.contacts .entryform .line textarea {
 	width: 100%;
 	min-height: 162px;
 	padding: 8px 20px;
 	outline: none;
 }
-.contacts .entryform .note {
-	width: 160px;
+.contacts .entryform .line .capture {
+	width: 50%;
+	padding-right: 40px;
+	display: block;
+	float: left;
+}
+.contacts .entryform .line .capture .pic {
+	width: 50%;
+	height: 30px;
+	display: block;
+	float: left;
+	background: #a2a7ae;
+}
+.contacts .entryform .line .capture .pic img {
+	width: 35px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	padding: 8px 0;
+}
+.contacts .entryform .line .capture .code {
+	width: 50%;
+	float: left;
+	position: relative;
+}
+.contacts .entryform .line .note {
+	width: 170px;
+	display: block;
+	font-size: 13px;
+	line-height: 18px;
+	float: left;
 	color: #a2a7ae;
+}
+.contacts .entryform .line .parallel {
+	width: 130px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+.contacts .entryform .line .parallel input[type="submit"] {
+	width: 100%;
+	height: 30px;
+	display: block;
+	color: #000;
+	background: transparent;
+	border: none;
+	transition: color .3s ease;
+}
+.contacts .entryform .line .parallel:hover input[type="submit"] {
+	color: #fff;
+}
+.contacts .comments {
+	width: 565px;
+	display: block;
+	margin: 0 auto;
+}
+.contacts .comments .text {
+	width: 100%;
+	margin-bottom: 20px;
+	position: relative;
+}
+.contacts .comments .text:nth-child(2n) {
+	padding-left: 100px;
+	border-bottom: 1px solid #e2e3e5;
+}
+.contacts .comments .text .date {
+	color: #a2a7ae;
+	font: 13px 'Minion Pro', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.contacts .comments .text .name {
+	font-weight: bold;
 }
 /* ==========================================================================
    _POPUP
