@@ -15,24 +15,24 @@ $(document).ready(function () {
 	});
 	/* Index carousel */
 	$('.index .carousel').bxSlider({
-		auto: false,
+		auto: true,
 		controls: false,
 		pagerCustom: '.pager'
 	});
 	/* Block-features carousel */
 	$('.block-features .carousel').bxSlider({
-		auto: false,
+		auto: true,
 		pager: false
 	});
 	/* Block-recent-projects carousel */
 	$('.block-recent-projects .slider .carousel').bxSlider({
-		auto: false,
+		auto: true,
 		pager: false
 	});
 	/* Block-partners carousel */
 	$('.block-partners .slider .carousel').bxSlider({
 		infiniteLoop: true,
-		auto: false,
+		auto: true,
 		pager: false,
 		controls: false,
 		minSlides: 6

@@ -976,12 +976,12 @@ textarea {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.block-recent-projects .slider .carousel li:before, .block-recent-projects .slider .carousel li:after {
+.block-recent-projects .slider-image .carousel li {
+	border: 1px solid #9a9995;
+}
+.block-recent-projects .slider-image .carousel .corner {
 	width: 0;
 	height: 0;
-	display: block;
-	content: ' ';
-	overflow: hidden;
 	position: absolute;
 	top: -1px;
 	left: -1px;
@@ -989,7 +989,22 @@ textarea {
 	border-width: 74px 74px 0 0;
 	border-color: #ffffff transparent transparent transparent;
 }
-.block-recent-projects .slider .carousel li:after {
+.block-recent-projects .slider-image .carousel .corner:after {
+	width: 1px;
+	height: 80px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	background: #999fa6;
+	position: absolute;
+	bottom: -1px;
+	left: 38px;
+	-webkit-transform: skew(-45deg);
+	-moz-transform: skew(-45deg);
+	-o-transform: skew(-45deg);
+}
+.block-recent-projects .slider-image .carousel .corner-bottom {
 	bottom: -1px;
 	right: -1px;
 	top: auto;
@@ -997,8 +1012,9 @@ textarea {
 	border-width: 0 0 74px 74px;
 	border-color: transparent transparent #ffffff transparent;
 }
-.block-recent-projects .slider-image .carousel li {
-	border: 1px solid #9a9995;
+.block-recent-projects .slider-image .carousel .corner-bottom:after {
+	bottom: -78px;
+	left: -38px;
 }
 .block-recent-projects .bx-controls-direction a {
 	width: 64px;
