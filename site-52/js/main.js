@@ -13,20 +13,26 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+	/* Index carousel */
+	$('.index .carousel').bxSlider({
+		auto: false,
+		controls: false,
+		pagerCustom: '.pager'
+	});
 	/* Block-features carousel */
 	$('.block-features .carousel').bxSlider({
-		auto: true,
+		auto: false,
 		pager: false
 	});
 	/* Block-recent-projects carousel */
 	$('.block-recent-projects .slider .carousel').bxSlider({
-		auto: true,
+		auto: false,
 		pager: false
 	});
 	/* Block-partners carousel */
 	$('.block-partners .slider .carousel').bxSlider({
 		infiniteLoop: true,
-		auto: true,
+		auto: false,
 		pager: false,
 		controls: false,
 		minSlides: 6
