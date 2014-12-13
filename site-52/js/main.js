@@ -4,9 +4,9 @@
 /* On document ready */
 $(document).ready(function () {
 	/* Phone toggle */
-	$('.top .call').each(function() {
+	$('.top .call').each(function () {
 		var _self = this;
-		$('.triggers a', this).click(function() {
+		$('.triggers a', this).click(function () {
 			var where = $(this).attr('href').replace(/^.*#(.*)/, "$1");
 			$('.' + where, _self).addClass('active').siblings().removeClass('active');
 			$(this).closest('li').toggleClass('active').siblings('li').removeClass('active');
