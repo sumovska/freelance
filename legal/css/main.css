@@ -62,7 +62,7 @@ audio, canvas, img, video {
    ========================================================================== */
 .wrapper {
 	max-width: 1160px;
-	padding: 45px 25px;
+	padding: 100px 25px 45px;
 	margin: 0 auto;
 }
 .wrapper:after {
@@ -104,7 +104,7 @@ audio, canvas, img, video {
 	position: absolute;
 	left: 50%;
 	bottom: 20px;
-	z-index: 50;
+	z-index: 40;
 }
 .next:before, .next:after {
 	width: 2px;
@@ -210,10 +210,16 @@ textarea {
 	right: 0;
 	z-index: 10;
 	cursor: default;
+	transition: background-color .2s ease;
+}
+.header-fixed {
+	position: fixed;
+	z-index: 50;
+	background: rgba(20, 26, 34, .9);
 }
 .header .wrapper {
 	padding: 0;
-	min-height: 100px;
+	min-height: 80px;
 	position: relative;
 }
 .header .logo {
@@ -238,6 +244,7 @@ textarea {
 	top: 28px;
 	text-transform: uppercase;
 	letter-spacing: .05em;
+	transition: opacity .3s ease;
 }
 .header .callback {
 	color: #fff;
@@ -365,7 +372,37 @@ textarea {
 	z-index: 5;
 	display: table;
 	overflow: hidden;
-	background: #3e444d url('../img/index.jpg') no-repeat 50% 50%;
+	background: #10171f;
+}
+.index .carousel {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+}
+.index .carousel .bx-wrapper,
+.index .carousel .bx-viewport {
+	height: 100% !important;
+}
+.index .carousel ul {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	overflow: hidden;
+}
+.index .carousel ul li {
+	width: 100% !important;
+	height: 100%;
+	float: left;
+	left: 0;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	background-size: cover;
 }
 .index .full {
@@ -411,6 +448,7 @@ textarea {
 	display: table !important;
 	padding: 10px 40px;
 	border: 3px solid #0d8d9c;
+	background: rgba(20, 26, 34, .62);
 }
 .index .list li .text strong {
 	display: table-cell;
@@ -439,18 +477,9 @@ textarea {
 	background: #fff url(../img/service.jpg) 50% 50% no-repeat;
 	background-size: cover;
 }
-.service-white {
-	background-image: url('../img/service-white.jpg');
-}
-.service-30 {
-	min-height: 30%;
-}
-.service-30 .wrapper {
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-.service-30 .h3 {
-	margin-bottom: 20px;
+.service .wrapper {
+	padding-top: 100px;
+	padding-bottom: 70px;
 }
 .service-full {
 	width: 100%;
@@ -461,7 +490,22 @@ textarea {
 	display: table-cell;
 	vertical-align: middle;
 }
-.service .wrapper {
+.service-white {
+	background-image: url('../img/service-white.jpg');
+}
+.service-white .wrapper {
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+.service-30 {
+	min-height: 30%;
+}
+.service-30 .wrapper {
+	padding-top: 100px;
+	padding-bottom: 70px;
+}
+.service-30 .h3 {
+	margin-bottom: 20px;
 }
 .service .info {
 	margin: 0 0 26px 0;
@@ -786,7 +830,7 @@ textarea {
 	padding: 14px 22px 25px;
 	color: #7d8ea0;
 	font-size: 11px;
-	background: rgba(20, 26, 34, .62)
+	background: rgba(20, 26, 34, .62);
 }
 .options .item .line:last-child {
 	margin: 0;
@@ -827,7 +871,7 @@ textarea {
 	background: #edeff0;
 }
 .features .wrapper {
-	padding-top: 45px;
+	padding-top: 100px;
 	padding-bottom: 60px;
 }
 .features .h3-line {
@@ -898,6 +942,7 @@ textarea {
 	background-size: cover;
 }
 .send .wrapper {
+	padding-top: 45px;
 	padding-bottom: 60px;
 	position: relative;
 	z-index: 20;
@@ -979,6 +1024,8 @@ textarea {
 	background: rgba(16, 23, 31, .62);
 }
 .reviews .wrapper {
+	padding-top: 45px;
+	padding-bottom: 0;
 	position: relative;
 	z-index: 20;
 }
@@ -1023,10 +1070,15 @@ textarea {
    _QUESTION
    ========================================================================== */
 .question {
+	position: relative;
 	background: #edeff0;
 }
 .question .wrapper {
-	padding-bottom: 60px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+.question:first-of-type .wrapper {
+	padding-bottom: 80px;
 }
 .question .text {
 	width: 320px;
@@ -1237,6 +1289,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	.header .logo { left: 45px; }
 	.header .callback { right: 45px; }
 	.header .h1 { top: 100px; }
+	.header-fixed .h1 { opacity: 0; }
 	.index .wrapper { padding-top: 150px; padding-bottom: 80px; }
 	.index .list li { width: 75%; padding: 0; display: block; }
 	.index .h2 { width: 100%; padding: 0; }

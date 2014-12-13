@@ -9,7 +9,7 @@ $(document).ready(function () {
 	$('.next').click(function () {
 		var where = '#' + $(this).attr('href').replace(/^.*#(.*)/, "$1");
 		$.scrollTo(where, {
-			duration: 700,
+			duration: 500,
 			easing: 'swing'
 		});
 		return false;
@@ -36,4 +36,58 @@ $(document).ready(function () {
 		});
 		return false;
 	});
+	scrollEvent();
+	resizeEvent()
 });
+
+$(window).on('scroll touchmove', function () {
+	return scrollEvent();
+});
+/* Обработчики скролла */
+function scrollEvent() {
+	/* Переключение плавающего хедера */
+	if ($(window).scrollTop() > 1) {
+		$('.header').addClass('header-fixed');
+	} else {
+		$('.header').removeClass('header-fixed');
+	}
+}
+
+
+$(window).on('resize', function () {
+	resizeEvent();
+});
+window.inited = false;
+function initCarousel() {
+	window.carousel = $('.index .carousel ul').bxSlider({
+		mode: 'fade',
+		speed: 1000,
+		pause: 5000,
+		infiniteLoop: true,
+		easing: 'ease',
+		adaptiveHeight: false,
+		useCSS: false,
+		preloadImages: 'all',
+		pager: false,
+		controls: false,
+		auto: true
+	});
+	window.inited = true;
+}
+
+
+/* Обработчики ресайза */
+function resizeEvent() {
+	if ($(window).width() < 768) {
+		if (window.inited && window.carousel) {
+			window.carousel.destroySlider();
+			window.carousel.width('auto');
+			window.inited = false;
+		}
+	} else {
+		if (!window.inited) {
+			initCarousel();
+			window.inited = true;
+		}
+	}
+}
