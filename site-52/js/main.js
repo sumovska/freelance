@@ -45,6 +45,22 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+	$('.block-news').each(function () {
+		var _self = $(this);
+		$('.all', this).click(function () {
+			$(this).hide();
+			$('.hidden', _self).fadeToggle(400);
+			return false;
+		});
+	});
+	$('.block-action').each(function () {
+		var _self = $(this);
+		$('.all', this).click(function () {
+			$(this).hide();
+			$('.hidden', _self).fadeToggle(400);
+			return false;
+		});
+	});
 });
 
 $(window).on('scroll touchmove', function () {
