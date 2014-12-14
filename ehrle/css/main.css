@@ -431,6 +431,113 @@ textarea {
 	background: rgba(255, 255, 255, .85);
 }
 /* ==========================================================================
+   _EQUIPMENT
+   ========================================================================== */
+.equipment .space {
+	padding-top: 27px;
+	padding-bottom: 40px;
+	background: #f3f2ec;
+	border-radius: 10px;
+	border: 3px solid #d7d7d7;
+	box-shadow: 0 5px 10px 1px rgba(180, 176, 150, .36)
+}
+.equipment .heading {
+	text-align: center;
+}
+.equipment .heading .wrapper {
+	padding-bottom: 40px;
+}
+.equipment .heading .h2 {
+	height: 60px;
+	margin-bottom: 18px;
+	padding: 0 20px;
+	color: #fff;
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+}
+.equipment .heading .slogan {
+	margin: 0;
+	font-size: 21px;
+	line-height: 27px;
+}
+.equipment .heading .h2:before, .equipment .heading .h2:after {
+	border-radius: 4px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -2;
+	-ms-transform: skew(-5deg); /* IE 9 */
+	-webkit-transform: skew(-5deg); /* Chrome, Safari, Opera */
+	transform: skew(-5deg);
+	background: url(../img/heading.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+.equipment .heading .h2:after {
+	background: rgba(19, 19, 19, .77);
+	z-index: -1;
+}
+.equipment .catalog {
+	background: #fff;
+}
+.equipment .catalog .wrapper {
+	padding-top: 16px;
+}
+.equipment .catalog .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.equipment .catalog .list li {
+	width: 224px;
+	min-height: 680px;
+	margin-right: 14px;
+	padding-bottom: 90px;
+	float: left;
+	position: relative;
+}
+.equipment .catalog .list li:nth-child(4n) {
+	margin-right: 0;
+}
+.equipment .catalog .list .pic {
+	width: 212px;
+	height: 240px;
+	display: block;
+	margin: 0 auto 11px;
+}
+.equipment .catalog .list .h4 {
+	margin-bottom: 14px;
+	text-align: center;
+}
+.equipment .catalog .list .h4 span {
+	display: block;
+	font-size: 15px;
+	color: #565656;
+	font-weight: normal;
+}
+.equipment .catalog .list .price {
+	font-weight: bold;
+	position: absolute;
+	bottom: 32px;
+	left: 0;
+}
+.equipment .catalog .list .more {
+	text-decoration: none;
+	font-weight: bold;
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+	border-bottom: 1px dotted #ed1c24;
+	transition: border-color .3s ease;
+}
+.equipment .catalog .list .more:hover {
+	border-color: transparent;
+}
+/* ==========================================================================
    _WHY
    ========================================================================== */
 .why .space {
@@ -679,6 +786,7 @@ textarea {
 	position: relative;
 	background: url(../img/temp/feature-1.jpg) 50% 50% no-repeat;
 	background-size: cover;
+	border-radius: 3px;
 }
 .scheme .features li:before {
 	display: block;
@@ -690,6 +798,7 @@ textarea {
 	right: 0;
 	bottom: 0;
 	background: rgba(0, 0, 0, .85);
+	border-radius: 3px;
 	z-index: 5;
 }
 .scheme .features li:nth-child(2) {
