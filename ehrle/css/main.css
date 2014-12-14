@@ -1,0 +1,237 @@
+/*!
+ * Project: Ehrle
+ * File: Main styles
+ * Author: Sergiy Miroshnychenko
+ */
+
+/* ==========================================================================
+   _FONTS
+   ========================================================================== */
+@font-face {
+	font-family: 'Din Pro';
+	src: url('../fonts/dinpro-webfont.eot') format('embedded-opentype');
+	src: url('../fonts/dinpro-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/dinpro-webfont.woff') format('woff'),
+	url('../fonts/dinpro-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Din Pro';
+	src: url('../fonts/dinpro-medium-webfont.eot') format('embedded-opentype');
+	src: url('../fonts/dinpro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/dinpro-medium-webfont.woff') format('woff'),
+	url('../fonts/dinpro-medium-webfont.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Din Pro';
+	src: url('../fonts/dinpro-bold-webfont.eot') format('embedded-opentype');
+	src: url('../fonts/dinpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/dinpro-bold-webfont.woff') format('woff'),
+	url('../fonts/dinpro-bold-webfont.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+/* ==========================================================================
+   _HTML
+   ========================================================================== */
+* {
+	box-sizing: border-box;
+}
+html {
+	width: 100%;
+	height: 100%;
+	font: 18px/24px 'Din Pro', Helvetica, Arial, sans-serif;
+	color: #000;
+	background: #fff;
+}
+body {
+	width: 100%;
+	min-height: 100%;
+	padding-bottom: 270px;
+	position: relative;
+	background: #fff;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+audio, canvas, img, video {
+	vertical-align: middle;
+}
+/* ==========================================================================
+   _LAYOUT
+   ========================================================================== */
+.wrapper {
+	width: 100%;
+}
+.wrapper:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.row {
+	width: 100%;
+}
+.scale {
+	width: 960px;
+	margin: 0 auto;
+}
+.scale:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+/* ==========================================================================
+   _TEXT
+   ========================================================================== */
+p {
+	margin: 0 0 24px;
+}
+ul, ol {
+	margin: 0 0 24px 0;
+}
+a {
+	color: #ed1c24;
+	text-decoration: underline;
+}
+a:focus {
+	outline: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0 0 30px;
+}
+h1, .h1 {
+	font-size: 63px;
+}
+h2, .h2 {
+	font-size: 40px;
+}
+h3, .h3 {
+	font-size: 30px;
+}
+h4, .h4 {
+	font-size: 27px;
+}
+h5, .h5 {
+	font-size: 24px;
+}
+h6, .h6 {
+	font-size: 21px;
+}
+/* ==========================================================================
+   _FORMS
+   ========================================================================== */
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+textarea {
+	resize: vertical;
+}
+/* ==========================================================================
+   _FOOTER
+   ========================================================================== */
+.footer {
+	font-size: 14px;
+	line-height: 21px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.footer .wrapper {
+	height: 270px;
+	border-top: 1px solid #d5d5d5;
+}
+.footer .scale {
+	position: relative;
+}
+.footer .logo {
+	width: 206px;
+	height: 61px;
+	margin: 0;
+	position: absolute;
+	top: 18px;
+	left: 6px;
+}
+.footer .logo img {
+	width: 100%;
+	display: block;
+}
+.footer .copyright {
+	position: absolute;
+	top: 89px;
+	left: 11px;
+}
+.footer .contacts {
+	width: 540px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+.footer .contacts li {
+	width: 240px;
+	float: left;
+}
+/* ==========================================================================
+   _TOP
+   ========================================================================== */
+
+/* ==========================================================================
+   _HEADER
+   ========================================================================== */
+
+/* ==========================================================================
+   _INDEX
+   ========================================================================== */
+
+/* ==========================================================================
+   _RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1240px) {
+	
+}
+@media (max-width: 1023px) {
+	
+}
+@media (max-width: 767px) {
+	
+}
+@media (max-width: 575px) {
+	
+}
+@media (max-width: 479px) {
+	
+}
+/* ==========================================================================
+   _PRINT STYLES
+   ========================================================================== */
+@media print {
+	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; }
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
+}
