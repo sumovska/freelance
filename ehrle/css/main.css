@@ -603,6 +603,396 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: rgba(255, 255, 255, .85);
 }
 /* ==========================================================================
+   _EQUIPMENT
+   ========================================================================== */
+.equipment .space {
+	padding-top: 27px;
+	padding-bottom: 40px;
+	background: #f3f2ec;
+	border-radius: 10px;
+	border: 3px solid #d7d7d7;
+	box-shadow: 0 5px 10px 1px rgba(180, 176, 150, .36)
+}
+.equipment .heading {
+	text-align: center;
+}
+.equipment .heading .wrapper {
+	padding-bottom: 40px;
+}
+.equipment .heading .h2 {
+	height: 60px;
+	margin-bottom: 18px;
+	padding: 0 20px;
+	color: #fff;
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+}
+.equipment .heading .slogan {
+	margin: 0;
+	font-size: 21px;
+	line-height: 27px;
+}
+.equipment .heading .h2:before, .equipment .heading .h2:after {
+	border-radius: 4px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -2;
+	-ms-transform: skew(-5deg); /* IE 9 */
+	-webkit-transform: skew(-5deg); /* Chrome, Safari, Opera */
+	transform: skew(-5deg);
+	background: url(../img/heading.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+.equipment .heading .h2:after {
+	background: rgba(19, 19, 19, .77);
+	z-index: -1;
+}
+.equipment .catalog {
+	background: #fff;
+}
+.equipment .catalog .wrapper {
+	padding-top: 16px;
+}
+.equipment .catalog .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.equipment .catalog .list li {
+	width: 224px;
+	min-height: 680px;
+	margin-right: 14px;
+	padding-bottom: 90px;
+	float: left;
+	position: relative;
+}
+.equipment .catalog .list li:nth-child(4n) {
+	margin-right: 0;
+}
+.equipment .catalog .list .pic {
+	width: 212px;
+	height: 240px;
+	display: block;
+	margin: 0 auto 11px;
+}
+.equipment .catalog .list .h4 {
+	margin-bottom: 14px;
+	text-align: center;
+}
+.equipment .catalog .list .h4 span {
+	display: block;
+	font-size: 15px;
+	color: #565656;
+	font-weight: normal;
+}
+.equipment .catalog .list .price {
+	font-weight: bold;
+	position: absolute;
+	bottom: 32px;
+	left: 0;
+}
+.equipment .catalog .list .more {
+	text-decoration: none;
+	font-weight: bold;
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+	border-bottom: 1px dotted #ed1c24;
+	transition: border-color .3s ease;
+}
+.equipment .catalog .list .more:hover {
+	border-color: transparent;
+}
+/* ==========================================================================
+   _WHY
+   ========================================================================== */
+.why .space {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-radius: 8px;
+	background: #f2f1ea;
+}
+.why .h2 {
+	margin-bottom: 7px;
+}
+.why .h2 sup {
+	padding: 1px 2px;
+	display: inline-block;
+	font-size: 9px;
+	line-height: 8px;
+	text-align: center;
+	position: relative;
+	top: -12px;
+	border: 1px solid;
+	border-radius: 50%;
+}
+.why .slogan {
+	margin-bottom: 47px;
+	font-size: 21px;
+	line-height: 27px;
+	text-align: center;
+}
+.why .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.why .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.why .list li {
+	width: 300px;
+	min-height: 590px;
+	margin-right: 18px;
+	margin-bottom: 20px;
+	padding: 30px 18px 23px 27px;
+	float: left;
+	background: #fff;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, .13)
+}
+.why .list li:nth-child(3n) {
+	margin-right: 0;
+}
+.why .list li:nth-child(3n+1) {
+	clear: left;
+}
+.why .list p:last-of-type {
+	margin-bottom: 0;
+}
+.why .list .pic {
+	width: 240px;
+	height: 150px;
+	margin-bottom: 20px;
+	display: block;
+}
+.why .list .h {
+	margin-bottom: 11px;
+	font-size: 28px;
+	line-height: 34px;
+	font-weight: bold;
+}
+/* ==========================================================================
+   _MEDIA
+   ========================================================================== */
+.media {
+	color: #fff;
+}
+.media .space {
+	padding-top: 40px;
+	padding-bottom: 60px;
+	border-radius: 10px;
+	background: #101010;
+}
+.media .h2 {
+	margin-bottom: 60px;
+}
+.media .inform:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.media .side {
+	width: 320px;
+	margin-top: -70px;
+	padding-right: 50px;
+	padding-left: 26px;
+	float: left;
+	color: #9c9c9c;
+}
+.media .side p:last-of-type {
+	margin-bottom: 0;
+}
+.media .side .picture:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.media .side .picture img {
+	width: 138px;
+	height: 104px;
+	display: block;
+	float: left;
+	border: 4px solid #fff;
+}
+.media .side .picture img:nth-child(2n) {
+	margin-top: -87px;
+	float: right;
+}
+.media .side .blockquote {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 12px;
+	padding-right: 22px;
+	font: italic 24px/30px Georgia, 'Times New Roman', serif;
+}
+.media .side .blockquote p {
+	margin-bottom: 0;
+	color: #fff;
+}
+.media .side .blockquote .quote {
+	color: #9c9c9c
+}
+.media .side .blockquote .quote:first-child {
+	margin-left: -18px;
+}
+.media .media-list {
+	width: 620px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.media .media-list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.media .media-list li {
+	width: 300px;
+	height: 200px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.media .media-list li:nth-child(even) {
+	margin-right: 0;
+}
+.media .media-list li a {
+	width: 300px;
+	height: 200px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	position: relative;
+}
+.media .media-list li a:before, .media .media-list li a:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+}
+.media .media-list li a:before {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .4);
+	z-index: 10;
+}
+.media .media-list li a:after {
+	width: 0;
+	height: 0;
+	margin-left: -19px;
+	margin-top: -24px;
+	top: 50%;
+	left: 50%;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 22px 0 22px 36px;
+	border-color: transparent transparent transparent #fff;
+	z-index: 20;
+}
+.media .media-list .pic {
+	width: 300px;
+	height: 200px;
+	display: block;
+}
+.media .media-list .name {
+	position: absolute;
+	bottom: 12px;
+	left: 18px;
+	right: auto;
+	z-index: 20;
+}
+/* ==========================================================================
+   _SCHEME
+   ========================================================================== */
+.scheme .space {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: #f2f1ea;
+	border-radius: 10px;
+}
+.scheme .h2 {
+	margin-bottom: 8px;
+}
+.scheme .slogan {
+	margin-bottom: 36px;
+	font-size: 21px;
+	line-height: 27px;
+	text-align: center;
+}
+.scheme .features {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.scheme .features:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.scheme .features li {
+	width: 300px;
+	margin-right: 20px;
+	padding: 18px 18px 22px 28px;
+	float: left;
+	color: #fff;
+	font-size: 15px;
+	line-height: 21px;
+	position: relative;
+	background: url(../img/temp/feature-1.jpg) 50% 50% no-repeat;
+	background-size: cover;
+	border-radius: 3px;
+}
+.scheme .features li:before {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .85);
+	border-radius: 3px;
+	z-index: 5;
+}
+.scheme .features li:nth-child(2) {
+	background-image: url(../img/temp/feature-2.jpg);
+}
+.scheme .features li:nth-child(3) {
+	margin-right: 0;
+	background-image: url(../img/temp/feature-3.jpg);
+}
+.scheme .features li p {
+	position: relative;
+	z-index: 10;
+}
+.scheme .features li p:last-of-type {
+	margin-bottom: 0;
+}
+.scheme .features .h {
+	margin-bottom: 10px;
+	font-size: 21px;
+	font-weight: bold;
+}
+/* ==========================================================================
    _CLIENTS
    ========================================================================== */
 .clients {
