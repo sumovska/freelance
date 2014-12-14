@@ -143,6 +143,7 @@ h5, .h5 {
 }
 h6, .h6 {
 	font-size: 21px;
+	margin-bottom: 16px;
 }
 /* ==========================================================================
    _FORMS
@@ -191,17 +192,63 @@ textarea {
 	left: 11px;
 }
 .footer .contacts {
-	width: 540px;
+	width: 550px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	position: absolute;
-	top: 20px;
+	top: 27px;
 	right: 0;
 }
 .footer .contacts li {
-	width: 240px;
+	width: 260px;
 	float: left;
+	letter-spacing: -.01em;
+}
+.footer .contacts li:nth-child(1) {
+	margin-right: 20px;
+}
+.footer .contacts li p {
+	margin-bottom: 22px;
+}
+.footer .contacts .h6 {
+	letter-spacing: -.05em;
+}
+.footer .contacts .link {
+	line-height: 18px;
+}
+.footer .contacts .link a {
+	padding-right: 18px;
+	position: relative;
+}
+.footer .contacts .link a:after {
+	width: 12px;
+	height: 12px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: 6px;
+	right: 0;
+	background: url(../img/sprite.png) 0 0 no-repeat;
+}
+.footer .contacts .phone {
+	margin-bottom: 16px;
+	font-size: 30px;
+	line-height: 30px;
+}
+.footer .contacts .phone a {
+	text-decoration: none;
+	color: #000;
+}
+.footer .contacts .h {
+	letter-spacing: -.05em;
+}
+.footer .contacts .phone-2 {
+	display: block;
+	text-decoration: none;
+	color: #000;
 }
 /* ==========================================================================
    _NAV
@@ -262,6 +309,41 @@ textarea {
    _INDEX
    ========================================================================== */
 
+/* ==========================================================================
+   _CLIENTS
+   ========================================================================== */
+.clients .wrapper {
+	box-shadow: inset 0 4px 6px -2px rgba(231, 233, 235, 1)
+}
+.clients .h6 {
+	display: inline-block;
+	float: left;
+}
+.clients .list {
+	margin: 0 0 0 306px;
+	padding: 0;
+	list-style: none;
+}
+.clients .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.clients .list li {
+	margin-right: 40px;
+	float: left;
+}
+.clients .list li:last-child {
+	margin-right: 0;
+}
+.clients .list li a {
+	display: block;
+}
+.clients .list li img {
+	height: 80px;
+	display: block;
+}
 /* ==========================================================================
    _RESPONSIVE
    ========================================================================== */
