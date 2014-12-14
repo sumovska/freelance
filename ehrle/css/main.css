@@ -153,6 +153,7 @@ h6, .h6 {
 h3 sup, .h3 sup {
 	font-size: 16px;
 }
+.red { color: #ed1c24; }
 /* ==========================================================================
    _FORMS
    ========================================================================== */
@@ -603,9 +604,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: rgba(255, 255, 255, .85);
 }
 /* ==========================================================================
-   _EQUIPMENT
+   _PRODUCTS
    ========================================================================== */
-.equipment .space {
+.products .space {
 	padding-top: 27px;
 	padding-bottom: 40px;
 	background: #f3f2ec;
@@ -613,13 +614,13 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border: 3px solid #d7d7d7;
 	box-shadow: 0 5px 10px 1px rgba(180, 176, 150, .36)
 }
-.equipment .heading {
+.products .heading {
 	text-align: center;
 }
-.equipment .heading .wrapper {
+.products .heading .wrapper {
 	padding-bottom: 40px;
 }
-.equipment .heading .h2 {
+.products .heading .h2 {
 	height: 60px;
 	margin-bottom: 18px;
 	padding: 0 20px;
@@ -628,12 +629,12 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	position: relative;
 	z-index: 2;
 }
-.equipment .heading .slogan {
+.products .heading .slogan {
 	margin: 0;
 	font-size: 21px;
 	line-height: 27px;
 }
-.equipment .heading .h2:before, .equipment .heading .h2:after {
+.products .heading .h2:before, .products .heading .h2:after {
 	border-radius: 4px;
 	content: ' ';
 	display: block;
@@ -649,22 +650,22 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: url(../img/heading.jpg) 50% 50% no-repeat;
 	background-size: cover;
 }
-.equipment .heading .h2:after {
+.products .heading .h2:after {
 	background: rgba(19, 19, 19, .77);
 	z-index: -1;
 }
-.equipment .catalog {
+.products .catalog {
 	background: #fff;
 }
-.equipment .catalog .wrapper {
+.products .catalog .wrapper {
 	padding-top: 16px;
 }
-.equipment .catalog .list {
+.products .catalog .list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.equipment .catalog .list li {
+.products .catalog .list li {
 	width: 224px;
 	min-height: 680px;
 	margin-right: 14px;
@@ -672,32 +673,32 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	float: left;
 	position: relative;
 }
-.equipment .catalog .list li:nth-child(4n) {
+.products .catalog .list li:nth-child(4n) {
 	margin-right: 0;
 }
-.equipment .catalog .list .pic {
+.products .catalog .list .pic {
 	width: 212px;
 	height: 240px;
 	display: block;
 	margin: 0 auto 11px;
 }
-.equipment .catalog .list .h4 {
+.products .catalog .list .h4 {
 	margin-bottom: 14px;
 	text-align: center;
 }
-.equipment .catalog .list .h4 span {
+.products .catalog .list .h4 span {
 	display: block;
 	font-size: 15px;
 	color: #565656;
 	font-weight: normal;
 }
-.equipment .catalog .list .price {
+.products .catalog .list .price {
 	font-weight: bold;
 	position: absolute;
 	bottom: 32px;
 	left: 0;
 }
-.equipment .catalog .list .more {
+.products .catalog .list .more {
 	text-decoration: none;
 	font-weight: bold;
 	position: absolute;
@@ -706,7 +707,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-bottom: 1px dotted #ed1c24;
 	transition: border-color .3s ease;
 }
-.equipment .catalog .list .more:hover {
+.products .catalog .list .more:hover {
 	border-color: transparent;
 }
 /* ==========================================================================
@@ -1049,10 +1050,11 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .callback .link {
 	margin-bottom: 20px;
 }
+.callback .link {
+	text-align: center;
+}
 .callback .link .button {
-	width: 312px;
-	margin: 0 auto;
-	display: block;
+	display: inline-block;
 }
 /* ==========================================================================
    _POPUP_CALLBACK

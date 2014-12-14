@@ -28,10 +28,12 @@ $(window).on('scroll touchmove', function () {
 	/* Fastclick for mobile devices */
 	FastClick.attach(document.body);
 
+	/*
 	var url = './map.html';
 	$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
 		$('#map-container').html(resp);
 	});
+	*/
 
 	scrollEvent();
 });
