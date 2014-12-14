@@ -3,5 +3,19 @@
 
 /* On document ready */
 $(document).ready(function () {
-	
+	scrollEvent();
 });
+
+$(window).on('scroll touchmove', function () {
+	scrollEvent();
+});
+
+/* Обработчик скролла */
+function scrollEvent() {
+	/* Переключение плавающего хедера */
+	if ($(window).scrollTop() >= 10) {
+		$('.nav').addClass('nav-fixed');
+	} else {
+		$('.nav').removeClass('nav-fixed');
+	}
+}
