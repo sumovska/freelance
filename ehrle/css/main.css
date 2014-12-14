@@ -640,6 +640,78 @@ textarea {
 	z-index: 20;
 }
 /* ==========================================================================
+   _SCHEME
+   ========================================================================== */
+.scheme .space {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: #f2f1ea;
+	border-radius: 10px;
+}
+.scheme .h2 {
+	margin-bottom: 8px;
+}
+.scheme .slogan {
+	margin-bottom: 36px;
+	font-size: 21px;
+	line-height: 27px;
+	text-align: center;
+}
+.scheme .features {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.scheme .features:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.scheme .features li {
+	width: 300px;
+	margin-right: 20px;
+	padding: 18px 18px 22px 28px;
+	float: left;
+	color: #fff;
+	font-size: 15px;
+	line-height: 21px;
+	position: relative;
+	background: url(../img/temp/feature-1.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+.scheme .features li:before {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .85);
+	z-index: 5;
+}
+.scheme .features li:nth-child(2) {
+	background-image: url(../img/temp/feature-2.jpg);
+}
+.scheme .features li:nth-child(3) {
+	margin-right: 0;
+	background-image: url(../img/temp/feature-3.jpg);
+}
+.scheme .features li p {
+	position: relative;
+	z-index: 10;
+}
+.scheme .features li p:last-of-type {
+	margin-bottom: 0;
+}
+.scheme .features .h {
+	margin-bottom: 10px;
+	font-size: 21px;
+	font-weight: bold;
+}
+/* ==========================================================================
    _CLIENTS
    ========================================================================== */
 .clients {
