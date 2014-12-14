@@ -7,6 +7,32 @@ $(document).ready(function () {
 });
 
 $(window).on('scroll touchmove', function () {
+	/* Init forms */
+	$('input, select').styler();
+
+	/* Popup script */
+	$(".fancybox-popup").fancybox({
+		padding: 0,
+		wrapCSS: 'fancybox-red',
+		helpers: {
+			overlay: {
+				speedIn: 200,
+				speedOut: 200,
+				css: {
+					'background': 'rgba(255, 255, 255, 0.75)'
+				}
+			}
+		}
+	});
+
+	/* Fastclick for mobile devices */
+	FastClick.attach(document.body);
+
+	var url = './map.html';
+	$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
+		$('#map-container').html(resp);
+	});
+
 	scrollEvent();
 });
 
@@ -19,3 +45,4 @@ function scrollEvent() {
 		$('.nav').removeClass('nav-fixed');
 	}
 }
+
