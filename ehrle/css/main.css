@@ -50,6 +50,7 @@ html {
 body {
 	width: 100%;
 	min-height: 100%;
+	padding-top: 62px;
 	padding-bottom: 270px;
 	position: relative;
 	background: #fff;
@@ -68,8 +69,21 @@ audio, canvas, img, video {
 /* ==========================================================================
    _LAYOUT
    ========================================================================== */
+body:before {
+	height: 62px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+	background: #131416;
+}
 .wrapper {
 	width: 100%;
+	max-width: 1260px;
+	margin: 0 auto;
 }
 .wrapper:after {
 	display: block;
@@ -190,13 +204,60 @@ textarea {
 	float: left;
 }
 /* ==========================================================================
-   _TOP
+   _NAV
    ========================================================================== */
-
+.nav {
+	cursor: default;
+	position: absolute;
+	top: 15px;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	background: #131416;
+}
+.nav ul {
+	min-width: 960px;
+	padding: 0;
+	margin: 0 auto;
+	list-style: none;
+	font-size: 17px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: .005em;
+}
+.nav ul li {
+	margin: 0 7px;
+	display: inline-block;
+}
+.nav ul a {
+	padding: 5px;
+	display: block;
+	color: #8a8a8a;
+	text-decoration: none;
+	transition: color .2s ease;
+}
+.nav ul a:hover {
+	color: #fff;
+}
 /* ==========================================================================
    _HEADER
    ========================================================================== */
-
+.header {
+}
+.header .wrapper {
+	width: 960px;
+	min-height: 104px;
+	position: relative;
+}
+.header .logo {
+	width: 212px;
+	margin: 0;
+	display: block;
+}
+.header .logo img {
+	width: 100%;
+	display: block;
+}
 /* ==========================================================================
    _INDEX
    ========================================================================== */
