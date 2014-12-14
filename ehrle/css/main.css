@@ -607,8 +607,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _PRODUCTS
    ========================================================================== */
 .products .space {
-	padding-top: 27px;
-	padding-bottom: 40px;
 	background: #f3f2ec;
 	border-radius: 10px;
 	border: 3px solid #d7d7d7;
@@ -618,6 +616,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	text-align: center;
 }
 .products .heading .wrapper {
+	padding-top: 27px;
 	padding-bottom: 40px;
 }
 .products .heading .h2 {
@@ -659,11 +658,18 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .products .catalog .wrapper {
 	padding-top: 16px;
+	padding-bottom: 34px;
 }
 .products .catalog .list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+.products .catalog .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
 }
 .products .catalog .list li {
 	width: 224px;
@@ -683,32 +689,101 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	margin: 0 auto 11px;
 }
 .products .catalog .list .h4 {
-	margin-bottom: 14px;
+	margin-bottom: 9px;
+	padding-bottom: 28px;
 	text-align: center;
+	position: relative;
 }
 .products .catalog .list .h4 span {
 	display: block;
 	font-size: 15px;
 	color: #565656;
 	font-weight: normal;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.products .catalog .list .text {
+	margin-bottom: 0;
 }
 .products .catalog .list .price {
+	margin-bottom: 0;
+	padding-left: 28px;
 	font-weight: bold;
 	position: absolute;
-	bottom: 32px;
+	bottom: 56px;
 	left: 0;
+}
+.products .catalog .list .price:before {
+	width: 18px;
+	height: 17px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	background: url(../img/sprite.png) -25px 0 no-repeat;
+	background-size: 100px auto;
 }
 .products .catalog .list .more {
 	text-decoration: none;
 	font-weight: bold;
 	position: absolute;
 	bottom: 25px;
-	left: 0;
+	left: 28px;
 	border-bottom: 1px dotted #ed1c24;
 	transition: border-color .3s ease;
 }
 .products .catalog .list .more:hover {
 	border-color: transparent;
+}
+.products .catalog .list .more:before {
+	width: 20px;
+	height: 20px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 4px;
+	left: -26px;
+	background: url(../img/sprite.png) -100px -10px no-repeat;
+}
+.products .catalog-2 .wrapper {
+	padding-top: 44px;
+	padding-bottom: 30px;
+}
+.products .catalog-2 .list li {
+	width: 450px;
+	min-height: 460px;
+	margin-right: 28px;
+	padding-bottom: 50px;
+}
+.products .catalog-2 .list li:nth-child(2) {
+	margin-right: 0;
+}
+.products .catalog-2 .list .pic {
+	width: 500px;
+	height: 160px;
+	margin-left: -38px;
+	margin-bottom: -2px;
+}
+.products .catalog-2 .list li:nth-child(2) .pic {
+	margin-left: -24px;
+}
+.products .catalog-2 .list .h4 {
+	margin-bottom: 16px;
+	padding-bottom: 0;
+	text-align: left;
+}
+.products .catalog-2 .list sup {
+	font-size: 11px;
+	top: -9px;
+	position: relative;
+}
+.products .catalog-2 .list .price {
+	bottom: 10px;
 }
 /* ==========================================================================
    _WHY
