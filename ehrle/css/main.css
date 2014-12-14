@@ -101,13 +101,13 @@ ul, ol {
 	margin: 0 0 24px 0;
 }
 a {
+	outline: none;
 	color: #ed1c24;
 	text-decoration: underline;
+	transition: color .2s ease;
 }
-a:focus {
+a:focus, a:hover {
 	outline: none;
-}
-a:hover {
 	text-decoration: none;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -263,6 +263,9 @@ textarea {
 	color: #000;
 	cursor: default;
 }
+.footer .contacts .phone-link:focus {
+	color: #ed1c24;
+}
 /* ==========================================================================
    _NAV
    ========================================================================== */
@@ -298,12 +301,10 @@ textarea {
 .nav ul a {
 	padding: 5px;
 	display: block;
-	outline: none;
 	color: #8a8a8a;
 	text-decoration: none;
-	transition: color .2s ease;
 }
-.nav ul a:hover {
+.nav ul a:hover, .nav ul a:focus {
 	color: #fff;
 }
 /* ==========================================================================
@@ -356,6 +357,9 @@ textarea {
 	color: #000;
 	text-decoration: none;
 	cursor: default;
+}
+.header .phone a:focus {
+	color: #ed1c24;
 }
 /* ==========================================================================
    _VIDEO
