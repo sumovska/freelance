@@ -503,7 +503,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	cursor: default;
 	color: #fff;
 	overflow: hidden;
-	background: #131416 url('../img/video/bg.jpg') no-repeat 50% 50%;
+	background: #131416 url('../video/preview.jpg') no-repeat 50% 50%;
 	background-size: cover;
 }
 .video:before {
@@ -616,7 +616,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	text-align: center;
 }
 .products .heading .wrapper {
-	padding-top: 27px;
+	padding-top: 30px;
 	padding-bottom: 40px;
 }
 .products .heading .h2 {
@@ -627,6 +627,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	display: inline-block;
 	position: relative;
 	z-index: 2;
+	cursor: default;
 }
 .products .heading .slogan {
 	margin: 0;
@@ -657,12 +658,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: #fff;
 }
 .products .catalog .wrapper {
-	padding-top: 16px;
-	padding-bottom: 34px;
 }
 .products .catalog .list {
-	margin: 0;
-	padding: 0;
+	margin: 0 -10px;
+	padding: 15px 0 35px;
 	list-style: none;
 }
 .products .catalog .list:after {
@@ -672,24 +671,24 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	clear: both;
 }
 .products .catalog .list li {
-	width: 224px;
+	width: 25%;
+	padding: 0 10px 90px 10px;
 	min-height: 680px;
-	margin-right: 14px;
-	padding-bottom: 90px;
 	float: left;
 	position: relative;
 }
-.products .catalog .list li:nth-child(4n) {
-	margin-right: 0;
+.products .catalog .list li:nth-child(4n+1) {
+	clear: left;
 }
 .products .catalog .list .pic {
 	width: 212px;
 	height: 240px;
 	display: block;
-	margin: 0 auto 11px;
+	margin: 0 auto 14px;
 }
 .products .catalog .list .h4 {
-	margin-bottom: 9px;
+	min-height: 58px;
+	margin-bottom: 8px;
 	padding-bottom: 28px;
 	text-align: center;
 	position: relative;
@@ -700,7 +699,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #565656;
 	font-weight: normal;
 	position: absolute;
-	bottom: 0;
+	bottom: 1px;
 	left: 0;
 	right: 0;
 }
@@ -712,27 +711,28 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding-left: 28px;
 	font-weight: bold;
 	position: absolute;
-	bottom: 56px;
-	left: 0;
+	bottom: 55px;
+	left: 10px;
+	cursor: default;
 }
 .products .catalog .list .price:before {
-	width: 18px;
-	height: 17px;
+	width: 20px;
+	height: 20px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	top: 4px;
-	left: 3px;
-	background: url(../img/sprite.png) -25px 0 no-repeat;
+	top: 3px;
+	left: 2px;
+	background: url(../img/sprite.png) -20px 0 no-repeat;
 	background-size: 100px auto;
 }
 .products .catalog .list .more {
 	text-decoration: none;
 	font-weight: bold;
 	position: absolute;
-	bottom: 25px;
-	left: 28px;
+	bottom: 24px;
+	left: 38px;
 	border-bottom: 1px dotted #ed1c24;
 	transition: border-color .3s ease;
 }
@@ -747,42 +747,44 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	overflow: hidden;
 	position: absolute;
 	top: 4px;
-	left: -26px;
-	background: url(../img/sprite.png) -100px -10px no-repeat;
+	left: -27px;
+	background: url(../img/sprite.png) -40px 0 no-repeat;
+	background-size: 100px auto;
 }
-.products .catalog-2 .wrapper {
-	padding-top: 44px;
+.products .catalog-two .wrapper {
+	padding-top: 30px;
 	padding-bottom: 30px;
 }
-.products .catalog-2 .list li {
+.products .catalog-two .list li {
 	width: 450px;
 	min-height: 460px;
 	margin-right: 28px;
 	padding-bottom: 50px;
 }
-.products .catalog-2 .list li:nth-child(2) {
+.products .catalog-two .list li:nth-child(2) {
 	margin-right: 0;
 }
-.products .catalog-2 .list .pic {
+.products .catalog-two .list .pic {
 	width: 500px;
 	height: 160px;
 	margin-left: -38px;
 	margin-bottom: -2px;
 }
-.products .catalog-2 .list li:nth-child(2) .pic {
+.products .catalog-two .list li:nth-child(2) .pic {
 	margin-left: -24px;
 }
-.products .catalog-2 .list .h4 {
+.products .catalog-two .list .h4 {
+	min-height: 0;
 	margin-bottom: 16px;
 	padding-bottom: 0;
 	text-align: left;
 }
-.products .catalog-2 .list sup {
+.products .catalog-two .list sup {
 	font-size: 11px;
 	top: -9px;
 	position: relative;
 }
-.products .catalog-2 .list .price {
+.products .catalog-two .list .price {
 	bottom: 10px;
 }
 /* ==========================================================================

@@ -7,7 +7,9 @@ $(document).ready(function () {
 	/* Scrolling navigation */
 	$('#nav').onePageNav({
 		currentClass: 'active',
-		xoffset: -75
+		scrollSpeed: 1000,
+		easing: 'easeInOutQuad',
+		xoffset: -60
 	});
 
 	/* Init forms */
@@ -22,19 +24,19 @@ $(document).ready(function () {
 	/* Popup script */
 	$(".fancybox-popup").fancybox({
 		padding: 0,
+		easing: 'easeOutQuad',
 		wrapCSS: 'fancybox-red',
 		helpers: {
 			overlay: {
 				speedIn: 200,
-				speedOut: 200,
 				css: {
-					'background': 'rgba(255, 255, 255, 0.75)'
+					'background': 'rgba(255, 255, 255, 0.8)'
 				}
 			}
 		}
 	});
 
-	loadMap();
+	/*loadMap();*/
 });
 
 $(window).on('scroll touchmove', function () {
