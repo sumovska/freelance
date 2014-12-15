@@ -28,6 +28,13 @@
 	font-weight: bold;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Gotham Light';
+	src: url('../fonts/gotham-light.eot') format('embedded-opentype');
+	src: url('../fonts/gotham-light.eot?#iefix') format('embedded-opentype'), url('../fonts/gotham-light.woff') format('woff'), url('../fonts/dinpro-bold.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
 /* ==========================================================================
    _HTML
    ========================================================================== */
@@ -45,7 +52,7 @@ body {
 	width: 100%;
 	min-width: 1000px;
 	min-height: 100%;
-	padding: 0 20px;
+	padding: 0 10px;
 	position: relative;
 	background: #fff;
 }
@@ -65,7 +72,7 @@ audio, canvas, img, video {
    ========================================================================== */
 body:before {
 	height: 62px;
-	margin: 0 -20px;
+	margin: 0 -10px;
 	content: ' ';
 	display: block;
 	position: relative;
@@ -293,8 +300,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    ========================================================================== */
 .footer {
 	border-top: 1px solid #d5d5d5;
-	margin-left: -20px;
-	margin-right: -20px;
+	margin-left: -10px;
+	margin-right: -10px;
 	font-size: 14px;
 	line-height: 21px;
 	letter-spacing: .005em;
@@ -497,14 +504,17 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _VIDEO
    ========================================================================== */
 .video {
-	margin-left: -20px;
-	margin-right: -20px;
+	margin-left: -10px;
+	margin-right: -10px;
 	position: relative;
 	cursor: default;
 	color: #fff;
 	overflow: hidden;
-	background: #131416 url('../video/preview.jpg') no-repeat 50% 50%;
+	background: #131416;
 	background-size: cover;
+}
+.body-loaded .video {
+	background: #131416 url('../video/preview.jpg') no-repeat 50% 50%;
 }
 .video:before {
 	content: ' ';
@@ -541,6 +551,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	z-index: 0;
+}
+.body-loaded .video video {
+	display: block;
 }
 .video .wrapper {
 	min-height: 590px;
@@ -759,6 +772,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding-bottom: 30px;
 }
 .products .catalog-two .list {
+	padding-bottom: 0;
 	overflow: hidden;
 }
 .products .catalog-two .list li {
@@ -792,6 +806,306 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .products .catalog-two .list .price {
 	bottom: 10px;
+}
+/* ==========================================================================
+   _MAP
+   ========================================================================== */
+.map {
+	position: relative;
+	z-index: 1;
+}
+.map .space {
+	position: relative;
+}
+.map .loading {
+	width: 200px;
+	margin-left: -100px;
+	cursor: default;
+	font-size: 14px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.map .area {
+	width: 445px;
+	position: absolute;
+	top: 61px;
+	right: 100px;
+	z-index: 5;
+	cursor: default;
+}
+.map .h3 {
+	padding: 0 10px;
+	margin: 0 -10px 23px;
+	font-size: 50px;
+	line-height: 54px;
+	overflow: hidden;
+}
+.map .h3 span {
+	height: 60px;
+	padding: 0 10px;
+	margin-bottom: 3px;
+	display: block;
+	float: left;
+	clear: left;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+.map .h3 span:before {
+	border-radius: 4px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	-ms-transform: skew(-2deg); /* IE 9 */
+	-webkit-transform: skew(-2deg); /* Chrome, Safari, Opera */
+	transform: skew(-2deg);
+	background: rgba(237, 28, 36, .8);
+}
+.map .tabs {
+	width: 272px;
+	padding: 13px 20px;
+	position: relative;
+}
+.map .tabs:before {
+	border-radius: 4px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	-ms-transform: skew(-2deg); /* IE 9 */
+	-webkit-transform: skew(-2deg); /* Chrome, Safari, Opera */
+	transform: skew(-2.5deg);
+	background: #fff;
+}
+.map .h4 {
+	letter-spacing: -.025em;
+	white-space: nowrap;
+}
+.map .list {
+	width: 220px;
+	height: 6px;
+	padding: 0;
+	margin: 30px 0 37px 10px;
+	list-style: none;
+	font-size: 15px;
+	background: #f2efe8;
+}
+.map .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.map .list li {
+	width: 30px;
+	margin-left: 70px;
+	float: left;
+	position: relative;
+}
+.map .list li:first-of-type {
+	margin-left: 0;
+}
+.map .list a {
+	padding-top: 16px;
+	display: block;
+	color: #000;
+	text-decoration: none;
+	transition: none;
+}
+.map .list a:hover {
+	color: #ed1c24;
+}
+.map .list a:before {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: -13px;
+	left: 0;
+	z-index: 1;
+	background: #fff;
+}
+.map .list a:after {
+	width: 26px;
+	height: 26px;
+	box-sizing: border-box;
+	border: 1px dashed #ed1c24;
+	border-radius: 50%;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: -11px;
+	left: 2px;
+	z-index: 2;
+	transition: border .1s ease;
+}
+.map .list li:nth-child(1) { margin-left: -10px; }
+.map .list li:nth-child(1) a:before { width: 20px; height: 20px; top: -8px; left: 5px; }
+.map .list li:nth-child(1) a:after { width: 16px; height: 16px; top: -6px; left: 7px; }
+.map .list li:nth-child(2) a:before { width: 24px; height: 24px; top: -10px; left: 3px; }
+.map .list li:nth-child(2) a:after { width: 20px; height: 20px; top: -8px; left: 5px; }
+.map .list a:hover:after {
+	border-style: solid;
+}
+.map .list li.active a { cursor: default; color: #000; }
+.map .list li.active a:after {
+	border: 5px solid #ed1c24;
+}
+.map .list span {
+	width: 50px;
+	margin: 0 -10px;
+	display: block;
+	font-size: 15px;
+	line-height: 18px;
+	text-align: center;
+}
+.map .map-container {
+	width: 100%;
+	height: 590px;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	background: #f3f2ec;
+}
+.map .map-container:before {
+	height: 5px;
+	content: ' ';
+	display: block;
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, .5);
+	overflow: hidden;
+	position: absolute;
+	top: -5px;
+	left: 0;
+	right: 0;
+	z-index: 5;
+}
+.map .map-container > div {
+	width: 100%;
+	height: 100%;
+}
+#mp_google_map {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+}
+a[href^="http://maps.google.com/maps"] { display: none !important }
+.gmnoprint a, .gmnoprint span, .gm-style-cc { display: none; }
+.gmnoprint div { background: none !important; }
+/* ==========================================================================
+   _WINTER
+   ========================================================================== */
+.winter {
+	height: 590px;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+.winter .space {
+	height: 590px;
+	border-radius: 10px;
+	overflow: hidden;
+	clip: rect(0, auto, auto, 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+.winter .space .bg {
+	width: 1260px;
+	height: 640px;
+	margin-left: -630px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: -1;
+}
+.body-loaded .winter .space .bg {
+	position: fixed;
+	background: url('../img/winter.jpg') no-repeat 50% 50%;
+}
+.winter .space:before {
+	border-radius: 10px;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+}
+.body-loaded .winter .space:before {
+	z-index: 5;
+	background: url('../img/winter.png') no-repeat 50% 50%;
+}
+.winter .temp {
+	margin: 0;
+	position: absolute;
+	left: 35px;
+	bottom: 23px;
+	z-index: 5;
+	color: #fff;
+	cursor: default;
+	font: 55px/60px 'Gotham Light', Helvetica, Arial, sans-serif;
+	text-shadow: 1px 1px 0 rgba(114, 146, 180, .8);
+}
+.winter .h3 {
+	padding: 0 10px;
+	margin: 0 -10px 23px 76px;
+	font-size: 50px;
+	line-height: 54px;
+	overflow: hidden;
+	white-space: nowrap;
+	position: absolute;
+	left: 50%;
+	top: 78px;
+	z-index: 15;
+	cursor: default;
+}
+.winter .h3 span {
+	height: 60px;
+	padding: 0 10px;
+	margin-bottom: 3px;
+	display: block;
+	float: left;
+	clear: left;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+.winter .h3 span:before {
+	border-radius: 4px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	-ms-transform: skew(-2deg); /* IE 9 */
+	-webkit-transform: skew(-2deg); /* Chrome, Safari, Opera */
+	transform: skew(-2deg);
+	background: rgba(67, 147, 203, .65);
 }
 /* ==========================================================================
    _WHY
@@ -1080,7 +1394,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _CLIENTS
    ========================================================================== */
 .clients {
-	margin: 0 -20px;
+	margin: 0 -10px;
 	cursor: default;
 	box-shadow: inset 0 12px 5px -10px rgba(0, 0, 0, .15);
 }
@@ -1221,47 +1535,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .fancybox-red .fancybox-close:hover:before, .fancybox-red .fancybox-close:hover:after { background-color: #000; }
 .fancybox-red .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
 .fancybox-red .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-/* ==========================================================================
-   _MAP
-   ========================================================================== */
-.map {
-	position: relative;
-	z-index: 1;
-}
-.map .space {
-	position: relative;
-}
-.map-container {
-	width: 100%;
-	height: 590px;
-	border-radius: 10px;
-	overflow: hidden;
-	position: relative;
-	z-index: 1;
-	background: #f3f2ec;
-}
-.map-container:before {
-	height: 5px;
-	content: ' ';
-	display: block;
-	box-shadow: 0 0 15px 0 rgba(0, 0, 0, .5);
-	overflow: hidden;
-	position: absolute;
-	top: -5px;
-	left: 0;
-	right: 0;
-	z-index: 5;
-}
-.map-container > div {
-	width: 100%;
-	height: 100%;
-}
-#mp_google_map {
-	width: 100%;
-	height: 100%;
-	border-radius: 10px;
-	overflow: hidden;
-}
 /* ==========================================================================
    _RESPONSIVE
    ========================================================================== */

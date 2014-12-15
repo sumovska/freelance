@@ -15,9 +15,6 @@ $(document).ready(function () {
 	/* Init forms */
 	$('input, select').styler();
 
-	/* Fixed header init */
-	fixedHeader();
-
 	/* Fastclick for mobile devices */
 	FastClick.attach(document.body);
 
@@ -36,28 +33,61 @@ $(document).ready(function () {
 		}
 	});
 
-	/*loadMap();*/
-});
+	/* Google Map init */
+	$('.map').each(function () {
+		function loadMap(url) {
+			$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
+				container.html(resp);
+			});
+		}
 
-$(window).on('scroll touchmove', function () {
-	fixedHeader();
-});
-
-/* Fixed header init */
-function fixedHeader() {
-	/* Переключение плавающего хедера */
-	if ($(window).scrollTop() >= 10) {
-		$('.nav').addClass('nav-fixed');
-	} else {
-		$('.nav').removeClass('nav-fixed');
-	}
-}
-
-/* Google Map init */
-function loadMap() {
-	var url = './map.html';
-	$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
-		$('#map-container').html(resp);
+		var url = './map.html', container = $('#map-container');
+		$('.tabs .list a').click(function () {
+			var url = $(this).attr('href');
+			$(this).closest('li').addClass('active').siblings('.active').removeClass('active');
+			container.html("<p class='loading'>Идет загрузка карты&hellip;</p>");
+			setTimeout(function () {
+				loadMap(url);
+			}, 300);
+			return false;
+		});
+		loadMap(url);
 	});
-}
 
+	var $window = $(window), $start = 0, $scroll = $window.scrollTop(), $height = $window.height(), $offset = 0, $low = 0, $top = 0, $switch;
+
+	$window.on('scroll touchmove', function () {
+		$scroll = $window.scrollTop();
+		/* Переключение плавающего хедера */
+		if ($scroll >= 10) {
+			$('.nav').addClass('nav-fixed');
+		} else {
+			$('.nav').removeClass('nav-fixed');
+		}
+	});
+	$('.winter .space').each(function () {
+		var _self = $(this), _bg;
+		_self.append('<div class="bg"></div>');
+		_bg = $('.bg', _self);
+		$window.resize(function () {
+			$height = $window.height();
+			if ($height > 800) {
+				$low = 1 + ($height - 800) / 800;
+			} else {
+				$low = 1;
+			}
+			$offset = _self.offset().top;
+			$start = $offset - $height;
+			$end = $offset + 590;
+		});
+		$window.scroll(function () {
+			if (($start <= $scroll) && ($scroll <= $end)) {
+				$top = -(($scroll - $offset) / (1.7 / $low));
+				_bg.css({top: $top + 'px'});
+			}
+		});
+	});
+	$window.resize();
+	$window.scroll();
+	$('body').addClass('body-loaded');
+});
