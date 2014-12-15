@@ -438,7 +438,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #8a8a8a;
 	text-decoration: none;
 }
-.nav ul a:hover, .nav ul a:focus {
+.nav ul li.active a, .nav ul a:hover {
 	color: #fff;
 }
 /* ==========================================================================
@@ -1141,10 +1141,42 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _MAP
    ========================================================================== */
 .map {
+	position: relative;
+	z-index: 1;
+}
+.map .space {
+	position: relative;
 }
 .map-container {
 	width: 100%;
 	height: 590px;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	background: #f3f2ec;
+}
+.map-container:before {
+	height: 5px;
+	content: ' ';
+	display: block;
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, .5);
+	overflow: hidden;
+	position: absolute;
+	top: -5px;
+	left: 0;
+	right: 0;
+	z-index: 5;
+}
+.map-container > div {
+	width: 100%;
+	height: 100%;
+}
+#mp_google_map {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	overflow: hidden;
 }
 /* ==========================================================================
    _RESPONSIVE

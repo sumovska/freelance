@@ -3,12 +3,21 @@
 
 /* On document ready */
 $(document).ready(function () {
-	scrollEvent();
-});
 
-$(window).on('scroll touchmove', function () {
+	/* Scrolling navigation */
+	$('#nav').onePageNav({
+		currentClass: 'active',
+		xoffset: -75
+	});
+
 	/* Init forms */
 	$('input, select').styler();
+
+	/* Fixed header init */
+	fixedHeader();
+
+	/* Fastclick for mobile devices */
+	FastClick.attach(document.body);
 
 	/* Popup script */
 	$(".fancybox-popup").fancybox({
@@ -25,26 +34,28 @@ $(window).on('scroll touchmove', function () {
 		}
 	});
 
-	/* Fastclick for mobile devices */
-	FastClick.attach(document.body);
-
-	/*
-	var url = './map.html';
-	$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
-		$('#map-container').html(resp);
-	});
-	*/
-
-	scrollEvent();
+	loadMap();
 });
 
-/* Обработчик скролла */
-function scrollEvent() {
+$(window).on('scroll touchmove', function () {
+	fixedHeader();
+});
+
+/* Fixed header init */
+function fixedHeader() {
 	/* Переключение плавающего хедера */
 	if ($(window).scrollTop() >= 10) {
 		$('.nav').addClass('nav-fixed');
 	} else {
 		$('.nav').removeClass('nav-fixed');
 	}
+}
+
+/* Google Map init */
+function loadMap() {
+	var url = './map.html';
+	$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
+		$('#map-container').html(resp);
+	});
 }
 
