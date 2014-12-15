@@ -13,12 +13,15 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
 	/* Index carousel */
 	$('.index .carousel').bxSlider({
 		auto: true,
+		pause: 10000,
 		controls: false,
 		pagerCustom: '.pager'
 	});
+
 	/* Block-features carousel */
 	$('.block-features .carousel').bxSlider({
 		auto: true,
@@ -71,7 +74,7 @@ $(window).on('scroll touchmove', function () {
 function scrollEvent() {
 	var current = $(window).scrollTop(), body, h = 0;
 	/* Переключение плавающего хедера */
-	if (current > 62) {
+	if (current > 86) {
 		$('.header').addClass('header-fixed');
 	} else {
 		$('.header').removeClass('header-fixed');
