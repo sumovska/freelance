@@ -525,12 +525,12 @@ textarea {
 	width: 500px;
 	margin: 0 auto;
 	position: relative;
-	left: -32px;
+	left: -30px;
 	letter-spacing: .05em;
 	text-transform: uppercase;
 }
 .index .carousel .text .title {
-	margin-bottom: 18px;
+	margin-bottom: 15px;
 	color: #fff;
 	letter-spacing: -.01em;
 	font: 300 46px/50px 'Bebas Neue', Helvetica, Arial, sans-serif;
@@ -540,23 +540,45 @@ textarea {
 	display: inline-block;
 	background: #1074d5;
 }
-.index .carousel .text .slogan span {
-	padding: 11px 0 3px;
-	display: inline;
+.index .carousel .text .slogan {
+	margin-bottom: 0;
 	font-size: 20px;
 	line-height: 40px;
 	letter-spacing: -.045em;
+	position: relative;
+	left: 26px;
+}
+.index .carousel .text .slogan .inline {
+	padding: 10px 0 4px;
+	box-shadow: 16px 0 0 #fff, -26px 0 0 #fff;
 	background: #fff;
 }
 .index .carousel .text .slogan .link {
-	padding-left: 9px;
-	padding-right: 9px;
-	text-align: center;
-	background: #ffd642;
+	width: 37px;
+	height: 25px;
+	display: inline-block;
+	position: relative;
+	left: 20px;
 }
 .index .carousel .text .slogan .link a {
+	width: 100%;
+	height: 34px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
 	color: #333;
+	line-height: 36px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: normal;
 	text-decoration: none;
+	background: #ffd642;
+	transition: background-color .3s ease;
+}
+.index .carousel .text .slogan .link a:hover {
+	background-color: #fff;
 }
 .index .bottom {
 	height: 35px;
@@ -588,10 +610,18 @@ textarea {
 	list-style: none;
 	text-align: center;
 }
+.index .pager:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
 .index .pager li {
-	padding: 0 42px;
-	display: inline-block;
+	width: 25%;
+	padding: 0 10px;
+	float: left;
 	text-transform: uppercase;
+	white-space: nowrap; 
 }
 .index .pager li a {
 	color: #fff;
@@ -811,17 +841,33 @@ textarea {
 	background: #1073d5;
 }
 .block-info .latest-news {
-	width: 596px;
-	float: right;
+	margin-left: 404px;
+}
+.block-info .latest-news:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-info .latest-news .list {
+	padding-right: 14px;
+}
+.block-info .latest-news .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
 }
 .block-info .latest-news .item {
-	width: 48%;
-	margin-right: 11px;
+	width: 48.5%;
 	padding: 4px;
 	float: left;
 	line-height: 12px;
 	position: relative;
 	background: linear-gradient(135deg, rgba(0, 204, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
+}
+.block-info .latest-news .item:nth-child(2) {
+	float: right;
 }
 .block-info .latest-news .item:before, .block-info .latest-news .item:after {
 	width: 0;
@@ -860,15 +906,20 @@ textarea {
 	float: left;
 }
 .block-info .latest-news .item .h3 {
-	margin-bottom: 0;
+	margin-bottom: 4px;
 	color: #1074d5;
+	line-height: 18px;
 }
 .block-info .latest-news .item .h3 a {
 	text-decoration: none;
 }
+.block-info .latest-news .item .text {
+	max-height: 34px;
+	overflow: hidden;
+}
 .block-info .latest-news .all {
 	margin-top: 6px;
-	margin-right: 32px;
+	padding-right: 20px;
 	float: right;
 	font-size: 12px;
 }
@@ -976,10 +1027,10 @@ textarea {
 }
 .block-recent-projects .slider {
 	width: 48%;
-	float: left;
+	float: right;
 }
 .block-recent-projects .slider-image {
-	margin-right: 40px;
+	float: left;
 }
 .block-recent-projects .slider .all {
 	margin-bottom: 12px;
@@ -1758,7 +1809,14 @@ textarea {
    _RESPONSIVE
    ========================================================================== */
 @media (max-width: 1240px) {
-	
+	.wrapper { width: 1000px; }
+	.contact-us .info .line { padding-left: 0; }
+	.contact-us .info .line:first-child { line-height: normal; }
+	.contact-us .info .line .phone { margin-right: 0; float: none; }
+	.contact-us .info .line:first-child .phone { margin-right: 0; }
+	.contact-us .info dd { margin-left: 0; }
+	.contact-us .info dl { line-height: normal; }
+	.contact-us .info .in { min-height: 185px; }
 }
 @media (max-width: 1023px) {
 	

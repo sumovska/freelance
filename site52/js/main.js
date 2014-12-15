@@ -29,7 +29,6 @@ $(document).ready(function () {
 	});
 	/* Block-recent-projects carousel */
 	$('.block-recent-projects .slider .carousel').bxSlider({
-		auto: true,
 		pager: false
 	});
 	/* Block-partners carousel */
