@@ -37,7 +37,7 @@ $(document).ready(function () {
 		auto: true,
 		pager: false,
 		controls: false,
-		minSlides: 6
+		maxSlides: 6
 	});
 	$('.block-services').each(function () {
 		var _self = $(this);

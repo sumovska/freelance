@@ -111,6 +111,7 @@ ul, ol {
 	margin: 0 0 22px 0;
 }
 a {
+	outline: none;
 	color: #1074d5;
 	text-decoration: underline;
 }
@@ -531,13 +532,15 @@ textarea {
 }
 .index .carousel .text .title {
 	margin-bottom: 15px;
-	color: #fff;
 	letter-spacing: -.01em;
 	font: 300 46px/50px 'Bebas Neue', Helvetica, Arial, sans-serif;
+	position: relative;
+	left: 24px;
 }
-.index .carousel .text .title span {
-	padding: 5px 24px 2px;
-	display: inline-block;
+.index .carousel .text .title .inline {
+	padding: 5px 0 2px;
+	box-shadow: 24px 0 0 #1074d5, -24px 0 0 #1074d5;
+	color: #fff;
 	background: #1074d5;
 }
 .index .carousel .text .slogan {
@@ -621,12 +624,16 @@ textarea {
 	padding: 0 10px;
 	float: left;
 	text-transform: uppercase;
-	white-space: nowrap; 
+	white-space: nowrap;
 }
 .index .pager li a {
 	color: #fff;
 	text-decoration: none;
 	position: relative;
+	transition: color .2s ease;
+}
+.index .pager li a:hover {
+	color: #ffd642;
 }
 .index .pager li a:before, .index .pager li a:after {
 	width: 19px;
@@ -657,13 +664,14 @@ textarea {
 	width: 23px;
 	height: 23px;
 	top: -26px;
+	margin-left: -11px;
 	background: linear-gradient(135deg, rgba(252, 229, 144, 1) 0%, rgba(243, 178, 13, 1) 100%);
 	box-shadow: 0 0 8px 1px rgba(0, 0, 0, .5);
 }
 .index .pager li a.active:after {
 	width: 15px;
 	height: 15px;
-	margin-left: -6px;
+	margin-left: -7px;
 	top: -22px;
 	background: #3c3c3c;
 	box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .5);
@@ -825,7 +833,7 @@ textarea {
 .block-info .about-us .more {
 	width: 96px;
 	height: 30px;
-	margin: 5px -11px -5px 0;
+	margin: 5px -9px -5px 0;
 	padding-top: 8px;
 	font-size: 12px;
 	line-height: 16px;
@@ -1817,6 +1825,8 @@ textarea {
 	.contact-us .info dd { margin-left: 0; }
 	.contact-us .info dl { line-height: normal; }
 	.contact-us .info .in { min-height: 185px; }
+	.block-partners .slider .bx-wrapper { width: 832px; }
+	.block-partners .all { margin-right: 54px; }
 }
 @media (max-width: 1023px) {
 	
