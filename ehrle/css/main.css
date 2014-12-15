@@ -553,7 +553,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	z-index: 0;
 }
 .body-loaded .video video {
-	display: block;
+	display: none;
 }
 .video .wrapper {
 	min-height: 590px;
@@ -1290,6 +1290,10 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	bottom: 0;
 	background: rgba(0, 0, 0, .4);
 	z-index: 10;
+	transition: background .3s ease;
+}
+.media .media-list li a:hover:before {
+	background: rgba(0, 0, 0, 0);
 }
 .media .media-list li a:after {
 	width: 0;
@@ -1335,7 +1339,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	text-align: center;
 }
 .scheme .features {
-	margin: 0;
+	margin: 0 0 40px 0;
 	padding: 0;
 	list-style: none;
 }
@@ -1389,6 +1393,87 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	margin-bottom: 10px;
 	font-size: 21px;
 	font-weight: bold;
+}
+.scheme .table:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.scheme .table table {
+	width: 520px;
+	float: left;
+	line-height: 18px;
+	background: #fff;
+}
+.scheme .table table th {
+	padding: 6px 12px 5px 14px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: .1em;
+	border-bottom: 1px dashed #e0e0e0;
+}
+.scheme .table table th:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.scheme .table table th p {
+	margin-bottom: 0;
+	float: left;
+}
+.scheme .table table th p:nth-child(2) {
+	float: right;
+	color: #d8ae07;
+}
+.scheme .table table td {
+	height: 60px;
+	padding-left: 15px;
+	padding-right: 15px;
+	letter-spacing: .005em;
+	font-size: 14px;
+	border-bottom: 1px dashed #e0e0e0; 
+}
+.scheme .diagram {
+	width: 420px;
+	height: 690px;
+	float: right;
+	background: url(../img/diagram.jpg) 0px 29px repeat;
+	box-shadow: inset 0 0 24px 1px rgba(80, 68, 26, .23);
+}
+.scheme .diagram .numbering {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 13px;
+	line-height: 18px;
+	text-align: center;
+}
+.scheme .diagram .numbering:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.scheme .diagram .numbering li {
+	width: 20px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	float: left;
+	text-align: center;
+}
+.scheme .diagram .graph {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.scheme .diagram .graph li {
+	height: 60px;
+	background: linear-gradient(to bottom,  rgba(252,219,86,1) 0%,rgba(239,214,115,1) 100%);
+	border: 1px solid #ceb44a;
+	border-radius: 5px;
 }
 /* ==========================================================================
    _CLIENTS
