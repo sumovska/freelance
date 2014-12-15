@@ -33,16 +33,24 @@ $(document).ready(function () {
 		}
 	});
 
-	/* Popup script */
+	/* Video popup script */
 	$(".fancybox-video").fancybox({
+		padding: 0,
+		easing: 'easeOutQuad',
+		autoSize: false,
+		fitToView: false,
 		helpers: {
+			media: {},
 			overlay: {
-				media: {}
+				speedIn: 250,
+				css: {
+					'background': 'rgba(255, 255, 255, 0.8)'
+				}
 			}
 		}
 	});
 
-	/* Google Map init *//*
+	/* Google Map init */
 	$('.map').each(function () {
 		function loadMap(url) {
 			$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
@@ -61,9 +69,9 @@ $(document).ready(function () {
 			return false;
 		});
 		loadMap(url);
-	});*/
+	});
 
-	var $window = $(window), $start = 0, $scroll = $window.scrollTop(), $height = $window.height(), $offset = 0, $low = 0, $top = 0, $switch;
+	var $window = $(window), $start = 0, $scroll = $window.scrollTop(), $width = $window.width(), $height = $window.height(), $offset = 0, $low = 0, $top = 0, $switch;
 
 	$window.on('scroll touchmove', function () {
 		$scroll = $window.scrollTop();
@@ -96,6 +104,27 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$('.video').each(function () {
+		var _self = $(this);
+		$window.resize(function () {
+			$width = $window.width();
+			if ($width > 1024) {
+				console.log('b' + $('video', _self).length);
+				if ($('video', _self).length < 1) {
+					console.log('add');
+					$(_self).append('<video preload autoplay loop muted><source src="./video/ehrle.mp4" type="video/mp4"><source src="./video/ehrle.ogv" type="video/ogg"><source src="./video/ehrle.webm" type="video/webm"></video>');
+				}
+			} else {
+				console.log('a' + $('video', _self).length);
+				if ($('video', _self).length > 0) {
+					console.log('delete');
+					$('video', _self).remove();
+				}
+			}
+		});
+	});
+
 	$window.resize();
 	$window.scroll();
 	$('body').addClass('body-loaded');

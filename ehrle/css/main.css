@@ -50,7 +50,7 @@ html {
 }
 body {
 	width: 100%;
-	min-width: 1000px;
+	min-width: 980px;
 	min-height: 100%;
 	padding: 0 10px;
 	position: relative;
@@ -1434,7 +1434,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	padding-right: 15px;
 	letter-spacing: .005em;
 	font-size: 14px;
-	border-bottom: 1px dashed #e0e0e0; 
+	border-bottom: 1px dashed #e0e0e0;
 }
 .scheme .diagram {
 	width: 420px;
@@ -1471,7 +1471,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 }
 .scheme .diagram .graph li {
 	height: 60px;
-	background: linear-gradient(to bottom,  rgba(252,219,86,1) 0%,rgba(239,214,115,1) 100%);
+	background: linear-gradient(to bottom, rgba(252, 219, 86, 1) 0%, rgba(239, 214, 115, 1) 100%);
 	border: 1px solid #ceb44a;
 	border-radius: 5px;
 }
@@ -1615,16 +1615,18 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 .fancybox-title-inside-wrap { margin-top: 10px; }
 .fancybox-title-over-wrap { position: absolute; bottom: 0; left: 0; color: #fff; padding: 10px; background: #000; background: rgba(0, 0, 0, .8); }
 .fancybox-red .fancybox-skin { border: 3px solid #f00; border-radius: 10px; box-shadow: none; background: #fff; }
-.fancybox-red .fancybox-close { width: 18px; height: 18px; display: block; top: 10px; right: 10px; background: none; outline: none; }
-.fancybox-red .fancybox-close:before, .fancybox-close:after { width: 2px; height: 22px; border-radius: 1px; position: absolute; top: -2px; left: 8px; display: block; overflow: hidden; content: ' '; background: #f03; transition: background-color .2s ease; }
-.fancybox-red .fancybox-close:hover:before, .fancybox-red .fancybox-close:hover:after { background-color: #000; }
-.fancybox-red .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
-.fancybox-red .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+.fancybox-skin .fancybox-close { width: 18px; height: 18px; display: block; top: 10px; right: 10px; background: none; outline: none; }
+.fancybox-skin .fancybox-close:before, .fancybox-skin .fancybox-close:after { width: 2px; height: 22px; border-radius: 1px; position: absolute; top: -2px; left: 8px; display: block; overflow: hidden; content: ' '; background: #f03; transition: background-color .2s ease; }
+.fancybox-skin .fancybox-close:hover:before, .fancybox-skin .fancybox-close:hover:after { background-color: #000; }
+.fancybox-skin .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+.fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 /* ==========================================================================
    _RESPONSIVE
    ========================================================================== */
-@media (max-width: 1240px) {
-	
+@media (min-width: 1024px) {
+	.body-loaded .video video {
+		display: block;
+	}
 }
 /* ==========================================================================
    _PRINT STYLES
