@@ -34,6 +34,7 @@ $(document).ready(function () {
 	});
 
 	/* Google Map init */
+	/*
 	$('.map').each(function () {
 		function loadMap(url) {
 			$.ajax({url: url, dataType: 'html', type: 'GET'}).done(function (resp) {
@@ -53,6 +54,7 @@ $(document).ready(function () {
 		});
 		loadMap(url);
 	});
+	*/
 
 	var $window = $(window), $start = 0, $scroll = $window.scrollTop(), $height = $window.height(), $offset = 0, $low = 0, $top = 0, $switch;
 
