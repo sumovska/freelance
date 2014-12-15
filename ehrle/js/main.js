@@ -28,7 +28,7 @@ $(document).ready(function () {
 		wrapCSS: 'fancybox-red',
 		helpers: {
 			overlay: {
-				speedIn: 200,
+				speedIn: 250,
 				css: {
 					'background': 'rgba(255, 255, 255, 0.8)'
 				}
