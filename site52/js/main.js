@@ -3,7 +3,7 @@
 
 /* On document ready */
 $(document).ready(function () {
-	/* Phone toggle */
+	/* Phone triggers */
 	$('.top .call').each(function () {
 		var _self = this;
 		$('.triggers a', this).click(function () {
@@ -14,39 +14,42 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Index carousel */
-	$('.index .carousel').bxSlider({
-		auto: true,
-		pause: 10000,
-		controls: false,
-		pagerCustom: '.pager'
+
+	$('.index').each(function () {
+		/* Index carousel */
+		$('.carousel', this).bxSlider({
+			auto: true,
+			pause: 10000,
+			controls: false,
+			pagerCustom: '.pager'
+		});
 	});
 
-	/* Block-features carousel */
-	$('.block-features .carousel').bxSlider({
-		auto: true,
-		pager: false
+	$('.block-features').each(function () {
+		/* Features carousel */
+		$('.carousel', this).bxSlider({
+			pager: false
+		});
 	});
-	/* Block-recent-projects carousel */
-	$('.block-recent-projects .slider .carousel').bxSlider({
-		pager: false
+
+	$('.block-recent-projects').each(function () {
+		/* Recent projects carousel */
+		$('.carousel', this).bxSlider({
+			pager: false
+		});
 	});
-	/* Block-partners carousel */
-	$('.block-partners .slider .carousel').bxSlider({
-		infiniteLoop: true,
-		auto: true,
-		pager: false,
-		controls: false,
-		maxSlides: 6
-	});
+
+	/* Services */
 	$('.block-services').each(function () {
-		var _self = $(this);
+		var _self = $(this), list = $('.list', _self);
 		$('.show', this).click(function () {
+			var h = list.height('auto').outerHeight(true);
+			list.removeAttr('style').animate({'height': h});
 			$(this).hide();
-			$('.list', _self).css({'height': 'auto'});
 			return false;
 		});
 	});
+
 	$('.block-news').each(function () {
 		var _self = $(this);
 		$('.all', this).click(function () {
@@ -63,19 +66,13 @@ $(document).ready(function () {
 			return false;
 		});
 	});
-});
 
-$(window).on('scroll touchmove', function () {
-	return scrollEvent();
+	$(window).on('scroll touchmove', function () {
+		/* Toggle fixed header */
+		if ($(window).scrollTop() > 86) {
+			$('.header').addClass('header-fixed');
+		} else {
+			$('.header').removeClass('header-fixed');
+		}
+	});
 });
-
-/* Обработчики скролла */
-function scrollEvent() {
-	var current = $(window).scrollTop(), body, h = 0;
-	/* Переключение плавающего хедера */
-	if (current > 86) {
-		$('.header').addClass('header-fixed');
-	} else {
-		$('.header').removeClass('header-fixed');
-	}
-}

@@ -85,15 +85,21 @@ audio, canvas, img, video {
    _LAYOUT
    ========================================================================== */
 .wrapper {
-	width: 1060px;
+	width: 1020px;
 	margin: 0 auto;
-	padding: 30px;
+	padding: 30px 10px;
 }
 .content {
-	padding-top: 68px;
+	padding-top: 70px;
 }
 .block {
 	margin-bottom: 40px;
+}
+.content h1, .content .h1 {
+	cursor: default;
+}
+.content > .block:last-of-type {
+	margin-bottom: 0;
 }
 .wrapper:after, .content:after, .block:after {
 	display: block;
@@ -133,7 +139,7 @@ h1, .h1 {
 h2, .h2 {
 	margin-bottom: 24px;
 	font: 24px 'Bebas Neue', Helvetica, Arial, sans-serif;
-	letter-spacing: .03em;
+	letter-spacing: .01em;
 }
 h3, .h3 {
 	font: 20px 'Bebas Neue', Helvetica, Arial, sans-serif;
@@ -162,10 +168,7 @@ textarea {
 	background-size: cover;
 }
 .footer .wrapper {
-	padding-top: 78px;
-	padding-bottom: 70px;
-	padding-right: 68px;
-	padding-left: 68px;
+	padding: 80px 50px 70px;
 }
 .footer .logo {
 	width: 94px;
@@ -196,6 +199,7 @@ textarea {
 .footer .col:nth-child(4) { width: 22.5%; }
 .footer .col .h {
 	margin-bottom: 16px;
+	line-height: 12px;
 	text-transform: uppercase;
 	font-weight: bold;
 }
@@ -219,12 +223,12 @@ textarea {
 }
 .top .wrapper {
 	padding-top: 10px;
-	padding-left: 32px;
 	padding-bottom: 7px;
 }
 .top .contacts {
 	width: 250px;
 	margin-right: 20px;
+	margin-left: 3px;
 	float: left;
 	font-size: 12px;
 	line-height: 16px;
@@ -264,7 +268,7 @@ textarea {
 	color: #ffd43b;
 }
 .top .call {
-	width: 300px;
+	width: 225px;
 	float: left;
 }
 .top .call .triggers {
@@ -393,14 +397,14 @@ textarea {
 	left: 0;
 	right: 0;
 	background: #25bdff;
-	transition: margin-left .2s ease;
+	transition: margin-left .3s ease;
 }
 .header-fixed {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	background: rgba(255, 255, 255, .8);
+	background: rgba(255, 255, 255, .9);
 }
 .header-fixed:after {
 	margin-left: 0;
@@ -412,15 +416,15 @@ textarea {
 	position: relative;
 }
 .header .logo {
-	width: 198px;
+	width: 200px;
 	margin-bottom: 0;
 	position: absolute;
-	top: -9px;
-	left: 30px;
+	top: -8px;
+	left: 10px;
 	transition: width .1s ease, top .1s ease, left .1s ease;
 }
 .header-fixed .logo {
-	width: 99px;
+	width: 100px;
 	top: 8px;
 	left: 75px;
 }
@@ -434,8 +438,8 @@ textarea {
 }
 .header .nav {
 	position: absolute;
-	top: 13px;
-	right: 28px;
+	top: 14px;
+	right: 10px;
 }
 .header .nav .toggle {
 	width: 12px;
@@ -450,11 +454,12 @@ textarea {
 .header .nav .toggle:before {
 	width: 100%;
 	height: 2px;
+	margin-top: -1px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	top: 2px;
+	top: 50%;
 	left: 0;
 	right: 0;
 	background: #121212;
@@ -504,7 +509,7 @@ textarea {
 	top: 0;
 	right: 0;
 	left: 0;
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
 	z-index: 20;
 }
 .index .carousel {
@@ -519,7 +524,7 @@ textarea {
 	background-repeat: no-repeat;
 }
 .index .carousel .wrapper {
-	padding-top: 136px;
+	padding-top: 141px;
 	cursor: default;
 }
 .index .carousel .text {
@@ -531,7 +536,7 @@ textarea {
 	text-transform: uppercase;
 }
 .index .carousel .text .title {
-	margin-bottom: 15px;
+	margin-bottom: 17px;
 	letter-spacing: -.01em;
 	font: 300 46px/50px 'Bebas Neue', Helvetica, Arial, sans-serif;
 	position: relative;
@@ -604,7 +609,7 @@ textarea {
 	background: linear-gradient(to bottom, rgba(30, 78, 174, 1) 0%, rgba(16, 116, 213, 1) 14%, rgba(0, 157, 255, 1) 37%, rgba(65, 244, 255, 1) 62%, rgba(0, 153, 253, 1) 83%, rgba(16, 115, 212, 1) 92%, rgba(30, 79, 175, 1) 100%);
 }
 .index .bottom .wrapper {
-	padding-top: 16px;
+	padding-top: 17px;
 	padding-bottom: 0;
 }
 .index .pager {
@@ -623,14 +628,14 @@ textarea {
 	width: 25%;
 	padding: 0 10px;
 	float: left;
+	position: relative;
 	text-transform: uppercase;
 	white-space: nowrap;
 }
 .index .pager li a {
 	color: #fff;
 	text-decoration: none;
-	position: relative;
-	transition: color .2s ease;
+	transition: color .3s ease;
 }
 .index .pager li a:hover {
 	color: #ffd642;
@@ -684,15 +689,25 @@ textarea {
 .blue {
 	width: 100%;
 	height: 150px;
-	margin-bottom: -120px;
+	margin-bottom: -117px;
+}
+.blue:before {
+	width: 100%;
+	height: 150px;
+	display: block;
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
 	background: #0c3479 url(../img/footer.jpg) 50% 50% no-repeat;
 	background-size: cover;
 }
 /* ==========================================================================
-   _BLOCK-FEATURES
+   _FEATURES
    ========================================================================== */
 .block-features .bx-wrapper {
 	position: relative;
+	cursor: default;
 }
 .block-features .carousel {
 	margin: 0;
@@ -700,8 +715,8 @@ textarea {
 	list-style: none;
 }
 .block-features .carousel li {
-	min-height: 224px;
-	padding: 16px;
+	min-height: 225px;
+	padding: 15px;
 	position: relative;
 	background-position: 50% 50%;
 	background-size: cover;
@@ -710,12 +725,15 @@ textarea {
 .block-features .carousel .text {
 	width: 388px;
 	height: 92px;
-	padding: 8px 14px 10px 38px;
-	margin-left: 414px;
+	padding: 8px 14px 8px 38px;
+	margin-left: 415px;
 	line-height: 14px;
 	position: relative;
 	text-transform: uppercase;
 	z-index: 10;
+}
+.block-features .carousel .text p {
+	margin: 0;
 }
 .block-features .carousel .text:before {
 	margin-left: 0;
@@ -746,20 +764,24 @@ textarea {
 	overflow: hidden;
 	position: absolute;
 	right: 11px;
-	bottom: 13px;
+	bottom: 15px;
 	background: url(../img/sprite.png) 0 0 no-repeat;
 }
 .block-features .bx-controls-direction a.bx-next {
-	bottom: 22px;
+	bottom: 24px;
 	background-position: -40px 0;
 }
 /* ==========================================================================
-   _BLOCK-INFO
+   _INFO
    ========================================================================== */
-.block-info .about-us {
-	width: 364px;
-	margin-top: -248px;
-	margin-left: 16px;
+.block-info {
+	padding: 0 15px;
+	margin-bottom: 30px;
+	cursor: default;
+}
+.block-info .about {
+	width: 366px;
+	margin-top: -250px;
 	padding: 10px 18px;
 	float: left;
 	line-height: 14px;
@@ -769,7 +791,7 @@ textarea {
 	border-bottom: 4px solid #0f77d9;
 	z-index: 20;
 }
-.block-info .about-us:before, .block-info .about-us:after {
+.block-info .about:before, .block-info .about:after {
 	width: 4px;
 	display: block;
 	content: ' ';
@@ -780,17 +802,17 @@ textarea {
 	left: 0;
 	background: linear-gradient(to bottom, rgba(0, 204, 255, 1) 0%, rgba(15, 119, 217, 1) 100%);
 }
-.block-info .about-us:after {
+.block-info .about:after {
 	top: 28px;
 	right: 0;
 	left: auto;
 }
-.block-info .about-us .corner {
+.block-info .about .corner {
 	position: absolute;
 	top: 0;
 	right: -18px;
 }
-.block-info .about-us .corner:before, .block-info .about-us .corner:after {
+.block-info .about .corner:before, .block-info .about .corner:after {
 	width: 20px;
 	height: 4px;
 	display: block;
@@ -802,7 +824,7 @@ textarea {
 	right: 0;
 	background: #0cf;
 }
-.block-info .about-us .corner:after {
+.block-info .about .corner:after {
 	width: 4px;
 	height: 32px;
 	left: 7px;
@@ -810,26 +832,26 @@ textarea {
 	-moz-transform: skew(-35deg);
 	-o-transform: skew(-35deg);
 }
-.block-info .about-us .corner div {
+.block-info .about .corner div {
 	width: 0;
 	height: 0;
 	border-style: solid;
 	border-width: 22px 18px 0 0;
 	border-color: rgba(255, 255, 255, .5) transparent transparent transparent;
 }
-.block-info .about-us .h3 {
+.block-info .about .h3 {
 	margin-bottom: 14px;
 }
-.block-info .about-us .h {
+.block-info .about .h {
 	margin-bottom: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
-.block-info .about-us .list {
+.block-info .about .list {
 	margin-bottom: 14px;
 	padding-left: 16px;
 }
-.block-info .about-us .more {
+.block-info .about .more {
 	width: 96px;
 	height: 30px;
 	margin: 5px -9px -5px 0;
@@ -842,30 +864,32 @@ textarea {
 	text-decoration: none;
 	text-transform: uppercase;
 	background: #009dff;
-	transition: background .3s ease;
+	transition: background-color .3s ease, color .3s ease;
 }
-.block-info .about-us .more:hover {
-	background: #1073d5;
+.block-info .about .more:hover, .block-info .about .more:focus {
+	color: #333;
+	background: #ffd642;
 }
-.block-info .latest-news {
-	margin-left: 404px;
+.block-info .news-latest {
+	margin-left: 420px;
+	cursor: default;
 }
-.block-info .latest-news:after {
+.block-info .news-latest .h2 {
+	line-height: 24px;
+}
+.block-info .news-latest:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.block-info .latest-news .list {
-	padding-right: 14px;
-}
-.block-info .latest-news .list:after {
+.block-info .news-latest .list:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.block-info .latest-news .item {
+.block-info .news-latest .item {
 	width: 48.5%;
 	padding: 4px;
 	float: left;
@@ -873,10 +897,10 @@ textarea {
 	position: relative;
 	background: linear-gradient(135deg, rgba(0, 204, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
 }
-.block-info .latest-news .item:nth-child(2) {
+.block-info .news-latest .item:nth-child(2) {
 	float: right;
 }
-.block-info .latest-news .item:before, .block-info .latest-news .item:after {
+.block-info .news-latest .item:before, .block-info .news-latest .item:after {
 	width: 0;
 	height: 0;
 	display: block;
@@ -890,21 +914,21 @@ textarea {
 	border-width: 0 19px 19px 0;
 	border-color: transparent #136dce transparent transparent;
 }
-.block-info .latest-news .item:before {
+.block-info .news-latest .item:before {
 	bottom: -10px;
 	right: 4px;
 	border-width: 0 14px 14px 0;
 	z-index: 20;
 	border-color: transparent #fff transparent transparent;
 }
-.block-info .latest-news .item .in {
+.block-info .news-latest .item .in {
 	width: 100%;
 	max-height: 65px;
 	padding: 2px 5px;
 	overflow: hidden;
 	background: #fff;
 }
-.block-info .latest-news .item .pic {
+.block-info .news-latest .item .pic {
 	width: 58px;
 	height: 58px;
 	margin-top: 2px;
@@ -912,36 +936,41 @@ textarea {
 	display: block;
 	float: left;
 }
-.block-info .latest-news .item .h3 {
+.block-info .news-latest .item .h3 {
 	margin-bottom: 4px;
 	color: #1074d5;
 	line-height: 18px;
 }
-.block-info .latest-news .item .h3 a {
+.block-info .news-latest .item .h3 a {
 	text-decoration: none;
+	transition: color .3s ease;
 }
-.block-info .latest-news .item .text {
+.block-info .news-latest .item .h3 a:hover {
+	color: #333;
+}
+.block-info .news-latest .item .text {
 	max-height: 34px;
 	overflow: hidden;
 }
-.block-info .latest-news .all {
+.block-info .news-latest .all {
 	margin-top: 6px;
 	padding-right: 20px;
 	float: right;
 	font-size: 12px;
 }
 /* ==========================================================================
-   _BLOCK-SERVICES
+   _SERVICES
    ========================================================================== */
+.block-services {
+	margin-bottom: 45px;
+	position: relative;
+}
 .block-services .h2 {
 	margin-bottom: 0;
 	padding-left: 34px;
 }
 .services {
-	padding-left: 4px;
-	padding-right: 4px;
-	padding-bottom: 4px;
-	margin-bottom: 14px;
+	padding: 0 4px 4px;
 	position: relative;
 	background: linear-gradient(135deg, rgba(0, 204, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
 }
@@ -969,9 +998,9 @@ textarea {
 	z-index: 20;
 }
 .services .list {
-	height: 335px;
+	height: 330px;
 	margin: 0;
-	padding: 28px 24px;
+	padding: 28px 24px 17px;
 	list-style: none;
 	overflow: hidden;
 	background: #fff;
@@ -998,30 +1027,52 @@ textarea {
 .services .list .cap {
 	width: 100%;
 	padding: 12px 8px 8px;
-	display: block;
 	border: 1px solid #009dff;
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+.services .list .link:hover .cap {
+	border-color: #b1b1b1;
 }
 .services .list .cap .name {
 	text-transform: uppercase;
 	margin-bottom: 4px;
 	display: block;
 	color: #3c3c3c;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.services .list .cap .price {
+	transition: color .3s ease;
+}
+.services .list .link:hover .cap .price {
+	color: #3c3c3c;
 }
 .services .list .pic {
 	width: 100%;
 	height: auto;
-	display: block;
 	border: 1px solid #b7b7b7;
+	margin-top: -1px;
+	display: block;
+	transition: border-color .3s ease;
 }
 .block-services .show {
-	text-align: center;
 	display: block;
-	text-transform: uppercase;
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	right: 0;
 	font-size: 12px;
+	text-transform: uppercase;
+	text-align: center;
 }
 /* ==========================================================================
-   _BLOCK-RECENT-PROJECTS
+   _RECENT-PROJECTS
    ========================================================================== */
+.block-recent-projects {
+	margin-bottom: 35px;
+}
 .block-recent-projects:after {
 	display: block;
 	content: ' ';
@@ -1030,17 +1081,17 @@ textarea {
 }
 .block-recent-projects .h2 {
 	margin-left: 32px;
-	margin-bottom: 4px;
+	margin-bottom: 3px;
 }
 .block-recent-projects .slider {
-	width: 48%;
-	float: right;
-}
-.block-recent-projects .slider-image {
+	width: 48.6%;
 	float: left;
 }
+.block-recent-projects .slider:last-of-type {
+	float: right;
+}
 .block-recent-projects .slider .all {
-	margin-bottom: 12px;
+	margin-bottom: 13px;
 	text-align: right;
 	display: block;
 	font-size: 12px;
@@ -1056,9 +1107,9 @@ textarea {
 }
 .block-recent-projects .slider .carousel li {
 	width: 100%;
-	height: 290px;
+	height: 288px;
 	position: relative;
-	background-position: 50% 50%;
+	background-position: 50% 0;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -1121,7 +1172,7 @@ textarea {
 	background-position: -80px -50px;
 }
 /* ==========================================================================
-   _BLOCK-PARTNERS
+   _PARTNERS
    ========================================================================== */
 .block-partners .h2 {
 	margin-left: 32px;
@@ -1134,7 +1185,7 @@ textarea {
 	height: 56px !important;
 }
 .block-partners .carousel {
-	margin: 0;
+	margin: 0 -4px;
 	padding: 0;
 	list-style: none;
 }
@@ -1147,7 +1198,7 @@ textarea {
 .block-partners .carousel li {
 	width: 160px !important;
 	height: 56px;
-	margin: 0 8px 0 0;
+	margin: 0 4px;
 	padding: 1px;
 	float: left;
 	background: linear-gradient(135deg, rgba(0, 204, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
@@ -1169,27 +1220,28 @@ textarea {
 /* ==========================================================================
    _CONTACT-US
    ========================================================================== */
-.contact-us {
+.contact {
 	margin-bottom: 8px;
+	cursor: default;
 	background: url(../img/map.jpg) 50% 50% no-repeat;
 	background-size: cover;
 }
-.contact-us .wrapper {
-	padding-left: 60px;
-	padding-right: 60px;
+.contact .wrapper {
+	padding-left: 40px;
+	padding-right: 40px;
 }
-.contact-us .h2 {
-	margin-bottom: 32px;
-	line-height: 24px;
+.contact .h2 {
+	margin-bottom: 35px;
+	line-height: 22px;
 	cursor: default;
 }
-.contact-us .info {
+.contact .info {
 	width: 48.5%;
 	padding-left: 72px;
 	float: left;
 	position: relative;
 }
-.contact-us .info:before {
+.contact .info:before {
 	width: 25px;
 	height: 38px;
 	display: block;
@@ -1201,19 +1253,22 @@ textarea {
 	background: url(../img/sprite.png) -45px -70px no-repeat;
 	background-size: 100px auto;
 }
-.contact-us .info-local {
+.contact .info:last-of-type {
 	float: right;
 	line-height: 16px;
 }
-.contact-us .info-local:before {
+.contact .info:last-of-type:before {
 	background-position: 0 -70px;
 }
-.contact-us .corner {
+.contact .info:last-of-type .in {
+	padding-top: 15px;
+}
+.contact .corner {
 	position: absolute;
 	top: 0;
-	left: 46px;
+	left: 50px;
 }
-.contact-us .corner:before {
+.contact .corner:before {
 	width: 28px;
 	height: 4px;
 	display: block;
@@ -1222,95 +1277,100 @@ textarea {
 	position: absolute;
 	top: 0;
 	left: 0;
-	right: 0;
 	background: #0cf;
 }
-.contact-us .corner:after {
+.contact .corner:after {
 	width: 5px;
-	height: 30px;
+	height: 26px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 	position: absolute;
-	left: 10px;
+	left: 8px;
 	top: 0;
 	background: #0cf;
 	-webkit-transform: skew(45deg);
 	-moz-transform: skew(45deg);
 	-o-transform: skew(45deg);
 }
-.contact-us .info .in {
-	min-height: 146px;
-	padding: 13px 25px 10px;
+.contact .info .in {
+	min-height: 145px;
+	padding: 12px 25px 10px;
 	position: relative;
 	border-top: 4px solid #0cf;
 	border-bottom: 4px solid #0f77d9;
 }
-.contact-us .info-local .in {
+.contact .info-local .in {
 	padding: 16px 25px 10px;
 }
-.contact-us .info .in:before, .contact-us .info .in:after {
+.contact .info .in:before, .contact .info .in:after {
 	width: 4px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	top: 26px;
+	top: 22px;
 	bottom: 0;
 	left: 0;
 	background: linear-gradient(to bottom, rgba(0, 204, 255, 1) 0%, rgba(15, 119, 217, 1) 100%);
 }
-.contact-us .info .in:after {
+.contact .info .in:after {
 	top: 0;
 	right: 0;
 	left: auto;
 }
-.contact-us .info dl {
+.contact .info dl {
 	margin: 0;
 	line-height: 26px;
 }
-.contact-us .info .line {
+.contact .info .line {
 	margin-bottom: 10px;
-	padding-left: 30px;
 }
-.contact-us .info .line:first-child {
+.contact .info .line:first-child {
 	padding-left: 0;
+	margin-bottom: 8px;
 	line-height: 38px;
 }
-.contact-us .info .line:last-child {
+.contact .info .line:last-child {
 	margin-bottom: 0;
 }
-.contact-us .info .line:after {
+.contact .info .line:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.contact-us .info .line .phone {
+.contact .info .line .phone {
+	width: 150px;
+	margin-right: 15px;
 	float: left;
-	margin-right: 16px;
-	font: 700 20px 'Bebas Neue', Helvetica, Arial, sans-serif;
+	font: 700 20px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
+	letter-spacing: -.005em;
+	text-align: right;
+	white-space: nowrap;
 }
-.contact-us .info .line:first-child .phone {
-	margin-right: 12px;
-	color: #009dff;
+.contact .info .line:first-child .phone {
 	font-size: 30px;
+	line-height: 34px;
+	color: #009dff;
 }
-.contact-us .info p {
+.contact .info p {
 	margin-bottom: 4px;
 }
-.contact-us .info p:last-of-type {
+.contact .info p:last-of-type {
 	margin: 0;
 }
-.contact-us .info a {
+.contact .info a {
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.contact .info a:hover {
+	color: #3c3c3c;
 	text-decoration: none;
 }
-.contact-us .info a:hover {
-	text-decoration: underline;
-}
 /* ==========================================================================
-   _BLOCK-NEWS
+   _NEWS
    ========================================================================== */
 .block-news .news {
 	margin: 0 0 14px 0;
@@ -1395,7 +1455,6 @@ textarea {
 	border-color: #c31f2d transparent transparent transparent;
 }
 .block-news .news .item .inform .calendar .date span {
-	font-size: 30px;
 	display: block;
 	font-size: 52px;
 	line-height: 44px;
@@ -1596,7 +1655,7 @@ textarea {
 	text-align: center;
 }
 /* ==========================================================================
-   _BLOCK-REVIEWS
+   _REVIEWS
    ========================================================================== */
 .block-reviews .reviews .item {
 	margin-bottom: 16px;
@@ -1695,7 +1754,7 @@ textarea {
 	text-transform: uppercase;
 }
 /* ==========================================================================
-   _BLOCK-PORTFOLIO
+   _PORTFOLIO
    ========================================================================== */
 .block-portfolio .nav {
 	margin: 0 0 26px 0;
@@ -1815,20 +1874,42 @@ textarea {
 /* ==========================================================================
    _RESPONSIVE
    ========================================================================== */
-@media (max-width: 1240px) {
-	.wrapper { width: 1000px; }
-	.contact-us .info .line { padding-left: 0; }
-	.contact-us .info .line:first-child { line-height: normal; }
-	.contact-us .info .line .phone { margin-right: 0; float: none; }
-	.contact-us .info .line:first-child .phone { margin-right: 0; }
-	.contact-us .info dd { margin-left: 0; }
-	.contact-us .info dl { line-height: normal; }
-	.contact-us .info .in { min-height: 185px; }
-	.block-partners .slider .bx-wrapper { width: 832px; }
-	.block-partners .all { margin-right: 54px; }
+@media (max-width: 1024px) {
+	.header-fixed .logo { left: 10px; }
 }
 @media (max-width: 1023px) {
-	
+	.wrapper { width: 760px; }
+	.top .request { width: 210px; padding: 0; margin: -6px 0 -6px; }
+	.top .request .line { width: 100%; padding: 0; float: none; }
+	.top .request .line:first-of-type { margin-bottom: 2px; }
+	.top .request .link { height: 25px; line-height: 27px; }
+	.header:after { margin-left: 0; }
+	.header .logo { top: -16px; }
+	.header-fixed .logo { top: 8px; }
+	.header .nav .list { display: none; }
+	.header .nav .toggle { width: 18px; height: 12px; margin: 0; right: 10px; }
+	.index .bottom { height: 58px; }
+	.index .pager li { white-space: normal; }
+	.block-features .carousel .text { width: auto; height: auto; margin-left: 48px; position: absolute; left: 45%; right: 38px; font-size: 13px; }
+	.block-info .about { width: 45%; }
+	.block-info .news-latest { width: 53%; margin-left: 0; float: right; }
+	.services .list li { width: 25%; }
+	.services .list li:nth-child(5n+1) { clear: none; }
+	.services .list li:nth-child(4n+1) { clear: left; }
+	.services .list .cap .name { min-height: 32px; }
+	.block-partners .carousel { width: 672px; margin: 0 auto; }
+	.block-partners .carousel li:nth-child(5), .block-partners .carousel li:nth-child(6) { display: none; }
+	.block-partners .all { margin-right: 38px; }
+	.contact .info .in { min-height: 196px; }
+	.contact .info .line .phone { width: auto; margin: 0; float: none; text-align: left; }
+	.contact .info .line dd { margin: 0 0 0 10px; line-height: 22px; }
+	.footer .wrapper { padding-top: 40px; padding-bottom: 50px; }
+	.footer .col { width: 25%; padding: 0; }
+	.footer .col:nth-child(1) { width: 100%; margin-bottom: 40px; float: none; }
+	.footer .col:nth-child(2) { width: 22%; }
+	.footer .col:nth-child(3) { width: 24%; }
+	.footer .col:nth-child(4) { width: 29%; }
+	.footer .col:nth-child(5) { width: 25%; }
 }
 @media (max-width: 767px) {
 	
