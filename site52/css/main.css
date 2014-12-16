@@ -482,6 +482,7 @@ textarea {
 	left: 0;
 	z-index: 5;
 	float: left;
+	transition: border .3s ease, background .3s ease;
 }
 .header .nav .toggle.active {
 	border: 1px solid #38cbff;
@@ -516,6 +517,7 @@ textarea {
 	padding: 22px 32px;
 	border: 1px solid #38cbfe;
 	margin: 0;
+	display: none;
 	list-style: none;
 	position: absolute;
 	top: 25px;
@@ -557,6 +559,22 @@ textarea {
 }
 .header .nav .sublist > ul > li > a:hover {
 	color: #1074d5;
+}
+.header .nav .sublist > ul > li > ul {
+	padding: 14px 0 0 0;
+	margin: 0;
+	list-style: none;
+	font-size: 12px;
+	line-height: 16px;
+}
+.header .nav .sublist > ul > li > ul > li > a {
+	text-decoration: none;
+	color: #333;
+	letter-spacing: .04em;
+	transition: color .3s ease;
+}
+.header .nav .sublist > ul > li > ul > li > a:hover {
+	color: #1072d5;
 }
 /* ==========================================================================
    _INDEX

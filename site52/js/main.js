@@ -14,6 +14,14 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.header .nav').each(function() {
+		$('.toggle').click(function () {
+			var _self = $(this);
+			_self.toggleClass('active');
+			$('.sublist').fadeToggle(300);
+			return false;
+		});
+	});
 
 	$('.index').each(function () {
 		/* Index carousel */
