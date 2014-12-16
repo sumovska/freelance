@@ -18,7 +18,7 @@
 		<div class="wrapper">
 			<div class="contacts">
 				<p class="links">
-					<a class="tel" href="tel:8-800-100-53-57">8 800 100 53 57</a>
+					<a class="tel" href="tel:+78-800-100-53-57">8 800 100 53 57</a>
 					<a class="mail" href="mailto:info@sait52.ru">info@sait52.ru</a>
 				</p>
 				<p>Звонки из регионов <span class="color">России бесплатно!</span></p>
@@ -29,13 +29,13 @@
 					<li><a href="#phone-2">Н.Новгород</a></li>
 				</ul>
 				<ul class="phones">
-					<li class="phone-1 active"><a href="tel:+7-(831)-257-63-88">+7 (831) 257 63 88</a><span class="time"> - с 9:00 до 18:00</span></li>
-					<li class="phone-2"><a href="tel:+7-(831)-257-63-88">+7 (831) 257 63 88</a><span class="time"> - с 9:00 до 18:00</span></li>
+					<li class="phone-1 active"><a href="tel:+7-499-677-67-52">+7 (499) 677 67 52</a><span class="time"> - с 9:00 до 18:00</span></li>
+					<li class="phone-2"><a href="tel:+7-831-257-63-88">+7 (831) 257 63 88</a><span class="time"> - с 9:00 до 18:00</span></li>
 				</ul>
 			</div>
 			<div class="request">
-				<p class="line"><a class="link link-price" href="#">Узнать стоимость</a></p>
-				<p class="line"><a class="link link-order" href="#">Оставить online-заявку</a></p>
+				<p class="line"><a class="link link-price fancybox-popup" href="#callback">Узнать стоимость</a></p>
+				<p class="line"><a class="link link-order fancybox-popup" href="#callback">Оставить online-заявку</a></p>
 			</div>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 		<div class="wrapper">
 			<p class="logo"><a href="index.html"><img src="img/logo.png" alt="Site 52"></a></p>
 			<nav class="nav">
-				<a class="toggle" href="#"></a>
+				<a class="toggle" href="#"><span></span></a>
 				<ul class="list">
 					<li><a href="#">Главная</a></li>
 					<li><a href="#">О компании</a></li>
@@ -54,6 +54,56 @@
 					<li><a href="reviews.html">Отзывы</a></li>
 					<li><a href="#">Контакты</a></li>
 				</ul>
+				<div class="sublist">
+					<ul>
+						<li>
+							<a href="#">Создание сайтов</a>
+							<ul>
+								<li><a href="#">Одностраничный сайт</a></li>
+								<li><a href="#">Сайт-визитка</a></li>
+								<li><a href="#">Корпоративный сайт</a></li>
+								<li><a href="#">Сайт-каталог</a></li>
+								<li><a href="#">Интернет-магазин</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Продвижение сайтов</a></li>
+						<li><a href="#">Поддержка сайтов</a></li>
+						<li>
+							<a href="#">Реклама в интернете</a>
+							<ul>
+								<li><a href="#">Контекстная реклама</a></li>
+								<li><a href="#">Медийная реклама</a></li>
+								<li><a href="#">Реклама в соц. сетях (SMM)</a></li>
+								<li><a href="#">Реклама на радио</a></li>
+								<li><a href="#">Реклама на телевидении</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">Дизайн услуги</a>
+							<ul>
+								<li><a href="#">Разработка логотипа</a></li>
+								<li><a href="#">Разработка фирстиля</a></li>
+								<li><a href="#">Разработка баннеров</a></li>
+								<li><a href="#">Дизайн и редизайн сайта</a></li>
+								<li><a href="#">Дизайн группы соцсетей</a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+							</ul>
+						</li>
+						<li><a href="#">Регистрация домена</a></li>
+						<li><a href="#">Регистрация хостинга</a></li>
+						<li><a href="#">Online-консультант</a></li>
+						<li><a href="#">Услуги фотографа</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Обучение управлению</a></li>
+						<li><a href="#">Аудит сайта</a></li>
+						<li><a href="#">Сотрудничество</a></li>
+					</ul>
+				</div>
 			</nav>
 		</div>
 	</header>
@@ -159,7 +209,7 @@
 
 	<footer class="footer">
 		<div class="wrapper">
-			<div class="col col-1">
+			<div class="col">
 				<p class="logo"><img src="img/logo-white.png" alt="Site 52"></p>
 				<p class="copyright">&copy; 2011-2015 ООО &laquo;Сайт52&raquo; <a class="link" href="#">Правила использования сайта</a></p>
 			</div>
@@ -208,6 +258,27 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="popups">
+		<div id="callback" class="popup popup-callback">
+			<h2 class="h2">Заполните форму</h2>
+			<p class="pre">Все данные собираются конфиденциально</p>
+
+			<form class="form" action="#">
+				<p class="line">
+					<label class="for">Введите имя</label>
+					<input type="text" value="">
+				</p>
+				<p class="line">
+					<label class="for">Введите номер телефона</label>
+					<input type="text" value="">
+				</p>
+				<p class="submit">
+					<button type="submit">Отправить</button>
+				</p>
+			</form>
+		</div>
+	</div>
 
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>

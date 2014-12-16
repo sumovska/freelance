@@ -75,6 +75,20 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Popup script */
+	$(".fancybox-popup").fancybox({
+		padding: 0,
+		wrapCSS: 'fancybox-red',
+		helpers: {
+			overlay: {
+				speedIn: 250,
+				css: {
+					'background': 'rgba(255, 255, 255, 0.8)'
+				}
+			}
+		}
+	});
+
 	$(window).on('scroll touchmove', function () {
 		/* Toggle fixed header */
 		if ($(window).scrollTop() > 86) {
