@@ -1823,9 +1823,10 @@ textarea {
 	clear: both;
 }
 .block-reviews .reviews .item .pic {
-	width: 240px;
+	width: 280px;
 	height: 300px;
-	padding: 24px 69px 52px 22px;
+	margin-left: -40px;
+	padding: 24px 69px 52px 62px;
 	float: left;
 	background: url(../img/temp/frame.png) 50% 50% no-repeat;
 	background-size: cover;
@@ -2181,6 +2182,9 @@ textarea {
 	.block-portfolio .nav li { width: 33.3%; margin-bottom: 20px; }
 	.block-portfolio .nav li:nth-child(1n+4) { margin-bottom: 0; }
 	.block-portfolio .catalog li { width: 50%; }
+	.block-reviews .reviews .item .pic { margin: 0 auto 30px; float: none; }
+	.block-reviews .reviews .item .review { margin-left: 0; }
+	.block-reviews .reviews .item .text { padding-top: 0; }
 	.contact .info .in { min-height: 196px; }
 	.contact .info .line .phone { width: auto; margin: 0; float: none; text-align: left; }
 	.contact .info .line dd { margin: 0 0 0 10px; line-height: 22px; }
@@ -2197,13 +2201,21 @@ textarea {
 	.action .list { margin: 0; }
 	.action .list li { width: 100%; padding: 0; float: none; }
 	.block-news .news { width: 100%; }
+	.block-reviews .reviews .item .company { width: 100%; margin-bottom: 30px; float: none; text-align: center; }
+	.block-reviews .reviews .item .company .logo { margin-left: auto; margin-right: auto; }
+	.block-reviews .reviews .item .text { width: 100%; padding-left: 0; float: none; }
+	.block-reviews .reviews .item .text .in span:before, .block-reviews .reviews .item .text .in span:after { display: none; }
 }
 @media (max-width: 575px) {
 	.block-news .news .item .inform { padding-left: 0; }
 	.block-news .news .item .inform .calendar { position: relative; margin: 0 auto 40px; }
 	.block-portfolio .catalog li { width: 100%; float: none; }
+	.block-reviews .reviews .item { padding-bottom: 30px; }
 @media (max-width: 479px) {
-
+	.block-reviews .reviews .item { padding-left: 14px; padding-right: 14px; }
+	.block-portfolio .nav { padding: 0; }
+	.block-portfolio .nav li { width: 50%; margin-bottom: 10px }
+	.block-portfolio .nav li:nth-child(1n+4) { margin-bottom: 10px; }
 }
 /* ==========================================================================
    _PRINT STYLES
