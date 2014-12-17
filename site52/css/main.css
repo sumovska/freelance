@@ -1734,6 +1734,9 @@ textarea {
 /* ==========================================================================
    _ACTION
    ========================================================================== */
+.block-action {
+	overflow: hidden;
+}
 .action {
 	margin: 0 0 14px 0;
 	position: relative;
@@ -1908,7 +1911,7 @@ textarea {
    ========================================================================== */
 .block-portfolio .nav {
 	margin: 0 0 26px 0;
-	padding: 0;
+	padding: 0 18px;
 	list-style: none;
 }
 .block-portfolio .nav:after {
@@ -1923,6 +1926,7 @@ textarea {
 	float: left;
 	text-transform: uppercase;
 	text-align: center;
+	position: relative;
 }
 .block-portfolio .nav li:last-child {
 	margin-right: 0;
@@ -1943,7 +1947,7 @@ textarea {
 	color: #1074d5;
 }
 .block-portfolio .catalog {
-	margin: 0;
+	margin: 0 -6px;
 	padding: 0;
 	list-style: none;
 }
@@ -1955,25 +1959,24 @@ textarea {
 }
 .block-portfolio .catalog li {
 	width: 25%;
-	padding: 0 10px 0 0;
+	margin-bottom: 40px;
+	padding: 0 6px;
 	float: left;
 }
-.block-portfolio .catalog .pic {
-	margin-bottom: 14px;
+.block-portfolio .catalog .project {
+	margin-bottom: 11px;
 	padding: 1px;
 	position: relative;
 	background: linear-gradient(45deg, rgba(15, 119, 217, 1) 0%, rgba(0, 204, 255, 1) 100%);
 }
-.block-portfolio .catalog .pic a {
-	width: 100%;
-	display: block;
-}
-.block-portfolio .catalog .pic img {
-	display: block;
+.block-portfolio .catalog .project .pic {
 	width: 100%;
 	height: auto;
+	display: block;
 }
-.block-portfolio .catalog .pic .cap {
+.block-portfolio .catalog .project .cap {
+	display: block;
+	color: #fff;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1984,33 +1987,65 @@ textarea {
 	z-index: 20;
 	transition: opacity .3s ease;
 }
-.block-portfolio .catalog .pic:hover .cap {
+.block-portfolio .catalog .project:hover .cap {
 	opacity: 1;
 }
-.block-portfolio .catalog .pic .cap .link {
-	width: 75%;
-	margin: 0 auto;
-	padding: 6px 0;
+.block-portfolio .catalog .project .cap .more {
+	width: 182px;
+	height: 40px;
+	margin: 0;
+	margin-top: -20px;
+	margin-left: -91px;
+	padding: 11px 0 12px 38px;
 	display: block;
-	position: relative;
-	top: 60px;
 	text-transform: uppercase;
+	text-decoration: underline;
 	text-align: center;
-	color: #fff;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
 	border: 1px solid rgba(255, 255, 255, .5);
 }
-.block-portfolio .catalog .pic .cap .link span {
-	color: #fff;
+.block-portfolio .catalog .project .cap .more:hover {
+	text-decoration: none;
+}
+.block-portfolio .catalog .project .cap .more:before, .block-portfolio .catalog .project .cap .more:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	background: #fff;
+}
+.block-portfolio .catalog .project .cap .more:before {
+	width: 18px;
+	height: 3px;
+	top: 18px;
+	left: 16px;
+}
+.block-portfolio .catalog .project .cap .more:after {
+	width: 3px;
+	height: 18px;
+	top: 11px;
+	left: 24px;
 }
 .block-portfolio .catalog .name {
-	line-height: 20px;
+	padding-left: 45px;
+	margin-bottom: 0;
+	position: relative;
+	line-height: 34px;
 }
 .block-portfolio .catalog .name .in {
 	width: 33px;
 	height: 33px;
 	margin-right: 12px;
 	padding: 1px;
-	display: inline-block;
+	display: block;
+	line-height: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
 	background: linear-gradient(45deg, rgba(15, 119, 217, 1) 0%, rgba(0, 204, 255, 1) 100%);
 }
 .block-portfolio .catalog .name .in span {
@@ -2052,7 +2087,7 @@ textarea {
 	margin: 30px 0 15px;
 }
 .popup-callback button[type="submit"] {
-	width: 192px;
+	width: 100%;
 	height: 40px;
 	margin: 0 auto;
 	padding-top: 4px;
@@ -2133,6 +2168,9 @@ textarea {
 	.block-features .carousel .text { width: auto; height: auto; margin-left: 48px; position: absolute; left: 45%; right: 38px; font-size: 13px; }
 	.block-info .about { width: 45%; }
 	.block-info .news-latest { width: 53%; margin-left: 0; float: right; }
+	.action .list { margin: 0 -10px; }
+	.action .list li { padding: 0 10px; }
+	.block-news .news { width: 75%; margin-left: auto; margin-right: auto; padding-left: 0; padding-right: 0; }
 	.services .list li { width: 25%; }
 	.services .list li:nth-child(5n+1) { clear: none; }
 	.services .list li:nth-child(4n+1) { clear: left; }
@@ -2140,6 +2178,9 @@ textarea {
 	.block-partners .carousel { width: 672px; margin: 0 auto; }
 	.block-partners .carousel li:nth-child(5), .block-partners .carousel li:nth-child(6) { display: none; }
 	.block-partners .all { margin-right: 38px; }
+	.block-portfolio .nav li { width: 33.3%; margin-bottom: 20px; }
+	.block-portfolio .nav li:nth-child(1n+4) { margin-bottom: 0; }
+	.block-portfolio .catalog li { width: 50%; }
 	.contact .info .in { min-height: 196px; }
 	.contact .info .line .phone { width: auto; margin: 0; float: none; text-align: left; }
 	.contact .info .line dd { margin: 0 0 0 10px; line-height: 22px; }
@@ -2151,16 +2192,18 @@ textarea {
 	.footer .col:nth-child(4) { width: 29%; }
 	.footer .col:nth-child(5) { width: 25%; }
 }
-@media (max-width: 767px) {
+@media (max-width: 749px) {
 	.wrapper { width: 100%; }
 	.action .list { margin: 0; }
 	.action .list li { width: 100%; padding: 0; float: none; }
+	.block-news .news { width: 100%; }
 }
 @media (max-width: 575px) {
-	
-}
+	.block-news .news .item .inform { padding-left: 0; }
+	.block-news .news .item .inform .calendar { position: relative; margin: 0 auto 40px; }
+	.block-portfolio .catalog li { width: 100%; float: none; }
 @media (max-width: 479px) {
-	
+
 }
 /* ==========================================================================
    _PRINT STYLES
