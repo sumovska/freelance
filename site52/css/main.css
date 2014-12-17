@@ -358,20 +358,11 @@ textarea {
 	line-height: 29px;
 	text-decoration: none;
 	text-align: center;
-	background: #fec514;
 	border: 1px solid #3b3a37;
 	box-shadow: 0 0 4px 0 rgba(255, 234, 124, .28);
-}
-.top .request .link-price {
-	background: url(../img/button.png) 0 0 repeat-x;
-}
-.top .request .link-price:hover {
-	background-position: 0 -35px;
-}
-.top .request .link-order {
 	background: #fec514 linear-gradient(to bottom, rgba(255, 236, 109, 1) 0%, rgba(242, 171, 2, 1) 100%);
 }
-.top .request .link-order:hover {
+.top .request .link:hover {
 	background: linear-gradient(to bottom, rgba(242, 171, 2, 1) 0%, rgba(255, 236, 109, 1) 100%);
 }
 /* ==========================================================================
@@ -475,6 +466,7 @@ textarea {
 .header .nav .toggle {
 	width: 34px;
 	height: 38px;
+	border: 1px solid transparent;
 	margin: 0;
 	display: block;
 	position: absolute;
@@ -482,11 +474,11 @@ textarea {
 	left: 0;
 	z-index: 5;
 	float: left;
-	transition: border .3s ease, background .3s ease;
+	transition: border .3s linear, background .3s linear;
 }
 .header .nav .toggle.active {
-	border: 1px solid #38cbff;
-	border-bottom: none;
+	border-color: #38cbff;
+	border-bottom-color: transparent;
 	background: #fff;
 }
 .header .nav .toggle span {
@@ -498,6 +490,10 @@ textarea {
 	position: relative;
 	top: 12px;
 	left: 10px;
+	transition: border-color .3s linear;
+}
+.header .nav .toggle:hover span {
+	border-color: #1074d5;
 }
 .header .nav .toggle span:before {
 	width: 100%;
@@ -511,6 +507,10 @@ textarea {
 	left: 0;
 	right: 0;
 	background: #121212;
+	transition: background-color .3s linear;
+}
+.header .nav .toggle:hover span:before {
+	background: #1074d5;
 }
 .header .nav .sublist {
 	min-width: 676px;
@@ -599,6 +599,7 @@ textarea {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	overflow: hidden;
 }
 .index .carousel li {
 	height: 389px;
@@ -607,7 +608,8 @@ textarea {
 	background-repeat: no-repeat;
 }
 .index .carousel .wrapper {
-	padding-top: 141px;
+	padding-top: 136px;
+	padding-bottom: 100px;
 	cursor: default;
 }
 .index .carousel .text {
@@ -619,29 +621,27 @@ textarea {
 	text-transform: uppercase;
 }
 .index .carousel .text .title {
-	margin-bottom: 17px;
+	margin: 0 25px 12px;
 	letter-spacing: -.01em;
-	font: 300 46px/50px 'Bebas Neue', Helvetica, Arial, sans-serif;
+	font: 300 46px/60px 'Bebas Neue', Helvetica, Arial, sans-serif;
 	position: relative;
-	left: 24px;
 }
 .index .carousel .text .title .inline {
 	padding: 5px 0 2px;
-	box-shadow: 24px 0 0 #1074d5, -24px 0 0 #1074d5;
+	box-shadow: 25px 0 0 #1074d5, -25px 0 0 #1074d5;
 	color: #fff;
 	background: #1074d5;
 }
 .index .carousel .text .slogan {
-	margin-bottom: 0;
+	margin: 0 25px;
 	font-size: 20px;
 	line-height: 40px;
 	letter-spacing: -.045em;
 	position: relative;
-	left: 26px;
 }
 .index .carousel .text .slogan .inline {
 	padding: 10px 0 4px;
-	box-shadow: 16px 0 0 #fff, -26px 0 0 #fff;
+	box-shadow: 15px 0 0 #fff, -25px 0 0 #fff;
 	background: #fff;
 }
 .index .carousel .text .slogan .link {
@@ -666,10 +666,11 @@ textarea {
 	font-weight: normal;
 	text-decoration: none;
 	background: #ffd642;
-	transition: background-color .3s ease;
+	transition: background-color .3s ease, color .3s ease;
 }
 .index .carousel .text .slogan .link a:hover {
-	background-color: #fff;
+	color: #fff;
+	background-color: #1074d5;
 }
 .index .bottom {
 	height: 35px;
@@ -2162,8 +2163,13 @@ textarea {
 	.header:after { margin-left: 0; }
 	.header .logo { top: -16px; }
 	.header-fixed .logo { top: 8px; }
-	.header .nav .list { display: none; }
-	.header .nav .toggle { width: 18px; height: 12px; margin: 0; right: 10px; }
+	.header .nav { left: 10px; right: 10px; top: 3px; transition: top .2s ease; }
+	.header-fixed .nav { top: 14px; }
+	.header .nav .list { display: none; position: absolute; top: 48px; left: 10px; right: 10px; float: none; z-index: 10; text-align: center; }
+	.header .nav .list li { display: inline-block; float: none; }
+	.sublist-open .header .nav .list { display: block; }
+	.header .nav .sublist { padding-top: 60px; left: 0; right: 0; }
+	.header .nav .toggle { left: auto; right: 0; }
 	.index .bottom { height: 58px; }
 	.index .pager li { white-space: normal; }
 	.block-features .carousel .text { width: auto; height: auto; margin-left: 48px; position: absolute; left: 45%; right: 38px; font-size: 13px; }
@@ -2176,6 +2182,7 @@ textarea {
 	.services .list li:nth-child(5n+1) { clear: none; }
 	.services .list li:nth-child(4n+1) { clear: left; }
 	.services .list .cap .name { min-height: 32px; }
+	.services .list .naming .top-list { display: none !important; }
 	.block-partners .carousel { width: 672px; margin: 0 auto; }
 	.block-partners .carousel li:nth-child(5), .block-partners .carousel li:nth-child(6) { display: none; }
 	.block-partners .all { margin-right: 38px; }
@@ -2196,8 +2203,9 @@ textarea {
 	.footer .col:nth-child(4) { width: 29%; }
 	.footer .col:nth-child(5) { width: 25%; }
 }
-@media (max-width: 749px) {
+@media (max-width: 759px) {
 	.wrapper { width: 100%; }
+	.top .request { width: 175px; }
 	.action .list { margin: 0; }
 	.action .list li { width: 100%; padding: 0; float: none; }
 	.block-news .news { width: 100%; }
@@ -2206,16 +2214,57 @@ textarea {
 	.block-reviews .reviews .item .text { width: 100%; padding-left: 0; float: none; }
 	.block-reviews .reviews .item .text .in span:before, .block-reviews .reviews .item .text .in span:after { display: none; }
 }
+@media (max-width: 700px) {
+	.top .call, .top .request { display: none; }
+	.top .contacts { width: auto; float: none; text-align: center; }
+	.header .nav .sublist { min-width: 0; padding-top: 80px; }
+	.header .nav .sublist > ul { width: 30%; margin-left: 3%; }
+	.header .nav .list { text-align: center; }
+	.header .nav .list li { padding: 3px 0; float: none; display: inline-block; }
+	.block-recent-projects .slider { width: 100%; float: none; }
+	.block-partners .carousel { width: 100%; text-align: center; }
+	.block-partners .carousel li { margin-bottom: 8px; display: inline-block !important; float: none; }
+	.block-partners .all { margin-right: 0; }
+	.services .list li { width: 33.3%; }
+	.services .list li:nth-child(4n+1) { clear: none; }
+	.services .list li:nth-child(3n+1) { clear: left; }
+	.block-info { padding: 0; }
+	.block-info .about { width: 100%; padding-bottom: 40px; margin: 0 0 30px 0; float: none; }
+	.block-info .about .corner { display: none; }
+	.block-info .about:after { top: 0; }
+	.block-info .news-latest .item:before, .block-info .news-latest .item:after { display: none; }
+	.block-info .news-latest { width: 100%; margin: 0; float: none; }
+	.block-features .carousel .text { left: 0; right: 85px; }
+	.block-features .carousel li { min-height: 140px; }
+	.index .bx-viewport { height: auto !important; }
+	.index .carousel li { height: auto; }
+	.index .carousel .wrapper { padding: 100px 30px 40px; }
+	.index .carousel .text { width: auto; left: auto; right: auto; position: relative; text-align: center; }
+	.index .bottom { display: none; }
+	.contact .info { width: 100%; margin-bottom: 30px; float: none; }
+	.contact .info .in { min-height: 0; }
+	.footer .col { width: 100% !important; margin-bottom: 40px; text-align: center; }
+}
 @media (max-width: 575px) {
 	.block-news .news .item .inform { padding-left: 0; }
 	.block-news .news .item .inform .calendar { position: relative; margin: 0 auto 40px; }
 	.block-portfolio .catalog li { width: 100%; float: none; }
 	.block-reviews .reviews .item { padding-bottom: 30px; }
+}
 @media (max-width: 479px) {
+	.header .nav .sublist > ul { width: 48%; margin-left: 4%; }
+	.services .list li { width: 50%; }
+	.services .list li:nth-child(3n+1) { clear: none; }
+	.services .list li:nth-child(2n+1) { clear: left; }
+	.block-info .news-latest .item { width: 100%; float: none; margin-bottom: 10px; }
 	.block-reviews .reviews .item { padding-left: 14px; padding-right: 14px; }
 	.block-portfolio .nav { padding: 0; }
 	.block-portfolio .nav li { width: 50%; margin-bottom: 10px }
 	.block-portfolio .nav li:nth-child(1n+4) { margin-bottom: 10px; }
+}
+@media (max-width: 400px) {
+	.header .nav .sublist > ul { width: 100%; margin-left: 0; }
+	.services .list li { width: 100%; float: none; }
 }
 /* ==========================================================================
    _PRINT STYLES

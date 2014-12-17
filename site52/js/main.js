@@ -14,19 +14,34 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.header .nav').each(function() {
+	$('.header .nav').each(function () {
+		var _nav = $(this), _html = $('html');
 		$('.toggle').click(function () {
-			var _self = $(this);
-			_self.toggleClass('active');
-			$('.sublist').fadeToggle(300);
+			$(this).toggleClass('active');
+			if ($(this).is('.active')) {
+				_html.addClass('sublist-open');
+				$('.sublist', _nav).fadeIn(300, 'linear');
+			} else {
+				_html.removeClass('sublist-open');
+				$('.sublist', _nav).fadeOut(300, 'linear');
+			}
 			return false;
+		});
+		$('body').bind("click touchstart", function (e) {
+			if (_html.hasClass('sublist-open')) {
+				if (!($(e.target).is('.sublist')) && ($(e.target).closest('.sublist').length === 0 )) {
+					$('.sublist', _nav).fadeOut(300, 'linear');
+					$('.toggle').toggleClass('active');
+					_html.removeClass('sublist-open');
+				}
+			}
 		});
 	});
 
 	$('.index').each(function () {
 		/* Index carousel */
 		$('.carousel', this).bxSlider({
-			auto: true,
+			adaptiveHeight: true,
 			pause: 10000,
 			controls: false,
 			pagerCustom: '.pager'
