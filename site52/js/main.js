@@ -82,11 +82,13 @@ $(document).ready(function () {
 	/* Services */
 	$('.block-services').each(function () {
 		var _self = $(this), list = $('.list', _self);
-		$('.services li', this).hover(function () {
-			$(this).addClass('hover').siblings('li').addClass('blur');
-		}, function () {
-			$(this).removeClass('hover').siblings('li').removeClass('blur');
-		});
+		if (!Modernizr.touch) {
+			$('.services li', this).hover(function () {
+				$(this).siblings('li').addClass('blur');
+			}, function () {
+				$(this).siblings('li').removeClass('blur');
+			});
+		}
 		$('.show', this).click(function () {
 			var h = list.height('auto').outerHeight(true);
 			list.removeAttr('style').animate({'height': h}, function () {
