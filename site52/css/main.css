@@ -797,6 +797,7 @@ textarea {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	overflow: hidden;
 }
 .block-features .carousel li {
 	min-height: 225px;
@@ -1346,7 +1347,7 @@ textarea {
 	font-weight: bold;
 }
 .block-recent-projects .slider .carousel .statistics .table .type-red {
-	color: #ff0000;
+	color: #f00;
 }
 .block-recent-projects .slider .carousel .statistics .table .type-blue {
 	color: #009dff;
@@ -2330,6 +2331,11 @@ textarea {
 	.block-reviews .reviews .item { padding-bottom: 30px; }
 }
 @media (max-width: 479px) {
+	h1, .h1 { font-size: 40px; line-height: normal; }
+	.block-features .bx-viewport { height: auto !important; }
+	.block-features .carousel li { min-height: 0; padding: 20px 60px 20px 20px; }
+	.block-features .carousel .text { position: relative; top: auto; left: auto; right: auto; margin: 0; }
+	.block-features .carousel .text:before { -webkit-transform: none; -moz-transform: none; -o-transform: none; }
 	.header .nav .sublist > ul { width: 48%; margin-left: 4%; }
 	.services .list li { width: 50%; }
 	.services .list li:nth-child(3n+1) { clear: none; }
