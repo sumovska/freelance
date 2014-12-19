@@ -82,6 +82,7 @@ $(document).ready(function () {
 			$('.nav').removeClass('nav-fixed');
 		}
 	});
+
 	$('.winter .space').each(function () {
 		var _self = $(this), _bg;
 		_self.append('<div class="bg"></div>');
@@ -95,14 +96,31 @@ $(document).ready(function () {
 			}
 			$offset = _self.offset().top;
 			$start = $offset - $height;
-			$end = $offset + 590;
+			$end = $offset + 764;
 		});
 		$window.scroll(function () {
 			if (($start <= $scroll) && ($scroll <= $end)) {
-				$top = -(($scroll - $offset) / (1.7 / $low));
+				$top = -(($scroll - $offset) / (2.4 / $low));
 				_bg.css({top: $top + 'px'});
 			}
 		});
+	});
+
+	$('.calculator .form').each(function () {
+		var _self = $(this), a = 0, b = 0, c = 0, c1 = 0, c2 = 0;
+
+		function reload() {
+			a = $('input[name="a"]:checked').val();
+			b = $('input[name="b"]:checked').val();
+			c = $('input[name="c1"]:checked').val() * $('input[name="c2"]:checked').val();
+			$('.p', _self).text(Math.floor(a * b * c));
+			$('.s', _self).text(Math.floor(a * b / 100));
+		}
+
+		$('input:radio').change(function () {
+			reload();
+		});
+		reload();
 	});
 
 	$('.video').each(function () {
@@ -110,15 +128,11 @@ $(document).ready(function () {
 		$window.resize(function () {
 			$width = $window.width();
 			if ($width > 1024) {
-				console.log('b' + $('video', _self).length);
 				if ($('video', _self).length < 1) {
-					console.log('add');
 					$(_self).append('<video preload autoplay loop muted><source src="./video/ehrle.mp4" type="video/mp4"><source src="./video/ehrle.ogv" type="video/ogg"><source src="./video/ehrle.webm" type="video/webm"></video>');
 				}
 			} else {
-				console.log('a' + $('video', _self).length);
 				if ($('video', _self).length > 0) {
-					console.log('delete');
 					$('video', _self).remove();
 				}
 			}
