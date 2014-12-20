@@ -844,10 +844,7 @@ textarea {
 	-moz-transform: skew(30deg);
 	-ms-transform: skew(30deg);
 	-o-transform: skew(30deg);
-<<<<<<< HEAD
 	-ms-transform: skew(30deg);
-=======
->>>>>>> FETCH_HEAD
 	transform: skew(30deg);
 	background: rgba(255, 255, 255, .7);
 	z-index: -1;
@@ -934,10 +931,7 @@ textarea {
 	-moz-transform: skew(-35deg);
 	-ms-transform: skew(-35deg);
 	-o-transform: skew(-35deg);
-<<<<<<< HEAD
 	-ms-transform: skew(-35deg);
-=======
->>>>>>> FETCH_HEAD
 	transform: skew(-35deg);
 }
 .block-info .about .corner div {
@@ -1370,10 +1364,7 @@ textarea {
 	-moz-transform: skew(-45deg);
 	-ms-transform: skew(-45deg);
 	-o-transform: skew(-45deg);
-<<<<<<< HEAD
 	-ms-transform: skew(-45deg);
-=======
->>>>>>> FETCH_HEAD
 	transform: skew(-45deg);
 }
 .block-recent-projects .slider-image .carousel .corner-bottom {
@@ -1599,10 +1590,7 @@ textarea {
 	-moz-transform: skew(45deg);
 	-ms-transform: skew(45deg);
 	-o-transform: skew(45deg);
-<<<<<<< HEAD
 	-ms-transform: skew(45deg);
-=======
->>>>>>> FETCH_HEAD
 	transform: skew(45deg);
 }
 .contact .info .in {
@@ -1635,33 +1623,28 @@ textarea {
 	margin: 0;
 	line-height: 26px;
 }
-.contact .info .line {
+.contact .info dl dt {
+	clear: left;
+}
+.contact .info dl dd {
 	margin-bottom: 10px;
 }
-.contact .info .line:first-child {
-	padding-left: 0;
-	margin-bottom: 8px;
-	line-height: 38px;
+.contact .info dl dd:first-of-type {
+	line-height: 34px;
 }
-.contact .info .line:last-child {
+.contact .info dl dd:last-of-type {
 	margin-bottom: 0;
 }
-.contact .info .line:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.contact .info .line .phone {
+.contact .info .phone {
 	width: 150px;
 	margin-right: 15px;
 	float: left;
-	font: 700 20px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
+	font: 700 20px/22px 'Bebas Neue', Helvetica, Arial, sans-serif;
 	letter-spacing: -.005em;
 	text-align: right;
 	white-space: nowrap;
 }
-.contact .info .line:first-child .phone {
+.contact .info .phone-1 {
 	font-size: 30px;
 	line-height: 34px;
 	color: #009dff;
@@ -1827,10 +1810,7 @@ textarea {
 	-moz-transform: skew(45deg);
 	-ms-transform: skew(45deg);
 	-o-transform: skew(45deg);
-<<<<<<< HEAD
 	-ms-transform: skew(45deg);
-=======
->>>>>>> FETCH_HEAD
 	transform: skew(45deg);
 }
 .block-news .news .more:after {
@@ -1839,10 +1819,7 @@ textarea {
 	-moz-transform: skew(-45deg);
 	-ms-transform: skew(-45deg);
 	-o-transform: skew(-45deg);
-<<<<<<< HEAD
 	-ms-transform: skew(-45deg);
-=======
->>>>>>> FETCH_HEAD
 	transform: skew(-45deg);
 }
 .block-news .news .hidden {
@@ -2390,11 +2367,8 @@ textarea {
 	right: 52px;
 	-webkit-transform: rotate(60deg);
 	-moz-transform: rotate(60deg);
-<<<<<<< HEAD
 	-ms-transform: rotate(60deg);
-=======
 	-ms-transform: rotate(-60deg);
->>>>>>> FETCH_HEAD
 	-o-transform: rotate(60deg);
 	transform: rotate(60deg);
 }
@@ -2669,15 +2643,7 @@ textarea {
 	letter-spacing: .03em;
 	font-weight: bold;
 	text-transform: uppercase;
-<<<<<<< HEAD
 	position: relative;
-=======
-	outline: none;
-	border: 1px solid #3b3a37;
-	box-shadow: 0 0 4px 0 rgba(255, 234, 124, .28);
-	background: #136dce linear-gradient(to bottom, rgba(0, 157, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
-	transition: background .3s ease;
->>>>>>> FETCH_HEAD
 }
 .block-kinds .tariff .list li:nth-child(5n+1) {
 	clear: left;
@@ -3169,6 +3135,44 @@ textarea {
 /* ==========================================================================
    _BLOCK-PROCESS
    ========================================================================== */
+.block-process .process {
+	position: relative;
+}
+.block-process .process .progress {
+	height: 7px;
+	margin-top: -11px;
+	margin-left: 60px;
+	margin-right: 10px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	background: url(../img/progress.jpg) 50% 50% repeat-x;
+	z-index: -1;
+}
+.block-process .progress:after {
+	width: 13px;
+	height: 13px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	right: -7px;
+	top: -5px;
+	background: #e8e8e8;
+	border: 1px solid #c9c9c9;
+	border-radius: 50%;
+}
+.block-process .progress .line {
+	width: 48%;
+	height: 7px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	background: #1074d5 linear-gradient(to bottom,  rgba(18,112,209,1) 0%,rgba(2,153,251,1) 100%);
+}
 .block-process .list {
 	margin: 0;
 	padding: 0;
@@ -3187,7 +3191,78 @@ textarea {
 	text-align: center;
 	position: relative;
 }
-
+.block-process .list .ok {
+	width: 31px;
+	height: 31px;
+	display: block;
+	position: absolute;
+	top: 44px;
+	right: -15px;
+	border: 4px solid #e6e6e6;
+	border-radius: 50%;
+}
+.block-process .list .ok-blue {
+	border-color: #0591f3;
+}
+.block-process .list .ok-last {
+	border: none;
+}
+.block-process .list .ok:before, .block-process .list .ok:after {
+	width: 4px;
+	height: 16px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: 3px;
+	left: 12px;
+	-webkit-transform: rotate(40deg);
+	-moz-transform: rotate(40deg);
+	-ms-transform: rotate(40deg);
+	-o-transform: rotate(40deg);
+	-ms-transform: rotate(40deg);
+	transform: rotate(40deg);
+	background: #e8e8e8;
+	border-radius: 2px;
+}
+.block-process .list .ok:after {
+	height: 6px;
+	top: 9px;
+	left: 5px;
+	-webkit-transform: rotate(-40deg);
+	-moz-transform: rotate(-40deg);
+	-ms-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	-ms-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+}
+.block-process .list .ok-blue:before, .block-process .list .ok-blue:after {
+	background: #0591f3;
+}
+.block-process .list .ok-last:before, .block-process .list .ok-last:after {
+	width: 8px;
+	height: 44px;
+	top: -8px;
+	left: 19px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.block-process .list .ok-last:after {
+	height: 18px;
+	left: 0;
+	top: 12px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
 .block-process .list li img {
 	width: 50px;
 	height: 50px;
@@ -3204,20 +3279,18 @@ textarea {
 	position: relative;
 	background: #ffd642;
 }
-.block-process .list .name:after {
-	width: 112px;
-	height: 7px;
+.block-process .list .name:before {
+	width: 0;
+	height: 0;
 	display: block;
 	content: ' ';
 	overflow: hidden;
-	clear: both;
 	position: absolute;
-	top: 50%;
-	right: -112px;
-	background: #1074d5 linear-gradient(to bottom,  rgba(18,112,209,1) 0%,rgba(2,153,251,1) 100%);
-}
-.block-process .list li:last-child .name:after {
-	display: none;
+	bottom: -5px;
+	right: 0;
+	border-style: solid;
+	border-width: 0 5px 5px 0;
+	border-color: transparent #ffd642 transparent transparent;
 }
 .block-process .list .text {
 	position: relative;
@@ -3233,6 +3306,72 @@ textarea {
 	bottom: 34px;
 	right: -62px;
 	background: url(../img/sprite.png) -150px 0 no-repeat;
+}
+/* ==========================================================================
+   _BLOCK-QUESTION
+   ========================================================================== */
+.block-question {
+	width: 75%;
+	margin: 0 auto 30px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.block-question .h2 {
+	margin-bottom: 16px;
+}
+.block-question .text {
+	margin-bottom: 56px;
+	font-weight: bold;
+}
+.block-question .text .tel {
+	font-size: 18px;
+	text-decoration: none;
+	color: #333;
+	cursor: default;
+}
+.block-question .link {
+	width: 206px;
+	height: 39px;
+	margin: 0 auto;
+	padding-top: 12px;
+	display: block;
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	background: #009DFF linear-gradient(to bottom,  rgba(0,157,255,1) 0%,rgba(19,109,206,1) 100%);
+	transition: background .3s ease;
+}
+.block-question .link:hover {
+	background: #009DFF linear-gradient(to bottom,  rgba(19,109,206,1) 0%,rgba(0,157,255,1) 100%);
+}
+.block-question .link .fn {
+	padding: 8px 8px 2px 10px;
+	display: inline-block;
+	vertical-align: top;
+	line-height: 14px;
+	letter-spacing: .03em;
+	font-size: 12px;
+	color: #333;
+	position: absolute;
+	top: -20px;
+	right: -30px;
+	background: #ffd642;
+}
+.block-question .link .fn:before {
+	width: 0;
+	height: 0;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	border-style: solid;
+	border-width: 6px 6px 0 0;
+	border-color: #ffd642 transparent transparent transparent;
 }
 /* ==========================================================================
    _POPUP_CALLBACK
@@ -3394,8 +3533,9 @@ textarea {
 	.block-reviews .reviews .item .review { margin-left: 0; }
 	.block-reviews .reviews .item .text { padding-top: 0; }
 	.contact .info .in { min-height: 196px; }
-	.contact .info .line .phone { width: auto; margin: 0; float: none; text-align: left; }
-	.contact .info .line dd { margin: 0 0 0 10px; line-height: 22px; }
+	.contact .info .phone { width: auto; margin: 0; float: none; text-align: left; }
+	.contact .info dd { margin: 0 0 0 10px; line-height: 22px; }
+	.contact .info dl dd:first-of-type { line-height: 22px; }
 	.block-kinds .tip { margin-bottom: 28px; padding-right: 58%; }
 	.block-kinds .tip .describe { width: 50%; right: 12px; }
 	.block-kinds .total { padding-left: 20px; padding-bottom: 10px; }
@@ -3458,16 +3598,13 @@ textarea {
 	.index .bottom { display: none; }
 	.contact .info { width: 100%; margin-bottom: 30px; float: none; }
 	.contact .info .in { min-height: 0; }
-<<<<<<< HEAD
 	.block-about .text { width: 50%; }
 	.block-kinds .tip { padding-right: 0; }
 	.block-kinds .tip .name { width: 70%; }
 	.block-kinds .tip .describe { width: 100%; position: relative; top: 0; left: 0; }
 	.block-kinds .tip .describe:before, .block-kinds .tip .describe:after { display: none; }
 	.block-kinds .tariff .list li { width: 50%; }
-=======
 	.footer { background-size: 300% auto; background-position: 50% 0; }
->>>>>>> FETCH_HEAD
 	.footer .col { width: 100% !important; margin-bottom: 40px; text-align: center; }
 	.contact .wrapper { padding-left: 10px; padding-right: 10px; }
 }
@@ -3476,7 +3613,6 @@ textarea {
 	.block-news .news .item .inform .calendar { position: relative; margin: 0 auto 40px; }
 	.block-portfolio .catalog li { width: 100%; float: none; }
 	.block-reviews .reviews .item { padding-bottom: 30px; }
-<<<<<<< HEAD
 	.block-project .picture { width: 100%; padding: 0 10px; }
 	.block-project .prev, .block-project .next { width: 40px; height: 40px; padding: 0; text-indent: -1000px; overflow: hidden; border-width: 1px; }
 	.block-project .prev:before, .block-project .prev:after, .block-project .next:before, .block-project .next:after { width: 2px; height: 10px; top: 12px; }
@@ -3497,11 +3633,9 @@ textarea {
 	.block-kinds .total .text { margin-right: 0; margin-bottom: 10px; float: none; }
 	.block-kinds .total .more { width: 50%; float: none; margin-right: auto; margin-left: auto; }
 	.navigation li { padding: 0 4px; }
-=======
 	.services .list li { width: 50%; }
 	.services .list li:nth-child(3n+1) { clear: none; }
 	.services .list li:nth-child(2n+1) { clear: left; }
->>>>>>> FETCH_HEAD
 }
 @media (max-width: 479px) {
 	h1, .h1 { font-size: 40px; line-height: normal; }
@@ -3516,9 +3650,7 @@ textarea {
 	.block-portfolio .navigation li { width: 48%; margin-bottom: 10px }
 	.block-portfolio .navigation li:nth-child(1n+4) { margin-bottom: 10px; }
 	.block-project .project-name .link-yellow { display: block; margin-top: 16px; margin-left: -40px; text-align: center; }
-<<<<<<< HEAD
 	.block-kinds .tariff .list li { width: 100%; float: none; }
-=======
 	.block-project .picture { width: 100%; padding: 0 10px; }
 	.block-project .prev, .block-project .next { width: 40px; height: 40px; padding: 0; text-indent: -1000px; overflow: hidden; border-width: 1px; }
 	.block-project .prev:before, .block-project .prev:after, .block-project .next:before, .block-project .next:after { width: 2px; height: 10px; top: 12px; }
@@ -3528,7 +3660,6 @@ textarea {
 	.block-project .next:after { right: 21px; }
 	.block-recent-projects .slider .carousel .statistics .table, .block-recent-projects .slider .carousel .statistics .table th, .block-recent-projects .slider .carousel .statistics .table td { font-size: 12px; line-height: 12px; }
 	.block-recent-projects .slider .carousel .statistics .table td { padding: 5px; }
->>>>>>> FETCH_HEAD
 }
 @media (max-width: 400px) {
 	.header .nav .sublist > ul { width: 100%; margin-left: 0; }
