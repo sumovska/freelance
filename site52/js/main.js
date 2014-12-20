@@ -79,6 +79,14 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.block-kinds').each(function () {
+		/* Catalog carousel */
+		$('.carousel', this).bxSlider({
+			maxSlides: 4,
+			pager: false
+		});
+	});
+
 	/* Services */
 	$('.block-services').each(function () {
 		var _self = $(this), list = $('.list', _self);
