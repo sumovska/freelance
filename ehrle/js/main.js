@@ -30,6 +30,10 @@ $(document).ready(function () {
 					'background': 'rgba(255, 255, 255, 0.8)'
 				}
 			}
+		},
+		afterClose: function () {
+			$('#callback #form').show();
+			$('#callback #success').hide();
 		}
 	});
 
@@ -142,4 +146,30 @@ $(document).ready(function () {
 	$window.resize();
 	$window.scroll();
 	$('body').addClass('body-loaded');
+
+	$('#callback .form').on('submit', function (e) {
+		e.preventDefault();
+		var form = $('#callback form');
+		var data = form.serialize();
+		$('#callback form button').text('Отправка...').attr('disabled', 'disabled');
+		form.css('opacity', '.5');
+
+		$.post("handler.php", data).done(function (response) {
+			if (response == 'ok') {
+				yaCounter27583617.reachGoal('LEAD');
+				form.trigger('reset');
+				$('#callback #form').hide();
+				$('#callback form button').text('Отправка').removeAttr('disabled');
+				form.css('opacity', '1');
+				$('#callback #success').show();
+			}
+		});
+
+	});
+
+	$('#callback #close').on('click', function () {
+		$.fancybox.close();
+	});
+
+
 });
