@@ -1029,6 +1029,18 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	bottom: 0;
 	z-index: 1;
 }
+.winter .corner {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	z-index: 10;
+	background: url('../img/sprite.png') no-repeat 0 -20px;
+	background-size: 100px auto;
+}
+.winter .corner-tl { top: 0; left: 0; background-position: 0 -20px; }
+.winter .corner-tr { top: 0; right: 0; background-position: -10px -20px; }
+.winter .corner-bl { bottom: 0; left: 0; background-position: 0 -30px; }
+.winter .corner-br { bottom: 0; right: 0; background-position: -10px -30px; }
 .winter .space .bg {
 	width: 1260px;
 	height: 764px;
@@ -1959,6 +1971,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 }
 .popup-products .form .submit {
 	margin: 0;
+	clear: both;
 }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license

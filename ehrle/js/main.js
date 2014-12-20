@@ -90,6 +90,7 @@ $(document).ready(function () {
 	$('.winter .space').each(function () {
 		var _self = $(this), _bg;
 		_self.append('<div class="bg"></div>');
+		_self.append('<div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>');
 		_bg = $('.bg', _self);
 		$window.resize(function () {
 			$height = $window.height();
