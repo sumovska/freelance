@@ -51,6 +51,13 @@
 	font-weight: 700;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Rouble';
+	src: url('../fonts/rouble-webfont.eot');
+	src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/rouble-webfont.woff') format('woff'), url('../fonts/rouble-webfont.ttf') format('truetype'), url('../fonts/rouble-webfont.svg#als_rublregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 /* ==========================================================================
    _HTML
    ========================================================================== */
@@ -79,6 +86,37 @@ hr {
 }
 audio, canvas, img, video {
 	vertical-align: middle;
+}
+.rub {
+	font-family: 'Rouble', Arial, Tahoma, sans-serif;
+	text-transform: none;
+}
+.fn {
+	padding: 6px 8px 4px 10px;
+	display: inline-block;
+	vertical-align: top;
+	line-height: 14px;
+	text-align: center;
+	letter-spacing: .03em;
+	font-size: 12px;
+	color: #333;
+	position: absolute;
+	top: -20px;
+	right: -30px;
+	background: #ffd642;
+}
+.fn:before {
+	width: 0;
+	height: 0;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	border-style: solid;
+	border-width: 6px 6px 0 0;
+	border-color: #ffd642 transparent transparent transparent;
 }
 /* ==========================================================================
    _LAYOUT
@@ -1858,7 +1896,7 @@ textarea {
 .up:before, .up:after {
 	width: 4px;
 	height: 22px;
-	margin-left: -10px;
+	margin-left: -9px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
@@ -2215,7 +2253,7 @@ textarea {
 	background: #fff;
 }
 /* ==========================================================================
-   _BLOCK-PROJECT
+   _PROJECT
    ========================================================================== */
 .block-project .project-name {
 	margin: 0 0 42px 0;
@@ -2402,7 +2440,7 @@ textarea {
 	line-height: 21px;
 	letter-spacing: .022em;
 	position: relative;
-	background: linear-gradient(to bottom,  rgba(255,255,255,0.53) 0%,rgba(255,255,255,0.99) 54%,rgba(255,255,255,1) 55%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0.53) 0%, rgba(255,255,255,0.53) 10%,rgba(255,255,255,0.99) 54%,rgba(255,255,255,1) 55%,rgba(255,255,255,1) 100%);
 	border-top: 4px solid #0cf;
 	border-bottom: 4px solid #0f77d9;
 	z-index: 20;
@@ -2455,7 +2493,7 @@ textarea {
 	height: 0;
 	border-style: solid;
 	border-width: 22px 18px 0 0;
-	border-color: rgba(255, 255, 255, .5) transparent transparent transparent;
+	border-color: rgba(255, 255, 255, .53) transparent transparent transparent;
 }
 .block-about .text p {
 	margin-bottom: 21px;
@@ -2482,7 +2520,7 @@ textarea {
 	background: #136dce linear-gradient(to bottom, rgba(19,109,206,1) 0%,rgba(0,157,255,1) 100%);
 }
 /* ==========================================================================
-   _BLOCK-SITES
+   _KINDS
    ========================================================================== */
 .block-kinds .item {
 	padding: 0 8px;
@@ -2552,16 +2590,9 @@ textarea {
 }
 .block-kinds .tip .name .text .fn {
 	padding: 4px 8px 0px 10px;
-	display: inline-block;
-	vertical-align: top;
-	line-height: 14px;
-	letter-spacing: .03em;
 	font-size: 10px;
-	color: #333;
-	position: absolute;
 	top: 2px;
 	right: 0;
-	background: #ffd642;
 }
 .block-kinds .tip .name .fn:before {
 	width: 0;
@@ -2638,6 +2669,7 @@ textarea {
 	margin-bottom: 22px;
 	padding-top: 7px;
 	padding-left: 30px;
+	padding-right: 10px;
 	float: left;
 	font-size: 11px;
 	letter-spacing: .03em;
@@ -2842,7 +2874,6 @@ textarea {
 .block-kinds .total .text {
 	margin-bottom: 0;
 	margin-top: 9px;
-	margin-right: 30px;
 	display: inline-block;
 	float: left;
 }
@@ -2861,7 +2892,7 @@ textarea {
 	box-shadow: 0 0 8px 1px rgba(255, 255, 255, .5);
 }
 /* ==========================================================================
-   _BLOCK-FEATURES
+   _FEATURES
    ========================================================================== */
 .block-features .list {
 	margin: 0;
@@ -2916,29 +2947,29 @@ textarea {
 /* ==========================================================================
    _INFORMAION
    ========================================================================== */
-.information {
+.block-information {
 	font-size: 16px;
 	line-height: 18px;
 }
-.information .h {
+.block-information .h {
 	text-transform: uppercase;
 	font-weight: bold;
 }
-.information p {
+.block-information p {
 	margin-bottom: 20px;
 }
-.information .list {
+.block-information .list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.information .list:after {
+.block-information .list:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.information .list li {
+.block-information .list li {
 	width: 50%;
 	margin-bottom: 20px;
 	padding-left: 38px;
@@ -2947,10 +2978,10 @@ textarea {
 	float: left;
 	position: relative;
 }
-.information .list li:nth-child(2n+1) {
+.block-information .list li:nth-child(2n+1) {
 	clear: left;
 }
-.information .list li:before, .information .list li:after {
+.block-information .list li:before, .block-information .list li:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
@@ -2959,12 +2990,12 @@ textarea {
 	top: 0;
 	left: 0;
 }
-.information .list li:before {
+.block-information .list li:before {
 	width: 21px;
 	height: 21px;
 	background: #ffd642;
 }
-.information .list li:after {
+.block-information .list li:after {
 	width: 0;
 	height: 0;
 	left: 12px;
@@ -2973,11 +3004,11 @@ textarea {
 	border-width: 0 9px 9px 0;
 	border-color: transparent #ffd642 transparent transparent;
 }
-.information .proposion {
+.block-information .proposion {
 	padding-right: 50%;
 	position: relative;
 }
-.information .proposion .pic {
+.block-information .proposion .pic {
 	width: 40%;
 	position: absolute;
 	top: 0;
@@ -2985,82 +3016,71 @@ textarea {
 	left: auto;
 	bottom: 0;
 }
-.information .proposion .pic img {
+.block-information .proposion .pic img {
 	width: 100%;
 	padding: 14px;
 	border: 1px solid #1074d5;
 }
-.information .proposion .pic .fn {
+.block-information .proposion .pic .fn {
 	width: 67px;
 	padding: 2px 0;
 	font-size: 10px;
 	line-height: 12px;
-	text-align: center;
-	text-transform: uppercase;
-	position: absolute;
 	top: -26px;
 	left: 0;
-	background: #ffd642;
 }
-.information .proposion .pic .fn:after {
-	width: 0;
-	height: 0;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-	position: absolute;
+.block-information .proposion .pic .fn:after {
 	right: 0;
 	top: 16px;
-	border-style: solid;
 	border-width: 0 9px 9px 0;
 	border-color: transparent #ffd642 transparent transparent;
 }
-.information .proposion .pic .fn-right {
+.block-information .proposion .pic .fn-right {
 	right: 0;
 	left: auto;
 }
-.information .proposion .pic .fn-right:after {
+.block-information .proposion .pic .fn-right:after {
 	left: 0;
 	right: auto;
 	border-width: 9px 9px 0 0;
 	border-color: #ffd642 transparent transparent transparent;
 }
-.information .proposion .list li {
+.block-information .proposion .list li {
 	width: 100%;
 	float: none;
 }
-.information .proposion .list li:before {
+.block-information .proposion .list li:before {
 	width: 13px;
 	height: 13px;
 	background: #009dff;
 }
-.information .proposion .list li:after {
+.block-information .proposion .list li:after {
 	top: 13px;
 	left: 7px;
 	border-width: 0 6px 6px 0;
 	border-color: transparent #009dff transparent transparent;
 }
-.condition {
+.block-information .condition {
 	margin: 0;
 	padding: 0 0 0 90px;
 	list-style: none;
 }
-.condition li {
+.block-information .condition li {
 	min-height: 80px;
 	margin-bottom: 10px;
 	padding-top: 30px;
 	padding-left: 136px;
 	position: relative;
 }
-.condition li:after {
+.block-information .condition li:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.condition li .time {
+.block-information .condition li .time {
 	min-width: 77px;
+	display: block;
 	padding-right: 16px;
 	color: #009dff;
 	text-align: right;
@@ -3068,7 +3088,7 @@ textarea {
 	left: 0;
 	top: 0;
 }
-.condition li .time:after {
+.block-information .condition li .time:after {
 	width: 1px;
 	height: 20px;
 	display: block;
@@ -3080,10 +3100,10 @@ textarea {
 	top: 0;
 	background: #3c3c3c;
 }
-.condition li:first-child .time:after {
+.block-information .condition li:first-child .time:after {
 	display: none;
 }
-.condition li .icon {
+.block-information .condition li .icon {
 	width: 56px;
 	height: 56px;
 	margin-right: 30px;
@@ -3094,7 +3114,7 @@ textarea {
 	left: 49px;
 	background: #0e7fdb linear-gradient(to bottom,  rgba(0,222,255,1) 0%,rgba(14,127,219,1) 100%);
 }
-.condition li .icon:before, .condition li .icon:after {
+.block-information .condition li .icon:before, .block-information .condition li .icon:after {
 	width: 0;
 	height: 0;
 	display: block;
@@ -3109,12 +3129,12 @@ textarea {
 	border-color: transparent #00ddff transparent transparent;
 	z-index: 20;
 }
-.condition li .icon:after {
+.block-information .condition li .icon:after {
 	top: -1px;
 	right: 0;
 	border-color: transparent #fff transparent transparent
 }
-.condition li .icon .in {
+.block-information .condition li .icon .in {
 	width: 100%;
 	height: 100%;
 	padding: 13px;
@@ -3122,7 +3142,7 @@ textarea {
 	position: relative;
 	background: #fff;
 }
-.condition li .icon .in img {
+.block-information .condition li .icon .in img {
 	width: 26px;
 	height: 26px;
 	margin-top: -13px;
@@ -3133,7 +3153,7 @@ textarea {
 	left: 50%;
 }
 /* ==========================================================================
-   _BLOCK-PROCESS
+   _PROCESS
    ========================================================================== */
 .block-process .process {
 	position: relative;
@@ -3165,7 +3185,7 @@ textarea {
 	border-radius: 50%;
 }
 .block-process .progress .line {
-	width: 48%;
+	width: 46%;
 	height: 7px;
 	display: block;
 	content: ' ';
@@ -3174,9 +3194,10 @@ textarea {
 	background: #1074d5 linear-gradient(to bottom,  rgba(18,112,209,1) 0%,rgba(2,153,251,1) 100%);
 }
 .block-process .list {
-	margin: 0;
-	padding: 0;
+	margin: 0 0 0 -50px;
+	padding: 0 50px 0 0;
 	list-style: none;
+	overflow: hidden;
 }
 .block-process .list:after {
 	display: block;
@@ -3308,7 +3329,7 @@ textarea {
 	background: url(../img/sprite.png) -150px 0 no-repeat;
 }
 /* ==========================================================================
-   _BLOCK-QUESTION
+   _QUESTION
    ========================================================================== */
 .block-question {
 	width: 75%;
@@ -3328,6 +3349,7 @@ textarea {
 	text-decoration: none;
 	color: #333;
 	cursor: default;
+	white-space: nowrap;
 }
 .block-question .link {
 	width: 206px;
@@ -3346,32 +3368,6 @@ textarea {
 }
 .block-question .link:hover {
 	background: #009DFF linear-gradient(to bottom,  rgba(19,109,206,1) 0%,rgba(0,157,255,1) 100%);
-}
-.block-question .link .fn {
-	padding: 8px 8px 2px 10px;
-	display: inline-block;
-	vertical-align: top;
-	line-height: 14px;
-	letter-spacing: .03em;
-	font-size: 12px;
-	color: #333;
-	position: absolute;
-	top: -20px;
-	right: -30px;
-	background: #ffd642;
-}
-.block-question .link .fn:before {
-	width: 0;
-	height: 0;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	position: absolute;
-	left: 0;
-	bottom: -6px;
-	border-style: solid;
-	border-width: 6px 6px 0 0;
-	border-color: #ffd642 transparent transparent transparent;
 }
 /* ==========================================================================
    _POPUP_CALLBACK
@@ -3513,6 +3509,7 @@ textarea {
 	.header .nav .toggle { left: auto; right: 0; }
 	.index .bottom { height: 58px; }
 	.index .pager li { white-space: normal; }
+	.block-features .list li { width: 33.3%; }
 	.block-features .carousel .text { width: auto; height: auto; margin-left: 48px; position: absolute; left: 45%; right: 38px; font-size: 13px; }
 	.block-info .about { width: 45%; }
 	.block-info .news-latest { width: 53%; margin-left: 0; float: right; }
@@ -3526,21 +3523,28 @@ textarea {
 	.block-partners .carousel { width: 672px; margin: 0 auto; }
 	.block-partners .carousel li:nth-child(5), .block-partners .carousel li:nth-child(6) { display: none; }
 	.block-partners .all { margin-right: 38px; }
-	.block-portfolio .navigation li { width: 32%; margin-bottom: 20px; }
-	.block-portfolio .navigation li:nth-child(1n+4) { margin-bottom: 0; }
+	.navigation li { width: 32%; margin-bottom: 20px; }
+	.navigation li:nth-child(1n+4) { margin-bottom: 0; }
+	.navigation-landing li { width: 24%; }
 	.block-portfolio .catalog li { width: 50%; }
 	.block-reviews .reviews .item .pic { margin: 0 auto 30px; float: none; }
 	.block-reviews .reviews .item .review { margin-left: 0; }
 	.block-reviews .reviews .item .text { padding-top: 0; }
 	.contact .info .in { min-height: 196px; }
 	.contact .info .phone { width: auto; margin: 0; float: none; text-align: left; }
-	.contact .info dd { margin: 0 0 0 10px; line-height: 22px; }
+	.contact .info dl dd { margin: 0 0 0 10px; line-height: 22px; }
 	.contact .info dl dd:first-of-type { line-height: 22px; }
 	.block-kinds .tip { margin-bottom: 28px; padding-right: 58%; }
 	.block-kinds .tip .describe { width: 50%; right: 12px; }
 	.block-kinds .total { padding-left: 20px; padding-bottom: 10px; }
 	.block-kinds .total .sum { position: relative; top: -3px; left: -20px; }
 	.block-kinds .tariff .list li { width: 33.3%; padding-right: 0; }
+	.block-kinds .tariff .list li:nth-child(3n+1) { clear: left; }
+	.block-kinds .tariff .list li:nth-child(5n+1) { clear: none; }
+	.block-question { width: 100%; }
+	.block-information .proposion { padding-right: 0; position: relative; }
+	.block-information .proposion .pic { width: 50%; margin: 20px auto 20px; position: relative; }
+	.block-information .condition { padding-left: 20px; }
 	.up { margin-bottom: 0; }
 	.footer .wrapper { padding-top: 40px; padding-bottom: 50px; }
 	.footer .col { width: 25%; padding: 0; }
@@ -3604,6 +3608,14 @@ textarea {
 	.block-kinds .tip .describe { width: 100%; position: relative; top: 0; left: 0; }
 	.block-kinds .tip .describe:before, .block-kinds .tip .describe:after { display: none; }
 	.block-kinds .tariff .list li { width: 50%; }
+	.block-kinds .tariff .list li:nth-child(2n+1) { clear: left; }
+	.block-kinds .tariff .list li:nth-child(3n+1) { clear: none; }
+	.block-features .list li { width: 50%; }
+	.block-information .list li { width: 100%; float: none; }
+	.block-information .condition { padding-left: 0; }
+	.navigation-landing li { width: 49%; }
+	.block-about .text { width: 70%; }
+	.block-question .text { line-height: 30px; }
 	.footer { background-size: 300% auto; background-position: 50% 0; }
 	.footer .col { width: 100% !important; margin-bottom: 40px; text-align: center; }
 	.contact .wrapper { padding-left: 10px; padding-right: 10px; }
@@ -3630,7 +3642,7 @@ textarea {
 	.block-kinds .total .sum { width: 100%; left: 0; }
 	.block-kinds .total .sum:before { display: none; }
 	.block-kinds .total .cheap { width: 50%; margin-right: auto; margin-left: auto; float: none; }
-	.block-kinds .total .text { margin-right: 0; margin-bottom: 10px; float: none; }
+	.block-kinds .total .text { margin: 0 auto 10px; float: none; }
 	.block-kinds .total .more { width: 50%; float: none; margin-right: auto; margin-left: auto; }
 	.navigation li { padding: 0 4px; }
 	.services .list li { width: 50%; }
@@ -3651,6 +3663,7 @@ textarea {
 	.block-portfolio .navigation li:nth-child(1n+4) { margin-bottom: 10px; }
 	.block-project .project-name .link-yellow { display: block; margin-top: 16px; margin-left: -40px; text-align: center; }
 	.block-kinds .tariff .list li { width: 100%; float: none; }
+	.block-kinds .tariff .list li:nth-child(2n+1) { clear: none; }
 	.block-project .picture { width: 100%; padding: 0 10px; }
 	.block-project .prev, .block-project .next { width: 40px; height: 40px; padding: 0; text-indent: -1000px; overflow: hidden; border-width: 1px; }
 	.block-project .prev:before, .block-project .prev:after, .block-project .next:before, .block-project .next:after { width: 2px; height: 10px; top: 12px; }
@@ -3660,10 +3673,22 @@ textarea {
 	.block-project .next:after { right: 21px; }
 	.block-recent-projects .slider .carousel .statistics .table, .block-recent-projects .slider .carousel .statistics .table th, .block-recent-projects .slider .carousel .statistics .table td { font-size: 12px; line-height: 12px; }
 	.block-recent-projects .slider .carousel .statistics .table td { padding: 5px; }
+	.block-features .list li { width: 100%; padding: 0; float: none; }
+	.block-information .list li { padding-right: 0; }
 }
 @media (max-width: 400px) {
 	.header .nav .sublist > ul { width: 100%; margin-left: 0; }
 	.services .list li { width: 100%; float: none; }
+	.block-features .list { padding: 0; }
+	.block-information .proposion { padding-top: 20px; }
+	.block-information .proposion .pic { width: 100%; }
+	.block-information .condition li { padding-left: 0; padding-top: 0; }
+	.block-information .condition li .time { margin: 0 auto 20px; position: relative; padding-right: 0; text-align: center; }
+	.block-information .condition li .time:after { display: none; }
+	.block-information .condition li .icon { margin: 0 auto 20px; position: relative; top: 0; left: auto; }
+	.navigation-landing li { width: 100%; float: none; }
+	.block-about .link { font-size: 12px; }
+
 }
 /* ==========================================================================
    _PRINT STYLES
