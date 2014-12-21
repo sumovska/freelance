@@ -104,9 +104,6 @@ $(document).ready(function () {
 			$end = $offset + 764;
 		});
 		$window.scroll(function () {
-			console.log('$scroll=' + $scroll);
-			console.log('$start=' + $start);
-			console.log('$end=' + $end);
 			if (($start <= $scroll) && ($scroll <= $end)) {
 				$top = (($scroll - $offset) / (2.4 / $low));
 				_bg.css({top: $top + 'px'});
