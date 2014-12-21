@@ -90,7 +90,7 @@ $(document).ready(function () {
 	$('.winter .space').each(function () {
 		var _self = $(this), _bg;
 		_self.append('<div class="bg"></div>');
-		_self.append('<div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>');
+		_self.parent().prepend('<div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>');
 		_bg = $('.bg', _self);
 		$window.resize(function () {
 			$height = $window.height();
@@ -104,8 +104,11 @@ $(document).ready(function () {
 			$end = $offset + 764;
 		});
 		$window.scroll(function () {
+			console.log('$scroll=' + $scroll);
+			console.log('$start=' + $start);
+			console.log('$end=' + $end);
 			if (($start <= $scroll) && ($scroll <= $end)) {
-				$top = -(($scroll - $offset) / (2.4 / $low));
+				$top = (($scroll - $offset) / (2.4 / $low));
 				_bg.css({top: $top + 'px'});
 			}
 		});

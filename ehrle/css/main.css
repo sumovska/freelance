@@ -1028,12 +1028,13 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	right: 0;
 	bottom: 0;
 	z-index: 1;
+	transform: translate3d(0, 0, 0);
 }
 .winter .corner {
 	width: 10px;
 	height: 10px;
 	position: absolute;
-	z-index: 10;
+	z-index: 1000;
 	background: url('../img/sprite.png') no-repeat 0 -20px;
 	background-size: 100px auto;
 }
@@ -1052,7 +1053,6 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	z-index: -1;
 }
 .body-loaded .winter .space .bg {
-	position: fixed;
 	background: url('../img/winter.jpg') no-repeat 50% 50%;
 }
 .winter .space:before {
