@@ -87,10 +87,16 @@ hr {
 audio, canvas, img, video {
 	vertical-align: middle;
 }
+/* ==========================================================================
+   _RUBLE ICON
+   ========================================================================== */
 .rub {
 	font-family: 'Rouble', Arial, Tahoma, sans-serif;
 	text-transform: none;
 }
+/* ==========================================================================
+   _YELLOW NOTE (On the top of the title)
+   ========================================================================== */
 .fn {
 	padding: 6px 8px 4px 10px;
 	display: inline-block;
@@ -117,6 +123,28 @@ audio, canvas, img, video {
 	border-style: solid;
 	border-width: 6px 6px 0 0;
 	border-color: #ffd642 transparent transparent transparent;
+}
+/* ==========================================================================
+   _BLUE BUTTON-LINK
+   ========================================================================== */
+.button {
+	width: 100%;
+	height: 39px;
+	font-size: 15px;
+	padding-top: 10px;
+	display: block;
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: .04em;
+	background: #136dce linear-gradient(to bottom, rgba(0,157,255,1) 0%,rgba(19,109,206,1) 100%);
+	border: 1px solid #1356ad;
+	transition: background .3s ease;
+}
+.button:hover {
+	background: #136dce linear-gradient(to bottom, rgba(19,109,206,1) 0%,rgba(0,157,255,1) 100%);
 }
 /* ==========================================================================
    _LAYOUT
@@ -1488,6 +1516,65 @@ textarea {
 	left: auto;
 	background-position: -80px -50px;
 }
+.block-recent-projects-seo {
+	position: relative;
+}
+.block-recent-projects-seo .h2 {
+	margin-bottom: 28px;
+}
+.block-recent-projects-seo .all {
+	position: absolute;
+	top: 16px;
+	right: 0;
+}
+.block-recent-projects-seo .slider .bx-viewport {
+	height: 380px !important;
+}
+.block-recent-projects-seo .slider {
+	width: 80%;
+	float: none;
+	margin: 0 auto;
+}
+.block-recent-projects-seo .slider:last-child {
+	float: none;
+}
+.block-recent-projects-seo .slider .carousel .statistics {
+	width: 87%;
+	margin: 0 auto;
+	padding-top: 0;
+}
+.block-recent-projects-seo .slider .carousel .statistics .title {
+	margin-top: -6px;
+	margin-bottom: 10px;
+	text-transform: none;
+	font: 16px/28px 'Calibri', Helvetica, Arial, sans-serif;
+}
+.block-recent-projects-seo .slider .carousel .statistics .table {
+	widows: 110px;
+}
+.block-recent-projects-seo .slider .carousel .statistics .table th {
+	padding: 16px 12px 8px;
+	font-size: 20px;
+	line-height: 28px;
+	border-right: 1px solid #fff;
+}
+.block-recent-projects-seo .slider .carousel .statistics .table th:last-of-type {
+	border-right: none;
+}
+.block-recent-projects-seo .slider .carousel .statistics .table td {
+	font-size: 18px;
+	line-height: 22px;
+	padding-top: 8px;
+	padding-bottom: 6px;
+}
+.block-recent-projects-seo .slider .carousel .statistics .table .type {
+	width: 44px;
+	padding-left: 12px;
+	font-size: 20px;
+}
+.block-recent-projects-seo .slider .carousel .statistics .table .claim {
+	padding-left: 18px;
+}
 /* ==========================================================================
    _PARTNERS
    ========================================================================== */
@@ -1552,22 +1639,6 @@ textarea {
 	margin-bottom: 35px;
 	line-height: 22px;
 	cursor: default;
-}
-.contact .order {
-	width: 240px;
-	height: 40px;
-	margin-left: -120px;
-	padding-top: 10px;
-	display: block;
-	text-align: center;
-	color: #fff;
-	font-size: 16px;
-	text-transform: uppercase;
-	position: absolute;
-	top: 24px;
-	left: 50%;
-	background: linear-gradient(to bottom, rgba(0, 157, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
-	border: 1px solid #1356ad;
 }
 .contact .info {
 	width: 48.5%;
@@ -2114,8 +2185,8 @@ textarea {
 	clear: both;
 }
 .navigation li {
-	width: 16.4%;
-	padding: 0 8px;
+	width: 16%;
+	padding: 0 4px;
 	display: inline-block;
 	text-transform: uppercase;
 	text-align: center;
@@ -2260,7 +2331,7 @@ textarea {
 	position: relative;
 	color: #fff;
 }
-.block-project .project-name .line:after {
+.block-project .project-name:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
@@ -2271,9 +2342,11 @@ textarea {
 	font-size: 16px;
 	line-height: 32px;
 	float: left;
+	clear: left;
 }
 .block-project .project-name dd {
 	font: 20px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
+	float: left;
 }
 .block-project .project-name .company {
 	font-size: 30px;
@@ -2420,6 +2493,19 @@ textarea {
 	margin-top: -40px;
 	margin-bottom: 0;
 }
+.block-project .button {
+	width: 240px;
+	height: 40px;
+	margin: 80px auto -124px;
+	padding-top: 10px;
+	font-size: 16px;
+	text-decoration: underline;
+	position: relative;
+	z-index: 20;
+}
+.block-project .button:hover {
+	text-decoration: none;
+}
 /* ==========================================================================
    _BLOCK-ABOUT
    ========================================================================== */
@@ -2501,23 +2587,14 @@ textarea {
 .block-about .text p:last-of-type {
 	margin-bottom: 0;
 }
-.block-about .link {
-	width: 100%;
-	height: 39px;
-	font-size: 15px;
-	padding-top: 10px;
-	display: block;
-	margin: 16px auto 0;
-	color: #fff;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	letter-spacing: .04em;
-	background: #136dce linear-gradient(to bottom, rgba(0,157,255,1) 0%,rgba(19,109,206,1) 100%);
-	transition: background .3s ease;
+.block-about .button {
+	margin-top: 16px;
 }
-.block-about .link:hover {
-	background: #136dce linear-gradient(to bottom, rgba(19,109,206,1) 0%,rgba(0,157,255,1) 100%);
+.block-about .pic {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	right: 30px;
 }
 /* ==========================================================================
    _KINDS
@@ -2594,7 +2671,7 @@ textarea {
 	top: 2px;
 	right: 0;
 }
-.block-kinds .tip .name .fn:before {
+.block-kinds .tip .name .text .fn:before {
 	width: 0;
 	height: 0;
 	display: block;
@@ -2640,6 +2717,68 @@ textarea {
 }
 .block-kinds .tip .describe p {
 	margin: 0;
+}
+.block-kinds .about {
+	min-height: 218px;
+	margin: 0;
+	padding-left: 34%;
+	position: relative;
+}
+.block-kinds .about .pic {
+	width: 34%;
+	height: auto;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: auto;
+	bottom: 0;
+}
+.block-kinds .about .list {
+	margin: 0;
+	padding: 28px 0 16px 36px;
+	list-style: none;
+}
+.block-kinds .about .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-kinds .about .list li {
+	width: 286px;
+	margin-bottom: 6px;
+	padding: 20px 18px 18px;
+	line-height: 16px;
+	text-transform: uppercase;
+	position: relative;
+	background: #ffd642;
+}
+.block-kinds .about .list li:last-child {
+	margin-bottom: 0;
+}
+.block-kinds .about .list li:before {
+	width: 0;
+	height: 0;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-style: solid;
+	border-width: 0 21px 21px 0;
+	border-color: transparent #f3f3f3 transparent transparent;
+}
+.block-kinds .about .list-2 li {
+	margin-right: 24px;
+	float: left;
+}
+.block-kinds .about .list-2 li:nth-child(even) {
+	margin-right: 0;
+}
+.block-kinds .about .list-2 li:nth-child(1n+5) {
+	margin-bottom: 0;
 }
 .block-kinds .tariff {
 	margin-bottom: 14px;
@@ -2890,6 +3029,102 @@ textarea {
 	background: linear-gradient(to bottom,  rgba(255,236,109,1) 0%,rgba(242,171,2,1) 100%);
 	border: 1px solid #343c41;
 	box-shadow: 0 0 8px 1px rgba(255, 255, 255, .5);
+}
+.block-kinds-design .item {
+	padding: 0;
+}
+.block-kinds-design .tip {
+	margin: 0;
+}
+.block-kinds-design .tip .name {
+	padding: 30px 14px 22px;
+	letter-spacing: 0.02em;
+	font-size: 30px;
+	line-height: 32px;
+}
+.block-kinds-design .tip .name .text .fn {
+	top: -15px;
+	right: 5px;
+}
+.block-kinds-design .total {
+	margin: 0;
+	padding-left: 375px;
+}
+.block-kinds-design .total:before {
+	width: 34%;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: auto;
+	background: #106dc7;
+}
+.block-kinds-seo .list {
+	margin-bottom: 20px;
+}
+.block-kinds-seo .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-kinds-seo .list .item {
+	width: 32%;
+	margin-right: 20px;
+	float: left;
+}
+.block-kinds-seo .list .item:nth-child(3) {
+	margin-right: 0;
+}
+.block-kinds-seo .tip {
+	margin-bottom: 22px;
+	padding-right: 0;
+}
+.block-kinds-seo .tip .name {
+	min-height: 84px;
+	padding: 23px 9px 15px;
+	text-align: center;
+}
+.block-kinds-seo .tip .name:before {
+	right: -1px;
+	border-color: transparent #fff transparent transparent;
+}
+.block-kinds-seo .tip .name .text {
+	padding-right: 0;
+	line-height: 20px;
+}
+.block-kinds-seo .tariff {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+.block-kinds-seo .tariff .h {
+	margin-bottom: 20px;
+}
+.block-kinds-seo .tariff .list {
+	padding-left: 10px;
+}
+.block-kinds-seo .tariff .list li {
+	width: 100%;
+	margin-bottom: 17px;
+	padding-right: 0;
+	padding-left: 44px;
+	float: none;
+}
+.block-kinds-seo .tariff .list li:nth-child(2):before{ background: url(../img/icons/icon-28.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(3):before{ background: url(../img/icons/icon-29.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(4):before{ background: url(../img/icons/icon-30.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(5):before{ background: url(../img/icons/icon-3.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(6):before{ background: url(../img/icons/icon-12.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .button {
+	width: 33%;
+	padding-top: 12px;
+	position: relative;
+}
+.block-kinds-seo .button .fn {
+	right: -70px;
 }
 /* ==========================================================================
    _FEATURES
@@ -3284,7 +3519,7 @@ textarea {
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
-.block-process .list li img {
+.block-process .list .pic {
 	width: 50px;
 	height: 50px;
 	margin-bottom: 20px;
@@ -3351,23 +3586,70 @@ textarea {
 	cursor: default;
 	white-space: nowrap;
 }
-.block-question .link {
-	width: 206px;
-	height: 39px;
-	margin: 0 auto;
+.block-question .button {
+	width: 205px;
 	padding-top: 12px;
-	display: block;
-	color: #fff;
 	font-size: 16px;
-	text-transform: uppercase;
-	text-decoration: none;
-	text-align: center;
 	position: relative;
-	background: #009DFF linear-gradient(to bottom,  rgba(0,157,255,1) 0%,rgba(19,109,206,1) 100%);
-	transition: background .3s ease;
 }
-.block-question .link:hover {
-	background: #009DFF linear-gradient(to bottom,  rgba(19,109,206,1) 0%,rgba(0,157,255,1) 100%);
+/* ==========================================================================
+   _BUTTONS-LINKS
+   ========================================================================== */
+.buttons-links {
+	margin: 0 0 40px;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+.buttons-links li {
+	width: 26%;
+	margin: 0 8px;
+	display: inline-block;
+}
+.buttons-links .button {
+	padding-top: 12px;
+}
+/* ==========================================================================
+   _NUMBER
+   ========================================================================== */]
+.block-number:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-number .col {
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+.block-number .col .number {
+	margin-bottom: 20px;
+	position: relative;
+}
+.block-number .col .number:before {
+	height: 1px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	background: #ece6e6;
+}
+.block-number .col .number span {
+	width: 14%;
+	height: 70px;
+	display: inline-block;
+	font: 600 68px/68px 'Bebas Neue', Helvetica, Arial, sans-serif;
+	color: #fff;
+	background: #333;
+}
+.block-number .col .text {
+	margin-bottom: 0;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 /* ==========================================================================
    _POPUP_CALLBACK
@@ -3541,6 +3823,16 @@ textarea {
 	.block-kinds .tariff .list li { width: 33.3%; padding-right: 0; }
 	.block-kinds .tariff .list li:nth-child(3n+1) { clear: left; }
 	.block-kinds .tariff .list li:nth-child(5n+1) { clear: none; }
+	.block-kinds .tariff-bonuses .list li:before { left: 10px; }
+	.block-kinds .about { padding-left: 44%; }
+	.block-kinds .about .pic { width: 42%; }
+	.block-kinds .about .list-2 li:nth-child(1n+5) { margin-bottom: 6px; }
+	.block-kinds-design .total:before { display: none; }
+	.block-kinds-seo .tip { padding-right: 0; }
+	.block-kinds-seo .tip .name { min-height: 104px; }
+	.block-kinds-seo .tariff .list li { width: 100%; }
+	.block-kinds-seo .list .item { margin-right: 12px; }
+	.block-kinds-seo .button { width: 50%; }
 	.block-question { width: 100%; }
 	.block-information .proposion { padding-right: 0; position: relative; }
 	.block-information .proposion .pic { width: 50%; margin: 20px auto 20px; position: relative; }
@@ -3554,6 +3846,10 @@ textarea {
 	.footer .col:nth-child(4) { width: 29%; }
 	.footer .col:nth-child(5) { width: 25%; }
 	.block-recent-projects .slider .carousel .statistics { padding: 25px 35px 25px 40px; }
+	.buttons-links li { width: 32%; margin: 0 2px; }
+	.block-about .text { width: 45%; }
+	.block-about .pic { width: 50%; right: 15px; }
+	.block-project .button { margin-bottom: 20px; margin-top: 30px; }
 }
 @media (max-width: 759px) {
 	.wrapper { width: 100%; }
@@ -3565,6 +3861,7 @@ textarea {
 	.block-reviews .reviews .item .company .logo { margin-left: auto; margin-right: auto; }
 	.block-reviews .reviews .item .text { width: 100%; padding-left: 0; float: none; }
 	.block-reviews .reviews .item .text .in span:before, .block-reviews .reviews .item .text .in span:after { display: none; }
+	.block-about .pic { width: 75%; margin-left: auto; margin-bottom: 20px; position: relative; }
 }
 @media (max-width: 700px) {
 	h2, .h2 { text-align: center; }
@@ -3602,10 +3899,9 @@ textarea {
 	.index .bottom { display: none; }
 	.contact .info { width: 100%; margin-bottom: 30px; float: none; }
 	.contact .info .in { min-height: 0; }
-	.block-about .text { width: 50%; }
 	.block-kinds .tip { padding-right: 0; }
 	.block-kinds .tip .name { width: 70%; }
-	.block-kinds .tip .describe { width: 100%; position: relative; top: 0; left: 0; }
+	.block-kinds .tip .describe { width: 100%; position: relative; top: 0; left: 0; border-left: none; border-right: none; }
 	.block-kinds .tip .describe:before, .block-kinds .tip .describe:after { display: none; }
 	.block-kinds .tariff .list li { width: 50%; }
 	.block-kinds .tariff .list li:nth-child(2n+1) { clear: left; }
@@ -3619,6 +3915,18 @@ textarea {
 	.footer { background-size: 300% auto; background-position: 50% 0; }
 	.footer .col { width: 100% !important; margin-bottom: 40px; text-align: center; }
 	.contact .wrapper { padding-left: 10px; padding-right: 10px; }
+	.block-kinds .about { padding-left: 0; }
+	.block-kinds .about .pic { width: 60%; position: relative; margin: 0 auto 20px; }
+	.block-kinds .about .list { margin-bottom: 20px; padding: 0; }
+	.block-kinds .about .list li { width: 60%; margin-left: auto; margin-right: auto; }
+	.block-kinds .about .list-2 li { float: none; }
+	.block-kinds .about .list-2 li:nth-child(even) { margin-right: auto; }
+	.block-kinds-seo .tip .name { width: 100%; }
+	.block-kinds-seo .list .item { width: 75%; margin: 0 auto 20px; float: none; }
+	.block-kinds-seo .list .item:nth-child(3) { margin-right: auto; }
+	.block-recent-projects-seo .all { position: relative; }
+	.buttons-links li { width: 75%; margin: 0 auto 20px; float: none; }
+	.block-number .col { width: 100%; margin: 0 auto 20px; float: none; }
 }
 @media (max-width: 575px) {
 	.block-news .news .item .inform { padding-left: 0; }
@@ -3636,18 +3944,24 @@ textarea {
 	.block-about .text:after { top: 0; }
 	.block-about .text .corner { display: none; }
 	.block-about .text .corner div { display: none; }
+	.block-about .pic { width: 100%; right: auto; margin-right: auto; }
 	.block-kinds .tip .name { width: 100%; }
 	.block-kinds .tip .name:before { display: none; }
-	.block-kinds .total { text-align: center; padding-right: 0; padding-left: 0; }
+	.block-kinds .total { text-align: center; padding-right: 0; padding-left: 0; padding-top: 10px; }
 	.block-kinds .total .sum { width: 100%; left: 0; }
 	.block-kinds .total .sum:before { display: none; }
-	.block-kinds .total .cheap { width: 50%; margin-right: auto; margin-left: auto; float: none; }
-	.block-kinds .total .text { margin: 0 auto 10px; float: none; }
+	.block-kinds .total .cheap { width: 50%; margin-right: auto; margin-left: auto; margin-bottom: 10px; float: none; }
+	.block-kinds .total .text { margin: 0 auto 10px; float: none; text-align: center; }
 	.block-kinds .total .more { width: 50%; float: none; margin-right: auto; margin-left: auto; }
 	.navigation li { padding: 0 4px; }
 	.services .list li { width: 50%; }
 	.services .list li:nth-child(3n+1) { clear: none; }
 	.services .list li:nth-child(2n+1) { clear: left; }
+	.block-kinds .about .pic { width: 80%; }
+	.block-kinds .about .list li { width: 80%; }
+	.block-kinds-seo .list .item { width: 80%; }
+	.block-kinds-seo .button { width: 80%; }
+	.block-kinds-seo .button .fn { right: 0; }
 }
 @media (max-width: 479px) {
 	h1, .h1 { font-size: 40px; line-height: normal; }
@@ -3664,6 +3978,8 @@ textarea {
 	.block-project .project-name .link-yellow { display: block; margin-top: 16px; margin-left: -40px; text-align: center; }
 	.block-kinds .tariff .list li { width: 100%; float: none; }
 	.block-kinds .tariff .list li:nth-child(2n+1) { clear: none; }
+	.block-kinds-seo .list .item { width: 100%; }
+	.block-kinds-seo .button { width: 100%; }
 	.block-project .picture { width: 100%; padding: 0 10px; }
 	.block-project .prev, .block-project .next { width: 40px; height: 40px; padding: 0; text-indent: -1000px; overflow: hidden; border-width: 1px; }
 	.block-project .prev:before, .block-project .prev:after, .block-project .next:before, .block-project .next:after { width: 2px; height: 10px; top: 12px; }
@@ -3687,8 +4003,11 @@ textarea {
 	.block-information .condition li .time:after { display: none; }
 	.block-information .condition li .icon { margin: 0 auto 20px; position: relative; top: 0; left: auto; }
 	.navigation-landing li { width: 100%; float: none; }
-	.block-about .link { font-size: 12px; }
-
+	.block-about .button { font-size: 12px; }
+	.buttons-links li { width: 100%; }
+	.block-project .project-name dd { margin-left: 0; }
+	.block-kinds .about .pic { width: 100%; }
+	.block-kinds .about .list li { width: 100%; }
 }
 /* ==========================================================================
    _PRINT STYLES
