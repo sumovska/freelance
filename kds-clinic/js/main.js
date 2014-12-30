@@ -39,6 +39,7 @@ $(document).ready(function () {
 			responsive: false,
 			controls: false,
 			pagerCustom: '.pager',
+			mode: 'vertical',
 			pause: 10000
 		});
 	});
@@ -58,8 +59,13 @@ $(document).ready(function () {
 	$('.gallery').each(function () {
 		/* Gallery carousel */
 		$('.carousel', this).bxSlider({
+			infiniteLoop: false,
+			responsive: false,
 			pager: false,
-			minSlides: 4
+			slideWidth: 208,
+			minSlides: 4,
+			maxSlides: 4,
+			moveSlides: 1
 		});
 	});
 	$('.up').click(function () {
