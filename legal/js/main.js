@@ -29,11 +29,7 @@ $(document).ready(function () {
 	});
 	$('.popup-open').click(function () {
 		var where = $('.popup-' + $(this).attr('href').replace(/^.*#(.*)/, "$1"));
-		$('.overlay').fadeIn(500, 'swing', function () {
-			where.css('margin-left', -Math.floor(where.outerWidth() / 2)).css('margin-top', -Math.floor(where.outerHeight() / 2));
-			where.fadeIn(500, 'swing');
-			$('html').addClass('body-popup');
-		});
+		openPopup(where);
 		return false;
 	});
 	scrollEvent();
@@ -90,4 +86,13 @@ function resizeEvent() {
 			window.inited = true;
 		}
 	}
+}
+
+function openPopup(where) {
+	where = $(where);
+	$('.overlay').fadeIn(500, 'swing', function () {
+		where.css('margin-left', -Math.floor(where.outerWidth() / 2)).css('margin-top', -Math.floor(where.outerHeight() / 2));
+		where.fadeIn(500, 'swing');
+		$('html').addClass('body-popup');
+	});
 }
