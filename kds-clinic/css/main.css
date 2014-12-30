@@ -7,21 +7,23 @@
    _FONTS
    ========================================================================== */
 @font-face {
-  font-family: 'Europe';
-  src: url('../fonts/Europe.eot?#iefix') format('embedded-opentype'),  url('../fonts/Europe.woff') format('woff'), url('../fonts/Europe.ttf')  format('truetype'), url('../fonts/Europe.svg#Europe') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Europe';
+	src: url('../fonts/europe.eot');
+	src: url('../fonts/europe.eot?#iefix') format('embedded-opentype'), url('../fonts/europe.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-  font-family: 'Europe';
-  src: url('../fonts/EuropeItalic.eot?#iefix') format('embedded-opentype'),  url('../fonts/EuropeItalic.woff') format('woff'), url('../fonts/EuropeItalic.ttf')  format('truetype');
-  font-weight: normal;
-  font-style: italic;
+	font-family: 'Europe';
+	src: url('../fonts/europe-italic.eot');
+	src: url('../fonts/europe-italic.eot?#iefix') format('embedded-opentype'), url('../fonts/europe-italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
 }
 @font-face {
 	font-family: 'Rouble';
-	src: url('../fonts/rouble-webfont.eot');
-	src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/rouble-webfont.woff') format('woff'), url('../fonts/rouble-webfont.ttf') format('truetype'), url('../fonts/rouble-webfont.svg#als_rublregular') format('svg');
+	src: url('../fonts/rouble.eot');
+	src: url('../fonts/rouble.eot?#iefix') format('embedded-opentype'), url('../fonts/rouble.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -288,7 +290,7 @@ input[type="search"] { -webkit-appearance: none }
 /*noinspection CssInvalidPseudoSelector*/
 :-ms-input-placeholder { color: #b9b9b9; }
 textarea { width: 400px; height: 126px; overflow: auto; resize: none; }
-button, input[type="button"], input[type="submit"], input[type="reset"] { min-width: 100px; overflow: visible; padding: 12px 20px; border-radius: 3px; outline: none; border: none; color: #fff; text-align: center; text-transform: uppercase; text-shadow: 0 0 2px #004e54;  font: 13px 'Europe', Helvetica, Arial, sans-serif; cursor: pointer; background: linear-gradient(to bottom, rgba(20, 118, 126, 1) 0%, rgba(20, 118, 126, 1) 50%, rgba(3, 87, 92, 1) 100%); transition: background .3s ease; }
+button, input[type="button"], input[type="submit"], input[type="reset"] { min-width: 100px; overflow: visible; padding: 12px 20px; border-radius: 3px; outline: none; border: none; color: #fff; text-align: center; text-transform: uppercase; text-shadow: 0 0 2px #004e54; font: 13px 'Europe', Helvetica, Arial, sans-serif; cursor: pointer; background: linear-gradient(to bottom, rgba(20, 118, 126, 1) 0%, rgba(20, 118, 126, 1) 50%, rgba(3, 87, 92, 1) 100%); transition: background .3s ease; }
 button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner { padding: 0; border: 0 }
 button:after { content: '' }
 button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover, button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):focus, input[type="reset"]:focus { background: linear-gradient(to bottom, rgba(3, 87, 92, 1) 0%, rgba(3, 87, 92, 1) 50%, rgba(20, 118, 126, 1) 100%); }
@@ -429,7 +431,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	width: 218px;
 	font-size: 12px;
 }
-.header .service  .jq-selectbox__select-text {
+.header .service .jq-selectbox__select-text {
 	padding-top: 9px;
 }
 .header .request {
@@ -473,7 +475,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .header .contacts .callback:hover {
 	color: #06565b;
 }
-.header .contacts .callback:before, .header .contacts .callback:after  {
+.header .contacts .callback:before, .header .contacts .callback:after {
 	width: 37px;
 	height: 37px;
 	display: block;
@@ -717,7 +719,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	left: 0;
 	top: -6px;
 	background: url(../img/sprite.png) -35px 0 no-repeat;
-	background-size: 100px auto; 
+	background-size: 100px auto;
 }
 .index .pager {
 	width: 306px;
@@ -769,10 +771,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: #31545b;
 }
 .index .pager .letter {
-    color: #16898d;
+	color: #16898d;
 }
 .index .pager a.active .letter {
-    color: #a6a6a6;
+	color: #a6a6a6;
 }
 /* ==========================================================================
    _ACTION
@@ -1424,7 +1426,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	-o-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
-	transition: background.3s ease;
+	transition: background .3s ease;
 }
 .social .up:hover:before, .social .up:hover:after {
 	background: #149897;
@@ -1445,7 +1447,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	display: block;
 	margin: 0 auto;
 	background: #31545b;
-	transition: background.3s ease;
+	transition: background .3s ease;
 }
 .social .up:hover span {
 	background: #149897;
@@ -1973,7 +1975,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	position: absolute;
 	top: 0;
 	left: -36px;
-	background: url(../img/sprite.png) -140px 0 no-repeat; 
+	background: url(../img/sprite.png) -140px 0 no-repeat;
 }
 .block-contacts .contacts dt.phone:before { background-position: -170px 0; }
 .block-contacts .contacts dt.mail:before { background-position: -140px -40px; }
@@ -2130,7 +2132,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .block-price .h2:before {
 	top: 4px;
 	left: -60px;
-	background-image: url(../img/icons/doc-21.png) ;
+	background-image: url(../img/icons/doc-21.png);
 	z-index: 20;
 }
 .block-price .h2:after {
@@ -2316,7 +2318,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	display: block;
 	content: ' ';
 	overflow: hidden;
-	clear: both; 
+	clear: both;
 }
 .block-reviews .com .user .name {
 	padding-left: 22px;
@@ -2438,7 +2440,11 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding-left: 58px;
 	background: #fff url(../img/icons/input-1.png) 18px 4px no-repeat;
 }
-.fill input[type="search"] { -webkit-appearance: none } .fill ::-webkit-input-placeholder { color: #31545b; } .fill :-moz-placeholder { color: #31545b; } .fill ::-moz-placeholder { color: #31545b; } .fill :-ms-input-placeholder { color: #31545b; }
+.fill input[type="search"] { -webkit-appearance: none }
+.fill ::-webkit-input-placeholder { color: #31545b; }
+.fill :-moz-placeholder { color: #31545b; }
+.fill ::-moz-placeholder { color: #31545b; }
+.fill :-ms-input-placeholder { color: #31545b; }
 .fill .line textarea {
 	width: 360px;
 	padding-left: 58px
@@ -2641,7 +2647,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 /* ==========================================================================
    _SEND-REVIEW
    ========================================================================== */
-.block-send-review .wrapper {
+ .block-send-review .wrapper {
 	padding-top: 16px;
 }
 .block-send-review .line {
@@ -2717,7 +2723,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .popup-callback .title {
 	height: 55px;
 	margin: -20px -29px 14px;
-	padding: 20px 29px 14px 25px; 
+	padding: 20px 29px 14px 25px;
 	font-size: 18px;
 	color: #b5b5b5;
 	text-transform: uppercase;
@@ -2815,28 +2821,28 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 @media (max-width: 700px) {
 	
-@media (max-width: 575px) {
-	
-}
-@media (max-width: 479px) {
-	
-}
-@media (max-width: 400px) {
-	
-}
-/* ==========================================================================
-   _PRINT STYLES
-   ========================================================================== */
-@media print {
-	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
-	a, a:visited { text-decoration: underline; }
-	a[href]:after { content: " (" attr(href) ")"; }
-	abbr[title]:after { content: " (" attr(title) ")"; }
-	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-	thead { display: table-header-group; }
-	tr, img { page-break-inside: avoid; }
-	img { max-width: 100% !important; }
-	p, h2, h3 { orphans: 3; widows: 3; }
-	h2, h3 { page-break-after: avoid; }
-}
+	@media (max-width: 575px) {
+
+	}
+	@media (max-width: 479px) {
+
+	}
+	@media (max-width: 400px) {
+
+	}
+	/* ==========================================================================
+	   _PRINT STYLES
+	   ========================================================================== */
+	@media print {
+		* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+		a, a:visited { text-decoration: underline; }
+		a[href]:after { content: " (" attr(href) ")"; }
+		abbr[title]:after { content: " (" attr(title) ")"; }
+		.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+		pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+		thead { display: table-header-group; }
+		tr, img { page-break-inside: avoid; }
+		img { max-width: 100% !important; }
+		p, h2, h3 { orphans: 3; widows: 3; }
+		h2, h3 { page-break-after: avoid; }
+	}
