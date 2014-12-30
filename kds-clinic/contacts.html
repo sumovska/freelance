@@ -12,7 +12,6 @@
 	<link rel="shortcut icon" href="img/favicon.png">
 
 	<!--[if lt IE 9]>
-	<link rel="stylesheet" href="css/ie.css">
 	<script src="js/vendor/html5shiv.js"></script>
 	<![endif]-->
 </head>
@@ -24,28 +23,30 @@
 			<p class="slogan">&laquo;КДС Клиник&raquo; - вернёт здоровье, силы</p>
 			<div class="service">
 				<form action="consult.html" method="post">
-					<select>
-						<option value="" selected>Выберите услугу</option>
-						<option value="0">Акушерство и гинекология</option>
-						<option value="1">Неврология</option>
-						<option value="2">Аллергология и иммунология</option>
-						<option value="3">Оториноларингология</option>
-						<option value="4">Анестезиология и реаниматология</option>
-						<option value="5">Офтальмология</option>
-						<option value="6">Гастроэнтерология</option>
-						<option value="7">Стоматология</option>
-						<option value="8">Дерматовенерология</option>
-						<option value="9">Урология</option>
-						<option value="10">Диабетология</option>
-						<option value="11">Хирургия</option>
-						<option value="12">Диетология</option>
-						<option value="13">Эндокринология</option>
-						<option value="14">Кардиология</option>
-						<option value="15">Эндоскопия</option>
-						<option value="16">Колопроктология</option>
-						<option value="17">Ультразвуковая диагностика</option>
-						<option value="18">Косметология</option>
-					</select>
+					<label>
+						<select>
+							<option value="" selected>Выберите услугу</option>
+							<option value="0">Акушерство и гинекология</option>
+							<option value="1">Неврология</option>
+							<option value="2">Аллергология и иммунология</option>
+							<option value="3">Оториноларингология</option>
+							<option value="4">Анестезиология и реаниматология</option>
+							<option value="5">Офтальмология</option>
+							<option value="6">Гастроэнтерология</option>
+							<option value="7">Стоматология</option>
+							<option value="8">Дерматовенерология</option>
+							<option value="9">Урология</option>
+							<option value="10">Диабетология</option>
+							<option value="11">Хирургия</option>
+							<option value="12">Диетология</option>
+							<option value="13">Эндокринология</option>
+							<option value="14">Кардиология</option>
+							<option value="15">Эндоскопия</option>
+							<option value="16">Колопроктология</option>
+							<option value="17">Ультразвуковая диагностика</option>
+							<option value="18">Косметология</option>
+						</select>
+					</label>
 					<button type="submit" class="request">Получить консультацию</button>
 				</form>
 			</div>
@@ -112,7 +113,7 @@
 					<dt class="address">Адрес:</dt>
 					<dd>Россия, Москва, улица Кондратюка , д. 3</dd>
 					<dt class="phone">Телефоны:</dt>
-					<dd><a class="tel" href="tel:+7-499-206-00-78">+7 (499) 206-00-78</a>, <a class="tel" href="+7-499-206-21-00">+7 (499) 206-21-00</a>, <a class="tel" href="+7-499-206-37-00">+7 (499) 206-37-00</a></dd>
+					<dd><a class="tel" href="tel:+7-499-206-00-78">+7 (499) 206-00-78</a>, <a class="tel" href="tel:+7-499-206-21-00">+7 (499) 206-21-00</a>, <a class="tel" href="tel:+7-499-206-37-00">+7 (499) 206-37-00</a></dd>
 					<dt class="mail">E-mail:</dt>
 					<dd>
 						<p>Общие вопросы: <a href="mailto:info@kds-clinic.ru">info@kds-clinic.ru</a></p>
@@ -124,9 +125,7 @@
 					<dd>Россия, Москва, улица Кондратюка , д. 3</dd>
 				</dl>
 				<h3 class="h3">Схема проезда:</h3>
-				<div class="map">
-					<img src="img/map.jpg" alt="">
-				</div>
+				<div id="map" class="map"></div>
 			</div>
 		</section>
 		<section class="block block-staff block-staff-contacts">
@@ -134,6 +133,32 @@
 				<h2 class="h2">Задайте вопрос</h2>
 				<div class="medics">
 					<ul class="carousel">
+						<li>
+							<img class="photo" src="img/temp/doc-1.jpg" alt="">
+							<div class="text">
+								<span class="name">Вальнер Алексей Константинович</span>
+								<dl>
+									<dt>Специализация:</dt>
+									<dd>Хигург</dd>
+									<dt>Стаж работы:</dt>
+									<dd>10 лет</dd>
+								</dl>
+								<a class="request" href="request.html">Записаться на приём</a>
+							</div>
+						</li>
+						<li>
+							<img class="photo" src="img/temp/doc-2.jpg" alt="">
+							<div class="text">
+								<span class="name">Петровичева Вера Олеговна</span>
+								<dl>
+									<dt>Специализация:</dt>
+									<dd>Косметолог</dd>
+									<dt>Стаж работы:</dt>
+									<dd>7 лет</dd>
+								</dl>
+								<a class="request" href="request.html">Записаться на приём</a>
+							</div>
+						</li>
 						<li>
 							<img class="photo" src="img/temp/doc-1.jpg" alt="">
 							<div class="text">
@@ -286,5 +311,57 @@
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+	<script>
+		window.marker = null;
+		/* Google Map Init */
+		function initMap() {
+			var map, pos, style, mapOptions;
+			pos = new google.maps.LatLng(55.819099, 37.6348879);
+			style = [
+				{ "featureType": "road",
+					"elementType": "labels.icon",
+					"stylers": [
+						{ "saturation": 1 },
+						{ "gamma": 1 },
+						{ "visibility": "on" },
+						{ "hue": "#e6ff00" }
+					]
+				}
+			];
+
+
+			mapOptions = {
+				center: pos,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				zoom: 17,
+				backgroundColor: "#eeeeee",
+				panControl: false,
+				mapTypeControl: false,
+				scaleControl: false,
+				streetViewControl: false,
+				overviewMapControl: false,
+				scrollwheel: false,
+				navigationControl: false,
+				zoomControlOptions: {
+					style: google.maps.ZoomControlStyle.SMALL
+				}
+			};
+			map = new google.maps.Map(document.getElementById('map'), mapOptions);
+			var mapType = new google.maps.StyledMapType(style, {name: "Grayscale"});
+			map.mapTypes.set('grey', mapType);
+			map.setMapTypeId('grey');
+			var marker_image = 'img/pin.png';
+			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
+			marker = new google.maps.Marker({
+				position: pos,
+				map: map
+			});
+		}
+		/* Google Map */
+		if (typeof google != 'undefined') {
+			initMap();
+		}
+	</script>
 </body>
 </html>
