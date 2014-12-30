@@ -6,20 +6,28 @@ $(document).ready(function () {
 
 	/* Forms */
 	$('input, select').styler();
-	
+
+	/* Index carousel */
 	$('.index').each(function () {
-		/* Index carousel */
 		$('.carousel', this).bxSlider({
-			pause: 10000,
+			infiniteLoop: false,
+			responsive: false,
 			controls: false,
-			pagerCustom: '.pager'
+			pagerCustom: '.pager',
+			pause: 10000
 		});
 	});
+
+	/* Staff carousel */
 	$('.block-staff').each(function () {
-		/* Staff carousel */
 		$('.carousel', this).bxSlider({
+			infiniteLoop: false,
+			responsive: false,
 			pager: false,
-			minSlides: 2
+			slideWidth: 388,
+			minSlides: 2,
+			maxSlides: 2,
+			moveSlides: 1
 		});
 	});
 	$('.gallery').each(function () {
