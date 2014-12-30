@@ -25,6 +25,7 @@ $(document).ready(function () {
 	});
 
 	$('.index').each(function () {
+		var _index = $(this);
 		$('.carousel', this).bxSlider({
 			controls: false,
 			pagerCustom: '.pager',
@@ -38,6 +39,10 @@ $(document).ready(function () {
 				$(this).next('.toggle').fadeToggle(400);
 				return false;
 			});
+			$('.more-tech', this).click(function () {
+                $('.toggle-tech', _index).fadeToggle(400);
+                return false;
+            });
 		});
 	});
 

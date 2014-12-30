@@ -100,6 +100,13 @@ h3, .h3 {
 h4, .h4 {
 	font-size: 16px;
 }
+span.norma {
+	font-size: 12px;
+}
+span.vybros {
+	font-size: 12px;
+	color: #000;
+}
 /* ==========================================================================
    _ORDER (button to order or to send request)
    ========================================================================== */
@@ -178,15 +185,98 @@ fieldset {
 textarea {
 	resize: vertical;
 }
+.order {
+	width: 300px;
+	height: 36px;
+	margin: 0 auto 28px;
+	display: block;
+	font-size: 11px;
+	color: #fff;
+	line-height: 36px;
+	font-weight: 700;
+	letter-spacing: .02em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	background: #c24731;
+	border-bottom: 3px solid #ac2109;
+	border-radius: 4px;
+	white-space: nowrap;
+	transition: background .3s ease;
+}
+.orders:hover, .orders:focus {
+	background: #ac2109;
+}
+/* ==========================================================================
+   _SCROLL (link-arrow scroll to bottom)
+   ========================================================================== */
+.bottom {
+	width: 50px;
+	height: 26px;
+	margin: 0 0 0 -25px;
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 15px;
+	z-index: 20;
+}
+.bottom:before, .bottom:after {
+	width: 4px;
+	height: 26px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	background: #c3c3c3;
+	border-radius: 3px;
+	transition: background .3s ease;
+}
+.bottom:hover:before, .bottom:hover:after, .bottom:focus:before, .bottom:focus:after {
+	background: #a7a7a7;
+}
+.bottom:before {
+	top: 0;
+	left: 16px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.bottom:after {
+	top: 0;
+	left: 32px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+/* ==========================================================================
+   _FORMS
+   ========================================================================== */
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+textarea {
+	resize: vertical;
+}
 /* ==========================================================================
    _FOOTER
    ========================================================================== */
+
+.section-contacts {
+	padding-bottom: 62px;
+}
+.section-contacts .slimScrollDiv {
+	overflow: visible !important;
+}
 .footer {
-	position: relative;
+	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 0;
-	background: #191919;
+	bottom: -31px;
+	background: #606060;
 }
 .footer .wrapper {
 	padding-top: 20px;
@@ -203,7 +293,7 @@ textarea {
 	padding: 0 13px;
 	position: relative;
 	display: inline-block;
-	color: #8d8c8c;
+	color: #fff;
 }
 .footer .contact-list li:after {
 	width: 2px;
@@ -220,7 +310,14 @@ textarea {
 .footer .contact-list li:last-child:after {
 	display: none;
 }
-.footer .contact-list .tel {
+.footer .contact-list a {
+	color: #fff;
+	text-decoration: underline;
+}
+.footer .contact-list a:hover {
+	text-decoration: none;
+}
+.footer .contact-list a.tel {
 	text-decoration: none;
 }
 /* ==========================================================================
@@ -482,12 +579,10 @@ textarea {
 	width: 6px;
 	height: 2px;
 	border-radius: 1px;
-	content: "\0020";
 	display: block;
 	overflow: hidden;
 	position: absolute;
 	background: #4f4f4e;
-	transition: background .3s ease;
 }
 .index .item .about .more:hover span:before, .index .item .about .more:hover span:after {
 	background: #000;
@@ -514,9 +609,12 @@ textarea {
 	font-size: 12px;
 	font-weight: 600;
 }
+.index .item .about .toggle p {
+	margin-bottom: 10px;
+}
 .index .item .pic {
 	width: 480px;
-	padding: 0 40px;
+	padding: 0 0;
 	float: left;
 }
 .index .item .pic img {
@@ -572,6 +670,10 @@ textarea {
 	margin-bottom: 40px;
 	text-align: center;
 	text-transform: uppercase;
+	letter-spacing: .03em;
+	font-size: 30px;
+	color: #d95c44;
+	left: 70px;
 	letter-spacing: .03em;
 }
 .advantages .item {
@@ -652,7 +754,7 @@ textarea {
 .advantages .item .info .list li {
 	position: relative;
 	padding-left: 64px;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 	line-height: 16px;
 }
 .advantages .item .info .list li a {
@@ -668,7 +770,7 @@ textarea {
 }
 .advantages .item .info .pic {
 	width: 50%;
-	margin-top: -30px;
+	margin-top: 0px;
 	float: left;
 }
 .advantages .item .info .pic img {
@@ -760,6 +862,7 @@ textarea {
 .contacts {
 }
 .contacts .wrapper {
+	padding: 70px 30px 30px;
 }
 .contacts .h2 {
 	margin: 0 0 40px 0;
@@ -790,14 +893,25 @@ textarea {
 	clear: both;
 }
 .contacts .list dt {
-	margin-right: 4px;
+	margin-right: 8px;
+	clear: left;
 	float: left;
+	display: block;
 	font-weight: 700;
 }
 .contacts .list dd {
-	color: #858585
+	margin-bottom: 8px;
+	color: #858585;
+	display: block;
 }
-.contacts .list .link {
+.contacts .list a {
+	text-decoration: underline;
+}
+.contacts .list a:hover {
+	text-decoration: none;
+}
+.contacts .list a.tel {
+	cursor: default;
 	text-decoration: none;
 }
 .contacts .request {
@@ -834,9 +948,14 @@ textarea {
    ========================================================================== */
 .map {
 	width: 100%;
-	height: 750px;
+	height: 300px;
 }
 .map .layer {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.map .layer iframe {
 	width: 100%;
 	height: 100%;
 	display: block;
@@ -845,12 +964,13 @@ textarea {
    _QUESTIONS
    ========================================================================== */
 .questions {
+	margin-bottom: 30px;
 	text-align: center;
 	text-transform: uppercase;
 }
 .questions .wrapper {
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 .questions .h2 {
 	margin: 0 30px;
@@ -1136,6 +1256,67 @@ textarea {
 	left: 20px;
 }
 /* ==========================================================================
+   _TECH
+   ========================================================================== */
+table.tech {
+	border-collapse: collapse;
+	font-size: 11px;
+	line-height: normal;
+}
+table.tech th {
+	text-transform: uppercase;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+}
+table.tech tr td {
+	padding: 10px 25px;
+	text-align: center;
+	font-weight: normal;
+}
+.block {
+	display: block
+}
+.old_toggle {
+	color: #878787;
+	font-size: 12px;
+	font-weight: 600;
+}
+.toggle-tech {
+	padding: 10px 90px 3px;
+	clear: both;
+	display: none;
+	color: #878787;
+}
+div.tech {
+	border-collapse: collapse;
+	font-size: 11px;
+	line-height: normal;
+	display: table;
+	clear: both;
+}
+div.tech p {
+	margin: 0;
+	display: block;
+}
+div.tech div.tr {
+	display: table-row;
+}
+div.tech div.th {
+	padding: 5px 20px;
+	text-transform: uppercase;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	display: table-cell;
+}
+div.tech div.td {
+	padding: 5px 20px;
+	text-align: center;
+	font-weight: normal;
+	display: table-cell;
+}
+/* ==========================================================================
    fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license
    ========================================================================== */
 .fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox-image, .fancybox-wrap iframe, .fancybox-wrap object, .fancybox-nav, .fancybox-nav span, .fancybox-tmp { padding: 0; margin: 0; border: 0; outline: none; vertical-align: top }
@@ -1194,8 +1375,8 @@ textarea {
 .fancybox-close:before, .fancybox-close:after { width: 2px; height: 7px; border-radius: 1px; position: absolute; top: 4px; left: 6px; display: block; overflow: hidden; content: ' '; background: #f03; transition: background-color .2s ease; }
 .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
 .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.fancybox-blue .fancybox-close { border-color: #c24731; background: transparent; }
-.fancybox-blue .fancybox-close:before, .fancybox-blue .fancybox-close:after { background-color: #c24731; }
+.fancybox-blue .fancybox-close { border-color: #fff; background: transparent; }
+.fancybox-blue .fancybox-close:before, .fancybox-blue .fancybox-close:after { background-color: #fff; }
 .fancybox-prev, .fancybox-next { width: 58px; height: 58px; margin-top: -29px; top: 50%; left: -20px; outline: none !important; display: block !important; }
 .fancybox-prev span, .fancybox-next span { width: 38px; height: 38px; display: block !important; visibility: visible !important; position: relative; left: 10px; right: 10px; background: #c24731; }
 .fancybox-next { left: auto; right: -20px; }
@@ -1239,22 +1420,28 @@ textarea {
 	.certificates .list li { width: 48%; }
 	.certificates-awards .list li { width: 100%; }
 	.footer .contact-list li:nth-child(2):after { display: none; }
+	.toggle-tech { padding-left: 0; padding-right: 0; }
+	.section-contacts { padding-bottom: 0; }
+	.questions { margin: 0 0 -20px; }
+	.footer { position: relative; }
+	.footer .contact-list li:last-of-type { margin: 0; }
 }
 @media (max-width: 767px) {
 	.wrapper { width: 100%; }
 	.header .toggle { right: 30px; }
 	.header .lan { right: 80px; }
-	.index .item .about { width: 50%; margin-bottom: 30px; }
-	.index .item .pic { width: 50%; }
-	.index .info { width: 50%; padding-left: 0; float: none; }
+	.index .item .about { width: 100%; margin-bottom: 30px; float: none; }
+	.index .item .pic { width: 100%; margin-bottom: 30px; float: none; }
+	.index .info { width: 100%; padding-left: 0; margin-bottom: 30px; float: none; }
 	.advantages .h2 { margin-bottom: 30px; }
 	.advantages .item .nav { width: 75%; padding-top: 0; margin: 0 auto 30px; float: none; text-align: center; }
+	.advantages .item .nav li { width: 160px; margin: 0 auto; text-align: left; }
 	.advantages .item .info { width: 100%; padding-top: 30px; float: none; }
 	.advantages .item .info .title { margin-bottom: 30px; position: relative; text-align: center; }
 	.certificates-awards .list li { width: 100%; margin-bottom: 40px; }
 	.certificates-awards .list .pic { margin: 0 auto 30px; float: none; display: block; }
 	.certificates-awards .list .about { width: 100%; float: none; padding: 0; }
-	.contacts .list { width: 100%; margin: 0 auto; float: none; text-align: center; }
+	.contacts .list { width: 100%; margin: 0 auto; float: none; text-align: center; display: none; }
 	.contacts .list dt { float: none; }
 	.contacts .list dd { margin-left: 0; }
 	.contacts .request { width: 75%; margin: 0 auto; float: none; }
@@ -1263,6 +1450,13 @@ textarea {
 	.footer .contact-list li:after { display: none; }
 	.fp-section.fp-table, .fp-slide.fp-table, .fp-tableCell { display: block; }
 	.fp-controlArrow { display: none; }
+	table.tech { font-size: 10px; }
+	table.tech tr th { padding: 5px; font-size: 10px; }
+	table.tech tr td { padding: 5px; }
+	div.tech { width: 100%; overflow: hidden; display: block; line-height: 14px; }
+	div.tech div.tr { width: 50%; float: left; display: block; }
+	div.tech div.th { width: 100%; min-height: 38px; padding: 5px 10px; display: block; text-align: right; }
+	div.tech div.td { width: 100%; min-height: 38px; padding: 5px 10px; display: block; text-align: left; }
 }
 @media (max-width: 575px) {
 	.wrapper { padding-left: 20px; padding-right: 20px; }
@@ -1276,6 +1470,7 @@ textarea {
 }
 @media (max-width: 479px) {
 	.order { width: 100%; }
+	.orders { width: 100%; }
 	.certificates-awards .list .pic { width: 100%; }
 }
 /* ==========================================================================
