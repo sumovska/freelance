@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="shortcut icon" href="img/favicon.png">
 
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-	<!--[if lte IE 9]>
+	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css">
+	<script src="js/vendor/html5shiv.js"></script>
 	<![endif]-->
 </head>
 <body>
@@ -97,150 +97,152 @@
 	</nav>
 
 	<article class="content">
-			<div class="breadcrumbs">
-				<div class="wrapper">
-					<p class="pager">
-						<a class="link" href="index.html">Главная страница</a>
-						<span class="current">Вопрос-ответ</span>
-					</p>
+		<div class="breadcrumbs">
+			<div class="wrapper">
+				<p class="pager">
+					<a class="link" href="index.html">Главная страница</a>
+					<span class="current">Вопрос-ответ</span>
+				</p>
+			</div>
+		</div>
+		<section class="block block-ask block-ask-answer">
+			<div class="wrapper">
+				<a class="request" href="#ask"><span>Задайте вопрос специалисту</span></a>
+				<div class="questions">
+					<div class="user">
+						<p class="name">Сергей Евгеньевич <span class="date">21 Ноября 2014</span></p>
+						<p class="question">Добрый день ! <br>Если у моей девушки обнаружили хламидиоз,значит и я подвержен этому заболеванию? Скажите больно сдавать мазок на анализы?</p>
+					</div>
+					<div class="medic">
+						<img class="photo" src="img/temp/doc-10.jpg" alt="">
+						<div class="text">
+							<span class="name">Голембиовская Ирина Викторовна</span>
+							<span class="specialism">Дерматовенеролог-Косметолог</span>
+							<p class="answer">Здравствуйте, Хламидиоз — инфекционное заболевание, передаваемое половым путем. Причиной заболевания служат хламидии (Chlamydia trachomatis) - внутриклеточные бактерии. В большинстве случаев заражение хламидиозом происходит половым путем. Вероятность заражения при незащищенном половом контакте (вагинальном, анальном) с больным хламидиозом составляет около 50%</p>
+						</div>
+					</div>
+				</div>
+				<div class="questions">
+					<div class="user">
+						<p class="name">Елена Ибрагимова <span class="date">15 Ноября 2014</span></p>
+						<p class="question">Здравствуйте!
+							<br>Столкнулась со следующей проблемой. Во второй раз срывается беременность, впервые это случилось в августе 2009 года, определили неразвивающуюся на сроке 1-2 недели, хотя задержка была более 3 недель. Взяли анализы на гормоны. Был сильно занижен прогестерон (значение не сказали) и завышен ДГЭА-сульфат (17,8). В прошлом месяце снова были все признаки (болела грудь, задержка 1 неделю и положительный тест), но снова началась менструация, очень болезненная (на УЗИ сказали, что вышло все само). Мазки и анализы на инфекции ничего не обнаружили. Подскажите, пожалуйста, нужно ли мне снова сдвать анализы на гормоны, и если да, то какие? Боюсь, чтобы такое "невынашивание" не перешло в "хроническую" форму.
+							<br>Спасибо заранее.</p>
+					</div>
+					<div class="medic">
+						<img class="photo" src="img/temp/doc-6.jpg" alt="">
+						<div class="text">
+							<span class="name">Бублик Евгения Викторовна</span>
+							<span class="specialism">Ведущий акушер-гинеколог</span>
+							<p class="answer">ЗНаша клиника специализируется на лечении бесплодия. Как Вы понимаете, заочно назначать обследование и лечение не представляется возможным. Приглашаем в нашу клинику на очный прием.</p>
+						</div>
+					</div>
+				</div>
+				<div class="questions">
+					<div class="user">
+						<p class="name">Мария Александровна Иванцевская <span class="date">13 Ноября 2014</span></p>
+						<p class="question">Здравствуйте. Мне 37 лет. При беременности 9 месяцев назад был обнаружен зоб. После родов повторное узи показало: два образования- в правой доле размером 21 мм, в левой - 7 мм. Гормоны в норме. Биопсия- кистозно-измененный узел с Б-клеточной метоплазией эпителия. Хирург назначил операцию после окончания кормления грудью. Показана ли мне лазерная операция? Зарание спасибо.</p>
+					</div>
+					<div class="medic">
+						<img class="photo" src="img/temp/doc-12.jpg" alt="">
+						<div class="text">
+							<span class="name">Погорелова Анна Сергеевна</span>
+							<span class="specialism">Эндокринолог</span>
+							<p class="answer">Уважаемая Ольга! Приглашаем Вас на прием к ЛОР врачу. После проведения УЗИ можно будет определиться с возможностью безоперационного лазерного удаления узлов щитовидной железы.</p>
+						</div>
+					</div>
+				</div>
+				<div class="questions">
+					<div class="user">
+						<p class="name">Ирина Федотова <span class="date">10 Ноября 2014</span></p>
+						<p class="question">Здравствуйте, скажите пожалуйста что лучше применить мне для мезотерапии. Мне 29 лет. Под глазами начали образовыватся больше года назад небольшин мешки (грыжи). по косточке вокруг глаз есть впадина (или складка), особенно по утрам смотреть на себя страшно...ходила к косметологу,сказали что операция мне еще рано,но мезо с препаратом эмбриобласт поможет. другой врач посоветовала NCTF - 135 HA - 1 мл ("Филорга"). Так что же лучше мне сделать? Заранее спасибо за ответ.</p>
+					</div>
+					<div class="medic">
+						<img class="photo" src="img/temp/doc-8.jpg" alt="">
+						<div class="text">
+							<span class="name">Арестова Юлия Михайловна</span>
+							<span class="specialism">Косметолог и массажист</span>
+							<p class="answer">Уважаемая Ирина! Приходите на очную консультацию к врачу-косметологу. После осмотра Вам предложат мезотерапию с наиболее подходящим для Вас коктейлем.</p>
+						</div>
+					</div>
+				</div>
+				<div class="questions">
+					<div class="user">
+						<p class="name">Ирина Федотова <span class="date">07 Ноября 2014</span></p>
+						<p class="question">Здравствуйте, подскажите пожалуйста, делают ли в вашей клинике септопластику, какова цена операции вместе с наркозом?</p>
+					</div>
+					<div class="medic">
+						<img class="photo" src="img/temp/doc-3.jpg" alt="">
+						<div class="text">
+							<span class="name">Кашников Иван Львович</span>
+							<span class="specialism">Пластический хирург</span>
+							<p class="answer">Здравствуйте, Юлия, да в нашей клинике проводят септопластику! Ждём Вас в клинике на первичную консультацию.</p>
+						</div>
+					</div>
+				</div>
+				<div class="pages">
+					<p class="heading">Страницы:</p>
+					<ul class="list">
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">7</a></li>
+					</ul>
 				</div>
 			</div>
-			<section class="block block-ask block-ask-answer">
-				<div class="wrapper">
-					<a class="request" href="#ask"><span>Задайте вопрос специалисту</span></a>
-					<div class="questions">
-						<div class="user">
-							<p class="name">Сергей Евгеньевич <span class="date">21 Ноября 2014</span></p>
-							<p class="question">Добрый день ! <br>Если у моей девушки обнаружили хламидиоз,значит и я подвержен этому заболеванию?  Скажите больно сдавать мазок на анализы?</p>
-						</div>
-						<div class="medic">
-							<img class="photo" src="img/temp/doc-10.jpg" alt="">
-							<div class="text">
-								<span class="name">Голембиовская Ирина Викторовна</span>
-								<span class="specialism">Дерматовенеролог-Косметолог</span>
-								<p class="answer">Здравствуйте, Хламидиоз — инфекционное заболевание, передаваемое половым путем. Причиной заболевания служат хламидии (Chlamydia trachomatis) - внутриклеточные бактерии. В большинстве случаев заражение хламидиозом происходит половым путем. Вероятность заражения при незащищенном половом контакте (вагинальном, анальном) с больным хламидиозом составляет около 50%</p>
-							</div>
-						</div>
-					</div>
-					<div class="questions">
-						<div class="user">
-							<p class="name">Елена Ибрагимова <span class="date">15 Ноября 2014</span></p>
-							<p class="question">Здравствуйте! <br>Столкнулась со следующей проблемой. Во второй раз срывается беременность, впервые это случилось в августе 2009 года, определили неразвивающуюся на сроке 1-2 недели, хотя задержка была более 3 недель. Взяли анализы на гормоны. Был сильно занижен прогестерон (значение не сказали) и завышен ДГЭА-сульфат (17,8). В прошлом месяце снова были все признаки (болела грудь, задержка 1 неделю и положительный тест), но снова началась менструация, очень болезненная (на УЗИ сказали, что вышло все само). Мазки и анализы на инфекции ничего не обнаружили. Подскажите, пожалуйста, нужно ли мне снова сдвать анализы на гормоны, и если да, то какие? Боюсь, чтобы такое "невынашивание" не перешло в "хроническую" форму. <br>Спасибо заранее.</p>
-						</div>
-						<div class="medic">
-							<img class="photo" src="img/temp/doc-6.jpg" alt="">
-							<div class="text">
-								<span class="name">Бублик Евгения Викторовна</span>
-								<span class="specialism">Ведущий акушер-гинеколог</span>
-								<p class="answer">ЗНаша клиника специализируется на лечении бесплодия. Как Вы понимаете, заочно назначать обследование и лечение не представляется возможным. Приглашаем в нашу клинику на очный прием.</p>
-							</div>
-						</div>
-					</div>
-					<div class="questions">
-						<div class="user">
-							<p class="name">Мария Александровна Иванцевская <span class="date">13 Ноября 2014</span></p>
-							<p class="question">Здравствуйте. Мне 37 лет. При беременности 9 месяцев назад был обнаружен зоб. После родов повторное узи показало: два образования- в правой доле размером 21 мм, в левой - 7 мм.  Гормоны в норме. Биопсия- кистозно-измененный узел с Б-клеточной метоплазией эпителия. Хирург назначил операцию после окончания кормления грудью. Показана ли мне лазерная операция? Зарание спасибо.</p>
-						</div>
-						<div class="medic">
-							<img class="photo" src="img/temp/doc-12.jpg" alt="">
-							<div class="text">
-								<span class="name">Погорелова Анна Сергеевна</span>
-								<span class="specialism">Эндокринолог</span>
-								<p class="answer">Уважаемая Ольга! Приглашаем Вас на прием к ЛОР врачу. После проведения УЗИ можно будет определиться с возможностью безоперационного лазерного удаления узлов щитовидной железы.</p>
-							</div>
-						</div>
-					</div>
-					<div class="questions">
-						<div class="user">
-							<p class="name">Ирина Федотова <span class="date">10 Ноября 2014</span></p>
-							<p class="question">Здравствуйте, скажите пожалуйста что лучше применить мне для мезотерапии. Мне 29 лет. Под глазами начали образовыватся больше года назад небольшин мешки (грыжи). по косточке вокруг глаз есть впадина (или складка), особенно по утрам смотреть на себя страшно...ходила к косметологу,сказали что операция мне еще рано,но мезо с препаратом эмбриобласт поможет. другой врач посоветовала NCTF - 135 HA - 1 мл ("Филорга"). Так что же лучше мне сделать? Заранее спасибо за ответ.</p>
-						</div>
-						<div class="medic">
-							<img class="photo" src="img/temp/doc-8.jpg" alt="">
-							<div class="text">
-								<span class="name">Арестова Юлия Михайловна</span>
-								<span class="specialism">Косметолог и массажист</span>
-								<p class="answer">Уважаемая Ирина! Приходите на очную консультацию к врачу-косметологу. После осмотра Вам предложат мезотерапию с наиболее подходящим для Вас коктейлем.</p>
-							</div>
-						</div>
-					</div>
-					<div class="questions">
-						<div class="user">
-							<p class="name">Ирина Федотова <span class="date">07 Ноября 2014</span></p>
-							<p class="question">Здравствуйте, подскажите пожалуйста, делают ли в вашей клинике септопластику, какова цена операции вместе с наркозом?</p>
-						</div>
-						<div class="medic">
-							<img class="photo" src="img/temp/doc-3.jpg" alt="">
-							<div class="text">
-								<span class="name">Кашников Иван Львович</span>
-								<span class="specialism">Пластический хирург</span>
-								<p class="answer">Здравствуйте, Юлия, да в нашей клинике проводят септопластику! Ждём Вас в клинике на первичную консультацию.</p>
-							</div>
-						</div>
-					</div>
-					<div class="pages">
-						<p class="heading">Страницы:</p>
-						<ul class="list">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">6</a></li>
-							<li><a href="#">7</a></li>
-						</ul>
-					</div>
+		</section>
+		<section class="block block-send-request" id="ask">
+			<div class="wrapper">
+				<h2 class="h2">Задайте вопрос специалисту</h2>
+				<div class="fill">
+					<form action="#">
+						<p class="line line-department">
+							<label>Направление</label>
+							<select>
+								<option class="department department-1">Выберите услугу</option>
+								<option class="department department-2">Акушерство и гинекология</option>
+								<option class="department department-3">Неврология</option>
+								<option class="department department-4">Аллергология и иммунология</option>
+								<option class="department department-5">Оториноларингология</option>
+								<option class="department department-6">Анестезиология и реаниматология</option>
+								<option class="department department-7">Офтальмология</option>
+								<option class="department department-8" selected="">Гастроэнтерология</option>
+								<option class="department department-9">Стоматология</option>
+								<option class="department department-10">Дерматовенерология</option>
+								<option class="department department-11">Урология</option>
+								<option class="department department-12">Диабетология</option>
+								<option class="department department-13">Хирургия</option>
+								<option class="department department-14">Диетология</option>
+								<option class="department department-15">Эндокринология</option>
+								<option class="department department-16">Кардиология</option>
+								<option class="department department-17">Эндоскопия</option>
+								<option class="department department-18">Колопроктология</option>
+								<option class="department department-19">Ультразвуковая диагностика</option>
+								<option class="department department-20">Косметология</option>
+							</select>
+						</p>
+						<p class="line">
+							<label>Ваши Ф.И.О<span class="complete">&#9733;</span></label>
+							<input type="text" value="" placeholder="">
+						</p>
+						<p class="line">
+							<label>Электронная почта<span class="complete">&#9733;</span></label>
+							<input type="text" value="" placeholder="">
+						</p>
+						<p class="line">
+							<label>Ваш вопрос</label>
+							<textarea placeholder=""></textarea>
+						</p>
+						<p class="submit">
+							<button type="submit">Записаться на приём</button>
+						</p>
+					</form>
 				</div>
-			</section>
-			<section class="block block-send-request" id="ask">
-				<div class="wrapper">
-					<h2 class="h2">Задайте вопрос специалисту</h2>
-					<div class="fill">
-						<form action="#">
-							<p class="line line-department">
-								<label>Направление</label>
-								<select>
-									<option class="department department-1">Выберите услугу</option>
-									<option class="department department-2">Акушерство и гинекология</option>
-									<option class="department department-3">Неврология</option>
-									<option class="department department-4">Аллергология и иммунология</option>
-									<option class="department department-5">Оториноларингология</option>
-									<option class="department department-6">Анестезиология и реаниматология</option>
-									<option class="department department-7">Офтальмология</option>
-									<option class="department department-8" selected="">Гастроэнтерология</option>
-									<option class="department department-9">Стоматология</option>
-									<option class="department department-10">Дерматовенерология</option>
-									<option class="department department-11">Урология</option>
-									<option class="department department-12">Диабетология</option>
-									<option class="department department-13">Хирургия</option>
-									<option class="department department-14">Диетология</option>
-									<option class="department department-15">Эндокринология</option>
-									<option class="department department-16">Кардиология</option>
-									<option class="department department-17">Эндоскопия</option>
-									<option class="department department-18">Колопроктология</option>
-									<option class="department department-19">Ультразвуковая диагностика</option>
-									<option class="department department-20">Косметология</option>
-								</select>
-							</p>
-							<p class="line">
-								<label>Ваши Ф.И.О<span class="complete">&#9733;</span></label>
-								<input type="text" value="" placeholder="">
-							</p>
-							<p class="line">
-								<label>Электронная почта<span class="complete">&#9733;</span></label>
-								<input type="text" value="" placeholder="">
-							</p>
-							<p class="line">
-								<label>Ваш вопрос</label>
-								<textarea placeholder=""></textarea>
-							</p>
-							<p class="submit">
-								<button type="submit">Записаться на приём</button>
-							</p>
-						</form>
-					</div>
-				</div>
-			</section>
+			</div>
+		</section>
 		</div>
 	</article>
 
@@ -350,38 +352,20 @@
 	<div class="popups">
 		<div id="callback" class="popup popup-callback">
 			<p class="title">Заказать звонок</p>
-
 			<form class="form" action="#">
-				<p class="line">
-					<input type="text" value="" placeholder="Контактное имя">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Контактный телефон">
-				</p>
-				<p class="submit">
-					<button type="submit">Заказать звонок</button>
-				</p>
+				<p class="line"><input type="text" value="" placeholder="Контактное имя"></p>
+				<p class="line"><input type="text" value="" placeholder="Контактный телефон"></p>
+				<p class="submit"><button type="submit">Заказать звонок</button></p>
 			</form>
 		</div>
 		<div id="consult" class="popup popup-callback">
 			<p class="title">Получить консультацию</p>
-
 			<form class="form" action="#">
-				<p class="line">
-					<input type="text" value="" placeholder="Контактное имя">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Контактный телефон">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Электронная почта">
-				</p>
-				<p class="line">
-					<textarea placeholder="Ваш вопрос"></textarea>
-				</p>
-				<p class="submit">
-					<button type="submit">Отправить</button>
-				</p>
+				<p class="line"><input type="text" value="" placeholder="Контактное имя"></p>
+				<p class="line"><input type="text" value="" placeholder="Контактный телефон"></p>
+				<p class="line"><input type="text" value="" placeholder="Электронная почта"></p>
+				<p class="line"><textarea placeholder="Ваш вопрос"></textarea></p>
+				<p class="submit"><button type="submit">Отправить</button></p>
 			</form>
 		</div>
 	</div>

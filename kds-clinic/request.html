@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="shortcut icon" href="img/favicon.png">
 
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-	<!--[if lte IE 9]>
+	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css">
+	<script src="js/vendor/html5shiv.js"></script>
 	<![endif]-->
 </head>
 <body>
@@ -97,129 +97,129 @@
 	</nav>
 
 	<article class="content">
-			<div class="breadcrumbs">
-				<div class="wrapper">
-					<p class="pager">
-						<a class="link" href="index.html">Главная страница</a>
-						<span class="current">Записаться на приём</span>
-					</p>
+		<div class="breadcrumbs">
+			<div class="wrapper">
+				<p class="pager">
+					<a class="link" href="index.html">Главная страница</a>
+					<span class="current">Записаться на приём</span>
+				</p>
+			</div>
+		</div>
+		<section class="block block-request">
+			<div class="wrapper">
+				<div class="fill">
+					<form action="#">
+						<p class="line line-department">
+							<label>Услуга</label>
+							<select>
+								<option class="department department-1">Выберите услугу</option>
+								<option class="department department-2">Акушерство и гинекология</option>
+								<option class="department department-3">Неврология</option>
+								<option class="department department-4">Аллергология и иммунология</option>
+								<option class="department department-5">Оториноларингология</option>
+								<option class="department department-6">Анестезиология и реаниматология</option>
+								<option class="department department-7">Офтальмология</option>
+								<option class="department department-8" selected="">Гастроэнтерология</option>
+								<option class="department department-9">Стоматология</option>
+								<option class="department department-10">Дерматовенерология</option>
+								<option class="department department-11">Урология</option>
+								<option class="department department-12">Диабетология</option>
+								<option class="department department-13">Хирургия</option>
+								<option class="department department-14">Диетология</option>
+								<option class="department department-15">Эндокринология</option>
+								<option class="department department-16">Кардиология</option>
+								<option class="department department-17">Эндоскопия</option>
+								<option class="department department-18">Колопроктология</option>
+								<option class="department department-19">Ультразвуковая диагностика</option>
+								<option class="department department-20">Косметология</option>
+							</select>
+						</p>
+						<p class="line line-doc">
+							<label>Ф.И.О. лечащего врача</label>
+							<select>
+								<option class="doc doc-1" selected="">Маевская Марина Викторовна</option>
+								<option class="doc doc-2">Рагозин Антон Константинович</option>
+								<option class="doc doc-3">Альбицкий Александр Владимирович</option>
+								<option class="doc doc-4">Бублик Евгения Викторовна</option>
+								<option class="doc doc-5">Лычагин Алексей Владимирович</option>
+								<option class="doc doc-6">Арестова Юлия Михайловна</option>
+								<option class="doc doc-7">Бурыгин Юрий Михайлович</option>
+								<option class="doc doc-8">Голембиовская Ирина Викторовна</option>
+								<option class="doc doc-9">Черепанов Вадим Геннадьевич</option>
+								<option class="doc doc-10">Погорелова Анна Сергеевна</option>
+								<option class="doc doc-11">Николаев Николай Николаевич</option>
+								<option class="doc doc-12">Кашников Иван Львович</option>
+							</select>
+						</p>
+						<p class="line">
+							<label>Дата визита</label>
+							<input type="text" value="" placeholder="">
+						</p>
+						<p class="line">
+							<label>Время визита</label>
+							<input type="text" value="" placeholder="">
+						</p>
+						<p class="line">
+							<label>Ваши Ф.И.О<span class="complete">&#9733;</span></label>
+							<input type="text" value="" placeholder="">
+						</p>
+						<p class="line">
+							<label>Контактный телефон<span class="complete">&#9733;</span></label>
+							<input type="text" value="" placeholder="">
+						</p>
+						<p class="line">
+							<label>Пожелания и комментарии</label>
+							<input type="text" value="" placeholder="">
+						</p>
+						<p class="line">
+							<label></label>
+							<textarea placeholder=""></textarea>
+						</p>
+						<p class="submit">
+							<button type="submit">Записаться на приём</button>
+						</p>
+					</form>
 				</div>
 			</div>
-			<section class="block block-request">
-				<div class="wrapper">
-					<div class="fill">
-						<form action="#">
-							<p class="line line-department">
-								<label>Услуга</label>
-								<select>
-									<option class="department department-1">Выберите услугу</option>
-									<option class="department department-2">Акушерство и гинекология</option>
-									<option class="department department-3">Неврология</option>
-									<option class="department department-4">Аллергология и иммунология</option>
-									<option class="department department-5">Оториноларингология</option>
-									<option class="department department-6">Анестезиология и реаниматология</option>
-									<option class="department department-7">Офтальмология</option>
-									<option class="department department-8" selected="">Гастроэнтерология</option>
-									<option class="department department-9">Стоматология</option>
-									<option class="department department-10">Дерматовенерология</option>
-									<option class="department department-11">Урология</option>
-									<option class="department department-12">Диабетология</option>
-									<option class="department department-13">Хирургия</option>
-									<option class="department department-14">Диетология</option>
-									<option class="department department-15">Эндокринология</option>
-									<option class="department department-16">Кардиология</option>
-									<option class="department department-17">Эндоскопия</option>
-									<option class="department department-18">Колопроктология</option>
-									<option class="department department-19">Ультразвуковая диагностика</option>
-									<option class="department department-20">Косметология</option>
-								</select>
-							</p>
-							<p class="line line-doc">
-								<label>Ф.И.О. лечащего врача</label>
-								<select>
-									<option class="doc doc-1" selected="">Маевская Марина Викторовна</option>
-									<option class="doc doc-2">Рагозин Антон Константинович</option>
-									<option class="doc doc-3">Альбицкий Александр Владимирович</option>
-									<option class="doc doc-4">Бублик Евгения Викторовна</option>
-									<option class="doc doc-5">Лычагин Алексей Владимирович</option>
-									<option class="doc doc-6">Арестова Юлия Михайловна</option>
-									<option class="doc doc-7">Бурыгин Юрий Михайлович</option>
-									<option class="doc doc-8">Голембиовская Ирина Викторовна</option>
-									<option class="doc doc-9">Черепанов Вадим Геннадьевич</option>
-									<option class="doc doc-10">Погорелова Анна Сергеевна</option>
-									<option class="doc doc-11">Николаев Николай Николаевич</option>
-									<option class="doc doc-12">Кашников Иван Львович</option>
-								</select>
-							</p>
-							<p class="line">
-								<label>Дата визита</label>
-								<input type="text" value="" placeholder="">
-							</p>
-							<p class="line">
-								<label>Время визита</label>
-								<input type="text" value="" placeholder="">
-							</p>
-							<p class="line">
-								<label>Ваши Ф.И.О<span class="complete">&#9733;</span></label>
-								<input type="text" value="" placeholder="">
-							</p>
-							<p class="line">
-								<label>Контактный телефон<span class="complete">&#9733;</span></label>
-								<input type="text" value="" placeholder="">
-							</p>
-							<p class="line">
-								<label>Пожелания и комментарии</label>
-								<input type="text" value="" placeholder="">
-							</p>
-							<p class="line">
-								<label></label>
-								<textarea placeholder=""></textarea>
-							</p>
-							<p class="submit">
-								<button type="submit">Записаться на приём</button>
-							</p>
-						</form>
-					</div>
-				</div>
-			</section>
+		</section>
 		</div>
 	</article>
 
 	<section class="block block-staff block-staff-request">
-			<div class="wrapper">
-				<h2 class="h2">Доктора центра &laquo;КДС Клиник&raquo;</h2>
-				<div class="medics">
-					<ul class="carousel">
-						<li>
-							<img class="photo" src="img/temp/doc-1.jpg" alt="">
-							<div class="text">
-								<span class="name">Вальнер Алексей Константинович</span>
-								<dl>
-									<dt>Специализация:</dt>
-									<dd>Хигург</dd>
-									<dt>Стаж работы:</dt>
-									<dd>10 лет</dd>
-								</dl>
-								<a class="request" href="#">Записаться на приём</a>
-							</div>
-						</li>
-						<li>
-							<img class="photo" src="img/temp/doc-2.jpg" alt="">
-							<div class="text">
-								<span class="name">Петровичева Вера Олеговна</span>
-								<dl>
-									<dt>Специализация:</dt>
-									<dd>Косметолог</dd>
-									<dt>Стаж работы:</dt>
-									<dd>7 лет</dd>
-								</dl>
-								<a class="request" href="#">Записаться на приём</a>
-							</div>
-						</li>
-					</ul>
-				</div>
+		<div class="wrapper">
+			<h2 class="h2">Доктора центра &laquo;КДС Клиник&raquo;</h2>
+			<div class="medics">
+				<ul class="carousel">
+					<li>
+						<img class="photo" src="img/temp/doc-1.jpg" alt="">
+						<div class="text">
+							<span class="name">Вальнер Алексей Константинович</span>
+							<dl>
+								<dt>Специализация:</dt>
+								<dd>Хигург</dd>
+								<dt>Стаж работы:</dt>
+								<dd>10 лет</dd>
+							</dl>
+							<a class="request" href="#">Записаться на приём</a>
+						</div>
+					</li>
+					<li>
+						<img class="photo" src="img/temp/doc-2.jpg" alt="">
+						<div class="text">
+							<span class="name">Петровичева Вера Олеговна</span>
+							<dl>
+								<dt>Специализация:</dt>
+								<dd>Косметолог</dd>
+								<dt>Стаж работы:</dt>
+								<dd>7 лет</dd>
+							</dl>
+							<a class="request" href="#">Записаться на приём</a>
+						</div>
+					</li>
+				</ul>
 			</div>
-		</section>
+		</div>
+	</section>
 
 	<div class="action">
 		<div class="bookmark"></div>
@@ -327,38 +327,20 @@
 	<div class="popups">
 		<div id="callback" class="popup popup-callback">
 			<p class="title">Заказать звонок</p>
-
 			<form class="form" action="#">
-				<p class="line">
-					<input type="text" value="" placeholder="Контактное имя">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Контактный телефон">
-				</p>
-				<p class="submit">
-					<button type="submit">Заказать звонок</button>
-				</p>
+				<p class="line"><input type="text" value="" placeholder="Контактное имя"></p>
+				<p class="line"><input type="text" value="" placeholder="Контактный телефон"></p>
+				<p class="submit"><button type="submit">Заказать звонок</button></p>
 			</form>
 		</div>
 		<div id="consult" class="popup popup-callback">
 			<p class="title">Получить консультацию</p>
-
 			<form class="form" action="#">
-				<p class="line">
-					<input type="text" value="" placeholder="Контактное имя">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Контактный телефон">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Электронная почта">
-				</p>
-				<p class="line">
-					<textarea placeholder="Ваш вопрос"></textarea>
-				</p>
-				<p class="submit">
-					<button type="submit">Отправить</button>
-				</p>
+				<p class="line"><input type="text" value="" placeholder="Контактное имя"></p>
+				<p class="line"><input type="text" value="" placeholder="Контактный телефон"></p>
+				<p class="line"><input type="text" value="" placeholder="Электронная почта"></p>
+				<p class="line"><textarea placeholder="Ваш вопрос"></textarea></p>
+				<p class="submit"><button type="submit">Отправить</button></p>
 			</form>
 		</div>
 	</div>

@@ -40,7 +40,7 @@ html {
 	color: #4c4c4c;
 }
 body {
-	min-width: 320px;
+	min-width: 1000px;
 	min-height: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -170,7 +170,7 @@ h3, .h3 {
 	z-index: 10;
 }
 .bookmark:after {
-	top: 0px;
+	top: 0;
 	right: -47px;
 	border-width: 47px 47px 0 0;
 	border-color: #fff transparent transparent transparent;
@@ -1107,7 +1107,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	position: absolute;
 	top: -14px;
 	left: -48px;
-	background: url(../img/medics-shadow.png) -55px 0 no-repeat;
+	background: url('../img/shadow-medics.png') -55px 0 no-repeat;
 }
 .gallery .photos:after {
 	right: -48px;
@@ -1424,7 +1424,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 	transition: background .3s ease;
 }
@@ -1438,7 +1437,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 .social .up span {
@@ -1506,7 +1504,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	top: 0px;
+	top: 0;
 	left: 0;
 	background: url(../img/icons/title-1.png) 0 0 no-repeat;
 }
@@ -2611,10 +2609,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: url(../img/icons/title-6.png) 0 0 no-repeat;
 }
 .block-send-request .fill {
-	padding-top: 33px;
-	padding-left: 107px;
-	padding-right: 310px;
-	padding-bottom: 24px;
+	padding: 33px 310px 24px 107px;
 	background: #f1f1f1;
 }
 .block-send-request .fill .line {
@@ -2646,7 +2641,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 /* ==========================================================================
    _SEND-REVIEW
    ========================================================================== */
- .block-send-review .wrapper {
+.block-send-review .wrapper {
 	padding-top: 16px;
 }
 .block-send-review .line {
@@ -2808,40 +2803,18 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .fancybox-skin .fancybox-close:before { -webkit-transform: rotate(36deg); -moz-transform: rotate(36deg); -ms-transform: rotate(45deg); transform: rotate(36deg); }
 .fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-36deg); -moz-transform: rotate(-36deg); -ms-transform: rotate(-45deg); transform: rotate(-36deg); }
 /* ==========================================================================
-   _RESPONSIVE
+   _PRINT STYLES
    ========================================================================== */
-@media (max-width: 1024px) {
+@media print {
+	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; }
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
 }
-@media (max-width: 1023px) {
-	
-}
-@media (max-width: 759px) {
-	
-}
-@media (max-width: 700px) {
-	
-	@media (max-width: 575px) {
-
-	}
-	@media (max-width: 479px) {
-
-	}
-	@media (max-width: 400px) {
-
-	}
-	/* ==========================================================================
-	   _PRINT STYLES
-	   ========================================================================== */
-	@media print {
-		* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
-		a, a:visited { text-decoration: underline; }
-		a[href]:after { content: " (" attr(href) ")"; }
-		abbr[title]:after { content: " (" attr(title) ")"; }
-		.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-		pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-		thead { display: table-header-group; }
-		tr, img { page-break-inside: avoid; }
-		img { max-width: 100% !important; }
-		p, h2, h3 { orphans: 3; widows: 3; }
-		h2, h3 { page-break-after: avoid; }
-	}

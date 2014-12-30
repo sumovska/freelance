@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="shortcut icon" href="img/favicon.png">
 
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-	<!--[if lte IE 9]>
+	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css">
+	<script src="js/vendor/html5shiv.js"></script>
 	<![endif]-->
 </head>
 <body>
@@ -338,7 +338,8 @@
 					</ul>
 				</div>
 				<p>Врач – специалист, с которого начинается человеческая жизнь. Во многом именно поэтому от медицинского работника ждут предельного внимания и бережного отношения – ведь человеческий организм хрупок и в момент болезни, как никогда, нуждается в заботе.</p>
-				<p>Основное богатство нашей клиники – трудовой коллектив. Наши специалисты имеют богатый опыт работы в медицине и регулярно повышают свой профессиональный уровень, посещая квалификационные курсы и семинары как в России, так и за рубежом. Это позволяет центру <a href="#">&laquo;КДС Клиник&laquo;</a> всегда соответствовать требованию времени и располагать актуальной информацией о лечении и диагностике различных недугов.</p>
+				<p>Основное богатство нашей клиники – трудовой коллектив. Наши специалисты имеют богатый опыт работы в медицине и регулярно повышают свой профессиональный уровень, посещая квалификационные курсы и семинары как в России, так и за рубежом. Это позволяет центру
+					<a href="#">&laquo;КДС Клиник&laquo;</a> всегда соответствовать требованию времени и располагать актуальной информацией о лечении и диагностике различных недугов.</p>
 			</div>
 		</section>
 
@@ -459,39 +460,20 @@
 	<div class="popups">
 		<div id="callback" class="popup popup-callback">
 			<p class="title">Заказать звонок</p>
-
 			<form class="form" action="#">
-				<p class="line">
-					<input type="text" value="" placeholder="Контактное имя">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Контактный телефон">
-				</p>
-				<p class="submit">
-					<button type="submit">Заказать звонок</button>
-				</p>
+				<p class="line"><input type="text" value="" placeholder="Контактное имя"></p>
+				<p class="line"><input type="text" value="" placeholder="Контактный телефон"></p>
+				<p class="submit"><button type="submit">Заказать звонок</button></p>
 			</form>
 		</div>
-
 		<div id="consult" class="popup popup-callback">
 			<p class="title">Получить консультацию</p>
-
 			<form class="form" action="#">
-				<p class="line">
-					<input type="text" value="" placeholder="Контактное имя">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Контактный телефон">
-				</p>
-				<p class="line">
-					<input type="text" value="" placeholder="Электронная почта">
-				</p>
-				<p class="line">
-					<textarea placeholder="Ваш вопрос"></textarea>
-				</p>
-				<p class="submit">
-					<button type="submit">Отправить</button>
-				</p>
+				<p class="line"><input type="text" value="" placeholder="Контактное имя"></p>
+				<p class="line"><input type="text" value="" placeholder="Контактный телефон"></p>
+				<p class="line"><input type="text" value="" placeholder="Электронная почта"></p>
+				<p class="line"><textarea placeholder="Ваш вопрос"></textarea></p>
+				<p class="submit"><button type="submit">Отправить</button></p>
 			</form>
 		</div>
 	</div>
