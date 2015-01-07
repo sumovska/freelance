@@ -56,11 +56,9 @@ $(document).ready(function () {
 
 	$('.about').each(function () {
 		var _self = $(this);
-		$('.more', this).click(function () {
+		$('.more, .close', this).click(function () {
 			var _more = $(this);
-			$('.hidden', _self).slideDown(function () {
-				_more.hide();
-			});
+			_self.parent().find('.about-full').toggle();
 			return false;
 		});
 	});

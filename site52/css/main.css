@@ -54,7 +54,7 @@
 @font-face {
 	font-family: 'Rouble';
 	src: url('../fonts/rouble-webfont.eot');
-	src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/rouble-webfont.woff') format('woff'), url('../fonts/rouble-webfont.ttf') format('truetype'), url('../fonts/rouble-webfont.svg#als_rublregular') format('svg');
+	src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/rouble-webfont.woff') format('woff'), url('../fonts/rouble-webfont.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -139,12 +139,12 @@ audio, canvas, img, video {
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: .04em;
-	background: #136dce linear-gradient(to bottom, rgba(0,157,255,1) 0%,rgba(19,109,206,1) 100%);
+	background: #136dce linear-gradient(to bottom, rgba(0, 157, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
 	border: 1px solid #1356ad;
 	transition: background .3s ease;
 }
 .button:hover {
-	background: #136dce linear-gradient(to bottom, rgba(19,109,206,1) 0%,rgba(0,157,255,1) 100%);
+	background: #136dce linear-gradient(to bottom, rgba(19, 109, 206, 1) 0%, rgba(0, 157, 255, 1) 100%);
 }
 /* ==========================================================================
    _LAYOUT
@@ -910,7 +910,6 @@ textarea {
 	-moz-transform: skew(30deg);
 	-ms-transform: skew(30deg);
 	-o-transform: skew(30deg);
-	-ms-transform: skew(30deg);
 	transform: skew(30deg);
 	background: rgba(255, 255, 255, .7);
 	z-index: -1;
@@ -940,6 +939,7 @@ textarea {
 	padding: 0 15px;
 	margin-bottom: 30px;
 	cursor: default;
+	position: relative;
 }
 .block-info .about {
 	width: 366px;
@@ -953,10 +953,85 @@ textarea {
 	border-bottom: 4px solid #0f77d9;
 	z-index: 20;
 }
+.block-info .about-full {
+	width: auto !important;
+	min-height: 398px;
+	padding-left: 8px;
+	padding-right: 8px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 15px;
+	right: 15px;
+	z-index: 25;
+	background: #fff;
+}
+.block-info .about-full:after { top: 0 !important; }
+.block-info .about-full .col {
+	width: 50%;
+	padding: 0 10px;
+	float: left;
+}
+.block-info .about-full .all {
+	margin: 0;
+	display: block;
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
+	z-index: 10;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+.block-info .about-full .close {
+	padding-right: 24px;
+	margin: 0;
+	display: block;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	z-index: 10;
+	font-size: 11px;
+	color: #3c3c3c;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color .3s ease;
+}
+.block-info .about-full .close:before, .block-info .about-full .close:after {
+	width: 3px;
+	height: 14px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: -2px;
+	right: 4px;
+	background: #3c3c3c;
+	border-radius: 2px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	transition: background .3s ease;
+}
+.block-info .about-full .close:after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.block-info .about-full .close:hover {
+	color: #1074d5;
+}
+.block-info .about-full .close:hover:before, .block-info .about-full .close:hover:after {
+	background: #1074d5;
+}
 .block-info .about .hidden {
 	display: none;
 }
-.block-info .about:before, .block-info .about:after {
+.block-info .about:before, .block-info .about:after, .block-info .about-full .col:after {
 	width: 4px;
 	display: block;
 	content: ' ';
@@ -997,7 +1072,6 @@ textarea {
 	-moz-transform: skew(-35deg);
 	-ms-transform: skew(-35deg);
 	-o-transform: skew(-35deg);
-	-ms-transform: skew(-35deg);
 	transform: skew(-35deg);
 }
 .block-info .about .corner div {
@@ -1430,7 +1504,6 @@ textarea {
 	-moz-transform: skew(-45deg);
 	-ms-transform: skew(-45deg);
 	-o-transform: skew(-45deg);
-	-ms-transform: skew(-45deg);
 	transform: skew(-45deg);
 }
 .block-recent-projects .slider-image .carousel .corner-bottom {
@@ -1550,7 +1623,7 @@ textarea {
 	font: 16px/28px 'Calibri', Helvetica, Arial, sans-serif;
 }
 .block-recent-projects-seo .slider .carousel .statistics .table {
-	widows: 110px;
+	width: 110px;
 }
 .block-recent-projects-seo .slider .carousel .statistics .table th {
 	padding: 16px 12px 8px;
@@ -1699,7 +1772,6 @@ textarea {
 	-moz-transform: skew(45deg);
 	-ms-transform: skew(45deg);
 	-o-transform: skew(45deg);
-	-ms-transform: skew(45deg);
 	transform: skew(45deg);
 }
 .contact .info .in {
@@ -1919,7 +1991,6 @@ textarea {
 	-moz-transform: skew(45deg);
 	-ms-transform: skew(45deg);
 	-o-transform: skew(45deg);
-	-ms-transform: skew(45deg);
 	transform: skew(45deg);
 }
 .block-news .news .more:after {
@@ -1928,7 +1999,6 @@ textarea {
 	-moz-transform: skew(-45deg);
 	-ms-transform: skew(-45deg);
 	-o-transform: skew(-45deg);
-	-ms-transform: skew(-45deg);
 	transform: skew(-45deg);
 }
 .block-news .news .hidden {
@@ -1981,7 +2051,6 @@ textarea {
 	-moz-transform: rotate(60deg);
 	-ms-transform: rotate(60deg);
 	-o-transform: rotate(60deg);
-	-ms-transform: rotate(60deg);
 	transform: rotate(60deg);
 }
 .up:after {
@@ -1990,7 +2059,6 @@ textarea {
 	-moz-transform: rotate(-60deg);
 	-ms-transform: rotate(-60deg);
 	-o-transform: rotate(-60deg);
-	-ms-transform: rotate(-60deg);
 	transform: rotate(-60deg);
 }
 /* ==========================================================================
@@ -2260,9 +2328,7 @@ textarea {
 .catalog .project .cap .more {
 	width: 182px;
 	height: 40px;
-	margin: 0;
-	margin-top: -20px;
-	margin-left: -91px;
+	margin: -20px 0 0 -91px;
 	padding: 11px 0 12px 38px;
 	display: block;
 	text-transform: uppercase;
@@ -2479,7 +2545,6 @@ textarea {
 	-webkit-transform: rotate(60deg);
 	-moz-transform: rotate(60deg);
 	-ms-transform: rotate(60deg);
-	-ms-transform: rotate(-60deg);
 	-o-transform: rotate(60deg);
 	transform: rotate(60deg);
 }
@@ -2526,7 +2591,7 @@ textarea {
 	line-height: 21px;
 	letter-spacing: .022em;
 	position: relative;
-	background: linear-gradient(to bottom, rgba(255,255,255,0.53) 0%, rgba(255,255,255,0.53) 10%,rgba(255,255,255,0.99) 54%,rgba(255,255,255,1) 55%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.53) 0%, rgba(255, 255, 255, 0.53) 10%, rgba(255, 255, 255, 0.99) 54%, rgba(255, 255, 255, 1) 55%, rgba(255, 255, 255, 1) 100%);
 	border-top: 4px solid #0cf;
 	border-bottom: 4px solid #0f77d9;
 	z-index: 20;
@@ -2651,7 +2716,7 @@ textarea {
 	background: #d96600;
 }
 .block-kinds .tip .name-green {
- 	background: #75b00e;
+	background: #75b00e;
 }
 .block-kinds .tip .name .price {
 	font-size: 19px;
@@ -2666,7 +2731,7 @@ textarea {
 	position: relative;
 }
 .block-kinds .tip .name .text .fn {
-	padding: 4px 8px 0px 10px;
+	padding: 4px 8px 0 10px;
 	font-size: 10px;
 	top: 2px;
 	right: 0;
@@ -2710,7 +2775,7 @@ textarea {
 	border-color: transparent #009dff transparent transparent;
 }
 .block-kinds .tip .describe:after {
-	top: 0px;
+	top: 0;
 	left: -21px;
 	border-width: 0 21px 20px 0;
 	border-color: transparent #fff transparent transparent;
@@ -2723,6 +2788,7 @@ textarea {
 	margin: 0;
 	padding-left: 34%;
 	position: relative;
+	z-index: 1;
 }
 .block-kinds .about .pic {
 	width: 34%;
@@ -2841,7 +2907,7 @@ textarea {
 .block-kinds .tariff .list li:nth-child(6):before { background-position: 0 -120px; }
 .block-kinds .tariff .list li:nth-child(7):before { background-position: -70px -240px; background-size: 200px auto; }
 .block-kinds .tariff .list li:nth-child(8):before { background-position: -70px -120px; }
-.block-kinds .tariff .list li:nth-child(9):before { background-position:  0 -155px; }
+.block-kinds .tariff .list li:nth-child(9):before { background-position: 0 -155px; }
 .block-kinds .tariff .list li:nth-child(10):before { background-position: -35px -155px; }
 .block-kinds .tariff-bonuses .list {
 	margin: 0 -8px;
@@ -2864,15 +2930,15 @@ textarea {
 	background: url(../img/icons/icon-7.png) 0 0 no-repeat;
 	background-size: cover;
 }
-.block-kinds .tariff-bonuses .list li:nth-child(2):before{ background: url(../img/icons/icon-13.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(3):before{ background: url(../img/icons/icon-10.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(4):before{ background: url(../img/icons/icon-8.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(5):before{ background: url(../img/icons/icon-9.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(6):before{ background: url(../img/icons/icon-12.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds .tariff-bonuses .list li:nth-child(2):before { background: url(../img/icons/icon-13.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds .tariff-bonuses .list li:nth-child(3):before { background: url(../img/icons/icon-10.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds .tariff-bonuses .list li:nth-child(4):before { background: url(../img/icons/icon-8.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds .tariff-bonuses .list li:nth-child(5):before { background: url(../img/icons/icon-9.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds .tariff-bonuses .list li:nth-child(6):before { background: url(../img/icons/icon-12.png) 0 0 no-repeat; background-size: cover; }
 .block-kinds .catalog {
 	margin-bottom: 22px;
 }
-.block-kinds .catalog .bx-wrapper { 
+.block-kinds .catalog .bx-wrapper {
 	padding-left: 20px;
 	padding-right: 20px;
 	position: relative;
@@ -3026,7 +3092,7 @@ textarea {
 	color: #3c3c3c;
 	text-transform: uppercase;
 	text-align: center;
-	background: linear-gradient(to bottom,  rgba(255,236,109,1) 0%,rgba(242,171,2,1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 236, 109, 1) 0%, rgba(242, 171, 2, 1) 100%);
 	border: 1px solid #343c41;
 	box-shadow: 0 0 8px 1px rgba(255, 255, 255, .5);
 }
@@ -3113,11 +3179,11 @@ textarea {
 	padding-left: 44px;
 	float: none;
 }
-.block-kinds-seo .tariff .list li:nth-child(2):before{ background: url(../img/icons/icon-28.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds-seo .tariff .list li:nth-child(3):before{ background: url(../img/icons/icon-29.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds-seo .tariff .list li:nth-child(4):before{ background: url(../img/icons/icon-30.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds-seo .tariff .list li:nth-child(5):before{ background: url(../img/icons/icon-3.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds-seo .tariff .list li:nth-child(6):before{ background: url(../img/icons/icon-12.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(2):before { background: url(../img/icons/icon-28.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(3):before { background: url(../img/icons/icon-29.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(4):before { background: url(../img/icons/icon-30.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(5):before { background: url(../img/icons/icon-3.png) 0 0 no-repeat; background-size: cover; }
+.block-kinds-seo .tariff .list li:nth-child(6):before { background: url(../img/icons/icon-12.png) 0 0 no-repeat; background-size: cover; }
 .block-kinds-seo .button {
 	width: 33%;
 	padding-top: 12px;
@@ -3166,7 +3232,7 @@ textarea {
 	right: 0;
 	border-style: solid;
 	border-width: 0 18px 18px 0;
-	border-color: transparent #ffffff transparent transparent;
+	border-color: transparent #fff transparent transparent;
 }
 .block-features .list .pic img {
 	width: 50px;
@@ -3347,7 +3413,7 @@ textarea {
 	position: absolute;
 	top: 23px;
 	left: 49px;
-	background: #0e7fdb linear-gradient(to bottom,  rgba(0,222,255,1) 0%,rgba(14,127,219,1) 100%);
+	background: #0e7fdb linear-gradient(to bottom, rgba(0, 222, 255, 1) 0%, rgba(14, 127, 219, 1) 100%);
 }
 .block-information .condition li .icon:before, .block-information .condition li .icon:after {
 	width: 0;
@@ -3361,7 +3427,7 @@ textarea {
 	right: 0;
 	border-style: solid;
 	border-width: 0 20px 20px 0;
-	border-color: transparent #00ddff transparent transparent;
+	border-color: transparent #0df transparent transparent;
 	z-index: 20;
 }
 .block-information .condition li .icon:after {
@@ -3426,7 +3492,7 @@ textarea {
 	content: ' ';
 	overflow: hidden;
 	clear: both;
-	background: #1074d5 linear-gradient(to bottom,  rgba(18,112,209,1) 0%,rgba(2,153,251,1) 100%);
+	background: #1074d5 linear-gradient(to bottom, rgba(18, 112, 209, 1) 0%, rgba(2, 153, 251, 1) 100%);
 }
 .block-process .list {
 	margin: 0 0 0 -50px;
@@ -3477,7 +3543,6 @@ textarea {
 	-moz-transform: rotate(40deg);
 	-ms-transform: rotate(40deg);
 	-o-transform: rotate(40deg);
-	-ms-transform: rotate(40deg);
 	transform: rotate(40deg);
 	background: #e8e8e8;
 	border-radius: 2px;
@@ -3490,7 +3555,6 @@ textarea {
 	-moz-transform: rotate(-40deg);
 	-ms-transform: rotate(-40deg);
 	-o-transform: rotate(-40deg);
-	-ms-transform: rotate(-40deg);
 	transform: rotate(-40deg);
 }
 .block-process .list .ok-blue:before, .block-process .list .ok-blue:after {
@@ -3505,7 +3569,6 @@ textarea {
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 .block-process .list .ok-last:after {
@@ -3516,7 +3579,6 @@ textarea {
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 .block-process .list .pic {
@@ -3611,7 +3673,7 @@ textarea {
 }
 /* ==========================================================================
    _NUMBER
-   ========================================================================== */]
+   ========================================================================== */
 .block-number:after {
 	display: block;
 	content: ' ';
@@ -3720,7 +3782,7 @@ textarea {
 	outline: none;
 	border: 1px solid #3b3a37;
 	box-shadow: 0 0 4px 0 rgba(255, 234, 124, .28);
-	background: #136dce linear-gradient(to bottom,  rgba(0,157,255,1) 0%,rgba(19,109,206,1) 100%);
+	background: #136dce linear-gradient(to bottom, rgba(0, 157, 255, 1) 0%, rgba(19, 109, 206, 1) 100%);
 	transition: background .3s ease;
 }
 .popup-callback button[type="submit"]:hover {
@@ -3885,6 +3947,9 @@ textarea {
 	.block-info .about { width: 100%; padding-bottom: 40px; margin: 0 0 30px 0; float: none; }
 	.block-info .about .corner { display: none; }
 	.block-info .about:after { top: 0; }
+	.block-info .about-full { left: 0; right: 0; }
+	.block-info .about-full .col { width: 100%; float: none; }
+	.block-info .about-full .col:last-of-type .h3 { display: none; }
 	.block-info .news-latest .h2 { text-align: center; }
 	.block-info .news-latest .item:before, .block-info .news-latest .item:after { display: none; }
 	.block-info .news-latest { width: 100%; margin: 0; float: none; }
