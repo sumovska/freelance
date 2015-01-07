@@ -2029,10 +2029,8 @@ textarea {
 	background: rgba(255, 255, 255, 1);
 	border: 3px solid #333;
 	border-radius: 50%;
+	z-index: 5;
 	transition: background .3s ease;
-}
-.up:hover {
-	background: rgba(255, 255, 255, .3);
 }
 .up:before, .up:after {
 	width: 4px;
@@ -3899,7 +3897,6 @@ textarea {
 	.block-information .proposion { padding-right: 0; position: relative; }
 	.block-information .proposion .pic { width: 50%; margin: 20px auto 20px; position: relative; }
 	.block-information .condition { padding-left: 20px; }
-	.up { margin-bottom: 0; }
 	.footer .wrapper { padding-top: 40px; padding-bottom: 50px; }
 	.footer .col { width: 25%; padding: 0; }
 	.footer .col:nth-child(1) { width: 100%; margin-bottom: 40px; float: none; }
@@ -3924,6 +3921,7 @@ textarea {
 	.block-reviews .reviews .item .text { width: 100%; padding-left: 0; float: none; }
 	.block-reviews .reviews .item .text .in span:before, .block-reviews .reviews .item .text .in span:after { display: none; }
 	.block-about .pic { width: 75%; margin-left: auto; margin-bottom: 20px; position: relative; }
+	.up { margin-bottom: -50px; }
 }
 @media (max-width: 700px) {
 	h2, .h2 { text-align: center; }
