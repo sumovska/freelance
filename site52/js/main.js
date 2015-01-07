@@ -48,6 +48,7 @@ $(document).ready(function () {
 		/* Index carousel */
 		$('.carousel', this).bxSlider({
 			adaptiveHeight: true,
+			swipeThreshold: 25,
 			pause: 10000,
 			controls: false,
 			pagerCustom: '.pager'
@@ -58,7 +59,7 @@ $(document).ready(function () {
 		var _self = $(this);
 		$('.more, .close', this).click(function () {
 			var _more = $(this);
-			_self.parent().find('.about-full').toggle();
+			_self.parent().find('.about').toggle();
 			return false;
 		});
 	});
@@ -66,6 +67,7 @@ $(document).ready(function () {
 	$('.block-features').each(function () {
 		/* Features carousel */
 		$('.carousel', this).bxSlider({
+			swipeThreshold: 25,
 			pager: false
 		});
 	});
@@ -73,6 +75,7 @@ $(document).ready(function () {
 	$('.block-recent-projects').each(function () {
 		/* Recent projects carousel */
 		$('.carousel', this).bxSlider({
+			swipeThreshold: 25,
 			pager: false
 		});
 	});
@@ -80,6 +83,7 @@ $(document).ready(function () {
 	$('.block-kinds').each(function () {
 		/* Catalog carousel */
 		$('.carousel', this).bxSlider({
+			swipeThreshold: 25,
 			maxSlides: 4,
 			pager: false
 		});
