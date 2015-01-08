@@ -129,7 +129,6 @@ $(document).ready(function () {
 	/* Popup script */
 	$(".fancybox-popup").fancybox({
 		padding: 0,
-		wrapCSS: 'fancybox-red',
 		helpers: {
 			overlay: {
 				speedIn: 250,

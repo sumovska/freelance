@@ -1825,10 +1825,18 @@ textarea {
 	text-align: right;
 	white-space: nowrap;
 }
+.contact .info .phone a, .contact .info .phone a:hover, .contact .info .phone a:focus {
+	color: #3c3c3c;
+	cursor: default;
+}
 .contact .info .phone-1 {
 	font-size: 30px;
 	line-height: 34px;
 	color: #009dff;
+}
+.contact .info .phone-1 a, .contact .info .phone-1 a:hover, .contact .info .phone-1 a:focus {
+	color: #009dff;
+	cursor: default;
 }
 .contact .info p {
 	margin-bottom: 4px;
@@ -2030,7 +2038,7 @@ textarea {
 	border: 3px solid #333;
 	border-radius: 50%;
 	z-index: 5;
-	transition: background .3s ease;
+	transition: color .2s ease, border-color .2s ease;
 }
 .up:before, .up:after {
 	width: 4px;
@@ -2050,6 +2058,7 @@ textarea {
 	-ms-transform: rotate(60deg);
 	-o-transform: rotate(60deg);
 	transform: rotate(60deg);
+	transition: background-color .2s ease;
 }
 .up:after {
 	margin-left: 8px;
@@ -2058,6 +2067,13 @@ textarea {
 	-ms-transform: rotate(-60deg);
 	-o-transform: rotate(-60deg);
 	transform: rotate(-60deg);
+}
+.up:hover, .up:focus {
+	border-color: #1074d5;
+	color: #1074d5;
+}
+.up:hover:before, .up:focus:before, .up:hover:after, .up:focus:after {
+	background: #1074d5;
 }
 /* ==========================================================================
    _ACTION
@@ -2283,6 +2299,7 @@ textarea {
 	margin: 0 -6px;
 	padding: 0;
 	list-style: none;
+	cursor: default;
 }
 .catalog:after {
 	display: block;
@@ -2482,11 +2499,11 @@ textarea {
 	background: rgba(255, 255, 255, 1);
 	border: 3px solid #333;
 	border-radius: 50%;
-	transition: border-color .3s ease, color .3s ease;
+	transition: border-color .2s ease, color .2s ease;
 }
-.block-project .prev:hover, .block-project .next:hover {
+.block-project .prev:hover, .block-project .next:hover, .block-project .prev:focus, .block-project .next:focus {
 	color: #1074d5;
-	border-color: #fff;
+	border-color: #1074d5;
 }
 .block-project .next {
 	right: 0;
@@ -2515,7 +2532,7 @@ textarea {
 	background: #1074d5;
 }
 .block-project .prev:before {
-	left: 34px;
+	left: 35px;
 	-webkit-transform: rotate(60deg);
 	-moz-transform: rotate(60deg);
 	-ms-transform: rotate(60deg);
@@ -2523,7 +2540,7 @@ textarea {
 	transform: rotate(60deg);
 }
 .block-project .prev:after {
-	left: 52px;
+	left: 51px;
 	-webkit-transform: rotate(-60deg);
 	-moz-transform: rotate(-60deg);
 	-ms-transform: rotate(-60deg);
@@ -2531,7 +2548,7 @@ textarea {
 	transform: rotate(-60deg);
 }
 .block-project .next:before {
-	right: 34px;
+	right: 35px;
 	-webkit-transform: rotate(-60deg);
 	-moz-transform: rotate(-60deg);
 	-ms-transform: rotate(-60deg);
@@ -2539,7 +2556,7 @@ textarea {
 	transform: rotate(-60deg);
 }
 .block-project .next:after {
-	right: 52px;
+	right: 51px;
 	-webkit-transform: rotate(60deg);
 	-moz-transform: rotate(60deg);
 	-ms-transform: rotate(60deg);
@@ -2559,8 +2576,8 @@ textarea {
 .block-project .button {
 	width: 240px;
 	height: 40px;
-	margin: 80px auto -124px;
-	padding-top: 10px;
+	margin: 80px auto -120px;
+	padding: 12px;
 	font-size: 16px;
 	text-decoration: underline;
 	position: relative;
@@ -3992,8 +4009,6 @@ textarea {
 	.block-number .col { width: 100%; margin: 0 auto 20px; float: none; }
 }
 @media (max-width: 575px) {
-	.block-news .news .item .inform { padding-left: 0; }
-	.block-news .news .item .inform .calendar { position: relative; margin: 0 auto 40px; }
 	.block-portfolio .catalog li { width: 100%; float: none; }
 	.block-reviews .reviews .item { padding-bottom: 30px; }
 	.block-project .picture { width: 100%; padding: 0 10px; }
