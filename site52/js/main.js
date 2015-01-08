@@ -3,6 +3,13 @@
 
 /* On document ready */
 $(document).ready(function () {
+
+	/* Fastclick for mobile devices */
+	FastClick.attach(document.body);
+
+	/* Init forms */
+	$('input, select').styler();
+
 	/* Phone triggers */
 	$('.top .call').each(function () {
 		var _self = this;
@@ -14,6 +21,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Nav init */
 	$('.header .nav').each(function () {
 		var _nav = $(this), _html = $('html');
 		$('.toggle', _nav).click(function () {
@@ -44,6 +52,7 @@ $(document).ready(function () {
 		}
 	});
 
+	/* Index init */
 	$('.index').each(function () {
 		/* Index carousel */
 		$('.carousel', this).bxSlider({
@@ -55,6 +64,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* About init */
 	$('.about').each(function () {
 		var _self = $(this);
 		$('.more, .close', this).click(function () {
@@ -64,6 +74,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Features init */
 	$('.block-features').each(function () {
 		/* Features carousel */
 		$('.carousel', this).bxSlider({
@@ -72,6 +83,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Recent projects init */
 	$('.block-recent-projects').each(function () {
 		/* Recent projects carousel */
 		$('.carousel', this).bxSlider({
@@ -80,6 +92,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Kinds init */
 	$('.block-kinds').each(function () {
 		/* Catalog carousel */
 		$('.carousel', this).bxSlider({
@@ -89,7 +102,7 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Services */
+	/* Services init */
 	$('.block-services').each(function () {
 		var _self = $(this), list = $('.list', _self);
 		if (!Modernizr.touch) {
@@ -109,6 +122,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* News init */
 	$('.block-news').each(function () {
 		var _self = $(this);
 		$('.all', this).click(function () {
@@ -139,11 +153,13 @@ $(document).ready(function () {
 		}
 	});
 
+	/* Scroll up init */
 	$('.up').click(function () {
 		$('html, body').animate({scrollTop: 0}, 600, 'swing');
 		return false;
 	});
 
+	/* Onscroll */
 	$(window).on('scroll touchmove', function () {
 		/* Toggle fixed header */
 		if ($(window).scrollTop() > 86) {
@@ -153,6 +169,7 @@ $(document).ready(function () {
 		}
 	});
 
+	/* IE fixes */
 	if ($.browser.msie) {
 		if ($.browser.versionNumber < 9) {
 			$('.block-recent-projects .slider:last-child,.block-info .news-latest .list .item:last-of-type,.footer .col:nth-child(1)').addClass('last-child');
