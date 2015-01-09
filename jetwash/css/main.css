@@ -8,28 +8,26 @@
    _FONTS
    ========================================================================== */
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/proximanova-regular.eot');
-    src: url('../fonts/proximanova-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/proximanova-regular.woff') format('woff'), url('../fonts/proximanova-regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Proxima Nova';
+	src: url('../fonts/proximanova-regular.eot');
+	src: url('../fonts/proximanova-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/proximanova-regular.woff') format('woff'), url('../fonts/proximanova-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/proximanova-bold.eot');
-    src: url('../fonts/proximanova-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/proximanova-bold.woff') format('woff'), url('../fonts/proximanova-bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+	font-family: 'Proxima Nova';
+	src: url('../fonts/proximanova-bold.eot');
+	src: url('../fonts/proximanova-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/proximanova-bold.woff') format('woff'), url('../fonts/proximanova-bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
 }
-
 @font-face {
-    font-family: 'PT Sans';
-    src: url('../fonts/ptsans-italic.eot');
-    src: url('../fonts/ptsans-italic.eot?#iefix') format('embedded-opentype'), url('../fonts/ptsans-italic.woff') format('woff'), url('../fonts/ptsans-italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+	font-family: 'PT Sans';
+	src: url('../fonts/ptsans-italic.eot');
+	src: url('../fonts/ptsans-italic.eot?#iefix') format('embedded-opentype'), url('../fonts/ptsans-italic.woff') format('woff'), url('../fonts/ptsans-italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
 }
-
 @font-face {
 	font-family: 'Din Pro';
 	src: url('../fonts/dinpro-regular.eot') format('embedded-opentype');
@@ -68,6 +66,7 @@ body {
 	width: 100%;
 	min-width: 980px;
 	min-height: 100%;
+	cursor: default;
 	background: #fff;
 }
 hr {
@@ -231,7 +230,7 @@ input[type="search"] { -webkit-appearance: none; }
 textarea { width: 400px; height: 126px; overflow: auto; resize: none; }
 button, input[type="button"], input[type="submit"], input[type="reset"], .button {
 	min-width: 100px;
-	padding: 13px 20px 18px;
+	padding: 16px 20px;
 	border: none;
 	border-radius: 4px;
 	overflow: visible;
@@ -276,10 +275,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-top: 1px solid #e1e1e1;
 	font-size: 15px;
 	cursor: default;
-	clear: both;	
+	clear: both;
 }
 .footer .wrapper {
-	padding-top: 20px 0;
+	padding-top: 20px;
 	min-height: 166px;
 	position: relative;
 }
@@ -394,7 +393,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _INDEX
    ========================================================================== */
 .index .wrapper {
-   	padding-top: 30px;
+	padding-top: 30px;
 }
 .index .device {
 	margin-bottom: 42px;
@@ -464,10 +463,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #e30514;
 }
 .index .action .timer {
-	width: 271px;
+	min-width: 300px;
 	padding: 10px 0;
 	text-align: center;
-	background: rgba(255, 255, 255, .77);
+	background: rgba(255, 255, 255, .95);
 	border-radius: 15px;
 	cursor: default;
 	position: absolute;
@@ -476,7 +475,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	z-index: 1;
 }
 .index .action .timer:before {
-	width: 271px;
+	width: 290px;
 	height: 110px;
 	display: block;
 	content: ' ';
@@ -485,7 +484,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	top: 0;
 	right: 0;
 	left: auto;
+	opacity: .4;
 	background: url('../img/shadow-timer.png') 0 0 no-repeat;
+	background-size: cover;
 	z-index: -1;
 }
 .index .action .timer .h {
@@ -503,6 +504,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	clear: both;
 }
 .index .action .timer .account .col {
+	min-width: 72px;
 	padding: 0 12px 22px;
 	display: inline-block;
 	position: relative;
@@ -515,7 +517,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	font-size: 40px;
 	line-height: 40px;
 	position: absolute;
-	right: -8px;
+	right: -6px;
 	top: -2px;
 }
 .index .action .timer .account .col-seconds:after {
@@ -539,7 +541,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	margin-top: 19px;
 	margin-right: 2px;
 	float: right;
-	border: 3px solid #ff0000;
+	border: 3px solid #f00;
 	border-radius: 9px;
 }
 .index .action .send label {
@@ -664,11 +666,11 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .fancybox-title-inside-wrap { margin-top: 10px; }
 .fancybox-title-over-wrap { position: absolute; bottom: 0; left: 0; color: #fff; padding: 10px; background: #000; background: rgba(0, 0, 0, .8); }
 .fancybox-red .fancybox-skin { border: 3px solid #f00; border-radius: 10px; box-shadow: none; background: #fff; }
-.fancybox-skin .fancybox-close { width: 18px; height: 18px; display: block; top: 10px; right: 10px; background: none; outline: none; }
-.fancybox-skin .fancybox-close:before, .fancybox-skin .fancybox-close:after { width: 2px; height: 22px; border-radius: 1px; position: absolute; top: -2px; left: 8px; display: block; overflow: hidden; content: ' '; background: #f03; transition: background-color .2s ease; }
-.fancybox-skin .fancybox-close:hover:before, .fancybox-skin .fancybox-close:hover:after { background-color: #000; }
-.fancybox-skin .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
-.fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+.fancybox-red .fancybox-skin .fancybox-close { width: 18px; height: 18px; display: block; top: 10px; right: 10px; background: none; outline: none; }
+.fancybox-red .fancybox-skin .fancybox-close:before, .fancybox-red .fancybox-skin .fancybox-close:after { width: 2px; height: 22px; border-radius: 1px; position: absolute; top: -2px; left: 8px; display: block; overflow: hidden; content: ' '; background: #f03; transition: background-color .2s ease; }
+.fancybox-red .fancybox-skin .fancybox-close:hover:before, .fancybox-red .fancybox-skin .fancybox-close:hover:after { background-color: #000; }
+.fancybox-red .fancybox-skin .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+.fancybox-red .fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 /* ==========================================================================
    _PRINT STYLES
    ========================================================================== */

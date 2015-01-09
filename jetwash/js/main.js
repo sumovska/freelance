@@ -13,7 +13,6 @@ $(document).ready(function () {
 	/* Popup script */
 	$(".fancybox-popup").fancybox({
 		padding: 0,
-		easing: 'easeOutQuad',
 		wrapCSS: 'fancybox-red',
 		helpers: {
 			overlay: {
@@ -48,6 +47,10 @@ $(document).ready(function () {
 		helpers: {
 			media: {}
 		}
+	});
+
+	$('.timer .account').countdown('2015/03/05', function(event) {
+		$(this).html(event.strftime('<div class="col col-days"><span class="time">%D</span><span class="type">дни</span></div><div class="col col-hours"><span class="time">%H</span><span class="type">часы</span></div><div class="col col-minutes"><span class="time">%M</span><span class="type">мин</span></div><div class="col col-seconds"><span class="time red">%S</span><span class="type">сек</span></div>'));
 	});
 
 });

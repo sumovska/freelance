@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
 	<!--[if lt IE 9]>
 	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
 	<![endif]-->
@@ -35,17 +36,13 @@
 				</div>
 				<div class="timer">
 					<p class="h">Акция действует еще</p>
-					<div class="account">
-						<div class="col col-days"><span class="time">2</span><span class="type">дни</span></div>
-						<div class="col col-hours"><span class="time">14</span><span class="type">часы</span></div>
-						<div class="col col-minutes"><span class="time">43</span><span class="type">мин</span></div>
-						<div class="col col-seconds"><span class="time red">14</span><span class="type">сек</span></div>
-					</div>
+					<div class="account"></div>
 				</div>
 				<img class="pic" src="img/temp/action-1.jpg" alt="">
 				<div class="send">
 					<h4 class="h4">Получить бесплатную консультацию от Ehrle<sup>&reg;</sup></h4>
-					<form class="form" action="handler.php" method="post">
+
+					<form class="form" action="./handler.php" method="post">
 						<p class="line">
 							<label class="for">Введите имя</label>
 							<input type="text" name="name" value="" required>
@@ -81,10 +78,10 @@
 			<p class="copyright">&copy; 2015 Ehrle Rus</p>
 			<div class="contacts">
 				<div class="col">
-					<p class="name">ООО «Эхрле Рус» <br>ОГРН: 1125050001010</p>
+					<p class="name">ООО &laquo;Эхрле Рус&raquo; <br>ОГРН: 1125050001010</p>
 				</div>
 				<div class="col">
-					<p class="address">Московская область, <br>Щелковский  район, город Щелково, <br>улица Заводская, дом 2, корпус 142</p>
+					<p class="address">Московская область, <br>Щелковский район, город Щелково, <br>улица Заводская, дом 2, корпус 142</p>
 				</div>
 				<div class="col">
 					<p class="phone"><a class="link-phone" href="tel:+6557-496-277-00-88">8 496 277-00-88</a></p>
@@ -99,14 +96,15 @@
 			<div id="form">
 				<h4 class="h4">Получить бесплатную консультацию от Ehrle<sup>&reg;</sup></h4>
 				<p class="pre">Все данные собираются конфиденциально</p>
-				<form class="form" action="handler.php" method="post">
+
+				<form class="form" action="./handler.php" method="post">
 					<p class="line">
-						<label class="for">Введите имя <span class="red">*</span></label>
-						<input type="text" name="name" value="" required>
+						<label for="callback-name" class="for">Введите имя <span class="red">*</span></label>
+						<input id="callback-name" type="text" name="name" value="" required>
 					</p>
 					<p class="line">
-						<label class="for">Введите номер телефона <span class="red">*</span></label>
-						<input type="text" name="phone" value="" required>
+						<label for="callback-phone" class="for">Введите номер телефона <span class="red">*</span></label>
+						<input id="callback-phone" type="text" name="phone" value="" required>
 					</p>
 					<p class="submit">
 						<button type="submit">Отправить</button>
