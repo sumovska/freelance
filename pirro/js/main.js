@@ -38,4 +38,23 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+	/* Top checkins scrollbar */
+	$('.block-dealers').each(function () {
+		$('.list', this).perfectScrollbar();
+	});
+
+	/* Popup script */
+	$('.fancybox-popup').fancybox({
+		padding: 0,
+		wrapCSS: 'fancybox-red',
+		helpers: {
+			overlay: {
+				speedIn: 250,
+				css: {
+					'background': 'rgba(0, 0, 0, 0.8)'
+				}
+			}
+		}
+	});
 });
