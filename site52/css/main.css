@@ -2120,7 +2120,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .up {
 	width: 95px;
 	height: 95px;
-	margin: 0 auto -76px;
+	margin: 0 auto -60px;
 	padding-top: 50px;
 	display: block;
 	text-align: center;
@@ -2385,8 +2385,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	box-shadow: 0 0 4px 1px rgba(255, 255, 255, .4);
 	transition: color .3s ease;
 }
-.navigation li a:hover {
+.navigation li a:hover, .navigation li a:focus {
 	color: #1074d5;
+	background: #fff;
 }
 /* ==========================================================================
    _CATALOG
@@ -2764,7 +2765,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	margin-bottom: 0;
 }
 .block-about .button {
-	margin-top: 16px;
+	width: auto;
+	margin: 16px 12px -16px 12px;
 }
 .block-about .pic {
 	display: block;
@@ -2978,7 +2980,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding: 0;
 	list-style: none;
 	font-size: 10px;
-	letter-spacing: 0;
+	letter-spacing: .01em;
 }
 .block-kinds .tariff .list:after {
 	display: block;
@@ -2989,7 +2991,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .block-kinds .tariff .list li {
 	width: 20%;
 	margin-bottom: 0;
-	padding: 6px 10px 16px 35px;
+	padding: 7px 10px 16px 37px;
 	float: left;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -3002,55 +3004,42 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .block-kinds .tariff .list li:last-child {
 	padding-right: 0;
 }
-.block-kinds .tariff .list li:before {
-	width: 25px;
-	height: 25px;
+.block-kinds .tariff .list li .icon {
+	width: 32px;
+	height: 32px;
 	display: block;
-	content: ' ';
 	overflow: hidden;
 	position: absolute;
 	left: 0;
-	top: 0;
-	background: url(../img/sprite.png) 0 -120px no-repeat;
-	background-size: 100px auto;
+	top: -5px;
 }
-.block-kinds .tariff .list li:nth-child(2):before { background-position: -70px -240px; background-size: 200px auto; }
-.block-kinds .tariff .list li:nth-child(3):before { background-position: -70px -120px; }
-.block-kinds .tariff .list li:nth-child(4):before { background-position: 0 -155px; }
-.block-kinds .tariff .list li:nth-child(5):before { background-position: -35px -155px; }
-.block-kinds .tariff .list li:nth-child(6):before { background-position: 0 -120px; }
-.block-kinds .tariff .list li:nth-child(7):before { background-position: -70px -240px; background-size: 200px auto; }
-.block-kinds .tariff .list li:nth-child(8):before { background-position: -70px -120px; }
-.block-kinds .tariff .list li:nth-child(9):before { background-position: 0 -155px; }
-.block-kinds .tariff .list li:nth-child(10):before { background-position: -35px -155px; }
 .block-kinds .tariff-bonuses .list {
 	margin: 0 -8px;
-	padding: 17px 7px;
+	padding: 10px 10px 7px;
+	margin-bottom: -1px;
+	font-size: 11px;
 	background: #ffd642;
 }
 .block-kinds .tariff-bonuses .list li {
 	width: 33.3%;
-	margin-bottom: 13px;
-	padding-left: 47px;
-	letter-spacing: .01em;
+	padding: 13px 10px 7px 45px;
+	margin-bottom: 0;
+	letter-spacing: .005em;
 }
 .block-kinds .tariff-bonuses .list li:nth-child(5n+1) {
 	clear: none;
 }
-.block-kinds .tariff-bonuses .list li:before {
-	width: 25px;
-	height: 25px;
-	top: 0;
-	background: url(../img/icons/icon-7.png) 0 0 no-repeat;
-	background-size: cover;
+.block-kinds .tariff-bonuses .list li .icon {
+	width: 36px;
+	height: 36px;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left: -4px;
+	top: 1px;
 }
-.block-kinds .tariff-bonuses .list li:nth-child(2):before { background: url(../img/icons/icon-13.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(3):before { background: url(../img/icons/icon-10.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(4):before { background: url(../img/icons/icon-8.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(5):before { background: url(../img/icons/icon-9.png) 0 0 no-repeat; background-size: cover; }
-.block-kinds .tariff-bonuses .list li:nth-child(6):before { background: url(../img/icons/icon-12.png) 0 0 no-repeat; background-size: cover; }
 .block-kinds .additional {
-	margin-bottom: 12px;
+	margin-bottom: 17px;
 }
 .block-kinds .additional:after, .block-kinds .additional .col:after, .block-kinds .additional .checkbox-list:after {
 	display: block;
@@ -3392,6 +3381,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 /* ==========================================================================
    _FEATURES
    ========================================================================== */
+.block-features {
+	margin: 0 0 50px;
+}
 .block-features .list {
 	margin: 0;
 	padding: 0 28px;
@@ -3403,6 +3395,11 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	overflow: hidden;
 	clear: both;
 }
+.block-features .list {
+	padding: 0 25px;
+	margin: 0;
+	list-style: none;
+}
 .block-features .list li {
 	width: 20%;
 	padding: 0 25px;
@@ -3411,8 +3408,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	line-height: 14px;
 }
 .block-features .list .pic {
-	height: 68px;
-	margin-bottom: 18px;
+	height: 67px;
+	margin: 0 -7px 18px 0;
 	padding-top: 8px;
 	position: relative;
 	background: #ffd642;
@@ -3442,6 +3439,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	text-transform: uppercase;
 	white-space: nowrap;
 }
+.block-features .list .t {
+	margin: 0 -15px;
+	display: block;
+}
 /* ==========================================================================
    _INFORMAION
    ========================================================================== */
@@ -3450,6 +3451,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	line-height: 18px;
 }
 .block-information .h {
+	margin-bottom: 19px;
 	text-transform: uppercase;
 	font-weight: bold;
 }
@@ -3457,7 +3459,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	margin-bottom: 20px;
 }
 .block-information .list {
-	margin: 0;
+	margin: 0 0 15px;
 	padding: 0;
 	list-style: none;
 }
@@ -3485,7 +3487,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	overflow: hidden;
 	clear: both;
 	position: absolute;
-	top: 0;
+	top: 2px;
 	left: 0;
 }
 .block-information .list li:before {
@@ -3507,25 +3509,32 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	position: relative;
 }
 .block-information .proposion .pic {
-	width: 40%;
+	width: 40.2%;
 	position: absolute;
-	top: 0;
+	top: 3px;
 	right: 0;
 	left: auto;
 	bottom: 0;
+	cursor: default;
 }
 .block-information .proposion .pic img {
 	width: 100%;
-	padding: 14px;
+	padding: 10px;
 	border: 1px solid #1074d5;
 }
 .block-information .proposion .pic .fn {
-	width: 67px;
-	padding: 2px 0;
-	font-size: 10px;
+	width: 65px;
+	padding: 5px 0 2px;
+	font-size: 11px;
 	line-height: 12px;
-	top: -26px;
-	left: 0;
+	top: -28px;
+	left: -1px;
+}
+.block-information .proposion .pic .fn:first-of-type:before {
+	left: auto;
+	right: 0;
+	border-width: 6px 0 0 6px;
+	border-color: #ffd642 transparent transparent transparent;
 }
 .block-information .proposion .pic .fn:after {
 	right: 0;
@@ -3545,6 +3554,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .block-information .proposion .list li {
 	width: 100%;
+	margin-bottom: 14px;
 	float: none;
 }
 .block-information .proposion .list li:before {
@@ -3559,14 +3569,13 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-color: transparent #009dff transparent transparent;
 }
 .block-information .condition {
-	margin: 0;
+	margin: 0 0 -20px;
 	padding: 0 0 0 90px;
 	list-style: none;
 }
 .block-information .condition li {
-	min-height: 80px;
-	margin-bottom: 10px;
-	padding-top: 30px;
+	min-height: 90px;
+	padding: 30px 0 10px;
 	padding-left: 136px;
 	position: relative;
 }
@@ -3581,6 +3590,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	display: block;
 	padding-right: 16px;
 	color: #009dff;
+	font-size: 13px;
+	text-transform: uppercase;
 	text-align: right;
 	position: absolute;
 	left: 0;
@@ -3608,8 +3619,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding: 1px;
 	display: block;
 	position: absolute;
-	top: 23px;
-	left: 49px;
+	top: 24px;
+	left: 50px;
 	background: #0e7fdb linear-gradient(to bottom, rgba(0, 222, 255, 1) 0%, rgba(14, 127, 219, 1) 100%);
 }
 .block-information .condition li .icon:before, .block-information .condition li .icon:after {
@@ -3653,14 +3664,21 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 /* ==========================================================================
    _PROCESS
    ========================================================================== */
+.block-process {
+	margin-bottom: 70px;
+}
+.block-process .h2 {
+	margin-bottom: 55px;
+}
 .block-process .process {
 	position: relative;
+	cursor: default;
 }
 .block-process .process .progress {
 	height: 7px;
-	margin-top: -11px;
+	margin-top: -19px;
 	margin-left: 60px;
-	margin-right: 10px;
+	margin-right: 30px;
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -3669,15 +3687,15 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	z-index: -1;
 }
 .block-process .progress:after {
-	width: 13px;
-	height: 13px;
+	width: 12px;
+	height: 12px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 	position: absolute;
-	right: -7px;
-	top: -5px;
+	right: -6px;
+	top: -4px;
 	background: #e8e8e8;
 	border: 1px solid #c9c9c9;
 	border-radius: 50%;
@@ -3692,8 +3710,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: #1074d5 linear-gradient(to bottom, rgba(18, 112, 209, 1) 0%, rgba(2, 153, 251, 1) 100%);
 }
 .block-process .list {
-	margin: 0 0 0 -50px;
-	padding: 0 50px 0 0;
+	margin: 0 0 0 -55px;
+	padding: 0 25px 0 0;
 	list-style: none;
 	overflow: hidden;
 }
@@ -3715,7 +3733,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	height: 31px;
 	display: block;
 	position: absolute;
-	top: 44px;
+	top: 42px;
 	right: -15px;
 	border: 4px solid #e6e6e6;
 	border-radius: 50%;
@@ -3734,7 +3752,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	overflow: hidden;
 	clear: both;
 	position: absolute;
-	top: 3px;
+	top: 4px;
 	left: 12px;
 	-webkit-transform: rotate(40deg);
 	-moz-transform: rotate(40deg);
@@ -3745,14 +3763,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-radius: 2px;
 }
 .block-process .list .ok:after {
-	height: 6px;
-	top: 9px;
-	left: 5px;
-	-webkit-transform: rotate(-40deg);
-	-moz-transform: rotate(-40deg);
-	-ms-transform: rotate(-40deg);
-	-o-transform: rotate(-40deg);
-	transform: rotate(-40deg);
+	height: 9px;
+	top: 10px;
+	left: 6px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 .block-process .list .ok-blue:before, .block-process .list .ok-blue:after {
 	background: #0591f3;
@@ -3781,12 +3799,12 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .block-process .list .pic {
 	width: 50px;
 	height: 50px;
-	margin-bottom: 20px;
+	margin-bottom: 16px;
 }
 .block-process .list .name {
 	width: 148px;
 	height: 44px;
-	margin: 0 auto 16px;
+	margin: 0 auto 15px;
 	padding-top: 16px;
 	text-align: center;
 	font-weight: bold;
@@ -3808,6 +3826,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-color: transparent #ffd642 transparent transparent;
 }
 .block-process .list .text {
+	padding: 0 5px;
+	line-height: 17px;
 	position: relative;
 }
 .block-process .list .text:after {
@@ -3818,8 +3838,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	overflow: hidden;
 	clear: both;
 	position: absolute;
-	bottom: 34px;
-	right: -62px;
+	bottom: 35px;
+	right: -55px;
 	background: url(../img/sprite.png) -150px 0 no-repeat;
 }
 /* ==========================================================================
@@ -3827,7 +3847,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    ========================================================================== */
 .block-question {
 	width: 75%;
-	margin: 0 auto 30px;
+	margin: 0 auto 95px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -3873,7 +3893,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    ========================================================================== */
 .block-number {
 	width: 100%;
-	margin-bottom: 35px;
+	margin-bottom: 50px;
 	display: table;
 	cursor: default;
 }
@@ -3977,10 +3997,11 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	height: 40px;
 	margin: 0;
 	padding: 0;
+	border-radius: 0;
 	display: block;
 	float: right;
 	color: #fff;
-	font-size: 12px;
+	font-size: 13px;
 	text-align: center;
 	letter-spacing: .06em;
 	text-transform: uppercase;
@@ -4058,7 +4079,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.header .nav .toggle { left: auto; right: 0; }
 	.index .bottom { height: 58px; }
 	.index .pager li { white-space: normal; }
-	.block-features .list li { width: 33.3%; }
+	.block-features .list li { width: 33.3%; padding-bottom: 10px; }
 	.block-features .carousel .text { width: auto; height: auto; margin-left: 48px; position: absolute; left: 45%; right: 38px; font-size: 13px; }
 	.block-info .about { width: 45%; }
 	.block-info .news-latest { width: 53%; margin-left: 0; float: right; }
@@ -4092,6 +4113,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-kinds .tariff .list li { width: 33.3%; padding-right: 0; }
 	.block-kinds .tariff .list li:nth-child(3n+1) { clear: left; }
 	.block-kinds .tariff .list li:nth-child(5n+1) { clear: none; }
+	.block-kinds .tariff-bonuses .list li { width: 50%; }
+	.block-kinds .tariff .list li:nth-child(3n+1) { clear: none; }
+	.block-kinds .tariff .list li:nth-child(2n+1) { clear: left; }
 	.block-kinds .tariff-bonuses .list li:before { left: 10px; }
 	.block-kinds .additional .col { width: 50%; padding-left: 14px; }
 	.block-kinds .additional .checkbox-list li { width: 100%; float: none; }
@@ -4118,8 +4142,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-recent-projects .slider .carousel .statistics { padding: 25px 35px 25px 40px; }
 	.buttons-links li { width: 32%; margin: 0 2px; }
 	.block-about .text { width: 45%; }
+	.block-about .button { font-size: 12px; }
 	.block-about .pic { width: 50%; right: 15px; }
 	.block-project .button { margin-bottom: 20px; margin-top: 30px; }
+	.block-process .list { margin: 0; }
+	.block-process .list li { padding: 0; }
+	.block-process .list .name { width: 100px; }
+	.block-process .list .ok { top: 30px; }
+	.block-process .list .text:after { display: none; }
 }
 @media (max-width: 759px) {
 	.wrapper { width: 100%; }
@@ -4132,7 +4162,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-reviews .reviews .item .text { width: 100%; padding-left: 0; float: none; }
 	.block-reviews .reviews .item .text .in span:before, .block-reviews .reviews .item .text .in span:after { display: none; }
 	.block-about .pic { width: 75%; margin-left: auto; margin-bottom: 20px; position: relative; }
-	.up { margin-bottom: -50px; }
+	.up { margin-bottom: -55px; }
+	.block-kinds .tariff .list li { width: 50%; }
 }
 @media (max-width: 700px) {
 	h2, .h2 { text-align: center; }
@@ -4180,7 +4211,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-kinds .tariff .list li { width: 50%; }
 	.block-kinds .tariff .list li:nth-child(2n+1) { clear: left; }
 	.block-kinds .tariff .list li:nth-child(3n+1) { clear: none; }
-	.block-features .list li { width: 50%; }
+	.block-features .list { text-align: center; }
+	.block-features .list li { width: 49%; float: none; display: inline-block; }
 	.block-information .list li { width: 100%; float: none; }
 	.block-information .condition { padding-left: 0; }
 	.navigation-landing li { width: 49%; }
@@ -4204,6 +4236,12 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.buttons-links li { width: 75%; margin: 0 auto 20px; float: none; }
 	.block-number { display: block; }
 	.block-number .col { width: 100%; margin: 0 auto 20px; display: block; float: none; }
+}
+@media (max-width: 650px) {
+	.block-process .list { padding: 0; }
+	.block-process .list li { width: 400px; margin-left: auto; margin-right: auto; float: none; }
+	.block-process .list .name { width: 150px; }
+	.block-process .list .ok, .block-process .process .progress { display: none; }
 }
 @media (max-width: 575px) {
 	.block-portfolio .catalog li { width: 100%; float: none; }
@@ -4266,6 +4304,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-recent-projects .slider .carousel .statistics .table td { padding: 5px; }
 	.block-features .list li { width: 100%; padding: 0; float: none; }
 	.block-information .list li { padding-right: 0; }
+	.block-process .list li { width: 100%; }
 }
 @media (max-width: 400px) {
 	.header .nav .sublist > ul { width: 100%; margin-left: 0; }
@@ -4278,7 +4317,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-information .condition li .time:after { display: none; }
 	.block-information .condition li .icon { margin: 0 auto 20px; position: relative; top: 0; left: auto; }
 	.navigation-landing li { width: 100%; float: none; }
-	.block-about .button { font-size: 12px; }
 	.buttons-links li { width: 100%; }
 	.block-project .project-name dd { margin-left: 0; }
 	.block-kinds .about .pic { width: 100%; }
