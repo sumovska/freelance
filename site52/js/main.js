@@ -23,6 +23,14 @@ $(document).ready(function () {
 
 	/* Nav init */
 	$('.header .nav').each(function () {
+		$(window).on('scroll touchmove', function () {
+			/* Toggle fixed header */
+			if ($(window).scrollTop() > 86) {
+				$('.header').addClass('header-fixed');
+			} else {
+				$('.header').removeClass('header-fixed');
+			}
+		});
 		var _nav = $(this), _html = $('html');
 		$('.toggle', _nav).click(function () {
 			$(this).toggleClass('active');
@@ -159,14 +167,73 @@ $(document).ready(function () {
 		return false;
 	});
 
-	/* Onscroll */
-	$(window).on('scroll touchmove', function () {
-		/* Toggle fixed header */
-		if ($(window).scrollTop() > 86) {
-			$('.header').addClass('header-fixed');
-		} else {
-			$('.header').removeClass('header-fixed');
+	$('.block-number').each(function () {
+		function count() {
+			$('.number', _number).each(function () {
+				var _self = $(this), myInterval, max = +_self.attr('data-counter'), counter = 0, len = max.toString().length, mask = '', i = 0, temp = 0, speed = +_self.attr('data-speed'), step = +_self.attr('data-step');
+				for (i = 0; i < len; i++) {
+					mask = mask + '0';
+				}
+				myInterval = setInterval(function () {
+					counter = counter + step;
+					if (counter >= max) {
+						clearInterval(myInterval);
+						counter = max;
+					}
+					temp = (mask + counter).slice(-len);
+					$('span', _self).each(function (i) {
+						$(this).text(temp[i]);
+					});
+				}, speed);
+			});
 		}
+
+		var _number = $(this), top = $(this).offset().top - Math.floor(3 * $(window).height() / 4);
+		$(window).on('scroll touchmove', function () {
+			if (!_number.hasClass('block-number-start')) {
+				if ($(window).scrollTop() > top) {
+					_number.addClass('block-number-start');
+					count();
+				}
+			}
+		});
+	});
+
+	$('.block-process').each(function () {
+		var _progress = $(this), top = $(this).offset().top - Math.floor(2 * $(window).height() / 3);
+		$(window).on('scroll touchmove', function () {
+			if (!_progress.hasClass('block-process-start')) {
+				if ($(window).scrollTop() > top) {
+					_progress.addClass('block-process-start');
+				}
+			}
+		});
+	});
+
+	$('.block-project').each(function () {
+		var _self = $(this), _project = $('.picture', this), top = _project.offset().top, bottom = _project.offset().top + _project.height();
+		$(window).on('scroll touchmove', function () {
+			if ($(window).scrollTop() > top) {
+				_self.addClass('block-project-start');
+				bottom = _project.offset().top + _project.height() - 400;
+				if ($(window).scrollTop() > bottom) {
+					_self.addClass('block-project-end');
+				} else {
+					_self.removeClass('block-project-end');
+				}
+			} else {
+				_self.removeClass('block-project-start');
+			}
+		});
+	});
+
+	$('.tabs').each(function () {
+		$('li a', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+			$('#' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			return false;
+		});
 	});
 
 	/* IE fixes */
