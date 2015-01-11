@@ -21,10 +21,29 @@
 		<div class="wrapper">
 			<p class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></p>
 			<p class="slogan">Новый взгляд на изоляцию</p>
-			<div class="callback">
-				<a class="link" href="#">Вход для дилеров</a>
-				<a class="link" href="#">Обратная связь</a>
-			</div>
+			<ul class="callback">
+				<li>
+					<a class="link" href="#">Вход для дилеров</a>
+					<div id="signin" class="form">
+						<form action="#">
+							<p class="line required"><input type="text" placeholder="Эл.почта"></p>
+							<p class="line"><input type="password" placeholder="Пароль"></p>
+							<p class="submit"><input type="submit" value="Войти на сайт"></p>
+							<p class="forgot"><a href="#">Забыли пароль?</a></p>
+						</form>
+					</div>
+				</li>
+				<li>
+					<a class="link" href="#">Обратная связь</a>
+					<div id="feedback" class="form">
+						<form action="#">
+							<p class="line required"><input type="text" placeholder="Имя"></p>
+							<p class="line"><input type="tel" placeholder="Телефон"></p>
+							<p class="submit"><input type="submit" value="Оставить заявку"></p>
+						</form>
+					</div>
+				</li>
+			</ul>
 			<a class="phone" href="tel:+7-495-204-17-89">+7 495 204-17-89</a>
 			<div class="search">
 				<form action="#">
@@ -38,7 +57,15 @@
 		<div class="wrapper">
 			<ul class="list">
 				<li><a href="index.html">Главная</a></li>
-				<li><a href="about.html">О компании</a></li>
+				<li class="sub">
+					<a href="#">О компании</a>
+					<ul class="sublist">
+						<li><a href="#">Технологии и История</a></li>
+						<li><a href="#">Наши объекты</a></li>
+						<li><a href="#">О продукте</a></li>
+						<li><a href="#">Публикации в СМИ</a></li>
+					</ul>
+				</li>
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#"><span class="hidden">Конструктивные</span> решения</a></li>
 				<li><a href="documents.html">Документы</a></li>
@@ -53,7 +80,7 @@
 	<article class="full">
 		<div class="wrapper">
 			<div class="breadcrumbs">
-				<a class="link" href="#">Каталог</a>
+				<a class="link" href="catalog.html">Каталог</a>
 				<span class="current">Pirro Venti</span>
 			</div>
 			<div class="promo" style="background-image:url('img/temp/promo-1.jpg')">
@@ -64,29 +91,29 @@
 			<div class="characteristic">
 				<div class="col">
 					<dl class="list-orange">
-						<dt class="line-1">Стандартные размеры</dt>
+						<dt><img src="img/icons/character-1.png" alt="">Стандартные размеры</dt>
 						<dd>По проекту</dd>
-						<dt class="line-2">Стандартная толщина</dt>
+						<dt><img src="img/icons/character-2.png" alt="">Стандартная толщина</dt>
 						<dd>20 мм</dd>
-						<dt class="line-3">Теплопроводность, &lambda;<sub>Б</sub></dt>
+						<dt><img src="img/icons/character-3.png" alt="">Теплопроводность, &lambda;<sub>Б</sub></dt>
 						<dd>0,023 Вт/(м•К)</dd>
-						<dt class="line-4">Удельный вес</dt>
+						<dt><img src="img/icons/character-4.png" alt="">Удельный вес</dt>
 						<dd>32 &#177; 2 кг/м3</dd>
-						<dt class="line-5">Прочность на сжатие при 10% деформации</dt>
+						<dt><img src="img/icons/character-5.png" alt="">Прочность на сжатие при 10% деформации</dt>
 						<dd>&gt;200 кПа</dd>
-						<dt class="line-6">Покрытие</dt>
+						<dt><img src="img/icons/character-6.png" alt="">Покрытие</dt>
 						<dd>Двустороннее диффузионно-герметичное покрытие многослойным ламинированным алюминием</dd>
 					</dl>
 				</div>
 				<div class="col">
 					<dl class="list-orange">
-						<dt class="line-7">Водопоглощение при полном погружении</dt>
+						<dt><img src="img/icons/character-7.png" alt="">Водопоглощение при полном погружении</dt>
 						<dd>&lt;1,0%</dd>
-						<dt class="line-8">Коэффициент паропроницаемости</dt>
+						<dt><img src="img/icons/character-8.png" alt="">Коэффициент паропроницаемости</dt>
 						<dd>0,003 Мг/м•ч•Па</dd>
-						<dt class="line-9">Стабильность размеров</dt>
+						<dt><img src="img/icons/character-9.png" alt="">Стабильность размеров</dt>
 						<dd>7%</dd>
-						<dt class="line-10">Профилирование</dt>
+						<dt><img src="img/icons/character-10.png" alt="">Профилирование</dt>
 						<dd>
 							<ul>
 								<li>Прямые кромки</li>
@@ -94,11 +121,11 @@
 								<li>Четверть<sup>**</sup></li>
 							</ul>
 						</dd>
-						<dt class="line-11">Класс пожарной опасности</dt>
+						<dt><img src="img/icons/character-11.png" alt="">Класс пожарной опасности</dt>
 						<dd>от -70<sup>&deg;</sup>C до +120<sup>&deg;</sup>C</dd>
-						<dt class="line-12">Температурный диапазон эксплуатации</dt>
+						<dt><img src="img/icons/character-12.png" alt="">Температурный диапазон эксплуатации</dt>
 						<dd>КМ1</dd>
-						<dt class="line-fn">
+						<dt class="fn">
 							<p><sup>*</sup> по всем сторонам панели, марка AF</p>
 							<p><sup>**</sup> по всем сторонам панели</p>
 						</dt>
@@ -127,7 +154,7 @@
 					<tr>
 						<td class="text">Разрушительные повторные подземные толчки продолжались и в 2011 году. Сильнейший из них, магнитудой 6,3, случился 22 февраля 2011 года, и ощущался от Инверкаргилла до Веллингтона. Тогда погибли 185 человек.</td>
 						<td class="size">190 Кб</td>
-						<td class="download"><a href="#">Скачать</a></td>
+						<td class="download"><a class="fancybox-popup" href="#callback">Скачать</a></td>
 					</tr>
 					<tr>
 						<td class="pic" rowspan="2"><img src="img/temp/doc-2.jpg" alt=""></td>
@@ -137,13 +164,13 @@
 					<tr>
 						<td class="text">Разрушительные повторные подземные толчки продолжались и в 2011 году. Сильнейший из них, магнитудой 6,3, случился 22 февраля 2011 года, и ощущался от Инверкаргилла до Веллингтона. Тогда погибли 185 человек.</td>
 						<td class="size">190 Кб</td>
-						<td class="download"><a href="#">Скачать</a></td>
+						<td class="download"><a class="fancybox-popup" href="#callback">Скачать</a></td>
 					</tr>
 				</table>
 			</div>
 			<div class="buttons">
 				<a class="button" href="#"><span>Уникальность PIRRO</span></a>
-				<a class="button button-calculate" href="#"><span>Калькулятор</span></a>
+				<a class="button button-calculate" href="calculate.html"><span>Калькулятор</span></a>
 				<a class="button button-buy" href="#"><span>Где купить</span></a>
 			</div>
 		</div>
@@ -154,25 +181,25 @@
 			<div class="col">
 				<p class="h">Каталог</p>
 				<ul class="list">
-					<li><a href="#">PIRRO UNIVERSAL</a></li>
-					<li><a href="#">PIRRO STUCCO</a></li>
-					<li><a href="#">PIRRO VENTIDUCT</a></li>
-					<li><a href="#">PIRRO BITUM</a></li>
-					<li><a href="#">PIRRO MEMBRANE</a></li>
-					<li><a href="#">PIRRO AGRO</a></li>
-					<li><a href="#">PIRRO INTERIOR</a></li>
-					<li><a href="#">PIRRO HEAVY</a></li>
-					<li><a href="#">PIRRO FACADE</a></li>
+					<li><a href="item.html">PIRRO UNIVERSAL</a></li>
+					<li><a href="item.html">PIRRO STUCCO</a></li>
+					<li><a href="item.html">PIRRO VENTIDUCT</a></li>
+					<li><a href="item.html">PIRRO BITUM</a></li>
+					<li><a href="item.html">PIRRO MEMBRANE</a></li>
+					<li><a href="item.html">PIRRO AGRO</a></li>
+					<li><a href="item.html">PIRRO INTERIOR</a></li>
+					<li><a href="item.html">PIRRO HEAVY</a></li>
+					<li><a href="item.html">PIRRO FACADE</a></li>
 				</ul>
 			</div>
 			<div class="col">
 				<p class="h">О компании</p>
 				<ul class="list">
-					<li><a href="#">О компании</a></li>
-					<li><a href="#">Каталог</a></li>
+					<li><a href="about.html">О компании</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
 					<li><a href="#">Конструктивные решения</a></li>
 					<li><a href="#">Область применения</a></li>
-					<li><a href="#">Документы</a></li>
+					<li><a href="documents.html">Документы</a></li>
 					<li><a href="#">Дилерам</a></li>
 					<li><a href="#">Новости</a></li>
 				</ul>
@@ -199,6 +226,21 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="popups">
+		<div id="callback" class="popup popup-callback">
+			<p class="title"><span>Получить документ</span>Для получения выбранного файла вам необходимо оставить заявку, после чего наши менеджеры вышлют вам файл на электронную почту.</p>
+			<form class="form" action="#">
+				<p class="line"><input type="text" value="" placeholder="Ваше имя"></p>
+				<p class="line"><input type="text" value="" placeholder="Эл. почта*"></p>
+				<p class="line"><input type="text" value="" placeholder="Телефон"></p>
+				<p class="submit">
+					<button type="submit">Получить</button>
+				</p>
+			</form>
+			<p class="legend">Если вы торопитесь, позвоните нашему менеджеру самостоятельно: <a class="tel" href="tel:+7-495-204-17-89">&nbsp;+7 495 204-17-89</a></p>
+		</div>
+	</div>
 
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>

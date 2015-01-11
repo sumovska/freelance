@@ -21,10 +21,29 @@
 		<div class="wrapper">
 			<p class="logo"><img src="img/logo.png" alt=""></p>
 			<p class="slogan">Новый взгляд на изоляцию</p>
-			<div class="callback">
-				<a class="link" href="#">Вход для дилеров</a>
-				<a class="link" href="#">Обратная связь</a>
-			</div>
+			<ul class="callback">
+				<li>
+					<a class="link" href="#">Вход для дилеров</a>
+					<div id="signin" class="form">
+						<form action="#">
+							<p class="line required"><input type="text" placeholder="Эл.почта"></p>
+							<p class="line"><input type="password" placeholder="Пароль"></p>
+							<p class="submit"><input type="submit" value="Войти на сайт"></p>
+							<p class="forgot"><a href="#">Забыли пароль?</a></p>
+						</form>
+					</div>
+				</li>
+				<li>
+					<a class="link" href="#">Обратная связь</a>
+					<div id="feedback" class="form">
+						<form action="#">
+							<p class="line required"><input type="text" placeholder="Имя"></p>
+							<p class="line"><input type="tel" placeholder="Телефон"></p>
+							<p class="submit"><input type="submit" value="Оставить заявку"></p>
+						</form>
+					</div>
+				</li>
+			</ul>
 			<a class="phone" href="tel:+7-495-204-17-89">+7 495 204-17-89</a>
 			<div class="search">
 				<form action="#">
@@ -37,8 +56,16 @@
 	<nav class="nav">
 		<div class="wrapper">
 			<ul class="list">
-				<li><a href="index.html">Главная</a></li>
-				<li><a href="about.html">О компании</a></li>
+				<li class="active"><a>Главная</a></li>
+				<li class="sub">
+					<a href="#">О компании</a>
+					<ul class="sublist">
+						<li><a href="#">Технологии и История</a></li>
+						<li><a href="#">Наши объекты</a></li>
+						<li><a href="#">О продукте</a></li>
+						<li><a href="#">Публикации в СМИ</a></li>
+					</ul>
+				</li>
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#"><span class="hidden">Конструктивные</span> решения</a></li>
 				<li><a href="documents.html">Документы</a></li>
@@ -66,13 +93,55 @@
 					<div class="features">
 						<div class="wrapper">
 							<ul class="list">
-								<li><a href="#">Эффективность</a></li>
-								<li><a href="#">Экологичность</a></li>
-								<li><a href="#">Огнестойкость</a></li>
-								<li><a href="#">Влагостойкость</a></li>
-								<li><a href="#">Универсальность</a></li>
-								<li><a href="#">Долговечность</a></li>
-								<li><a href="#">Экономическая выгода</a></li>
+								<li>
+									<a href="#">
+										<img class="icon icon-white" src="img/icons/feature-1.png" alt="">
+										<img class="icon icon-color" src="img/icons/feature-1c.png" alt="">
+										<span>Эффективность</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="icon icon-white" src="img/icons/feature-2.png" alt="">
+										<img class="icon icon-color" src="img/icons/feature-2c.png" alt="">
+										<span>Экологичность</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="icon icon-white" src="img/icons/feature-3.png" alt="">
+										<img class="icon icon-color" src="img/icons/feature-3c.png" alt="">
+										<span>Огнестойкость</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="icon icon-white" src="img/icons/feature-4.png" alt="">
+										<img class="icon icon-color" src="img/icons/feature-4c.png" alt="">
+										<span>Влагостойкость</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="icon icon-white" src="img/icons/feature-5.png" alt="">
+										<img class="icon icon-color" src="img/icons/feature-5c.png" alt="">
+										<span>Универсальность</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="icon icon-white" src="img/icons/feature-6.png" alt="">
+										<img class="icon icon-color" src="img/icons/feature-6c.png" alt="">
+										<span>Долговечность</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="icon icon-white" src="img/icons/feature-7.png" alt="">
+										<img class="icon icon-color" src="img/icons/feature-7c.png" alt="">
+										<span>Экономическая выгода</span>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -83,9 +152,9 @@
 
 	<article class="full">
 		<div class="wrapper">
-			<div class="about">
-				<p class="col">Компания «PirroGroup» стала одним из пионеров  в России по производству огнестойких  полиуретанов  нового поколения (ПИР)  с мягкими облицовками и заложила один из кирпичиков в фундамент направления,  нацеленного на экономию энергии.</p>
-				<p class="col">Сегодня  завод компании   «PirroGroup»   производит  термоизоляционные панели  марки «Pirro» на высокотехнологичном  оборудовании, способном выпускать более 10 млн м2 в год.</p>
+			<div class="columns">
+				<p>Компания «PirroGroup» стала одним из пионеров  в России по производству огнестойких  полиуретанов  нового поколения (ПИР)  с мягкими облицовками и заложила один из кирпичиков в фундамент направления,  нацеленного на экономию энергии.</p>
+				<p>Сегодня  завод компании   «PirroGroup»   производит  термоизоляционные панели  марки «Pirro» на высокотехнологичном  оборудовании, способном выпускать более 10 млн м2 в год.</p>
 			</div>
 			<ul class="info">
 				<li>
@@ -119,7 +188,7 @@
 			</ul>
 			<div class="buttons">
 				<a class="button" href="#"><span>Уникальность PIRRO</span></a>
-				<a class="button button-calculate" href="#"><span>Калькулятор</span></a>
+				<a class="button button-calculate" href="calculate.html"><span>Калькулятор</span></a>
 				<a class="button button-buy" href="#"><span>Где купить</span></a>
 			</div>
 		</div>
@@ -145,10 +214,10 @@
 				<p class="h">О компании</p>
 				<ul class="list">
 					<li><a href="#">О компании</a></li>
-					<li><a href="#">Каталог</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
 					<li><a href="#">Конструктивные решения</a></li>
 					<li><a href="#">Область применения</a></li>
-					<li><a href="#">Документы</a></li>
+					<li><a href="documents.html">Документы</a></li>
 					<li><a href="#">Дилерам</a></li>
 					<li><a href="#">Новости</a></li>
 				</ul>

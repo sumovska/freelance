@@ -22,11 +22,18 @@ $(document).ready(function () {
 			maxSlides: 6
 		});
 	});
+
+	$('.header').each(function () {
+		$('.callback li a').click(function () {
+			$(this).closest('li').toggleClass('active')
+		});
+	});
+
 	$('.nav').each(function () {
 		var _self = $(this);
 		$('.toggle', this).click(function () {
 			if ($('.nav-space', _self).length === 0) {
-				$('ul', _self).wrap('<div class="nav-space"></div>')
+				$('.list', _self).wrap('<div class="nav-space"></div>')
 			}
 			$('.nav-space', _self).fadeToggle(200);
 			$('body').toggleClass('body-nav-open');
@@ -39,7 +46,7 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Top checkins scrollbar */
+	/* Dealers scrollbar */
 	$('.block-dealers').each(function () {
 		$('.list', this).perfectScrollbar();
 	});
@@ -57,4 +64,60 @@ $(document).ready(function () {
 			}
 		}
 	});
+
+	/* Submenu
+	$('.nav').each(function () {
+		$('.list li').click(function () {
+			var _self = $(this);
+			$(_self).toggleClass('active');
+			$('.sublist').fadeToggle(200);
+			return false;
+		});
+	});
+	*/
+
+	$('.sidebar').each(function () {
+		var _self = $(this);
+		$('.filter-link .link').click(function () {
+			$(_self).toggleClass('sidebar-open');
+			$('.filter').fadeToggle(200);
+			return false;
+		});
+		/* Filter */
+		$('.filter').each(function () {
+			$('.slider', this).each(function () {
+				var _self = $(this);
+				var item = $('.item', this).noUiSlider({
+					start: [ 40, 220 ],
+					step: 1,
+					behaviour: 'drag',
+					connect: true,
+					range: {
+						'min': 0,
+						'max': 250
+					},
+					serialization: {
+						lower: [
+							$.Link({
+								target: $(".from var", _self)
+							})
+						],
+						upper: [
+							$.Link({
+								target: $(".to var", _self)
+							})
+						],
+						format: {
+							// Set formatting
+							thousand: ' ',
+							decimals: 0
+						}
+					}
+				});
+			});
+		});
+	});
+		
+
+
 });
