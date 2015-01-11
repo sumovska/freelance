@@ -21,10 +21,29 @@
 		<div class="wrapper">
 			<p class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></p>
 			<p class="slogan">Новый взгляд на изоляцию</p>
-			<div class="callback">
-				<a class="link" href="#">Вход для дилеров</a>
-				<a class="link" href="#">Обратная связь</a>
-			</div>
+			<ul class="callback">
+				<li>
+					<a class="link" href="#">Вход для дилеров</a>
+					<div id="signin" class="form">
+						<form action="#">
+							<p class="line required"><input type="text" placeholder="Эл.почта"></p>
+							<p class="line"><input type="password" placeholder="Пароль"></p>
+							<p class="submit"><input type="submit" value="Войти на сайт"></p>
+							<p class="forgot"><a href="#">Забыли пароль?</a></p>
+						</form>
+					</div>
+				</li>
+				<li>
+					<a class="link" href="#">Обратная связь</a>
+					<div id="feedback" class="form">
+						<form action="#">
+							<p class="line required"><input type="text" placeholder="Имя"></p>
+							<p class="line"><input type="tel" placeholder="Телефон"></p>
+							<p class="submit"><input type="submit" value="Оставить заявку"></p>
+						</form>
+					</div>
+				</li>
+			</ul>
 			<a class="phone" href="tel:+7-495-204-17-89">+7 495 204-17-89</a>
 			<div class="search">
 				<form action="#">
@@ -38,12 +57,20 @@
 		<div class="wrapper">
 			<ul class="list">
 				<li><a href="index.html">Главная</a></li>
-				<li><a href="about.html">О компании</a></li>
+				<li class="sub">
+					<a href="#">О компании</a>
+					<ul class="sublist">
+						<li><a href="#">Технологии и История</a></li>
+						<li><a href="#">Наши объекты</a></li>
+						<li><a href="#">О продукте</a></li>
+						<li><a href="#">Публикации в СМИ</a></li>
+					</ul>
+				</li>
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#"><span class="hidden">Конструктивные</span> решения</a></li>
-				<li><a href="#">Документы</a></li>
+				<li><a href="documents.html">Документы</a></li>
 				<li><a href="#"><span class="hidden">Область</span> применения</a></li>
-				<li><a href="#">Контакты</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 			<a class="toggle" href="#">Меню</a>
 			<a class="close" href="#">x</a>
@@ -60,44 +87,68 @@
 						<p class="line">
 							<label>Регион</label>
 							<select>
-								<option></option>
+								<option>Поволжский регион</option>
 							</select>
 						</p>
 						<p class="line">
 							<label>Город</label>
 							<select>
-								<option></option>
+								<option>Ульяновск</option>
 							</select>
 						</p>
 					</form>
 					<div class="inform">
-						<p>Рекомендуемая толщина утеплителя для стен <span>45 мм</span></p>
-						<p>Для крыши и пола <span>65 мм</span></p>
+						<p class="line"><img class="icon" src="img/icons/inform-2.png" alt="">Рекомендуемая толщина утеплителя для стен <span>45 мм</span></p>
+						<p class="line"><img class="icon" src="img/icons/inform-1.png" alt="">Для крыши и пола <span>65 мм</span></p>
 					</div>
+				</div>
+				<div class="block block-compute">
 					<h4 class="h4">Расчёт <span class="mark">количества</span> утеплителя</h4>
-					<form>
-						<p>
-							<label>Длина</label>
-							<input type="text" placeholder="14 500">
-						</p>
-						<p>
-							<label>Ширина</label>
-							<input type="text" placeholder="11 800">
-						</p>
-						<p>
-							<label>Высота</label>
-							<input type="text" placeholder="2 000">
-						</p>
-						<p>
-							<label>Отапливаемый чердак?</label>
-							<select>
-								<option>да</option>
-								<option>нет</option>
-							</select>
-						</p>
-					</form>
+					<div class="inner">
+						<img class="draft" src="img/temp/draft-1.png" alt="">
+						<form class="form" action="#">
+							<p class="line">
+								<label>Длина</label>
+								<input type="text" placeholder="14 500">
+								<span>мм</span>
+							</p>
+							<p class="line">
+								<label>Ширина</label>
+								<input type="text" placeholder="11 800">
+								<span>мм</span>
+							</p>
+							<p class="line">
+								<label>Высота</label>
+								<input type="text" placeholder="2 000">
+								<span>мм</span>
+							</p>
+							<p class="line">
+								<label>Отапливаемый чердак?</label>
+								<select>
+									<option>да</option>
+									<option>нет</option>
+								</select>
+							</p>
+							<p class="line">
+								<label>Угол ската крыши</label>
+								<select>
+									<option>45°</option>
+								</select>
+							</p>
+						</form>
+						<div class="inform">
+							<p class="line"><img class="icon" src="img/icons/inform-2.png" alt="">Рекомендуемое количество утеплителя для стен <span>42 м<sup>2</sup></span></p>
+							<p class="line"><img class="icon" src="img/icons/inform-1.png" alt="">Для крыши <span>24 м<sup>2</sup></span></p>
+							<p class="line"><img class="icon" src="img/icons/inform-3.png" alt="">Для пола <span>21 м<sup>2</sup></span></p>
+						</div>
+					</div>
 				</div>
 
+			</div>
+			<div class="buttons">
+				<a class="button" href="#"><span>Уникальность PIRRO</span></a>
+				<a class="button button-catalog" href="catalog.html"><span>Каталог</span></a>
+				<a class="button button-buy" href="#"><span>Где купить</span></a>
 			</div>
 		</div>
 	</article>
@@ -107,25 +158,25 @@
 			<div class="col">
 				<p class="h">Каталог</p>
 				<ul class="list">
-					<li><a href="#">PIRRO UNIVERSAL</a></li>
-					<li><a href="#">PIRRO STUCCO</a></li>
-					<li><a href="#">PIRRO VENTIDUCT</a></li>
-					<li><a href="#">PIRRO BITUM</a></li>
-					<li><a href="#">PIRRO MEMBRANE</a></li>
-					<li><a href="#">PIRRO AGRO</a></li>
-					<li><a href="#">PIRRO INTERIOR</a></li>
-					<li><a href="#">PIRRO HEAVY</a></li>
-					<li><a href="#">PIRRO FACADE</a></li>
+					<li><a href="item.html">PIRRO UNIVERSAL</a></li>
+					<li><a href="item.html">PIRRO STUCCO</a></li>
+					<li><a href="item.html">PIRRO VENTIDUCT</a></li>
+					<li><a href="item.html">PIRRO BITUM</a></li>
+					<li><a href="item.html">PIRRO MEMBRANE</a></li>
+					<li><a href="item.html">PIRRO AGRO</a></li>
+					<li><a href="item.html">PIRRO INTERIOR</a></li>
+					<li><a href="item.html">PIRRO HEAVY</a></li>
+					<li><a href="item.html">PIRRO FACADE</a></li>
 				</ul>
 			</div>
 			<div class="col">
 				<p class="h">О компании</p>
 				<ul class="list">
-					<li><a href="#">О компании</a></li>
-					<li><a href="#">Каталог</a></li>
+					<li><a href="about.html">О компании</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
 					<li><a href="#">Конструктивные решения</a></li>
 					<li><a href="#">Область применения</a></li>
-					<li><a href="#">Документы</a></li>
+					<li><a href="documents.html">Документы</a></li>
 					<li><a href="#">Дилерам</a></li>
 					<li><a href="#">Новости</a></li>
 				</ul>
