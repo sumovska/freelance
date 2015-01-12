@@ -42,4 +42,16 @@ $(document).ready(function () {
 		return false;
 	});
 
+	/* Month init */
+	$('.month').each(function () {
+		$(window).on('scroll touchmove', function () {
+			/* Toggle fixed header */
+			if ($(window).scrollTop() > 250) {
+				$('.month').addClass('month-fixed');
+			} else {
+				$('.month').removeClass('month-fixed');
+			}
+		});
+	});
+
 });
