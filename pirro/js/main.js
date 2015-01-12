@@ -25,7 +25,7 @@ $(document).ready(function () {
 
 	$('.header').each(function () {
 		$('.callback li a').click(function () {
-			$(this).closest('li').toggleClass('active')
+			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
 		});
 	});
 

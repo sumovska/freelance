@@ -1624,27 +1624,18 @@ textarea {
 }
 .block-dealers .map {
 	height: 600px;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 	z-index: 10;
-}
-.block-dealers .wrapper {
-	padding-top: 0;
-	padding-bottom: 0;
-	position: relative;
-	overflow: visible;
-	z-index: 20;
 }
 .dealers {
 	width: 300px;
 	padding: 30px;
 	background: #222629;
-	position: relative;
+	position: absolute;
+	left: 90px;
+	top: 0;
 	border-radius: 4px;
 	box-shadow: 0 0 70px 1px rgba(0, 0, 0, .5);
+	z-index: 20;
 }
 .dealers form {
 	margin-bottom: 20px;
@@ -1865,12 +1856,27 @@ textarea {
 	position: relative;
 }
 .block-compute .inner .draft {
-	width: 508px;
+	width: 520px;
+	height: 460px;
 	display: block;
+	font: bold 18px 'PFDin Display Pro', Helvetica, Arial, sans-serif;
 	position: absolute;
 	right: 10px;
 	top: 2px;
 }
+.block-compute .inner .draft img {
+	width: 508px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+.block-compute .inner .draft .measure {
+	position: absolute;
+	bottom: 40px;
+}
+.block-compute .inner .draft .measure-width-1 { left: 8px; }
+.block-compute .inner .draft .measure-width-2 { right: 106px; }
+.block-compute .inner .draft .measure-height { right: 8px; bottom: 188px; }
 .block-compute .inner .form .line {
 	width: 300px;
 	float: none;
@@ -1905,7 +1911,6 @@ textarea {
 	width: 252px;
 	height: 250px;
 	margin: 0 15px 25px;
-	padding: 20px;
 	float: left;
 	background-color: #f9f9f9;
 	background-size: 252px auto;
@@ -1913,6 +1918,17 @@ textarea {
 	background-repeat: no-repeat;
 	box-shadow: inset 0 0 12px 4px rgba(0, 0, 0, .05);
 	border-radius: 4px;
+}
+.catalog .link {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: block;
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.catalog .link span {
+	display: block;
 }
 .catalog .text {
 	color: #555;
@@ -1923,16 +1939,11 @@ textarea {
 .catalog .h {
 	margin-bottom: 6px;
 	font-size: 24px;
+	color: #202224;
 	line-height: 26px;
 	font-weight: bold;
 }
-.catalog .h a {
-	display: block;
-	color: #202224;
-	text-decoration: none;
-	transition: color .3s ease;
-}
-.catalog .h a:hover {
+.catalog .link:hover .h {
 	color: #555;
 }
 /* ==========================================================================
@@ -2166,11 +2177,10 @@ textarea {
 	.block-sertificate table .text { padding-right: 10px; }
 	.make .pic { width: 100%; height: auto; margin-bottom: 10px; float: none; }
 	.make .describe { padding-left: 0; }
-	.dealers { width: 100%; margin-bottom: 18px; box-shadow: none; }
+	.dealers { width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 18px; position: relative; left: auto; box-shadow: none; }
 	.dealers .inner .list { height: 146px; }
 	.dealers .inner .list .line { width: 50%; float: left; }
 	.dealers .jq-selectbox { width: 100%; }
-	.block-dealers .map { position: relative; }
 	.block-send .make { margin-bottom: 0; }
 	.block-send .make .pic { float: left; margin-bottom: 0; }
 	.sidebar { width: 100%; margin-bottom: 20px; float: none; }
@@ -2181,6 +2191,12 @@ textarea {
 	.sidebar-open .filter-link { margin-bottom: 20px; }
 	.filter { display: none; }
 	.filter .checkbox-list .line { float: left; }
+	.block-compute .inner .draft { width: 400px; height: auto; font-size: 14px; }
+	.block-compute .inner .draft img { width: 100%; }
+	.block-compute .inner .draft .measure { bottom: 26px; }
+	.block-compute .inner .draft .measure-width-1 { left: 0; }
+	.block-compute .inner .draft .measure-width-2 { right: 76px; }
+	.block-compute .inner .draft .measure-height { right: 0; bottom: 142px; }
 }
 @media (max-width: 499px) {
 	.wrapper { width: 100%; }
@@ -2203,6 +2219,12 @@ textarea {
 	.catalog li:last-child { margin-bottom: 0; }
 	.block-dealers .map { height: 200px; }
 	.map-dealer { height: 200px; }
+	.dealers { width: 100%; }
+	.block-compute .inner .draft { width: 300px; font-size: 12px; }
+	.block-compute .inner .draft .measure { bottom: 20px; }
+	.block-compute .inner .draft .measure-width-1 { left: -4px; }
+	.block-compute .inner .draft .measure-width-2 { right: 50px; }
+	.block-compute .inner .draft .measure-height { right: -4px; bottom: 108px; }
 }
 @media (max-width: 400px) {
 	.header .phone { font-size: 18px; }
