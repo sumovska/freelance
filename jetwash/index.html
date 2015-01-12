@@ -40,21 +40,28 @@
 				</div>
 				<img class="pic" src="img/temp/action-1.jpg" alt="">
 				<div class="send">
-					<h4 class="h4">Получить бесплатную консультацию от Ehrle<sup>&reg;</sup></h4>
-
-					<form class="form" action="./handler.php" method="post">
-						<p class="line">
-							<label class="for">Введите имя</label>
-							<input type="text" name="name" value="" required>
-						</p>
-						<p class="line">
-							<label class="for">Введите номер телефона <span class="red">*</span></label>
-							<input type="text" name="phone" value="" required>
-						</p>
-						<p class="submit">
-							<button type="submit">Отправить</button>
-						</p>
-					</form>
+					<div class="form-callback">
+						<div class="form">
+							<h4 class="h4">Получить бесплатную консультацию от Ehrle<sup>&reg;</sup></h4>
+							<form action="./handler.php" method="post">
+								<p class="line">
+									<label for="callback-name-2" class="for">Введите имя <span class="red">*</span></label>
+									<input id="callback-name-2" type="text" name="name" value="" required>
+								</p>
+								<p class="line">
+									<label for="callback-phone-2" class="for">Введите номер телефона <span class="red">*</span></label>
+									<input id="callback-phone-2" type="text" name="phone" value="" required>
+								</p>
+								<p class="submit">
+									<button type="submit">Отправить</button>
+								</p>
+							</form>
+						</div>
+						<div class="success" style="display:none;">
+							<h4 class="h4" style="text-align:center;">Спасибо! Наши менеджеры вам перезвонят</h4>
+							<button class="hide" type="button" style="margin: 20px auto 0 auto;display: block;">Продолжить</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -93,27 +100,28 @@
 
 	<div class="popups">
 		<div id="callback" class="popup popup-callback">
-			<div id="form">
-				<h4 class="h4">Получить бесплатную консультацию от Ehrle<sup>&reg;</sup></h4>
-				<p class="pre">Все данные собираются конфиденциально</p>
-
-				<form class="form" action="./handler.php" method="post">
-					<p class="line">
-						<label for="callback-name" class="for">Введите имя <span class="red">*</span></label>
-						<input id="callback-name" type="text" name="name" value="" required>
-					</p>
-					<p class="line">
-						<label for="callback-phone" class="for">Введите номер телефона <span class="red">*</span></label>
-						<input id="callback-phone" type="text" name="phone" value="" required>
-					</p>
-					<p class="submit">
-						<button type="submit">Отправить</button>
-					</p>
-				</form>
-			</div>
-			<div id="success" style="display:none;">
-				<h4 class="h4">Спасибо! Наши менеджеры вам перезвонят</h4>
-				<button id="close" type="button" style="margin: 20px auto 0 auto;display: block;">Закрыть</button>
+			<div class="form-callback">
+				<div class="form">
+					<h4 class="h4">Получить бесплатную консультацию от Ehrle<sup>&reg;</sup></h4>
+					<p class="pre">Все данные собираются конфиденциально</p>
+					<form action="./handler.php" method="post">
+						<p class="line">
+							<label for="callback-name" class="for">Введите имя <span class="red">*</span></label>
+							<input id="callback-name" type="text" name="name" value="" required>
+						</p>
+						<p class="line">
+							<label for="callback-phone" class="for">Введите номер телефона <span class="red">*</span></label>
+							<input id="callback-phone" type="text" name="phone" value="" required>
+						</p>
+						<p class="submit">
+							<button type="submit">Отправить</button>
+						</p>
+					</form>
+				</div>
+				<div class="success" style="display:none;">
+					<h4 class="h4" style="text-align:center;">Спасибо! Наши менеджеры вам перезвонят</h4>
+					<button class="close" type="button" style="margin: 20px auto 0 auto;display: block;">Закрыть</button>
+				</div>
 			</div>
 		</div>
 	</div>

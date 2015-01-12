@@ -1,4 +1,4 @@
-<div id="products-popup" class="popup popup-products">
+<div id="products-popup1" class="popup popup-products">
 	<h4 class="h4">Автомойка SmartWash</h4>
 	<p class="pre">Бесконтактная автомойка в компактной версии</p>
 	<img class="full" src="img/temp/products/full-1.jpg" alt="">
@@ -123,8 +123,8 @@
 		<td>20 л</td>
 	</tr>
 	</table>
-	<h4 class="h4">Получить консультацию по SmartWash</h4>
-	<form class="form" method="post">
+	<h4 class="h4" id="product1t">Получить консультацию по SmartWash</h4>
+	<form class="form" action="handler.php" method="post" id="product1f">
 		<p class="line line-50">
 			<label class="for">Введите имя <span class="red">*</span></label>
 			<input type="text" name="name" value="" required>
@@ -137,4 +137,8 @@
 			<button type="submit">Отправить</button>
 		</p>
 	</form>
+	<div id="success1" style="display:none;">
+				<h4 class="h4">Спасибо! Наши менеджеры вам перезвонят</h4>
+				<button id="closep1" type="button" style="margin: 20px auto 0 auto;display: block;">Закрыть</button>
+</div>
 </div>

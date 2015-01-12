@@ -168,9 +168,103 @@ $(document).ready(function () {
 
 	});
 
-	$('#callback #close').on('click', function () {
-		$.fancybox.close();
+	$(document).on('submit', '#product1f', function (e) {
+		e.preventDefault();
+		var form = $('#product1f');
+		var data = form.serialize();
+		$('#product1f button').text('Отправка...').attr('disabled', 'disabled');
+		form.css('opacity', '.5');
+
+		$.post("handler.php", data).done(function (response) {
+			if (response == 'ok') {
+				yaCounter27583617.reachGoal('LEAD');
+				form.trigger('reset');
+				$('#product1f').hide();
+				$('#product1t').hide();
+
+				$('#product1f button').text('Отправка').removeAttr('disabled');
+				form.css('opacity', '1');
+				$('#products-popup1 #success1').show();
+			}
+		});
+
 	});
+	$(document).on('submit', '#product2f', function (e) {
+		e.preventDefault();
+		var form = $('#product2f');
+		var data = form.serialize();
+		$('#product2f button').text('Отправка...').attr('disabled', 'disabled');
+		form.css('opacity', '.5');
 
+		$.post("handler.php", data).done(function (response) {
+			if (response == 'ok') {
+				yaCounter27583617.reachGoal('LEAD');
+				form.trigger('reset');
+				$('#product2f').hide();
+				$('#product2t').hide();
 
+				$('#product2f button').text('Отправка').removeAttr('disabled');
+				form.css('opacity', '1');
+				$('#products-popup2 #success2').show();
+			}
+		});
+		$(document).on('submit', '#product3f', function (e) {
+			e.preventDefault();
+			var form = $('#product3f');
+			var data = form.serialize();
+			$('#product3f button').text('Отправка...').attr('disabled', 'disabled');
+			form.css('opacity', '.5');
+
+			$.post("handler.php", data).done(function (response) {
+				if (response == 'ok') {
+					yaCounter27583617.reachGoal('LEAD');
+					form.trigger('reset');
+					$('#product3f').hide();
+					$('#product3t').hide();
+
+					$('#product3f button').text('Отправка').removeAttr('disabled');
+					form.css('opacity', '1');
+					$('#products-popup3 #success3').show();
+				}
+			});
+
+		});
+		$(document).on('submit', '#product4f', function (e) {
+			e.preventDefault();
+			var form = $('#product4f');
+			var data = form.serialize();
+			$('#product4f button').text('Отправка...').attr('disabled', 'disabled');
+			form.css('opacity', '.5');
+
+			$.post("handler.php", data).done(function (response) {
+				if (response == 'ok') {
+					yaCounter27583617.reachGoal('LEAD');
+					form.trigger('reset');
+					$('#product4f').hide();
+					$('#product4t').hide();
+
+					$('#product4f button').text('Отправка').removeAttr('disabled');
+					form.css('opacity', '1');
+					$('#products-popup4 #success4').show();
+				}
+			});
+
+			$('#callback #close').on('click', function () {
+				$.fancybox.close();
+			});
+			$(document).on('click', '#closep1', function () {
+				$.fancybox.close();
+			});
+			$(document).on('click', '#closep2', function () {
+				$.fancybox.close();
+			});
+			$(document).on('click', '#closep3', function () {
+				$.fancybox.close();
+			});
+			$(document).on('click', '#closep4', function () {
+				$.fancybox.close();
+			});
+
+		});
+	});
 });
