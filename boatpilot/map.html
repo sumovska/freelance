@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Boatpilot.me - free navigator and interactive pilot for tablets</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="free navigator, yacht navigation, mapping tools, nautical charts, forecasts, marina booking, yacht charts, ipad nautical navigation, android nautical navigation, free yacht navigation, free navionics alternative">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
+	<!--[if IE]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body class="body">
+
+	<header class="header header-inner">
+		<div class="wrapper">
+			<p class="logo"><a href="index.html"><img src="img/logo.png" alt="Boatpilot.me"></a></p>
+			<div class="search">
+				<form action="#">
+					<input type="text" placeholder="Search POI: i.e.Proto Montenegro" value="">
+					<button type="submit" value="" title="Искать"></button>
+				</form>
+			</div>
+			<ul class="social">
+				<li class="fb"><a href="#" title="Facebook"></a></li>
+				<li class="tw"><a href="#" title="Twitter"></a></li>
+				<li class="nt"><a href="#" title="Navigation"></a></li>
+			</ul>
+			<a class="download" href="#">Download app</a>
+		</div>
+	</header>
+
+	<div class="map-main">
+		<div class="wrapper">
+			<div class="info">
+				<h5 class="h5"><a href="#">Marina di Portoscuso</a></h5>
+				<p class="text">Porto turistico di Portoscuso - is a small modern marina. The village is pleasant despite its proximity to the industrial area of Portovesme. Call the direction via VHF before entering the port. ... <a href="#">More</a></p>
+			</div>
+		</div>
+		<div id="map" class="map"></div>
+	</div>
+
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="copyright">&copy; 2014 Boatpilot.me</p>
+			<ul class="navigation">
+				<li><a href="#">Terms</a></li>
+				<li><a href="#">About us</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="mailto:info@boatpilot.me">Contact us</a></li>
+				<li><a href="#">Advertizing zone</a></li>
+				<li><a href="#">Secret link</a></li>
+			</ul>
+			<ul class="social">
+				<li class="fb"><a href="#" title="Facebook"></a></li>
+				<li class="tw"><a href="#" title="Twitter"></a></li>
+			</ul>
+			<a class="googleplay" href="https://play.google.com/store/apps/details?id=me.piratas.boatpilot&referrer=utm_source%3Dsite" target="_blank"><img src="img/googleplay.svg" alt=""></a>
+		</div>
+	</footer>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+	<script>
+		window.marker = null;
+		/* Google Map Init */
+		function initMap() {
+			var map, pos, style, mapOptions;
+			pos = new google.maps.LatLng(42.436515, 18.694019);
+			style = [
+				{ "featureType": "road",
+					"elementType": "labels.icon",
+					"stylers": [
+						{ "saturation": 1 },
+						{ "gamma": 1 },
+						{ "visibility": "on" },
+						{ "hue": "#e6ff00" }
+					]
+				}
+			];
+
+
+			mapOptions = {
+				center: pos,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				zoom: 15,
+				backgroundColor: "#eeeeee",
+				panControl: false,
+				mapTypeControl: false,
+				scaleControl: false,
+				streetViewControl: false,
+				overviewMapControl: false,
+				scrollwheel: false,
+				navigationControl: false,
+				zoomControlOptions: {
+					style: google.maps.ZoomControlStyle.SMALL
+				}
+			};
+			map = new google.maps.Map(document.getElementById('map'), mapOptions);
+			var mapType = new google.maps.StyledMapType(style, {name: "Grayscale"});
+			map.mapTypes.set('grey', mapType);
+			map.setMapTypeId('grey');
+			var marker_image = 'img/pin.png';
+			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
+			marker = new google.maps.Marker({
+				position: pos,
+				map: map
+			});
+		}
+		/* Google Map */
+		if (typeof google != 'undefined') {
+			initMap();
+		}
+	</script>
+</body>
+</html>

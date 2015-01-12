@@ -22,6 +22,13 @@
 }
 @font-face {
 	font-family: 'Museo';
+	src: url('../fonts/museocyrl-100.eot');
+	src: url('../fonts/museocyrl-100.eot?#iefix') format('embedded-opentype'), url('../fonts/museocyrl-100.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Museo';
 	src: url('../fonts/museocyrl-100italic.eot');
 	src: url('../fonts/museocyrl-100italic.eot?#iefix') format('embedded-opentype'), url('../fonts/museocyrl-100italic.woff') format('woff');
 	font-weight: normal;
@@ -270,6 +277,13 @@ fieldset {
 	color: #4acd8b;
 	transition: color .3s ease;
 }
+.nav li.active a {
+	color: #d7b5fc;
+	cursor: default;
+}
+.nav li.active a:hover {
+	text-decoration: none;
+}
 /* ==========================================================================
    _POSTS
    ========================================================================== */
@@ -466,6 +480,250 @@ html.contacts-open .contacts { right: 0; }
 html.navigation-open, html.contacts-open { overflow-x: hidden; }
 html.navigation-open body, html.contacts-open body { height: auto; overflow-y: auto; overflow-x: hidden; }
 /* ==========================================================================
+   _ABOUT
+   ========================================================================== */
+.about {
+	width: 46%;
+	margin: 0 auto 62px;
+}
+.about .img {
+	width: 100%;
+	margin-bottom: 38px;
+	display: block;
+}
+.about .text {
+	margin-bottom: 0;
+}
+/* ==========================================================================
+   _CONTACT-ME
+   ========================================================================== */
+.contact-me {
+	width: 50%;
+	margin: -7px auto 62px;
+	text-align: center;
+}
+.contact-me .h2 {
+	margin-bottom: 22px;
+}
+.contact-me .details {
+	margin: 0 0 38px;
+	padding: 0;
+	list-style: none;
+	line-height: 30px;
+}
+.contact-me .details .tel {
+	color: #231f20;
+	cursor: default;
+}
+.contact-me .details .tel:hover {
+	text-decoration: none;
+}
+.contact-me .details .tel:focus {
+	color: #4acd8b;
+}
+.contact-me .callback {
+	width: 100%;
+}
+/* ==========================================================================
+   _CALLBACK
+   ========================================================================== */
+.callback {
+	width: 64%;
+	margin: 0 auto;
+}
+.callback .legend {
+	margin-bottom: 38px;
+}
+.callback .line {
+	margin-bottom: 9px;
+}
+.callback .line input[type="text"] {
+	width: 100%;
+	padding: 12px 16px 15px;
+	display: block;
+	outline: none;
+	font: 16px Museo, Helvetica, Arial, sans-serif;
+	border: 1px solid #dcddd6;
+	box-shadow: inset 0 -1px 1px rgba(231, 232, 227, .9);
+}
+.callback .line textarea {
+	width: 100%;
+	min-height: 94px;
+	padding: 12px 16px 16px;
+	display: block;
+	outline: none;
+	font: 16px Museo, Helvetica, Arial, sans-serif;
+	border: 1px solid #dcddd6;
+	box-shadow: inset 0 -1px 1px rgba(231, 232, 227, .9);
+}
+.callback .submit input[type="submit"] {
+	width: 100%;
+	padding: 12px;
+	display: block;
+	outline: none;
+	font: 18px Raleway, Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	background: #96e2c3;
+	border: 1px solid transparent;
+	transition: color .3s ease, background .3s ease, border-color .3s ease;
+}
+.callback .submit input[type="submit"]:hover {
+	color: #96e2c3;
+	background: transparent;
+	border-color: #96e2c3;
+}
+/* ==========================================================================
+   _CALENDAR
+   ========================================================================== */
+.calendar {
+	width: 100%;
+	font: 16px Museo, Helvetica, Arial, sans-serif;
+}
+.calendar .month {
+	margin-bottom: 32px;
+	padding: 20px 0;
+	text-align: center;
+	font-size: 18px;
+}
+.calendar .month span {
+	position: relative;
+}
+.calendar .month a {
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	top: -10px;
+	background: #96e2c3;
+	border-radius: 50%;
+	transition: background .3s ease;
+}
+.calendar .month a.prev {
+	left: -77px;
+}
+.calendar .month a.next {
+	right: -77px;
+}
+.calendar .month a:hover {
+	background: #e6f9f1;
+}
+.calendar .month a:before, .calendar .month a:after {
+	width: 1px;
+	height: 10px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: 12px;
+	left: 50%;
+	background: #fff;
+	border-radius: 1px;
+	transition: background .3s ease;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.calendar .month a:hover:before, .calendar .month a:hover:after {
+	background: #757979;
+}
+.calendar .month a:after {
+	top: 19px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.calendar .month a.next:before {
+	top: 19px;
+}
+.calendar .month a.next:after {
+	top: 12px;
+}
+.calendar .month-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 255, 255, .9);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .2);
+}
+.calendar .month-fixed span {
+	display: block;
+}
+.calendar .month-fixed a.prev {
+	left: 17px;
+}
+.calendar .month-fixed a.next {
+	right: 17px;
+}
+.calendar .table {
+	margin-bottom: 60px;
+}
+.calendar .table .tr {
+	display: table-row;
+}
+.calendar .table .tr:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.calendar .table .tr .th, .calendar .tr .td {
+	width: 14.28%;
+	padding: 5px 14px;
+	display: table-cell;
+	border-right: 1px solid #dfe0d9;
+}
+.calendar .table .tr .th:last-child, .calendar .tr .td:last-child {
+	border-right: none;
+}
+.calendar .table .tr .th {
+	height: 28px;
+	color: #757979;
+}
+.calendar .table .tr .td {
+	height: 100px;
+	color: #231f20;
+}
+.calendar .table .tr .td ul {
+	margin: 10px 0 0 0;
+	padding: 0;
+	list-style: none;
+	line-height: 16px;
+	color: #757979;
+}
+.calendar .events {
+	padding: 43px 0 9px;
+}
+.calendar .events:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.calendar .events .tr .th {
+	color: #696a6a;
+	border-right: none;
+}
+.purple {
+	background: #f2e7ff;
+}
+.green {
+	background: #e6f9f1;
+}
+.yellow {
+	background: #f6ffd9;
+}
+.blue {
+	background: #e2ffff;
+}
+.calendar .callback .legend {
+	padding: 0 30px;
+}
+/* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
 @media print {
@@ -500,6 +758,14 @@ html.navigation-open body, html.contacts-open body { height: auto; overflow-y: a
 	html.contacts-open .container { left: -33.3334%; }
 	.navigation { width: 33.3334%; left: -33.3334%; }
 	.contacts { width: 33.3334%; right: -33.3334%; }
+	.about { width: 60%; }
+	.contact-me { width: 65%; }
+	.calendar { font-size: 18px; }
+	.calendar .events { display: none; }
+	.calendar .table .tr { display: block; }
+	.calendar .table .tr .td { width: 100%; height: 100%; margin-bottom: 1px; padding-top: 10px; padding-bottom: 10px; display: block; border-right: none; }
+	.calendar .table .tr .td ul { margin: 10px -14px -10px; padding: 10px 14px 43px; line-height: 28px; background: #fff; }
+	.calendar .table .tr-days { display: none; }
 }
 @media (max-width: 640px) {
 	.header { height: 173px; padding: 38px 20px; }
@@ -525,6 +791,9 @@ html.navigation-open body, html.contacts-open body { height: auto; overflow-y: a
 	html.contacts-open .container { left: -280px; }
 	.navigation { width: 280px; left: -280px; }
 	.contacts { width: 280px; right: -280px; }
+	.about { width: 71%; }
+	.contact-me { width: 90%; }
+	.callback { width: 90%; }
 }
 @media (max-width: 380px) {
 	.posts .list > li { width: 100%; min-width: 320px; height: 100vw; min-height: 320px; }
@@ -539,4 +808,7 @@ html.navigation-open body, html.contacts-open body { height: auto; overflow-y: a
 	.navigation { width: 250px; left: -250px; }
 	.contacts { width: 250px; right: -250px; }
 	.footer .nav li { padding: 0; }
+	.about { width: 84%; }
+	.contact-me { width: 100%; }
+	.callback { width: 100%; }
 }
