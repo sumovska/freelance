@@ -29,7 +29,7 @@
 			<ul class="social">
 				<li class="fb"><a href="#" title="Facebook"></a></li>
 				<li class="tw"><a href="#" title="Twitter"></a></li>
-				<li class="nt"><a href="#" title="Navigation"></a></li>
+				<li class="s"><a href="#" title="Search"></a></li>
 			</ul>
 			<a class="download" href="#">Download app</a>
 		</div>
@@ -41,17 +41,17 @@
 			<div id="map" class="map map-small"></div>
 			<div class="contacts">
 				<dl>
-				<dt>Coords:</dt>
-				<dd class="coordinates">N 42˚26.112E 18˚41.524</dd>
-				<dt>Vhf:</dt>
-				<dd>Install app for full info</dd>
-				<dt>Phone:</dt>
-				<dd>Install app for full info</dd>
-				<dt>Address:</dt>
-				<dd>Install app for full info</dd>
-				<dt>Services:</dt>
-				<dd>Install app for full info</dd>
-				</ul>
+					<dt>Coords:</dt>
+					<dd class="coordinates">N 42˚26.112E 18˚41.524</dd>
+					<dt>Vhf:</dt>
+					<dd>Install app for full info</dd>
+					<dt>Phone:</dt>
+					<dd>Install app for full info</dd>
+					<dt>Address:</dt>
+					<dd>Install app for full info</dd>
+					<dt>Services:</dt>
+					<dd>Install app for full info</dd>
+				</dl>
 			</div>
 		</aside>
 
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 		</section>
-		
+
 	</div>
 
 	<footer class="footer">
@@ -121,13 +121,14 @@
 			var map, pos, style, mapOptions;
 			pos = new google.maps.LatLng(42.436515, 18.694019);
 			style = [
-				{ "featureType": "road",
+				{
+					"featureType": "road",
 					"elementType": "labels.icon",
 					"stylers": [
-						{ "saturation": 1 },
-						{ "gamma": 1 },
-						{ "visibility": "on" },
-						{ "hue": "#e6ff00" }
+						{"saturation": 1},
+						{"gamma": 1},
+						{"visibility": "on"},
+						{"hue": "#e6ff00"}
 					]
 				}
 			];
