@@ -102,6 +102,7 @@ $(document).ready(function () {
 	});
 	scrollEvent();
 
+	/* Block-item */
 	$('.block-item .info').each(function () {
 		$('.colors li a').click(function () {
 			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
