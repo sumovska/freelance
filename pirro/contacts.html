@@ -11,12 +11,13 @@
 	<link rel="stylesheet" href="css/main.css">
 
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<link rel="shortcut icon" href="img/favicon.png">
+
 	<!--[if lte IE 9]>
 	<link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
 </head>
 <body>
-
 	<header class="header">
 		<div class="wrapper">
 			<p class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></p>
@@ -70,7 +71,7 @@
 				<li><a href="#"><span class="hidden">Конструктивные</span> решения</a></li>
 				<li><a href="documents.html">Документы</a></li>
 				<li><a href="#"><span class="hidden">Область</span> применения</a></li>
-				<li class="active"><a>Контакты</a></li>
+				<li class="active"><a href="contacts.html">Контакты</a></li>
 			</ul>
 			<a class="toggle" href="#">Меню</a>
 			<a class="close" href="#">x</a>
@@ -83,23 +84,43 @@
 			<div class="contact-us">
 				<div class="col">
 					<dl class="list-orange">
-						<dt><img src="img/icons/contact-1.png" alt="">Контактный телефон</dt>
-						<dd>+7 495 510 68 63</dd>
-						<dt><img src="img/icons/contact-2.png" alt="">Факс</dt>
-						<dd>+7 495 510 68 65</dd>
-						<dt><img src="img/icons/contact-3.png" alt="">Электронная почта</dt>
-						<dd>info@pirrogroup.ru</dd>
+						<dt><img class="icon" src="img/icons/contact-1.png" alt="">Контактный телефон</dt>
+						<dd><a class="tel" href="tel:+7-495-510-68-63">+7 495 510 68 63</a></dd>
+						<dt><img class="icon" src="img/icons/contact-2.png" alt="">Факс</dt>
+						<dd><a class="tel" href="tel:+7-495-510-68-65">+7 495 510 68 65</a></dd>
+						<dt><img class="icon" src="img/icons/contact-3.png" alt="">Электронная почта</dt>
+						<dd><a href="mailto:info@pirrogroup.ru">info@pirrogroup.ru</a></dd>
 					</dl>
 				</div>
 				<div class="col">
 					<dl class="list-orange">
-						<dt><img src="img/icons/contact-4.png" alt="">Наш адрес</dt>
-						<dd>113623 г.Москва, Старокалужское шоссе, дом 62, стр. 1, корпус 6,(м. Калужская)</dd>
+						<dt><img class="icon" src="img/icons/contact-4.png" alt="">Наш адрес</dt>
+						<dd>113623 г.Москва, Старокалужское шоссе, <br>дом 62, стр. 1, корпус 6,(м. Калужская)</dd>
 					</dl>
 				</div>
 			</div>
 		</div>
-		<div id="map" class="map"></div>
+
+		<div id="ymaps-map-id_14211551600804933022" class="map"></div>
+		<script type="text/javascript">
+			function fid_14211551600804933022(ymaps) {
+				var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+					center: [37.53765643914791, 55.66049642672229],
+					zoom: 16,
+					type: "yandex#map"
+				});
+				map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
+				myGeoObject = new ymaps.GeoObject({
+					geometry: {
+						type: "Point",
+						coordinates: [37.53765643914791, 55.66049642672229]
+					}
+				});
+				map.geoObjects.add(myGeoObject);
+			}
+		</script>
+		<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
+
 		<div class="wrapper">
 			<div class="block block-send">
 				<div class="col">
@@ -108,7 +129,7 @@
 						<img class="pic" src="img/temp/doc-1.png" alt="">
 						<div class="describe">
 							<p class="h">Техническое описание <br>теплоизоляционных панелей Pirro Group</p>
-							<p class="text">Предназначены для изоляции различных строительных конструкций и изготовления воздуховодов...</p>
+							<p class="text">Предназначены для изоляции различных строительных конструкций и изготовления воздуховодов&hellip;</p>
 							<p class="link"><a class="fancybox-popup" href="#callback">Скачать DOC</a> - <span class="it">2,3 МБайт</span></p>
 						</div>
 					</div>
@@ -121,12 +142,8 @@
 								<input type="text" placeholder="Электронный адрес">
 								<input type="text" placeholder="Телефон">
 							</p>
-							<p class="line">
-								<textarea placeholder="Текст сообщения"></textarea>
-							</p>
-							<p class="line">
-								<input type="submit" value="Отправить">
-							</p>
+							<p class="line"><textarea placeholder="Текст сообщения"></textarea></p>
+							<p class="line"><input type="submit" value="Отправить"></p>
 						</form>
 					</div>
 				</div>
@@ -193,11 +210,14 @@
 	<div class="popups">
 		<div id="callback" class="popup popup-callback">
 			<p class="title"><span>Получить документ</span>Для получения выбранного файла вам необходимо оставить заявку, после чего наши менеджеры вышлют вам файл на электронную почту.</p>
+
 			<form class="form" action="#">
 				<p class="line"><input type="text" value="" placeholder="Ваше имя"></p>
 				<p class="line"><input type="text" value="" placeholder="Эл. почта*"></p>
 				<p class="line"><input type="text" value="" placeholder="Телефон"></p>
-				<p class="submit"><button type="submit">Получить</button></p>
+				<p class="submit">
+					<button type="submit">Получить</button>
+				</p>
 			</form>
 			<p class="legend">Если вы торопитесь, позвоните нашему менеджеру самостоятельно: <a class="tel" href="tel:+7-495-204-17-89">&nbsp;+7 495 204-17-89</a></p>
 		</div>
@@ -206,58 +226,5 @@
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-	<script>
-		window.marker = null;
-		/* Google Map Init */
-		function initMap() {
-			var map, pos, style, mapOptions;
-			pos = new google.maps.LatLng(55.6612475, 37.5383627);
-			style = [
-				{
-					"featureType": "road",
-					"elementType": "labels.icon",
-					"stylers": [
-						{"saturation": 1},
-						{"gamma": 1},
-						{"visibility": "on"},
-						{"hue": "#e6ff00"}
-					]
-				}
-			];
-
-
-			mapOptions = {
-				center: pos,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				zoom: 15,
-				backgroundColor: "#eeeeee",
-				panControl: false,
-				mapTypeControl: false,
-				scaleControl: false,
-				streetViewControl: false,
-				overviewMapControl: false,
-				scrollwheel: false,
-				navigationControl: false,
-				zoomControlOptions: {
-					style: google.maps.ZoomControlStyle.SMALL
-				}
-			};
-			map = new google.maps.Map(document.getElementById('map'), mapOptions);
-			var mapType = new google.maps.StyledMapType(style, {name: "Grayscale"});
-			map.mapTypes.set('grey', mapType);
-			map.setMapTypeId('grey');
-			var marker_image = 'img/pin.png';
-			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
-			marker = new google.maps.Marker({
-				position: pos,
-				map: map
-			});
-		}
-		/* Google Map */
-		if (typeof google != 'undefined') {
-			initMap();
-		}
-	</script>
 </body>
 </html>
