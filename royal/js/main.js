@@ -101,6 +101,12 @@ $(document).ready(function () {
 		$('.phone', this).clone().addClass('phone-mobile').appendTo('body');
 	});
 	scrollEvent();
+
+	$('.block-item .info').each(function () {
+		$('.colors li a').click(function () {
+			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
+		});
+	});
 });
 
 $(window).on('scroll touchmove', function () {
