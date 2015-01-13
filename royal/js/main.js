@@ -108,6 +108,17 @@ $(document).ready(function () {
 			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
 		});
 	});
+
+	/* Tabs-list toggle */
+	$('.tabs-list').each(function () {
+		var _self = this;
+		$('.submenu-triggers a', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			return false;
+		});
+	});
 });
 
 $(window).on('scroll touchmove', function () {
