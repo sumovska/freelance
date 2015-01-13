@@ -133,7 +133,7 @@
 			</div>
 			<div class="buttons">
 				<a class="button" href="#"><span>Уникальность PIRRO</span></a>
-				<a class="button button-calculate" href="calculate.html"><span>Калькулятор</span></a>
+				<a class="button button-calculate" href="calculator.html"><span>Калькулятор</span></a>
 				<a class="button button-buy" href="#"><span>Где купить</span></a>
 			</div>
 		</div>
@@ -158,12 +158,12 @@
 			<div class="col">
 				<p class="h">О компании</p>
 				<ul class="list">
-					<li><a href="about.html">О компании</a></li>
+					<li><a href="#">О компании</a></li>
 					<li><a href="catalog.html">Каталог</a></li>
 					<li><a href="#">Конструктивные решения</a></li>
 					<li><a href="#">Область применения</a></li>
 					<li><a href="documents.html">Документы</a></li>
-					<li><a href="#">Дилерам</a></li>
+					<li><a href="dealers.html">Дилерам</a></li>
 					<li><a href="#">Новости</a></li>
 				</ul>
 			</div>
@@ -197,9 +197,7 @@
 				<p class="line"><input type="text" value="" placeholder="Ваше имя"></p>
 				<p class="line"><input type="text" value="" placeholder="Эл. почта*"></p>
 				<p class="line"><input type="text" value="" placeholder="Телефон"></p>
-				<p class="submit">
-					<button type="submit">Получить</button>
-				</p>
+				<p class="submit"><button type="submit">Получить</button></p>
 			</form>
 			<p class="legend">Если вы торопитесь, позвоните нашему менеджеру самостоятельно: <a class="tel" href="tel:+7-495-204-17-89">&nbsp;+7 495 204-17-89</a></p>
 		</div>
@@ -216,13 +214,14 @@
 			var map, pos, style, mapOptions;
 			pos = new google.maps.LatLng(55.6612475, 37.5383627);
 			style = [
-				{ "featureType": "road",
+				{
+					"featureType": "road",
 					"elementType": "labels.icon",
 					"stylers": [
-						{ "saturation": 1 },
-						{ "gamma": 1 },
-						{ "visibility": "on" },
-						{ "hue": "#e6ff00" }
+						{"saturation": 1},
+						{"gamma": 1},
+						{"visibility": "on"},
+						{"hue": "#e6ff00"}
 					]
 				}
 			];
