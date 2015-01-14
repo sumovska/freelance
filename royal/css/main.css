@@ -2639,6 +2639,79 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: #ff4949;
 }
 /* ==========================================================================
+   _FAQ
+   ========================================================================== */
+.faq {
+	width: 700px;
+	color: #212121
+}
+.faq .item .question {
+	display: none;
+	color: #666;
+}
+.faq .item .title {
+	font-size: 17px;
+	margin-bottom: 8px;
+}
+.faq .item .title a.active {
+	color: #ff5c26;
+	border-bottom-color: #ff5c26;
+}
+.faq .item .title a {
+	border-bottom-style: dashed;
+}
+.faq .item .question {
+	font-size: 14px;
+	line-height: 20px;
+}
+/* ==========================================================================
+   _CONTACT-US
+   ========================================================================== */
+.contact-us {
+	font-size: 14px;
+	line-height: 20px;
+}
+.contact-us:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.contact-us .h2 {
+	font-size: 17px;
+	margin-bottom: 7px;
+}
+.contact-us .line {
+	margin: 0 -20px;
+}
+.contact-us .line:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.contact-us .col {
+	width: 50%;
+	margin-bottom: 26px;
+	padding: 0 20px;
+	float: left;
+}
+.contact-us .col-info:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.contact-us .col-info p {
+	margin-bottom: 9px;
+}
+.contact-us .col strong {
+	color: #212121;
+	font-size: 11px;
+	font-family: 'Gotham Pro', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
+/* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
 @media print {
@@ -2751,7 +2824,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.rewards { margin-right: -40px; }
 	.catalog .item:nth-child(4n + 1) { clear: left; }
 	.catalog .item:nth-child(3n + 1) { clear: none; }
-	.actions .item .define .banner { width: 100%; }
 }
 @media (max-width: 985px) {
 	.catalog .item:nth-child(4n + 1) { clear: none; }
@@ -2775,6 +2847,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.feature .text { width: 100%; padding-right: 0; margin-bottom: 36px; float: none; }
 	.feature .list { width: 100%; float: none; }
 	.feature .list dd { padding-left: 180px; }
+	.actions .item .define .banner { width: 100%; }
+	.faq { width: 100%; }
 }
 @media (max-width: 755px) {
 	.catalog-grey .catalog { width: 460px; margin: 0 auto; }
@@ -2857,14 +2931,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.catalog-grey .scroll-top { margin-right: -15px; right: 50%; }
 	.catalog-grey .catalog { padding-top: 20px; }
 	.catalog-grey .catalog .item { width: 220px; padding: 20px 0; }
+	.actions .item .term { width: 100%; margin-bottom: 20px; padding-top: 0; float: none; }
+	.actions .item .term .new { right: 0; left: auto; }
+	.actions .item .define { padding-left: 0; }
 }
 @media (max-width: 486px) {
 	.catalog-grey .catalog { width: auto; }
 	.catalog .item { float: none; margin-left: auto !important; margin-right: auto !important; }
 	.catalog .item:nth-child(2n + 1) { clear: none; }
-	.actions .item .term { width: 100%; margin-bottom: 20px; padding-top: 0; float: none; }
-	.actions .item .term .new { right: 0; left: auto; }
-	.actions .item .define { padding-left: 0; }
 }
 @media (max-width: 400px) {
 	.index { height: 200px; }

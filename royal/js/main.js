@@ -119,6 +119,14 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+	$('.faq').each(function () {
+		$('.title a', this).click(function () {
+			$(this).toggleClass('active');
+			$(this).closest('.item').find('.question').fadeToggle(200);
+			return false;
+		});
+	});
 });
 
 $(window).on('scroll touchmove', function () {
