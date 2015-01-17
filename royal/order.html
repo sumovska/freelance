@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Royal Spirit</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+	<header class="header">
+		<p class="logo"><a href="index.html"><img src="img/logo.svg" alt="Royal Spirit"></a></p>
+		<nav class="nav">
+			<ul class="ul">
+				<li class="li-catalog li-sub"><a href="catalog.html"><span>Каталог</span></a></li>
+				<li class="li-action"><a href="action.html"><span>Акции</span></a></li>
+				<li class="li-company li-sub active"><a href="about.html"><span>Компания</span></a></li>
+				<li class="li-partnership"><a href="partnership.html"><span>Сотрудничество</span></a></li>
+				<li class="li-contacts li-sub"><a href="contacts.html"><span>Контакты</span></a></li>
+				<li class="li-buy"><a href="where.html"><span>Где купить</span></a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container">
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="catalog.html">Каталог</a></span> <span><a href="#">Royal’s</a></span> <span><a href="#">Мужские куртки</a></span> Гауди</p> 
+
+		<div class="block-cart block-order">
+			<form action="" class="form">
+				<ul class="steps">
+					<li><a href="cart.html"><span>1</span>Корзина</a></li>
+					<li class="active"><a href="order.html"><span>2</span>Оформление</a></li>
+					<li><a href="confirm.html"><span>3</span>Подтверждение</a></li>
+				</ul>
+				<div class="tabs-list">
+					<ul class="submenu submenu-triggers">
+						<li class="active"><a class="full" href="#private">Индивидуальный предприниматель</a> <a class="short" href="#private">ИП</a></li>
+						<li><a href="#legal">Юридическое лицо</a></li>
+					</ul>
+					
+					<div class="tab tab-private">
+						<p class="line line-select">
+							<label>Выберите профиль</label>
+							<select>
+								<option>Александр Васильев</option>
+							</select>
+						</p>
+						<div class="col">
+							<h2 class="h2">Информация о покупателе</h2>
+							<div class="field">
+								<p class="line">
+									<label>Имя</label>
+									<input type="text" placeholder="Александр">
+								</p>
+								<p class="line">
+									<label>Фамилия</label>
+									<input type="text" placeholder="Васильев">
+								</p>
+								<p class="line">
+									<label>Телефон</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>E-mail</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>Индекс</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>Страна</label>
+									<select>
+										<option></option>
+									</select>
+								</p>
+								<p class="line">
+									<label>Адрес доставки</label>
+									<textarea></textarea>
+								</p>
+								<p class="line">
+									<label>Комментарии</label>
+									<textarea></textarea>
+								</p>
+							</div>
+						</div>
+						<div class="col col-right">
+							<h2 class="h2">Доставка</h2>
+							<div class="field">
+								<p class="line">
+									<input id="check1" type="radio" name="delivery1" value="company" checked>
+									<label for="check1">Транспортной компанией<span class="cost">от 750 <span class="rub">p</span>, 2 дня</span></label>
+									<span class="in">
+										<input id="check2" type="radio" name="delivery1" value="company">
+										<label for="check2">Деловые линии<span class="cost">750 <span class="rub">p</span>, 2 дня</span></label>
+										<input id="check3" type="radio" name="delivery1" value="company">
+										<label for="check3">DHL<span class="cost">900 <span class="rub">p</span>, 2 дня</span></label>
+									</span>
+								</p>
+								<p class="line">
+									<input id="check4" type="radio" name="delivery2" value="courier">
+									<label for="check4">Курьером<span class="cost">500 <span class="rub">p</span>, 1 день</span></label>
+									<input id="check5" type="radio" name="delivery2" value="pickup">
+									<label for="check5">Самовывоз<span class="cost">Владимирский пр., д. 200</span></label>
+								</p>
+							</div>
+							<div class="field">
+								<h2 class="h2">Оплата</h2>
+								<p class="line">
+									<input id="check6" type="radio" name="pay" value="cash" checked>
+									<label for="check6">По счету</label>
+									<input id="check7" type="radio" name="pay" value="cash">
+									<label for="check7">Наличными в офисе</label>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab tab-legal tab-hidden">
+						<div class="col">
+							<h2 class="h2">Информация о покупателе</h2>
+							<div class="field">
+								<p class="line">
+									<label>Название компании</label>
+									<input type="text" placeholder="220 ВОЛЬТ">
+								</p>
+								<p class="line">
+									<label>Юридический адрес</label>
+									<textarea></textarea>
+								</p>
+								<p class="line">
+									<label>ИНН</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>КПП</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>Контактное лицо</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>Телефон</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>E-mail</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>Факс</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>Индекс</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="line">
+									<label>Страна</label>
+									<select>
+										<option></option>
+									</select>
+								</p>
+								<p class="line">
+									<label>Адрес доставки</label>
+									<textarea></textarea>
+								</p>
+								<p class="line">
+									<label>Комментарии</label>
+									<textarea></textarea>
+								</p>
+							</div>
+						</div>
+						<div class="col col-right">
+							<h2 class="h2">Доставка</h2>
+							<div class="field">
+								<p class="line">
+									<input id="check-1" type="radio" name="delivery" value="company" checked="">
+									<label for="check-1">Транспортной компанией<span class="cost">от 750 <span class="rub">p</span>, 2 дня</span></label>
+									<input id="check-3" type="radio" name="delivery" value="courier">
+									<label for="check-3">Курьером<span class="cost">500 <span class="rub">p</span>, 1 день</span></label>
+									<input id="check-4" type="radio" name="delivery" value="pickup">
+									<label for="check-4">Самовывоз<span class="cost"><a href="#">Подробные адреса складов</a></span></label>
+									<select>
+										<option>На Владимирской</option>
+									</select>
+								</p>
+							</div>
+							<div class="field">
+								<h2 class="h2">Оплата</h2>
+								<p class="line">
+									<input id="check-5" type="radio" name="pay" value="cashless">
+									<label for="check-5">По счету</label>
+									<input id="check-6" type="radio" name="pay" value="cash" checked="">
+									<label for="check-6">Наличными в офисе</label>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="total">
+						<div class="col col-1">
+							<h2 class="h2">Итого: <span class="number">15 000</span> <span class="rub">p</span></h2>
+							<p class="fn">Включая стоимость доставки</p>
+						</div>
+						<div class="col col-3"><a class="to-cart" href="confirm.html"><span>Оформить заказ</span></a></div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+	<aside class="top">
+		<div class="wrapper">
+			<a href="#" class="scroll-top"></a>
+			<span class="name"><a href="profile.html"><span>John Wood</span></a></span>
+			<ul class="links">
+				<li class="li-cart"><a href="cart.html">Корзина</a></li>
+				<li class="li-favourite"><a href="fav.html">Избранное</a></li>
+				<li class="li-compare"><a href="compare.html">К сравнению</a></li>
+			</ul>
+			<div class="search">
+				<form action="search.html" method="post">
+					<input type="text" placeholder="Поиск" value="">
+					<input type="submit" value="" title="Искать">
+				</form>
+			</div>
+		</div>
+	</aside>
+
+	<footer class="footer">
+		<p class="ask"><a href="#">Задать вопрос</a> или <a href="faq.html">посмотреть FAQ</a></p>
+		<p class="phone"><a href="tel:+7-495-234-57-17">+7 (495) 234-57-17</a></p>
+		<p class="callback"><a class="js" href="#callback">Обратный звонок</a></p>
+		<p class="wholesale">Только оптовые продажи</p>
+		<ul class="social">
+			<li class="vk"><a href="#" title="Вконтакте"></a></li>
+			<li class="fb"><a href="#" title="Facebook"></a></li>
+			<li class="tw"><a href="#" title="Twitter"></a></li>
+			<li class="in"><a href="#" title="Instagram"></a></li>
+		</ul>
+		<hr>
+		<p class="copyright">&copy; &laquo;Royal Spirit&raquo;, 2014</p>
+		<p class="author">Разработка сайта &ndash; <a href="http://delovsaite.ru" target="_blank">Дело в сайте</a></p>
+	</footer>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

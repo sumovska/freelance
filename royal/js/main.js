@@ -120,10 +120,20 @@ $(document).ready(function () {
 		});
 	});
 
+	/* FAQ toggle */
 	$('.faq').each(function () {
 		$('.title a', this).click(function () {
 			$(this).toggleClass('active');
 			$(this).closest('.item').find('.question').fadeToggle(200);
+			return false;
+		});
+	});
+
+	/* BLOCK-CART */
+	$('.block-cart').each(function () {
+		var _self = this;
+		$('.close a').click(function () {
+			$(this).closest('.tr').fadeToggle(200);
 			return false;
 		});
 	});
