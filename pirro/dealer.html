@@ -97,23 +97,43 @@
 			<div class="contact-us">
 				<div class="col">
 					<dl class="list-orange">
-						<dt><img src="img/icons/contact-1.png" alt="">Контактный телефон</dt>
-						<dd>+7 495 510 68 63</dd>
-						<dt><img src="img/icons/contact-2.png" alt="">Факс</dt>
-						<dd>+7 495 510 68 65</dd>
-						<dt><img src="img/icons/contact-3.png" alt="">Электронная почта</dt>
-						<dd>info@pirrogroup.ru</dd>
+						<dt><img class="icon" src="img/icons/contact-1.png" alt="">Контактный телефон</dt>
+						<dd><a class="tel" href="tel:+7-495-123-45-67">+7 495 123 45 67</a></dd>
+						<dt><img class="icon" src="img/icons/contact-2.png" alt="">Факс</dt>
+						<dd><a class="tel" href="tel:+7-495-123-45-67">+7 495 123 45 67</a></dd>
+						<dt><img class="icon" src="img/icons/contact-3.png" alt="">Электронная почта</dt>
+						<dd><a href="mailto:info@pirrogroup.ru">info@pirrogroup.ru</a></dd>
 					</dl>
 				</div>
 				<div class="col">
 					<dl class="list-orange">
-						<dt><img src="img/icons/contact-4.png" alt="">Наш адрес</dt>
-						<dd>113623 г.Москва, Старокалужское шоссе, дом 62, стр. 1, корпус 6,(м. Калужская)</dd>
+						<dt><img class="icon" src="img/icons/contact-4.png" alt="">Наш адрес</dt>
+						<dd>413623 г.Тюмень, Тюменьское шоссе, <br>дом 62, стр. 1, корпус 6, (м. Калужская)</dd>
 					</dl>
 				</div>
 			</div>
 		</div>
-		<div id="map" class="map map-dealer"></div>
+
+		<div id="ymaps-map-id_14211551600804933022" class="map map-dealer"></div>
+		<script type="text/javascript">
+			function fid_14211551600804933022(ymaps) {
+				var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+					center: [37.53765643914791, 55.66049642672229],
+					zoom: 16,
+					type: "yandex#map"
+				});
+				map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
+				myGeoObject = new ymaps.GeoObject({
+					geometry: {
+						type: "Point",
+						coordinates: [37.53765643914791, 55.66049642672229]
+					}
+				});
+				map.geoObjects.add(myGeoObject);
+			}
+		</script>
+		<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
+
 		<div class="wrapper">
 			<div class="buttons">
 				<a class="button" href="#"><span>Уникальность PIRRO</span></a>
@@ -177,57 +197,5 @@
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-	<script>
-		window.marker = null;
-		/* Google Map Init */
-		function initMap() {
-			var map, pos, style, mapOptions;
-			pos = new google.maps.LatLng(55.6612475, 37.5383627);
-			style = [
-				{ "featureType": "road",
-					"elementType": "labels.icon",
-					"stylers": [
-						{ "saturation": 1 },
-						{ "gamma": 1 },
-						{ "visibility": "on" },
-						{ "hue": "#e6ff00" }
-					]
-				}
-			];
-
-
-			mapOptions = {
-				center: pos,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				zoom: 15,
-				backgroundColor: "#eeeeee",
-				panControl: false,
-				mapTypeControl: false,
-				scaleControl: false,
-				streetViewControl: false,
-				overviewMapControl: false,
-				scrollwheel: false,
-				navigationControl: false,
-				zoomControlOptions: {
-					style: google.maps.ZoomControlStyle.SMALL
-				}
-			};
-			map = new google.maps.Map(document.getElementById('map'), mapOptions);
-			var mapType = new google.maps.StyledMapType(style, {name: "Grayscale"});
-			map.mapTypes.set('grey', mapType);
-			map.setMapTypeId('grey');
-			var marker_image = 'img/pin.png';
-			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
-			marker = new google.maps.Marker({
-				position: pos,
-				map: map
-			});
-		}
-		/* Google Map */
-		if (typeof google != 'undefined') {
-			initMap();
-		}
-	</script>
 </body>
 </html>

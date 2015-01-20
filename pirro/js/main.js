@@ -28,6 +28,7 @@ $(document).ready(function () {
 	$('.header').each(function () {
 		$('.callback li a').click(function () {
 			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
+			return false;
 		});
 	});
 
@@ -75,39 +76,6 @@ $(document).ready(function () {
 			$(_self).toggleClass('sidebar-open');
 			$('.filter').fadeToggle(200);
 			return false;
-		});
-		/* Filter */
-		$('.filter').each(function () {
-			$('.slider', this).each(function () {
-				var _self = $(this);
-				var item = $('.item', this).noUiSlider({
-					start: [40, 220],
-					step: 1,
-					behaviour: 'drag',
-					connect: true,
-					range: {
-						'min': 0,
-						'max': 250
-					},
-					serialization: {
-						lower: [
-							$.Link({
-								target: $(".from var", _self)
-							})
-						],
-						upper: [
-							$.Link({
-								target: $(".to var", _self)
-							})
-						],
-						format: {
-							// Set formatting
-							thousand: ' ',
-							decimals: 0
-						}
-					}
-				});
-			});
 		});
 	});
 });

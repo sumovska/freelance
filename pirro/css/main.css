@@ -230,6 +230,9 @@ table th {
 .picture {
 	border-radius: 3px;
 }
+.picture.flexible {
+	max-width: 100%;
+}
 /* ==========================================================================
    _COLUMNS (Text in two column)
    ========================================================================== */
@@ -319,13 +322,13 @@ table th {
 .jq-file.disabled, .jq-file.disabled .jq-file__browse { border-color: #ccc; background: #f5f5f5; box-shadow: none; color: #888 }
 .jq-selectbox { vertical-align: middle; cursor: pointer }
 .jq-selectbox__select { height: 30px; padding: 0 45px 0 10px; border: 1px solid #ccc; border-bottom-color: #b3b3b3; border-radius: 4px; background: #f5f5f5 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC') repeat-x; box-shadow: inset 1px -1px #f1f1f1, inset 0 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, 0.1); color: #333; text-shadow: 1px 1px #fff; font: 14px/30px Arial, sans-serif }
-.jq-selectbox__select:hover { border-color: #202224; }
+.jq-selectbox__select:hover, .jq-selectbox__select:focus { border: 1px solid #ccc; border-bottom-color: #b3b3b3; }
 .jq-selectbox__select:active { background: #fff; box-shadow: inset 1px 1px 3px #ddd }
 .jq-selectbox.focused .jq-selectbox__select { border: 1px solid #dbdcdf; }
 .jq-selectbox.disabled .jq-selectbox__select { background: #f5f5f5; box-shadow: none; color: #888 }
 .jq-selectbox__select-text { display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 .jq-selectbox__trigger { position: absolute; top: 0; right: 0; width: 34px; height: 100%; border-left: 1px solid #ccc }
-.jq-selectbox__trigger-arrow { position: absolute; top: 14px; right: 12px; width: 0; height: 0; overflow: hidden; border-top: 5px solid #000; border-right: 5px solid transparent; border-left: 5px solid transparent; opacity: .3 }
+.jq-selectbox__trigger-arrow { position: absolute; top: 14px; right: 10px; width: 0; height: 0; overflow: hidden; border-top: 5px solid #000; border-right: 4px solid transparent; border-left: 4px solid transparent; opacity: .3 }
 .jq-selectbox:hover .jq-selectbox__trigger-arrow { opacity: 1 }
 .jq-selectbox.disabled .jq-selectbox__trigger-arrow { opacity: .3 }
 .jq-selectbox__dropdown { top: 33px; width: 100%; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; border: 1px solid #ccc; border-radius: 4px; background: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); font: 14px/18px Arial, sans-serif }
@@ -356,7 +359,7 @@ table th {
 .jq-select-multiple li.optgroup { font-weight: bold }
 .jq-select-multiple li.option { padding-left: 25px }
 .jq-selectbox__select { height: 40px; padding: 4px 14px; border: 1px solid transparent; border-radius: 3px; transition: color .2s ease, border-color .2s ease, box-shadow .2s ease; color: #555; outline: none; font: 14px 'PFDin Text Pro', Helvetica, Arial, sans-serif; box-shadow: inset 0 4px 12px rgba(172, 175, 177, .5); background: #f7f7fa; }
-.jq-selectbox__select-text { min-width: 205px; max-width: 215px; padding: 7px 0; }
+.jq-selectbox__select-text { min-width: 205px; max-width: 215px; padding: 8px 0; }
 .jq-selectbox__trigger { width: 39px; height: 100%; border: none; top: 1px; right: 1px; }
 .jq-selectbox__trigger-arrow { top: 14px; right: 12px; border-top-color: #231f20; }
 .jq-selectbox__dropdown { top: 36px; border: none; border-radius: 0; font: 14px/24px 'PFDin Text Pro', Helvetica, Arial, sans-serif; }
@@ -1051,6 +1054,7 @@ fieldset {
 	border-radius: 16px;
 }
 .filter .slider {
+	margin-top: 20px;
 	margin-bottom: 30px;
 	position: relative;
 }
@@ -1080,12 +1084,13 @@ fieldset {
 }
 .filter .slider .noUi-handle {
 	height: 22px;
+	padding-top: 1px;
 	border: none;
 	border-radius: 16px;
 	cursor: pointer;
 	box-shadow: none;
 	top: -10px;
-	left: -3px;
+	text-align: center;
 	background: #f6931e;
 }
 .filter .slider .noUi-handle:before, .filter .slider .noUi-handle:after {
@@ -1264,7 +1269,7 @@ fieldset {
 	left: -73px;
 }
 .list-orange dd {
-	margin-bottom: 46px;
+	margin-bottom: 44px;
 	margin-left: 0;
 }
 .list-orange dd:last-child {
@@ -1354,7 +1359,7 @@ fieldset {
 	padding-bottom: 8px;
 }
 .block-sertificate table .pic {
-	width: 8.5%;
+	padding: 10px 10px 20px 0;
 }
 .block-sertificate table .pic img {
 	width: 64px;
@@ -1367,10 +1372,15 @@ fieldset {
 }
 .block-sertificate table .text {
 	width: 78%;
-	padding-right: 40px;
+	padding: 0 40px 15px 15px;
+}
+.block-sertificate table .size {
+	padding-top: 0;
+	white-space: nowrap;
 }
 .block-sertificate table .download {
 	width: 6%;
+	padding-top: 0;
 	font-weight: 500;
 	text-align: right;
 }
@@ -1384,7 +1394,7 @@ fieldset {
 	background: #1d2224;
 	border-radius: 5px;
 }
-.filtration:after {
+.filtration:after, .filtration .line:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
@@ -1399,7 +1409,7 @@ fieldset {
 	float: left;
 }
 .filtration .line {
-	margin-right: 26px;
+	margin-right: 30px;
 	margin-bottom: 0;
 	float: left;
 }
@@ -1407,16 +1417,21 @@ fieldset {
 	margin-right: 0;
 }
 .filtration .line label {
-	margin-right: 12px;
 	display: inline-block;
 	font-size: 18px;
-	letter-spacing: .02em;
+	letter-spacing: .035em;
 	line-height: 24px;
 	vertical-align: middle;
 }
 .filtration .line .jq-selectbox {
-	max-width: 222px;
+	width: 280px;
+	max-width: none;
 }
+.filtration .line:nth-child(2) label { width: 40px; }
+.filtration .line:nth-child(3) label { width: 60px; }
+.filtration .line:nth-child(3) .jq-selectbox { width: 195px; }
+.filtration .line:nth-child(4) label { width: 70px; }
+.filtration .line:nth-child(4) .jq-selectbox { width: 190px; }
 .filtration .line .jq-selectbox__select {
 	height: 36px;
 	padding: 1px 10px;
@@ -1432,9 +1447,12 @@ fieldset {
 	text-align: center;
 	font-size: 18px;
 	position: relative;
+	cursor: default;
 }
 .pages li {
+	margin: 0 3px;
 	display: inline-block;
+	vertical-align: middle;
 }
 .pages li a {
 	width: 32px;
@@ -1445,16 +1463,17 @@ fieldset {
 	text-decoration: none;
 	background: transparent;
 	border-radius: 50%;
-	transition: color .3s ease, background .3s ease;
+	transition: none;
 }
 .pages li.arrow {
-	font-size: 30px;
+	font-size: 36px;
+	line-height: 18px;
 	font-weight: 200;
 }
 .pages li.arrow a {
 	color: #f29200;
 }
-.pages li a:hover {
+.pages li a:hover, .pages li a:focus {
 	color: #fff;
 	background-color: #f29200;
 }
@@ -1647,7 +1666,7 @@ fieldset {
 	position: absolute;
 	left: 0;
 	right: 0;
-	background: linear-gradient(to bottom, rgba(82, 85, 86, .5) 0%, rgba(82, 85, 86, 0) 100%);
+	background: linear-gradient(to bottom, rgba(34, 38, 41, 1) 0%, rgba(34, 38, 41, 0) 100%);
 	z-index: 20;
 }
 .dealers .inner:before {
@@ -1655,7 +1674,7 @@ fieldset {
 }
 .dealers .inner:after {
 	bottom: 0;
-	background: linear-gradient(to bottom, rgba(82, 85, 86, 0) 0%, rgba(82, 85, 86, .5) 100%);
+	background: linear-gradient(to bottom, rgba(34, 38, 41, 0) 0%, rgba(34, 38, 41, 1) 100%);
 }
 .dealers .inner .list {
 	height: 480px;
@@ -2057,8 +2076,9 @@ fieldset {
 	.block-gallery .bx-controls-direction a.bx-next { right: 16px; }
 	.contact-us .col:nth-child(1), .contact-us .col:nth-child(2) { width: 50%; }
 	.contact-us .list-orange { padding-left: 74px; }
-	.filtration .h5 { margin-bottom: 14px; float: none; }
-	.filtration .line { margin-bottom: 18px; }
+	.filtration .line .jq-selectbox { width: 220px; }
+	.filtration .line:nth-child(3) .jq-selectbox { width: 135px; }
+	.filtration .line:nth-child(4) .jq-selectbox { width: 150px; }
 	.sidebar { width: 220px; }
 	.content { width: 700px; }
 	.catalog { margin-left: -10px; margin-right: -10px; }
@@ -2107,6 +2127,13 @@ fieldset {
 	.catalog li { width: 228px; background-size: 228px auto; }
 	.block-send .fill .line input[type="text"] { width: 170px; }
 	.block-send .fill .line input[type="text"]:last-child { width: 170px; }
+	.filtration { padding: 16px 26px 6px 26px; margin-bottom: 30px; }
+	.filtration .h5 { margin: 0 0 8px; float: none; }
+	.filtration .line { margin-bottom: 18px; }
+	.filtration .line .jq-selectbox { width: 280px; }
+	.filtration .line:nth-child(3) { margin-right: 0; }
+	.filtration .line:nth-child(3) .jq-selectbox { width: 260px; }
+	.filtration .line:nth-child(4) .jq-selectbox { width: 250px; }
 }
 @media (min-width: 767px) {
 	.nav-space { display: block !important; }
@@ -2162,7 +2189,8 @@ fieldset {
 	.footer .col .list li { margin-right: 20px; float: left; }
 	.footer .col .contacts dt { clear: none; }
 	.footer .col .contacts dd { margin-right: 20px; }
-	.promo { margin-right: -10px; margin-left: -10px; padding-top: 214px; padding-left: 6px; padding-right: 6px; }
+	.promo { border-radius: 0; margin-right: -10px; margin-left: -10px; padding-top: 214px; padding-left: 16px; padding-right: 16px; }
+	.promo .h1 { font-size: 60px; line-height: 60px; }
 	.characteristic .col { width: 100%; float: none; }
 	.characteristic .col dd:last-child { margin-bottom: 46px; }
 	.block-gallery .bx-wrapper { padding: 0; }
@@ -2172,10 +2200,16 @@ fieldset {
 	.block-send .fill .line input[type="text"], .block-send .fill .line input[type="text"]:last-child { width: 100%; margin-bottom: 16px; float: none; }
 	.block-send .fill .line input[type="text"]:last-child { margin: 0; }
 	.block-send .fill .line input[type="submit"] { width: 100%; padding-top: 16px; padding-bottom: 16px; font-size: 24px; }
-	.filtration .line { width: 100%; margin-right: 0; float: none; }
-	.filtration .line .jq-selectbox { max-width: 350px; width: 350px; float: right; }
+	.filtration .line { width: 100%; margin: 0 0 16px; float: none; position: relative; }
+	.filtration .line label { padding: 6px 0; position: absolute; top: 0; left: 0; }
+	.filtration .line .jq-selectbox { width: 100% !important; }
+	.filtration .line:nth-child(2) { padding-left: 40px; }
+	.filtration .line:nth-child(3) { padding-left: 60px; }
+	.filtration .line:nth-child(4) { padding-left: 70px; }
 	.block-sertificate table .pic { width: 17%; }
-	.block-sertificate table .text { padding-right: 10px; }
+	.block-sertificate table .text { width: 100%; padding-right: 10px; display: block; }
+	.block-sertificate table .size { width: auto; display: block; float: left; }
+	.block-sertificate table .download { width: auto; display: block; float: left; }
 	.make .pic { width: 100%; height: auto; margin-bottom: 10px; float: none; }
 	.make .describe { padding-left: 0; }
 	.dealers { width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 18px; position: relative; left: auto; box-shadow: none; }
@@ -2198,6 +2232,7 @@ fieldset {
 	.block-compute .inner .draft .measure-width-1 { left: 0; }
 	.block-compute .inner .draft .measure-width-2 { right: 76px; }
 	.block-compute .inner .draft .measure-height { right: 0; bottom: 142px; }
+	.picture.notflexible { max-width: 100%; margin: 0 auto 20px !important; float: none !important; display: block; }
 }
 @media (max-width: 499px) {
 	.wrapper { width: 100%; }
@@ -2225,6 +2260,13 @@ fieldset {
 	.block-compute .inner .draft .measure-width-1 { left: -4px; }
 	.block-compute .inner .draft .measure-width-2 { right: 50px; }
 	.block-compute .inner .draft .measure-height { right: -4px; bottom: 108px; }
+	table { font-size: 11px; line-height: 14px; }
+	table th, table td { padding: 3px; }
+	.block-sertificate table .text { padding-left: 3px; padding-right: 3px; }
+}
+@media (max-width: 479px) {
+	.breadcrumbs { font-size: 24px; line-height: 30px; }
+	.breadcrumbs .link:after { top: 2px; height: 24px; }
 }
 @media (max-width: 400px) {
 	.header .logo { top: 5px; left: 50%; margin-left: -71px; }

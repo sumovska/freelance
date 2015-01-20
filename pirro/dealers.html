@@ -169,7 +169,25 @@
 					</ul>
 				</div>
 			</div>
-			<div id="map" class="map"></div>
+			<div id="ymaps-map-id_14211551600804933022" class="map"></div>
+			<script type="text/javascript">
+				function fid_14211551600804933022(ymaps) {
+					var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+						center: [37.53765643914791, 55.66049642672229],
+						zoom: 16,
+						type: "yandex#map"
+					});
+					map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
+					myGeoObject = new ymaps.GeoObject({
+						geometry: {
+							type: "Point",
+							coordinates: [37.53765643914791, 55.66049642672229]
+						}
+					});
+					map.geoObjects.add(myGeoObject);
+				}
+			</script>
+			<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
 		</div>
 
 		<div class="wrapper">
@@ -281,58 +299,5 @@
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-	<script>
-		window.marker = null;
-		/* Google Map Init */
-		function initMap() {
-			var map, pos, style, mapOptions;
-			pos = new google.maps.LatLng(55.6612475, 37.5383627);
-			style = [
-				{
-					"featureType": "road",
-					"elementType": "labels.icon",
-					"stylers": [
-						{"saturation": 1},
-						{"gamma": 1},
-						{"visibility": "on"},
-						{"hue": "#e6ff00"}
-					]
-				}
-			];
-
-
-			mapOptions = {
-				center: pos,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				zoom: 15,
-				backgroundColor: "#eeeeee",
-				panControl: false,
-				mapTypeControl: false,
-				scaleControl: false,
-				streetViewControl: false,
-				overviewMapControl: false,
-				scrollwheel: false,
-				navigationControl: false,
-				zoomControlOptions: {
-					style: google.maps.ZoomControlStyle.SMALL
-				}
-			};
-			map = new google.maps.Map(document.getElementById('map'), mapOptions);
-			var mapType = new google.maps.StyledMapType(style, {name: "Grayscale"});
-			map.mapTypes.set('grey', mapType);
-			map.setMapTypeId('grey');
-			var marker_image = 'img/pin.png';
-			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
-			marker = new google.maps.Marker({
-				position: pos,
-				map: map
-			});
-		}
-		/* Google Map */
-		if (typeof google != 'undefined') {
-			initMap();
-		}
-	</script>
 </body>
 </html>
