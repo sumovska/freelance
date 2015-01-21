@@ -69,6 +69,15 @@ $(document).ready(function () {
 		}
 	});
 
+	$(".block-gallery .carousel a").fancybox({
+		autoSize: false,
+		fitToView: false,
+		padding: 0,
+		helpers: {
+			media: {}
+		}
+	});
+
 	/* Sidebar */
 	$('.sidebar').each(function () {
 		var _self = $(this);
