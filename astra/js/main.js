@@ -23,11 +23,18 @@ $(document).ready(function () {
 		});
 		return false;
 	});
-	$('.news .unit .text').each(function () {
+	$('.news .unit .inform').each(function () {
 		var _self = $(this);
-		$('.link', this).toggleClass(function () {
-			_self.toggleClass('text-open');
+		$('.link', this).click(function () {
+			_self.toggleClass('inform-open');
 			$('.hidden', _self).slideToggle(400);
+			return false;
+		});
+	});
+
+	$('.header').each(function () {
+		$('.products .switch').click(function () {
+			$(this).closest('li').toggleClass('active');
 			return false;
 		});
 	});
