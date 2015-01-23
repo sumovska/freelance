@@ -137,6 +137,24 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+		
+
+	$('.upgrade').each(function () {
+		$('.gallery .carousel', this).bxSlider({
+			pager: false,
+			minslides: 5,
+			infiniteLoop: false
+		});
+		$(".gallery li a").fancybox({
+			autoSize: false,
+			fitToView: false,
+			padding: 0,
+			helpers: {
+				media: {}
+			}
+		});
+	});
 });
 
 $(window).on('scroll touchmove', function () {

@@ -30,76 +30,67 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="private.html">Личный кабинет</a></span> Данные</p>
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="private.html">Личный кабинет</a></span> Менеджер</p>
 
 		<ul class="submenu">
-			<li class="active"><a href="data.html">Данные</a></li>
+			<li><a href="data.html">Данные</a></li>
 			<li><a href="#">Заказы</a></li>
-			<li><a href="support.html">Менеджер</a></li>
+			<li class="active"><a href="manager.html">Менеджер</a></li>
 			<li><a href="#">Мои магазины</a></li>
 		</ul>
 
-		<form class="form form-data" action="#">
-			<div class="list">
-				<div class="columns">
-					<div class="column column-1">
-						<h3 class="h3">Изменение личных данных</h3>
-						<div class="line">
-							<label>Имя</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label>Фамилия</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label>Телефон</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label>Название организации</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label>Город</label>
-							<select>
-								<option></option>
-							</select>
-						</div>
-						<div class="line line-adr">
-							<span>
-								<label>Улица</label>
+		<div class="block-manage">
+			<form class="form form-data" action="#">
+				<div class="list">
+					<div class="columns">
+						<div class="column column-1">
+							<div class="support">
+								<img class="pic" src="img/temp/manager-1.jpg" alt="">
+								<span class="name">Дарья Петрова<a class="link" href="#">Отправить сообщение</a></span>
+							</div>
+							<div class="line">
+								<label>Тема сообщения</label>
 								<input type="text" placeholder="">
-							</span>
-							<span>
-								<label>Дом</label>
-								<input type="text" placeholder="">
-							</span>
+							</div>
+							<div class="line">
+								<label>Сообщение</label>
+								<textarea placeholder=""></textarea>
+							</div>
+							<div class="add">
+								<a href="#">Добавить изображения</a>
+							</div>
 						</div>
+						<div class="column column-2">
+							<p class="sale">Ваша скидка <span>-20 %</span></p>
+						</div>
+
 					</div>
-					<div class="column column-2">
-						<h3 class="h3">Изменение пароля</h3>
+					<div class="submit">
 						<div class="line">
-							<label>Старый пароль</label>
-							<input type="password" placeholder="">
-						</div>
-						<div class="line">
-							<label>Новый пароль</label>
-							<input type="password" placeholder="">
-						</div>
-						<div class="line">
-							<label>Подтвердите</label>
-							<input type="password" placeholder="">
+							<button type="submit">Отправить</button>
 						</div>
 					</div>
 				</div>
-				<div class="submit">
-					<div class="line">
-						<button type="submit">Отправить на модерацию</button>
-					</div>
-				</div>
+			</form>
+			<div class="questions">
+				<ul>
+					<li>
+						<div class="line">
+							<img class="pic" src="img/temp/manager-1.jpg" alt="">
+							<span class="date">20.06.2014, 20:00</span>
+							<span class="text">Пусть будет видна история переписки, если есть, и возможность вложить файл, например, фото с браком и т. д. Может тут создать кнопку?</span>
+						</div>
+					</li>
+					<li>
+						<div class="line">
+							<img class="pic" src="img/temp/manager-1.jpg" alt="">
+							<span class="date">20.06.2014, 8:35</span>
+							<span class="text">Сможем сделать карту с возможностью переноса маркера?</span>
+						</div>
+					</li>
+				</ul>
 			</div>
-		</form>
+		</div>
 
 	</div>
 
