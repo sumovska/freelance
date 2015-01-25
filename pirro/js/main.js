@@ -30,6 +30,12 @@ $(document).ready(function () {
 			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
 			return false;
 		});
+		/* Navigation toggles */
+		$('body').bind('mousedown', function (e) {
+			if (($(e.target).closest('.callback').length < 1)) {
+				$('.callback li').removeClass('active');
+			}
+		});
 	});
 
 	/* Nav */
@@ -83,7 +89,7 @@ $(document).ready(function () {
 		var _self = $(this);
 		$('.filter-link .link').click(function () {
 			$(_self).toggleClass('sidebar-open');
-			$('.filter').fadeToggle(200);
+			$('.filter').toggle();
 			return false;
 		});
 	});

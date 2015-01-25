@@ -104,6 +104,8 @@
 							<h6 class="h6">Толщина панели, мм</h6>
 							<div id="slider-1" class="slider slider-1">
 								<div class="item"></div>
+								<input type="text" class="from" value="40">
+								<input type="text" class="to" value="220">
 							</div>
 							<script>
 								document.addEventListener("DOMContentLoaded", function (event) {
@@ -121,13 +123,15 @@
 												decimals: 0
 											})
 										});
-										$('.item', this).Link('lower').to('-inline-').Link('upper').to('-inline-');
+										$('.item', this).Link('lower').to('-inline-').Link('upper').to('-inline-').Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 									});
 								});
 							</script>
 							<h6 class="h6">Теплопроводность, Вт/(м•К)</h6>
 							<div id="slider-2" class="slider slider-2">
 								<div class="item"></div>
+								<input type="text" class="from" value="0.018">
+								<input type="text" class="to" value="0.023">
 							</div>
 							<script>
 								document.addEventListener("DOMContentLoaded", function (event) {
@@ -146,7 +150,7 @@
 											})
 										});
 										$('.noUi-handle', this).width(38).css('left', '-19px');
-										$('.item', this).Link('lower').to('-inline-').Link('upper').to('-inline-');
+										$('.item', this).Link('lower').to('-inline-').Link('upper').to('-inline-').Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 									});
 								});
 							</script>
@@ -162,6 +166,8 @@
 							<h6 class="h6">Температурный диапазон, ºC</h6>
 							<div id="slider-3" class="slider slider-3">
 								<div class="item"></div>
+								<input type="text" class="from" value="-70">
+								<input type="text" class="to" value="120">
 							</div>
 							<script>
 								document.addEventListener("DOMContentLoaded", function (event) {
@@ -179,7 +185,7 @@
 												decimals: 0
 											})
 										});
-										$('.item', this).Link('lower').to('-inline-').Link('upper').to('-inline-');
+										$('.item', this).Link('lower').to('-inline-').Link('upper').to('-inline-').Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 									});
 								});
 							</script>
