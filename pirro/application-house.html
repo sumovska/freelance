@@ -59,19 +59,19 @@
 			<ul class="list">
 				<li><a href="index.html">Главная</a></li>
 				<li class="sub">
-					<a href="content.html">О компании</a>
+					<a href="#">О компании</a>
 					<ul class="sublist">
-						<li><a href="content.html">Технологии и История</a></li>
-						<li><a href="content.html">Наши объекты</a></li>
-						<li><a href="content.html">О продукте</a></li>
-						<li><a href="content.html">Публикации в СМИ</a></li>
+						<li><a href="#">Технологии и История</a></li>
+						<li><a href="#">Наши объекты</a></li>
+						<li><a href="#">О продукте</a></li>
+						<li><a href="#">Публикации в СМИ</a></li>
 					</ul>
 				</li>
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#"><span class="hidden">Конструктивные</span> решения</a></li>
 				<li><a href="documents.html">Документы</a></li>
-				<li><a href="application.html"><span class="hidden">Область</span> применения</a></li>
-				<li class="active"><a href="contacts.html">Контакты</a></li>
+				<li class="active"><a href="application.html"><span class="hidden">Область</span> применения</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 			<a class="toggle" href="#">Меню</a>
 			<a class="close" href="#">x</a>
@@ -80,72 +80,34 @@
 
 	<article class="full">
 		<div class="wrapper">
-			<h1 class="h1">Контактная информация</h1>
-			<div class="contact-us">
-				<div class="col">
-					<dl class="list-orange">
-						<dt><img class="icon" src="img/icons/contact-1.png" alt="">Контактный телефон</dt>
-						<dd><a class="tel" href="tel:+7-495-510-68-63">+7 495 510 68 63</a></dd>
-						<dt><img class="icon" src="img/icons/contact-2.png" alt="">Факс</dt>
-						<dd><a class="tel" href="tel:+7-495-510-68-65">+7 495 510 68 65</a></dd>
-						<dt><img class="icon" src="img/icons/contact-3.png" alt="">Электронная почта</dt>
-						<dd><a href="mailto:info@pirrogroup.ru">info@pirrogroup.ru</a></dd>
-					</dl>
-				</div>
-				<div class="col">
-					<dl class="list-orange">
-						<dt><img class="icon" src="img/icons/contact-4.png" alt="">Наш адрес</dt>
-						<dd>113623 г.Москва, Старокалужское шоссе, <br>дом 62, стр. 1, корпус 6,(м. Калужская)</dd>
-					</dl>
-				</div>
+			<div class="breadcrumbs">
+				<a class="link" href="application.html">Области применения</a>
+				<h1 class="current">Карта дилеров в регионах</h1>
 			</div>
-		</div>
-
-		<div id="ymaps-map-id_14211551600804933022" class="map"></div>
-		<script type="text/javascript">
-			function fid_14211551600804933022(ymaps) {
-				var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
-					center: [37.53765643914791, 55.66049642672229],
-					zoom: 16,
-					type: "yandex#map"
-				});
-				map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
-				myGeoObject = new ymaps.GeoObject({
-					geometry: {
-						type: "Point",
-						coordinates: [37.53765643914791, 55.66049642672229]
-					}
-				});
-				map.geoObjects.add(myGeoObject);
-			}
-		</script>
-		<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
-
-		<div class="wrapper">
-			<div class="block block-send">
-				<div class="col">
-					<h2 class="h2 h2-bar">Брошюра компании</h2>
-					<div class="make">
-						<img class="pic" src="img/temp/doc-1.png" alt="">
-						<div class="describe">
-							<p class="h">Техническое описание <br>теплоизоляционных панелей Pirro Group</p>
-							<p class="text">Предназначены для изоляции различных строительных конструкций и изготовления воздуховодов&hellip;</p>
-							<p class="link"><a class="fancybox-popup" href="#callback">Скачать DOC</a> - <span class="it">2,3 МБайт</span></p>
-						</div>
-					</div>
+			<div class="application">
+				<div class="item">
+					<a href="application-house.html" class="link">
+						<span class="name">Частные дома</span>
+						<img class="img" src="img/temp/application-1.jpg" alt="">
+					</a>
 				</div>
-				<div class="col">
-					<h2 class="h2 h2-bar">Напишите нам</h2>
-					<div class="fill">
-						<form action="#">
-							<p class="line">
-								<input type="text" placeholder="Электронный адрес">
-								<input type="text" placeholder="Телефон">
-							</p>
-							<p class="line"><textarea placeholder="Текст сообщения"></textarea></p>
-							<p class="line"><input class="sended" type="submit" value="Сообщение отправлено"></p>
-						</form>
-					</div>
+				<div class="item">
+					<a href="application-house.html" class="link">
+						<span class="name">Сельскохозяйственные объекты</span>
+						<img class="img" src="img/temp/application-2.jpg" alt="">
+					</a>
+				</div>
+				<div class="item">
+					<a href="application-house.html" class="link">
+						<span class="name">Промышленные здания</span>
+						<img class="img" src="img/temp/application-3.jpg" alt="">
+					</a>
+				</div>
+				<div class="item">
+					<a href="application-air.html" class="link">
+						<span class="name">Воздуховоды</span>
+						<img class="img" src="img/temp/application-4.jpg" alt="">
+					</a>
 				</div>
 			</div>
 			<div class="buttons">
