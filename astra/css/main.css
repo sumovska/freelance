@@ -756,7 +756,7 @@ textarea {
 	width: 280px;
 	margin-bottom: 18px;
 }
-.top .amount {
+.top .small {
 	display: block;
 	font: 13px 'Minion Pro', Helvetica, Arial, sans-serif;
 	font-style: italic;
@@ -1571,70 +1571,96 @@ textarea {
 	padding-top: 36px;
 	padding-bottom: 50px;
 }
-.contact-us .unit .inform .contact {
+/* ==========================================================================
+   _CONTACT-LINE
+   ========================================================================== */
+.contact-line {
 	margin: 0;
 }
-.contact-us .unit .inform .contact:after {
+.contact-line:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.contact-us .unit .inform .contact .item {
+.contact-line .item {
 	margin-bottom: 28px;
 	padding-bottom: 28px;
 	border-bottom: 1px solid #e2e3e5;
 }
-.contact-us .unit .inform .contact .item:last-child {
+.contact-line .item:last-child {
 	margin-bottom: 0;
 	padding-bottom: 0;
 	border-bottom: none;
 }
-.contact-us .unit .inform .contact .item .h {
+.contact-line .item .h {
 	margin: 0 0 10px 0;
 	font: 18px/24px 'Futura DemiC', Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: .03em;
 	clear: both;
 }
-.contact-us .unit .inform .contact .item .col .h {
+.contact-line .item .col .h {
 	margin-bottom: 0;
 }
-.contact-us .unit .inform .contact .item .cols {
+.contact-line .item .cols {
 	overflow: hidden;
 }
-.contact-us .unit .inform .contact .item .cols .in {
+.contact-line .item .cols .in {
 	margin: 0 -10px;
 }
-.contact-us .unit .inform .contact .item .cols .in:after {
+.contact-line .item .cols .in:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.contact-us .unit .inform .contact .item .col {
+.contact-line .item .col {
 	width: 50%;
 	padding: 0 10px;
 	margin-bottom: 24px;
 	float: left;
 	letter-spacing: .02em;
 }
-.contact-us .unit .inform .contact .item .col:nth-child(2n+1) {
+.contact-line .item .col:nth-child(2n+1) {
 	clear: left;
 }
-.contact-us .unit .inform .contact .item .col:last-child {
+.contact-line .item .col:last-child {
 	margin: 0;
 }
-.contact-us .unit .inform .contact .col span, .contact-us .inform .col strong {
+.contact-line .col span, .contact-us .inform .col strong {
 	display: block;
 }
-.contact-us .unit .inform .contact .col .mail {
+.contact-line .col .mail {
 	margin-top: 4px;
 	display: block;
 }
-.contact-us .unit .inform .contact .col .tel {
+.contact-line .col .tel {
 	text-decoration: none;
 	cursor: default;
+}
+/* ==========================================================================
+   _JOBS
+   ========================================================================== */
+.jobs .top {
+	padding-top: 55px;
+	background: #b9ad97;
+}
+.jobs .unit .inform {
+	padding-bottom: 78px;
+}
+.jobs .contact-line .item {
+	padding-bottom: 50px;
+	margin-bottom: 24px;
+}
+.jobs .contact-line .item .cols {
+	margin-bottom: 40px;
+}
+.jobs .contact-line .item .cols:last-of-type {
+	margin-bottom: 0;
+}
+.jobs .contact-line .item .col {
+	margin-bottom: 0;
 }
 /* ==========================================================================
    _BLOCK-ASK
@@ -1937,7 +1963,7 @@ textarea {
 	.unit .inform .date { margin-bottom: 22px; font-size: 26px; line-height: 26px; }
 	.units .unit:nth-child(2n) .inform .date { margin-bottom: 17px; }
 	.special .top { padding-top: 38px; padding-bottom: 34px; }
-	.special .top .amount { font-size: 24px; }
+	.special .top .small { font-size: 24px; }
 	.special .unit .photo .sale { margin: -59px 0 0 -98px; font-size: 92px; }
 	.special .unit .inform .link { display: none; }
 	.special .show { padding-top: 12px; padding-bottom: 14px; }
@@ -2032,7 +2058,7 @@ textarea {
 	.index .bx-pager .bx-pager-item a { width: 10px; height: 10px; }
 	.top .h3 { margin-bottom: 16px; font-size: 36px; line-height: 40px; }
 	.special .top { min-height: 100%; }
-	.special .top .amount { font-size: 13px; }
+	.special .top .small { font-size: 13px; }
 	.special .unit .photo .sale { display: none; }
 	.unit .inform .date { margin-bottom: 7px; font-size: 13px; }
 	.unit .inform .title { font-size: 18px; line-height: 24px; margin-bottom: 18px; padding-bottom: 18px; }
@@ -2066,6 +2092,7 @@ textarea {
 	.top .h3 { font-size: 26px; }
 	.parallel { width: 200px; line-height: 20px; }
 	.footer .note .parallel { width: 200px; }
+	.catalog .list .pic .topsheet span { font-size: 20px; }
 }
 
 /* ==========================================================================
