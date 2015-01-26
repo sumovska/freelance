@@ -161,7 +161,7 @@ a:focus {
 a:hover {
 	text-decoration: none;
 }
-h1, h2, h2, h4, h5, h6, .h1, .h2, .h2, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin: 0 0 30px;
 	font-family: 'PF Din Display Pro', Helvetica, Arial, sans-serif;
 }
@@ -210,7 +210,7 @@ h4, .h4 {
 	line-height: inherit;
 	font-weight: bold;
 	font-family: 'PFDin Text Pro', Helvetica, Arial, sans-serif;
-	letter-spacing: normal;
+	letter-spacing: .025em;
 }
 h5, .h5 {
 	margin-bottom: 8px;
@@ -704,6 +704,9 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	background: #ffa733;
 }
 .nav .list > li.sub:hover {
+	background: #d97c2b;
+}
+.nav .list > li.sub.active:hover {
 	background: #d97c2b;
 }
 .nav .list > li.active:hover {
@@ -1221,9 +1224,9 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	margin-bottom: 0;
 }
 .h1 .big {
-	width: 14%;
-	padding-right: 22px;
-	display: table-cell;
+	padding-right: 26px;
+	margin-right: 16px;
+	display: inline;
 	text-decoration: none;
 	color: #202224;
 	position: relative;
@@ -1240,10 +1243,10 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	background: #f39200;
 }
 .h1 .small {
-	padding-left: 22px;
-	display: table-cell;
+	display: inline;
 	color: #777;
 	font-weight: 200;
+	line-height: 44px;
 	letter-spacing: .027em;
 }
 /* ==========================================================================
@@ -1251,7 +1254,7 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
    ========================================================================== */
 .promo {
 	margin-bottom: 50px;
-	padding: 47px 380px 49px 62px;
+	padding: 50px 380px 50px 60px;
 	color: #fff;
 	position: relative;
 	overflow: hidden;
@@ -2089,33 +2092,33 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	color: #f39420;
 }
 /* ==========================================================================
-   _APPLICATION
+   _APPLICATION_MENU
    ========================================================================== */
-.application {
+.menu-application {
 	margin: 0 -15px 56px;
 }
-.application:after, .application .item:after {
+.menu-application:after, .menu-application .item:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.application .item {
+.menu-application .item {
 	width: 565px;
 	padding: 12px 15px;
 	float: left;
 }
-.application .link {
+.menu-application .link {
 	display: block;
 	outline: none;
 	position: relative;
 	color: #222;
 	transition: color .2s ease;
 }
-.application .link:hover, .application .link:focus {
+.menu-application .link:hover, .menu-application .link:focus {
 	color: #f3931f;
 }
-.application .link:before {
+.menu-application .link:before {
 	border-radius: 6px;
 	display: block;
 	content: ' ';
@@ -2127,14 +2130,15 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	z-index: 2;
 	box-shadow: inset 0 2px 10px rgba(0, 0, 0, .1);
 }
-.application .img {
-	width: 100%;
+.menu-application .img {
+	width: 535px;
+	height: 350px;
 	border-radius: 5px;
 	display: block;
 	position: relative;
 	z-index: 1;
 }
-.application .name {
+.menu-application .name {
 	position: absolute;
 	top: 23px;
 	left: 18px;
@@ -2142,6 +2146,91 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	font-size: 24px;
 	letter-spacing: .035em;
 	text-decoration: none;
+}
+/* ==========================================================================
+   _APPLICATION
+   ========================================================================== */
+.application {
+	min-height: 550px;
+	margin-bottom: 68px;
+	padding: 47px 550px 30px 60px;
+	border-radius: 5px;
+	box-shadow: inset 0 2px 10px rgba(0, 0, 0, .1);
+	color: #202224;
+	position: relative;
+	overflow: hidden;
+	background-color: #f9f9f9;
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+}
+.application a {
+	color: #202224;
+}
+.application .h1 {
+	margin-bottom: 15px;
+	font: 500 72px/72px 'PF Din Display Pro', Helvetica, Arial, sans-serif;
+	letter-spacing: .02em;
+}
+.application .h2 {
+	margin-bottom: 13px;
+	font-weight: 300;
+	letter-spacing: .02em;
+}
+.application .text {
+	padding-right: 100px;
+	margin-bottom: 0;
+	letter-spacing: .005em;
+	display: block;
+}
+.application .list {
+	padding-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 0;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 26px;
+}
+.application .list li {
+	padding-bottom: 10px;
+}
+/* ==========================================================================
+   _FEATURES-LIST
+   ========================================================================== */
+.features-list {
+	padding: 0;
+	margin: 43px 0 33px;
+	list-style: none;
+}
+.features-list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.features-list > li {
+	width: 48.5%;
+	min-height: 120px;
+	padding: 0 0 28px 70px;
+	float: left;
+	position: relative;
+}
+.features-list > li:nth-child(2n) { float: right; }
+.features-list > li:nth-child(2n+1) { clear: both; }
+.features-list > li.width {
+	width: 100%;
+	min-height: 0;
+	float: none;
+}
+.features-list .h4 {
+	margin-bottom: 4px;
+}
+.features-list .icon {
+	width: 60px;
+	height: 60px;
+	display: block;
+	position: absolute;
+	top: -5px;
+	left: 0;
 }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
@@ -2222,7 +2311,9 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	.catalog li { width: 220px; background-size: 220px auto; margin-right: 10px; margin-left: 10px; }
 	.block-send .fill .line input[type="text"] { width: 220px; }
 	.block-send .fill .line input[type="text"]:last-child { width: 220px; }
-	.application .item { width: 485px; }
+	.menu-application .item { width: 485px; }
+	.menu-application .item img { width: 455px; height: 317px; }
+	.application { padding-right: 400px }
 }
 @media (max-width: 1024px) {
 	.wrapper { width: 768px; padding-left: 20px; padding-right: 20px; }
@@ -2271,7 +2362,9 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	.filtration .line:nth-child(3) { margin-right: 0; }
 	.filtration .line:nth-child(3) .jq-selectbox { width: 260px; }
 	.filtration .line:nth-child(4) .jq-selectbox { width: 250px; }
-	.application .item { width: 378px; }
+	.menu-application .item { width: 378px; }
+	.menu-application .item img { width: 348px; height: 228px; }
+	.application { padding-right: 200px }
 }
 @media (min-width: 767px) {
 	.nav-space { display: block !important; }
@@ -2374,8 +2467,12 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	.block-compute .inner .draft .measure-height { right: 0; bottom: 142px; }
 	.picture.notflexible { max-width: 100%; margin: 0 auto 20px !important; float: none !important; display: block; }
 	.catalog { width: 496px; margin-left: auto; margin-right: auto; }
-	.application { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
-	.application .item { width: 100%; max-width: 535px; padding-left: 0; padding-right: 0; margin: 0 auto; float: none; }
+	.menu-application { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
+	.menu-application .item { width: 100%; max-width: 535px; padding-left: 0; padding-right: 0; margin: 0 auto; float: none; }
+	.menu-application .item img { width: 100%; height: auto; }
+	.application { padding-left: 15px; padding-right: 15px; margin-right: -10px; margin-left: -10px; border-radius: 0; background-position: 20% 100%; }
+	.application .h2, .application .text { max-width: 500px; }
+	.features-list > li, .features-list > li:nth-child(2n), .features-list > li:nth-child(2n+1) { width: 100%; min-height: 0; float: none; clear: none; }
 }
 @media (max-width: 499px) {
 	.wrapper { width: 100%; }
@@ -2406,10 +2503,13 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	table { font-size: 11px; line-height: 14px; }
 	table th, table td { padding: 3px; }
 	.block-sertificate table .text { padding-left: 3px; padding-right: 3px; }
+	.application { background-position: 30% 100%; }
+	.application .text { padding-right: 55px; max-width: none; }
+	.application .list { padding-right: 70px; }
 }
 @media (max-width: 479px) {
-	.h1 { font-size: 24px; line-height: 30px; }
-	.h1 .link:after { top: 2px; height: 24px; }
+	.h1 { font-size: 26px; line-height: 28px; }
+	.h1 .big:after { height: 26px; top: 2px; }
 }
 @media (max-width: 400px) {
 	.header .logo { top: 5px; left: 50%; margin-left: -71px; }
@@ -2424,8 +2524,6 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	.index .slider .carousel .area .item:nth-child(5) { top: 83.3%; }
 	.button { font-size: 20px; }
 	.block-gallery .carousel li { margin-right: 9px; margin-left: 9px; }
-	.h1 { font-size: 26px; line-height: 28px; }
-	.h1 .link:after { height: 26px; top: 2px; }
 	.filtration .line label { margin-bottom: 6px; }
 	.filtration .line .jq-selectbox { width: 270px; }
 	.pages { font-size: 14px; line-height: 16px; }
@@ -2446,7 +2544,7 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	.popup-callback .legend .tel { display: block; }
 	.list-orange, .contact-us .list-orange { font-size: 24px; line-height: 32px; }
 	.promo .pic { top: -40px; right: -100px; }
-	.application .name { top: 12px; left: 16px; font-size: 18px; }
+	.menu-application .name { top: 12px; left: 16px; font-size: 18px; }
 }
 /* ==========================================================================
    _PRINT STYLES
