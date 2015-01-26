@@ -167,6 +167,14 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.popup-edit .goods').each(function () {
+		var _self = this;
+		$('.button-close').click(function () {
+			$(this).closest('.name').fadeToggle(200);
+			return false;
+		});
+	});
+
 	/* Popup script */
 	$('.fancybox-popup').fancybox({
 		padding: 0,
