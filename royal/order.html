@@ -32,8 +32,8 @@
 	<div class="container">
 		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="catalog.html">Каталог</a></span> <span><a href="#">Royal’s</a></span> <span><a href="#">Мужские куртки</a></span> Гауди</p> 
 
-		<div class="block-cart block-order">
-			<form action="" class="form">
+		<div class="block-order">
+			<form action="#" class="form form-data">
 				<ul class="steps">
 					<li><a href="cart.html"><span>1</span>Корзина</a></li>
 					<li class="active"><a href="order.html"><span>2</span>Оформление</a></li>
@@ -52,80 +52,82 @@
 								<option>Александр Васильев</option>
 							</select>
 						</p>
-						<div class="col">
-							<h2 class="h2">Информация о покупателе</h2>
-							<div class="field">
-								<p class="line">
-									<label>Имя</label>
-									<input type="text" placeholder="Александр">
-								</p>
-								<p class="line">
-									<label>Фамилия</label>
-									<input type="text" placeholder="Васильев">
-								</p>
-								<p class="line">
-									<label>Телефон</label>
-									<input type="text" placeholder="">
-								</p>
-								<p class="line">
-									<label>E-mail</label>
-									<input type="text" placeholder="">
-								</p>
-								<p class="line">
-									<label>Индекс</label>
-									<input type="text" placeholder="">
-								</p>
-								<p class="line">
-									<label>Страна</label>
-									<select>
-										<option></option>
-									</select>
-								</p>
-								<p class="line">
-									<label>Адрес доставки</label>
-									<textarea></textarea>
-								</p>
-								<p class="line">
-									<label>Комментарии</label>
-									<textarea></textarea>
-								</p>
-							</div>
-						</div>
-						<div class="col col-right">
-							<h2 class="h2">Доставка</h2>
-							<div class="field">
-								<p class="line">
-									<input id="check1" type="radio" name="delivery1" value="company" checked>
-									<label for="check1">Транспортной компанией<span class="cost">от 750 <span class="rub">p</span>, 2 дня</span></label>
-									<span class="in">
-										<input id="check2" type="radio" name="delivery1" value="company">
-										<label for="check2">Деловые линии<span class="cost">750 <span class="rub">p</span>, 2 дня</span></label>
-										<input id="check3" type="radio" name="delivery1" value="company">
-										<label for="check3">DHL<span class="cost">900 <span class="rub">p</span>, 2 дня</span></label>
-									</span>
-								</p>
-								<p class="line">
-									<input id="check4" type="radio" name="delivery2" value="courier">
-									<label for="check4">Курьером<span class="cost">500 <span class="rub">p</span>, 1 день</span></label>
-									<input id="check5" type="radio" name="delivery2" value="pickup">
-									<label for="check5">Самовывоз<span class="cost">Владимирский пр., д. 200</span></label>
-								</p>
-							</div>
-							<div class="field">
-								<h2 class="h2">Оплата</h2>
-								<p class="line">
-									<input id="check6" type="radio" name="pay" value="cash" checked>
-									<label for="check6">По счету</label>
-									<input id="check7" type="radio" name="pay" value="cash">
-									<label for="check7">Наличными в офисе</label>
-								</p>
+						<div class="list">
+							<div class="columns">
+								<div class="column column-1">
+									<h3 class="h3">Информация о покупателе</h3>
+									<p class="line">
+										<label>Имя</label>
+										<input type="text" placeholder="Александр">
+									</p>
+									<p class="line">
+										<label>Фамилия</label>
+										<input type="text" placeholder="Васильев">
+									</p>
+									<p class="line">
+										<label>Телефон</label>
+										<input type="text" placeholder="">
+									</p>
+									<p class="line">
+										<label>E-mail</label>
+										<input type="text" placeholder="">
+									</p>
+									<p class="line">
+										<label>Индекс</label>
+										<input type="text" placeholder="">
+									</p>
+									<p class="line">
+										<label>Страна</label>
+										<select>
+											<option></option>
+										</select>
+									</p>
+									<p class="line">
+										<label>Адрес доставки</label>
+										<textarea></textarea>
+									</p>
+									<p class="line">
+										<label>Комментарии</label>
+										<textarea></textarea>
+									</p>
+								</div>
+								<div class="column column-2">
+									<h3 class="h3">Доставка</h3>
+									<div class="kind">
+										<p class="line">
+											<input id="check1" type="radio" name="delivery1" value="company" checked>
+											<label for="check1">Транспортной компанией<span class="cost">от 750 <span class="rub">p</span>, 2 дня</span></label>
+											<span class="in">
+												<input id="check2" type="radio" name="delivery1" value="company">
+												<label for="check2">Деловые линии<span class="cost">750 <span class="rub">p</span>, 2 дня</span></label>
+												<input id="check3" type="radio" name="delivery1" value="company">
+												<label for="check3">DHL<span class="cost">900 <span class="rub">p</span>, 2 дня</span></label>
+											</span>
+										</p>
+										<p class="line">
+											<input id="check4" type="radio" name="delivery2" value="courier">
+											<label for="check4">Курьером<span class="cost">500 <span class="rub">p</span>, 1 день</span></label>
+											<input id="check5" type="radio" name="delivery2" value="pickup">
+											<label for="check5">Самовывоз<span class="cost">Владимирский пр., д. 200</span></label>
+										</p>
+									</div>
+									<div class="kind">
+										<h3 class="h3">Оплата</h3>
+										<p class="line">
+											<input id="check6" type="radio" name="pay" value="cash" checked>
+											<label for="check6">По счету</label>
+											<input id="check7" type="radio" name="pay" value="cash">
+											<label for="check7">Наличными в офисе</label>
+										</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="tab tab-legal tab-hidden">
-						<div class="col">
-							<h2 class="h2">Информация о покупателе</h2>
-							<div class="field">
+						<div class="columns">
+							<div class="column column-1">
+								<h2 class="h2">Информация о покупателе</h2>
 								<p class="line">
 									<label>Название компании</label>
 									<input type="text" placeholder="220 ВОЛЬТ">
@@ -177,30 +179,30 @@
 									<textarea></textarea>
 								</p>
 							</div>
-						</div>
-						<div class="col col-right">
-							<h2 class="h2">Доставка</h2>
-							<div class="field">
-								<p class="line">
-									<input id="check-1" type="radio" name="delivery" value="company" checked="">
-									<label for="check-1">Транспортной компанией<span class="cost">от 750 <span class="rub">p</span>, 2 дня</span></label>
-									<input id="check-3" type="radio" name="delivery" value="courier">
-									<label for="check-3">Курьером<span class="cost">500 <span class="rub">p</span>, 1 день</span></label>
-									<input id="check-4" type="radio" name="delivery" value="pickup">
-									<label for="check-4">Самовывоз<span class="cost"><a href="#">Подробные адреса складов</a></span></label>
-									<select>
-										<option>На Владимирской</option>
-									</select>
-								</p>
-							</div>
-							<div class="field">
-								<h2 class="h2">Оплата</h2>
-								<p class="line">
-									<input id="check-5" type="radio" name="pay" value="cashless">
-									<label for="check-5">По счету</label>
-									<input id="check-6" type="radio" name="pay" value="cash" checked="">
-									<label for="check-6">Наличными в офисе</label>
-								</p>
+							<div class="column column-2">
+								<h2 class="h2">Доставка</h2>
+								<div class="kind">
+									<p class="line">
+										<input id="check-1" type="radio" name="delivery" value="company" checked="">
+										<label for="check-1">Транспортной компанией<span class="cost">от 750 <span class="rub">p</span>, 2 дня</span></label>
+										<input id="check-3" type="radio" name="delivery" value="courier">
+										<label for="check-3">Курьером<span class="cost">500 <span class="rub">p</span>, 1 день</span></label>
+										<input id="check-4" type="radio" name="delivery" value="pickup">
+										<label for="check-4">Самовывоз<span class="cost"><a href="#">Подробные адреса складов</a></span></label>
+										<select>
+											<option>На Владимирской</option>
+										</select>
+									</p>
+								</div>
+								<div class="kind">
+									<h2 class="h2">Оплата</h2>
+									<p class="line">
+										<input id="check-5" type="radio" name="pay" value="cashless">
+										<label for="check-5">По счету</label>
+										<input id="check-6" type="radio" name="pay" value="cash" checked="">
+										<label for="check-6">Наличными в офисе</label>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -209,7 +211,7 @@
 							<h2 class="h2">Итого: <span class="number">15 000</span> <span class="rub">p</span></h2>
 							<p class="fn">Включая стоимость доставки</p>
 						</div>
-						<div class="col col-3"><a class="to-cart" href="confirm.html"><span>Оформить заказ</span></a></div>
+						<div class="col col-3"><a class="link" href="confirm.html"><span>Оформить заказ</span></a></div>
 					</div>
 				</div>
 			</form>

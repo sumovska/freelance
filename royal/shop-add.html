@@ -34,43 +34,110 @@
 
 		<ul class="submenu">
 			<li><a href="data.html">Данные</a></li>
-			<li><a href="#">Заказы</a></li>
+			<li><a href="orders.html">Заказы</a></li>
 			<li><a href="support.html">Менеджер</a></li>
 			<li class="active"><a href="#">Мои магазины</a></li>
 		</ul>
 
 		<ul class="submenu submenu-small">
-			<li><a href="data.html">Мои магазины</a></li>
-			<li class="active"><a href="#">Магазины на модерации</a></li>
-			<li><a href="manager.html">Добавление магазина</a></li>
-			<li><a href="manager.html">Акции</a></li>
+			<li><a href="shops.html">Мои магазины</a></li>
+			<li><a href="#">Магазины на модерации</a></li>
+			<li class="active"><a href="#">Добавление магазина</a></li>
+			<li><a href="#">Акции</a></li>
 			<li><a href="#">Создание акции</a></li>
 		</ul>
 
-		<div class="upgrade">
-			<div class="name">
-				<h2 class="h2">Восточный базар</h2>
-				<div class="links">
-					<a href="#">Верхняя одежда</a>
-					<a href="#">Костюмы</a>
+		<div class="block-add">
+			<form class="form form-data" action="#">
+				<div class="list">
+					<div class="columns">
+						<div class="column column-1">
+							<div class="line">
+								<label>Название торгового центра</label>
+								<input type="text" placeholder="">
+							</div>
+							<div class="line line-half">
+								<span>
+									<label>Этаж</label>
+									<input type="text" placeholder="">
+								</span>
+								<span>
+									<label>Номер секции</label>
+									<input type="text" placeholder="">
+								</span>
+							</div>
+							<div class="line line-adr">
+								<span>
+									<label>Улица</label>
+									<input type="text" placeholder="">
+								</span>
+								<span>
+									<label>Дом</label>
+									<input type="text" placeholder="">
+								</span>
+							</div>
+							<div class="add add-good">
+								<a href="#"><span class="plus"><span></span></span>Добавить ассортимент</a>
+							</div>
+							<div class="line line-close">
+								<select>
+									<option>Верхняя одежда</option>
+								</select>
+								<a class="button-close" href="#"></a>
+							</div>
+							<div class="line line-close">
+								<select>
+									<option>Костюмы</option>
+								</select>
+								<a class="button-close" href="#"></a>
+							</div>
+							<div class="line line-close">
+								<select>
+									<option>Трикотаж</option>
+								</select>
+								<a class="button-close" href="#"></a>
+							</div>
+						</div>
+						<div class="column column-2">
+							<div class="line">
+								<label>Название магазина</label>
+								<input type="text" placeholder="">
+							</div>
+							<div class="line">
+								<label>Город</label>
+								<select>
+									<option></option>
+								</select>
+							</div>
+							<div class="line line-half">
+								<span>
+									<label>Основной телефон</label>
+									<input type="text" placeholder="">
+								</span>
+								<span>
+									<label>Дополнительный</label>
+									<input type="text" placeholder="">
+								</span>
+							</div>
+							<div class="add">
+								<a href="#">Добавить изображения</a>
+							</div>
+							<div class="gallery">
+								<ul>
+									<li><img src="img/temp/gallery-2s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+									<li><img src="img/temp/gallery-1s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+									<li><img src="img/temp/gallery-3s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="submit">
+						<div class="line">
+							<button type="submit">Отправить на модерацию</button>
+						</div>
+					</div>
 				</div>
-				<div class="address">
-					<span>Санкт-Петербург, Невский проспект, д. 220</span>
-					<span>Тел.: +7 (812) 220-20-20, 345-55-00</span>
-				</div>
-				<div class="edit">
-					<a href="#">Редактировать</a>
-					<a href="#">Удалить</a>
-				</div>
-			</div>
-			<div class="gallery">
-				<ul class="carousel">
-					<li><a href="img/temp/gallery-1.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-1s.jpg" alt=""></a></li>
-					<li><a href="img/temp/gallery-2.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-2s.jpg" alt=""></a></li>
-					<li><a href="img/temp/gallery-3.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-3s.jpg" alt=""></a></li>
-					<li><a href="img/temp/gallery-4.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-4s.jpg" alt=""></a></li>
-				</ul>
-			</div>
+			</form>
 		</div>
 
 	</div>
