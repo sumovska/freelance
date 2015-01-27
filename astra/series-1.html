@@ -17,19 +17,18 @@
 	<header class="header">
 		<p class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></p>
 		<nav class="nav nav-full">
-			<ul class="products products-full">
+			<ul class="products">
 				<li class="active">
-					<span>Продукция</span>
+					<a class="switch" href="#">Продукция</a>
 					<ul>
-						<li><a href="bathes.html">Ванны</a></li>
-						<li>Мебель для ванных комнат</li>
-						<li><a href="collection.html">Коллекции</a></li>
+						<li class="current"><a href="bathes.html">Ванны</a></li>
+						<li><a href="furniture.html">Мебель для ванных комнат</a></li>
 					</ul>
 				</li>
 				<li><a href="#">Где купить</a></li>
 			</ul>
-			<ul class="contacts contacts-full">
-				<li><a href="#">Задать вопрос</a></li>
+			<ul class="contacts">
+				<li><a href="ask.html">Задать вопрос</a></li>
 				<li><a href="jobs.html">Вакансии</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
@@ -46,6 +45,8 @@
 				<li class="pinterest"><a href="#"></a></li>
 				<li class="facebook"><a href="#"></a></li>
 			</ul>
+			<a class="toggle js-popup" href="#popup-callback"></a>
+			<a class="cart" href="#"></a>
 		</nav>
 	</header>
 
@@ -56,85 +57,89 @@
 			<div class="hr">
 				<div class="bg"></div>
 			</div>
-			<a class="parallel" href="#">Посмотреть в галерее</a>
+			<a class="parallel" href="collections.html">Посмотреть в галерее</a>
 		</div>
 	</div>
 
-	<div class="content">
-		<div class="top-line">
-			<p class="cart">Добавлено: 0 товаров, <span class="cost">Cтоимость: 0 руб.</span></p>
-			<ul class="nav">
-				<li><a href="#">Конструктор ванной комнаты</a></li>
-				<li><a href="#">Инструкции по эксплуатации</a></li>
-				<li><a href="#">Технический Каталог</a></li>
-			</ul>
-		</div>
-		<div class="info-block">
-			<div class="pic">
-				<img src="img/catalog/furniture-7m.jpg" alt="">
+	<div class="content content-beige">
+		<div class="wrapper">
+			<div class="block-cart">
+				<div class="top-line">
+					<p class="amount">Добавлено: 0 товаров, <span class="cost">Cтоимость: 0 руб.</span></p>
+					<ul class="links">
+						<li><a href="#">Конструктор ванной комнаты</a></li>
+						<li><a href="#">Инструкции по эксплуатации</a></li>
+						<li><a href="#">Технический Каталог</a></li>
+					</ul>
+				</div>
 			</div>
-			<div class="text">
-				<h4 class="h4">Серия «Лотус»</h4>
-				<p>В комплект мебели «Лотус» входит только все самое необходимое. Если вы цените элегантность и ищите базовые вещи для вашей ванной комнаты безупречного качества, данный комплект станет прекрасным решением. Подберите цвет в соответствии с остальным интерьером и наслаждайтесь вашей новой ванной комнатой.</p>
-				<p class="h">Окраска корпуса и фасада</p>
-				<ul class="list">
-					<li>Глянцевая эмаль.</li>
-					<li>16 базовых цветов (+20% от стоимости).</li>
-					<li>Индивидуальный подбор цвета по системе RAL </li>
-					<li>(+10% к стоимости цветного изделия).</li>
-				</ul>
+			<div class="block-item">
+				<div class="pic">
+					<img src="img/catalog/furniture-7m.jpg" alt="">
+				</div>
+				<div class="text">
+					<h4 class="h4">Серия «Лотус»</h4>
+					<p>В комплект мебели «Лотус» входит только все самое необходимое. Если вы цените элегантность и ищите базовые вещи для вашей ванной комнаты безупречного качества, данный комплект станет прекрасным решением. Подберите цвет в соответствии с остальным интерьером и наслаждайтесь вашей новой ванной комнатой.</p>
+					<p class="h">Окраска корпуса и фасада</p>
+					<ul class="list">
+						<li>Глянцевая эмаль.</li>
+						<li>16 базовых цветов (+20% от стоимости).</li>
+						<li>Индивидуальный подбор цвета по системе RAL </li>
+						<li>(+10% к стоимости цветного изделия).</li>
+					</ul>
+				</div>
 			</div>
-		</div>
-		<div class="parts">
-			<h4 class="h4">Соберите свой комплект</h4>
-			<ul class="list">
-				<li>
-					<a class="link" href="#">
-						<img class="pic" src="img/temp/part-1.png" alt="">
-						<span class="name"> Нижний шкаф выдвижной</span>
-						<div class="bottom">
-							<span class="cost">50 800 руб.</span>
-							<span class="parallel parallel-black">Добавить в заказ</span>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a class="link" href="#">
-						<img class="pic" src="img/temp/part-2.png" alt="">
-						<span class="name">Пенал</span>
-						<div class="bottom">
-							<span class="cost">18 400 руб.</span>
-							<span class="parallel parallel-black">Добавить в заказ</span>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a class="link" href="#">
-						<img class="pic" src="img/temp/part-3.png" alt="">
-						<span class="name">Зеркало</span>
-						<div class="bottom">
-							<span class="cost">15 900 руб.</span>
-							<span class="parallel parallel-black">Добавить в заказ</span>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a class="link" href="#">
-						<img class="pic" src="img/temp/part-4.png" alt="">
-						<span class="name">Выключатель сенсорный</span>
-						<div class="bottom">
-							<span class="cost">2 300 руб.</span>
-							<span class="parallel parallel-black">Добавить в заказ</span>
-						</div>
-					</a>
-				</li>
-			</ul>
+			<div class="equipment">
+				<h4 class="title">Соберите свой комплект</h4>
+				<div class="parts">
+					<div class="item">
+						<a class="link" href="#">
+							<img class="pic" src="img/temp/part-1.png" alt="">
+							<span class="name">Нижний шкаф выдвижной</span>
+							<span class="bottom">
+								<span class="cost">50 800 руб.</span>
+								<span class="parallel parallel-black">Добавить в зака</span>
+							</span>
+						</a>
+					</div>
+					<div class="item">
+						<a class="link" href="#">
+							<img class="pic" src="img/temp/part-2.png" alt="">
+							<span class="name">Пенал</span>
+							<span class="bottom">
+								<span class="cost">18 400 руб.</span>
+								<span class="parallel parallel-black">Добавить в заказ</span>
+							</span>
+						</a>
+					</div>
+					<div class="item">
+						<a class="link" href="#">
+							<img class="pic" src="img/temp/part-3.png" alt="">
+							<span class="name">Зеркало</span>
+							<span class="bottom">
+								<span class="cost">15 900 руб.</span>
+								<span class="parallel parallel-black">Добавить в заказ</span>
+							</span>
+						</a>
+					</div>
+					<div class="item">
+						<a class="link" href="#">
+							<img class="pic" src="img/temp/part-4.png" alt="">
+							<span class="name">Выключатель сенсорный</span>
+							<span class="bottom">
+								<span class="cost">2 300 руб.</span>
+								<span class="parallel parallel-black">Добавить в заказ</span>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<div class="prev-next">
 		<div class="prev">
-			<a class="link" href="series-2.html">
+			<a class="link" href="item-2.html">
 				<div class="text">
 					<span class="name">Серия «Рубин»<span class="arrow"></span></span>
 				</div>
@@ -142,7 +147,7 @@
 			</a>
 		</div>
 		<div class="next">
-			<a class="link" href="series-2.html">
+			<a class="link" href="item-2.html">
 				<div class="text">
 					<span class="name">Серия «Купе»<span class="arrow"></span></span>
 				</div>
