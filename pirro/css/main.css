@@ -116,7 +116,6 @@ audio, canvas, img, video {
 .full .wrapper {
 	padding-top: 38px;
 	padding-bottom: 38px;
-	overflow: hidden;
 }
 .block {
 	margin-bottom: 30px;
@@ -211,6 +210,10 @@ h4, .h4 {
 	font-weight: bold;
 	font-family: 'PFDin Text Pro', Helvetica, Arial, sans-serif;
 	letter-spacing: .025em;
+}
+.h4-bold {
+	margin-bottom: 60px;
+	line-height: 24px;
 }
 h5, .h5 {
 	margin-bottom: 8px;
@@ -2233,6 +2236,46 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	left: 0;
 }
 /* ==========================================================================
+   _SPEC-LIST
+   ========================================================================== */
+.spec-list {
+	padding: 0;
+	margin: 24px 0 33px;
+	list-style: none;
+}
+.spec-list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.spec-list > li {
+	width: 48.5%;
+	min-height: 260px;
+	padding: 10px 0 50px 240px;
+	float: left;
+	position: relative;
+}
+.spec-list > li:nth-child(2n) { float: right; }
+.spec-list > li:nth-child(2n+1) { clear: both; }
+.spec-list > li.width {
+	width: 100%;
+	float: none;
+}
+.spec-list .h4 {
+	margin-bottom: 10px;
+}
+.spec-list .icon {
+	width: 200px;
+	height: 200px;
+	border-radius: 2px;
+	box-shadow: 0 0 50px rgba(0, 0, 0, .3);
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
    ========================================================================== */
 .fancybox-tmp iframe, .fancybox-tmp object { vertical-align: top; padding: 0; margin: 0; }
@@ -2365,6 +2408,7 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	.menu-application .item { width: 378px; }
 	.menu-application .item img { width: 348px; height: 228px; }
 	.application { padding-right: 200px }
+	.spec-list > li, .spec-list > li:nth-child(2n), .spec-list > li:nth-child(2n+1) { width: 100%; float: none; clear: none; }
 }
 @media (min-width: 767px) {
 	.nav-space { display: block !important; }
@@ -2372,6 +2416,7 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 }
 @media (max-width: 767px) {
 	.wrapper { width: 100%; padding-left: 10px; padding-right: 10px; }
+	.full .wrapper { overflow: hidden; }
 	.header .logo { left: 10px; }
 	.header .slogan { left: 168px; top: 112px; }
 	.header .phone { top: 15px; right: 9px; }
@@ -2510,6 +2555,8 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 @media (max-width: 479px) {
 	.h1 { font-size: 26px; line-height: 28px; }
 	.h1 .big:after { height: 26px; top: 2px; }
+	.spec-list > li { min-height: 160px; padding-top: 5px; padding-left: 120px; }
+	.spec-list .icon { width: 100px; height: 100px; }
 }
 @media (max-width: 400px) {
 	.header .logo { top: 5px; left: 50%; margin-left: -71px; }
