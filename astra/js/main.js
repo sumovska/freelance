@@ -12,6 +12,21 @@ $(document).ready(function () {
 		useCSS: false,
 		slideWidth: 1260
 	});
+
+	$('.features').each(function () {
+		var _self = $(this);
+		/* Features carousel */
+		$('.carousel').bxSlider({
+			controls: false,
+			mode: 'vertical',
+			adaptiveHeight: true
+		});
+		$('.block-item-add .close').click(function () {
+			$(this).closest('.features').fadeToggle(400);
+			return false;
+		});
+	});
+
 	$('body').append('<div class="overlay"></div>');
 	$('.overlay').click(function () {
 		var _self = $(this);
@@ -40,6 +55,26 @@ $(document).ready(function () {
 		$('.products .switch').click(function () {
 			$(this).closest('li').toggleClass('active');
 			return false;
+		});
+	});
+
+	$(".similar li a").fancybox({
+		autoSize: false,
+		fitToView: false,
+		padding: 0,
+		helpers: {
+			media: {}
+		}
+
+	});
+
+	$('.functions').each(function () {
+		$('.more', this).click(function () {
+			$(this).closest('.line').toggleClass('line-active').siblings('.active').removeClass('active');
+			return false;
+		});
+		$('.similar li a', this).click(function () {
+			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
 		});
 	});
 

@@ -17,19 +17,19 @@
 	<header class="header">
 		<p class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></p>
 		<nav class="nav nav-full">
-			<ul class="products products-full">
+			<ul class="products">
 				<li class="active">
-					<span>Продукция</span>
+					<a class="switch" href="#">Продукция</a>
 					<ul>
 						<li><a href="bathes.html">Ванны</a></li>
-						<li>Мебель для ванных комнат</li>
-						<li><a href="collection.html">Коллекции</a></li>
+						<li><a href="furniture.html">Мебель для ванных комнат</a></li>
+						<li class="current"><a href="collections.html">Коллекции</a></li>
 					</ul>
 				</li>
 				<li><a href="#">Где купить</a></li>
 			</ul>
-			<ul class="contacts contacts-full">
-				<li><a href="#">Задать вопрос</a></li>
+			<ul class="contacts">
+				<li><a href="ask.html">Задать вопрос</a></li>
 				<li><a href="jobs.html">Вакансии</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
@@ -46,6 +46,8 @@
 				<li class="pinterest"><a href="#"></a></li>
 				<li class="facebook"><a href="#"></a></li>
 			</ul>
+			<a class="toggle js-popup" href="#popup-callback"></a>
+			<a class="cart" href="#"></a>
 		</nav>
 	</header>
 
@@ -66,16 +68,14 @@
 				<div class="top-line">
 					<p class="amount">Добавлено: 0 товаров, <span class="cost">Cтоимость: 0 руб.</span></p>
 					<ul class="links">
-						<li><a href="#">Конструктор ванной комнаты</a></li>
+						<li class="hiding"><a href="#">Конструктор ванной комнаты</a></li>
 						<li><a href="#">Инструкции по эксплуатации</a></li>
-						<li><a href="#">Технический Каталог</a></li>
+						<li class="hiding"><a href="#">Технический Каталог</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="block-item">
-				<div class="pic">
-					<img src="img/catalog/furniture-7m.jpg" alt="">
-				</div>
+				<div class="pic" style="background-image:url('img/catalog/furniture-7m.jpg')"></div>
 				<div class="text">
 					<h4 class="h4">Коллекция «Лотус»</h4>
 					<p>В комплект коллекции «Лотус» входит только все самое необходимое. Если вы цените элегантность и ищите базовые вещи для вашей ванной комнаты безупречного качества, данный комплект станет прекрасным решением. Подберите цвет в соответствии с остальным интерьером и наслаждайтесь вашей новой ванной комнатой.</p>
@@ -83,64 +83,103 @@
 					<ul class="list">
 						<li>Глянцевая эмаль.</li>
 						<li>16 базовых цветов (+20% от стоимости).</li>
-						<li>Индивидуальный подбор цвета по системе RAL </li>
-						<li>(+10% к стоимости цветного изделия).</li>
+						<li>Индивидуальный подбор цвета по системе RAL <br>(+10% к стоимости цветного изделия).</li>
 					</ul>
 				</div>
 			</div>
 			<div class="equipment">
 				<h4 class="title">Соберите коллекцию</h4>
-				<div class="block-item block-item-add">
-					<a href="#" class="close"></a>
-					<div class="pic">
-						<img src="img/temp/part-20.png" alt="">
-					</div>
-					<div class="text">
-						<h4 class="h4">Ванна «Лотус»</h4>
-						<div class="measure">
-							<p class="col">
-								<span>Длина: 1850 +/-7 мм</span>
-								<span>Толщина стенок: 10-15 мм</span>
-								<span>Объем: 282 л</span>
-							</p>
-							<p class="col">
-								<span>Ширина: 850  +/-5 мм</span>
-								<span>Масса: 135 кг</span>
-							</p>
-							<p class="col">
-								<span>Высота: 650  +/-5 мм</span>
-								<span>Глубина ванны: 475 мм</span>
-							</p>
-						</div>
-						<div class="describe">
-							<p>Ванна из литого мрамора «Лотус» отражает все современные модные тенденции, отличается динамичностью линий и безупречным стилем. Ванна сделана из искусственного камня и сочетает в себе все положительные качества изделий из чугуна, акрила и стали. Хорошо сохраняет тепло, легка в эксплуатации, отличается хорошим шумопоглащением и отсутствием вибрации. Слив-перелив заказывается отдельно.</p>
-							<p class="h">Окраска корпуса и фасада</p>
-							<ul class="list">
-								<li>Глянцевая эмаль.</li>
-								<li>16 базовых цветов (+20% от стоимости).</li>
-								<li>Индивидуальный подбор цвета по системе RAL </li>
-								<li>(+10% к стоимости цветного изделия).</li>
-							</ul>
-						</div>
-						<p class="price">60 800 руб.</p>
-						<p class="link"><a class="parallel parallel-black" href="#">Добавить в заказ</a></p>
-					</div>
+				<div class="features">
+					<ul class="carousel">
+						<li>
+							<div class="block-item block-item-add">
+								<a href="#" class="close"></a>
+								<div class="pic">
+									<img src="img/temp/part-20.png" alt="">
+								</div>
+								<div class="text">
+									<h4 class="h4">Ванна «Лотус»</h4>
+									<div class="measure">
+										<p class="col">
+											<span>Длина: 1850 +/-7 мм</span>
+											<span>Толщина стенок: 10-15 мм</span>
+											<span>Объем: 282 л</span>
+										</p>
+										<p class="col">
+											<span>Ширина: 850  +/-5 мм</span>
+											<span>Масса: 135 кг</span>
+										</p>
+										<p class="col">
+											<span>Высота: 650  +/-5 мм</span>
+											<span>Глубина ванны: 475 мм</span>
+										</p>
+									</div>
+									<div class="describe">
+										<p>Ванна из литого мрамора «Лотус» отражает все современные модные тенденции, отличается динамичностью линий и безупречным стилем. Ванна сделана из искусственного камня и сочетает в себе все положительные качества изделий из чугуна, акрила и стали. Хорошо сохраняет тепло, легка в эксплуатации, отличается хорошим шумопоглащением и отсутствием вибрации. <br>Слив-перелив заказывается отдельно.</p>
+										<p class="h">Окраска корпуса и фасада</p>
+										<ul class="list">
+											<li>16 базовых цветов (+20% от стоимости).</li>
+											<li>Индивидуальный подбор цвета по системе RAL <br>(+10% к стоимости цветного изделия).</li>
+										</ul>
+									</div>
+									<p class="price">60 800 руб.</p>
+									<p class="link"><a class="parallel parallel-black" href="#">Добавить в заказ</a></p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="block-item block-item-add">
+								<a href="#" class="close"></a>
+								<div class="pic">
+									<img src="img/temp/part-20.png" alt="">
+								</div>
+								<div class="text">
+									<h4 class="h4">Ванна «Лотус»</h4>
+									<div class="measure">
+										<p class="col">
+											<span>Длина: 1850 +/-7 мм</span>
+											<span>Толщина стенок: 10-15 мм</span>
+											<span>Объем: 282 л</span>
+										</p>
+										<p class="col">
+											<span>Ширина: 850  +/-5 мм</span>
+											<span>Масса: 135 кг</span>
+										</p>
+										<p class="col">
+											<span>Высота: 650  +/-5 мм</span>
+											<span>Глубина ванны: 475 мм</span>
+										</p>
+									</div>
+									<div class="describe">
+										<p>Ванна из литого мрамора «Лотус» отражает все современные модные тенденции, отличается динамичностью линий и безупречным стилем. Ванна сделана из искусственного камня и сочетает в себе все положительные качества изделий из чугуна, акрила и стали. Хорошо сохраняет тепло, легка в эксплуатации, отличается хорошим шумопоглащением и отсутствием вибрации. <br>Слив-перелив заказывается отдельно.</p>
+										<p class="h">Окраска корпуса и фасада</p>
+										<ul class="list">
+											<li>16 базовых цветов (+20% от стоимости).</li>
+											<li>Индивидуальный подбор цвета по системе RAL <br>(+10% к стоимости цветного изделия).</li>
+										</ul>
+									</div>
+									<p class="price">60 800 руб.</p>
+									<p class="link"><a class="parallel parallel-black" href="#">Добавить в заказ</a></p>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 				<div class="parts">
 					<div class="item">
 						<a class="link" href="#">
-							<img class="pic" src="img/temp/part-5.png" alt="">
-							<span class="name">Раковина</span>
+							<span class="pic"><img src="img/temp/part-26.png" alt=""></span>
+							<span class="name">Ванна «Лотус»</span>
 							<span class="bottom">
-								<span class="cost">8 000 руб.</span>
+								<span class="cost">60 800 руб.</span>
 								<span class="parallel parallel-black">Добавить в заказ</span>
 							</span>
 						</a>
 					</div>
 					<div class="item">
 						<a class="link" href="#">
-							<img class="pic" src="img/temp/part-2.png" alt="">
-							<span class="name"> Нижний шкаф 800 распашной</span>
+							<span class="pic"><img src="img/temp/part-2.png" alt=""></span>
+							<span class="name"> Нижний шкаф 800 <br>распашной</span>
 							<span class="bottom">
 								<span class="cost">13 800 руб.</span>
 								<span class="parallel parallel-black">Добавить в заказ</span>
@@ -149,8 +188,8 @@
 					</div>
 					<div class="item">
 						<a class="link" href="#">
-							<img class="pic" src="img/temp/part-3.png" alt="">
-							<span class="name">Нижний шкаф 400 распашной</span>
+							<span class="pic"><img src="img/temp/part-3.png" alt=""></span>
+							<span class="name">Нижний шкаф 400 <br>распашной</span>
 							<span class="bottom">
 								<span class="cost">7 400 руб.</span>
 								<span class="parallel parallel-black">Добавить в заказ</span>
@@ -159,8 +198,8 @@
 					</div>
 					<div class="item">
 						<a class="link" href="#">
-							<img class="pic" src="img/temp/part-4.png" alt="">
-							<span class="name">Нижний шкаф 400 выдвижной</span>
+							<span class="pic"><img src="img/temp/part-4.png" alt=""></span>
+							<span class="name">Нижний шкаф 400 <br>выдвижной</span>
 							<span class="bottom">
 								<span class="cost">11 300 руб.</span>
 								<span class="parallel parallel-black">Добавить в заказ</span>
@@ -169,8 +208,8 @@
 					</div>
 					<div class="item">
 						<a class="link" href="#">
-							<img class="pic" src="img/temp/part-1.png" alt="">
-							<span class="name">Нижний шкаф 400 выдвижной  двойной</span>
+							<span class="pic"><img src="img/temp/part-1.png" alt=""></span>
+							<span class="name">Нижний шкаф 400 <br>выдвижной  двойной</span>
 							<span class="bottom">
 								<span class="cost">12 800 руб.</span>
 								<span class="parallel parallel-black">Добавить в заказ</span>
@@ -183,16 +222,16 @@
 	</div>
 
 	<div class="prev-next">
-		<div class="prev" style="background-image:url('img/temp/prev-2.jpg')">
-			<a class="link" href="item-1.html">
+		<div class="prev" style="background-image:url('img/temp/prevnext-2.jpg')">
+			<a class="link" href="collection-1.html">
 				<div class="text">
 					<span class="name">Коллекция «Нейт 170»<span class="arrow"></span></span>
 				</div>
 				<div class="topsheet"></div>
 			</a>
 		</div>
-		<div class="next" style="background-image:url('img/temp/next-3.jpg')">
-			<a class="link" href="item-1.html">
+		<div class="next" style="background-image:url('img/temp/prevnext-6.jpg')">
+			<a class="link" href="collection-1.html">
 				<div class="text">
 					<span class="name">Коллекция «Олимп»<span class="arrow"></span></span>
 				</div>
@@ -201,12 +240,16 @@
 		</div>
 	</div>
 
-
-	<footer class="footer">
+	<footer class="footer" id="bottom">
+		<ul class="social social-white">
+			<li class="twitter"><a href="#"></a></li>
+			<li class="pinterest"><a href="#"></a></li>
+			<li class="facebook"><a href="#"></a></li>
+		</ul>
+		<p class="note">Хотите быть в курсе наших новостей? <a class="parallel" href="#">Подпишитесь <span>на рассылку</span></a> <span class="mask">&nbsp;на рассылку.</span></p>
 		<p class="author">Site by <strong>DC</strong></p>
 		<p class="copyright">&copy; 2007-2014 ASTRO-FORM. Все права защищены</p>
 		<p class="logo"><img src="img/logowhite.png" alt></p>
-		<p class="note">Хотите быть в курсе наших новостей? <a class="parallel" href="#">Подпишитесь</a> &nbsp;на рассылку.</p>
 	</footer>
 
 	<div class="popup popup-callback">
@@ -232,8 +275,8 @@
 			</ul>
 			<ul class="contacts">
 				<li><a href="ask.html">Задать вопрос</a></li>
-				<li><a href="#">Вакансии</a></li>
-				<li><a href="contacts">Контакты</a></li>
+				<li><a href="jobs.html">Вакансии</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 			<ul class="social social-white">
 				<li class="twitter"><a href="#"></a></li>
