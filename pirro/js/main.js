@@ -93,4 +93,16 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+	/* Tabs */
+	$('.tabs').each(function () {
+		var _self = this;
+		$('.tab-nav a', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+			$('.tab', _self).addClass('tab-hidden');
+			$('#' + where).removeClass('tab-hidden');
+			return false;
+		});
+	});
 });

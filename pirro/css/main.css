@@ -2276,6 +2276,98 @@ button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sen
 	left: 0;
 }
 /* ==========================================================================
+   _TABS
+   ========================================================================== */
+.tabs .tab-nav {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	position: relative;
+	left: -20px;
+	z-index: 10;
+	font: 500 24px/26px 'PF Din Display Pro', Helvetica, Arial, sans-serif;
+}
+.tabs .tab-nav:after, .tabs .tab:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tabs .tab-nav li {
+	float: left;
+}
+.tabs .tab-nav a {
+	padding: 12px 20px 17px;
+	display: block;
+	color: #202224;
+	text-decoration: none;
+}
+.tabs .tab-nav a:hover {
+	color: #f39200;
+}
+.tabs .tab-nav li.active {
+	padding-bottom: 10px;
+	border-radius: 4px 4px 0 0;
+	margin-bottom: -10px;
+	box-shadow: inset 0 4px 4px rgba(0, 0, 0, .025);
+	background: #f9f9f9;
+}
+.tabs .tab-nav li.active a {
+	color: #202224;
+	cursor: default;
+}
+.tabs .wrapper {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.tabs .full-gray {
+	padding: 50px 0;
+	box-shadow: inset 0 4px 4px rgba(0, 0, 0, .025);
+	background: #f9f9f9;
+}
+.tabs .tab { margin-bottom: 50px; }
+.tabs .tab-hidden {
+	display: none;
+}
+/* ==========================================================================
+   _SOLUTIONS
+   ========================================================================== */
+.solutions-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.solutions-list {
+	padding: 0;
+	margin: 24px 0 33px;
+	list-style: none;
+}
+.solutions-list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.solutions-list > li {
+	width: 100%;
+	min-height: 260px;
+	padding: 10px 0 50px 240px;
+	position: relative;
+}
+.solutions-list .h4 {
+	margin-bottom: 10px;
+}
+.solutions-list .icon {
+	width: 200px;
+	height: 200px;
+	border-radius: 2px;
+	box-shadow: 0 0 50px rgba(0, 0, 0, .3);
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
    ========================================================================== */
 .fancybox-tmp iframe, .fancybox-tmp object { vertical-align: top; padding: 0; margin: 0; }
