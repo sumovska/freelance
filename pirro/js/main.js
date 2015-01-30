@@ -105,4 +105,29 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+	/* Dotted nav */
+	$('.list-dotted').find('a').click(function () {
+		var where = '#' + $(this).attr('href').replace(/^.*#(.*)/, "$1");
+		$.scrollTo(where, {
+			duration: 400,
+			easing: 'swing'
+		});
+		return false;
+	});
+
+	/* IE */
+	if ($.browser.msie && $.browser.version < 10) {
+		$('input[type="text"], input[type="password"], input[type="tel"], textarea').each(function () {
+			$(this).val($(this).attr('placeholder')).focus(function () {
+				if ($(this).val() === $(this).attr('placeholder')) {
+					$(this).val('');
+				}
+			}).blur(function () {
+				if ($(this).val() === '') {
+					$(this).val($(this).attr('placeholder'));
+				}
+			});
+		});
+	}
 });
