@@ -3566,6 +3566,34 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding: 0 10px;
 	float: left;
 }
+.form-data .line-search-1 {
+	position: relative;
+}
+.form-data .line-search-1 input[type="text"] {
+	padding-right: 64px;
+}
+.form-data .line-search-1 input[type="submit"] {
+	padding-left: 7px;
+	padding-right: 7px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.form-data .line-search-2 .in {
+	display: block;
+}
+.form-data .line-search-2 .in-1 {
+	width: 70%;
+	float: left;
+	display: block;
+}
+.form-data .line-search-2 .in-2 {
+	width: 26%;
+	float: right;
+}
+.form-data .line-search-2 .in-2 input[type="submit"] {
+	width: 100%;
+}
 .form-data .line-close {
 	margin-bottom: 9px;
 	padding-right: 30px;
@@ -3953,6 +3981,136 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding: 0 10px;
 }
 /* ==========================================================================
+   _BLOCK-BUY
+   ========================================================================== */
+.block-buy .form {
+	padding-bottom: 24px;
+}
+.block-buy .columns {
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-bottom: 0;
+	margin-bottom: 21px;
+}
+.block-buy .columns:before {
+	display: none;
+}
+.block-buy .column {
+	width: 50%;
+	padding: 0 10px;
+}
+.block-buy .column .line {
+	margin-bottom: 0;
+}
+.block-buy .sale {
+	margin: 0 -14px;
+}
+.block-buy .sale:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-buy .sale .line {
+	margin-bottom: 0;
+	padding: 0 14px;
+	float: left;
+	clear: none;
+}
+.block-buy .sale .line:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-buy .sale .line label {
+	margin-bottom: 0;
+	padding: 8px 8px 2px 30px;
+}
+.block-buy .sale .line .check {
+	float: left;
+}
+/* ==========================================================================
+   _TABS-LETTERS
+   ========================================================================== */
+.tabs-abc {
+	color: #666;
+}
+.tabs-abc .h3 {
+	margin-bottom: 6px;
+	color: #036;
+	font-size: 17px;
+}
+.tabs-abc .triggers {
+	margin: 0 -66px 31px -40px;
+	padding: 0 25px;
+	list-style: none;
+	color: #202020;
+	font: bold 11px/16px 'Gotham Pro', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	background: #f5f5f5;
+	box-shadow: inset 0 1px 5px rgba(102,102,102,.25);
+}
+.tabs-abc .triggers:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tabs-abc .triggers li {
+	margin: 0 -2px;
+	float: left;
+	border: 2px solid transparent;
+}
+.tabs-abc .triggers li.active {
+	background: #fff;
+	border: 2px solid #003366;
+}
+.tabs-abc .triggers li.hidden {
+	display: none;
+}
+.tabs-abc .triggers li a {
+	display: block;
+	border-bottom: none;
+}
+.tabs-abc .triggers li a:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tabs-abc .triggers .letter {
+	padding: 4px 15px 6px;
+	float: left;
+}
+.tabs-abc .tab {
+	margin: 0 -22px;
+}
+.tabs-abc .tab-hidden {
+	display: none;
+}
+.tabs-abc .tab:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tabs-abc .tab .col {
+	width: 21.6%;
+	padding: 0 22px;
+	float: left;
+}
+.tabs-abc .tab .col .line {
+	margin-bottom: 24px;
+}
+.tabs-abc .tab .col .line span {
+	margin-bottom: 5px;
+	display: block;
+}
+.tabs-abc .tab .col .line span:last-of-type {
+	margin-bottom: 0;
+}
+/* ==========================================================================
    _POPUP_CALLBACK
    ========================================================================== */
 .popups {
@@ -4176,6 +4334,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.form-data .column-2 { width: 318px; }
 	.questions .line { width: 84.4%; padding-right: 188px; }
 	.shops .name { width: 350px; }
+	.block-buy .column-1 { width: 39.4%; }
+	.block-buy .column-2 { width: 60.6%; }
+	.form-data .line-search-2 .in-1 { width: 64%; }
+	.form-data .line-search-2 .in-2 { width: 32%; }
+	.tabs-abc .triggers { padding: 0 35px; margin-right: -55px; }
+	.tabs-abc .triggers li { margin-left: -1px; margin-right: -1px; }
+	.tabs-abc .triggers .letter { padding-right: 7px; padding-left: 7px; }
+	.tabs-abc .tab .col { width: 31.4%; }
 }
 @media (min-width: 1024px) {
 	.header .nav { display: block !important; }
@@ -4215,6 +4381,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-search .form .sort { float: none; padding: 0 10px; }
 	.block-search .result { margin-top: 0; float: none; }
 	.login { left: 250px; }
+	.block-buy .column-1 { width: 39.7%; }
+	.block-buy .column-2 { width: 60.3%; }
+	.tabs-abc .triggers { margin-right: -40px; }
 }
 @media (max-width: 985px) {
 	.catalog .item:nth-child(4n + 1) { clear: none; }
@@ -4304,6 +4473,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.login { width: 350px; }
 	.block-orders .table-info .tr .td:nth-child(even) { padding-top: 0; }
 	.block-orders .table-info .tr .td:nth-child(odd) { border-bottom: none; }
+	.tabs-abc .tab .col { width: 50%; }
 }
 @media (max-width: 600px) {
 	.container { padding: 160px 20px 20px; }
@@ -4396,6 +4566,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.login .form .title { margin: 0; padding-top: 10px; padding-bottom: 35px; color: #036; background: #fff; text-align: center; font-size: 20px; line-height: 25px; }
 	.login .form .title span { display: none; }
 	.login .form .submit input[type="button"] { width: 100%; font-size: 14px; padding-top: 15px; padding-bottom: 15px; }
+	.tabs-abc .triggers { margin-left: -20px; margin-right: -20px; }
+	.block-buy .sale .line { margin-bottom: 12px; }
 }
 @media (max-width: 486px) {
 	.catalog-grey .catalog { width: auto; }
@@ -4404,6 +4576,20 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.login .form { width: 100%; margin: 0 auto; }
 	.recovery .h2 { margin-bottom: 35px; text-align: center; }
 	.recovery .form .submit input[type="button"] { width: 100%; font-size: 14px; padding-top: 15px; padding-bottom: 15px; }
+	.block-buy .sale { margin: 0 -4px; }
+	.block-buy .sale .line { width: 62%; padding: 0 4px; }
+	.block-buy .sale .line:nth-child(2n) { width: 38%; }
+	.tabs-abc .tab { margin: 0; }
+	.tabs-abc .tab .col { width: 100%; float: none; padding: 0; }
+	.form-data .line-search-2 .in-1, .form-data .line-search-2 .in-2 { width: 100%; float: none; }
+	.form-data .line-search-2 .in-2 { position: absolute; bottom: 20px; left: 0; right: 0; }
+	.block-buy .form { position: relative; padding-bottom: 57px; }
+	.block-buy .columns { position: static; margin-bottom: 16px; }
+	.block-buy .column { margin-bottom: 20px; }
+	.tabs-abc .triggers { text-align: center; }
+	.tabs-abc .triggers li { display: none; }
+	.tabs-abc .triggers li.hidden { display: inline-block; float: none; }
+	.tabs-abc .triggers .letter { padding-left: 16px; padding-right: 16px; }
 }
 @media (max-width: 400px) {
 	.index { height: 200px; }
