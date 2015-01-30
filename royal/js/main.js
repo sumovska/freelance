@@ -120,6 +120,17 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Tabs-list toggle */
+	$('.tabs-abc').each(function () {
+		var _self = this;
+		$('.triggers a', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			return false;
+		});
+	});
+
 	/* FAQ toggle */
 	$('.faq').each(function () {
 		$('.title a', this).click(function () {
