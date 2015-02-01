@@ -163,11 +163,6 @@ $(document).ready(function () {
 				media: {}
 			}
 		});
-		$('.button-close').click(function () {
-			var _self = this;
-			$(this).closest('li').fadeToggle(200);
-			return false;
-		});
 	});
 
 	$('.form-data').each(function () {
@@ -182,6 +177,10 @@ $(document).ready(function () {
 		var _self = this;
 		$('.button-close').click(function () {
 			$(this).closest('.name').fadeToggle(200);
+			return false;
+		});
+		$('.button-close').click(function () {
+			$(this).closest('.gallery li').fadeToggle(200);
 			return false;
 		});
 	});
