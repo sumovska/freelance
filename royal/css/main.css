@@ -328,6 +328,20 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	width: 180px;
 	display: block;
 }
+.header .search-toggle {
+	width: 40px;
+	height: 40px;
+	border: none;
+	margin-top: -20px;
+	display: none;
+	outline: none;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	z-index: 5;
+	background: url('../img/sprite.png') no-repeat -40px -145px;
+	background-size: 160px auto;
+}
 .header .nav-toggle {
 	width: 50px;
 	height: 44px;
@@ -368,10 +382,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .header .nav-toggle:hover, .header .nav-toggle:focus {
 	border-color: #fff;
 }
-.body-nav-open .header .nav-toggle:before {
+.html-nav-open .header .nav-toggle:before {
 	background: #ff5c26;
 }
-.body-nav-open .header .nav-toggle:after {
+.html-nav-open .header .nav-toggle:after {
 	border-color: #ff5c26;
 }
 .header .nav .ul {
@@ -4414,11 +4428,11 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.header .nav { display: block !important; }
 }
 @media (max-width: 1023px) {
-	html { overflow-x: hidden; }
+	html.html-nav-open { overflow-x: hidden; }
 	body { padding-left: 0; overflow-y: auto; overflow-x: hidden; }
 	.container { padding: 60px 40px 40px; }
 	.container, .header, .top, .footer, .phone-mobile { -webkit-transition: -webkit-transform .4s ease; transition: transform .4s ease; -webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px); }
-	.body-nav-open .container, .body-nav-open .header, .body-nav-open .top, .body-nav-open .footer, .body-nav-open .phone-mobile { -webkit-transform: translate3d(240px, 0px, 0px); transform: translate3d(240px, 0px, 0px); }
+	.html-nav-open .container, .html-nav-open .header, .html-nav-open .top, .html-nav-open .footer, .html-nav-open .phone-mobile { -webkit-transform: translate3d(240px, 0px, 0px); transform: translate3d(240px, 0px, 0px); }
 	.header { width: 200px; height: auto; padding: 0; bottom: auto; }
 	.header:before { display: none; }
 	.header .logo { height: 60px; padding: 20px 10px 20px 60px; border: none; margin: 0; background: none; }
@@ -4563,20 +4577,23 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 @media (max-width: 600px) {
 	.container { padding: 160px 20px 20px; }
-	.body-nav-open .container, .body-nav-open .header, .body-nav-open .top, .body-nav-open .footer, .body-nav-open .phone-mobile { -webkit-transform: translate3d(260px, 0px, 0px); transform: translate3d(260px, 0px, 0px); }
-	.header { width: auto; height: 60px; border-bottom: 1px solid #000; box-shadow: 0 1px #003164; left: 0; right: 0; }
+	.container .index:first-child { margin-top: 0; }
+	.html-nav-open .container, .html-nav-open .header, .html-nav-open .top, .html-nav-open .footer, .html-nav-open .phone-mobile { -webkit-transform: translate3d(260px, 0px, 0px); transform: translate3d(260px, 0px, 0px); }
+	.header { width: auto; min-width: 320px; height: 60px; border-bottom: 1px solid #000; box-shadow: 0 1px #003164; left: 0; right: 0; }
 	.header-fixed .header { box-shadow: none; }
+	.header .search-toggle { display: block; }
 	.header .nav { width: 260px; left: -260px; }
 	.header .logo { padding-right: 60px; }
 	.header .logo img { margin: 0 auto; }
-	.phone-mobile { height: 60px; padding: 15px 0; margin: 0; display: block; position: absolute; top: 60px; left: 0; right: 0; font: bold 20px/24px 'Gotham Pro', Helvetica, Arial, sans-serif; text-align: center; background: #001b41; }
-	.phone-mobile a { color: #fff; outline: none; }
-	.top { position: absolute; top: 120px; }
+	.phone-mobile { height: 60px; padding: 15px 0; margin: 0; display: block; position: absolute; top: 60px; left: 0; right: 0; font: bold 20px/28px 'Gotham Pro', Helvetica, Arial, sans-serif; text-align: center; background: #001b41; }
+	.phone-mobile a { color: #fff; outline: none; border: none; }
+	.top { position: absolute; top: 120px; z-index: 100; }
 	.header-fixed .top { position: fixed; top: 60px; }
 	.top .wrapper { padding: 2px 20px 2px 2px; margin-left: 0; }
 	.top .name { max-width: 170px; }
 	.top .links { padding: 0; }
-	.top .search { display: none; }
+	.top .search { display: none; top: -60px; right: 0; }
+	.body-search-open .top .search { display: block !important; }
 	.index { height: 300px; margin-bottom: 35px; }
 	.index, .jumbotron, .breadcrumbs, .sort, .nav-default, .catalog-grey { margin-left: -20px; margin-right: -20px; }
 	.sort, .nav-default, .catalog-grey { padding-left: 20px; padding-right: 20px; }

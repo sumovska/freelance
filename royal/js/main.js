@@ -17,9 +17,9 @@ $(document).ready(function () {
 
 	/* Nav initialization */
 	$('.nav').each(function () {
-		$(this).after('<a class="nav-toggle" href="#"></a>');
+		$(this).after('<a class="nav-toggle" href="#"></a><a href="#" class="search-toggle"></a>');
 		$('.nav-toggle').click(function () {
-			$('html').toggleClass('body-nav-open');
+			$('html').toggleClass('html-nav-open');
 			return false;
 		});
 	});
@@ -28,9 +28,13 @@ $(document).ready(function () {
 	$('.search').each(function () {
 		function openSearch() {
 			if (!$('html').hasClass('body-search-open')) {
-				_self.velocity({'width': '100%', leaveTransforms: true}, 400, 'swing', function () {
+				_self.show().velocity({'width': '100%', leaveTransforms: true}, 400, 'swing', function () {
 					$('html').addClass('body-search-open');
 				});
+			} else {
+				if ($(this).is('.search-toggle')) {
+					closeSearch();
+				}
 			}
 			return false;
 		}
@@ -39,14 +43,16 @@ $(document).ready(function () {
 			var html = $('html');
 			if (html.hasClass('body-search-open')) {
 				html.removeClass('body-search-open');
-				_self.velocity({'width': '40px', leaveTransforms: true}, 400, 'swing');
+				_self.velocity({'width': '40px', leaveTransforms: true}, 400, 'swing', function () {
+					_self.removeAttr('style');
+				});
 			}
 			return false;
 		}
 
 		var _self = $(this);
 		$(this).append('<a href="#" class="search-toggle"></a>');
-		$('.search-toggle', _self).click(openSearch);
+		$('.search-toggle').click(openSearch);
 		$('input[type="text"]', _self).focus(openSearch);
 		$('html').bind("click touchstart", function (e) {
 			if ($(this).hasClass('body-search-open')) {
@@ -159,7 +165,7 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Popup script */
+	/* Fancybox script */
 	$('.fancybox, .fancybox-popup').fancybox({
 		padding: 0,
 		margin: 40,
@@ -187,11 +193,12 @@ $(document).ready(function () {
 });
 
 $(window).on('scroll touchmove', function () {
-	scrollEvent();
+	return scrollEvent();
 });
 
 function scrollEvent() {
 	/* Переключение плавающего хедера */
+	console.log($(window).scrollTop());
 	if ($(window).scrollTop() > 60) {
 		$('html').addClass('header-fixed');
 	} else {
