@@ -96,6 +96,15 @@ $(document).ready(function () {
 		});
 	});
 
+	/* FAQ block */
+	$('.faq').each(function () {
+		$('.title a', this).click(function () {
+			$(this).toggleClass('active');
+			$(this).closest('.item').find('.question').fadeToggle(200);
+			return false;
+		});
+	});
+
 	/* Footer */
 	$('.footer').each(function () {
 		$('.phone', this).clone().addClass('phone-mobile').appendTo('body');
@@ -128,15 +137,6 @@ $(document).ready(function () {
 		});
 	});
 
-	/* FAQ toggle */
-	$('.faq').each(function () {
-		$('.title a', this).click(function () {
-			$(this).toggleClass('active');
-			$(this).closest('.item').find('.question').fadeToggle(200);
-			return false;
-		});
-	});
-
 	/* Cart block */
 	$('.button-close').click(function () {
 		$(this).closest('.cover').fadeToggle(200);
@@ -161,8 +161,11 @@ $(document).ready(function () {
 	});
 
 	/* Popup script */
-	$('.fancybox-popup').fancybox({
+	$('.fancybox, .fancybox-popup').fancybox({
 		padding: 0,
+		margin: 40,
+		nextEffect: 'fade',
+		prevEffect: 'fade',
 		helpers: {
 			overlay: {
 				speedIn: 250,
