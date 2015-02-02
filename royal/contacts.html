@@ -2,10 +2,10 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Royal Spirit</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -21,9 +21,9 @@
 			<ul class="ul">
 				<li class="li-catalog sub"><a href="catalog.html"><span>Каталог</span></a></li>
 				<li class="li-action"><a href="action.html"><span>Акции</span></a></li>
-				<li class="li-company sub active"><a href="about.html"><span>Компания</span></a></li>
+				<li class="li-company sub"><a href="about.html"><span>Компания</span></a></li>
 				<li class="li-partnership"><a href="partnership.html"><span>Сотрудничество</span></a></li>
-				<li class="li-contacts sub"><a href="contacts.html"><span>Контакты</span></a></li>
+				<li class="li-contacts sub active"><a href="contacts.html"><span>Контакты</span></a></li>
 				<li class="li-buy"><a href="where.html"><span>Где купить</span></a></li>
 			</ul>
 		</nav>
@@ -32,28 +32,46 @@
 	<div class="container">
 		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Вопросы</p>
 		
-		<div class="contact-us">
+		<div class="contact">
 			<h2 class="h2">Как нас найти</h2>
 			<div class="info">
 				<div class="col">
-					<p class="line">Офис оптовых продаж и склад компании «Роял Спирит» располагаются на востоке Москвы в районе станций метро «Шоссе Энтузиастов» и «Перово».</p>
+					<p>Офис оптовых продаж и склад компании «Роял Спирит» располагаются на востоке Москвы в районе станций метро «Шоссе Энтузиастов» и «Перово».</p>
 				</div>
-				<div class="col col-right col-address">
+				<div class="col">
 					<p class="line line-adr"><strong>Адрес:</strong> 111141, город Москва, улица Плеханова, дом 17, строение 2</p>
 					<p class="line line-tel"><strong>Телефон:</strong> <a class="tel" href="tel:+7-495-234-57-17">(495) 2345-7-17</a> (только оптовые продажи)</p>
 					<p class="line line-time"><strong>Время работы:</strong> с 9:00 до18:00 ежедневно, кроме субботы и воскресенья</p>
 				</div>
 			</div>
-			<div class="block-map">
-				<div id="map" class="map"></div>
+			<div class="map">
+				<div id="ymaps-map-id_14211551600804933022" class="space"></div>
 			</div>
+			<script type="text/javascript">
+				function fid_14211551600804933022(ymaps) {
+					var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+						center: [37.764285, 55.749202],
+						zoom: 16,
+						type: "yandex#map"
+					});
+					map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
+					myGeoObject = new ymaps.GeoObject({
+						geometry: {
+							type: "Point",
+							coordinates: [37.764285, 55.749202]
+						}
+					});
+					map.geoObjects.add(myGeoObject);
+				}
+			</script>
+			<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
 			<div class="info">
 				<div class="col">
 					<h2 class="h2">Как доехать на общественном транспорте</h2>
-					<p class="line"><strong>ОТ МЕТРО «ШОССЕ ЭНТУЗИАСТОВ»:</strong> автобусы № 254, № 46 и маршрутное такси № 69 до остановки «Вентиляторный завод»</p>
-					<p class="line"><strong>ОТ МЕТРО «ПЕРОВО»:</strong> троллейбус № 77 и маршрутные такси № 246, № 249, № 627 до остановки «Улица Плеханова»</p>
+					<p><strong>ОТ МЕТРО &laquo;ШОССЕ ЭНТУЗИАСТОВ&raquo;:</strong> автобусы № 254, № 46 и маршрутное такси № 69 до остановки &laquo;Вентиляторный завод&raquo;</p>
+					<p><strong>ОТ МЕТРО &laquo;ПЕРОВО&raquo;:</strong> троллейбус № 77 и маршрутные такси № 246, № 249, № 627 до остановки &laquo;Улица Плеханова&raquo;</p>
 				</div>
-				<div class="col col-right">
+				<div class="col">
 					<h2 class="h2">Как найти офис на территории</h2>
 					<ul class="list-default">
 						<li>Пройдите в ворота.</li>
@@ -70,8 +88,8 @@
 			<span class="name"><a href="profile.html"><span>John Wood</span></a></span>
 			<ul class="links">
 				<li class="li-cart"><a href="cart.html">Корзина</a></li>
-				<li class="li-favourite"><a href="fav.html">Избранное</a></li>
-				<li class="li-compare"><a href="compare.html">К сравнению</a></li>
+				<li class="li-favourite"><a href="#">Избранное</a></li>
+				<li class="li-compare"><a href="#">К сравнению</a></li>
 			</ul>
 			<div class="search">
 				<form action="search.html" method="post">
@@ -85,7 +103,7 @@
 	<footer class="footer">
 		<p class="ask"><a href="#">Задать вопрос</a> или <a href="faq.html">посмотреть FAQ</a></p>
 		<p class="phone"><a href="tel:+7-495-234-57-17">+7 (495) 234-57-17</a></p>
-		<p class="callback"><a class="js" href="#callback">Обратный звонок</a></p>
+		<p class="callback"><a class="js" href="#">Обратный звонок</a></p>
 		<p class="wholesale">Только оптовые продажи</p>
 		<ul class="social">
 			<li class="vk"><a href="#" title="Вконтакте"></a></li>
@@ -101,57 +119,5 @@
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-	<script>
-		window.marker = null;
-		/* Google Map Init */
-		function initMap() {
-			var map, pos, style, mapOptions;
-			pos = new google.maps.LatLng(55.749225, 37.764336);
-			style = [
-				{ "featureType": "road",
-					"elementType": "labels.icon",
-					"stylers": [
-						{ "saturation": 1 },
-						{ "gamma": 1 },
-						{ "visibility": "on" },
-						{ "hue": "#e6ff00" }
-					]
-				}
-			];
-
-
-			mapOptions = {
-				center: pos,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				zoom: 15,
-				backgroundColor: "#eeeeee",
-				panControl: false,
-				mapTypeControl: false,
-				scaleControl: false,
-				streetViewControl: false,
-				overviewMapControl: false,
-				scrollwheel: false,
-				navigationControl: false,
-				zoomControlOptions: {
-					style: google.maps.ZoomControlStyle.SMALL
-				}
-			};
-			map = new google.maps.Map(document.getElementById('map'), mapOptions);
-			var mapType = new google.maps.StyledMapType(style, {name: "Grayscale"});
-			map.mapTypes.set('grey', mapType);
-			map.setMapTypeId('grey');
-			var marker_image = 'img/pin.png';
-			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
-			marker = new google.maps.Marker({
-				position: pos,
-				map: map
-			});
-		}
-		/* Google Map */
-		if (typeof google != 'undefined') {
-			initMap();
-		}
-	</script>
 </body>
 </html>

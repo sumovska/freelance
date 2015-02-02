@@ -2307,6 +2307,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	text-decoration: line-through;
 }
 .block-item .info .options .tag .note {
+	margin: 0;
+	display: block;
 	font-size: 11px;
 	line-height: 18px;
 	float: right;
@@ -2702,69 +2704,61 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 /* ==========================================================================
    _CONTACT-US
    ========================================================================== */
-.contact-us {
+.contact {
 	font-size: 14px;
 	line-height: 20px;
 }
-.contact-us:after {
+.contact:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.contact-us .h2 {
+.contact .h2 {
 	font-size: 17px;
 	margin-bottom: 9px;
 }
-.contact-us .info {
+.contact .info {
 	margin: 0 -20px 34px;
 }
-.contact-us .info:after {
+.contact .info:after, .contact .col:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.contact-us .col {
-	width: 440px;
+.contact .info .col {
+	width: 41.5%;
 	margin-bottom: 0;
 	padding: 0 20px;
 	float: left;
 }
-.contact-us .col-right {
-	width: 610px;
+.contact .info .col:last-child {
+	width: 58.5%;
 	padding-left: 40px;
 }
-.contact-us .col-address:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.contact-us .col-address .tel {
+.contact .info .tel {
 	border-bottom: transparent;
 	cursor: default;
 	color: #666;
 	text-decoration: none;
 }
-.contact-us .col-address .tel:focus {
+.contact .info .tel:focus {
 	color: #ff5c26;
 }
-.contact-us .col .h2 {
+.contact .info .h2 {
 	margin-bottom: 30px;
 	color: #036;
 }
-.contact-us .col .line {
+.contact .info .line {
+	padding-left: 24px;
 	margin-bottom: 9px;
 	position: relative;
 }
-.contact-us .col .line:last-child {
+.contact .info .col p:last-child {
 	margin-bottom: 0;
 }
-.contact-us .col-address .line {
-	padding-left: 24px;
-}
-.contact-us .col-address .line:before {
+.contact .info .line:before {
 	width: 20px;
 	height: 20px;
 	display: block;
@@ -2776,10 +2770,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: url(../img/sprite.png) -5px -225px no-repeat;
 	background-size: 160px auto;
 }
-.contact-us .col-address .line-adr:before { background-position: -5px -225px; }
-.contact-us .col-address .line-tel:before { background-position: -40px -225px; }
-.contact-us .col-address .line-time:before { background-position: -75px -225px; }
-.contact-us .col strong {
+.contact .info .line-adr:before { background-position: -5px -225px; }
+.contact .info .line-tel:before { background-position: -40px -225px; }
+.contact .info .line-time:before { background-position: -75px -225px; }
+.contact .info strong {
 	color: #212121;
 	font-size: 11px;
 	font-family: 'Gotham Pro', Helvetica, Arial, sans-serif;
@@ -2788,16 +2782,16 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 /* ==========================================================================
    _MAP
    ========================================================================== */
-.block-map {
+.map {
 	margin: 0 -40px 40px;
 }
-.map {
+.map .space {
 	width: 100%;
 	height: 320px;
 	position: relative;
 	cursor: default;
 }
-.map img {
+.map .space img {
 	width: auto;
 	max-width: 100%;
 	max-height: 100%;
@@ -4157,15 +4151,19 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .recovery .h2 {
 	margin-bottom: 34px;
 }
-.recovery .line-mail {
-	width: 40.4%;
-	padding-right: 20px;
+.recovery .mail {
+	width: 51.4%;
+	max-width: 350px;
+	margin-right: 20px;
 	float: left;
 }
 .recovery .submit {
 	padding-top: 0;
 	clear: none;
 	float: left;
+}
+.recovery input[type="button"] {
+	width: 150px;
 }
 /* ==========================================================================
    _POPUP_CALLBACK
@@ -4323,7 +4321,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-item .info .options .col:nth-child(1), .block-item .info .options .col:nth-child(2) { width: 50%; float: left; }
 	.block-item .info .options .col:nth-child(2) .size { text-align: right; }
 	.feature .text { width: 388px; padding-right: 46px; }
-	.block-map { margin-right: -66px; }
+	.map { margin-right: -66px; }
 	.block-search .form { padding-bottom: 0; }
 	.block-search .form .look { margin-right: 0; float: none; }
 	.block-search .form .look input[type="submit"] { padding-left: 7px; padding-right: 7px; }
@@ -4331,9 +4329,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-search .form .sort { padding: 0 46px; float: right; }
 	.block-search .result { margin-top: -23px; float: left; }
 	.block-search { padding-bottom: 44px; }
-	.contact-us .info { margin-right: 0; margin-left: 0; }
-	.contact-us .col { width: 100%; float: none; padding: 0; margin-bottom: 30px; }
-	.contact-us .col:last-child { margin-bottom: 0; }
 	.tabs-list .submenu-triggers { margin-bottom: 34px; }
 	.actions .item .define { padding-right: 0; }
 }
@@ -4375,7 +4370,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.actions .item .define { padding-left: 170px; }
 	.actions .item .define .text { margin-bottom: 30px; }
 	.actions .item .define ul { margin-bottom: 34px; }
-	.block-map { margin-right: -55px; }
+	.map { margin-right: -55px; }
 	.table-order .tr .check { width: 36px; }
 	.table-order .tr .pic { width: 54px; }
 	.table-order .tr .name { width: 230px; padding-right: 16px; }
@@ -4401,6 +4396,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.tabs-abc .triggers .letter { padding-right: 7px; padding-left: 7px; }
 	.tabs-abc .tab .col { width: 31.4%; }
 	.recovery .line-mail { width: 53.4%; }
+	.contact .info { margin: 0 0 4px; }
+	.contact .info .col, .contact .info .col:last-child { width: 100%; padding: 0; margin-bottom: 30px; float: none; }
 }
 @media (min-width: 1024px) {
 	.header .nav { display: block !important; }
@@ -4435,7 +4432,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.rewards { margin-right: -40px; }
 	.catalog .item:nth-child(4n + 1) { clear: left; }
 	.catalog .item:nth-child(3n + 1) { clear: none; }
-	.block-map { margin-right: -40px; }
+	.map { margin-right: -40px; }
 	.block-search .form { padding-bottom: 17px; }
 	.block-search .form .sort { float: none; padding: 0 10px; }
 	.block-search .result { margin-top: 0; float: none; }
@@ -4631,7 +4628,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.actions .item .term { width: 100%; margin-bottom: 20px; padding-top: 0; padding-right: 100px; float: none; }
 	.actions .item .term .new { right: 0; left: auto; }
 	.actions .item .define { padding-left: 0; }
-	.block-map { margin: 0 -20px 30px; }
+	.map { margin: 0 -20px 30px; }
 	.block-search .form .look { display: none; }
 	.block-search .result { margin-left: 10px; }
 	.questions .line { padding-right: 0; padding-left: 0; }
@@ -4646,16 +4643,16 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.login .form .submit input[type="button"] { width: 100%; font-size: 14px; padding-top: 15px; padding-bottom: 15px; }
 	.tabs-abc .triggers { margin-left: -20px; margin-right: -20px; }
 	.block-buy .sale .line { margin-bottom: 12px; }
+	.recovery .h2 { margin-bottom: 35px; text-align: center; }
+	.recovery .mail { width: 100%; max-width: none; float: none; padding-right: 0; }
+	.recovery .submit { float: none; }
+	.recovery input[type="button"] { width: 100%; font-size: 14px; padding-top: 15px; padding-bottom: 15px; }
 }
 @media (max-width: 486px) {
 	.catalog-grey .catalog { width: auto; }
 	.catalog .item { float: none; margin-left: auto !important; margin-right: auto !important; }
 	.catalog .item:nth-child(2n + 1) { clear: none; }
 	.login .form { width: 100%; margin: 0 auto; }
-	.recovery .h2 { margin-bottom: 35px; text-align: center; }
-	.recovery .line-mail { width: 100%; float: none; padding-right: 0; }
-	.recovery .submit { float: none; }
-	.recovery .submit input[type="button"] { width: 100%; font-size: 14px; padding-top: 15px; padding-bottom: 15px; }
 	.block-buy .sale { margin: 0 -4px; }
 	.block-buy .sale .line { width: 62%; padding: 0 4px; }
 	.block-buy .sale .line:nth-child(2n) { width: 38%; }
