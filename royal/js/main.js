@@ -22,6 +22,11 @@ $(document).ready(function () {
 			$('html').toggleClass('html-nav-open');
 			return false;
 		});
+		$('li.sub', this).children('a').click(function () {
+			if (Modernizr.touch) {
+				return false;
+			}
+		});
 	});
 
 	/* Searchbox initialization */
@@ -198,7 +203,6 @@ $(window).on('scroll touchmove', function () {
 
 function scrollEvent() {
 	/* Переключение плавающего хедера */
-	console.log($(window).scrollTop());
 	if ($(window).scrollTop() > 60) {
 		$('html').addClass('header-fixed');
 	} else {
