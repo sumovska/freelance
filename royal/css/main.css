@@ -2682,6 +2682,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .faq .item .question {
 	display: none;
 	color: #666;
+	font-size: 14px;
+	line-height: 20px;
 }
 .faq .item .title {
 	font-size: 17px;
@@ -2690,16 +2692,15 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .faq .item .title a:hover {
 	border-bottom-color: transparent !important;
 }
-.faq .item .title a.active {
-	color: #ff5c26;
-	border-bottom-color: #ff5c26;
-}
 .faq .item .title a {
 	border-bottom-style: dashed;
 }
-.faq .item .question {
-	font-size: 14px;
-	line-height: 20px;
+.faq .item.active .title a {
+	color: #ff5c26;
+	border-bottom-color: #ff5c26;
+}
+.faq .item.active .question {
+	display: block;
 }
 /* ==========================================================================
    _CONTACT-US
@@ -4077,7 +4078,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	font-size: 17px;
 }
 .tabs-abc .triggers {
-	margin: 0 -66px 31px -40px;
+	margin: 0 -40px 30px -40px;
 	padding: 0 25px;
 	list-style: none;
 	color: #202020;

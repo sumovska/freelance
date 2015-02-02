@@ -99,8 +99,7 @@ $(document).ready(function () {
 	/* FAQ block */
 	$('.faq').each(function () {
 		$('.title a', this).click(function () {
-			$(this).toggleClass('active');
-			$(this).closest('.item').find('.question').fadeToggle(200);
+			$(this).closest('.item').toggleClass('active');
 			return false;
 		});
 	});
