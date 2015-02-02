@@ -267,7 +267,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .jq-checkbox.focused { border-color: #fff; }
 .jq-checkbox .jq-checkbox__div { width: 20px; height: 20px; margin: 0; position: absolute; top: -5px; left: 2px; background: none; }
 .jq-checkbox.checked .jq-checkbox__div { width: 20px; height: 20px; margin: 0; position: absolute; top: -5px; left: 2px; box-shadow: none; border-radius: 0; background: url('../img/sprite.png') no-repeat -70px -370px; }
-.jq-radio { width: 20px; height: 20px; border: none; box-shadow: none; margin: 2px; background: transparent; border: 2px solid #036; }
+.jq-radio { width: 20px; height: 20px; box-shadow: none; margin: 2px; background: transparent; border: 2px solid #036; }
 .jq-radio.focused { border-color: #f6f6f6; }
 .jq-radio.checked .jq-radio__div { background: #ff5c26; box-shadow: none; width: 8px; height: 8px; margin: 0; position: absolute; top: 4px; left: 4px; border-radius: 50%; }
 .checkbox .jq-checkbox { margin-right: 9px; }
@@ -2624,7 +2624,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.actions .item-over:after {
+.actions .item.disabled:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
@@ -2637,7 +2637,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: rgba(255, 255, 255, .6);
 	z-index: 200;
 }
-.actions .item-over .term .new {
+.actions .item.disabled .term .new {
 	background: #ff4949;
 }
 /* ==========================================================================
@@ -4319,7 +4319,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-search .form .look { margin-right: 0; float: none; }
 	.block-search .form .look input[type="submit"] { padding-left: 7px; padding-right: 7px; }
 	.block-search .form .look { margin-bottom: 10px; }
-	.block-search .form .sort { padding: 0px 46px; float: right; }
+	.block-search .form .sort { padding: 0 46px; float: right; }
 	.block-search .result { margin-top: -23px; float: left; }
 	.block-search { padding-bottom: 44px; }
 	.contact-us .info { margin-right: 0; margin-left: 0; }
