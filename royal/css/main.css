@@ -418,7 +418,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .header .nav .ul > li.li-partnership.active > a:before { background-position: -120px -60px; }
 .header .nav .ul > li.li-contacts.active > a:before { background-position: -80px -100px; }
 .header .nav .ul > li.li-buy.active > a:before { background-position: -120px -100px; }
-.header .nav .ul > li.li-sub > a:after {
+.header .nav .ul > li.sub > a:after {
 	width: 0;
 	height: 0;
 	border-style: solid;
@@ -464,6 +464,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .footer .ask {
 	margin-bottom: 35px;
 	font: bold 14px/20px 'Gotham Pro', Helvetica, Arial, sans-serif;
+}
+.footer .ask a.active {
+	border-color: #005e8b;
+	color: #006dd9;
 }
 .footer .phone {
 	font: bold 20px/24px 'Gotham Pro', Helvetica, Arial, sans-serif;
@@ -2681,6 +2685,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	font-size: 17px;
 	margin-bottom: 8px;
 }
+.faq .item .title a:hover {
+	border-bottom-color: transparent !important;
+}
 .faq .item .title a.active {
 	color: #ff5c26;
 	border-bottom-color: #ff5c26;
@@ -4400,7 +4407,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 @media (max-width: 1023px) {
 	html { overflow-x: hidden; }
-	body { padding-left: 0; height: auto; overflow-y: auto; overflow-x: hidden; }
+	body { padding-left: 0; overflow-y: auto; overflow-x: hidden; }
 	.container { padding: 60px 40px 40px; }
 	.container, .header, .top, .footer, .phone-mobile { -webkit-transition: -webkit-transform .4s ease; transition: transform .4s ease; -webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px); }
 	.body-nav-open .container, .body-nav-open .header, .body-nav-open .top, .body-nav-open .footer, .body-nav-open .phone-mobile { -webkit-transform: translate3d(240px, 0px, 0px); transform: translate3d(240px, 0px, 0px); }
