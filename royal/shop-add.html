@@ -41,7 +41,7 @@
 
 		<ul class="submenu submenu-small">
 			<li><a href="shops.html">Мои магазины</a></li>
-			<li><a href="#">Магазины на модерации</a></li>
+			<li><a href="shop-upgrade.html">Магазины на модерации</a></li>
 			<li class="active"><a href="#">Добавление магазина</a></li>
 			<li><a href="#">Акции</a></li>
 			<li><a href="#">Создание акции</a></li>
@@ -51,20 +51,32 @@
 			<form class="form form-data" action="#">
 				<div class="list">
 					<div class="columns">
-						<div class="column column-1">
+						<div class="unit">
 							<div class="line">
 								<label>Название торгового центра</label>
 								<input type="text" placeholder="">
 							</div>
+							<div class="line">
+								<label>Название магазина</label>
+								<input type="text" placeholder="">
+							</div>
 							<div class="line line-half">
-								<span>
-									<label>Этаж</label>
-									<input type="text" placeholder="">
-								</span>
-								<span>
-									<label>Номер секции</label>
-									<input type="text" placeholder="">
-								</span>
+								<div class="in">
+									<span>
+										<label>Этаж</label>
+										<input type="text" placeholder="">
+									</span>
+									<span>
+										<label>Номер секции</label>
+										<input type="text" placeholder="">
+									</span>
+								</div>
+							</div>
+							<div class="line">
+								<label>Город</label>
+								<select>
+									<option></option>
+								</select>
 							</div>
 							<div class="line line-adr">
 								<span>
@@ -76,58 +88,54 @@
 									<input type="text" placeholder="">
 								</span>
 							</div>
-							<div class="add add-good">
-								<a href="#"><span class="plus"><span></span></span>Добавить ассортимент</a>
-							</div>
-							<div class="line line-close">
-								<select>
-									<option>Верхняя одежда</option>
-								</select>
-								<a class="button-close" href="#"></a>
-							</div>
-							<div class="line line-close">
-								<select>
-									<option>Костюмы</option>
-								</select>
-								<a class="button-close" href="#"></a>
-							</div>
-							<div class="line line-close">
-								<select>
-									<option>Трикотаж</option>
-								</select>
-								<a class="button-close" href="#"></a>
+							<div class="line line-half">
+								<div class="in">
+									<span>
+										<label>Основной телефон</label>
+										<input type="text" placeholder="">
+									</span>
+									<span>
+										<label>Дополнительный</label>
+										<input type="text" placeholder="">
+									</span>
+								</div>
 							</div>
 						</div>
-						<div class="column column-2">
+						<div class="unit unit-2">
 							<div class="line">
-								<label>Название магазина</label>
-								<input type="text" placeholder="">
+								<div class="add add-good">
+									<a href="#"><span class="plus"><span></span></span>Добавить ассортимент</a>
+								</div>
+								<div class="line cover">
+									<select>
+										<option>Верхняя одежда</option>
+									</select>
+									<a class="button-close" href="#"></a>
+								</div>
+								<div class="line cover">
+									<select>
+										<option>Костюмы</option>
+									</select>
+									<a class="button-close" href="#"></a>
+								</div>
+								<div class="line cover">
+									<select>
+										<option>Трикотаж</option>
+									</select>
+									<a class="button-close" href="#"></a>
+								</div>
 							</div>
 							<div class="line">
-								<label>Город</label>
-								<select>
-									<option></option>
-								</select>
-							</div>
-							<div class="line line-half">
-								<span>
-									<label>Основной телефон</label>
-									<input type="text" placeholder="">
-								</span>
-								<span>
-									<label>Дополнительный</label>
-									<input type="text" placeholder="">
-								</span>
-							</div>
-							<div class="add">
-								<a href="#">Добавить изображения</a>
-							</div>
-							<div class="gallery">
-								<ul>
-									<li><img src="img/temp/gallery-2s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-									<li><img src="img/temp/gallery-1s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-									<li><img src="img/temp/gallery-3s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-								</ul>
+								<div class="add">
+									<a href="#">Добавить изображения</a>
+								</div>
+								<div class="gallery">
+									<ul>
+										<li class="cover"><img src="img/temp/gallery-2s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+										<li class="cover"><img src="img/temp/gallery-1s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+										<li class="cover"><img src="img/temp/gallery-3s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
