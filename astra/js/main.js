@@ -27,6 +27,19 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.popup-gallery .carousel').bxSlider({
+		controls: false,
+		mode: 'vertical',
+		adaptiveHeight: true,
+		maxSlides: 1,
+		minSlides: 1
+	});
+
+	$('.button-close').click(function () {
+		$(this).closest('.cover').fadeToggle(400);
+		return false;
+	});
+
 	$('body').append('<div class="overlay"></div>');
 	$('.overlay').click(function () {
 		var _self = $(this);
@@ -75,6 +88,25 @@ $(document).ready(function () {
 		});
 		$('.similar li a', this).click(function () {
 			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
+		});
+	});
+
+	/* Dealers scrollbar */
+	$('.city').each(function () {
+		$('.list', this).perfectScrollbar();
+		$('.switch', this).click(function () {
+			$(this).siblings('.list').fadeToggle(400);
+			$('span', this).toggleClass('active');
+			return false;
+		});
+	});
+
+	$('.tabs').each(function () {
+		$('.triggers li a', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+			$(this).closest('.tabs').attr('class', 'tabs').addClass('tabs-' + where);
+			return false;
 		});
 	});
 
