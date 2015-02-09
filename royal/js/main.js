@@ -238,7 +238,6 @@ $(document).ready(function () {
 	/* IE fixes */
 	if ($.browser.msie) {
 		if ($.browser.versionNumber < 9) {
-			$('.header .logo img').attr('src', 'img/ie/logo.png');
 		}
 	}
 	if (!Modernizr.svg) {
@@ -246,7 +245,7 @@ $(document).ready(function () {
 	}
 	if (!Modernizr.borderradius) {
 		if (window.PIE) {
-			$('.index .forward').each(function () {
+			$('.index .forward, .rewards .list img').each(function () {
 				PIE.attach(this);
 			});
 		}
