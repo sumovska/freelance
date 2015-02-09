@@ -54,6 +54,16 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.login-link').click(function () {
+		$('.login').fadeToggle(100);
+		return false;
+	});
+	$('html').bind("click touchstart", function (e) {
+		if ((!$(e.target).is('.login')) && ($(e.target).closest('.login').length < 1)) {
+			$('.login').fadeOut(100);
+		}
+	});
+
 	/* Footer */
 	$('.footer').each(function () {
 		$(this).clone().appendTo('.header .scroll');

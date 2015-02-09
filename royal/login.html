@@ -20,7 +20,7 @@
 <body>
 
 	<header class="header">
-		<p class="logo"><a href="index.html"><img src="img/logo.svg" alt="Royal Spirit"></a></p>
+		<p class="logo"><img src="img/logo.svg" alt="Royal Spirit"></p>
 		<nav class="nav">
 			<ul class="ul">
 				<li class="li-catalog sub">
@@ -55,79 +55,194 @@
 
 	<div class="login">
 		<div id="login" class="form">
-			<form action="#" class="form">
-				<p class="title">Вход <span>в личный кабинет</span></p>
+			<form class="form" action="index.html">
+				<p class="title"><a class="js login-link" href="#login">Вход<span> в личный кабинет</span></a></p>
 				<p class="line"><input type="text" placeholder="Логин"></p>
 				<p class="line"><input type="password" placeholder="Пароль"></p>
 				<p class="remember"><label><input type="checkbox" checked=""> Запомнить меня</label></p>
 				<p class="forgot"><a href="recovery.html">Забыли пароль?</a></p>
-				<p class="submit"><input type="button" value="Войти"></p>
+				<p class="submit"><button type="submit">Войти</button></p>
 			</form>
 		</div>
 	</div>
 
 	<div class="container">
-
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Поиск</p>
-
-		<div class="block-search">
-			<form class="form" action="#">
-				<div class="look">
-					<input type="text" placeholder="Мужское пальто">
-					<input type="submit" value="Поиск">
-				</div>
-				<div class="sort">
-					<div class="line">
-						<label for="form-sort" class="for">Сортировать по</label>
-						<select id="form-sort">
-							<option value="">названию</option>
-							<option value="1">цене</option>
-							<option value="2">рейтингу</option>
-							<option value="3">новизне</option>
-						</select>
+		<div class="index">
+			<div class="carousel">
+				<div class="item" style="background-image:url('img/temp/index-1.jpg');">
+					<div class="area">
+						<strong class="title">
+							<small>new awesome</small>
+							<br>collection</strong>
+						<a class="link" href="catalog.html">Посмотреть</a>
 					</div>
-					<ul class="list">
-						<li>Сортировать по</li>
-						<li><a href="#">названию</a></li>
-						<li class="active"><a href="#">цене</a></li>
-						<li><a href="#">рейтингу</a></li>
-						<li><a href="#">новизне</a></li>
-					</ul>
 				</div>
-			</form>
-			<p class="result">Результатов: <span>3</span></p>
+				<div class="item" style="background-image:url('img/temp/index-1.jpg');">
+					<div class="area">
+						<strong class="title orange">
+							<small>new awesome</small>
+							<br>collection</strong>
+						<a class="link" href="catalog.html">Посмотреть</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="catalog">
-			<div class="item">
-				<ul class="links">
-					<li class="li-favourite"><a href="#" title="В избранное"></a></li>
-					<li class="li-compare"><a href="#" title="К сравнению"></a></li>
-					<li class="li-new">Новинка</li>
-				</ul>
-				<p class="pic"><a href="item.html"><img src="img/temp/catalog-1.jpg" alt=""></a></p>
-				<p class="price"><a class="to-cart" href="#"></a><span class="big">2 600 <span class="rub">p</span></span></p>
-				<p class="name"><a href="item.html">Мужская куртка <strong>Кентавр ПМ-669-20</strong></a></p>
+		<section class="three">
+			<h2 class="h2">Категории товаров</h2>
+			<div class="item"><a href="catalog.html" style="background-image:url('img/temp/three-1.jpg');"><strong>Мужские костюмы, пиджаки, брюки, трикотаж</strong></a></div>
+			<div class="item"><a href="catalog.html" style="background-image:url('img/temp/three-2.jpg');"><strong>Верхняя мужская одежда: куртки, пальто, плащи</strong></a></div>
+			<div class="item"><a href="catalog.html" style="background-image:url('img/temp/three-3.jpg');"><strong>Школьные костюмы для мальчиков, детский трикотаж</strong></a></div>
+		</section>
+
+		<section class="welcome">
+			<div class="heading">
+				<h2 class="h2">Вы зашли на сайт одного из крупнейших производителей и поставщиков мужской одежды &mdash; компании &laquo;Роял Спирит&raquo;.</h2>
 			</div>
-			<div class="item">
-				<ul class="links">
-					<li class="li-favourite"><a href="#" title="В избранное"></a></li>
-					<li class="li-compare"><a href="#" title="К сравнению"></a></li>
-					<li class="li-new">Новинка</li>
-				</ul>
-				<p class="pic"><a href="item.html"><img src="img/temp/catalog-2.jpg" alt=""></a></p>
-				<p class="price"><a class="to-cart" href="#"></a><span class="big">22 600 <span class="rub">p</span></span><span class="old">23 200</span></p>
-				<p class="name"><a href="item.html">Мужская куртка <strong>Гауди ПМ-675-560</strong></a></p>
+			<div class="area">
+				<p>Мы производим и продаем оптом <a href="catalog.html">мужские костюмы</a>, <a href="catalog.html">мужские пиджаки</a>, <a href="catalog.html">мужские пальто</a>, <a href="catalog.html">мужские куртки</a>, <a href="catalog.html">мужские плащи</a>,
+					<a href="catalog.html">мужской трикотаж</a>, <a href="catalog.html">школьные костюмы для мальчиков</a> и <a href="catalog.html">детский трикотаж</a>.</p>
 			</div>
-			<div class="item">
-				<ul class="links">
-					<li class="li-favourite"><a href="#" title="В избранное"></a></li>
-					<li class="li-compare"><a href="#" title="К сравнению"></a></li>
-					<li class="li-new">Новинка</li>
+		</section>
+
+		<div class="catalog-new">
+			<h2 class="h2">Новинки</h2>
+			<div class="scroll">
+				<div class="in">
+					<div class="catalog">
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-1.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">2 600 <span class="rub">p</span></span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Кентавр ПМ-669-20</strong></a></p>
+						</div>
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-2.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">22 600 <span class="rub">p</span></span><span class="old">23 200</span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Гауди ПМ-675-560</strong></a></p>
+						</div>
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-3.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">3 600 <span class="rub">p</span></span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Бутик ПМ-675-562</strong></a></p>
+						</div>
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-2.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">22 600 <span class="rub">p</span></span><span class="old">23 200</span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Гауди ПМ-675-560</strong></a></p>
+						</div>
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-2.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">22 600 <span class="rub">p</span></span><span class="old">23 200</span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Гауди ПМ-675-560</strong></a></p>
+						</div>
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-1.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">2 600 <span class="rub">p</span></span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Кентавр ПМ-669-20</strong></a></p>
+						</div>
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-3.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">3 600 <span class="rub">p</span></span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Бутик ПМ-675-562</strong></a></p>
+						</div>
+						<div class="item">
+							<ul class="links">
+								<li class="li-favourite"><a href="#" title="В избранное"></a></li>
+								<li class="li-compare"><a href="#" title="К сравнению"></a></li>
+								<li class="li-new">Новинка</li>
+							</ul>
+							<p class="pic"><a href="item.html"><img src="img/temp/catalog-2.jpg" alt=""></a></p>
+							<p class="price"><a class="to-cart" href="#"></a><span class="big">22 600 <span class="rub">p</span></span><span class="old">23 200</span></p>
+							<p class="name"><a href="item.html">Мужская куртка <strong>Гауди ПМ-675-560</strong></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="scroll-top"></a>
+		</div>
+
+		<section class="jumbotron">
+			<div class="wrapper">
+				<h2 class="h2">Развивайте свой бизнес, работая с нами</h2>
+				<p>Сегодня мы приглашаем к сотрудничеству людей, готовых развивать свой бизнес. Если у вас есть одна или несколько торговых точек и вам интересны качественные <a href="catalog.html">мужские костюмы</a>, <a href="catalog.html">мужские пальто</a>,
+					<a href="catalog.html">мужские куртки</a>, <a href="catalog.html">трикотаж</a> или <a href="catalog.html">школьные костюмы</a>, обращайтесь к нам. На протяжении десяти лет работы мы формируем круг постоянных клиентов, которые развиваются вместе с нами.</p>
+				<ul class="list">
+					<li><img src="img/temp/jumbo-1.png" alt="">Онлайн заказ</li>
+					<li><img src="img/temp/jumbo-2.png" alt="">Индивидуальные скидки</li>
+					<li><img src="img/temp/jumbo-3.png" alt="">Удобная доставка</li>
+					<li><img src="img/temp/jumbo-4.png" alt="">Постоянное обновление ассортимента</li>
 				</ul>
-				<p class="pic"><a href="item.html"><img src="img/temp/catalog-3.jpg" alt=""></a></p>
-				<p class="price"><a class="to-cart" href="#"></a><span class="big">3 600 <span class="rub">p</span></span></p>
-				<p class="name"><a href="item.html">Мужская куртка <strong>Бутик ПМ-675-562</strong></a></p>
+			</div>
+		</section>
+
+		<div class="news-index">
+			<div class="wrapper">
+				<div class="news-list article-list">
+					<h2 class="h2"><a href="news.html">Статьи</a></h2>
+					<div class="item">
+						<figure class="picture">
+							<a href="article.html"><img src="img/temp/news-4.jpg" alt=""></a>
+						</figure>
+						<div class="text">
+							<var class="date">20.07.2014</var>
+							<p class="h4"><a href="article.html">Matteo Ferrari, фотограф &laquo;От моды к мертвым зайцам&raquo; и Sonia Rykiel, вот уже 40 лет пребывающая на вершине</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="news-list">
+					<h2 class="h2"><a href="news.html">Новости</a></h2>
+					<div class="item">
+						<var class="date">20.06.2014</var>
+						<p class="h4"><a href="article.html">Новое поступление мужских костюмов</a></p>
+					</div>
+					<div class="item">
+						<var class="date">26.05.2014</var>
+						<p class="h4"><a href="article.html">Наша компания успешно прошла контроль качества</a></p>
+					</div>
+					<div class="item">
+						<var class="date">20.06.2014</var>
+						<p class="h4"><a href="article.html">Началась грандиозная распродажа</a></p>
+					</div>
+					<div class="item">
+						<var class="date">26.05.2014</var>
+						<p class="h4"><a href="article.html">Открылся новый магазин моды в Москве</a></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -135,7 +250,7 @@
 	<aside class="top">
 		<div class="wrapper">
 			<a href="#" class="scroll-top"></a>
-			<span class="name"><a href="profile.html"><span>John Wood</span></a></span>
+			<span class="name"><a class="login-link" href="#login"><span>Вход<span>&nbsp;в личный&nbsp;кабинет</span></span></a></span>
 			<ul class="links">
 				<li class="li-cart"><a href="cart.html">Корзина</a></li>
 				<li class="li-favourite"><a href="#">Избранное</a></li>
