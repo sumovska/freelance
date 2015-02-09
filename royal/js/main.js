@@ -67,7 +67,7 @@ $(document).ready(function () {
 	$('.search').each(function () {
 		function openSearch() {
 			if (!$('html').hasClass('body-search-open')) {
-				_self.show().velocity({'width': '100%', leaveTransforms: true}, 400, 'swing', function () {
+				_self.show().animate({'width': '100%'}, 400, 'swing', function () {
 					$('html').addClass('body-search-open');
 				});
 			} else {
@@ -82,7 +82,7 @@ $(document).ready(function () {
 			var html = $('html');
 			if (html.hasClass('body-search-open')) {
 				html.removeClass('body-search-open');
-				_self.velocity({'width': '40px', leaveTransforms: true}, 400, 'swing', function () {
+				_self.animate({'width': '40px'}, 400, 'swing', function () {
 					_self.removeAttr('style');
 				});
 			}
