@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 	/* Forms */
 	$('input, select').styler();
-	
+
 	/* Index page carousel */
 	$('.slider .carousel').bxSlider({
 		useCSS: false,
