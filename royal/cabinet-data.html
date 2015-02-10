@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Royal Spirit</title>
 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -63,57 +63,60 @@
 			<li><a href="cabinet-shops.html">Мои магазины</a></li>
 		</ul>
 
-		<form class="form form-data" action="#">
+		<form class="form form-data" action="cabinet-data.html">
 			<div class="list">
 				<div class="columns">
 					<div class="column column-1">
 						<h3 class="h3">Изменение личных данных</h3>
 						<div class="line">
-							<label>Имя</label>
-							<input type="text" placeholder="">
+							<label for="data-name" class="for">Имя</label>
+							<input id="data-name" type="text" value="">
 						</div>
 						<div class="line">
-							<label>Фамилия</label>
-							<input type="text" placeholder="">
+							<label for="data-surname" class="for">Фамилия</label>
+							<input id="data-surname" type="text" value="">
 						</div>
 						<div class="line">
-							<label>Телефон</label>
-							<input type="text" placeholder="">
+							<label for="data-phone" class="for">Телефон</label>
+							<input id="data-phone" type="text" value="">
 						</div>
 						<div class="line">
-							<label>Название организации</label>
-							<input type="text" placeholder="">
+							<label for="data-company" class="for">Название организации</label>
+							<input id="data-company" type="text" value="">
 						</div>
 						<div class="line">
-							<label for="select-city">Город</label>
-							<select id="select-city">
-								<option value=""></option>
+							<label for="data-city" class="for select-city">Город</label>
+							<select id="data-city">
+								<option value="">Выберите</option>
+								<option value="0">Москва</option>
+								<option value="1">Санкт-Петербург</option>
+								<option value="2">Екатеринбург</option>
 							</select>
 						</div>
-						<div class="line line-adr">
-							<span>
-								<label>Улица</label>
-								<input type="text" placeholder="">
-							</span>
-							<span>
-								<label>Дом</label>
-								<input type="text" placeholder="">
-							</span>
+						<div class="line line-address">
+							<div class="line">
+								<label for="data-street" class="for">Улица</label>
+								<input id="data-street" type="text" value="">
+							</div>
+							<div class="line">
+								<label for="data-home" class="for">Дом</label>
+								<input id="data-home" type="text" value="">
+							</div>
 						</div>
 					</div>
 					<div class="column column-2">
 						<h3 class="h3">Изменение пароля</h3>
 						<div class="line">
-							<label>Старый пароль</label>
-							<input type="password" placeholder="">
+							<label for="password-old" class="for">Старый пароль</label>
+							<input id="password-old" type="password" value="">
 						</div>
 						<div class="line">
-							<label>Новый пароль</label>
-							<input type="password" placeholder="">
+							<label for="password-new" class="for">Новый пароль</label>
+							<input id="password-new" type="password" value="">
 						</div>
 						<div class="line">
-							<label>Подтвердите</label>
-							<input type="password" placeholder="">
+							<label for="password-confirm" class="for">Подтвердите</label>
+							<input id="password-confirm" type="password" value="">
 						</div>
 					</div>
 				</div>

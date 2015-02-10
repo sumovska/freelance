@@ -11,7 +11,11 @@ $(document).ready(function () {
 
 	/* Scroll top button */
 	$('.scroll-top').append('<span></span>').click(function () {
-		$('html, body').animate({scrollTop: 0}, 300);
+		if (Modernizr.touch) {
+			$('html, body').animate({scrollTop: 0}, 0);
+		} else {
+			$('html, body').animate({scrollTop: 0}, 300);
+		}
 		return false;
 	});
 
@@ -240,7 +244,7 @@ $(document).ready(function () {
 	/* Orders block */
 	$('.block-orders').each(function () {
 		$('.number', this).click(function () {
-			$(this).closest('.order').toggleClass('order-active');
+			$(this).closest('.order').toggleClass('order-open');
 			return false;
 		});
 	});
