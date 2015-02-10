@@ -54,83 +54,50 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="profile.html">Личный кабинет</a></span> Данные</p>
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Личный кабинет</p>
 
 		<ul class="submenu">
-			<li class="active"><a href="data.html">Данные</a></li>
-			<li><a href="orders.html">Заказы</a></li>
-			<li><a href="support.html">Менеджер</a></li>
-			<li><a href="shops.html">Мои магазины</a></li>
+			<li><a href="cabinet-data.html">Данные</a></li>
+			<li><a href="cabinet-orders.html">Заказы</a></li>
+			<li><a href="cabinet-manager.html">Менеджер</a></li>
+			<li><a href="cabinet-shops.html">Мои магазины</a></li>
 		</ul>
 
-		<form class="form form-data" action="#">
-			<div class="list">
-				<div class="columns">
-					<div class="column column-1">
-						<h3 class="h3">Изменение личных данных</h3>
-						<div class="line">
-							<label>Имя</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label>Фамилия</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label>Телефон</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label>Название организации</label>
-							<input type="text" placeholder="">
-						</div>
-						<div class="line">
-							<label for="select-city">Город</label>
-							<select id="select-city">
-								<option value=""></option>
-							</select>
-						</div>
-						<div class="line line-adr">
-							<span>
-								<label>Улица</label>
-								<input type="text" placeholder="">
-							</span>
-							<span>
-								<label>Дом</label>
-								<input type="text" placeholder="">
-							</span>
-						</div>
-					</div>
-					<div class="column column-2">
-						<h3 class="h3">Изменение пароля</h3>
-						<div class="line">
-							<label>Старый пароль</label>
-							<input type="password" placeholder="">
-						</div>
-						<div class="line">
-							<label>Новый пароль</label>
-							<input type="password" placeholder="">
-						</div>
-						<div class="line">
-							<label>Подтвердите</label>
-							<input type="password" placeholder="">
-						</div>
-					</div>
+		<div class="private">
+			<div class="cols">
+				<div class="col">
+					<h3 class="h3">Добрый день, John</h3>
+					<ul class="orders">
+						<li>
+							<span class="date">от 20.08.2020</span>
+							<p>Ваш последний <a href="#">заказ №22890</a> от 26.08.2020 ждет отгрузки</p>
+						</li>
+						<li>
+							<span class="date">от 20.08.2020</span>
+							<p>Магазин <a href="#">«Невская перспектива»</a> успешно прошел модерацию</p>
+						</li>
+						<li>
+							<span class="date">от 20.08.2020</span>
+							<p>Магазин <a href="#">«Московский филиал»</a> успешно прошел модерацию</p>
+						</li>
+					</ul>
 				</div>
-				<div class="submit">
-					<div class="line">
-						<button type="submit">Отправить на модерацию</button>
-					</div>
+				<div class="col">
+					<h3 class="h3">Ваш менеджер</h3>
+					<p class="support">
+						<img class="pic" src="img/temp/manager-1.jpg" alt="">
+						<span class="name">Дарья Петрова<a class="link" href="#">Отправить сообщение</a></span>
+					</p>
 				</div>
 			</div>
-		</form>
+		</div>
 
 	</div>
 
 	<aside class="top">
 		<div class="wrapper">
 			<a href="#" class="scroll-top"></a>
-			<span class="name"><a href="profile.html"><span>John Wood</span></a></span>
+			<span class="name"><a href="cabinet.html"><span>John Wood</span></a></span>
 			<ul class="links">
 				<li class="li-cart"><a href="cart.html">Корзина</a></li>
 				<li class="li-favourite"><a href="#">Избранное</a></li>

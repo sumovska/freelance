@@ -54,75 +54,83 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="profile.html">Личный кабинет</a></span> Менеджер</p>
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="cabinet.html">Личный кабинет</a></span> Данные</p>
 
 		<ul class="submenu">
-			<li><a href="data.html">Данные</a></li>
-			<li><a href="orders.html">Заказы</a></li>
-			<li class="active"><a href="#">Менеджер</a></li>
-			<li><a href="shops.html">Мои магазины</a></li>
+			<li class="active"><a href="cabinet-data.html">Данные</a></li>
+			<li><a href="cabinet-orders.html">Заказы</a></li>
+			<li><a href="cabinet-manager.html">Менеджер</a></li>
+			<li><a href="cabinet-shops.html">Мои магазины</a></li>
 		</ul>
 
-		<div class="block-manage">
-			<form class="form form-data" action="#">
-				<div class="list">
-					<div class="columns">
-						<div class="column column-1">
-							<div class="support">
-								<img class="pic" src="img/temp/manager-1.jpg" alt="">
-								<span class="name">Дарья Петрова<a class="link" href="#">Отправить сообщение</a></span>
-							</div>
+		<form class="form form-data" action="#">
+			<div class="list">
+				<div class="columns">
+					<div class="column column-1">
+						<h3 class="h3">Изменение личных данных</h3>
+						<div class="line">
+							<label>Имя</label>
+							<input type="text" placeholder="">
 						</div>
-						<div class="column column-2">
-							<p class="sale">Ваша скидка <span>-20 %</span></p>
+						<div class="line">
+							<label>Фамилия</label>
+							<input type="text" placeholder="">
 						</div>
-						<div class="column column-1">
-							<div class="line">
-								<label>Тема сообщения</label>
+						<div class="line">
+							<label>Телефон</label>
+							<input type="text" placeholder="">
+						</div>
+						<div class="line">
+							<label>Название организации</label>
+							<input type="text" placeholder="">
+						</div>
+						<div class="line">
+							<label for="select-city">Город</label>
+							<select id="select-city">
+								<option value=""></option>
+							</select>
+						</div>
+						<div class="line line-adr">
+							<span>
+								<label>Улица</label>
 								<input type="text" placeholder="">
-							</div>
-							<div class="line">
-								<label>Сообщение</label>
-								<textarea placeholder=""></textarea>
-							</div>
-							<div class="add">
-								<a href="#">Добавить изображения</a>
-							</div>
+							</span>
+							<span>
+								<label>Дом</label>
+								<input type="text" placeholder="">
+							</span>
 						</div>
 					</div>
-					<div class="submit">
+					<div class="column column-2">
+						<h3 class="h3">Изменение пароля</h3>
 						<div class="line">
-							<button type="submit">Отправить</button>
+							<label>Старый пароль</label>
+							<input type="password" placeholder="">
+						</div>
+						<div class="line">
+							<label>Новый пароль</label>
+							<input type="password" placeholder="">
+						</div>
+						<div class="line">
+							<label>Подтвердите</label>
+							<input type="password" placeholder="">
 						</div>
 					</div>
 				</div>
-			</form>
-			<div class="questions">
-				<ul>
-					<li>
-						<div class="line">
-							<img class="pic" src="img/temp/manager-1.jpg" alt="">
-							<span class="date">20.06.2014, 20:00</span>
-							<span class="text">Пусть будет видна история переписки, если есть, и возможность вложить файл, например, фото с браком и т. д. Может тут создать кнопку?</span>
-						</div>
-					</li>
-					<li>
-						<div class="line">
-							<img class="pic" src="img/temp/manager-1.jpg" alt="">
-							<span class="date">20.06.2014, 8:35</span>
-							<span class="text">Сможем сделать карту с возможностью переноса маркера?</span>
-						</div>
-					</li>
-				</ul>
+				<div class="submit">
+					<div class="line">
+						<button type="submit">Отправить на модерацию</button>
+					</div>
+				</div>
 			</div>
-		</div>
+		</form>
 
 	</div>
 
 	<aside class="top">
 		<div class="wrapper">
 			<a href="#" class="scroll-top"></a>
-			<span class="name"><a href="profile.html"><span>John Wood</span></a></span>
+			<span class="name"><a href="cabinet.html"><span>John Wood</span></a></span>
 			<ul class="links">
 				<li class="li-cart"><a href="cart.html">Корзина</a></li>
 				<li class="li-favourite"><a href="#">Избранное</a></li>

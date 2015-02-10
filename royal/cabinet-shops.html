@@ -54,99 +54,78 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="catalog.html">Корзина</a></span> Подтверждение</p> 
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="cabinet.html">Личный кабинет</a></span> Мои магазины</p>
 
-		<div class="block-order">
-			<form action="" class="form">
-				<ul class="steps">
-					<li><a href="cart.html"><span class="number">1</span>Корзина</a></li>
-					<li><a href="order.html"><span class="number">2</span>Оформление</a></li>
-					<li class="active"><a href="confirm.html"><span class="number">3</span>Подтверждение</a></li>
-				</ul>
-				<div class="table table-info">
-					<div class="tr number">
-						<div class="td"><h2 class="h2">Заказ <span class="h-orange">№ 34000</span></h2></div>
-						<div class="td">
-							<dl class="info">
-								<dt></dt>
-								<dd class="date">от 20.08.2020</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="tr">
-						<div class="td title">Параметры заказа</div>
-						<div class="td">
-							<dl class="info">
-								<dt>Тип плательщика</dt>
-								<dd>Физическое лицо</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="tr">
-						<div class="td title title-2">Данные для доставки</div>
-						<div class="td">
-							<dl class="info">
-								<dt>Индекс</dt>
-								<dd>7878787</dd>
-								<dt>Страна</dt>
-								<dd>Россия</dd>
-								<dt>Город</dt>
-								<dd>Санкт-Петербург</dd>
-								<dt>Адрес</dt>
-								<dd>ул. Будапештская, 200, к. 1, оф. 200</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="tr">
-						<div class="td title title-3">Параметры доставки и оплаты</div>
-						<div class="td">
-							<dl class="info">
-								<dt>Тип оплаты</dt>
-								<dd>Банковской картой онлайн</dd>
-								<dt>Тип доставки</dt>
-								<dd>Курьер</dd>
-							</dl>
-						</div>
-					</div>
-				</div>
+		<ul class="submenu">
+			<li><a href="cabinet-data.html">Данные</a></li>
+			<li><a href="cabinet-orders.html">Заказы</a></li>
+			<li><a href="cabinet-manager.html">Менеджер</a></li>
+			<li class="active"><a href="cabinet-shops.html">Мои магазины</a></li>
+		</ul>
 
-				<h3 class="h3">Состав заказа</h3>
-				<div class="table table-order">
-					<div class="tr tr-1">
-						<div class="th pic"></div>
-						<div class="th name">Товар</div>
-						<div class="th price">Цена</div>
-						<div class="th type">Тип</div>
-						<div class="th size">Размеры</div>
-						<div class="th sum">Итого</div>
+		<ul class="submenu submenu-small">
+			<li class="active"><a href="cabinet-shops.html">Мои магазины</a></li>
+			<li><a href="cabinet-shops-upgrade.html">Магазины на модерации</a></li>
+			<li><a href="cabinet-shops-add.html">Добавление магазина</a></li>
+			<li><a href="#">Акции</a></li>
+			<li><a href="#">Создание акции</a></li>
+		</ul>
+
+		<div class="shops">
+			<div class="item">
+				<div class="name">
+					<h2 class="h2">Невская перспектива</h2>
+					<div class="links">
+						<a href="#">Верхняя одежда</a>
+						<a href="#">Костюмы</a>
+						<a href="#">Трикотаж</a>
 					</div>
-					<div class="tr">
-						<div class="td pic"><img src="img/temp/catalog-2.jpg" alt=""></div>
-						<div class="td name">Мужское пальто <span>АКАПУЛЬКО ПМ-673-570</span></div>
-						<div class="td price"><span class="hidden">Цена:</span> 2 500 <span class="rub">p</span></div>
-						<div class="td type"><span class="hidden">Тип:</span> Базовый</div>
-						<div class="td size"><a href="#">Посмотреть размеры</a></div>
-						<div class="td sum"><span class="hidden">Итого:</span> 5 000 <span class="rub">p</span></div>
+					<div class="address">
+						<span>Санкт-Петербург, Невский проспект, д. 220</span>
+						<span>Тел.: <a class="tel" href="tel:+7812-220-20-20">+7 (812) 220-20-20</a>, <a class="tel" href="tel:+7495-345-55-00">345-55-00</a></span>
 					</div>
-					<div class="tr">
-						<div class="td pic"><img src="img/temp/catalog-1.jpg" alt=""></div>
-						<div class="td name">Мужское пальто <span>КЕНТАВР ПМ-669-12</span></div>
-						<div class="td price"><span class="hidden">Цена:</span> 2 000 <span class="rub">p</span></div>
-						<div class="td type"><span class="hidden">Тип:</span> Базовый</div>
-						<div class="td size"><a href="#">Посмотреть размеры</a></div>
-						<div class="td sum"><span class="hidden">Итого:</span> 10 000 <span class="rub">p</span></div>
-					</div>
-				</div>
-				<div class="total">
-					<div class="col col-1">
-						<h2 class="h2">Итого: <span class="number">15 000</span> <span class="rub">p</span></h2>
-						<p class="fn">Включая стоимость доставки</p>
-					</div>
-					<div class="col col-3">
-						<a class="link" href="#"><span>Оформить заказ</span></a>
+					<div class="edit">
+						<a class="fancybox-popup" href="#edit">Редактировать</a>
+						<a href="#">Удалить</a>
 					</div>
 				</div>
-			</form>
+				<div class="gallery">
+					<ul class="carousel">
+						<li><a class="fancybox-gallery" href="img/temp/gallery-1.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-1s.jpg" alt=""></a></li>
+						<li><a class="fancybox-gallery" href="img/temp/gallery-2.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-2s.jpg" alt=""></a></li>
+						<li><a class="fancybox-gallery" href="img/temp/gallery-3.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-3s.jpg" alt=""></a></li>
+						<li><a class="fancybox-gallery" href="img/temp/gallery-4.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-4s.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="item">
+				<div class="name">
+					<h2 class="h2">Московский филиал</h2>
+					<div class="links">
+						<a href="#">Верхняя одежда</a>
+						<a href="#">Костюмы</a>
+					</div>
+					<div class="address">
+						<span>Москва, Московский проспект, д. 228</span>
+						<span>Тел.: <a class="tel" href="tel:+7812-220-80-20">+7 (812) 220-80-20</a>, <a class="tel" href="tel:+7495-545-55-00">545-55-00</a></span>
+					</div>
+					<div class="edit">
+						<a class="fancybox-popup" href="#edit">Редактировать</a>
+						<a href="#">Удалить</a>
+					</div>
+				</div>
+				<div class="gallery">
+					<ul class="carousel">
+						<li><a class="fancybox-gallery" href="img/temp/gallery-2.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-2s.jpg" alt=""></a></li>
+						<li><a class="fancybox-gallery" href="img/temp/gallery-1.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-1s.jpg" alt=""></a></li>
+						<li><a class="fancybox-gallery" href="img/temp/gallery-3.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-3s.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="block-map">
+			<div class="map"><img src="img/temp/map.jpg" alt=""></div>
 		</div>
 
 	</div>
@@ -237,6 +216,72 @@
 				</div>
 				<div class="line">
 					<button type="submit">Заказать</button>
+				</div>
+			</form>
+		</div>
+
+		<div id="edit" class="popup popup-edit">
+			<form class="form form-data" action="#">
+				<div class="list">
+					<h2 class="h2">Магазин <span>&laquo;Невская перспектива&raquo;</span></h2>
+						<div class="columns">
+							<div class="unit">
+								<div class="line">
+									<label>Название</label>
+									<input type="text" placeholder="Невская перспектива">
+								</div>
+								<div class="line">
+									<label>Город</label>
+									<select>
+										<option>Санкт-Петербург</option>
+									</select>
+								</div>
+								<div class="line line-adr">
+									<span>
+										<label>Улица</label>
+										<input type="text" placeholder="Невский проспект">
+									</span>
+									<span>
+										<label>Дом</label>
+										<input type="text" placeholder="220">
+									</span>
+								</div>
+								<div class="line">
+									<label>Телефон</label>
+									<input type="text" placeholder="+7 (812) 220-20-20, 345-55-00">
+								</div>
+							</div>
+							<div class="unit unit-2">
+								<div class="line">
+									<div class="add add-good">
+										<a href="#"><span class="plus"><span></span></span>Добавить ассортимент</a>
+									</div>
+									<div class="goods">
+										<span class="name cover"><span>Верхняя одежда</span> <a class="button-close" href="#"></a></span>
+										<span class="name cover"><span>Трикотаж</span> <a class="button-close" href="#"></a></span>
+										<span class="name cover"><span>Костюмы</span> <a class="button-close" href="#"></a></span>
+									</div>
+								</div>
+								<div class="line">
+									<div class="add">
+										<a href="#">Добавить изображения</a>
+									</div>
+									<div class="gallery">
+										<ul>
+											<li class="cover"><img src="img/temp/gallery-2s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+											<li class="cover"><img src="img/temp/gallery-1s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+											<li class="cover"><img src="img/temp/gallery-3s.jpg" alt=""> <a class="button-close" href="#"></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="submit">
+						<div class="line">
+							<button type="submit">Отправить на модерацию</button>
+						</div>
+					</div>
 				</div>
 			</form>
 		</div>

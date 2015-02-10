@@ -54,48 +54,66 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="cabinet.html">Личный кабинет</a></span> Мои магазины</p>
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="cabinet.html">Личный кабинет</a></span> Менеджер</p>
 
 		<ul class="submenu">
-			<li><a href="data.html">Данные</a></li>
-			<li><a href="orders.html">Заказы</a></li>
-			<li><a href="support.html">Менеджер</a></li>
-			<li class="active"><a href="#">Мои магазины</a></li>
+			<li><a href="cabinet-data.html">Данные</a></li>
+			<li><a href="cabinet-orders.html">Заказы</a></li>
+			<li class="active"><a href="cabinet-manager.html">Менеджер</a></li>
+			<li><a href="cabinet-shops.html">Мои магазины</a></li>
 		</ul>
 
-		<ul class="submenu submenu-small">
-			<li><a href="shops.html">Мои магазины</a></li>
-			<li class="active"><a href="#">Магазины на модерации</a></li>
-			<li><a href="shop-add.html">Добавление магазина</a></li>
-			<li><a href="#">Акции</a></li>
-			<li><a href="#">Создание акции</a></li>
-		</ul>
-
-		<div class="shops">
-			<div class="item">
-				<div class="name">
-					<h2 class="h2">Восточный базар</h2>
-					<div class="links">
-						<a href="#">Верхняя одежда</a>
-						<a href="#">Костюмы</a>
+		<div class="block-manage">
+			<form class="form form-data" action="#">
+				<div class="list">
+					<div class="columns">
+						<div class="column column-1">
+							<div class="support">
+								<img class="pic" src="img/temp/manager-1.jpg" alt="">
+								<span class="name">Дарья Петрова<a class="link" href="#">Отправить сообщение</a></span>
+							</div>
+						</div>
+						<div class="column column-2">
+							<p class="sale">Ваша скидка <span>-20 %</span></p>
+						</div>
+						<div class="column column-1">
+							<div class="line">
+								<label>Тема сообщения</label>
+								<input type="text" placeholder="">
+							</div>
+							<div class="line">
+								<label>Сообщение</label>
+								<textarea placeholder=""></textarea>
+							</div>
+							<div class="add">
+								<a href="#">Добавить изображения</a>
+							</div>
+						</div>
 					</div>
-					<div class="address">
-						<span>Санкт-Петербург, Невский проспект, д. 220</span>
-						<span>Тел.: <a class="tel" href="tel:+7812-220-20-20">+7 (812) 220-20-20</a>, <a class="tel" href="tel:+7495-345-55-00">345-55-00</a></span>
-					</div>
-					<div class="edit">
-						<a class="fancybox-popup" href="#edit">Редактировать</a>
-						<a href="#">Удалить</a>
+					<div class="submit">
+						<div class="line">
+							<button type="submit">Отправить</button>
+						</div>
 					</div>
 				</div>
-				<div class="gallery">
-					<ul class="carousel">
-						<li><a class="fancybox-gallery" href="img/temp/gallery-1.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-1s.jpg" alt=""></a></li>
-						<li><a class="fancybox-gallery" href="img/temp/gallery-2.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-2s.jpg" alt=""></a></li>
-						<li><a class="fancybox-gallery" href="img/temp/gallery-3.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-3s.jpg" alt=""></a></li>
-						<li><a class="fancybox-gallery" href="img/temp/gallery-4.jpg" data-fancybox-group="gallery"><img src="img/temp/gallery-4s.jpg" alt=""></a></li>
-					</ul>
-				</div>
+			</form>
+			<div class="questions">
+				<ul>
+					<li>
+						<div class="line">
+							<img class="pic" src="img/temp/manager-1.jpg" alt="">
+							<span class="date">20.06.2014, 20:00</span>
+							<span class="text">Пусть будет видна история переписки, если есть, и возможность вложить файл, например, фото с браком и т. д. Может тут создать кнопку?</span>
+						</div>
+					</li>
+					<li>
+						<div class="line">
+							<img class="pic" src="img/temp/manager-1.jpg" alt="">
+							<span class="date">20.06.2014, 8:35</span>
+							<span class="text">Сможем сделать карту с возможностью переноса маркера?</span>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 
@@ -104,7 +122,7 @@
 	<aside class="top">
 		<div class="wrapper">
 			<a href="#" class="scroll-top"></a>
-			<span class="name"><a href="profile.html"><span>John Wood</span></a></span>
+			<span class="name"><a href="cabinet.html"><span>John Wood</span></a></span>
 			<ul class="links">
 				<li class="li-cart"><a href="cart.html">Корзина</a></li>
 				<li class="li-favourite"><a href="#">Избранное</a></li>
@@ -187,72 +205,6 @@
 				</div>
 				<div class="line">
 					<button type="submit">Заказать</button>
-				</div>
-			</form>
-		</div>
-
-		<div id="edit" class="popup popup-edit">
-			<form class="form form-data" action="#">
-				<div class="list">
-					<h2 class="h2">Магазин <span>&laquo;Невская перспектива&raquo;</span></h2>
-						<div class="columns">
-							<div class="unit">
-								<div class="line">
-									<label>Название</label>
-									<input type="text" placeholder="Невская перспектива">
-								</div>
-								<div class="line">
-									<label>Город</label>
-									<select>
-										<option>Санкт-Петербург</option>
-									</select>
-								</div>
-								<div class="line line-adr">
-									<span>
-										<label>Улица</label>
-										<input type="text" placeholder="Невский проспект">
-									</span>
-									<span>
-										<label>Дом</label>
-										<input type="text" placeholder="220">
-									</span>
-								</div>
-								<div class="line">
-									<label>Телефон</label>
-									<input type="text" placeholder="+7 (812) 220-20-20, 345-55-00">
-								</div>
-							</div>
-							<div class="unit unit-2">
-								<div class="line">
-									<div class="add add-good">
-										<a href="#"><span class="plus"><span></span></span>Добавить ассортимент</a>
-									</div>
-									<div class="goods">
-										<span class="name cover"><span>Верхняя одежда</span> <a class="button-close" href="#"></a></span>
-										<span class="name cover"><span>Трикотаж</span> <a class="button-close" href="#"></a></span>
-										<span class="name cover"><span>Костюмы</span> <a class="button-close" href="#"></a></span>
-									</div>
-								</div>
-								<div class="line">
-									<div class="add">
-										<a href="#">Добавить изображения</a>
-									</div>
-									<div class="gallery">
-										<ul>
-											<li class="cover"><img src="img/temp/gallery-2s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-											<li class="cover"><img src="img/temp/gallery-1s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-											<li class="cover"><img src="img/temp/gallery-3s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="submit">
-						<div class="line">
-							<button type="submit">Отправить на модерацию</button>
-						</div>
-					</div>
 				</div>
 			</form>
 		</div>

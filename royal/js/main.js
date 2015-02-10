@@ -248,6 +248,7 @@ $(document).ready(function () {
 	/* IE fixes */
 	if ($.browser.msie) {
 		if ($.browser.versionNumber < 9) {
+			$('.two .col:nth-child(2n - 1)').addClass('nth-child-2n-1');
 		}
 	}
 	if (!Modernizr.svg) {
