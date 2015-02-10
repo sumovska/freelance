@@ -60,7 +60,27 @@
 			<p>Мы производим и продаем оптом <a href="#">мужские костюмы</a>, <a href="#">мужские пиджаки</a>, <a href="#">мужские пальто</a>, <a href="#">мужские куртки</a>, <a href="#">мужские плащи</a>, <a href="#">мужской трикотаж</a>, <a href="#">школьные костюмы для мальчиков</a> и <a href="#">детский трикотаж</a>.</p>
 
 			<div class="block-map">
-				<div class="map"><img src="img/temp/map.jpg" alt=""></div>
+				<div class="map">
+					<div id="ymaps-map-id_14211551600804933022" class="space"></div>
+				</div>
+				<script type="text/javascript">
+					function fid_14211551600804933022(ymaps) {
+						var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+							center: [37.764285, 55.749202],
+							zoom: 16,
+							type: "yandex#map"
+						});
+						map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
+						myGeoObject = new ymaps.GeoObject({
+							geometry: {
+								type: "Point",
+								coordinates: [37.764285, 55.749202]
+							}
+						});
+						map.geoObjects.add(myGeoObject);
+					}
+				</script>
+				<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
 			</div>
 		
 			<form class="form form-data" action="#">
@@ -70,20 +90,22 @@
 							<label>Город</label>
 							<span>
 								<input type="text" placeholder="Саратов">
-								<input type="submit" value="Поиск">
+								<button type="submit">Поиск</button>
 							</span>
 						</div>
 					</div>
 					<div class="column column-2">
 						<div class="line line-search line-search-2">
-							<label>Ассортимент</label>
+							<label for="select-search">Ассортимент</label>
 							<span class="in in-1">
-								<select>
-									<option>Детские костюмы и брюки</option>
+								<select id="select-search">
+									<option value="">Детские костюмы и брюки</option>
+									<option value="0">Детские костюмы и брюки</option>
+									<option value="1">Детские костюмы и брюки</option>
 								</select>
 							</span>
 							<span class="in in-2">
-								<input type="submit" value="Найти">
+								<button type="submit">Найти</button>
 							</span>
 						</div>
 					</div>
@@ -110,6 +132,7 @@
 							<span class="letter">А</span>
 							<span class="letter">Б</span>
 							<span class="letter">В</span>
+							<span class="letter letter-mobile">А&hellip;В</span>
 						</a>
 					</li>
 					<li>
@@ -117,6 +140,7 @@
 							<span class="letter">Г</span>
 							<span class="letter">Д</span>
 							<span class="letter">Е</span>
+							<span class="letter letter-mobile">Г&hellip;Е</span>
 						</a>
 					</li>
 					<li>
@@ -124,6 +148,7 @@
 							<span class="letter">Ж</span>
 							<span class="letter">З</span>
 							<span class="letter">И</span>
+							<span class="letter letter-mobile">Ж&hellip;И</span>
 						</a>
 					</li>
 					<li>
@@ -131,6 +156,7 @@
 							<span class="letter">К</span>
 							<span class="letter">Л</span>
 							<span class="letter">М</span>
+							<span class="letter letter-mobile">К&hellip;М</span>
 						</a>
 					</li>
 					<li>
@@ -138,6 +164,7 @@
 							<span class="letter">Н</span>
 							<span class="letter">О</span>
 							<span class="letter">П</span>
+							<span class="letter letter-mobile">Н&hellip;П</span>
 						</a>
 					</li>
 					<li>
@@ -145,31 +172,12 @@
 							<span class="letter">Р</span>
 							<span class="letter">С</span>
 							<span class="letter">Т</span>
-						</a>
-					</li>
-					<li class="hidden">
-						<a href="#part1">
-							<span class="letter">А&hellip;Д</span>
-						</a>
-					</li>
-					<li class="hidden">
-						<a href="#part3">
-							<span class="letter">Е&hellip;К</span>
-						</a>
-					</li>
-					<li class="hidden">
-						<a href="#part5">
-							<span class="letter">Л&hellip;П</span>
-						</a>
-					</li>
-					<li class="hidden">
-						<a href="#part6">
-							<span class="letter">Р&hellip;Т</span>
+							<span class="letter letter-mobile">Р&hellip;Т</span>
 						</a>
 					</li>
 				</ul>
 
-				<div class="tab tab-part1">
+				<div id="part1" class="tab tab-part1">
 					<div class="col">
 						<div class="line">
 							<h3 class="h3">Александров</h3>
@@ -229,7 +237,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab tab-part2 tab-hidden">
+				<div id="part2" class="tab tab-part2 tab-hidden">
 					<div class="col">
 						<div class="line">
 							<h3 class="h3">Александров</h3>
@@ -263,7 +271,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab tab-part3 tab-hidden">
+				<div id="part3" class="tab tab-part3 tab-hidden">
 					<div class="col">
 						<div class="line">
 							<h3 class="h3">Архангельск</h3>
@@ -299,7 +307,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab tab-part4 tab-hidden">
+				<div id="part4" class="tab tab-part4 tab-hidden">
 					<div class="col">
 						<div class="line">
 							<h3 class="h3">Владимир</h3>
@@ -335,7 +343,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab tab-part5 tab-hidden">
+				<div id="part5" class="tab tab-part5 tab-hidden">
 					<div class="col">
 						<div class="line">
 							<h3 class="h3">Архангельск</h3>
@@ -389,7 +397,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab tab-part6 tab-hidden">
+				<div id="part6" class="tab tab-part6 tab-hidden">
 					<div class="col">
 						<div class="line">
 							<h3 class="h3">Архангельск</h3>
@@ -445,7 +453,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<aside class="top">
@@ -534,67 +541,6 @@
 				</div>
 				<div class="line">
 					<button type="submit">Заказать</button>
-				</div>
-			</form>
-		</div>
-
-		<div id="edit" class="popup popup-edit">
-			<form class="form form-data" action="#">
-				<div class="list">
-					<h2 class="h2">Магазин <span>&laquo;Невская перспектива&raquo;</span></h2>
-					<div class="columns">
-						<div class="column column-1">
-							<div class="line">
-								<label>Название</label>
-								<input type="text" placeholder="Невская перспектива">
-							</div>
-							<div class="line line-adr">
-								<span>
-									<label>Улица</label>
-									<input type="text" placeholder="Невский проспект">
-								</span>
-								<span>
-									<label>Дом</label>
-									<input type="text" placeholder="220">
-								</span>
-							</div>
-							<div class="add add-good">
-								<a href="#"><span class="plus"><span></span></span>Добавить ассортимент</a>
-							</div>
-							<div class="goods">
-								<span class="name"><span>Верхняя одежда</span> <a class="button-close" href="#"></a></span>
-								<span class="name"><span>Костюмы</span> <a class="button-close" href="#"></a></span>
-								<span class="name"><span>Трикотаж</span> <a class="button-close" href="#"></a></span>
-							</div>
-						</div>
-						<div class="column column-2">
-							<div class="line">
-								<label>Город</label>
-								<select>
-									<option>Санкт-Петербург</option>
-								</select>
-							</div>
-							<div class="line">
-								<label>Телефон</label>
-								<input type="text" placeholder="+7 (812) 220-20-20, 345-55-00">
-							</div>
-							<div class="add">
-								<a href="#">Добавить изображения</a>
-							</div>
-							<div class="gallery">
-								<ul>
-									<li><img src="img/temp/gallery-2s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-									<li><img src="img/temp/gallery-1s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-									<li><img src="img/temp/gallery-3s.jpg" alt=""> <a class="button-close" href="#"></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="submit">
-						<div class="line">
-							<button type="submit">Отправить на модерацию</button>
-						</div>
-					</div>
 				</div>
 			</form>
 		</div>

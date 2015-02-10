@@ -1738,7 +1738,7 @@ body > .search-toggle {
 	overflow: hidden;
 }
 .sort .list li {
-	padding: 7px 10px;
+	padding: 7px 9px;
 	margin: 0 10px;
 	float: left;
 }
@@ -1900,6 +1900,9 @@ body > .search-toggle {
 /* ==========================================================================
    _CATALOG_NEW
    ========================================================================== */
+.catalog-search {
+	margin-right: -10px;
+}
 .catalog-new {
 	margin: 0 -40px 45px;
 	position: relative;
@@ -2059,6 +2062,7 @@ body > .search-toggle {
 	float: left;
 }
 .catalog .links li a {
+	border: none;
 	display: inline-block;
 	position: relative;
 	outline: none;
@@ -2941,25 +2945,24 @@ body > .search-toggle {
 	padding-bottom: 17px;
 }
 .block-search .form .look {
-	margin-right: 47px;
+	width: 54%;
 	float: left;
 	position: relative;
 }
 .block-search .form .look input[type="text"] {
 	width: 100%;
 }
-.block-search .form .look input[type="submit"] {
-	padding-left: 22px;
-	padding-right: 22px;
+.block-search .form .look button[type="submit"] {
+	width: 90px;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 }
 .block-search .form .sort {
+	padding: 0;
 	margin: 0;
-	padding: 0 20px;
-	float: left;
+	float: right;
 }
 .block-search .form .sort:before {
 	background: transparent;
@@ -2968,7 +2971,10 @@ body > .search-toggle {
 	margin: 0;
 }
 .block-search .result {
-	margin-bottom: 0;
+	margin: 17px 0 -4px 0;
+	display: block;
+	float: left;
+	clear: both;
 	font: 11px/13px 'Gotham Pro', Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 }
@@ -3717,7 +3723,8 @@ body > .search-toggle {
 .form-data .line-search-1 input[type="text"] {
 	padding-right: 64px;
 }
-.form-data .line-search-1 input[type="submit"] {
+.form-data .line-search-1 button[type="submit"] {
+	width: 60px;
 	padding-left: 7px;
 	padding-right: 7px;
 	position: absolute;
@@ -3736,7 +3743,7 @@ body > .search-toggle {
 	width: 26%;
 	float: right;
 }
-.form-data .line-search-2 .in-2 input[type="submit"] {
+.form-data .line-search-2 .in-2 button[type="submit"] {
 	width: 100%;
 }
 .form-data .cover {
@@ -4145,7 +4152,7 @@ body > .search-toggle {
    _BLOCK-BUY
    ========================================================================== */
 .block-buy .form {
-	padding-bottom: 24px;
+	padding-bottom: 23px;
 }
 .block-buy .columns {
 	margin-left: -10px;
@@ -4227,9 +4234,6 @@ body > .search-toggle {
 	background: #fff;
 	border: 2px solid #036;
 }
-.tabs-abc .triggers li.hidden {
-	display: none;
-}
 .tabs-abc .triggers li a {
 	display: block;
 	border-bottom: none;
@@ -4241,8 +4245,11 @@ body > .search-toggle {
 	clear: both;
 }
 .tabs-abc .triggers .letter {
-	padding: 4px 15px 6px;
+	padding: 5px 15px;
 	float: left;
+}
+.tabs-abc .triggers .letter-mobile {
+	display: none;
 }
 .tabs-abc .tab {
 	margin: 0 -22px;
@@ -4487,7 +4494,7 @@ body > .search-toggle {
 }
 @media (max-width: 1366px) {
 	.container { padding-right: 66px; }
-	.index, .jumbotron, .breadcrumbs, .catalog-grey, .sort, .catalog-new { margin-right: -66px; }
+	.index, .jumbotron, .breadcrumbs, .catalog-grey, .sort, .catalog-new, .tabs-abc .triggers { margin-right: -66px; }
 	.index .bx-viewport, .jumbotron, .catalog-grey, .sort { padding-right: 66px; }
 	.index .forward { left: auto; right: 66px; }
 	.index .bx-controls-space { width: auto; right: 66px; }
@@ -4503,19 +4510,15 @@ body > .search-toggle {
 	.block-item .info .options .col:nth-child(2) .size { text-align: right; }
 	.feature .text { width: 388px; padding-right: 46px; }
 	.map { margin-right: -66px; }
-	.block-search .form { padding-bottom: 0; }
-	.block-search .form .look { margin-right: 0; float: none; }
-	.block-search .form .look input[type="submit"] { padding-left: 7px; padding-right: 7px; }
-	.block-search .form .look { margin-bottom: 10px; }
-	.block-search .form .sort { padding: 0 46px; float: right; }
-	.block-search .result { margin-top: -23px; float: left; }
 	.block-search { padding-bottom: 44px; }
+	.block-search .form { padding-bottom: 0; }
 	.tabs-list .submenu-triggers { margin-bottom: 34px; }
 	.actions .item .define { padding-right: 0; }
 }
 @media (max-width: 1266px) {
 	.catalog .item:nth-child(4n + 1) { clear: none; }
 	.catalog .item:nth-child(3n + 1) { clear: left; }
+	.block-search .form .look { width: 48%; }
 }
 @media (max-width: 1160px) {
 	.container { padding-right: 55px; }
@@ -4580,6 +4583,10 @@ body > .search-toggle {
 	.recovery .line-mail { width: 53.4%; }
 	.contact .info { margin: 0 0 4px; }
 	.contact .info .col, .contact .info .col:last-child { width: 100%; padding: 0; margin-bottom: 30px; float: none; }
+	.block-search .form .sort { margin-right: 45px; }
+	.block-search .form .look { width: 100%; margin-bottom: 10px; float: none; }
+	.block-search .form .look button[type="submit"] { width: 60px; padding-left: 5px; padding-right: 5px; }
+	.block-search .result { margin: 7px 0 0; clear: none; }
 }
 @media (min-width: 1024px) {
 	.header .nav { display: block !important; }
@@ -4626,9 +4633,6 @@ body > .search-toggle {
 	.catalog .item:nth-child(4n + 1) { clear: left; }
 	.catalog .item:nth-child(3n + 1) { clear: none; }
 	.map { margin-right: -40px; }
-	.block-search .form { padding-bottom: 17px; }
-	.block-search .form .sort { float: none; padding: 0 10px; }
-	.block-search .result { margin-top: 0; float: none; }
 	.login { left: 250px; }
 	.block-buy .column-1 { width: 39.7%; }
 	.block-buy .column-2 { width: 60.3%; }
@@ -4743,6 +4747,7 @@ body > .search-toggle {
 	.block-orders .table-info .tr .td:nth-child(even) { padding-top: 0; }
 	.block-orders .table-info .tr .td:nth-child(odd) { border-bottom: none; }
 	.tabs-abc .tab .col { width: 50%; }
+	.block-search .form .sort { margin-right: 0; }
 }
 @media (max-width: 600px) {
 	.container { padding: 160px 20px 20px; }
@@ -4824,8 +4829,13 @@ body > .search-toggle {
 	.actions .item .term .new { right: 0; left: auto; }
 	.actions .item .define { padding-left: 0; }
 	.map { margin: 0 -20px 30px; }
+	.block-search:before { left: -20px; right: -20px; }
+	.block-search .form { padding-top: 55px; position: relative; }
+	.block-search .form label.for { margin-bottom: 7px; }
+	.block-search .form .sort { width: 100%; float: none; }
 	.block-search .form .look { display: none; }
-	.block-search .result { margin-left: 10px; }
+	.block-search .result { margin: 0; position: absolute; top: 20px; left: 0; font-size: 17px; }
+	.block-search .result span { font-size: 20px; }
 	.questions .line { padding-right: 0; padding-left: 0; }
 	.questions .line .date { position: relative; float: left; display: block; }
 	.questions .line .pic { margin: 0 20px 10px 0; position: relative; float: left; display: block; }
@@ -4855,8 +4865,8 @@ body > .search-toggle {
 	.catalog .item:nth-child(2n + 1) { clear: none; }
 	.login .form { width: 100%; margin: 0 auto; }
 	.block-buy .sale { margin: 0 -4px; }
-	.block-buy .sale .line { width: 62%; padding: 0 4px; }
-	.block-buy .sale .line:nth-child(2n) { width: 38%; }
+	.block-buy .sale .line { width: 100%; padding: 0 4px; }
+	.block-buy .sale .line:nth-child(2n) { width: 100%; }
 	.tabs-abc .tab { margin: 0; }
 	.tabs-abc .tab .col { width: 100%; float: none; padding: 0; }
 	.form-data .line-search-2 .in-1, .form-data .line-search-2 .in-2 { width: 100%; float: none; }
@@ -4867,9 +4877,9 @@ body > .search-toggle {
 	.block-buy .columns { position: static; margin-bottom: 16px; }
 	.block-buy .column { margin-bottom: 20px; }
 	.tabs-abc .triggers { text-align: center; }
-	.tabs-abc .triggers li { display: none; }
 	.tabs-abc .triggers li.hidden { display: inline-block; float: none; }
-	.tabs-abc .triggers .letter { padding-left: 16px; padding-right: 16px; }
+	.tabs-abc .triggers .letter { padding-left: 16px; padding-right: 16px; display: none; }
+	.tabs-abc .triggers .letter-mobile { display: inline-block; }
 }
 @media (max-width: 400px) {
 	.index { height: 200px; }
