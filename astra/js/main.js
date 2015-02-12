@@ -78,7 +78,6 @@ $(document).ready(function () {
 		helpers: {
 			media: {}
 		}
-
 	});
 
 	$('.functions').each(function () {
@@ -106,6 +105,15 @@ $(document).ready(function () {
 			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
 			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
 			$(this).closest('.tabs').attr('class', 'tabs').addClass('tabs-' + where);
+			return false;
+		});
+	});
+
+	/* Block-cart */
+	$('.block-cart .goods .item').each(function () {
+		var input = $('.amount-text', this);
+		$('.plus', this).click(function () {
+			var a = +input.val() + 1;
 			return false;
 		});
 	});
