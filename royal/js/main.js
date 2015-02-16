@@ -209,17 +209,36 @@ $(document).ready(function () {
 		return false;
 	});
 
+	$('.submenu-small').each(function () {
+		var _self = $(this);
+		$('a', this).click(function () {
+			if ($(this).closest('li').is('.active')) {
+				_self.toggleClass('submenu-small-open');
+				return false;
+			}
+		});
+	});
+
 	/* Gallery */
 	$('.gallery').each(function () {
 		$('.carousel', this).bxSlider({
 			pager: false,
-			minslides: 5,
-			infiniteLoop: false
+			responsive: true,
+			minSlides: 3,
+			maxSlides: 8,
+			moveSlides: 1,
+			slideWidth: 80,
+			slideMargin: 10,
+			useCSS: true,
+			infiniteLoop: false,
+			hideControlOnEnd: true
 		});
 		$('.fancybox-gallery', this).fancybox({
-			autoSize: false,
-			fitToView: false,
 			padding: 0,
+			margin: 45,
+			autoSize: true,
+			fitToView: true,
+			loop: false,
 			helpers: {
 				media: {}
 			}
