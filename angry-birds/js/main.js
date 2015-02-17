@@ -4,6 +4,9 @@
 /* On document ready */
 $(document).ready(function () {
 
+	/* Forms */
+	$('input, select').styler();
+
 	$('.projects').each(function () {
 		$('.triggers li a', this).click(function () {
 			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
@@ -13,4 +16,17 @@ $(document).ready(function () {
 		});
 	});
 	
+	/* Popup script */
+	$('.fancybox-popup').fancybox({
+		padding: 0,
+		helpers: {
+			overlay: {
+				speedIn: 250,
+				css: {
+					'background': 'rgba(0, 0, 0, 0.8)'
+				}
+			}
+		}
+	});
+
 });
