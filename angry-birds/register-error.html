@@ -9,11 +9,10 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
-
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 	<link rel="shortcut icon" href="img/favicon.png">
 
 	<!--[if lte IE 9]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
 	<link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
 </head>
@@ -26,7 +25,7 @@
 				<li><a href="winner.html">Победители</a></li>
 			</ul>
 			<ul class="nav nav-login">
-				<li><a href="checkin.html">Регистрация</a></li>
+				<li><a href="register.html">Регистрация</a></li>
 				<li><a href="login.html">Авторизация</a></li>
 			</ul>
 		</div>
@@ -35,10 +34,11 @@
 	<div class="content">
 		<div class="wrapper">
 			<h2 class="h1">Регистрация</h2>
+
 			<form class="form" action="#">
-				<p class="legend">Введите вашу фамилию и персональный код сотрудника. <br>Если у Вас нет кода сотрудника, свяжитесь со службой поддержки.</p>
-				<p class="line"><input type="text" placeholder="Ваша фамилия"></p>
-				<p class="line"><input type="text" placeholder="Ваш код сотрудника"></p>
+				<p class="legend">Введите вашу фамилию и персональный код сотрудника. Если у Вас нет кода сотрудника, свяжитесь со службой поддержки.</p>
+				<p class="line"><input class="error" type="text" placeholder="Неверно введена фамилия!"></p>
+				<p class="line"><input type="password" placeholder="Ваш код сотрудника"></p>
 				<p class="submit"><input type="submit" value="Продолжить"></p>
 			</form>
 		</div>

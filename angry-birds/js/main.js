@@ -7,6 +7,7 @@ $(document).ready(function () {
 	/* Forms */
 	$('input, select').styler();
 
+	/* Project tabs */
 	$('.projects').each(function () {
 		$('.triggers li a', this).click(function () {
 			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
@@ -15,7 +16,7 @@ $(document).ready(function () {
 			return false;
 		});
 	});
-	
+
 	/* Popup script */
 	$('.fancybox-popup').fancybox({
 		padding: 0,
