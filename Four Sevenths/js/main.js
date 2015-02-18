@@ -45,8 +45,16 @@ $(document).ready(function () {
 
 	$('.block-item .tab').each(function () {
 		$('.link', this).click(function () {
-			$(this).siblings('.info').fadeToggle(400).closest('.line').toggleClass('line-active');
+			$(this).siblings('.price').fadeToggle(400).closest('.option').toggleClass('option-active');
 			return false;
+		});
+	});
+
+	$('.additional').each(function () {
+		$('.carousel', this).bxSlider({
+			pager: false,
+			minSlides: 3,
+			maxSlides: 3
 		});
 	});
 
