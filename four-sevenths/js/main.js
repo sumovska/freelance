@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 	$('.block-item .tab').each(function () {
 		$('.link', this).click(function () {
-			$(this).siblings('.price').fadeToggle(400).closest('.option').toggleClass('option-active');
+			$(this).siblings('.in').fadeToggle(400).closest('.size').toggleClass('size-active');
 			return false;
 		});
 	});
