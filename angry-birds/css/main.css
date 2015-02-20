@@ -22,6 +22,7 @@
 }
 @font-face {
 	font-family: 'Angry Birds';
+	src: url('../fonts/angrybirds-regular.eot');
 	src: url('../fonts/angrybirds-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/angrybirds-regular.woff') format('woff'), url('../fonts/angrybirds-regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
@@ -130,11 +131,11 @@ h1, .h1 {
 	font-family: 'Angry Birds', Helvetica, Arial, sans-serif;
 	-webkit-text-stroke: 2px black;
 	color: white;
-	/*text-shadow:
-    -4px -4px 0 #000,  
-    4px -4px 0 #000,
-    -4px 4px 0 #000,
-    4px 4px 0 #000;*/
+}
+@-moz-document url-prefix() {
+	h1, .h1 {
+		text-shadow: 2px 2px 4px #000;
+	}
 }
 h2, .h2 {
 	margin-bottom: 12px;
@@ -281,10 +282,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .form label.for { margin-bottom: 5px; display: block; }
 .form:after, .form .line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .jq-file { width: auto; height: auto; box-shadow: none; border-radius: 0; }
-.jq-file__name, .jq-file__browse { visibility: hidden; }
-.file { padding: 5px 0; margin-top: -5px; display: block; position: relative; }
-.file .add { position: relative; z-index: 1; }
-.file .jq-file { position: absolute !important; top: 0; left: 0; right: 0; bottom: 0; z-index: 5; }
+.jq-file__name, .focused .jq-file__name { height: auto; padding: 12px 20px 16px; border: none; border-top: 3px solid #4d87a4; border-radius: 5px; box-shadow: none; margin: 0 auto; color: #fff; font: 14px 'Open Sans', Helvetica, Arial, sans-serif; text-align: left; background: #5199b8; }
+.jq-file__browse { border: none; padding: 10px 20px 8px; box-shadow: none; text-shadow: none; color: #fff; background: #4d87a4; }
+.jq-file:hover .jq-file__browse { background: #43768f !important; }
 input[type="email"].error, input[type="number"].error, input[type="password"].error, input[type="search"].error, input[type="tel"].error, input[type="text"].error, input[type="url"].error, textarea.error { background: #eb2c31; border-top-color: #c01f2f; }
 /*noinspection CssInvalidPseudoSelector*/
 /* ==========================================================================
@@ -388,8 +388,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .index .inner {
 	width: 100%;
 	height: 420px;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background: url('../img/index.jpg') 50% 50% no-repeat;
 	background-size: cover;
 }
 .index .wrapper {
@@ -708,9 +707,6 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 }
 .popup {
 	padding: 38px 30px 30px;
-	background: #fff;
-	border-radius: 3px;
-	border-bottom: 3px solid #d9d9d9;
 }
 .popup-delete {
 	width: 570px;
@@ -738,6 +734,64 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .popup-publish .line {
 	text-align: center;
 }
+.popup-publish .submit {
+	display: none;
+}
+.file-uploader .holder {
+	width: 400px;
+	min-height: 200px;
+	padding: 7px 10px 10px;
+	border-top: 3px solid #4d87a4;
+	border-radius: 5px;
+	margin: 0 auto;
+	color: #fff;
+	font: 14px 'Open Sans', Helvetica, Arial, sans-serif;
+	background: #5199b8;
+}
+.file-uploader .holder.hover {
+	background: #4989a5;
+}
+.file-uploader .holder img {
+	margin: 0 auto;
+	display: block;
+}
+.file-uploader .holder p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 16px;
+}
+.file-uploader .holder .error {
+	margin-top: 10px;
+	color: red;
+}
+.file-uploader .holder .message {
+	padding-top: 110px;
+	display: block;
+	position: relative;
+}
+.file-uploader .holder .message:before {
+	width: 80px;
+	height: 57px;
+	margin-left: -40px;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	background: url('../img/file.png') no-repeat 0 0;
+}
+.file-uploader .holder.loaded .message,
+.file-uploader .holder.loaded .error {
+	display: none;
+}
+.file-uploader .holder a {
+	color: #fff;
+}
+.file-uploader progress { width: 100%; }
+.file-uploader progress:after { content: '%'; }
+.file-uploader .fail { background: #c00; padding: 2px; color: #fff; }
+.file-uploader .hidden { display: none !important; }
+.file-uploader .jq-file { width: 400px; margin: 0 auto; display: block; }
 .popup-closer {
 	padding: 20px 20px 16px;
 }
@@ -854,6 +908,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .fancybox-title-inside-wrap { margin-top: 10px; }
 .fancybox-title-over-wrap { position: absolute; bottom: 0; left: 0; color: #fff; padding: 10px; background: #000; background: rgba(0, 0, 0, .8); }
 .fancybox-blue .fancybox-skin { border: 3px solid #1074d4; border-radius: 10px; box-shadow: none; background: #fff; }
+.fancybox-skin { background: #fff; border-radius: 3px; border-bottom: 3px solid #d9d9d9; }
 .fancybox-skin .fancybox-close { width: 40px; height: 40px; display: block; top: -59px; right: -57px; outline: none; background: none; transition: background-color .1s ease; }
 .fancybox-skin .fancybox-close:hover { }
 .fancybox-skin .fancybox-close:before, .fancybox-skin .fancybox-close:after { width: 10px; height: 38px; border-radius: 0; position: absolute; top: 2px; left: 15px; display: block; overflow: hidden; content: ' '; background: #fff; transition: background .1s ease; }

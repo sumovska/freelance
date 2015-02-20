@@ -12,7 +12,7 @@
 	<link rel="shortcut icon" href="img/favicon.png">
 
 	<!--[if lte IE 9]>
-	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<script src="js/vendor/html5-3.6-pie.min-1.0.0.js"></script>
 	<link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
 </head>
@@ -49,7 +49,7 @@
 							<span class="name">Борисов Анатолий Анатольевич</span>
 							<a class="place" href="#">ТЦ Белая Дача</a>
 							<span class="date">04 Мая 2015</span>
-							<div class="score" href="#">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
+							<div class="score">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
 						</div>
 					</li>
 					<li>
@@ -60,7 +60,7 @@
 							<span class="name">Борисов Анатолий Анатольевич</span>
 							<a class="place" href="#">ТЦ Белая Дача</a>
 							<span class="date">04 Мая 2015</span>
-							<div class="score" href="#">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
+							<div class="score">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
 						</div>
 					</li>
 					<li>
@@ -71,7 +71,7 @@
 							<span class="name">Борисов Анатолий Анатольевич</span>
 							<a class="place" href="#">ТЦ Белая Дача</a>
 							<span class="date">04 Мая 2015</span>
-							<div class="score" href="#">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
+							<div class="score">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
 						</div>
 					</li>
 					<li>
@@ -82,7 +82,7 @@
 							<span class="name">Борисов Анатолий Анатольевич</span>
 							<a class="place" href="#">ТЦ Белая Дача</a>
 							<span class="date">04 Мая 2015</span>
-							<div class="score" href="#">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
+							<div class="score">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
 						</div>
 					</li>
 					<li>
@@ -93,7 +93,7 @@
 							<span class="name">Борисов Анатолий Анатольевич</span>
 							<a class="place" href="#">ТЦ Белая Дача</a>
 							<span class="date">04 Мая 2015</span>
-							<div class="score" href="#">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
+							<div class="score">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
 						</div>
 					</li>
 				</ul>
@@ -119,12 +119,20 @@
 		</div>
 		<div id="publish" class="popup popup-publish">
 			<h2 class="h1">Публикация работы</h2>
-
 			<form class="form" action="#">
 				<p class="legend">Загрузите вашу конкурсную фотографию, заполнив все поля ниже. Фотография должна быть формата .JPG, .JPEG, .PNG. <br>Размер не более 3Мб.</p>
 				<p class="line"><input type="text" placeholder="Введите адрес торговой точки"></p>
 				<p class="line"><input type="text" placeholder="Введите имя сотрудника"></p>
-				<p class="line"><input class="file" type="file"></p>
+				<div class="line">
+					<div class="file-uploader">
+						<div class="holder" id="holder">
+							<p class="message">Загрузите фото, перетащив его сюда, или воспользуйтесь <a class="default" href="#">стандартной формой загрузки</a>
+						</div>
+						<p id="upload" class="upload hidden"><input type="file"></p>
+						<p id="filereader" class="hidden">File API & FileReader API не поддерживается</p>
+						<p id="formdata" class="hidden">XHR2's FormData не поддерживается</p>
+					</div>
+				</div>
 			</form>
 		</div>
 		<div id="closer" class="popup popup-closer">
@@ -135,7 +143,7 @@
 					<a class="place" href="#">ТЦ Белая Дача</a>
 					<div class="info">
 						<span class="date">04 Мая 2015</span>
-						<div class="score" href="#">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
+						<div class="score">1 745 <a class="icon icon-like" href="#"></a> <a class="icon icon-delete fancybox-popup" href="#delete"></a></div>
 					</div>
 				</div>
 			</div>
