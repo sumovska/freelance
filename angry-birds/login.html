@@ -35,10 +35,10 @@
 		<div class="wrapper">
 			<h2 class="h1">Авторизация</h2>
 
-			<form class="form" action="#">
+			<form class="form form-validate" action="index.html" method="post">
 				<p class="legend">Пожалуйста, введите ваш код сотрудника и персональный пароль. При утере персональных данных - обращайтесь в службу поддержки.</p>
-				<p class="line"><input type="text" placeholder="Ваш код сотрудника"></p>
-				<p class="line"><input type="password" placeholder="Ваш пароль"></p>
+				<p class="line"><input class="required" type="text" placeholder="Ваш код сотрудника" data-errortext="Не введен код сотрудника" maxlength="100"></p>
+				<p class="line"><input class="required" type="password" placeholder="Ваш пароль" data-errortext="Не введен пароль" maxlength="100"></p>
 				<p class="submit"><input type="submit" value="Войти"></p>
 			</form>
 		</div>

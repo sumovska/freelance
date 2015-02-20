@@ -35,10 +35,10 @@
 		<div class="wrapper">
 			<h2 class="h1">Регистрация</h2>
 
-			<form class="form" action="#">
+			<form class="form form-validate" action="password.html" method="post">
 				<p class="legend">Введите вашу фамилию и персональный код сотрудника. <br>Если у Вас нет кода сотрудника, свяжитесь со службой поддержки.</p>
-				<p class="line"><input type="text" placeholder="Ваша фамилия"></p>
-				<p class="line"><input type="text" placeholder="Ваш код сотрудника"></p>
+				<p class="line"><input class="required" type="text" placeholder="Ваша фамилия" data-errortext="Не введена фамилия" maxlength="100"></p>
+				<p class="line"><input class="required" type="text" placeholder="Ваш код сотрудника" data-errortext="Не введен код сотрудника" maxlength="100"></p>
 				<p class="submit"><input type="submit" value="Продолжить"></p>
 			</form>
 		</div>

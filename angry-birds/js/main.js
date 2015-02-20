@@ -30,6 +30,36 @@ $(document).ready(function () {
 		}
 	});
 
+	$('.form-validate').submit(function () {
+		var valid = true, _self = (this);
+		$('.required', this).each(function () {
+			var current = $(this);
+			if ($(this).val().length === 0 || ($(this).val() === $(this).attr('data-placeholder'))) {
+				$(this).addClass('error');
+				$(this).attr('data-placeholder', $(this).attr('placeholder'));
+				$(this).attr('placeholder', $(this).attr('data-errortext'));
+				valid = false;
+			} else {
+				$(this).removeClass('error');
+				$(this).attr('placeholder', $(this).attr('data-placeholder'));
+				if ($(this).is('.match-repeat')) {
+					$('.match:not(.match-repeat)', _self).each(function () {
+						if ($(this).val() != current.val()) {
+							current.val('').attr('placeholder', current.attr('data-matchtext'));
+							current.addClass('error');
+							valid = false;
+						} else {
+							current.removeClass('error');
+							current.attr('placeholder', current.attr('data-placeholder'));
+						}
+					});
+				}
+			}
+		});
+		$('.error', this).eq(0).focus();
+		return valid;
+	});
+
 	$('.file-uploader').each(function () {
 		var _self = $(this);
 		var holder = document.getElementById('holder'),
@@ -51,8 +81,7 @@ $(document).ready(function () {
 			fileupload = document.getElementById('upload');
 
 		$('.default', _self).click(function () {
-			$('.upload', _self).removeClass('hidden');
-			$(holder).addClass('hidden');
+			$(_self).toggleClass('file-alternative');
 			return false;
 		});
 
@@ -69,10 +98,7 @@ $(document).ready(function () {
 		});
 
 		if ($.browser.msie && $.browser.version < 10) {
-			$('.upload', _self).each(function () {
-				$(this).removeClass('hidden');
-			});
-			$(holder).addClass('hidden');
+			$(_self).addClass('file-alternative');
 		}
 
 		function previewfile(file) {
@@ -146,24 +172,27 @@ $(document).ready(function () {
 	if ($.browser.msie && $.browser.version < 10) {
 		if ($.browser.version < 9) {
 			$('body').addClass('ie8');
+			$("input[type='text'], input[type='password']").each(function () {
+				if (!$(this).attr('data-placeholder')) {
+					$(this).attr('data-placeholder', $(this).attr('placeholder'))
+				}
+				$(this).val($(this).attr('data-placeholder'));
+				$(this).focus(function () {
+					if ($(this).val() === $(this).attr('data-placeholder')) {
+						$(this).val('');
+					}
+				});
+				$(this).blur(function () {
+					if ($(this).val() === '') {
+						$(this).val($(this).attr('data-placeholder'));
+					}
+				});
+			});
 		}
 		if (window.PIE) {
 			$('.prizes .item .user, .prizes .item .user .photo').each(function () {
 				PIE.attach(this);
 			});
 		}
-		$("input[type='text'], input[type='password']").each(function () {
-			$(this).val($(this).attr('placeholder'));
-			$(this).focus(function () {
-				if ($(this).val() === $(this).attr('placeholder')) {
-					$(this).val('');
-				}
-			});
-			$(this).blur(function () {
-				if ($(this).val() === '') {
-					$(this).val($(this).attr('placeholder'));
-				}
-			});
-		});
 	}
 });
