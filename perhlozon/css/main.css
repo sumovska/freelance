@@ -40,7 +40,7 @@ html {
 	color: #404142;
 }
 body {
-	max-width: 1260px;
+	width: 100%;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -365,9 +365,23 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    ========================================================================== */
 .index {
 	height: 664px;
+	position: relative;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
+}
+.index:after {
+	width: 1260px;
+	height: 36px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: url(../img/index-bottom.png) 0 0 no-repeat;
 }
 .index .wrapper {
 	padding-top: 68px;
@@ -423,18 +437,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .product {
 	position: relative;
 }
-.product:before {
-	width: 1260px;
-	height: 36px;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	position: absolute;
-	top: -36px;
-	left: 0;
-	right: 0;
-	background: url(../img/product-top.png) 0 0 no-repeat;
-}
 .product .wrapper {
 	padding-top: 76px;
 	padding-bottom: 124px;
@@ -444,6 +446,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	float: left;
 }
 .product .picture .img {
+	width: 432px;
+	height: 374px;
 	margin: 0 auto 28px;
 	display: block;
 }
@@ -497,6 +501,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #fff;
 	position: relative;
 	background: url(../img/recommend.jpg) 0 0 no-repeat;
+	background-size: cover;
 }
 .recommend:before {
 	width: 100%;
@@ -513,8 +518,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .recommend .wrapper {
 	padding-top: 70px;
 }
-.recommend .info {
-	padding: 24px 0 18px 24px;
+.recommend .info .wrapper {
+	min-height: 290px;
+	padding: 94px 400px 38px 44px;
 	position: relative;
 }
 .recommend .info:after {
@@ -526,7 +532,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .recommend .h3 {
 	font-weight: 700;
 }
-.recommend .text {
+.recommend .slogan {
 	font-size: 24px;
 	font-weight: 700;
 	letter-spacing: -.016em;
@@ -537,8 +543,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	float: right;
-	position: relative;
+	position: absolute;
+	top: 94px;
+	right: 20px;
 	font-size: 18px;
 }
 .recommend .links > li {
@@ -890,6 +897,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	bottom: 30px;
 	font-weight: normal;
 }
+/* ==========================================================================
+   _FOOTER
+   ========================================================================== */
 .footer {
 	height: 336px;
 	color: #999999;
@@ -902,6 +912,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	position: relative;
 }
 .footer .wrapper .lan {
+	margin-bottom: 0;
 	font-size: 14px;
 	position: absolute;
 	left: 50%;
@@ -917,6 +928,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .footer .wrapper .copyright {
 	width: 240px;
+	margin-bottom: 0;
 	padding-left: 41px;
 	position: absolute;
 	left: 6px;
@@ -957,10 +969,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	margin: 0 auto;
 	font-size: 36px;
 	line-height: 44px;
-	letter-spacing: -.02em;
-	color: #999999;
+	letter-spacing: -.024em;
+	color: #999;
 	text-align: center;
-	font-family: 'Arial Narrow';
+	font-family: 'Arial Narrow', Arial, sans-serif;;
 	text-transform: uppercase;
 }
 /* ==========================================================================
