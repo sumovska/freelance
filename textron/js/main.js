@@ -6,4 +6,10 @@ $(document).ready(function () {
 
 	/* Init forms */
 	$('input, select').styler();
+
+	$('.index').each(function () {
+		$('.carousel', this).bxSlider({
+			controls: false
+		});
+	});
 });
