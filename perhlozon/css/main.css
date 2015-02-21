@@ -139,6 +139,35 @@ fieldset {
 	overflow: hidden;
 	clear: both;
 }
+.content {
+	position: relative;
+	background: #fff;
+	background: url(../img/content.png) 50% 100% repeat-x;
+}
+.content:before {
+	width: 100%;
+	height: 42px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(../img/temp/line-whitelb.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	z-index: 100;
+}
+.content .wrapper {
+	padding-top: 60px;
+}
+.content .inside {
+	padding-bottom: 60px;
+	margin-bottom: -14px;
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+}
 /* ==========================================================================
    _HEADER
    ========================================================================== */
@@ -189,6 +218,11 @@ fieldset {
 	top: 37px;
 	left: 50%;
 }
+.header .logo a {
+	width: 337px;
+	height: 42px;
+	display: block;
+}
 .header .logo img {
 	width: 337px;
 	height: 42px;
@@ -224,6 +258,11 @@ fieldset {
 }
 .header .crest img {
 	width: 146px;
+	height: 94px;
+	display: block;
+}
+.header .crest-2 img {
+	width: 58px;
 	height: 94px;
 	display: block;
 }
@@ -327,8 +366,15 @@ fieldset {
 /* ==========================================================================
    _NAV
    ========================================================================== */
+.nav {
+	position: relative;
+	background: #fff;
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 79%,rgba(215,239,245,1) 100%);
+	box-shadow: 0 6px 6px 1px #11da79;
+	z-index: 100;
+}
 .nav .wrapper {
-	padding-bottom: 13px;
+	padding: 0;
 }
 .nav .list {
 	width: 100%;
@@ -343,12 +389,15 @@ fieldset {
 	text-align: center;
 }
 .nav .list li a {
+	padding: 20px 0 13px;
+	display: block;
 	color: #000;
 	text-decoration: none;
-	transition: color .3s ease;
+	transition: color .2s ease, background .2s ease;
 }
 .nav .list li a:hover {
-	color: #01a551;
+	color: #fff;
+	background: #36e48f;
 }
 /* ==========================================================================
    _INDEX
@@ -986,6 +1035,191 @@ fieldset {
 .research .laps .link-1 { left: 28px; }
 .research .laps .link-2 { left: auto; right: 24px; top: 90px; }
 .research .laps .link-3 { left: 94px; top: auto; bottom: 0; }
+/* ==========================================================================
+   _ARTICLES
+   ========================================================================== */
+.articles {
+	margin-bottom: -12px;
+	padding-bottom: 118px;
+	padding-right: 384px;
+	background-position: 98% 98%;
+}
+.articles .h2 {
+	margin-bottom: 27px;
+}
+.articles .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.articles .list li {
+	margin-bottom: 24px;
+	padding-left: 80px;
+	position: relative;
+}
+.articles .list li a {
+	color: #404142;
+	text-decoration: none;
+}
+.articles .list li a:hover {
+	color: #01a551;
+	text-decoration: underline;
+}
+.articles .list .number {
+	width: 54px;
+	height: 54px;
+	display: block;
+	color: #f3e8c5;
+	text-align: center;
+	font: bold 40px/46px 'Fedra Sans Pro', Arial, sans-serif;
+	position: absolute;
+	left: 0;
+	top: 2px;
+	border-radius: 50%;
+	border: 1px solid #e2bf32;
+}
+/* ==========================================================================
+   _REVIEWS
+   ========================================================================== */
+.reviews {
+	margin: 0 -48px 0 8px;
+	padding: 0 28px;
+	list-style: none;
+}
+.reviews:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.reviews li {
+	width: 320px;
+	margin-bottom: 62px;
+	padding: 0 45px;
+	float: left;
+}
+.reviews li:nth-child(3n+1) {
+	clear: left;
+}
+.reviews li a {
+	display: block;
+}
+.reviews .pic {
+	width: 211px;
+	height: 301px;
+	margin-bottom: 21px;
+	display: block;
+	position: relative;
+	box-shadow: 0 2px 14px rgba(0,0,0,.26);
+}
+.reviews .pic img {
+	width: 211px;
+	height: 301px;
+	display: block;
+}
+.reviews .pic:before {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	opacity: .2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 50%;
+	background: #faf8ef;
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(250,243,229,1) 100%);
+}
+/* ==========================================================================
+   _CONTACTS
+   ========================================================================== */
+.contacts {
+	padding-right: 384px;
+	padding-bottom: 60px;
+	margin-bottom: -14px;
+	background-position: 103% 100%;
+}
+.contacts .info {
+	padding-left: 80px;
+	position: relative;
+}
+.contacts .info:before {
+	width: 37px;
+	height: 37px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	left: 6px;
+	top: 6px;
+	background: url(../img/sprite.png) -140px 0 no-repeat; 
+}
+.contacts .h {
+	color: #02a551;
+}
+.contacts .tel {
+	text-decoration: none;
+	font-weight: bold;
+	color: #404142;
+	cursor: default;
+}
+
+.triggers {
+	margin: 0 -2px 41px;
+	padding: 0;
+	list-style: none;
+	font: bold 24px/32px 'Fedra Sans Pro', Arial, sans-serif;
+	position: relative;
+}
+.triggers:before {
+	height: 22px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: url(../img/temp/shadow-gray.png) 50% 100% no-repeat;
+}
+.triggers:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.triggers li {
+	min-width: 440px;
+	padding: 0 4px;
+	float: left;
+	text-align: center;
+}
+.triggers li a {
+	padding: 22px 23px 15px;
+	display: block;
+	text-decoration: none;
+	color: #898989;
+	letter-spacing: .04em;
+	background: #f6f8f8;
+	border-radius: 4px;
+	border: 1px solid transparent;
+}
+.triggers li.active a {
+	border-color: #b6b6b6;
+}
+.triggers li a:hover {
+	color: #01a551;
+	z-index: 20;
+}
+.tab {
+	padding-right: 410px;
+	padding-left: 20px;
+}
+.tab-hidden {
+	display: none;
+}
 /* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
