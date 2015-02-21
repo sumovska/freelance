@@ -13,7 +13,7 @@ $(document).ready(function () {
 		$('.cell', this).each(function () {
 			var _self = $(this);
 			$('.link', this).click(function () {
-				$('.cell', _header).removeClass('active');
+				_self.siblings('.cell').removeClass('active');
 				_self.toggleClass('active');
 				return false;
 			});
