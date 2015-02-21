@@ -19,4 +19,10 @@ $(document).ready(function () {
 			});
 		});
 	});
+
+	$('.index').each(function () {
+		$('.carousel', this).bxSlider({
+			controls: false
+		});
+	});
 });

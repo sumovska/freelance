@@ -513,6 +513,94 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .header .search.active .link { border-color: #2c2c2c; background: #2c2c2c; }
 .header .search.active .link:before { background-position: -70px -20px; }
 /* ==========================================================================
+   _INDEX
+   ========================================================================== */
+.index .wrapper {
+	height: 100%;
+}
+.index .inside {
+	width: 580px;
+	position: relative;
+	top: 147px;
+	left: -2px;
+	color: #fff;
+}
+.index .title {
+	margin-bottom: 10px;
+	font-size: 56px;
+	line-height: 63px;
+	letter-spacing: -.004em;
+	text-transform: uppercase;
+}
+.index .slogan {
+	margin-bottom: 20px;
+	line-height: 21px;
+	letter-spacing: .055em;
+}
+.index .link {
+	width: 144px;
+	height: 38px;
+	padding: 10px 8px 5px 2px;
+	display: block;
+	color: #fff;
+	letter-spacing: .14em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	background: #d0154f;
+	border: 2px solid transparent;
+	transition: background .3s ease, border-color .3s ease;
+}
+.index .link:hover {
+	border-color: #d0154f;
+	background: transparent;
+}
+.index .carousel {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.index .carousel:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.index .carousel li {
+	width: 100%;
+	height: 616px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: cover;
+}
+.index .bx-wrapper {
+	position: relative;
+}
+.index .bx-controls {
+	text-align: center;	
+	position: absolute;
+	bottom: 82px;
+	left: 0;
+	right: 0;
+}
+.index .bx-pager-item {
+	margin: 0 4px;
+	display: inline-block;
+}
+.index .bx-pager a {
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	text-indent: -1000px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 2px solid #fff;
+}
+.index .bx-pager a.active {
+	background: #fff;
+}
+/* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
    ========================================================================== */
 .fancybox-tmp iframe, .fancybox-tmp object { vertical-align: top; padding: 0; margin: 0; }
