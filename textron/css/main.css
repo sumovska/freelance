@@ -428,6 +428,90 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	line-height: 14px;
 	color: #7b7b7b;
 }
+.header .cart {
+	margin: 0;
+	display: block;
+	position: absolute;
+	top: 37px;
+	right: 106px;
+	z-index: 2;
+}
+.header .cart .link {
+	width: 51px;
+	height: 41px;
+	border: 1px solid #eee;
+	display: block;
+	background: #fff;
+}
+.header .cart .link:before {
+	width: 20px;
+	height: 20px;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+	background: url('../img/sprite.png') no-repeat -50px 0;
+	background-size: 100px auto;
+}
+.header .cart .link span {
+	width: 14px;
+	height: 14px;
+	border-radius: 1px;
+	display: block;
+	color: #fff;
+	font-size: 10px;
+	line-height: 14px;
+	text-align: center;
+	overflow: hidden;
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	z-index: 2;
+	background: #d0154f;
+}
+.header .cart.active { z-index: 3; }
+.header .cart.active .link { border-color: #2c2c2c; background: #2c2c2c; }
+.header .cart.active .link:before { background-position: -70px 0; }
+.header .search {
+	margin: 0;
+	display: block;
+	position: absolute;
+	top: 37px;
+	right: 156px;
+	z-index: 1;
+}
+.header .search {
+	margin: 0;
+	display: block;
+	position: absolute;
+	top: 37px;
+	right: 156px;
+	z-index: 2;
+}
+.header .search .link {
+	width: 51px;
+	height: 41px;
+	border: 1px solid #eee;
+	display: block;
+	background: #fff;
+}
+.header .search .link:before {
+	width: 20px;
+	height: 20px;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 1;
+	background: url('../img/sprite.png') no-repeat -50px -20px;
+	background-size: 100px auto;
+}
+.header .search.active { z-index: 3; }
+.header .search.active .link { border-color: #2c2c2c; background: #2c2c2c; }
+.header .search.active .link:before { background-position: -70px -20px; }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
    ========================================================================== */
