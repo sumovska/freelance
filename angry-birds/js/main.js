@@ -20,6 +20,7 @@ $(document).ready(function () {
 	/* Popup script */
 	$('.fancybox-popup').fancybox({
 		padding: 0,
+		margin: 80,
 		helpers: {
 			overlay: {
 				speedIn: 250,
@@ -172,23 +173,23 @@ $(document).ready(function () {
 	if ($.browser.msie && $.browser.version < 10) {
 		if ($.browser.version < 9) {
 			$('body').addClass('ie8');
-			$("input[type='text'], input[type='password']").each(function () {
-				if (!$(this).attr('data-placeholder')) {
-					$(this).attr('data-placeholder', $(this).attr('placeholder'))
-				}
-				$(this).val($(this).attr('data-placeholder'));
-				$(this).focus(function () {
-					if ($(this).val() === $(this).attr('data-placeholder')) {
-						$(this).val('');
-					}
-				});
-				$(this).blur(function () {
-					if ($(this).val() === '') {
-						$(this).val($(this).attr('data-placeholder'));
-					}
-				});
-			});
 		}
+		$("input[type='text'], input[type='password']").each(function () {
+			if (!$(this).attr('data-placeholder')) {
+				$(this).attr('data-placeholder', $(this).attr('placeholder'))
+			}
+			$(this).val($(this).attr('data-placeholder'));
+			$(this).focus(function () {
+				if ($(this).val() === $(this).attr('data-placeholder')) {
+					$(this).val('');
+				}
+			});
+			$(this).blur(function () {
+				if ($(this).val() === '') {
+					$(this).val($(this).attr('data-placeholder'));
+				}
+			});
+		});
 		if (window.PIE) {
 			$('.prizes .item .user, .prizes .item .user .photo').each(function () {
 				PIE.attach(this);

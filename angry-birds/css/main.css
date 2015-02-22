@@ -31,6 +31,7 @@
    _HTML
    ========================================================================== */
 * {
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 html {
@@ -41,6 +42,7 @@ html {
 }
 body {
 	width: 100%;
+	min-width: 980px;
 	min-height: 100%;
 	margin: 0 auto;
 	padding-bottom: 92px;
@@ -725,20 +727,28 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	background-color: #2d6c3a;
 }
 .popup-publish {
-	width: 630px;
+	max-width: 630px;
 	padding: 30px 20px;
 }
 .popup-publish .form {
-	width: 470px;
+	width: 100%;
+	max-width: 470px;
 }
 .popup-publish .line {
 	text-align: center;
+}
+.popup-publish .line input[type="text"] {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	display: block;
 }
 .popup-publish .submit {
 	display: none;
 }
 .file-uploader .holder {
-	width: 400px;
+	width: 100%;
+	max-width: 400px;
 	min-height: 200px;
 	padding: 7px 10px 10px;
 	border-top: 3px solid #4d87a4;
@@ -797,16 +807,16 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .file-uploader progress:after { content: '%'; }
 .file-uploader .fail { background: #c00; padding: 2px; color: #fff; }
 .file-uploader .hidden { display: none !important; }
-.file-uploader .jq-file { width: 400px; margin: 0 auto; display: block; }
+.file-uploader .jq-file { width: 100%; max-width: 400px; margin: 0 auto; display: block; }
 .popup-closer {
 	padding: 20px 20px 16px;
 }
 .popup-closer .pic {
-	width: 960px;
 	display: block;
 }
 .popup-closer .pic img {
-	width: 960px;
+	width: 100%;
+	max-width: 960px;
 	display: block;
 }
 .popup-closer .text {
@@ -946,4 +956,8 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	img { max-width: 100% !important; }
 	p, h2, h2 { orphans: 3; widows: 3; }
 	h2, h2 { page-break-after: avoid; }
+}
+@media (max-width: 1200px) {
+	.index .bird { left: -200px; }
+	.index .bird-2 { left: auto; right: -200px; }
 }
