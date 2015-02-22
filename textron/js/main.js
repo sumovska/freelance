@@ -25,4 +25,38 @@ $(document).ready(function () {
 			controls: false
 		});
 	});
+
+	/* Filter */
+	$('.filter').each(function () {
+		$('.slider', this).each(function () {
+			var _self = $(this);
+			var item = $('.item', this).noUiSlider({
+				start: [ 3000, 190000 ],
+				step: 100,
+				behaviour: 'drag',
+				connect: true,
+				range: {
+					'min': 3000,
+					'max': 315000
+				},
+				serialization: {
+					lower: [
+						$.Link({
+							target: $(".from var", _self)
+						})
+					],
+					upper: [
+						$.Link({
+							target: $(".to var", _self)
+						})
+					],
+					format: {
+						// Set formatting
+						thousand: ' ',
+						decimals: 0
+					}
+				}
+			});
+		});
+	});
 });

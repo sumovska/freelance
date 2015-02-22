@@ -95,6 +95,24 @@ h2, .h2 {
 	line-height: 25px;
 	letter-spacing: .049em;
 }
+.h2-white {
+	margin-bottom: 14px;
+	padding: 11px 10px 7px 21px;
+	background: #fff;
+	border: 1px solid #eee;
+	position: relative;
+}
+.h2-white:before {
+	width: 10px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: -1px;
+	left: 0;
+	bottom: -1px;
+	background: #d0154f;
+}
 h3, .h3 {
 	margin-bottom: 14px;
 	font-size: 26px;
@@ -207,10 +225,10 @@ input[type="search"] { -webkit-appearance: none }
 /*noinspection CssInvalidPseudoSelector*/
 :-ms-input-placeholder { color: #000; }
 textarea { width: 400px; height: 126px; overflow: auto; resize: none; }
-button, input[type="button"], input[type="submit"], input[type="reset"] { min-width: 100px; overflow: visible; padding: 5px 15px; border-radius: 0; outline: none; border: none; color: #fff; font: 12px Roboto, Helvetica, Arial, sans-serif; cursor: pointer; transition: background-color .1s linear; background: #231f20; }
+button, input[type="button"], input[type="submit"], input[type="reset"] { min-width: 100px; overflow: visible; padding: 11px 30px; border-radius: 0; outline: none; border: none; color: #fff; font: 13px Roboto, Helvetica, Arial, sans-serif; cursor: pointer; text-transform: uppercase; transition: background-color .1s linear; background: #d0154f; }
 button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner { padding: 0; border: 0 }
 button:after { content: '' }
-button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover, button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):focus, input[type="reset"]:focus { background-color: #dd3979; }
+button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover, button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):focus, input[type="reset"]:focus { background-color: #b61245; }
 button[disabled], input[type="button"][disabled], input[type="submit"][disabled] { background: #f5f5f5; box-shadow: none; color: #888; }
 .checkbox, .radio { font: 12px/17px Roboto, Helvetica, Arial, sans-serif; cursor: pointer; }
 .jq-checkbox { width: 20px; height: 20px; border: 1px solid #eee; border-radius: 0; box-shadow: none; background: #f7f8fa; overflow: hidden; text-align: left; }
@@ -236,7 +254,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	width: 1170px;
 	margin: 0 auto;
 }
-.wrapper:after, .content:after, .container:after, .aside:after {
+.wrapper:after, .content:after, .container:after, .aside:after, .section:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
@@ -252,6 +270,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .content {
 	width: 870px;
 	float: right;
+}
+.section {
+	margin-bottom: 35px;
 }
 /* ==========================================================================
    _FOOTER
@@ -1188,7 +1209,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .hgroup {
 	background: #222;
 }
-.container .hgroup .wrapper {
+.hgroup .wrapper {
 	padding: 10px 0 32px;
 }
 .navigation {
@@ -1228,10 +1249,52 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #fff;
 }
 /* ==========================================================================
+   _SLIDER
+   ========================================================================== */
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target, .noUi-target * { -webkit-touch-callout: none; -webkit-user-select: none; -ms-touch-action: none; -ms-user-select: none; -moz-user-select: none; -moz-box-sizing: border-box; box-sizing: border-box; }
+.noUi-base { width: 100%; height: 100%; position: relative; }
+.noUi-origin { position: absolute; right: 0; top: 0; left: 0; bottom: 0; }
+.noUi-handle { position: relative; z-index: 1; }
+.noUi-stacking .noUi-handle { z-index: 10; }
+.noUi-state-tap .noUi-origin { -webkit-transition: left 0.3s, top 0.3s; transition: left 0.3s, top 0.3s; }
+.noUi-state-drag * { cursor: inherit !important; }
+/* Slider size and handle placement; */
+.noUi-horizontal { height: 18px; }
+.noUi-horizontal .noUi-handle { width: 34px; height: 28px; left: -17px; top: -6px; }
+.noUi-horizontal.noUi-extended { padding: 0 15px; }
+.noUi-horizontal.noUi-extended .noUi-origin { right: -15px; }
+.noUi-vertical { width: 18px; }
+.noUi-vertical .noUi-handle { width: 28px; height: 34px; left: -6px; top: -17px; }
+.noUi-vertical.noUi-extended { padding: 15px 0; }
+.noUi-vertical.noUi-extended .noUi-origin { bottom: -15px; }
+/* Styling; */
+.noUi-background { background: #fafafa; box-shadow: inset 0 1px 1px #f0f0f0; }
+.noUi-connect { background: #3fb8af; box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45); -webkit-transition: background 450ms; transition: background 450ms; }
+.noUi-origin { border-radius: 2px; }
+.noUi-target { border-radius: 4px; border: 1px solid #d3d3d3; box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbb; }
+.noUi-target.noUi-connect { box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #bbb; }
+/* Handles and cursors; */
+.noUi-dragable { cursor: w-resize; }
+.noUi-vertical .noUi-dragable { cursor: n-resize; }
+.noUi-handle { border: 1px solid #d9d9d9; border-radius: 3px; background: #fff; cursor: default; box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb; }
+.noUi-active { box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ddd, 0 3px 6px -3px #bbb; }
+/* Handle stripes; */
+.noUi-handle:before, .noUi-handle:after { content: ""; display: block; position: absolute; height: 14px; width: 1px; background: #e8e7e6; left: 14px; top: 6px; }
+.noUi-handle:after { left: 17px; }
+.noUi-vertical .noUi-handle:before, .noUi-vertical .noUi-handle:after { width: 14px; height: 1px; left: 6px; top: 14px; }
+.noUi-vertical .noUi-handle:after { top: 17px; }
+/* Disabled state; */
+[disabled].noUi-connect, [disabled] .noUi-connect { background: #b8b8b8; }
+[disabled] .noUi-handle { cursor: not-allowed; }
+/* ==========================================================================
    _FILTER
    ========================================================================== */
 .filter {
-	padding: 17px 22px;
+	padding: 17px 10px 23px;
 	border: 1px solid #eee;
 }
 .filter .h3 {
@@ -1249,6 +1312,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #fff;
 	background: #222;
 }
+.filter .form {
+	padding: 0 12px;
+}
 .filter .form label {
 	padding-left: 15px;
 	display: block;
@@ -1257,12 +1323,17 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .filter .entry {
 	margin-bottom: 24px;
 }
-.filter .form .checkbox-color {
+.filter .entry-color {
 	margin-left: -12px;
+}
+.filter .entry-color .h4 {
+	margin-left: 0;
+}
+.filter .entry-color .checkbox-color {
 	padding-left: 74px;
 	position: relative;
 }
-.filter .form .checkbox-color .color {
+.filter .entry-color .checkbox-color .sample {
 	width: 60px;
 	height: 18px;
 	display: block;
@@ -1272,6 +1343,86 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .filter .entry-color .line {
 	margin-bottom: 9px;
+}
+.filter .slider {
+	padding-top: 34px;
+	padding-left: 5px;
+	margin-bottom: 36px;
+	position: relative;
+}
+.filter .slider > p {
+	margin: 0;
+	display: block;
+	font-size: 15px;
+	font-weight: 500;
+	cursor: default;
+	position: absolute;
+	top: 1px;
+}
+.filter .slider > p.from { left: 16px; }
+.filter .slider > p.to { right: 50px; }
+.filter .slider > p var {
+	padding: 0 6px;
+	font-style: normal;
+}
+.filter .slider .item {
+	height: 5px;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	background: #e5e5e5;
+}
+.filter .slider .noUi-base {
+	background: #e5e5e5;
+}
+.filter .slider .noUi-origin {
+	border-radius: 0;
+	box-shadow: none;
+	background: none;
+}
+.filter .slider .noUi-connect {
+	background: #d0154f;
+}
+.filter .slider .noUi-handle {
+	width: 12px;
+	height: 12px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: none;
+	top: -4px;
+	left: -4px;
+	background: #d0154f;
+}
+.filter .slider .noUi-handle:before, .filter .slider .noUi-handle:after {
+	display: none;
+}
+.filter .slider .noUi-background {
+	background: #e5e5e5;
+}
+.filter .submit {
+	margin-top: 34px;
+	text-align: center;
+}
+/* ==========================================================================
+   _INFORMATION
+   ========================================================================== */
+.information {
+	color: #fff;
+	background: #d0154f;
+	letter-spacing: .08em;
+	font-weight: 300;
+}
+.information .wrapper {
+	padding: 52px 114px 55px;
+}
+.information .h2 {
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	letter-spacing: .065em;
+}
+.information p:last-of-type {
+	margin-bottom: 0;
 }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
