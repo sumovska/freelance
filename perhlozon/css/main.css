@@ -27,6 +27,13 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Fedra Serif A Pro';
+  	src: url('../fonts/FedraSerifAPro-Bold.eot');
+ 	src: url('../fonts/FedraSerifAPro-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/FedraSerifAPro-Bold.woff') format('woff'), url('../fonts/FedraSerifAPro-Bold.ttf')  format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 /* ==========================================================================
    _LAYOUT
    ========================================================================== */
@@ -133,7 +140,7 @@ fieldset {
 	margin: 0 auto;
 	padding: 20px;
 }
-.wrapper:after {
+.wrapper:after, .content:after, .block:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
@@ -161,9 +168,14 @@ fieldset {
 }
 .content .wrapper {
 	padding-top: 60px;
+	padding-bottom: 40px;
 }
-.content .inside {
-	padding-bottom: 60px;
+.block {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.block .wrapper {
+	padding-bottom: 80px;
 	margin-bottom: -14px;
 	background-repeat: no-repeat;
 	background-position: 100% 100%;
@@ -339,7 +351,7 @@ fieldset {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: url(../img/logo-small.jpg) 0 0 no-repeat;
+	background: url(../img/temp/crest-3.jpg) 0 0 no-repeat;
 }
 .footer .adr {
 	margin-bottom: 0;
@@ -371,6 +383,7 @@ fieldset {
 	background: #fff;
 	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 79%,rgba(215,239,245,1) 100%);
 	box-shadow: 0 6px 6px 1px #11da79;
+	border-bottom: 1px solid #fff;
 	z-index: 100;
 }
 .nav .wrapper {
@@ -389,6 +402,8 @@ fieldset {
 	text-align: center;
 }
 .nav .list li a {
+	margin-top: -1px;
+	margin-bottom: -1px;
 	padding: 20px 0 13px;
 	display: block;
 	color: #000;
@@ -396,6 +411,10 @@ fieldset {
 	transition: color .2s ease, background .2s ease;
 }
 .nav .list li a:hover {
+	color: #fff;
+	background: #36e48f;
+}
+.nav .list li.active a {
 	color: #fff;
 	background: #36e48f;
 }
@@ -1039,44 +1058,53 @@ fieldset {
    _ARTICLES
    ========================================================================== */
 .articles {
-	margin-bottom: -12px;
+	margin-bottom: -32px;
 	padding-bottom: 118px;
 	padding-right: 384px;
-	background-position: 98% 98%;
+	background-position: 98% 100%;
+	background-repeat: no-repeat;
 }
 .articles .h2 {
 	margin-bottom: 27px;
 }
-.articles .list {
+.number-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.articles .list li {
+.number-list li {
+	min-height: 56px;
 	margin-bottom: 24px;
 	padding-left: 80px;
 	position: relative;
 }
-.articles .list li a {
+.number-list li a {
+	vertical-align: middle;
 	color: #404142;
 	text-decoration: none;
 }
-.articles .list li a:hover {
+.number-list li a:hover {
 	color: #01a551;
 	text-decoration: underline;
 }
-.articles .list .number {
+.number-list .number {
 	width: 54px;
 	height: 54px;
 	display: block;
 	color: #f3e8c5;
 	text-align: center;
-	font: bold 40px/46px 'Fedra Sans Pro', Arial, sans-serif;
+	font: bold 40px/46px 'Fedra Serif A Pro', Arial, sans-serif;
 	position: absolute;
 	left: 0;
 	top: 2px;
 	border-radius: 50%;
 	border: 1px solid #e2bf32;
+}
+.articles .number-list li {
+	display: table;
+}
+.articles .number-list li a {
+	display: table-cell;
 }
 /* ==========================================================================
    _REVIEWS
@@ -1135,16 +1163,15 @@ fieldset {
    _CONTACTS
    ========================================================================== */
 .contacts {
-	padding-right: 384px;
-	padding-bottom: 60px;
-	margin-bottom: -14px;
-	background-position: 103% 100%;
-}
-.contacts .info {
 	padding-left: 80px;
 	position: relative;
+	padding-right: 384px;
+	padding-bottom: 60px;
+	margin-bottom: -34px;
+	background-position: 103% 100%;
+	background-repeat: no-repeat;
 }
-.contacts .info:before {
+.contacts:before {
 	width: 37px;
 	height: 37px;
 	display: block;
@@ -1165,12 +1192,17 @@ fieldset {
 	color: #404142;
 	cursor: default;
 }
-
+/* ==========================================================================
+   _EXPLORE
+   ========================================================================== */
+.block-explore {
+	background-position: 98.7% 99.4%;
+}
 .triggers {
 	margin: 0 -2px 41px;
 	padding: 0;
 	list-style: none;
-	font: bold 24px/32px 'Fedra Sans Pro', Arial, sans-serif;
+	font: bold 24px/32px 'Fedra Serif A Pro', Arial, sans-serif;
 	position: relative;
 }
 .triggers:before {
@@ -1195,30 +1227,192 @@ fieldset {
 	padding: 0 4px;
 	float: left;
 	text-align: center;
+	position: relative;
+	z-index: 30;
 }
 .triggers li a {
 	padding: 22px 23px 15px;
 	display: block;
 	text-decoration: none;
 	color: #898989;
-	letter-spacing: .04em;
-	background: #f6f8f8;
+	background: transparent;
 	border-radius: 4px;
-	border: 1px solid transparent;
+	border: 1px solid #b6b6b6;
 }
 .triggers li.active a {
-	border-color: #b6b6b6;
-}
-.triggers li a:hover {
 	color: #01a551;
-	z-index: 20;
+	background-color: #f6f8f8;
+	border-color: transparent;
 }
 .tab {
-	padding-right: 410px;
+	min-height: 268px;
+	padding-right: 360px;
 	padding-left: 20px;
 }
 .tab-hidden {
 	display: none;
+}
+.block-explore .number-list li {
+	display: table;
+}
+.block-explore .number-list li a {
+	display: table-cell;
+	vertical-align: middle;
+}
+/* ==========================================================================
+   _NEWS
+   ========================================================================== */
+.block-news {
+	background-size: cover;
+}
+.block-news .wrapper {
+	padding-right: 384px;
+}
+.block-news .number-list > li {
+	min-height: 60px;
+	margin-bottom: 18px;
+}
+.block-news .number-list > li > ul {
+	margin: 24px 0 0 0;
+	padding-left: 20px;
+}
+.block-news .number-list > li > ul li {
+	margin-bottom: 16px;
+	padding-left: 0;
+}
+.block-news .date {
+	width: 56px;
+	color: #e1be2e;
+	font-size: 12px;
+	line-height: 14px;
+	position: absolute;
+	left: 1px;
+	top: -1px;
+}
+.block-news .date .day {
+	display: block;
+	font: bold 30px/32px 'Fedra Serif A Pro', Arial, sans-serif;
+}
+/* ==========================================================================
+   _QUESTIONS
+   ========================================================================== */
+.block-questions .fon {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	z-index: 20;
+}
+.block-questions .wrapper {
+	padding-bottom: 358px;
+}
+.block-questions .number-list li {
+	padding-top: 18px;
+	padding-right: 20px;
+	padding-bottom: 7px;
+}
+.block-questions .h {
+	margin-bottom: 34px;
+	display: block;
+	color: #404142;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 24px;
+}
+.block-questions .answer {
+	margin-bottom: 0;
+	padding: 16px 30px 20px 18px;
+	background: #fdfbf1;
+	box-shadow: 0 0 48px rgba(58,56,48,.2);
+	position: relative;
+}
+.block-questions .answer:before {
+	width: 0;
+	height: 0;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: -15px;
+	left: 20px;
+	border-style: solid;
+	border-width: 16px 0 0 28px;
+	border-color: transparent transparent transparent #fdfbf1;
+}
+/* ==========================================================================
+   _RECOMMENDATION
+   ========================================================================== */
+.recommendation .wrapper {
+	padding-bottom: 10px;
+}
+.recommendation .info {
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 23px;
+	text-align: center;
+	color: #01a551;
+}
+.recommendation .title {
+	margin-bottom: 49px;
+	font-size: 19px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.recommendation .text {
+	margin-bottom: 64px;
+}
+.video-block {
+	position: relative;
+}
+.video-block:before {
+	width: 36px;
+	height: 36px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 20px;
+	top: -4px;
+	background: url(../img/sprite.png) 0 -60px no-repeat;
+}
+.video-block .item {
+	margin-bottom: 88px;
+	padding-left: 102px;
+	font-size: 19px;
+	line-height: 27px;
+	position: relative;
+}
+.video-block .item:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.video-block .col {
+	width: 50%;
+	float: left;
+}
+.video-block .in {
+	width: 424px;
+	height: 253px;
+	display: block;
+	position: relative;
+	box-shadow: 0 3px 35px rgba(2,165,81,.91);
+}
+.video-block .play {
+	width: 120px;
+	height: 120px;
+	margin: -60px 0 0 -60px;
+	display: block;
+	border-radius: 50%;
+	border: 6px solid #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: url(../img/temp/play.png) 60% 50% no-repeat;
+}
+.video-block .text {
+	padding: 0 17px;
+	margin-bottom: 0;
 }
 /* ==========================================================================
    _PRINT STYLES

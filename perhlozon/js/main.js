@@ -4,7 +4,7 @@
 /* On document ready */
 $(document).ready(function () {
 
-	$('.explore').each(function () {
+	$('.block-explore').each(function () {
 		$('.triggers li a', this).click(function () {
 			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
 			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
