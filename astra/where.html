@@ -54,7 +54,7 @@
 				<li class="facebook"><a href="#"></a></li>
 			</ul>
 		</div>
-		<a class="toggle js-popup" href="#popup-menu"></a>
+		<a class="toggle" href="#menu"></a>
 		<a class="cart-small" href="#"></a>
 	</header>
 
@@ -192,7 +192,51 @@
 						</ul>
 					</div>
 					<div id="map" class="tab tab-map">
-						<div class="map"><img src="img/temp/map.jpg" alt=""></div>
+						<div id="map" class="map"></div>
+						<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false&language=ru-RU"></script>
+
+						<script type="text/javascript">
+							google.maps.event.addDomListener(window, 'load', init);
+							function init() {
+								var pos = new google.maps.LatLng(55.7441733, 37.6729741);
+								var mapOptions = {
+									zoom: 15,
+									panControl: false,
+									mapTypeControl: false,
+									scaleControl: false,
+									streetViewControl: false,
+									overviewMapControl: false,
+									scrollwheel: false,
+									navigationControl: false,
+									zoomControlOptions: {
+										style: google.maps.ZoomControlStyle.SMALL
+									},
+									center: pos,
+									styles: [
+										{featureType: 'road', elementType: 'geometry', stylers: [
+											{lightness: 50},
+											{visibility: 'simplified'}
+										]},
+										{featureType: 'road', elementType: 'labels', stylers: [
+											{visibility: 'off'}
+										]},
+										{
+											"featureType": "poi.business", "stylers": [
+											{"visibility": "off"}
+										]}
+									]
+								};
+								var mapElement = document.getElementById('map');
+								var map = new google.maps.Map(mapElement, mapOptions);
+								var marker_image = 'img/pin.png';
+								var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(75, 58));
+								marker = new google.maps.Marker({
+									position: pos,
+									map: map,
+									icon: pinIcon
+								});
+							}
+						</script>
 					</div>
 				</div>
 			</div>
@@ -205,64 +249,73 @@
 			<li class="pinterest"><a href="#"></a></li>
 			<li class="facebook"><a href="#"></a></li>
 		</ul>
-		<p class="note">Хотите быть в курсе наших новостей? <a class="parallel" href="#">Подпишитесь <span>на рассылку</span></a> <span class="mask">&nbsp;на рассылку.</span></p>
+		<p class="note">Хотите быть в курсе наших новостей? <a class="parallel fancybox-popup" href="#letters">Подпишитесь <span>на рассылку</span></a> <span class="mask">&nbsp;на рассылку.</span></p>
 		<p class="author">Site by <strong>DC</strong></p>
 		<p class="copyright">&copy; 2007-2014 ASTRO-FORM. Все права защищены</p>
 		<p class="logo"><img src="img/logowhite.png" alt></p>
 	</footer>
 
-	<div class="popup popup-menu">
-		<form action="#">
-			<ul class="products">
-				<li>
-					<a href="#">Продукция</a>
-					<ul>
-						<li><a href="baths.html">Ванны</a></li>
-						<li><a href="furniture.html">Мебель для ванных комнат</a></li>
-						<li><a href="collections.html">Коллекции</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Где купить</a></li>
-			</ul>
-			<ul class="sections">
-				<li><a href="#">Спецпредложения</a></li>
-				<li><a href="#">О компании</a></li>
-				<li><a href="#">Технологии</a></li>
-				<li><a href="#">Новости</a></li>
-				<li><a href="#">Сервис</a></li>
-				<li><a href="#">Сотрудничество</a></li>
-			</ul>
-			<ul class="contacts">
-				<li><a href="faq.html">Задать вопрос</a></li>
-				<li><a href="jobs.html">Вакансии</a></li>
-				<li><a href="contacts.html">Контакты</a></li>
-			</ul>
-			<ul class="social social-white">
-				<li class="twitter"><a href="#"></a></li>
-				<li class="pinterest"><a href="#"></a></li>
-				<li class="facebook"><a href="#"></a></li>
-			</ul>
-		</form>
-	</div>
-
-	<div class="popup popup-gallery cover">
-		<a href="#" class="button-close"></a>
-		<span class="logo"><img src="img/logo.png" alt=""></span>
-		<div class="features">
-			<ul class="carousel">
-				<li>
-					<div class="in">
-						<img src="img/slider/1.jpg" alt="">
-						<span class="name">Ванна «Роксбург»</span>
+	<div class="popups">
+		<div id="letters" class="popup popup-letters">
+			<form class="form" action="#">
+				<img class="logo" src="img/logo.png" alt="">
+				<div class="units">
+					<div class="unit">
+						<div class="photo" style="background-image:url('img/temp/popup-1.jpg')"></div>
+						<div class="inform">
+							<h3 class="h3">Подписаться <br>на рассылку новостей</h3>
+							<div class="hr hr-black">
+								<div class="bg"></div>
+							</div>
+							<div class="blockquote">
+								<p class="quote">С начала 2000 года компания «Астра-Форм» успешно работает в сфере производства сантехники, предлагая рынку широкий ассортимент мебели для ванных комнат.</p>
+							</div>
+							<p>В современном, быстро меняющемся мире назрела необходимость в материале, способном удовлетворить самые широкие запросы потребителя - от классики до авангарда, в широкой цветовой гамме, материале, который нашел применение в самых широких отраслях производства: от строительства до медицины. В современном, быстро меняющемся мире назрела необходимость в материале, способном удовлетворить самые широкие запросы потребителя - от классики до авангарда, в широкой цветовой гамме, материале,который нашел применение в самых широких отраслях производства: от строительства до медицины. 
+							</p>
+							<div class="line line-cols">
+								<div class="col"><input type="text" placeholder="Имя"></div>
+								<div class="col"><input type="text" placeholder="E-mail"></div>
+							</div>
+							<div class="submit">
+								<button>Подписаться</button>
+							</div>
+						</div>	
 					</div>
-				</li>
-				<li>
-					<div class="in">
-						<img src="img/slider/1.jpg" alt="">
-						<span class="name">Ванна «Роксбург»</span>
-					</div>
-				</li>
-			</ul>
+				</div>
+			</form>
+		</div>
+		<div class="popup popup-menu" id="menu">
+			<form action="#">
+				<ul class="products">
+					<li>
+						<a href="#">Продукция</a>
+						<ul>
+							<li><a href="baths.html">Ванны</a></li>
+							<li><a href="furniture.html">Мебель для ванных комнат</a></li>
+							<li><a href="collections.html">Коллекции</a></li>
+						</ul>
+					</li>
+					<li><a href="where.html">Где купить</a></li>
+				</ul>
+				<ul class="sections">
+					<li><a href="#">Спецпредложения</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Технологии</a></li>
+					<li><a href="#">Новости</a></li>
+					<li><a href="#">Сервис</a></li>
+					<li><a href="#">Сотрудничество</a></li>
+				</ul>
+				<ul class="contacts">
+					<li><a href="faq.html">Задать вопрос</a></li>
+					<li><a href="jobs.html">Вакансии</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+				</ul>
+				<ul class="social social-white">
+					<li class="twitter"><a href="#"></a></li>
+					<li class="pinterest"><a href="#"></a></li>
+					<li class="facebook"><a href="#"></a></li>
+				</ul>
+			</form>
 		</div>
 	</div>
 
