@@ -158,4 +158,11 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.popup-instruction').each(function() {
+		$('.technology .stroke .name', this).click(function () {
+			$(this).siblings('.functions').fadeToggle(400).closest('.stroke').toggleClass('stroke-open').siblings('.stroke-open').removeClass('stroke-open');
+			return false;
+		});
+	});
+
 });

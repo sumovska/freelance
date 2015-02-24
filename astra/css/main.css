@@ -3095,6 +3095,7 @@ textarea {
 }
 .popup {
 	max-width: 1260px;
+	width: 1246px;
 	padding: 89px 108px;
 	background: #fff;
 }
@@ -3134,10 +3135,9 @@ textarea {
 	font-style: italic;
 	letter-spacing: .07em;
 }
-.popup .inform {
-	padding-top: 0;
-	padding-right: 0;
-	padding-bottom: 0;
+.popup .block-item {
+	margin: 0;
+	padding: 0;
 }
 .popup .hr {
 	margin-bottom: 20px;
@@ -3298,6 +3298,9 @@ textarea {
 .popup-instruction {
 	position: relative;
 }
+.popup-instruction .form {
+	margin-bottom: 0;
+}
 .popup-instruction .like {
 	margin-right: 2px;
 	font: bold italic 13px 'Minion Pro', Helvetica, Arial, sans-serif;
@@ -3318,11 +3321,66 @@ textarea {
 	left: 0;
 	right: 0;
 }
-.popup-technology .small {
+.popup-instruction .small {
 	display: block;
 	font: 13px 'Minion Pro', Helvetica, Arial, sans-serif;
 	font-style: italic;
 	text-align: center;
+}
+.popup-instruction .technology > .stroke > .name {
+	padding-right: 20px;
+	display: block;
+	color: #162335;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+}
+.popup-instruction .technology > .stroke > .name .switch {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #162335;
+	border-radius: 50%;
+}
+.popup-instruction .technology > .stroke > .name .switch:before, .popup-instruction .technology > .stroke > .name .switch:after {
+	width: 2px;
+	height: 6px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 7px;
+	background: #fff;
+}
+.popup-instruction .technology > .stroke > .name .switch:before {
+	left: 10px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.popup-instruction .technology > .stroke > .name .switch:after {
+	left: 7px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.popup-instruction .technology > .stroke-open > .name .switch:before {
+	top: 6px;
+	left: 7px;
+}
+.popup-instruction .technology > .stroke-open > .name .switch:after {
+	top: 6px;
+	left: 10px;
+}
+.popup-instruction .functions {
+	display: none;
 }
 /* ==========================================================================
    _RESPONSIVE
@@ -3340,6 +3398,7 @@ textarea {
 	.block-cart { padding: 0; }
 	.block-cart .top-line { padding: 0; }
 	.goods .item .cell-img { width: 170px; }
+	.popup { width: 984px; }
 }
 @media (max-width: 1023px) {
 	.wrapper { padding-left: 20px; padding-right: 20px; padding-bottom: 10px; }
@@ -3407,6 +3466,7 @@ textarea {
 	.goods .note .col-2 { width: 318px; }
 	.goods .line .col { width: 25%; padding-left: 14px; padding-right: 16px; }
 	.goods .line .col input[type="text"] { width: 100%; }
+	.popup { width: 960px; }
 }
 @media (max-width: 999px) {
 	html { font-size: 26px; line-height: 31px; }
@@ -3637,7 +3697,7 @@ textarea {
 	.goods .line .col { width: 100%; padding-left: 27px; padding-right: 24px; margin-bottom: 39px; }
 	.goods .submit button { width: 315px; height: 78px; padding-top: 18px; font-size: 22px; letter-spacing: .06em; }
 	.goods form { padding-bottom: 168px; position: relative; }
-	.popup { padding: 80px 50px; }
+	.popup { padding: 80px 50px; width: 729px; }
 	.popup-letters .unit { padding: 0; }
 	.popup-letters .unit .photo { display: none; }
 	.popup-letters .unit .inform { padding: 0; }
@@ -3668,11 +3728,11 @@ textarea {
 	.contact-line .item .h { margin-bottom: 20px; }
 	.contact-line .item .col { margin-bottom: 50px; }
 	.jobs .contact-line .item .cols { padding-bottom: 40px; }
+	.popup { padding: 80px 40px; width: 460px; }
 }
 @media (max-width: 639px) {
 	.index .carousel .text { padding: 0 20px; }
 	.jobs .unit .inform { padding-left: 20px; padding-right: 20px; }
-	.popup { padding: 80px 40px; }
 }
 @media (max-width: 575px) {
 	html { font-size: 14px; line-height: 21px; }
