@@ -10,12 +10,8 @@ $(document).ready(function () {
 	FastClick.attach(document.body);
 
 	/* Scroll top button */
-	$('.scroll-top').append('<span></span>').click(function () {
-		if (Modernizr.touch) {
-			$('html, body').animate({scrollTop: 0}, 0);
-		} else {
-			$('html, body').animate({scrollTop: 0}, 300);
-		}
+	$('.filter .scroll-top').click(function() {
+		$(this).toggleClass('scroll-top-open').siblings('.inside').fadeToggle(200).closest('.filter').toggleClass('filter-open');
 		return false;
 	});
 
@@ -214,6 +210,16 @@ $(document).ready(function () {
 		$('a', this).click(function () {
 			if ($(this).closest('li').is('.active')) {
 				_self.toggleClass('submenu-small-open');
+				return false;
+			}
+		});
+	});
+
+	$('.steps-small').each(function () {
+		var _self = $(this);
+		$('a', this).click(function () {
+			if ($(this).closest('li').is('.active')) {
+				_self.toggleClass('steps-small-open');
 				return false;
 			}
 		});
