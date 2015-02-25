@@ -44,21 +44,22 @@ $(document).ready(function () {
 	/* Index carousel */
 	$('.index').each(function () {
 		$('.carousel', this).bxSlider({
-			infinteLoop: false,
+			infiniteLoop: false,
 			responsive: true,
 			controls: false,
 			preloadImages: 'all',
 			auto: true,
 			autoHover: true,
-			easing: 'ease',
+			easing: 'ease'
 		});
 	});
 
 	/* Item */
 	$('.last-reviews').each(function () {
-		$('.carousel').bxSlider({
+		$('.carousel', this).bxSlider({
 			infiniteLoop: false,
 			hideControlOnEnd: true,
+			adaptiveHeight: true,
 			responsive: true,
 			pager: false,
 			preloadImages: 'all',
@@ -66,6 +67,13 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Sale */
+	$('.sale').each(function () {
+		$('.carousel', this).bxSlider({
+			pager: false,
+			easing: 'ease'
+		});
+	});
 
 	/* Item */
 	$('.catalog-item').each(function () {

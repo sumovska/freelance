@@ -1144,6 +1144,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding-top: 23px;
 }
 .sale .col-2 {
+	position: relative;
+}
+.sale .carousel {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.sale .carousel li {
 	padding-left: 122px;
 	padding-right: 100px;
 	position: relative;
@@ -1169,6 +1177,13 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	line-height: 24px;
 	letter-spacing: .035em;
 }
+.sale .h a {
+	color: #fff;
+	text-decoration: none;
+}
+.sale .h a:hover {
+	text-decoration: underline;
+}
 .sale .date {
 	margin-bottom: 7px;
 	color: #c3c3c3;
@@ -1186,18 +1201,29 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	left: 2px;
 	top: 0;
 }
-.sale .more {
+.sale .bx-controls {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+}
+.sale .bx-controls .bx-prev {
+	display: none !important;
+}
+.sale .bx-controls .bx-next {
 	width: 42px;
 	height: 42px;
 	margin-top: -20px;
 	display: block;
+	overflow: hidden;
+	text-indent: -1000px;
 	position: absolute;
 	right: 0;
-	top: 50%;
+	top: 49px;
 	background: #fff;
 	border-radius: 50%;
 }
-.sale .more:before, .sale .more:after {
+.sale .bx-controls .bx-next:before, .sale .bx-controls .bx-next:after {
 	width: 1px;
 	height: 10px;
 	display: block;
@@ -1208,21 +1234,21 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	left: 20px;
 	background: #939498;
 }
-.sale .more:before {
+.sale .bx-controls .bx-next:before {
 	top: 13px;
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
-.sale .more:after {
+.sale .bx-controls .bx-next:after {
 	top: 19px;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
-.sale .more:hover:before, .sale .more:hover:after {
+.sale .bx-controls .bx-next:hover:before, .sale .bx-controls .bx-next:hover:after {
 	background: #d0154f;
 }
 /* ==========================================================================
