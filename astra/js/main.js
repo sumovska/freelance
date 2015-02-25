@@ -101,10 +101,15 @@ $(document).ready(function () {
 
 	$(".similar li a").fancybox({
 		autoSize: false,
+		wrapCSS: 'fancybox-gallery',
 		fitToView: false,
 		padding: 0,
 		helpers: {
-			media: {}
+			overlay: {
+				css: {
+					'background': 'rgba(22, 35, 53, 0.5)'
+				}
+			}
 		}
 	});
 
@@ -160,7 +165,7 @@ $(document).ready(function () {
 
 	$('.popup-instruction').each(function() {
 		$('.technology .stroke .name', this).click(function () {
-			$(this).siblings('.functions').fadeToggle(400).closest('.stroke').toggleClass('stroke-open').siblings('.stroke-open').removeClass('stroke-open');
+			$(this).siblings('.inside').fadeToggle(400).closest('.stroke').toggleClass('stroke-open').siblings('.stroke-open').removeClass('stroke-open');
 			return false;
 		});
 	});
