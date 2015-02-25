@@ -3472,6 +3472,7 @@ line-height: 15px; }
 .block-order .column-2 .line label {
 	margin-bottom: 12px;
 	padding-left: 30px;
+	display: block;
 }
 .block-order .column-2 .line .jq-radio {
 	float: left;
@@ -3768,6 +3769,23 @@ line-height: 15px; }
 	padding: 0 10px;
 	float: left;
 }
+.form-data .line-adr:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.form-data .line-adr span {
+	display: block;
+}
+.form-data .line-adr span:nth-child(1) {
+	width: 80%;
+	float: left;
+}
+.form-data .line-adr span:nth-child(2) {
+	width: 15%;
+	float: right;
+}
 .form-data .line-search-1 {
 	position: relative;
 }
@@ -3846,7 +3864,7 @@ line-height: 15px; }
 	width: 30px;
 	height: 30px;
 	margin-right: 10px;
-	padding: 1px;
+	padding: 2px;
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
@@ -3866,7 +3884,7 @@ line-height: 15px; }
 	clear: both;
 	position: absolute;
 	top: 8px;
-	left: 13px;
+	left: 12px;
 	background: #515151;
 }
 .form-data .add-good .plus span:before {
@@ -3877,7 +3895,7 @@ line-height: 15px; }
 	width: 10px;
 	height: 2px;
 	top: 12px;
-	left: 9px;
+	left: 8px;
 }
 /* ==========================================================================
    _BLOCK-MANAGE
@@ -4419,7 +4437,7 @@ line-height: 15px; }
 	padding-bottom: 0;
 }
 .popup-edit .form-data .cover {
-	padding-right: 20px;
+	margin-right: 10px;
 }
 .popup-edit .h2 {
 	margin-bottom: 35px;
@@ -4984,7 +5002,7 @@ line-height: 15px; }
 	.block-item .image { width: 100%; }
 	.block-item .image .pic { width: 100%; }
 	.block-item .info .options .colors { width: 100%; }
-	.block-item .info .options .tag { width: 100%; }
+	.block-item .info .options .tag { width: auto; margin: 0 -20px; padding: 0 20px; }
 	.block-item .info .options .tag:before, .block-item .info .options .tag:after { display: none; }
 	.block-item .info .options .tag .in { padding: 17px 0 17px 4px; }
 	.block-item .info .options .tag .in:before { display: none; }
@@ -5001,4 +5019,5 @@ line-height: 15px; }
 	.popup-edit { width: 260px; padding-left: 10px; padding-right: 10px; }
 	.popup-edit .form-data .line-adr span:first-child { width: 85%; }
 	.popup-edit .form-data .line-adr span { width: 15%; }
+	.block-item .info .options .colors span { border-bottom: none; }
 }

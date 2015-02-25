@@ -274,6 +274,10 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.check-all .jq-checkbox').click(function(){
+    	$('.check input:checkbox').not(this).click();
+	});
+
 	/* IE fixes */
 	if ($.browser.msie) {
 		if ($.browser.versionNumber < 9) {
