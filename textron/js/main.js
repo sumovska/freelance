@@ -19,7 +19,6 @@ $(document).ready(function () {
 			}
 		}
 
-		var _header = $(this);
 		$('.cell', this).each(function () {
 			var _self = $(this);
 			$('.link', this).click(function () {
@@ -170,7 +169,7 @@ $(document).ready(function () {
 			map.mapTypes.set('grey', mapType);
 			map.setMapTypeId('grey');
 			var marker_image = 'img/pin.png';
-			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
+			new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
 			marker = new google.maps.Marker({
 				position: pos,
 				map: map
