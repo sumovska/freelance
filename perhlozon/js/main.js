@@ -4,12 +4,28 @@
 /* On document ready */
 $(document).ready(function () {
 
+	/* Tabs */
 	$('.block-explore').each(function () {
 		$('.triggers li a', this).click(function () {
-			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
 			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
-			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			$('.tab-' + $(this).attr("href").replace(/^.*#(.*)/, "$1")).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			return false;
 		});
+	});
+
+	/* Popup script */
+	$('.fancybox-popup').fancybox({
+		padding: 0,
+		margin: 80,
+		helpers: {
+			media: {},
+			overlay: {
+				speedIn: 250,
+				css: {
+					'background': 'rgba(0, 0, 0, 0.8)'
+				}
+			}
+		}
 	});
 
 });

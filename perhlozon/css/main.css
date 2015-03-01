@@ -1089,7 +1089,7 @@ fieldset {
 	display: block;
 	color: #f3e8c5;
 	text-align: center;
-	font: bold 40px/52px 'Fedra Serif A Pro', Arial, sans-serif;
+	font: bold 40px/48px 'Fedra Serif A Pro', Arial, sans-serif;
 	position: absolute;
 	left: 2px;
 	top: 2px;
@@ -1102,6 +1102,10 @@ fieldset {
 }
 .articles .number-list li a {
 	display: table-cell;
+	transition: color .1s linear;
+}
+.articles .number-list li a:hover {
+	text-decoration: none;
 }
 /* ==========================================================================
    _REVIEWS
@@ -1128,6 +1132,11 @@ fieldset {
 }
 .reviews li a {
 	display: block;
+	text-decoration: none;
+	transition: color .1s linear;
+}
+.reviews li a:hover {
+	color: #404142;
 }
 .reviews .pic {
 	width: 211px;
@@ -1211,6 +1220,8 @@ fieldset {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	z-index: 5;
+	opacity: .5;
 	background: url(../img/temp/shadow-gray.png) 50% 100% no-repeat;
 }
 .triggers:after {
@@ -1221,25 +1232,40 @@ fieldset {
 }
 .triggers li {
 	min-width: 440px;
-	padding: 0 4px;
+	margin: 0 4px;
+	border-radius: 4px 4px 0 0;
+	border: 1px solid transparent;
+	border-bottom: none;
 	float: left;
 	text-align: center;
-	position: relative;
-	z-index: 30;
+	background-color: #f6f8f8;
 }
 .triggers li a {
 	padding: 22px 23px 15px;
 	display: block;
 	text-decoration: none;
-	color: #898989;
+	color: #01a551;
+	position: relative;
+	z-index: 10;
 	background: transparent;
-	border-radius: 4px;
-	border: 1px solid #b6b6b6;
+}
+.triggers li a:after {
+	height: 50px;
+	display: block;
+	content: ' ';
+	position: absolute;
+	left: -5px;
+	right: -5px;
+	bottom: 0;
+	z-index: -1;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+.triggers li.active {
+	background-color: #fff;
+	border-color: #b6b6b6;
 }
 .triggers li.active a {
-	color: #01a551;
-	background-color: #f6f8f8;
-	border-color: transparent;
+	color: #898989;
 }
 .tab {
 	min-height: 268px;
@@ -1255,6 +1281,10 @@ fieldset {
 .block-explore .number-list li a {
 	display: table-cell;
 	vertical-align: middle;
+	transition: color .1s linear;
+}
+.block-explore .number-list li a:hover {
+	text-decoration: none;
 }
 /* ==========================================================================
    _NEWS
@@ -1404,12 +1434,75 @@ fieldset {
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	z-index: 2;
 	background: url(../img/temp/play.png) 60% 50% no-repeat;
+}
+.video-block img {
+	display: block;
+	position: relative;
+	z-index: 1;
+	transition: opacity .1s linear;
+}
+.video-block .in:hover img {
+	opacity: .9;
 }
 .video-block .text {
 	padding: 0 17px;
 	margin-bottom: 0;
 }
+/* ==========================================================================
+   fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
+   ========================================================================== */
+.fancybox-tmp iframe, .fancybox-tmp object { vertical-align: top; padding: 0; margin: 0; }
+.fancybox-wrap { position: absolute; top: 0; left: 0; z-index: 8020; }
+.fancybox-skin { position: relative; padding: 0; margin: 0; background: #949599; color: #444; text-shadow: none; }
+.fancybox-opened { z-index: 8030; }
+.fancybox-opened .fancybox-skin { border-radius: 10px; }
+.fancybox-outer, .fancybox-inner { padding: 0; margin: 0; position: relative; outline: none; }
+.fancybox-inner { overflow: hidden; }
+.fancybox-type-iframe .fancybox-inner { -webkit-overflow-scrolling: touch; }
+.fancybox-error { color: #444; font: 14px/20px "Europe", Helvetica, Arial, sans-serif; margin: 0; padding: 10px; }
+.fancybox-image, .fancybox-iframe { display: block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; vertical-align: top; }
+.fancybox-image { max-width: 100%; max-height: 100%; }
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span { background-image: url(../img/fancybox/fancybox_sprite.png); }
+#fancybox-loading { position: fixed; top: 50%; left: 50%; margin-top: -22px; margin-left: -22px; background-position: 0 -108px; opacity: .8; cursor: pointer; z-index: 8020; }
+#fancybox-loading div { width: 44px; height: 44px; background: url(../img/fancybox/fancybox_loading.gif) center center no-repeat; }
+.fancybox-close { position: absolute; top: -18px; right: -18px; width: 36px; height: 36px; cursor: pointer; z-index: 8040; }
+.fancybox-nav { position: absolute; top: 0; width: 40%; height: 100%; cursor: pointer; background: transparent url(../img/fancybox/blank.gif); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 8040; }
+.fancybox-prev { left: 0; }
+.fancybox-next { right: 0; }
+.fancybox-nav span { position: absolute; top: 50%; width: 36px; height: 34px; margin-top: -18px; cursor: pointer; z-index: 8040; visibility: hidden; }
+.fancybox-prev span { left: 20px; background-position: 0 -36px; }
+.fancybox-next span { right: 20px; background-position: 0 -72px; }
+.fancybox-nav:hover span { visibility: visible; }
+.fancybox-tmp { position: absolute; top: -9999px; left: -9999px; padding: 0; overflow: visible; visibility: hidden; }
+#fancybox-overlay { position: absolute; top: 0; left: 0; overflow: hidden; display: none; z-index: 8010; background: #000; }
+#fancybox-overlay.overlay-fixed { position: fixed; bottom: 0; right: 0; }
+.fancybox-title { visibility: hidden; font: normal 13px/20px "Europe", Helvetica, Arial, sans-serif; position: relative; text-shadow: none; z-index: 8050; }
+.fancybox-opened .fancybox-title { visibility: visible; }
+.fancybox-title-float-wrap { position: absolute; bottom: 0; right: 50%; margin-bottom: -35px; z-index: 8030; text-align: center; }
+.fancybox-title-float-wrap .child { display: inline-block; margin-right: -100%; padding: 2px 20px; background: rgba(0, 0, 0, 0.8); -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; text-shadow: 0 1px 2px #222; color: #fff; font-weight: 700; line-height: 24px; white-space: nowrap; }
+.fancybox-title-outside-wrap { position: relative; margin-top: 10px; color: #fff; }
+.fancybox-title-inside-wrap { margin-top: 10px; }
+.fancybox-title-over-wrap { position: absolute; bottom: 0; left: 0; color: #fff; padding: 10px; background: #000; background: rgba(0, 0, 0, .8); }
+.fancybox-blue .fancybox-skin { border: 3px solid #1074d4; border-radius: 10px; box-shadow: none; background: #fff; }
+.fancybox-skin { background: #fff; border-radius: 0 !important; border: none; }
+.fancybox-skin .fancybox-close { width: 40px; height: 40px; display: block; top: -59px; right: -57px; outline: none; background: none; transition: background-color .1s ease; }
+.fancybox-skin .fancybox-close:hover { }
+.fancybox-skin .fancybox-close:before, .fancybox-skin .fancybox-close:after { width: 4px; height: 38px; border-radius: 0; position: absolute; top: 2px; left: 15px; display: block; overflow: hidden; content: ' '; background: #fff; transition: background .1s ease; }
+.fancybox-skin .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+.fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+.fancybox-skin .fancybox-close:hover:before, .fancybox-skin .fancybox-close:hover:after { background: #36e48f; }
+.fancybox-skin .fancybox-prev, .fancybox-skin .fancybox-next { width: 58px; height: 58px; margin-top: -29px; top: 50%; left: -20px; outline: none !important; display: block !important; }
+.fancybox-skin .fancybox-prev span, .fancybox-skin .fancybox-next span { width: 38px; height: 38px; display: block !important; visibility: visible !important; position: relative; left: 10px; right: 10px; background: #36e48f; }
+.fancybox-skin .fancybox-next { left: auto; right: -20px; }
+.fancybox-skin .fancybox-prev span:before, .fancybox-skin .fancybox-prev span:after, .fancybox-next span:before, .fancybox-next span:after { width: 4px; height: 17px; position: absolute; display: block; overflow: hidden; content: ' '; background: #fff; transition: background-color .1s ease; }
+.fancybox-skin .fancybox-prev span:before, .fancybox-skin .fancybox-next span:after { -webkit-transform: rotate(30deg); -moz-transform: rotate(30deg); -ms-transform: rotate(30deg); transform: rotate(30deg); }
+.fancybox-skin .fancybox-prev span:after, .fancybox-skin .fancybox-next span:before { -webkit-transform: rotate(-30deg); -moz-transform: rotate(-30deg); -ms-transform: rotate(-30deg); transform: rotate(-30deg); }
+.fancybox-skin .fancybox-prev span:before { left: 16px; top: 4px; }
+.fancybox-skin .fancybox-prev span:after { left: 16px; top: 17px; }
+.fancybox-skin .fancybox-next span:before { left: 18px; top: 4px; }
+.fancybox-skin .fancybox-next span:after { left: 18px; top: 17px; }
 /* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
