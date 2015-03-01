@@ -80,7 +80,7 @@ h1, .h1 {
 	font-family: 'Fedra Sans Pro', Arial, sans-serif;
 }
 h2, .h2 {
-	margin-bottom: 18px;
+	margin-bottom: 27px;
 	font-size: 48px;
 	line-height: 58px;
 	font-weight: 700;
@@ -186,6 +186,7 @@ fieldset {
 .header {
 	height: 123px;
 	position: relative;
+	cursor: default;
 }
 .header:before {
 	width: 1260px;
@@ -286,6 +287,7 @@ fieldset {
 	color: #999;
 	font-size: 14px;
 	line-height: 18px;
+	cursor: default;
 }
 .footer .wrapper {
 	height: 100%;
@@ -379,12 +381,12 @@ fieldset {
    _NAV
    ========================================================================== */
 .nav {
+	border-bottom: 1px solid #fff;
+	box-shadow: 0 6px 6px 1px #11da79;
 	position: relative;
+	z-index: 100;
 	background: #fff;
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 79%, rgba(215, 239, 245, 1) 100%);
-	box-shadow: 0 6px 6px 1px #11da79;
-	border-bottom: 1px solid #fff;
-	z-index: 100;
 }
 .nav .wrapper {
 	padding: 0;
@@ -392,7 +394,7 @@ fieldset {
 .nav .list {
 	width: 100%;
 	margin: 0;
-	padding: 0 20px;
+	padding: 0 40px;
 	list-style: none;
 	display: table;
 	font-family: 'Fedra Sans Pro', Arial, sans-serif;
@@ -404,11 +406,11 @@ fieldset {
 .nav .list li a {
 	margin-top: -1px;
 	margin-bottom: -1px;
-	padding: 20px 0 13px;
+	padding: 21px 0 13px;
 	display: block;
 	color: #000;
 	text-decoration: none;
-	transition: color .2s ease, background .2s ease;
+	transition: color .1s linear, background .1s linear;
 }
 .nav .list li a:hover {
 	color: #fff;
@@ -727,7 +729,7 @@ fieldset {
 	display: inline-block;
 	opacity: .6;
 	text-align: center;
-	transition: opacity .3s ease;
+	transition: opacity .2s linear;
 }
 .recommend .carousel li:hover {
 	opacity: 1;
@@ -961,9 +963,6 @@ fieldset {
 	overflow: hidden;
 	clear: both;
 }
-.research .info .h2 {
-	margin-bottom: 26px;
-}
 .research .info .text {
 	margin-bottom: 60px;
 }
@@ -1064,9 +1063,6 @@ fieldset {
 	background-position: 98% 100%;
 	background-repeat: no-repeat;
 }
-.articles .h2 {
-	margin-bottom: 27px;
-}
 .number-list {
 	margin: 0;
 	padding: 0;
@@ -1093,12 +1089,13 @@ fieldset {
 	display: block;
 	color: #f3e8c5;
 	text-align: center;
-	font: bold 40px/46px 'Fedra Serif A Pro', Arial, sans-serif;
+	font: bold 40px/52px 'Fedra Serif A Pro', Arial, sans-serif;
 	position: absolute;
 	left: 0;
 	top: 2px;
 	border-radius: 50%;
 	border: 1px solid #e2bf32;
+	cursor: default;
 }
 .articles .number-list li {
 	display: table;
