@@ -410,7 +410,6 @@ fieldset {
 	display: block;
 	color: #000;
 	text-decoration: none;
-	transition: color .1s linear, background .1s linear;
 }
 .nav .list li a:hover {
 	color: #fff;
@@ -418,6 +417,7 @@ fieldset {
 }
 .nav .list li.active a {
 	color: #fff;
+	cursor: default;
 	background: #36e48f;
 }
 /* ==========================================================================
@@ -1065,7 +1065,7 @@ fieldset {
 }
 .number-list {
 	margin: 0;
-	padding: 0;
+	padding: 10px 0 0;
 	list-style: none;
 }
 .number-list li {
@@ -1091,7 +1091,7 @@ fieldset {
 	text-align: center;
 	font: bold 40px/52px 'Fedra Serif A Pro', Arial, sans-serif;
 	position: absolute;
-	left: 0;
+	left: 2px;
 	top: 2px;
 	border-radius: 50%;
 	border: 1px solid #e2bf32;
@@ -1303,9 +1303,8 @@ fieldset {
 	padding-bottom: 358px;
 }
 .block-questions .number-list li {
-	padding-top: 18px;
-	padding-right: 20px;
-	padding-bottom: 7px;
+	padding: 18px 20px 0 80px;
+	margin-bottom: 19px;
 }
 .block-questions .h {
 	margin-bottom: 34px;
@@ -1317,7 +1316,7 @@ fieldset {
 }
 .block-questions .answer {
 	margin-bottom: 0;
-	padding: 16px 30px 20px 18px;
+	padding: 16px 30px 21px 18px;
 	background: #fdfbf1;
 	box-shadow: 0 0 48px rgba(58, 56, 48, .2);
 	position: relative;
