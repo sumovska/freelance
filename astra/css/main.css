@@ -193,9 +193,9 @@ input.error::-moz-placeholder { color: #e4373b; }
 /*noinspection CssInvalidPseudoSelector*/
 input.error:-ms-input-placeholder { color: #e4373b; }
 button.sended:hover, input[type="button"].sended:hover, input[type="submit"].sended:hover, input[type="reset"].sended:hover { background: #fff; }
-button, html input[type="button"] { padding: 9px 20px 6px; font: bold 10px 'PT Sans', Helvetica, Arial, sans-serif; position: relative; border: none; outline: none; color: #162335; text-transform: uppercase; background: transparent; z-index: 10; }
+button, html input[type="button"] { padding: 9px 20px 6px; font: bold 10px 'PT Sans', Helvetica, Arial, sans-serif; position: relative; border: none; outline: none; color: #162335; text-transform: uppercase; background: transparent; z-index: 10; -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden; }
 button:not([disabled]):hover, input[type="button"]:not([disabled]):hover button:not([disabled]):focus, input[type="button"]:not([disabled]):focus { background: transparent; }
-button:before, html input[type="button"]:before { width: 100%; display: block; content: ' '; overflow: hidden; position: absolute; top: 0; left: -5px; right: 0; bottom: 0; -webkit-transform: skew(-45deg); -moz-transform: skew(-45deg); -o-transform: skew(-45deg); background: transparent; border-top: 1px solid #162335; border-bottom: 1px solid #162335; border-left: 1px solid #162335; border-right: 1px solid #162335; z-index: -1; }
+button:before, html input[type="button"]:before { width: 100%; display: block; content: ' '; overflow: hidden; position: absolute; top: 0; left: -5px; right: 0; bottom: 0; -webkit-transform: skew(-45deg); -moz-transform: skew(-45deg); -o-transform: skew(-45deg); -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden; background: transparent; border-top: 1px solid #162335; border-bottom: 1px solid #162335; border-left: 1px solid #162335; border-right: 1px solid #162335; z-index: -1; }
 button:not([disabled]):hover:before, input[type="button"]:not([disabled]):hover:before button:not([disabled]):focus:before, input[type="button"]:not([disabled]):focus:before { background: #162335; }
 /* ==========================================================================
    _LAYOUT
@@ -416,17 +416,6 @@ h6, .h6 {
 .social-white li.pinterest a { background-image: url(../img/icons/social-2w.png); }
 .social-white li.facebook a { background-image: url(../img/icons/social-3w.png); }
 /* ==========================================================================
-   _FORMS
-   ========================================================================== */
-fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-textarea {
-	resize: vertical;
-}
-/* ==========================================================================
    _FOOTER
    ========================================================================== */
 .footer {
@@ -449,8 +438,10 @@ textarea {
 	top: 42px;
 	left: 43px;
 }
-.footer .author strong {
+.footer .author a {
 	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
 }
 .footer .copyright {
 	margin: 0;
@@ -510,7 +501,7 @@ textarea {
 	top: 18px;
 	left: 44px;
 	z-index: 20;
-	transition: width .1s ease, top .1s ease, left .1s ease;
+	transition: width .1s linear, top .1s linear, left .1s linear;
 }
 .header .logo a {
 	width: 100%;
@@ -720,9 +711,8 @@ textarea {
 }
 .header-fixed .logo {
 	width: 94px;
-	height: 40px;
 	top: 10px;
-	left: 24px;
+	left: 39px;
 }
 .header-fixed .nav .products, .header-fixed .nav .contacts {
 	top: 50%;
@@ -1240,11 +1230,12 @@ textarea {
 .about-service .unit .inform .list .h-icon:before {
 	width: 52px;
 	height: 52px;
+	margin-top: -25px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	top: 0;
+	top: 50%;
 	left: -6px;
 	background: url(../img/icons/service-2.png) 0 0 no-repeat;
 	background-size: cover;
@@ -1414,11 +1405,20 @@ textarea {
 .catalog .photo {
 	position: relative;
 	display: block;
+	overflow: hidden;
 }
 .catalog .photo img {
 	width: 100%;
 	height: auto;
 	display: block;
+	-webkit-transition: -webkit-transform .2s ease-out;
+	-webkit-transform: scale(1);
+	transition: transform .2s ease-out;
+	transform: scale(1);
+}
+.catalog .photo:hover img {
+	-webkit-transform: scale(1.07);
+	transform: scale(1.07);
 }
 .catalog .topsheet {
 	display: block;
@@ -2102,6 +2102,8 @@ textarea {
 	display: block;
 	color: #fff;
 	text-decoration: none;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .prev-next .topsheet {
 	position: absolute;
