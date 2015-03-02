@@ -155,7 +155,7 @@ $(document).ready(function () {
 	$('.header .nav').each(function () {
 		$(window).on('scroll touchmove', function () {
 			/* Toggle fixed header */
-			if ($(window).scrollTop() > 2) {
+			if ($(window).scrollTop() > 14) {
 				$('.header').addClass('header-fixed');
 			} else {
 				$('.header').removeClass('header-fixed');

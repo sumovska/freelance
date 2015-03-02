@@ -292,6 +292,8 @@ h6, .h6 {
 	text-align: center;
 	position: relative;
 	z-index: 10;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
 }
 .parallel:before {
 	display: block;
@@ -305,6 +307,9 @@ h6, .h6 {
 	-webkit-transform: skew(-45deg);
 	-moz-transform: skew(-45deg);
 	-o-transform: skew(-45deg);
+	transform: skew(-45deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
 	background: transparent;
 	border-top: 2px solid #fff;
 	border-bottom: 2px solid #fff;
@@ -1003,8 +1008,8 @@ textarea {
 	transform: scale(1);
 }
 .unit .photo:hover .pic {
-	-webkit-transform: scale(1.07);
-	transform: scale(1.07);
+	-webkit-transform: scale(1.04);
+	transform: scale(1.04);
 }
 .unit .inform {
 	padding: 30px 42px 24px;
