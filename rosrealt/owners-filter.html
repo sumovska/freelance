@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Rosrealt</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="css/ie.css">
+	<script src="js/vendor/pie.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<div class="top">
+		<div class="wrapper">
+			<a class="link-add" href="#"><span class="plus"></span> Добавить</a>
+			<h1 class="h1">Собственники</h1>
+			<ul class="links">
+				<li><span class="icon icon-1"></span>02 объявления <a href="#">Увеличить</a></li>
+				<li><span class="icon icon-2"></span>1500 руб. <a href="#">Пополнить</a></li>
+				<li><span class="icon icon-3"></span><a class="name" href="#">АН “Миель”</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<header class="header">
+		<div class="nav">
+			<ul class="list">
+				<li class="li-owners"><a href="owners.html"><span class="icon"></span> Собственники</a></li>
+				<li class="li-objects"><a href="add-object.html"><span class="icon"></span> Все объекты</a></li>
+				<li class="li-rent"><a href="#"><span class="icon"></span> Вся аренда</a></li>
+				<li class="li-archive"><a href="#"><span class="icon"></span> Архив</a></li>
+				<li class="li-clients"><a href="#"><span class="icon"></span> Все клиенты</a></li>
+				<li class="li-workers"><a href="staff.html"><span class="icon"></span> Сотрудники</a></li>
+				<li class="li-tasks"><a href="#"><span class="icon"></span> Задачи</a></li>
+				<li class="li-portal">
+					<a href="#"><span class="icon"></span> На портале</a>
+					<div class="inside">
+						<p class="h"><span>Раздел:</span> на портале</p>
+						<p class="text">В данном разделе отображаются все объекты которые Вы опубликовали на Единый всероссийский портал недвижимости Роснедвижимость.ру</p>
+						<a href="#">Дальше</a>
+						<span class="amount">8 из 15</span>
+					</div></li>
+				<li class="li-actual"><a href="#"><span class="icon"></span> Актуальность</a></li>
+				<li class="li-promo"><a href="#"><span class="icon"></span> Реклама</a></li>
+				<li class="li-specific"><a href="#"><span class="icon"></span> Детализация</a></li>
+			</ul>
+		</div>
+		<a class="toggle" href="#"><span></span></a>
+	</header>
+
+	<div class="container">
+		<div class="owners">
+			<div class="wrapper">
+				<div id="map" class="map map-small">
+					<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false&language=ru-RU"></script>
+
+					<script type="text/javascript">
+						google.maps.event.addDomListener(window, 'load', init);
+						function init() {
+							var pos = new google.maps.LatLng(55.7556939, 37.5497171);
+							var mapOptions = {
+								zoom: 15,
+								panControl: false,
+								mapTypeControl: false,
+								scaleControl: false,
+								streetViewControl: false,
+								overviewMapControl: false,
+								scrollwheel: false,
+								navigationControl: false,
+								zoomControlOptions: {
+									style: google.maps.ZoomControlStyle.SMALL
+								},
+								center: pos,
+								styles: [
+									{
+										featureType: 'road', elementType: 'geometry', stylers: [
+										{lightness: 50},
+										{visibility: 'simplified'}
+									]
+									},
+									{
+										featureType: 'road', elementType: 'labels', stylers: [
+										{visibility: 'off'}
+									]
+									},
+									{
+										"featureType": "poi.business", "stylers": [
+										{"visibility": "off"}
+									]
+									}
+								]
+							};
+							var mapElement = document.getElementById('map');
+							var map = new google.maps.Map(mapElement, mapOptions);
+						}
+					</script>
+				</div>
+				<div class="filter">
+					<form class="form" action="#">
+						<a class="toggle" href="#"><span></span></a>
+						<div class="stroke stroke-1">
+							<span class="cell">
+								<select>
+									<option>Действие</option>
+								</select>
+							</span>
+							<span class="cell">
+								<select>
+									<option>Тип недвижимости</option>
+								</select>
+							</span>
+							<span class="cell"><input type="text" placeholder="Цена:"></span>
+							<span class="cell">
+								<select>
+									<option>Станция метро / район</option>
+								</select>
+							</span>
+							<span class="cell"><input type="text" placeholder="Улица:"></span>
+						</div>
+						<div class="inside">
+							<div class="stroke">
+								<span class="cell cell-small">
+									<label>Комнаты <input type="text" placeholder="От:"> - <input type="text" placeholder="До:"></label>
+									<label>Общая площадь <input type="text" placeholder="От:"> - <input type="text" placeholder="До:"></label>
+									<label>Площаль кухни <input type="text" placeholder="От:"> - <input type="text" placeholder="До:"></label>
+								</span>
+								<span class="cell"><input type="text" placeholder="Уровни:"></span>
+								<span class="cell">
+									<select>
+										<option>Санузел</option>
+									</select>
+								</span>
+							</div>
+							<div class="stroke">
+								<span class="cell">
+									<label class="checkbox">Квартира-студия <input type="checkbox"></label>
+									<label class="checkbox">Газ в доме <input type="checkbox"></label>
+									<label class="checkbox">Охрана <input type="checkbox"></label>
+								</span>
+								<span class="cell">
+									<label class="checkbox">Отображать топ 6 <input type="checkbox"></label>
+									<input type="reset" value="Сбросить">
+								</span>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="table">
+					<div class="line" style="background-color:#fff;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line" style="background-color:#f9f9f9;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line" style="background-color:#fff;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line" style="background-color:#fff;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line" style="background-color:#f9f9f9;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line" style="background-color:#fff;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line" style="background-color:#f9f9f9;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+					<div class="line" style="background-color:#fff;">
+						<span class="cell">0000001</span>
+						<span class="cell">21.03.2015</span>
+						<span class="cell"><a class="link" href="#">Назара Широких, 112</a></span>
+						<span class="cell">М: Пушкинская</span>
+						<span class="cell">Комнат: 1</span>
+						<span class="cell">S: 75 м2</span>
+						<span class="cell">3 550 000 руб.</span>
+						<span class="cell cell-edit"><a class="phone" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="market" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="open" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="pin" href="#"><span></span></a></span>
+						<span class="cell cell-edit"><a class="mark" href="#"><span></span></a></span>
+					</div>
+				</div>
+				<div class="links">
+					<a class="link-add link-add-white link-add-1" href="#"><span class="plus"></span>Следующие 10</a>
+					<a class="link-add link-add-white link-add-2" href="#"><span class="plus"></span>В закладки</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="wrapper">
+			<ul class="links">
+				<li><a style="color:#323232;" href="#">Ссылка один</a></li>
+				<li><a href="#">Ссылка два</a></li>
+				<li><a style="color:#323232;" href="#">Ссылка три</a></li>
+			</ul>
+			<div class="buttons">
+				<a class="support" href="#">Служба поддержки <span></span></a>
+				<a class="btn btn-notice" href="#"></a>
+				<a class="btn btn-book" href="#"></a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
