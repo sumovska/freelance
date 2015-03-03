@@ -35,17 +35,14 @@ $(document).ready(function () {
 		}
 	});
 
-	/* Fade on scroll */
-	$('.scrolled').viewportChecker({
-		offset: 150
-	});
-
+	/* Tooltips */
 	$('.laps > li').hover(function () {
 		$('.fn', this).stop().fadeIn(150);
 	}, function () {
 		$('.fn', this).stop().fadeOut(50);
 	});
 
+	/* Cards carousel */
 	$('.research .cards').each(function () {
 		$('a', this).click(function () {
 			$(this).closest('li').addClass('active').siblings('.active').removeClass('active');
@@ -53,6 +50,10 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Fade on scroll */
+	$('.scrolled').viewportChecker({
+		offset: 150
+	});
 });
 
 $(window).on('scroll touchmove', function () {
