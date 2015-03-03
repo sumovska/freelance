@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<header class="header">
+	<header id="header" class="header">
 		<div class="wrapper">
 			<p class="slogan"><span>Инновационный</span> препарат для лечения туберкулеза</p>
 			<p class="logo"><img src="img/logo.png"></p>
@@ -42,46 +42,60 @@
 		</div>
 	</nav>
 
-	<section class="index" style="background-image:url('img/temp/fon-1.jpg')">
+	<nav class="anchors">
+		<ul class="list">
+			<li class="active"><a href="#index"></a></li>
+			<li><a href="#product"></a></li>
+			<li><a href="#recommend"></a></li>
+			<li><a href="#describe"></a></li>
+			<li><a href="#research"></a></li>
+		</ul>
+	</nav>
+
+	<section id="index" class="index">
 		<div class="wrapper">
 			<h3 class="h3"><span class="name">Перхлозон <sup class="mark">&reg;</sup></span> <br>инновационный препарат для лечения впервые выявленной формы МЛУ МТБ</h3>
 			<ul class="links">
 				<li>
 					<div class="video">
-						<img src="img/temp/video-1.jpg" alt="">
+						<a href="https://www.youtube.com/watch?v=9hqm-9Cdkk0" class="fancybox-popup">
+							<img src="img/temp/video-1.jpg" alt="">
+							<span class="name">Видеоролик: Перхлозон <span>&reg;</span> &ndash; ценные рекомендации по применению</span>
+						</a>
 					</div>
-					<span class="name">Видеоролик: Перхлозон <span>&reg;</span> &ndash; ценные рекомендации по применению</span>
 				</li>
 				<li>
 					<div class="video">
-						<img src="img/temp/video-2.jpg" alt="">
+						<a href="https://www.youtube.com/watch?v=9hqm-9Cdkk0" class="fancybox-popup">
+							<img src="img/temp/video-2.jpg" alt="">
+							<span class="name">Видеоролик: Круглый стол по препарату Перхлозон <span>&reg;</span></span>
+						</a>
 					</div>
-					<span class="name">Видеоролик: Круглый стол по препарату Перхлозон <span>&reg;</span></span>
 				</li>
 			</ul>
 		</div>
 	</section>
 
-	<section class="product">
+	<section id="product" class="product">
 		<div class="wrapper">
-			<div class="picture">
+			<div class="picture scrolled">
 				<img class="img" src="img/temp/product-1.jpg" alt="">
 				<span class="fn"><sup>*</sup>по данным доклинических и клинических <br>исследований</span>
 			</div>
 			<div class="features">
-				<h3 class="h3">Перхлозон <sup class="mark">&reg;</sup></h3>
+				<h3 class="h3 scrolled">Перхлозон <sup class="mark">&reg;</sup></h3>
 				<ul class="list">
-					<li>оказывает строго избирательное действие на МБТ</li>
-					<li>активизирует фагоцитарную активность макрофагов</li>
-					<li>сокращает время заживления очагов деструкции в легких</li>
-					<li>обладает хорошей <br>переносимостью</li>
-					<li>входит в перечень ЖНВЛП на 2015 год</li>
+					<li class="scrolled">оказывает строго избирательное действие на МБТ</li>
+					<li class="scrolled">активизирует фагоцитарную активность макрофагов</li>
+					<li class="scrolled">сокращает время заживления очагов деструкции в легких</li>
+					<li class="scrolled">обладает хорошей <br>переносимостью</li>
+					<li class="scrolled">входит в перечень ЖНВЛП на 2015 год</li>
 				</ul>
 			</div>
 		</div>
 	</section>
 
-	<section class="recommend" style="background-image:url('img/temp/fon-2.jpg')">
+	<section id="recommend" class="recommend">
 		<div class="info">
 			<div class="wrapper">
 				<div class="inside">
@@ -165,15 +179,15 @@
 		</ul>
 	</section>
 
-	<section class="describe" style="background-image:url('img/temp/fon-3.jpg')">
+	<section id="describe" class="describe">
 		<div class="wrapper">
-			<h2 class="h2">Первое противотуберкулезное средство нового поколения за последние 40 лет</h2>
+			<h2 class="h2">Первое противотуберкулезное средство нового поколения за&nbsp;последние 40 лет</h2>
 			<div class="text">
 				<p>Новый химический класс противотуберкулезных препаратов группы Тиосемикарбазонов</p>
 				<p>Тиоуреидоиминометилпиридиния <br>перхлорат</p>
 			</div>
 			<img class="formula" src="img/temp/formula.png" alt="">
-			<div class="sertificates">
+			<div class="sertificates scrolled">
 				<span class="name">Регистрационное удостоверение ЛП-001899 <br>от 09.11.2012</span>
 				<span class="docs">
 					<img class="doc doc-1" src="img/temp/sertificate-2.png" alt="">
@@ -183,30 +197,27 @@
 		</div>
 	</section>
 
-	<section class="research" style="background-image:url('img/temp/capsula.png')">
+	<section id="research" class="research">
 		<div class="wrapper">
 			<div class="instruction">
-				<div class="pic">
+				<div class="pic scrolled">
 					<img src="img/temp/instruction-1.png" alt="">
 				</div>
 				<ul class="list">
 					<li>
-						<a href="#">Инструкция по применению</a>
-						<span class="type"></span>
+						<a href="#"><span>Инструкция по применению</span> <span class="doc">doc</span></a>
 						<span class="size">155 кБ</span>
 					</li>
 					<li>
-						<a href="#">Сертификат соответствия</a>
-						<span class="type"></span>
+						<a href="#"><span>Сертификат соответствия</span> <span class="doc">doc</span></a>
 						<span class="size">25 кБ</span>
 					</li>
 					<li>
-						<a href="#">Регистрационное удостоверение</a>
+						<a href="#"><span>Регистрационное удостоверение</span></a>
 						<span class="size">15 кБ</span>
 					</li>
 					<li>
-						<a href="#">Перечень ЖНВЛП на 2015 год</a>
-						<span class="type type-pdf"></span>
+						<a href="#"><span>Перечень ЖНВЛП на 2015 год</span> <span class="pdf">pdf</span></a>
 						<span class="size">15 кБ</span>
 					</li>
 				</ul>
@@ -215,7 +226,7 @@
 				<h2 class="h2">Исследования препарата</h2>
 				<p class="text">Перхлозон прошел необходимые доклинические и клинические исследования в соответствии со стандартами GLP и GCP и подтвердил свою высокую эффективность и безопасность</p>
 				<ul class="cards">
-					<li>
+					<li class="active">
 						<a href="#" style="background-color:#db560d;">
 							<span class="number" style="color:#db560d;">1</span>
 							<span class="cell">
@@ -293,6 +304,7 @@
 				</ul>
 			</div>
 		</div>
+		<div class="capsula"></div>
 	</section>
 
 	<footer class="footer">

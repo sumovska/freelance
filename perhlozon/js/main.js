@@ -13,6 +13,13 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.anchors .list').onePageNav({
+		currentClass: 'active',
+		scrollSpeed: 1000,
+		easing: 'easeInOutQuad',
+		xoffset: -20
+	});
+
 	/* Popup script */
 	$('.fancybox-popup').fancybox({
 		padding: 0,
@@ -28,4 +35,31 @@ $(document).ready(function () {
 		}
 	});
 
+	/* Fade on scroll */
+	$('.scrolled').viewportChecker({
+		offset: 150
+	});
+
+	$('.laps > li').hover(function () {
+		$('.fn', this).stop().fadeIn(150);
+	}, function () {
+		$('.fn', this).stop().fadeOut(50);
+	});
+
+	$('.research .cards').each(function () {
+		$('a', this).click(function () {
+			$(this).closest('li').addClass('active').siblings('.active').removeClass('active');
+			return false;
+		});
+	});
+
+});
+
+$(window).on('scroll touchmove', function () {
+	/* Переключение плавающего хедера */
+	if ($(window).scrollTop() > 123) {
+		$('html').addClass('header-fixed');
+	} else {
+		$('html').removeClass('header-fixed');
+	}
 });

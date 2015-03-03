@@ -48,6 +48,7 @@ html {
 }
 body {
 	width: 100%;
+	min-width: 1260px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -188,6 +189,9 @@ fieldset {
 	position: relative;
 	cursor: default;
 }
+.header-fixed .header {
+	margin-bottom: 57px;
+}
 .header:before {
 	width: 1260px;
 	height: 116px;
@@ -250,19 +254,20 @@ fieldset {
 	line-height: 17px;
 	position: absolute;
 	top: 41px;
-	right: 174px;
+	left: 710px;
 }
 .header .ask:before {
-	width: 26px;
-	height: 22px;
+	width: 30px;
+	height: 30px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 	position: absolute;
-	top: 4px;
-	left: 1px;
-	background: url(../img/sprite.png) 0 0 no-repeat;
+	top: 0;
+	left: -1px;
+	background: url(../img/ask.png) 0 0 no-repeat;
+	background-size: 100% auto;
 }
 .header .crest {
 	position: absolute;
@@ -278,6 +283,103 @@ fieldset {
 	width: 58px;
 	height: 94px;
 	display: block;
+}
+/* ==========================================================================
+   _NAV
+   ========================================================================== */
+.nav {
+	border-bottom: 1px solid #fff;
+	box-shadow: 0 6px 6px 1px #11da79;
+	position: relative;
+	z-index: 100;
+	background: #fff;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 79%, rgba(215, 239, 245, 1) 100%);
+}
+.header-fixed .nav {
+	min-width: 1260px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+}
+.nav .wrapper {
+	padding: 0;
+}
+.nav .list {
+	width: 100%;
+	margin: 0;
+	padding: 0 40px;
+	list-style: none;
+	display: table;
+	font-family: 'Fedra Sans Pro', Arial, sans-serif;
+}
+.nav .list li {
+	display: table-cell;
+	text-align: center;
+}
+.nav .list li a {
+	margin-top: -1px;
+	margin-bottom: -1px;
+	padding: 21px 0 13px;
+	display: block;
+	color: #000;
+	text-decoration: none;
+}
+.nav .list li a:hover {
+	color: #fff;
+	background: #36e48f;
+}
+.nav .list li.active a {
+	color: #fff;
+	cursor: default;
+	background: #36e48f;
+}
+/* ==========================================================================
+   _ANCHORS
+   ========================================================================== */
+.anchors {
+	position: fixed;
+	top: 50%;
+	left: 20px;
+	z-index: 100;
+}
+.anchors .list {
+	padding: 0;
+	margin: -90px 0 0 0;
+	list-style: none;
+}
+.anchors .list li {
+	padding: 7px 0;
+}
+.anchors .list li a {
+	width: 22px;
+	height: 22px;
+	border: 2px solid #f5f5f5;
+	border-radius: 50%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+	display: block;
+	position: relative;
+}
+.anchors .list li a:hover {
+	border-color: #27d77d;
+}
+.anchors .list li a:before {
+	border: none;
+	display: block;
+	border-radius: 50%;
+	content: ' ';
+	opacity: 0;
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	bottom: -2px;
+	left: -2px;
+	background: #08dd71 linear-gradient(to bottom, rgba(3, 220, 109, 1) 0%, rgba(231, 249, 112, 1) 100%);
+	transition: .2s opacity ease;
+}
+.anchors .list li.active a:before {
+	opacity: 1;
 }
 /* ==========================================================================
    _FOOTER
@@ -378,60 +480,17 @@ fieldset {
 	color: #151515;
 }
 /* ==========================================================================
-   _NAV
-   ========================================================================== */
-.nav {
-	border-bottom: 1px solid #fff;
-	box-shadow: 0 6px 6px 1px #11da79;
-	position: relative;
-	z-index: 100;
-	background: #fff;
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 79%, rgba(215, 239, 245, 1) 100%);
-}
-.nav .wrapper {
-	padding: 0;
-}
-.nav .list {
-	width: 100%;
-	margin: 0;
-	padding: 0 40px;
-	list-style: none;
-	display: table;
-	font-family: 'Fedra Sans Pro', Arial, sans-serif;
-}
-.nav .list li {
-	display: table-cell;
-	text-align: center;
-}
-.nav .list li a {
-	margin-top: -1px;
-	margin-bottom: -1px;
-	padding: 21px 0 13px;
-	display: block;
-	color: #000;
-	text-decoration: none;
-}
-.nav .list li a:hover {
-	color: #fff;
-	background: #36e48f;
-}
-.nav .list li.active a {
-	color: #fff;
-	cursor: default;
-	background: #36e48f;
-}
-/* ==========================================================================
    _INDEX
    ========================================================================== */
 .index {
 	height: 664px;
 	position: relative;
-	background-repeat: no-repeat;
+	cursor: default;
+	background: #62c39b url('../img/temp/fon-1.jpg') no-repeat 50% 0;
 	background-size: cover;
-	background-position: 0 0;
 }
 .index:after {
-	width: 1260px;
+	width: 100%;
 	height: 36px;
 	display: block;
 	content: ' ';
@@ -442,6 +501,7 @@ fieldset {
 	left: 0;
 	right: 0;
 	background: url(../img/temp/line-whitelb.png) 0 0 no-repeat;
+	background-size: 100% 36px;
 }
 .index .wrapper {
 	padding-top: 68px;
@@ -476,26 +536,52 @@ fieldset {
 .index .links .video {
 	width: 210px;
 	height: 117px;
-	margin-bottom: 12px;
 	display: block;
 	position: relative;
-	box-shadow: 0 5px 24px rgba(36, 89, 112, .75);
+	box-shadow: 0 5px 24px rgba(36, 89, 112, .35);
+}
+.index .links .video a {
+	width: 210px;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	opacity: .85;
+	transition: .3s opacity ease;
+}
+.index .links .video a:hover { opacity: 1; }
+.index .links .video a:before {
+	width: 77px;
+	height: 77px;
+	margin: 0 0 0 -38px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	z-index: 2;
+	background: url('../img/play.png') no-repeat 0 0;
+	background-size: 100% auto;
 }
 .index .links .video img {
 	width: 210px;
 	height: 117px;
+	margin-bottom: 12px;
 	display: block;
+	position: relative;
+	z-index: 1;
 }
-.index .links .name {
-	letter-spacing: -.04em;
+.index .links .video .name {
+	display: block;
+	font: bold 14px/17px Arial, sans-serif;
+	letter-spacing: 0;
 	color: #fff;
-	cursor: default;
 }
 /* ==========================================================================
    _PRODUCT
    ========================================================================== */
 .product {
 	position: relative;
+	cursor: default;
 }
 .product .wrapper {
 	padding-top: 76px;
@@ -504,6 +590,18 @@ fieldset {
 .product .picture {
 	width: 500px;
 	float: left;
+}
+.product .picture.scrolled {
+	opacity: 0;
+	-webkit-transition: -webkit-transform 1.6s ease, opacity 1.6s ease;
+	transition: transform 1.2s ease, opacity 1.2s ease;
+	-webkit-transform: translate3d(-200px, 0, 0);
+	transform: translate3d(-200px, 0, 0);
+}
+.product .picture.scrolled.visible {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 .product .picture .img {
 	width: 432px;
@@ -523,12 +621,20 @@ fieldset {
 	width: 478px;
 	padding: 32px 54px 32px 32px;
 	float: left;
+	cursor: default;
 }
 .features .h3 {
 	margin-bottom: 20px;
 	color: #00a650;
 	text-transform: uppercase;
 	font-weight: bold;
+}
+.features .h3.scrolled {
+	opacity: 0;
+	transition: 1s .6s opacity ease;
+}
+.features .h3.scrolled.visible {
+	opacity: 1;
 }
 .features .list {
 	margin: 0;
@@ -542,16 +648,25 @@ fieldset {
 	padding-left: 60px;
 	position: relative;
 }
+.features .list li.scrolled {
+	opacity: 0;
+	transition: 1s 1s opacity ease;
+}
+.features .list li.scrolled.visible {
+	opacity: 1;
+}
 .features .list li:before {
-	width: 28px;
-	height: 28px;
+	width: 30px;
+	height: 30px;
+	margin-top: -16px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	left: 9px;
-	top: 3px;
-	background: url(../img/sprite.png) -40px 0 no-repeat;
+	left: 8px;
+	top: 50%;
+	background: url(../img/check.png) 0 0 no-repeat;
+	background-size: 100% auto;
 }
 /* ==========================================================================
    _RECOMMEND
@@ -560,6 +675,8 @@ fieldset {
 	min-height: 815px;
 	color: #fff;
 	position: relative;
+	cursor: default;
+	background: #3b86d0 url('../img/temp/fon-2.jpg') no-repeat 50% 0;
 	background-size: cover;
 }
 .recommend:before, .recommend:after {
@@ -637,7 +754,7 @@ fieldset {
 }
 .laps .fn {
 	width: 260px;
-	margin: -78px 0 0 -8px;
+	margin: -78px 0 0 -7px;
 	padding: 14px 22px 20px;
 	display: none;
 	color: #572c0c;
@@ -652,9 +769,6 @@ fieldset {
 	background: rgba(255, 255, 255, .9);
 	border-radius: 14px;
 	z-index: 50;
-}
-.laps > li:hover .fn {
-	display: block;
 }
 .laps .fn:after {
 	width: 0;
@@ -765,6 +879,8 @@ fieldset {
 	color: #fff;
 	position: relative;
 	overflow: hidden;
+	cursor: default;
+	background: #bcdbef url('../img/temp/fon-3.jpg') no-repeat 50% 0;
 	background-size: cover;
 }
 .describe:before, .describe:after {
@@ -794,8 +910,11 @@ fieldset {
 	padding-top: 312px;
 	padding-left: 44px;
 }
+.describe .h2 {
+	margin-bottom: 18px;
+}
 .describe .text {
-	margin-bottom: 12px;
+	margin-bottom: 18px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: bold;
@@ -828,6 +947,16 @@ fieldset {
 	bottom: -8px;
 	right: 176px;
 }
+.describe .sertificates.scrolled {
+	-webkit-transition: -webkit-transform .6s ease;
+	transition: transform .6s ease;
+	-webkit-transform: translate3d(0, 200px, 0);
+	transform: translate3d(0, 200px, 0);
+}
+.describe .sertificates.scrolled.visible {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
 .describe .sertificates:after {
 	display: block;
 	content: ' ';
@@ -854,8 +983,28 @@ fieldset {
    ========================================================================== */
 .research {
 	position: relative;
-	background-position: 556px 62px;
-	background-repeat: no-repeat;
+}
+.research .capsula {
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+.research .capsula:before {
+	width: 800px;
+	height: 890px;
+	margin: 0 0 0 -85px;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 65px;
+	left: 50%;
+	z-index: -1;
+	background: url('../img/temp/capsula.png') no-repeat 0 0;
 }
 .research:before {
 	width: 100%;
@@ -904,10 +1053,12 @@ fieldset {
 	clear: both;
 }
 .instruction .pic {
-	width: 416px;
+	width: 616px;
 	height: 319px;
+	padding: 0 100px;
+	overflow: hidden;
 	position: absolute;
-	left: 0;
+	left: -100px;
 	bottom: 0;
 }
 .instruction .pic:before {
@@ -929,14 +1080,46 @@ fieldset {
 	height: 319px;
 	display: block;
 }
+.instruction .pic.scrolled img {
+	-webkit-transition: -webkit-transform .5s 1s ease;
+	transition: transform .5s 1s ease;
+	-webkit-transform: translate3d(0, 200px, 0);
+	transform: translate3d(0, 200px, 0);
+}
+.instruction .pic.scrolled.visible img {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
 .instruction .list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	font-size: 15px;
+	cursor: default;
 }
 .instruction .list li a {
 	color: #00b1fb;
+	text-decoration: none;
+}
+.instruction .list li a span { text-decoration: underline; }
+.instruction .list li a:hover span { text-decoration: none; }
+.instruction .list li a span.doc, .instruction .list li a span.pdf {
+	height: 17px;
+	padding: 0 3px;
+	border-radius: 3px;
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	color: #fff;
+	font-size: 10px;
+	line-height: 17px;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #157efb;
+}
+.instruction .list li a span.pdf {
+	background: #d00b0b;
 }
 .instruction .list .type {
 	width: 28px;
@@ -993,6 +1176,9 @@ fieldset {
 .research .cards li:nth-child(4) { position: absolute; top: 49px; left: 52px; z-index: 30; }
 .research .cards li:nth-child(5) { position: absolute; top: 63px; left: 69px; z-index: 20; }
 .research .cards li:nth-child(6) { position: absolute; top: 100px; left: 100px; z-index: 10; }
+.research .cards li.active {
+	z-index: 100;
+}
 .research .cards li a {
 	width: 286px;
 	min-height: 170px;
@@ -1466,7 +1652,7 @@ fieldset {
 .fancybox-image { max-width: 100%; max-height: 100%; }
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span { background-image: url(../img/fancybox/fancybox_sprite.png); }
 #fancybox-loading { position: fixed; top: 50%; left: 50%; margin-top: -22px; margin-left: -22px; background-position: 0 -108px; opacity: .8; cursor: pointer; z-index: 8020; }
-#fancybox-loading div { width: 44px; height: 44px; background: url(../img/fancybox/fancybox_loading.gif) center center no-repeat; }
+#fancybox-loading div { width: 44px; height: 44px; background: url(../img/fancybox/fancybox_loading@2x.gif) center center no-repeat; background-size: 22px auto; }
 .fancybox-close { position: absolute; top: -18px; right: -18px; width: 36px; height: 36px; cursor: pointer; z-index: 8040; }
 .fancybox-nav { position: absolute; top: 0; width: 40%; height: 100%; cursor: pointer; background: transparent url(../img/fancybox/blank.gif); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 8040; }
 .fancybox-prev { left: 0; }
