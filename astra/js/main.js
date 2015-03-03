@@ -9,7 +9,6 @@ $(document).ready(function () {
 
 	/* Index page carousel */
 	$('.slider .carousel').bxSlider({
-		useCSS: false,
 		minSlides: 1,
 		maxSlides: 2
 	});
