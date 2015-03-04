@@ -171,10 +171,10 @@ fieldset {
 .jq-selectbox__trigger { width: 27px; height: 100%; border: none; top: 0; }
 .jq-selectbox__trigger-arrow { background: url(../img/sprite.png) -45px -150px no-repeat; background-size: 100px auto; border: none; }
 .jq-selectbox:hover .jq-selectbox__trigger-arrow { background-position: -45px -165px; }
-.jq-selectbox__dropdown { width: 100% !important; top: 30px; border: 1px solid #ff7c10; border-radius: 0; box-shadow: none; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; }
+.jq-selectbox__dropdown { width: 100% !important; top: 29px; border: 1px solid #ff7c10; border-radius: 0; box-shadow: none; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; }
 .jq-selectbox.focused .jq-selectbox__select, .jq-selectbox.opened .jq-selectbox__select { border-color: #ff7c10; box-shadow: none; }
 .jq-selectbox li { padding: 6px 9px 7px; }
-.jq-selectbox li:hover { color: #222; background: #ccc; }
+.jq-selectbox li:hover { background: #ff7c10; }
 .jq-selectbox li.selected { color: #fff !important; background: #ff7c10; }
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 250px; padding: 6px 9px 7px; border: 1px solid #d8d8d8; border-radius: 0; box-shadow: none; color: #676767; outline: none; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: none; }
 input[type="email"]:not([disabled]):focus, input[type="number"]:not([disabled]):focus, input[type="password"]:not([disabled]):focus, input[type="search"]:not([disabled]):focus, input[type="tel"]:not([disabled]):focus, input[type="text"]:not([disabled]):focus, input[type="url"]:not([disabled]):focus, textarea:not([disabled]):focus { border-color: #ff7b10; background: #fff; }
@@ -188,7 +188,7 @@ input[type="search"] { -webkit-appearance: none }
 /*noinspection CssInvalidPseudoSelector*/
 :-ms-input-placeholder { color: #676767; }
 textarea { width: 400px; height: 95px; overflow: auto; resize: none; }
-.button, button, input[type="button"], input[type="submit"], input[type="reset"] { overflow: visible; padding: 7px 10px 8px; border-radius: 1px; outline: none; border: none; font: 13px  Arial, Helvetica, sans-serif; text-transform: uppercase; color: #fff; cursor: pointer; transition: background-color .3s ease; background: #ff7b10; }
+.button, button, input[type="button"], input[type="submit"], input[type="reset"] { overflow: visible; padding: 7px 10px 9px; border-radius: 1px; outline: none; border: none; font: 13px  Arial, Helvetica, sans-serif; text-transform: uppercase; color: #fff; cursor: pointer; transition: background-color .3s ease; background: #ff7b10; }
 .button::-moz-focus-inner, button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner { padding: 0; border: 0; }
 button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover, button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):focus, input[type="reset"]:focus { background-color: #df6300; }
 button:not([disabled]):hover:before, button:not([disabled]):focus:before { display: none; }
@@ -199,9 +199,9 @@ button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, button
 .jq-checkbox { width: 18px; height: 18px; border: 1px solid #d6d6d6; border-radius: 0; box-shadow: none; background: #fff; overflow: visible !important; text-align: left; }
 .jq-checkbox.focused { border-color: #fff; }
 .checkbox .jq-checkbox.checked .jq-checkbox__div { border-radius: 0; box-shadow: none; width: 10px; height: 10px; margin: 0; margin: 3px 0 0 4px; background: url(../img/sprite.png) -70px -120px no-repeat; background-size: 100px auto; }
-.jq-radio { width: 20px; height: 20px; box-shadow: none; margin: 2px; background: transparent; border: 2px solid #036; }
+.jq-radio { width: 18px; height: 18px; box-shadow: none; margin: -4px 6px 0 0; background: #fff; border: 1px solid #d6d6d6; }
 .jq-radio.focused { border-color: #f6f6f6; }
-.jq-radio.checked .jq-radio__div { background: #ff5c26; box-shadow: none; width: 8px; height: 8px; margin: 0; position: absolute; top: 4px; left: 4px; border-radius: 50%; }
+.jq-radio.checked .jq-radio__div { background: #b9b9b9; box-shadow: none; width: 12px; height: 12px; margin: 2px 0 0 2px; border-radius: 50%; }
 .checkbox .jq-checkbox { margin-right: 9px; }
 .radio .jq-radio { margin-right: 9px; }
 .form .line { margin-bottom: 15px; clear: left; }
@@ -256,18 +256,16 @@ button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, button
    _HEADER
    ========================================================================== */
 .header {
-	width: 210px;
+	width: 44px;
+	overflow: hidden;
 	min-height: 100%;
 	margin-left: -44px;
 	margin-right: -165px;
 	position: fixed;
 	z-index: 580;
 }
-.nav {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
+.header:hover {
+	width: 210px;
 }
 .nav .list {
 	margin: 0 0 0 44px;
@@ -280,6 +278,7 @@ button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, button
 .nav .list > li {
 	padding: 5px 0 5px 0;
 	position: relative;
+	white-space: nowrap;
 }
 .nav .list > li:first-child {
 	padding-top: 1px;
@@ -615,22 +614,15 @@ button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, button
 	background-position: 50% 50%;
 	border-radius: 1px;
 }
-.top .links .icon:before {
+.top .links .icon img {
 	width: 20px;
 	height: 20px;
 	margin: -10px 0 0 -10px;
 	display: block;
-	content: ' ';
-	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	background: url(../img/sprite.png) 0 0 no-repeat; 
-	background-size: 100px auto; 
 }
-.top .links .icon-1:before { background-position: 0 0; }
-.top .links .icon-2:before { background-position: -25px 0; }
-.top .links .icon-3:before { background-position: -50px 0; }
 .top .links li a {
 	padding-left: 5px;
 	font-size: 14px;
@@ -721,33 +713,20 @@ button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, button
 .table .cell-edit a {
 	display: block;
 }
-.table .cell-edit a span {
+.table .cell-edit .icon {
 	width: 20px;
 	height: 20px;
-	margin: 0 auto;
+	margin: -10px 0 0 -10px;
 	display: block;
-	background: url(../img/sprite.png) 0 -180px no-repeat;
-	background-size: 100px auto; 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: opacity .3s ease;
 }
-.table .cell-edit:hover a span {
-	background-position: -25px -180px;
-}
-.table .cell-edit a.open span { background-position: -65px -150px; }
-.table .cell-edit:hover a.open span{ background-position: -65px -175px; }
-.table .cell-edit a.task span { background-position: 0 -205px; }
-.table .cell-edit:hover a.task span { background-position: -25px -205px; }
-.table .cell-edit a.phone span { background-position: 0 -230px; }
-.table .cell-edit:hover a.phone span { background-position: 0 -260px; }
-.table .cell-edit a.market span { background-position: -25px -230px; }
-.table .cell-edit:hover a.market span{ background-position: -25px -260px; }
-.table .cell-edit a.pin span{ background-position: -55px -230px; }
-.table .cell-edit:hover a.pin span { background-position: -55px -260px; }
-.table .cell-edit a.mark span { background-position: -80px -230px; }
-.table .cell-edit:hover a.mark span { background-position: -80px -260px; }
-.table .cell-edit a.date span { background-position: -50px -315px; }
-.table .cell-edit:hover a.date span { background-position: -80px -315px; }
-.table .cell-edit a.add span { width: 15px; height: 15px; background-position: -20px -155px; }
-.table .cell-edit:hover a.add span { background-position: -20px -155px; }
+.table .cell-edit .icon-1 { opacity: 1; }
+.table .cell-edit:hover .icon-1 { opacity: 0; }
+.table .cell-edit .icon-2 { opacity: 0; }
+.table .cell-edit:hover .icon-2 { opacity: 1; }
 .table .cell-edit a.close span {
 	background: transparent;
 	position: relative;
