@@ -6,18 +6,6 @@ $(document).ready(function () {
 	/* Init forms */
 	$('input, select').styler();
 
-	/* Nav init */
-	$('.header').each(function () {
-		$(window).on('scroll touchmove', function () {
-			/* Toggle fixed header */
-			if ($(window).scrollTop() > 5) {
-				$('.header').addClass('header-fixed');
-			} else {
-				$('.header').removeClass('header-fixed');
-			}
-		});
-	});
-
 	$('.button-close').click(function () {
 		$(this).closest('.cover').fadeToggle(200);
 		return false;
