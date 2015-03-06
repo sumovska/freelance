@@ -86,6 +86,14 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Table-Card */
+	$('.table-cart').each(function() {
+		$('.cell .close', this).click(function() {
+			$(this).closest('.row').hide(200);
+			return false;
+		});
+	});
+
 	/* Filter */
 	$('.filter').each(function () {
 		$('.slider', this).each(function () {
