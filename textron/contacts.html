@@ -25,7 +25,7 @@
 			<li><a href="about.html">О магазине</a></li>
 			<li><a href="#">Возврат товаров и гарантия</a></li>
 			<li><a href="news.html">Новости</a></li>
-			<li><a href="contacts.html">Контакты</a></li>
+			<li class="active"><a href="contacts.html">Контакты</a></li>
 			<li><a href="#">Вход / Регистрация</a></li>
 		</ul>
 	</nav>
@@ -45,30 +45,30 @@
 				</form>
 			</div>
 		</div>
-		<div class="cell cart">
+		<div class="cell cart-small">
 			<a class="link" href="#"><span>6</span></a>
 			<div class="tooltip">
 				<div class="table">
 					<a class="tr" href="#">
 						<span class="th"><span>Denon SC-N7, Gloss Black</span></span>
-						<span class="td">1 X 6 000 Р</span>
+						<span class="td">1 X 6 000 <span class="rub">p</span></span>
 					</a>
 					<a class="tr" href="#">
 						<span class="th"><span>Настольная стереосистема Yamaha MCR-042, green</span></span>
-						<span class="td">4 X 12 000 Р</span>
+						<span class="td">4 X 12 000 <span class="rub">p</span></span>
 					</a>
 					<a class="tr" href="#">
 						<span class="th"><span>Teac CR-H238I, Silver</span></span>
-						<span class="td">1 X 4 000 Р</span>
+						<span class="td">1 X 4 000 <span class="rub">p</span></span>
 					</a>
 				</div>
-				<a class="reset" href="#">Пересчитать</a>
-				<span class="total">ВСЕГО: <strong class="big">22 000 Р</strong></span>
+				<a class="reset" href="cart.html">Оформить</a>
+				<span class="total">ВСЕГО: <strong class="big">22 000 <span class="rub">p</span></strong></span>
 			</div>
 		</div>
 		<nav class="menu">
 			<ul>
-				<li class="active">
+				<li>
 					<a href="catalog.html">Домашние кинотеатры</a>
 					<div class="submenu">
 						<h3 class="h3">Домашние кинотеатры<img class="icon" src="img/temp/catalog-1s.png" alt=""></h3>
@@ -147,18 +147,18 @@
 		</nav>
 	</header>
 
-	<div class="breadcrumbs breadcrumbs-catalog">
-		<div class="wrapper">
-			<p class="line"><a class="home" href="index.html"></a> &gt; Контакты</p>
+	<div class="breadcrumbs">
+		<div class="wrapper wrapper-small">
+			<p class="line"><a class="home" href="index.html"></a> &gt; <span>Контакты</span></p>
 		</div>
 	</div>
 
 	<article class="container">
 		<div class="hgroup">
 			<div class="contacts">
-				<div class="wrapper">
+				<div class="wrapper wrapper-small">
 					<div class="col col-1">
-						<h3 class="h1">Контакты</h3>
+						<h1 class="h1">Контакты</h1>
 					</div>
 					<div class="col col-2">
 						<p class="adr"><strong>Адрес:</strong> <br>г. Москва, ул. Нижняя Сыромятническая, <br>д.10, стр. 7, этаж 1.</p>
@@ -179,57 +179,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="map" class="map">
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false&language=ru-RU"></script>
-
-			<script type="text/javascript">
-				google.maps.event.addDomListener(window, 'load', init);
-				function init() {
-					var pos = new google.maps.LatLng(55.7476456, 37.6074862);
-					var mapOptions = {
-						zoom: 17,
-						panControl: false,
-						mapTypeControl: false,
-						scaleControl: false,
-						streetViewControl: false,
-						overviewMapControl: false,
-						scrollwheel: false,
-						navigationControl: false,
-						zoomControlOptions: {
-							style: google.maps.ZoomControlStyle.SMALL
-						},
-						center: pos,
-						styles: [
-							{
-								featureType: 'road', elementType: 'geometry', stylers: [
-								{lightness: 50},
-								{visibility: 'simplified'}
-							]
-							},
-							{
-								featureType: 'road', elementType: 'labels', stylers: [
-								{visibility: 'off'}
-							]
-							},
-							{
-								"featureType": "poi.business", "stylers": [
-								{"visibility": "off"}
-							]
-							}
-						]
-					};
-					var mapElement = document.getElementById('map');
-					var map = new google.maps.Map(mapElement, mapOptions);
-					var marker_image = 'img/pin.png';
-					var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(40, 59));
-					marker = new google.maps.Marker({
-						position: pos,
-						map: map,
-						icon: pinIcon
-					});
-				}
-			</script>
-		</div>
+		<div id="map" class="map"></div>
 	</article>
 
 	<footer class="footer">
@@ -279,5 +229,6 @@
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 </body>
 </html>

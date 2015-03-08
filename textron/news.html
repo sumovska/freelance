@@ -24,7 +24,7 @@
 			<li><a href="#">Доставка и оплата</a></li>
 			<li><a href="about.html">О магазине</a></li>
 			<li><a href="#">Возврат товаров и гарантия</a></li>
-			<li><a href="news.html">Новости</a></li>
+			<li class="active"><a href="news.html">Новости</a></li>
 			<li><a href="contacts.html">Контакты</a></li>
 			<li><a href="#">Вход / Регистрация</a></li>
 		</ul>
@@ -45,30 +45,30 @@
 				</form>
 			</div>
 		</div>
-		<div class="cell cart">
+		<div class="cell cart-small">
 			<a class="link" href="#"><span>6</span></a>
 			<div class="tooltip">
 				<div class="table">
 					<a class="tr" href="#">
 						<span class="th"><span>Denon SC-N7, Gloss Black</span></span>
-						<span class="td">1 X 6 000 Р</span>
+						<span class="td">1 X 6 000 <span class="rub">p</span></span>
 					</a>
 					<a class="tr" href="#">
 						<span class="th"><span>Настольная стереосистема Yamaha MCR-042, green</span></span>
-						<span class="td">4 X 12 000 Р</span>
+						<span class="td">4 X 12 000 <span class="rub">p</span></span>
 					</a>
 					<a class="tr" href="#">
 						<span class="th"><span>Teac CR-H238I, Silver</span></span>
-						<span class="td">1 X 4 000 Р</span>
+						<span class="td">1 X 4 000 <span class="rub">p</span></span>
 					</a>
 				</div>
-				<a class="reset" href="#">Пересчитать</a>
-				<span class="total">ВСЕГО: <strong class="big">22 000 Р</strong></span>
+				<a class="reset" href="cart.html">Оформить</a>
+				<span class="total">ВСЕГО: <strong class="big">22 000 <span class="rub">p</span></strong></span>
 			</div>
 		</div>
 		<nav class="menu">
 			<ul>
-				<li class="active">
+				<li>
 					<a href="catalog.html">Домашние кинотеатры</a>
 					<div class="submenu">
 						<h3 class="h3">Домашние кинотеатры<img class="icon" src="img/temp/catalog-1s.png" alt=""></h3>
@@ -147,27 +147,26 @@
 		</nav>
 	</header>
 
-	<div class="breadcrumbs breadcrumbs-catalog">
-		<div class="wrapper">
-			<p class="line"><a class="home" href="index.html"></a> &gt; О магазине</p>
+	<div class="breadcrumbs">
+		<div class="wrapper wrapper-small">
+			<p class="line"><a class="home" href="index.html"></a> &gt; <span>О магазине</span></p>
 		</div>
 	</div>
 
 	<article class="container">
 		<div class="hgroup">
-			<div class="wrapper">
+			<div class="wrapper wrapper-small">
 				<h1 class="h1">Новости</h1>
+
 				<form class="form" action="#">
 					<div class="sort">
 						<div class="date">
-							<label>Сортировка</label>
+							<label for="sort">Сортировка</label>
 							<div class="select-simple">
-								<select>
-									<option>Дата</option>
-									<option>Дата</option>
-									<option>Дата</option>
-									<option>Дата</option>
-									<option>Дата</option>
+								<select id="sort">
+									<option value="1" selected>Дата</option>
+									<option value="2">Имя</option>
+									<option value="3">Популярность</option>
 								</select>
 							</div>
 						</div>
@@ -188,25 +187,31 @@
 			<div class="news">
 				<div class="item">
 					<span class="date"><span class="day">21</span> июля <span class="year">2014</span></span>
-					<img class="pic" src="img/temp/news-1.jpg" alt="">
-					<p class="h4">SuperStereo на фестивале "Усадьба Jazz 2014"</p>
-					<p class="text">Дорогие друзья! <br>Не пропустите! В эти выходные 14 и 15 июня магазин SuperStereo будет участвовать в одном из самых ярких музыкальном событии этого лета - фестивале "Усадьба Jazz" в Архангельском! Как и в прошлом году, мы ждем вас в нашем кино-шатре! Мы подготовили для вас не только интересное кино, но и интересные арт-объекты с которыми можно сфотографироваться от нашего партнера - компании InterLamp!</p>
+					<a href="#" class="pic"><img src="img/temp/news-1.jpg" alt=""></a>
+					<p class="h4"><a href="#">SuperStereo на фестивале "Усадьба Jazz 2014"</a></p>
+					<p class="text">Дорогие друзья!
+						<br>Не пропустите! В эти выходные 14 и 15 июня магазин SuperStereo будет участвовать в одном из самых ярких музыкальном событии этого лета - фестивале "Усадьба Jazz" в Архангельском! Как и в прошлом году, мы ждем вас в нашем кино-шатре! Мы подготовили для вас не только интересное кино, но и интересные арт-объекты с которыми можно сфотографироваться от нашего партнера - компании InterLamp!
+					</p>
 					<a class="comments" href="#">12 Комментариев</a>
 					<a class="more" href="#">читать далее</a>
 				</div>
 				<div class="item">
 					<span class="date"><span class="day">21</span> июля <span class="year">2014</span></span>
-					<img class="pic" src="img/temp/news-1.jpg" alt="">
-					<p class="h4">SuperStereo на фестивале "Усадьба Jazz 2014"</p>
-					<p class="text">Дорогие друзья! <br>Не пропустите! В эти выходные 14 и 15 июня магазин SuperStereo будет участвовать в одном из самых ярких музыкальном событии этого лета - фестивале "Усадьба Jazz" в Архангельском! Как и в прошлом году, мы ждем вас в нашем кино-шатре! Мы подготовили для вас не только интересное кино, но и интересные арт-объекты с которыми можно сфотографироваться от нашего партнера - компании InterLamp!</p>
+					<a href="#" class="pic"><img src="img/temp/news-1.jpg" alt=""></a>
+					<p class="h4"><a href="#">SuperStereo на фестивале "Усадьба Jazz 2014"</a></p>
+					<p class="text">Дорогие друзья!
+						<br>Не пропустите! В эти выходные 14 и 15 июня магазин SuperStereo будет участвовать в одном из самых ярких музыкальном событии этого лета - фестивале "Усадьба Jazz" в Архангельском! Как и в прошлом году, мы ждем вас в нашем кино-шатре! Мы подготовили для вас не только интересное кино, но и интересные арт-объекты с которыми можно сфотографироваться от нашего партнера - компании InterLamp!
+					</p>
 					<a class="comments" href="#">12 Комментариев</a>
 					<a class="more" href="#">читать далее</a>
 				</div>
 				<div class="item">
 					<span class="date"><span class="day">21</span> июля <span class="year">2014</span></span>
-					<img class="pic" src="img/temp/news-1.jpg" alt="">
-					<p class="h4">SuperStereo на фестивале "Усадьба Jazz 2014"</p>
-					<p class="text">Дорогие друзья! <br>Не пропустите! В эти выходные 14 и 15 июня магазин SuperStereo будет участвовать в одном из самых ярких музыкальном событии этого лета - фестивале "Усадьба Jazz" в Архангельском! Как и в прошлом году, мы ждем вас в нашем кино-шатре! Мы подготовили для вас не только интересное кино, но и интересные арт-объекты с которыми можно сфотографироваться от нашего партнера - компании InterLamp!</p>
+					<a href="#" class="pic"><img src="img/temp/news-1.jpg" alt=""></a>
+					<p class="h4"><a href="#">SuperStereo на фестивале "Усадьба Jazz 2014"</a></p>
+					<p class="text">Дорогие друзья!
+						<br>Не пропустите! В эти выходные 14 и 15 июня магазин SuperStereo будет участвовать в одном из самых ярких музыкальном событии этого лета - фестивале "Усадьба Jazz" в Архангельском! Как и в прошлом году, мы ждем вас в нашем кино-шатре! Мы подготовили для вас не только интересное кино, но и интересные арт-объекты с которыми можно сфотографироваться от нашего партнера - компании InterLamp!
+					</p>
 					<a class="comments" href="#">12 Комментариев</a>
 					<a class="more" href="#">читать далее</a>
 				</div>

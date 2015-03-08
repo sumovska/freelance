@@ -14,8 +14,8 @@ $(document).ready(function () {
 			if ((target.closest('.search').length === 0)) {
 				$('.search').removeClass('active');
 			}
-			if (target.closest('.cart').length === 0) {
-				$('.cart').removeClass('active');
+			if (target.closest('.cart-small').length === 0) {
+				$('.cart-small').removeClass('active');
 			}
 		}
 
@@ -43,34 +43,37 @@ $(document).ready(function () {
 	/* Index carousel */
 	$('.index').each(function () {
 		$('.carousel', this).bxSlider({
-			infiniteLoop: false,
+			infiniteLoop: true,
+			useCSS: true,
+			easing: 'ease',
 			responsive: true,
 			controls: false,
 			preloadImages: 'all',
 			auto: true,
-			autoHover: true,
-			easing: 'ease'
+			autoHover: true
 		});
 	});
 
 	/* Item */
 	$('.last-reviews').each(function () {
 		$('.carousel', this).bxSlider({
+			useCSS: true,
+			easing: 'ease',
 			infiniteLoop: false,
+			preloadImages: 'all',
 			hideControlOnEnd: true,
 			adaptiveHeight: true,
 			responsive: true,
-			pager: false,
-			preloadImages: 'all',
-			easing: 'ease'
+			pager: false
 		});
 	});
 
 	/* Sale */
 	$('.sale').each(function () {
 		$('.carousel', this).bxSlider({
-			pager: false,
-			easing: 'ease'
+			useCSS: true,
+			easing: 'ease',
+			pager: false
 		});
 	});
 
@@ -87,8 +90,8 @@ $(document).ready(function () {
 	});
 
 	/* Table-Card */
-	$('.table-cart').each(function() {
-		$('.cell .close', this).click(function() {
+	$('.table-cart').each(function () {
+		$('.cell .close', this).click(function () {
 			$(this).closest('.row').hide(200);
 			return false;
 		});
@@ -121,7 +124,8 @@ $(document).ready(function () {
 					format: {
 						// Set formatting
 						thousand: ' ',
-						decimals: 0
+						decimals: 0,
+						postfix: ' <span class="rub">p</span>'
 					}
 				}
 			});
@@ -138,8 +142,33 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Cart */
+	$('.cart .number').each(function () {
+		var input = $('input', this), up = $('.up', this), down = $('.down', this);
+		input.keydown(function (e) {
+			if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+				(e.keyCode == 65 && e.ctrlKey === true) ||
+				(e.keyCode >= 35 && e.keyCode <= 39)) {
+				return;
+			}
+			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+				e.preventDefault();
+			}
+		});
+		up.click(function () {
+			if (+input.val() < 10) {
+				input.val(+input.val() + 1);
+			}
+		});
+		down.click(function () {
+			if (+input.val() > 0) {
+				input.val(+input.val() - 1);
+			}
+		});
+	});
+
 	/* Google Map */
-	$('.about .map').each(function () {
+	$('.map').each(function () {
 		window.marker = null;
 		function initMap() {
 			var map, pos, style, mapOptions;
@@ -177,10 +206,11 @@ $(document).ready(function () {
 			map.mapTypes.set('grey', mapType);
 			map.setMapTypeId('grey');
 			var marker_image = 'img/pin.png';
-			new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(90, 90));
+			var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(40, 59));
 			marker = new google.maps.Marker({
 				position: pos,
-				map: map
+				map: map,
+				icon: pinIcon
 			});
 		}
 
