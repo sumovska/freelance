@@ -4,6 +4,9 @@
 /* On document ready */
 $(document).ready(function () {
 
+	/* Forms */
+	$('input, select').styler();
+
 	/* Tabs */
 	$('.block-explore').each(function () {
 		$('.triggers li a', this).click(function () {
@@ -13,11 +16,27 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Anchors nav */
 	$('.anchors .list').onePageNav({
 		currentClass: 'active',
 		scrollSpeed: 1000,
 		easing: 'easeInOutQuad',
 		xoffset: -20
+	});
+
+	/* Recommend carousel */
+	$('.recommend').each(function () {
+		$('.carousel', this).slick({
+			infinite: true,
+			swipeToSlide: true,
+			centerMode: true,
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			prevArrow: '<span class="slick-prev"></span>',
+			nextArrow: '<span class="slick-next"></span>'
+		});
 	});
 
 	/* Popup script */
