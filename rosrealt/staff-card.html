@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Rosrielt</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--[if lte IE 9]>
+	<script src="js/vendor/html5-3.6-pie.min-1.0.0.js"></script>
+	<link rel="stylesheet" href="css/ie.css">
+	<![endif]-->
+</head>
+<body>
+
+	<header class="header">
+		<h1 class="h1">Карточка сотрудника</h1>
+		<a class="add" href="staff-add.html">Добавить</a>
+		<ul class="status">
+			<li class="ads">2 объявления &nbsp;<a href="#">Увеличить</a></li>
+			<li class="funds">1500 руб. &nbsp;<a href="#">Пополнить</a></li>
+			<li class="name"><a href="#">АН "Миель"</a></li>
+		</ul>
+	</header>
+
+	<nav class="nav">
+		<ul id="menu" class="menu">
+			<li><a href="owners.html" class="owners" title="Собственники">Собственники <span class="new">29</span></a></li>
+			<li><a href="#" class="top" title="Топ 6">Топ 6</a></li>
+			<li><a href="#" class="sell" title="Продажа">Продажа</a></li>
+			<li><a href="#" class="rent" title="Аренда">Аренда</a></li>
+			<li><a href="#" class="archive" title="Архив">Архив</a></li>
+			<li><a href="#" class="pins" title="Закладки">Закладки <span class="new">99</span></a></li>
+			<li><a href="#" class="clients" title="Клиенты">Клиенты</a></li>
+			<li class="active"><a href="staff.html" class="staff" title="Сотрудники">Сотрудники</a></li>
+			<li><a href="#" class="tasks" title="Задачи">Задачи</a></li>
+			<li><a href="#" class="portal" title="На портале">На портале</a></li>
+			<li><a href="#" class="topic" title="Актуальность">Актуальность</a></li>
+			<li><a href="#" class="ads" title="Реклама">Реклама</a></li>
+			<li><a href="#" class="details" title="Детализация">Детализация</a></li>
+		</ul>
+		<a href="#menu" class="toggle" title="Раскрыть меню"></a>
+	</nav>
+
+	<div class="container">
+		<div class="content">
+			<div class="item">
+				<form class="form" method="post" action="staff.html">
+					<div class="line line-cols">
+						<div class="col"><input type="text" placeholder="Фамилия" value="Илья"></div>
+						<div class="col"><input type="text" placeholder="Имя" value="Райс"></div>
+					</div>
+					<div class="line line-cols">
+						<div class="col"><input type="text" placeholder="Отчество" value="Анатольевич"></div>
+						<div class="col"><input type="text" placeholder="Логин" value="Ilya_Rice"></div>
+					</div>
+					<div class="line line-cols">
+						<div class="col"><input type="text" placeholder="Email" value="711710@list.ru"></div>
+						<div class="col"><input type="text" placeholder="Мобильный (корпоративный) телефон" value="+7 924 382 2002"></div>
+					</div>
+					<div class="line line-cols">
+						<div class="col"><input type="password" placeholder="Пароль" value="12345678"></div>
+						<div class="col">
+							<select>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+								<option>Личный счет</option>
+							</select>
+						</div>
+					</div>
+					<div class="line line-task">
+						<a class="add add-white" href="#"><span class="plus"></span>Поставить задачу сотруднику</a>
+					</div>
+					<table class="table table-tasks">
+					<tr class="tr">
+						<td class="td cell-text" colspan="5">
+							<p><input type="text" placeholder="Укажите тему задачи"></p>
+						</td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-text" colspan="5">
+							<p><textarea>Подробное описание задачи</textarea></p>
+						</td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-text">
+							<p>
+								<select>
+									<option>Выберите исполнителя</option>
+									<option>Выберите исполнителя</option>
+									<option>Выберите исполнителя</option>
+									<option>Выберите исполнителя</option>
+									<option>Выберите исполнителя</option>
+									<option>Выберите исполнителя</option>
+									<option>Выберите исполнителя</option>
+									<option>Выберите исполнителя</option>
+								</select>
+							</p>
+						</td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_11.png" alt="">
+									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td"><p>Дата начала</p></td>
+						<td class="td"><p>Дата завершения</p></td>
+						<td class="td cell-text"><p><input type="submit" value="Добавить"></p></td>
+					</tr>
+					</table>
+					<table class="table table-tasks">
+					<tr class="tr">
+						<td class="td cell-text">
+							<p><input type="text" placeholder="Заголовок поступившей задачи"></p>
+						</td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_11.png" alt="">
+									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_14c.png" alt="">
+									<img class="icon icon-2" src="img/icon/_14c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_15c.png" alt="">
+									<img class="icon icon-2" src="img/icon/_15c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_12.png" alt="">
+									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
+								</a>
+							</p>
+						</td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-title" colspan="3"><p>Заголовок поступившей задачи</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_11.png" alt="">
+									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_12.png" alt="">
+									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
+								</a>
+							</p>
+						</td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-title" colspan="3"><p>Заголовок поступившей задачи</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_11.png" alt="">
+									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_12.png" alt="">
+									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
+								</a>
+							</p>
+						</td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-title" colspan="3"><p>Заголовок открытой задачи</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_11.png" alt="">
+									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_12.png" alt="">
+									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
+								</a>
+							</p>
+						</td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-title" colspan="3"><p>Заголовок открытой задачи</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_11.png" alt="">
+									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_13.png" alt="">
+									<img class="icon icon-2" src="img/icon/_13c.png" alt="">
+								</a>
+							</p>
+						</td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-text" colspan="8"><p><textarea>Подробное описание задачи</textarea></p></td>
+					</tr>
+					<tr class="tr">
+						<td class="td cell-text" colspan="6">
+							<p>
+								<input style="background-color:transparent;" type="text" placeholder="Поставщик: Иванов Иван Иванович">
+							</p>
+						</td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_14c.png" alt="">
+									<img class="icon icon-2" src="img/icon/_14c.png" alt="">
+								</a>
+							</p>
+						</td>
+						<td class="td cell-edit">
+							<p>
+								<a href="#">
+									<img class="icon icon-1" src="img/icon/_15c.png" alt="">
+									<img class="icon icon-2" src="img/icon/_15c.png" alt="">
+								</a>
+							</p>
+						</td>
+					</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+		<div class="aside">
+			<img class="add" src="img/add.jpg" alt="">
+
+			<div class="statistics">
+				<dl class="totals">
+					<dt>Счет:</dt>
+					<dd>Общий / 1200 руб. <a class="link" href="#">Пополнить</a></dd>
+					<dt>Объявлений:</dt>
+					<dd>50 шт. <a class="link" href="#">Добавить</a></dd>
+					<dt>Продажа:</dt>
+					<dd><a class="link" href="#">40 объектов</a></dd>
+					<dt>Аренда:</dt>
+					<dd><a class="link" href="#">12 объектов</a></dd>
+				</dl>
+				<div class="date">
+							<span class="icon">
+								<a href="#">
+									<img class="pic pic-1" src="img/icon/_11.png" alt="">
+									<img class="pic pic-2" src="img/icon/_11c.png" alt="">
+								</a>
+							</span>
+					<span class="text">01.01.2015</span>
+					<span class="text">31.01.2015</span>
+				</div>
+				<div class="actions">
+					<p class="line">
+						<span class="time">12:00</span>
+						<span class="text">Добавление <a href="#">объекта</a> в раздел Аренда</span>
+						<span class="time">12:30</span>
+						<span class="text">Пополнение счета на сумму 1300 руб.</span>
+						<span class="time">12:50</span>
+						<span class="text">Добавление <a href="#">объекта</a> в раздел Объекты</span>
+						<span class="time">13:00</span>
+						<span class="text">Приобретение <a href="#">"Пакет 25"</a> за 3500 руб.</span>
+						<span class="time">14:50</span>
+						<span class="text">Публикация <a href="#">объекта</a> на портал.</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<ul class="links">
+			<li><a href="#">Ссылка один</a></li>
+			<li><a href="#">Ссылка два</a></li>
+			<li><a href="#">Ссылка три</a></li>
+		</ul>
+		<div class="support">
+			<a class="toggle" href="#" title="Помощь">Служба поддержки</a>
+		</div>
+		<div class="messages">
+			<a class="toggle" href="#" title="Сообщения"><span class="new">1</span></a>
+		</div>
+		<div class="help">
+			<a class="toggle" href="#" title="Помощь"></a>
+		</div>
+	</footer>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

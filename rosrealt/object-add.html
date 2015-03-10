@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Rosrielt</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--[if lte IE 9]>
+	<script src="js/vendor/html5-3.6-pie.min-1.0.0.js"></script>
+	<link rel="stylesheet" href="css/ie.css">
+	<![endif]-->
+</head>
+<body>
+
+	<header class="header">
+		<h1 class="h1">Новый объект</h1>
+		<a class="add" href="staff-add.html">Добавить</a>
+		<ul class="status">
+			<li class="ads">2 объявления &nbsp;<a href="#">Увеличить</a></li>
+			<li class="funds">1500 руб. &nbsp;<a href="#">Пополнить</a></li>
+			<li class="name"><a href="#">АН "Миель"</a></li>
+		</ul>
+	</header>
+
+	<nav class="nav">
+		<ul id="menu" class="menu">
+			<li><a href="owners.html" class="owners" title="Собственники">Собственники <span class="new">29</span></a></li>
+			<li><a href="#" class="top" title="Топ 6">Топ 6</a></li>
+			<li><a href="#" class="sell" title="Продажа">Продажа</a></li>
+			<li><a href="#" class="rent" title="Аренда">Аренда</a></li>
+			<li><a href="#" class="archive" title="Архив">Архив</a></li>
+			<li><a href="#" class="pins" title="Закладки">Закладки <span class="new">99</span></a></li>
+			<li><a href="#" class="clients" title="Клиенты">Клиенты</a></li>
+			<li class="active"><a href="staff.html" class="staff" title="Сотрудники">Сотрудники</a></li>
+			<li><a href="#" class="tasks" title="Задачи">Задачи</a></li>
+			<li><a href="#" class="portal" title="На портале">На портале</a></li>
+			<li><a href="#" class="topic" title="Актуальность">Актуальность</a></li>
+			<li><a href="#" class="ads" title="Реклама">Реклама</a></li>
+			<li><a href="#" class="details" title="Детализация">Детализация</a></li>
+		</ul>
+		<a href="#menu" class="toggle" title="Раскрыть меню"></a>
+	</nav>
+
+	<div class="container">
+		<form class="form" method="post" action="owners.html">
+			<div class="content">
+				<div class="line">
+					<select title="Тип операции">
+						<option value="0" selected>Тип операции</option>
+						<option value="1">Купля</option>
+						<option value="2">Продажа</option>
+						<option value="3">Аренда</option>
+					</select>
+				</div>
+				<div class="line">
+					<select title="Регион">
+						<option value="0" selected>Регион</option>
+						<option value="1">Московская область</option>
+						<option value="2">Ленинградская область</option>
+						<option value="3">Псковская область</option>
+					</select>
+				</div>
+				<div class="line">
+					<select title="Город">
+						<option value="0" selected>Город</option>
+						<option value="1">Москва</option>
+						<option value="2">Санкт-Петербург</option>
+						<option value="3">Псков</option>
+					</select>
+				</div>
+				<div class="line">
+					<select title="Район">
+						<option value="0" selected>Район</option>
+						<option value="1">Центр</option>
+						<option value="2">Лужники</option>
+						<option value="3">Ново-Бирюлево</option>
+					</select>
+				</div>
+				<div class="line">
+					<select title="Станция метро">
+						<option value="0" selected>Станция метро</option>
+						<option value="1">Театральная</option>
+						<option value="2">Фестивальная</option>
+						<option value="3">Конечная</option>
+					</select>
+				</div>
+				<div class="line"><input type="text" value="" placeholder="Улица" title="Улица"></div>
+				<div class="line line-2-col">
+					<div class="col"><input type="text" value="" placeholder="Номер дома" title="Номер дома"></div>
+					<div class="col"><input type="text" value="" placeholder="Корпус" title="Корпус"></div>
+				</div>
+				<div class="line line-2-col">
+					<div class="col"><input type="text" value="" placeholder="Этажность дома" title="Этажность дома"></div>
+					<div class="col"><input type="text" value="" placeholder="Номер этажа" title="Номер этажа"></div>
+				</div>
+				<div class="line">
+					<select title="Состояние">
+						<option value="0" selected>Состояние</option>
+						<option value="1">Отличное</option>
+						<option value="2">Жилое</option>
+					</select>
+				</div>
+				<div class="line line-3-col">
+					<div class="col"><input type="text" value="" placeholder="Общая площадь / м2" title="Общая площадь / м2"></div>
+					<div class="col"><input type="text" value="" placeholder="Жилая площадь / м2" title="Жилая площадь / м2"></div>
+					<div class="col"><input type="text" value="" placeholder="Площадь кухни / м2" title="Площадь кухни / м2"></div>
+				</div>
+				<div class="line">
+					<select title="Санузел">
+						<option value="0" selected>Санузел</option>
+						<option value="1">Совмещенный</option>
+						<option value="2">Раздельный</option>
+					</select>
+				</div>
+				<div class="line line-3-col">
+					<div class="col"><input type="text" value="" placeholder="Количество комнат" title="Количество комнат"></div>
+					<div class="col"><input type="text" value="" placeholder="Количество уровней" title="Количество уровней"></div>
+					<div class="col"><input type="text" value="" placeholder="Высота потолков / м" title="Высота потолков / м"></div>
+				</div>
+				<div class="line line-3-col">
+					<div class="col">
+						<div class="line"><label class="checkbox"><input type="checkbox">Квартира-студия</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Цокольный этаж</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Газ в доме</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Теплые полы</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Теплый потолок</label></div>
+					</div>
+					<div class="col">
+						<div class="line"><label class="checkbox"><input type="checkbox">Телефон</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Интернет</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Кабельное ТВ</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Сауна</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Тренажерный зал</label></div>
+					</div>
+					<div class="col">
+						<div class="line"><label class="checkbox"><input type="checkbox">Охранная сигнализация</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Физическая охрана</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Пожарная сигнализация</label></div>
+						<div class="line"><label class="checkbox"><input type="checkbox">Видеонаблюдение</label></div>
+					</div>
+				</div>
+				<div class="line"><textarea placeholder="Дополнительная информация об объекте" title="Дополнительная информация об объекте"></textarea></div>
+				<div class="line"><input type="text" value="" placeholder="Цена / руб." title="Цена / руб."></div>
+				<div class="line">
+					<select title="Завести договор">
+						<option value="0" selected>Завести договор</option>
+						<option value="1">На заводить договор</option>
+					</select>
+				</div>
+			</div>
+			<div class="aside">
+				<div class="line">
+					<input class="file-photo" type="file">
+				</div>
+				<div class="line">
+					<input type="text" placeholder="HTML код вашего видео из YоuTube" value="">
+				</div>
+			</div>
+			<div class="line submit">
+				<button class="add" type="submit">Сохранить и распечатать</button>
+			</div>
+		</form>
+	</div>
+
+	<footer class="footer">
+		<ul class="links">
+			<li><a href="#">Ссылка один</a></li>
+			<li><a href="#">Ссылка два</a></li>
+			<li><a href="#">Ссылка три</a></li>
+		</ul>
+		<div class="support">
+			<a class="toggle" href="#" title="Помощь">Служба поддержки</a>
+		</div>
+		<div class="messages">
+			<a class="toggle" href="#" title="Сообщения"><span class="new">1</span></a>
+		</div>
+		<div class="help">
+			<a class="toggle" href="#" title="Помощь"></a>
+		</div>
+	</footer>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
