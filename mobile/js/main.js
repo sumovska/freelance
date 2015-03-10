@@ -11,4 +11,21 @@ $(document).ready(function () {
 			controls: false
 		});
 	});
+
+	$('.slider').each(function () {
+		$('.item', this).noUiSlider({
+			start: [1200, 2359],
+			step: 1,
+			behaviour: 'drag',
+			connect: true,
+			range: {
+				'min': 0,
+				'max': 3000
+			},
+			format: wNumb({
+				decimals: 0
+			})
+		});
+		$('.item', this).Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
+	});
 });
