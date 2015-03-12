@@ -189,7 +189,6 @@ $(document).ready(function () {
 		return false;
 	});
 
-
 	$('.tabs').each(function () {
 		$('.triggers li a', this).click(function () {
 			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
