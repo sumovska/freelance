@@ -7,8 +7,13 @@ $(document).ready(function () {
 	$('input, select').styler();
 	
 	$('.index').each(function() {
-		$('.carousel', this).bxSlider({
-			controls: false
+		$('.carousel', this).slick({
+			adaptiveHeight: false,
+			dots: true,
+			arrows: false,
+			customPaging: function(slider, i) {
+				return '<span data-role="none">' + (i + 1) + '</span>';
+			}
 		});
 	});
 
@@ -28,4 +33,6 @@ $(document).ready(function () {
 		});
 		$('.item', this).Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 	});
+
 });
+
