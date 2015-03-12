@@ -49,7 +49,7 @@ $(document).ready(function () {
 	});
 
 	/* Popup scripts */
-	$(".fancybox-popup").fancybox({
+	$(".fancybox-popup").fancybox ({
 		padding: 0,
 		helpers: {
 			overlay: {
@@ -59,6 +59,11 @@ $(document).ready(function () {
 				}
 			}
 		}
+
+	});
+
+	$.extend($.fancybox.defaults.tpl, {
+    	closeBtn: '<a class="fancybox-button-close" href="javascript:void(0);"><span></span>Закрыть</a>'
 	});
 
 	var body = $('body');
@@ -169,32 +174,21 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.popup-gallery .carousel').bxSlider({
-		controls: false,
-		mode: 'vertical',
-		adaptiveHeight: true,
-		maxSlides: 1,
-		minSlides: 1
+	$('.popup-gallery').each(function() {
+		$('.carousel').bxSlider({
+			controls: false,
+			mode: 'vertical',
+			adaptiveHeight: true,
+			maxSlides: 1,
+			minSlides: 1
+		});
 	});
-
+		
 	$('.button-close').click(function () {
 		$(this).closest('.cover').fadeToggle(400);
 		return false;
 	});
 
-	$(".similar li a").fancybox({
-		autoSize: false,
-		wrapCSS: 'fancybox-gallery',
-		fitToView: false,
-		padding: 0,
-		helpers: {
-			overlay: {
-				css: {
-					'background': 'rgba(22, 35, 53, 0.5)'
-				}
-			}
-		}
-	});
 
 	$('.tabs').each(function () {
 		$('.triggers li a', this).click(function () {
