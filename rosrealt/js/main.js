@@ -146,6 +146,26 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.footer').each(function () {
+		$('.help', this).each(function () {
+			var _help = $(this);
+			$('.toggle', this).click(function () {
+				_help.toggleClass('active');
+				$('.sub', _help).click(function () {
+					$(this).closest('li').toggleClass('open').siblings('li.open').removeClass('open');
+					return false;
+				});
+				return false;
+			});
+			$('body').bind("click", function (event) {
+				var target = $(event.target);
+				if ((target.closest('.tooltip-help').length === 0)) {
+					_help.removeClass('active');
+				}
+			});
+		});
+	});
+
 	/* Фильтр */
 	$('.filter').each(function () {
 		$('.toggle').click(function () {
