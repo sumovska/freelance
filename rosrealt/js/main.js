@@ -31,6 +31,42 @@ $(document).ready(function () {
 		$(this).closest('.note').fadeOut();
 	});
 
+	/* Инпут с редактированием */
+	$('input.secure, textarea.secure, .jq-selectbox.secure').each(function () {
+		var input = $(this), space = $(this).closest('.secure-space');
+		if ($(this).is('.jq-selectbox')) {
+			input = $('select', this);
+		}
+		$('.icon-edit', space).click(function () {
+			space.addClass('secure-space-enabled');
+			input.prop('disabled', false).trigger('refresh');
+		});
+		$('.icon-save', space).click(function () {
+			space.removeClass('secure-space-enabled');
+			input.prop('disabled', true).trigger('refresh');
+		});
+	});
+
+	/* Показывает/прячет форму добавления задачи */
+	$('.add-task').click(function () {
+		$('.task-create').slideToggle(300, 'swing');
+		return false;
+	});
+
+	/* Список задач */
+	$('.task-list').each(function () {
+		$('.task', this).each(function () {
+			var _self = $(this);
+			$('.toggle', this).click(function () {
+				$(this).toggleClass('active');
+				$('.space', _self).slideToggle(300, function () {
+					_self.toggleClass('open');
+				});
+				return false;
+			});
+		});
+	});
+
 	/* Фильтр */
 	$('.filter').each(function () {
 		$('.toggle').click(function () {

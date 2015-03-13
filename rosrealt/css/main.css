@@ -112,7 +112,7 @@ h6, .h6 {
    Стили форм для плагина Form Styler 1.6.2 (https://github.com/Dimox/jQueryFormStyler)
    ================================================================================================== */
 /* === INPUT === */
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 30px; padding: 7px 9px; border: 1px solid #d6d6d6; border-radius: 1px; box-shadow: none; outline: none; -webkit-appearance: none color : #676767; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: border-color .2s; }
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 30px; padding: 7px 9px; border: 1px solid #d6d6d6; border-radius: 1px; box-shadow: none; outline: none; -webkit-appearance: none; color: #676767; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: border-color .2s; }
 textarea { width: 400px; height: 95px; overflow: auto; resize: none; }
 input[type="email"]:not([disabled]):focus, input[type="number"]:not([disabled]):focus, input[type="password"]:not([disabled]):focus, input[type="search"]:not([disabled]):focus, input[type="tel"]:not([disabled]):focus, input[type="text"]:not([disabled]):focus, input[type="url"]:not([disabled]):focus, textarea:not([disabled]):focus { border-color: #a09f9e; }
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled] { cursor: default; background: #f6f5f3; }
@@ -120,7 +120,8 @@ input[type="email"][disabled], input[type="number"][disabled], input[type="passw
 button, input[type="button"], input[type="submit"], input[type="reset"] { padding: 10px; border: none; border-radius: 1px; box-shadow: none; outline: none; cursor: pointer; overflow: visible; color: #fff; font: 13px/13px Arial, Helvetica, sans-serif; text-transform: uppercase; background: #ff7b10; transition: background-color .2s; }
 button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner { padding: 0; border: 0; }
 button:after { content: ''; }
-button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover { background: #f56e00; }
+button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover,
+button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):focus, input[type="reset"]:focus { background: #f56e00; }
 button:not([disabled]):active, input[type="button"]:not([disabled]):active, input[type="submit"]:not([disabled]):active, input[type="reset"]:active { padding-top: 11px; padding-bottom: 9px; background: #ff7b10; }
 button[disabled], input[type="button"][disabled], input[type="submit"][disabled] { cursor: default; opacity: .75; background: #8d8d8d !important; }
 button[disabled]:before, input[type="button"][disabled]:before, input[type="submit"][disabled]:before { text-shadow: none; background: #585858 !important; }
@@ -202,23 +203,24 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 /*noinspection CssInvalidPseudoSelector*/
 :-ms-input-placeholder { color: #676767; opacity: 1; }
 .form { cursor: default; display: block }
-.form:after, .form .line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
-.form input[type="email"], .form input[type="number"], .form input[type="password"], .form input[type="search"], .form input[type="tel"], .form input[type="text"], .form input[type="url"], .form textarea, .form .jq-selectbox, .form .jq-file { width: 100%; }
+.form:after, .form-line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .checkbox, .radio { padding-left: 28px; display: inline-block; vertical-align: middle; position: relative; }
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
-.jq-file.file-photo { max-width: 305px; margin: 0 auto; display: block !important; }
+.jq-file.file-photo { width: 100%; margin: 0 auto; display: block !important; }
 .jq-file.file-photo .jq-file__name { height: 210px; padding: 112px 9px 9px 9px; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: #e3e3e3; transition: border-color .2s, color .2s; }
 .jq-file.file-photo.changed .jq-file__name { text-transform: none; }
 .jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; transition: opacity .2s; }
 .jq-file.file-photo:hover .jq-file__name, .jq-file.file-photo.focused .jq-file__name { border-color: #a09f9e; color: #a09f9e; }
 .jq-file.file-photo:hover .jq-file__name:before, .jq-file.file-photo.focused .jq-file__name:before { opacity: .4; }
 .jq-file.file-photo .jq-file__browse { display: none; }
-.form .line { width: 100%; margin-bottom: 15px; clear: left; }
-.form .line .line:last-of-type { margin: 0; }
-.form .line .note { min-height: 0; margin: 15px 0 0; }
-.form .line-2-col, .form .line-3-col { width: auto; margin-left: -10px; margin-right: -10px; }
-.form .line-2-col .col { width: 50%; padding: 0 10px; float: left; }
-.form .line-3-col .col { width: 33.3%; padding: 0 10px; float: left; }
+.form-line { width: 100%; margin-bottom: 15px; clear: left; }
+.form-line .form-line:last-of-type { margin: 0; }
+.form-line input[type="email"], .form-line input[type="number"], .form-line input[type="password"], .form-line input[type="search"], .form-line input[type="tel"], .form-line input[type="text"], .form-line input[type="url"], .form-line textarea, .form-line .jq-selectbox, .form-line .jq-file { width: 100%; }
+.form-line .note { min-height: 0; margin: 15px 0 0; }
+.form-line-2-col, .form-line-3-col { width: auto; margin-left: -10px; margin-right: -10px; }
+.form-line-2-col .col { width: 50%; padding: 0 10px; float: left; }
+.form-line-3-col .col { width: 33.3%; padding: 0 10px; float: left; }
+.form .select { width: 100%; display: block; }
 /* ==========================================================================
    _Шапка
    ========================================================================== */
@@ -580,10 +582,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	bottom: 0;
 	background: #e06400;
 }
-.add-white { color: #676767; background: transparent; border: 1px solid #d6d6d6; }
-.add-white:hover { background: #fff; }
-.add-white .plus { background: #fff; border-right: 1px solid #d6d6d6; }
-.add-white .plus:before { width: 20px; height: 20px; top: 6px; left: 8px; }
 /* ==========================================================================
    _Заметка
    ========================================================================== */
@@ -726,6 +724,465 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	bottom: 0;
 }
 /* ==========================================================================
+   _Статистика
+   ========================================================================== */
+.stats {
+	width: 100%;
+	position: relative;
+}
+.stats a { color: #2f79bd; }
+.stats a:hover, .stats a:focus { text-decoration: none; }
+.stats:after, .stats .main:after, .stats .date:after, .stats .actions:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden }
+/* Основные данные */
+.stats .main {
+	padding: 13px 15px;
+	margin: 0;
+	border: 1px solid #dadad9;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: .04em;
+	color: #676767;
+	background: #fff;
+}
+.stats .main p { margin: 0 0 7px; }
+.stats .main p:nth-child(2n) { margin-bottom: 17px; }
+.stats .main p:last-of-type { margin: 0; }
+.stats .main strong { font-weight: normal; text-transform: uppercase; }
+.stats .date {
+	padding-left: 36px;
+	position: relative;
+	cursor: default;
+}
+.stats .date .icon-calendar {
+	width: 36px;
+	border: 1px solid #d6d6d6;
+	position: absolute;
+	top: -1px;
+	left: 0;
+	bottom: -1px;
+	z-index: 4;
+	background: #fff;
+	transition: border-color .2s;
+}
+.stats .date .icon-calendar:focus {
+	border-color: #a09f9e;
+}
+.stats .date .text {
+	width: 50%;
+	padding: 10px;
+	border-right: 1px solid #d6d6d6;
+	display: block;
+	float: left;
+	color: #676767;
+	text-align: center;
+}
+.stats .actions {
+	height: 366px;
+	padding: 13px 15px;
+	border: 1px solid #dadad9;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: .04em;
+	overflow: auto;
+	overflow-x: hidden;
+	background: #fff;
+}
+.stats .actions p {
+	margin-bottom: 5px;
+}
+.stats .actions .time {
+	margin-bottom: 6px;
+	display: block;
+	font-weight: bold;
+	font-style: normal;
+}
+/* ==========================================================================
+   _Иконки
+   ========================================================================== */
+.icon {
+	width: 36px;
+	height: 37px;
+	border: 1px solid #d6d6d6;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	transition: border-color .2s;
+	background: #fff;
+}
+.icon:before, .icon:after {
+	width: 30px;
+	height: 30px;
+	margin: -15px 0 0 -15px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 1;
+	z-index: 1;
+	background: url('../img/sprite.png') no-repeat 100px 100px;
+	background-size: 300px auto;
+	transition: opacity .3s;
+}
+.icon:after { opacity: 0; z-index: 2; }
+.icon:hover:before { opacity: 0; }
+.icon:hover:after { opacity: 1; }
+.icon:focus { border-color: #a09f9e !important; }
+/* Календарь */
+.icon-calendar:before { background-position: -90px -90px; }
+.icon-calendar:after { background-position: -90px -120px; }
+/* Сохранить */
+.icon-save:before { background-position: -120px -120px; }
+.icon-save:hover:before { opacity: 1; }
+.icon-save:after { display: none; }
+/* Удалить */
+.icon-delete:before { background-position: -150px -120px; }
+.icon-delete:hover:before { opacity: 1; }
+.icon-delete:after { display: none; }
+/* Редактирование */
+.icon-edit:before { background-position: 0 -90px; }
+.icon-edit:after { background-position: 0 -120px; }
+/* ==========================================================================
+   _Инпут с редактированием
+   ========================================================================== */
+.secure-space {
+	position: relative;
+	display: block;
+}
+.secure {
+	position: relative;
+}
+input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled .jq-selectbox__select {
+	background: #fff;
+}
+.secure-space .icon {
+	width: 35px;
+	height: 35px;
+	border-width: 0 0 0 1px;
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	z-index: 105;
+}
+.secure-space.col .icon { right: 11px; }
+.secure-space .icon-edit { opacity: 0; transition: opacity .1s; }
+.secure-space:hover .icon-edit { opacity: 1; }
+.secure-space-enabled .icon-edit { display: none; }
+.secure-space .icon-save { display: none; }
+.secure-space-enabled .icon-save { display: block; }
+/* ==========================================================================
+   _Кнопка 'Поставить задачу сотруднику'
+   ========================================================================== */
+.add-task {
+	padding: 11px 25px 11px 55px;
+	border: 1px solid #d6d6d6;
+	color: #676767;
+	letter-spacing: 0;
+	background: #f6f5f3;
+	transition: background-color .2s, border-color .2s;
+}
+.add-task:before {
+	width: 34px;
+	border-right: 1px solid #d6d6d6;
+	content: ' ';
+	z-index: 1;
+	background: #fff;
+	transition: border-color .2s;
+}
+.add-task:after {
+	width: 30px;
+	height: 30px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	z-index: 2;
+	background: #fff url('../img/sprite.png') no-repeat -30px -90px;
+	background-size: 300px auto;
+}
+.add-task:hover, .add-task:focus {
+	border-color: #a09f9e;
+	color: #676767;
+	background: #fff;
+}
+.add-task:hover:before, .add-task:focus:before { border-color: #a09f9e; }
+.add-task:active {
+	padding-top: 12px;
+	padding-bottom: 10px;
+}
+/* ==========================================================================
+   Форма новой задачи
+   ========================================================================== */
+.task-create {
+	width: 100%;
+	margin-bottom: 15px;
+	position: relative;
+	background: #fff;
+}
+.task-create .form-line { margin: -1px 0 0 0; position: static; }
+.task-create .form-line:first-child { margin: 0; }
+.task-create textarea {
+	height: 52px;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	position: relative;
+	z-index: 99;
+	background: none;
+}
+.task-create textarea:focus { z-index: 102; }
+.task-create input:focus, .task-create textarea:focus {
+	z-index: 105;
+}
+.task-create .form-line-last {
+	padding-right: 91px;
+	position: relative;
+}
+.task-create .form-line-last .select {
+	width: 61%;
+	padding-right: 34px;
+	float: left;
+	position: relative;
+}
+.task-create input[disabled], .task-create textarea[disabled] {
+	z-index: 0 !important;
+	background: rgba(205, 205, 205, .2);
+}
+/*
+.task-create .form-line-last .select .jq-selectbox.large .jq-selectbox__select {
+	background: rgba(205, 205, 205, .2);
+}
+*/
+.task-create .form-line-last .select .jq-selectbox.large.focused .jq-selectbox__select,
+.task-create .form-line-last .select .jq-selectbox.large.opened .jq-selectbox__select,
+.task-create .form-line-last .select .jq-selectbox.large.changed .jq-selectbox__select {
+	background: none;
+}
+.task-create .icon-calendar {
+	border: 1px solid #d6d6d6;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	top: 0;
+	right: -1px;
+	z-index: 101;
+	transition: border-color .2s;
+	background: none;
+}
+.task-create .icon-calendar:focus { border-color: #a09f9e; }
+.task-create .form-line-last input.date-from, .task-create .form-line-last input.date-to {
+	width: 19.5%;
+	float: left;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+.task-create .form-line-last input.date-from:hover, .task-create .form-line-last input.date-from:hover, .task-create .form-line-last input.date-from:focus, .task-create .form-line-last input.date-from:focus {
+	z-index: 2;
+}
+.task-create .form-line-last input.date-to {
+	margin-left: -1px;
+}
+.task-create .add-space {
+	width: 93px;
+	border: 1px solid #d6d6d6;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 0;
+}
+.task-create .add-space input {
+	height: 35px;
+	padding: 11px 10px;
+}
+/* ==========================================================================
+   Список задач
+   ========================================================================== */
+.task-list {
+	margin-bottom: 15px;
+	position: relative;
+	background: #fff;
+}
+.task-list:after, .task-list .task:after, .task-list .input:after, .task-list .actions:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
+.task-list .task {
+	margin-top: -1px;
+	box-shadow: inset 0 0 0 1px #d6d6d6;
+	background: #fff;
+}
+.task-list .input {
+	margin: 0 184px 0 0;
+}
+.task-list .input input {
+	width: 100%;
+	border-top-color: transparent;
+	display: block;
+	position: relative;
+	background: none;
+}
+.task-list input[disabled], .task-list textarea[disabled] {
+	z-index: 0 !important;
+	background: rgba(205, 205, 205, .2) !important;
+}
+.task-list .actions {
+	width: 184px;
+	padding: 0 35px 0 34px;
+	margin-top: -37px;
+	position: relative;
+	float: right;
+}
+.task-list .actions .icon-calendar {
+	border-top-color: transparent;
+	border-left-color: transparent;
+	position: absolute;
+	top: 0;
+	left: -1px;
+	z-index: 2;
+	background: none;
+}
+.task-list .actions .date {
+	width: 100%;
+	padding: 7px 5px 7px 10px;
+	border: 1px solid #d6d6d6;
+	margin: 0;
+	color: #676767;
+	line-height: 21px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	display: block;
+	position: relative;
+	z-index: 0;
+	background: none !important;
+}
+.task-list .actions .date-yellow { background: #ffdeaa !important; }
+.task-list .actions .date-orange { background: #ff7979 !important; }
+.task-list .actions .toggle {
+	width: 36px;
+	height: 37px;
+	border: 1px solid #d6d6d6;
+	border-top-color: transparent;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	transition: border-color .3s;
+}
+.task-list .actions .toggle:before {
+	width: 18px;
+	height: 3px;
+	margin: -1px 0 0 -9px;
+	content: ' ';
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: #838383;
+	transition: background-color .2s;
+}
+.task-list .actions .toggle:after {
+	width: 18px;
+	height: 9px;
+	border-top: 3px solid #838383;
+	border-bottom: 3px solid #838383;
+	margin: -7px 0 0 -9px;
+	content: ' ';
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: border-color .2s;
+}
+.task-list .actions .toggle:before, .task-list .actions .toggle:after {
+	-webkit-transition: -webkit-transform .2s;
+	-webkit-transform: rotate(0deg);
+	-moz-transition: -moz-transform .2s;
+	-moz-transform: rotate(0deg);
+	transition: transform .2s;
+	transform: rotate(0deg);
+}
+.task-list .task .actions .toggle.active:before, .task-list .task .actions .toggle.active:after {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.task-list .actions .toggle:hover:before { background-color: #ff7b10; }
+.task-list .actions .toggle:hover:after { border-color: #ff7b10; }
+.task-list .actions .toggle:focus { border-color: #a09f9e !important; }
+.task-list .task:first-child { margin: 0; }
+.task-list .task:first-child .input input, .task-list .task:first-child .actions .icon-calendar, .task-list .task:first-child .actions .toggle { border-top-color: #d6d6d6; }
+.task-list .task:first-child .input input:focus { border-color: #a09f9e; }
+.task-list .space {
+	width: 100%;
+	margin: 0 0 -1px 0;
+	display: none;
+	overflow: hidden;
+	position: relative;
+	top: -1px;
+	z-index: 10;
+}
+.task-list .task.open .space { display: block; }
+.task-list .form-line { margin: 0 0 -1px 0; }
+.task-list .form-line-last {
+	padding-right: 70px;
+	margin: 0;
+}
+.task-list .space textarea {
+	width: 100%;
+	height: 52px;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	display: block;
+	position: relative;
+	z-index: 15;
+	background: none;
+}
+.task-list .space input[type="text"]:last-of-type {
+	border-bottom-color: transparent;
+	background: none;
+}
+.task-list .space textarea:focus, .task-list .space input[type="text"]:focus { border-color: #a09f9e !important; }
+.task-list .space .buttons {
+	width: 71px;
+	height: 37px;
+	margin-top: -37px;
+	float: right;
+	position: relative;
+	z-index: 10;
+}
+.task-list .space .buttons .icon-save {
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: none;
+}
+.task-list .space .buttons .icon-delete {
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: none;
+}
+/* ==========================================================================
+   _Блоки
+   ========================================================================== */
+/* Высота input=file на странице 'карточка пользователя' */
+.block-staff-card .jq-file.file-photo .jq-file__name {
+	height: 193px;
+	padding: 100px 9px 9px 9px;
+}
+input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, textarea.large { height: 37px; padding-top: 10px; padding-bottom: 10px; }
+.jq-selectbox.large .jq-selectbox__dropdown { top: 36px; }
+.jq-selectbox.large .jq-selectbox__select { height: 37px; }
+.jq-selectbox.large .jq-selectbox__select-text { padding-top: 9px; }
+/* ==========================================================================
    _HELP
    ========================================================================== */
 /*
@@ -757,152 +1214,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .help .amount {
 	padding: 0 17px;
 	display: inline-block;
-}
-*/
-/* ==========================================================================
-   _ASIDE
-   ========================================================================== */
-.totals {
-	margin: 0;
-	padding: 16px 20px;
-	border: 1px solid #dadad9;
-	background: #fff;
-}
-.totals:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden }
-.totals dt {
-	text-transform: uppercase;
-	float: left;
-	clear: left;
-}
-.totals dd {
-	margin-bottom: 11px;
-	margin-left: 0;
-	padding-left: 6px;
-	float: left;
-}
-.totals .link {
-	color: #2f79bd;
-}
-.totals dd:nth-child(4n) {
-	margin-bottom: 20px;
-}
-.actions {
-	padding: 16px 20px;
-	border: 1px solid #dadad9;
-	background: #fff;
-}
-.actions .time {
-	margin-bottom: 6px;
-	display: block;
-	font-weight: bold;
-}
-.actions .text {
-	margin-bottom: 6px;
-	display: block;
-}
-.actions .text a {
-	color: #2f79bd;
-}
-.statistics .date {
-	padding-left: 35px;
-	position: relative;
-}
-.statistics .date:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden }
-.statistics .date .icon {
-	width: 35px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	background: #fff;
-	border-left: 1px solid #d6d6d6;
-	border-right: 1px solid #d6d6d6;
-}
-.statistics .date .icon a {
-	padding: 4px 7px;
-	display: block;
-}
-.statistics .date .icon .pic {
-	width: 20px;
-	height: 20px;
-	margin: -10px 0 0 -10px;
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transition: opacity .1s;
-}
-.statistics .date .icon .pic-1 { opacity: 1; }
-.statistics .date .icon .pic-2 { opacity: 0; }
-.statistics .date .icon:hover .pic-1 { opacity: 0; }
-.statistics .date .icon:hover .pic-2 { opacity: 1; }
-.statistics .date .text {
-	width: 50%;
-	padding: 10px;
-	display: block;
-	float: left;
-	border-right: 1px solid #d6d6d6;
-}
-/* ==========================================================================
-   _ITEM
-   ========================================================================== */
-.item .form .line-task {
-	margin-bottom: 15px;
-}
-.item .line-task .add .plus:before {
-	background: url(../img/icon/_6.png);
-	left: 6px;
-	background-size: 20px 20px;
-}
-/* ==========================================================================
-   _TABLE-TASKS
-   ========================================================================== */
-.table-tasks {
-	margin-bottom: 16px;
-}
-.table-tasks .tr {
-	background-color: transparent;
-}
-.table-tasks .td {
-	border-right: 1px solid #d6d6d6;
-}
-.table-tasks .td:last-of-type {
-	border-right: none;
-}
-.table-tasks .cell-text { padding: 0; }
-.table-tasks .cell-edit { background: #fff; border-left: none; }
-.table-tasks .td .date { white-space: nowrap; }
-.table-tasks .cell-title p {
-	width: 150px;
-	white-space: nowrap;
-	-o-text-overflow: ellipsis;
-	-ms-text-overflow: ellipsis;
-	-moz-text-overflow: ellipsis;
-	-webkit-text-overflow: ellipsis;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
-.table-tasks .td input[type="text"], .table-tasks .td .jq-selectbox__select, .table-tasks .td textarea {
-	border-color: transparent;
-}
-.table-tasks .td input[type="text"] {
-	padding-top: 8px;
-	padding-bottom: 9px;
-}
-.table-tasks .td input[type="submit"], .table-tasks .td .jq-selectbox {
-	width: 100%;
-}
-.table-tasks .td textarea {
-	width: 100%;
-	height: 50px;
-}
-.table-tasks .td input[type="text"]:focus,
-.table-tasks .td .jq-selectbox__select:focus,
-.table-tasks .td textarea:focus {
-	border-color: #ff7b10;
-}
-.table-tasks .td .jq-selectbox__select {
-	background: transparent;
 }
 /* ==========================================================================
    _OWNERS
@@ -1152,7 +1463,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	.header .status li { padding: 0; margin: 0 15px; float: none; display: inline-block; }
 	.header .status li:before, .header .status li:after { display: none; }
 	.content, .aside { padding: 0; display: block; }
-	.form .line.submit { text-align: center; }
+	.form-line.form-submit { text-align: center; }
 }
 @media (max-width: 759px) {
 }

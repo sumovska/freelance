@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
 
 	<!--[if lte IE 9]>
 	<script src="js/vendor/html5-3.6-pie.min-1.0.0.js"></script>
@@ -47,124 +48,126 @@
 	</nav>
 
 	<div class="container">
-		<form class="form" method="post" action="owners.html">
-			<div class="content">
-				<div class="line">
-					<select title="Тип операции">
-						<option value="0" selected>Тип операции</option>
-						<option value="1">Купля</option>
-						<option value="2">Продажа</option>
-						<option value="3">Аренда</option>
-					</select>
-				</div>
-				<div class="line">
-					<select title="Регион">
-						<option value="0" selected>Регион</option>
-						<option value="1">Московская область</option>
-						<option value="2">Ленинградская область</option>
-						<option value="3">Псковская область</option>
-					</select>
-				</div>
-				<div class="line">
-					<select title="Город">
-						<option value="0" selected>Город</option>
-						<option value="1">Москва</option>
-						<option value="2">Санкт-Петербург</option>
-						<option value="3">Псков</option>
-					</select>
-				</div>
-				<div class="line">
-					<select title="Район">
-						<option value="0" selected>Район</option>
-						<option value="1">Центр</option>
-						<option value="2">Лужники</option>
-						<option value="3">Ново-Бирюлево</option>
-					</select>
-				</div>
-				<div class="line">
-					<select title="Станция метро">
-						<option value="0" selected>Станция метро</option>
-						<option value="1">Театральная</option>
-						<option value="2">Фестивальная</option>
-						<option value="3">Конечная</option>
-					</select>
-				</div>
-				<div class="line"><input type="text" value="" placeholder="Улица" title="Улица"></div>
-				<div class="line line-2-col">
-					<div class="col"><input type="text" value="" placeholder="Номер дома" title="Номер дома"></div>
-					<div class="col"><input type="text" value="" placeholder="Корпус" title="Корпус"></div>
-				</div>
-				<div class="line line-2-col">
-					<div class="col"><input type="text" value="" placeholder="Этажность дома" title="Этажность дома"></div>
-					<div class="col"><input type="text" value="" placeholder="Номер этажа" title="Номер этажа"></div>
-				</div>
-				<div class="line">
-					<select title="Состояние">
-						<option value="0" selected>Состояние</option>
-						<option value="1">Отличное</option>
-						<option value="2">Жилое</option>
-					</select>
-				</div>
-				<div class="line line-3-col">
-					<div class="col"><input type="text" value="" placeholder="Общая площадь / м2" title="Общая площадь / м2"></div>
-					<div class="col"><input type="text" value="" placeholder="Жилая площадь / м2" title="Жилая площадь / м2"></div>
-					<div class="col"><input type="text" value="" placeholder="Площадь кухни / м2" title="Площадь кухни / м2"></div>
-				</div>
-				<div class="line">
-					<select title="Санузел">
-						<option value="0" selected>Санузел</option>
-						<option value="1">Совмещенный</option>
-						<option value="2">Раздельный</option>
-					</select>
-				</div>
-				<div class="line line-3-col">
-					<div class="col"><input type="text" value="" placeholder="Количество комнат" title="Количество комнат"></div>
-					<div class="col"><input type="text" value="" placeholder="Количество уровней" title="Количество уровней"></div>
-					<div class="col"><input type="text" value="" placeholder="Высота потолков / м" title="Высота потолков / м"></div>
-				</div>
-				<div class="line line-3-col">
-					<div class="col">
-						<div class="line"><label class="checkbox"><input type="checkbox">Квартира-студия</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Цокольный этаж</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Газ в доме</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Теплые полы</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Теплый потолок</label></div>
+		<div class="block-object-add">
+			<form class="form" method="post" action="owners.html">
+				<div class="content">
+					<div class="form-line">
+						<select title="Тип операции">
+							<option value="0" selected>Тип операции</option>
+							<option value="1">Купля</option>
+							<option value="2">Продажа</option>
+							<option value="3">Аренда</option>
+						</select>
 					</div>
-					<div class="col">
-						<div class="line"><label class="checkbox"><input type="checkbox">Телефон</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Интернет</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Кабельное ТВ</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Сауна</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Тренажерный зал</label></div>
+					<div class="form-line">
+						<select title="Регион">
+							<option value="0" selected>Регион</option>
+							<option value="1">Московская область</option>
+							<option value="2">Ленинградская область</option>
+							<option value="3">Псковская область</option>
+						</select>
 					</div>
-					<div class="col">
-						<div class="line"><label class="checkbox"><input type="checkbox">Охранная сигнализация</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Физическая охрана</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Пожарная сигнализация</label></div>
-						<div class="line"><label class="checkbox"><input type="checkbox">Видеонаблюдение</label></div>
+					<div class="form-line">
+						<select title="Город">
+							<option value="0" selected>Город</option>
+							<option value="1">Москва</option>
+							<option value="2">Санкт-Петербург</option>
+							<option value="3">Псков</option>
+						</select>
+					</div>
+					<div class="form-line">
+						<select title="Район">
+							<option value="0" selected>Район</option>
+							<option value="1">Центр</option>
+							<option value="2">Лужники</option>
+							<option value="3">Ново-Бирюлево</option>
+						</select>
+					</div>
+					<div class="form-line">
+						<select title="Станция метро">
+							<option value="0" selected>Станция метро</option>
+							<option value="1">Театральная</option>
+							<option value="2">Фестивальная</option>
+							<option value="3">Конечная</option>
+						</select>
+					</div>
+					<div class="form-line"><input type="text" value="" placeholder="Улица" title="Улица"></div>
+					<div class="form-line form-line-2-col">
+						<div class="col"><input type="text" value="" placeholder="Номер дома" title="Номер дома"></div>
+						<div class="col"><input type="text" value="" placeholder="Корпус" title="Корпус"></div>
+					</div>
+					<div class="form-line form-line-2-col">
+						<div class="col"><input type="text" value="" placeholder="Этажность дома" title="Этажность дома"></div>
+						<div class="col"><input type="text" value="" placeholder="Номер этажа" title="Номер этажа"></div>
+					</div>
+					<div class="form-line">
+						<select title="Состояние">
+							<option value="0" selected>Состояние</option>
+							<option value="1">Отличное</option>
+							<option value="2">Жилое</option>
+						</select>
+					</div>
+					<div class="form-line form-line-3-col">
+						<div class="col"><input type="text" value="" placeholder="Общая площадь / м2" title="Общая площадь / м2"></div>
+						<div class="col"><input type="text" value="" placeholder="Жилая площадь / м2" title="Жилая площадь / м2"></div>
+						<div class="col"><input type="text" value="" placeholder="Площадь кухни / м2" title="Площадь кухни / м2"></div>
+					</div>
+					<div class="form-line">
+						<select title="Санузел">
+							<option value="0" selected>Санузел</option>
+							<option value="1">Совмещенный</option>
+							<option value="2">Раздельный</option>
+						</select>
+					</div>
+					<div class="form-line form-line-3-col">
+						<div class="col"><input type="text" value="" placeholder="Количество комнат" title="Количество комнат"></div>
+						<div class="col"><input type="text" value="" placeholder="Количество уровней" title="Количество уровней"></div>
+						<div class="col"><input type="text" value="" placeholder="Высота потолков / м" title="Высота потолков / м"></div>
+					</div>
+					<div class="form-line form-line-3-col">
+						<div class="col">
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Квартира-студия</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Цокольный этаж</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Газ в доме</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Теплые полы</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Теплый потолок</label></div>
+						</div>
+						<div class="col">
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Телефон</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Интернет</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Кабельное ТВ</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Сауна</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Тренажерный зал</label></div>
+						</div>
+						<div class="col">
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Охранная сигнализация</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Физическая охрана</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Пожарная сигнализация</label></div>
+							<div class="form-line"><label class="checkbox"><input type="checkbox">Видеонаблюдение</label></div>
+						</div>
+					</div>
+					<div class="form-line"><textarea placeholder="Дополнительная информация об объекте" title="Дополнительная информация об объекте"></textarea></div>
+					<div class="form-line"><input type="text" value="" placeholder="Цена / руб." title="Цена / руб."></div>
+					<div class="form-line">
+						<select title="Завести договор">
+							<option value="0" selected>Завести договор</option>
+							<option value="1">На заводить договор</option>
+						</select>
 					</div>
 				</div>
-				<div class="line"><textarea placeholder="Дополнительная информация об объекте" title="Дополнительная информация об объекте"></textarea></div>
-				<div class="line"><input type="text" value="" placeholder="Цена / руб." title="Цена / руб."></div>
-				<div class="line">
-					<select title="Завести договор">
-						<option value="0" selected>Завести договор</option>
-						<option value="1">На заводить договор</option>
-					</select>
+				<div class="aside">
+					<div class="form-line">
+						<input class="file-photo" type="file">
+					</div>
+					<div class="form-line">
+						<input type="text" placeholder="HTML код вашего видео из YоuTube" value="">
+					</div>
 				</div>
-			</div>
-			<div class="aside">
-				<div class="line">
-					<input class="file-photo" type="file">
+				<div class="form-line form-submit">
+					<button class="add" type="submit">Сохранить и распечатать</button>
 				</div>
-				<div class="line">
-					<input type="text" placeholder="HTML код вашего видео из YоuTube" value="">
-				</div>
-			</div>
-			<div class="line submit">
-				<button class="add" type="submit">Сохранить и распечатать</button>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 
 	<footer class="footer">

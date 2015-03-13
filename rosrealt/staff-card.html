@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
 
 	<!--[if lte IE 9]>
 	<script src="js/vendor/html5-3.6-pie.min-1.0.0.js"></script>
@@ -47,267 +48,213 @@
 	</nav>
 
 	<div class="container">
-		<div class="content">
-			<div class="item">
-				<form class="form" method="post" action="staff.html">
-					<div class="line line-cols">
-						<div class="col"><input type="text" placeholder="Фамилия" value="Илья"></div>
-						<div class="col"><input type="text" placeholder="Имя" value="Райс"></div>
-					</div>
-					<div class="line line-cols">
-						<div class="col"><input type="text" placeholder="Отчество" value="Анатольевич"></div>
-						<div class="col"><input type="text" placeholder="Логин" value="Ilya_Rice"></div>
-					</div>
-					<div class="line line-cols">
-						<div class="col"><input type="text" placeholder="Email" value="711710@list.ru"></div>
-						<div class="col"><input type="text" placeholder="Мобильный (корпоративный) телефон" value="+7 924 382 2002"></div>
-					</div>
-					<div class="line line-cols">
-						<div class="col"><input type="password" placeholder="Пароль" value="12345678"></div>
-						<div class="col">
-							<select>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-								<option>Личный счет</option>
-							</select>
+		<div class="block-staff-card">
+			<form class="form" method="post" action="staff-card.html">
+				<div class="content">
+					<div class="form-line form-line-2-col">
+						<div class="col secure-space">
+							<input class="large secure" type="text" placeholder="Фамилия" value="Илья" disabled>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
+						</div>
+						<div class="col secure-space">
+							<input class="large secure" type="text" placeholder="Имя" value="Райс" disabled>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
 						</div>
 					</div>
-					<div class="line line-task">
-						<a class="add add-white" href="#"><span class="plus"></span>Поставить задачу сотруднику</a>
+					<div class="form-line form-line-2-col">
+						<div class="col secure-space">
+							<input class="large secure" type="text" placeholder="Отчество" value="Анатольевич" disabled>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
+						</div>
+						<div class="col secure-space">
+							<input class="large secure" type="text" placeholder="Логин" value="Ilya_Rice" disabled>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
+						</div>
 					</div>
-					<table class="table table-tasks">
-					<tr class="tr">
-						<td class="td cell-text" colspan="5">
-							<p><input type="text" placeholder="Укажите тему задачи"></p>
-						</td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-text" colspan="5">
-							<p><textarea>Подробное описание задачи</textarea></p>
-						</td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-text">
-							<p>
-								<select>
-									<option>Выберите исполнителя</option>
-									<option>Выберите исполнителя</option>
-									<option>Выберите исполнителя</option>
-									<option>Выберите исполнителя</option>
-									<option>Выберите исполнителя</option>
-									<option>Выберите исполнителя</option>
-									<option>Выберите исполнителя</option>
-									<option>Выберите исполнителя</option>
+					<div class="form-line form-line-2-col">
+						<div class="col secure-space">
+							<input class="large secure" type="text" placeholder="Email" value="711710@list.ru" disabled>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
+						</div>
+						<div class="col secure-space">
+							<input class="large secure" type="text" placeholder="Мобильный (корпоративный) телефон" value="+7 924 382 2002" disabled>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
+						</div>
+					</div>
+					<div class="form-line form-line-2-col">
+						<div class="col secure-space">
+							<input class="large secure" type="password" placeholder="Пароль" value="12345678" disabled>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
+						</div>
+						<div class="col secure-space">
+							<label class="select">
+								<select class="large secure" disabled>
+									<option value="0" selected>Личный счет</option>
+									<option value="1">Корпоративный счет</option>
 								</select>
-							</p>
-						</td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_11.png" alt="">
-									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td"><p>Дата начала</p></td>
-						<td class="td"><p>Дата завершения</p></td>
-						<td class="td cell-text"><p><input type="submit" value="Добавить"></p></td>
-					</tr>
-					</table>
-					<table class="table table-tasks">
-					<tr class="tr">
-						<td class="td cell-text">
-							<p><input type="text" placeholder="Заголовок поступившей задачи"></p>
-						</td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_11.png" alt="">
-									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_14c.png" alt="">
-									<img class="icon icon-2" src="img/icon/_14c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_15c.png" alt="">
-									<img class="icon icon-2" src="img/icon/_15c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_12.png" alt="">
-									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
-								</a>
-							</p>
-						</td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-title" colspan="3"><p>Заголовок поступившей задачи</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_11.png" alt="">
-									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_12.png" alt="">
-									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
-								</a>
-							</p>
-						</td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-title" colspan="3"><p>Заголовок поступившей задачи</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_11.png" alt="">
-									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_12.png" alt="">
-									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
-								</a>
-							</p>
-						</td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-title" colspan="3"><p>Заголовок открытой задачи</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_11.png" alt="">
-									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_12.png" alt="">
-									<img class="icon icon-2" src="img/icon/_12c.png" alt="">
-								</a>
-							</p>
-						</td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-title" colspan="3"><p>Заголовок открытой задачи</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_11.png" alt="">
-									<img class="icon icon-2" src="img/icon/_11c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td" colspan="3"><p class="date">ДО: 12.01.2015</p></td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_13.png" alt="">
-									<img class="icon icon-2" src="img/icon/_13c.png" alt="">
-								</a>
-							</p>
-						</td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-text" colspan="8"><p><textarea>Подробное описание задачи</textarea></p></td>
-					</tr>
-					<tr class="tr">
-						<td class="td cell-text" colspan="6">
-							<p>
-								<input style="background-color:transparent;" type="text" placeholder="Поставщик: Иванов Иван Иванович">
-							</p>
-						</td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_14c.png" alt="">
-									<img class="icon icon-2" src="img/icon/_14c.png" alt="">
-								</a>
-							</p>
-						</td>
-						<td class="td cell-edit">
-							<p>
-								<a href="#">
-									<img class="icon icon-1" src="img/icon/_15c.png" alt="">
-									<img class="icon icon-2" src="img/icon/_15c.png" alt="">
-								</a>
-							</p>
-						</td>
-					</tr>
-					</table>
-				</form>
-			</div>
-		</div>
-		<div class="aside">
-			<img class="add" src="img/add.jpg" alt="">
+							</label>
+							<span class="icon icon-edit" title="Редактировать"></span>
+							<span class="icon icon-save" title="Сохранить"></span>
+						</div>
+					</div>
 
-			<div class="statistics">
-				<dl class="totals">
-					<dt>Счет:</dt>
-					<dd>Общий / 1200 руб. <a class="link" href="#">Пополнить</a></dd>
-					<dt>Объявлений:</dt>
-					<dd>50 шт. <a class="link" href="#">Добавить</a></dd>
-					<dt>Продажа:</dt>
-					<dd><a class="link" href="#">40 объектов</a></dd>
-					<dt>Аренда:</dt>
-					<dd><a class="link" href="#">12 объектов</a></dd>
-				</dl>
-				<div class="date">
-							<span class="icon">
-								<a href="#">
-									<img class="pic pic-1" src="img/icon/_11.png" alt="">
-									<img class="pic pic-2" src="img/icon/_11c.png" alt="">
-								</a>
-							</span>
-					<span class="text">01.01.2015</span>
-					<span class="text">31.01.2015</span>
+					<div class="form-line">
+						<a class="add add-task" href="#">Поставить задачу сотруднику</a>
+					</div>
+
+					<div class="task-create">
+						<div class="form-line"><input class="large" type="text" placeholder="Укажите тему задачи" value=""></div>
+						<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
+						<div class="form-line form-line-last">
+							<div class="select">
+								<label>
+									<select class="large">
+										<option value="0" selected>Выберите исполнителя</option>
+										<option value="1">Леонид Грач</option>
+										<option value="2">Иван Дорн</option>
+										<option value="3">Олег Потреяшкин</option>
+									</select>
+								</label>
+								<a class="icon icon-calendar" href="#"></a>
+							</div>
+							<input type="text" class="large date-from" placeholder="Дата начала" value="" disabled>
+							<input type="text" class="large date-to" placeholder="Дата завершения" value="" disabled>
+							<span class="add-space"><input type="submit" value="Добавить"></span>
+						</div>
+					</div>
+
+					<div class="task-list">
+						<div class="task">
+							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value=""></div>
+							<div class="actions">
+								<a class="icon icon-calendar" href="#"></a>
+								<label><input type="text" class="large date" value="до: 12.01.2015" disabled></label>
+								<a class="toggle" href="#"></a>
+							</div>
+							<div class="space">
+								<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
+								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value=""></div>
+								<div class="buttons">
+									<a class="icon icon-delete" href="#"></a>
+									<a class="icon icon-save" href="#"></a>
+								</div>
+							</div>
+						</div>
+						<div class="task">
+							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value=""></div>
+							<div class="actions">
+								<a class="icon icon-calendar" href="#"></a>
+								<label><input type="text" class="large date" value="до: 12.01.2015" disabled></label>
+								<a class="toggle" href="#"></a>
+							</div>
+							<div class="space">
+								<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
+								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value=""></div>
+								<div class="buttons">
+									<a class="icon icon-delete" href="#"></a>
+									<a class="icon icon-save" href="#"></a>
+								</div>
+							</div>
+						</div>
+						<div class="task">
+							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value=""></div>
+							<div class="actions">
+								<a class="icon icon-calendar" href="#"></a>
+								<label><input type="text" class="large date" value="до: 12.01.2015" disabled></label>
+								<a class="toggle" href="#"></a>
+							</div>
+							<div class="space">
+								<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
+								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value=""></div>
+								<div class="buttons">
+									<a class="icon icon-delete" href="#"></a>
+									<a class="icon icon-save" href="#"></a>
+								</div>
+							</div>
+						</div>
+						<div class="task">
+							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value=""></div>
+							<div class="actions">
+								<a class="icon icon-calendar" href="#"></a>
+								<label><input type="text" class="large date" value="до: 12.01.2015" disabled></label>
+								<a class="toggle" href="#"></a>
+							</div>
+							<div class="space">
+								<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
+								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value=""></div>
+								<div class="buttons">
+									<a class="icon icon-delete" href="#"></a>
+									<a class="icon icon-save" href="#"></a>
+								</div>
+							</div>
+						</div>
+						<div class="task open">
+							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value=""></div>
+							<div class="actions">
+								<a class="icon icon-calendar" href="#"></a>
+								<label><input type="text" class="large date" value="до: 12.01.2015" disabled></label>
+								<a class="toggle active" href="#"></a>
+							</div>
+							<div class="space">
+								<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
+								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value=""></div>
+								<div class="buttons">
+									<a class="icon icon-delete" href="#"></a>
+									<a class="icon icon-save" href="#"></a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="actions">
-					<p class="line">
-						<span class="time">12:00</span>
-						<span class="text">Добавление <a href="#">объекта</a> в раздел Аренда</span>
-						<span class="time">12:30</span>
-						<span class="text">Пополнение счета на сумму 1300 руб.</span>
-						<span class="time">12:50</span>
-						<span class="text">Добавление <a href="#">объекта</a> в раздел Объекты</span>
-						<span class="time">13:00</span>
-						<span class="text">Приобретение <a href="#">"Пакет 25"</a> за 3500 руб.</span>
-						<span class="time">14:50</span>
-						<span class="text">Публикация <a href="#">объекта</a> на портал.</span>
-					</p>
+
+				<div class="aside">
+					<div class="form-line">
+						<input class="file-photo" type="file">
+					</div>
+					<div class="stats">
+						<div class="main">
+							<p><strong>Счет:</strong> Общий / 1200 руб. <a href="#">Пополнить</a></p>
+							<p><strong>Объявлений:</strong> 50 шт. <a href="#">Добавить</a></p>
+							<p><strong>Продажа:</strong> <a href="#">40 объектов</a></p>
+							<p><strong>Аренда:</strong> <a href="#">12 объектов</a></p>
+						</div>
+						<div class="date">
+							<a class="icon icon-calendar" href="#"></a>
+							<span class="text">01.01.2015</span>
+							<span class="text">31.01.2015</span>
+						</div>
+						<div class="actions">
+							<p><var class="time">12:00</var> Добавление <a href="#">объекта</a> в раздел Аренда</p>
+							<p><var class="time">12:30</var> Пополнение счета на сумму 1300 руб.</p>
+							<p><var class="time">12:50</var> Добавление <a href="#">объекта</a> в раздел Объекты</p>
+							<p><var class="time">13:00</var> Приобретение <a href="#">"Пакет 25"</a> за 3500 руб.</p>
+							<p><var class="time">14:50</var> Публикация <a href="#">объекта</a> на портал.</p>
+							<p><var class="time">12:00</var> Добавление <a href="#">объекта</a> в раздел Аренда</p>
+							<p><var class="time">12:30</var> Пополнение счета на сумму 1300 руб.</p>
+							<p><var class="time">12:50</var> Добавление <a href="#">объекта</a> в раздел Объекты</p>
+							<p><var class="time">13:00</var> Приобретение <a href="#">"Пакет 25"</a> за 3500 руб.</p>
+							<p><var class="time">14:50</var> Публикация <a href="#">объекта</a> на портал.</p>
+							<p><var class="time">12:00</var> Добавление <a href="#">объекта</a> в раздел Аренда</p>
+							<p><var class="time">12:30</var> Пополнение счета на сумму 1300 руб.</p>
+							<p><var class="time">12:50</var> Добавление <a href="#">объекта</a> в раздел Объекты</p>
+							<p><var class="time">13:00</var> Приобретение <a href="#">"Пакет 25"</a> за 3500 руб.</p>
+							<p><var class="time">14:50</var> Публикация <a href="#">объекта</a> на портал.</p>
+							<p><var class="time">12:00</var> Добавление <a href="#">объекта</a> в раздел Аренда</p>
+							<p><var class="time">12:30</var> Пополнение счета на сумму 1300 руб.</p>
+							<p><var class="time">12:50</var> Добавление <a href="#">объекта</a> в раздел Объекты</p>
+							<p><var class="time">13:00</var> Приобретение <a href="#">"Пакет 25"</a> за 3500 руб.</p>
+							<p><var class="time">14:50</var> Публикация <a href="#">объекта</a> на портал.</p>
+						</div>
+					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 
