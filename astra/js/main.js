@@ -49,7 +49,7 @@ $(document).ready(function () {
 	});
 
 	/* Popup scripts */
-	$(".fancybox-popup").fancybox ({
+	$(".fancybox-popup").fancybox({
 		padding: 0,
 		helpers: {
 			overlay: {
@@ -63,7 +63,7 @@ $(document).ready(function () {
 	});
 
 	$.extend($.fancybox.defaults.tpl, {
-    	closeBtn: '<a class="fancybox-button-close" href="javascript:void(0);"><span></span>Закрыть</a>'
+		closeBtn: '<a class="fancybox-button-close" href="javascript:void(0);"><span></span>Закрыть</a>'
 	});
 
 	var body = $('body');
@@ -170,7 +170,7 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.popup-gallery').each(function() {
+	$('.popup-gallery').each(function () {
 		$('.carousel').bxSlider({
 			controls: false,
 			mode: 'vertical',
@@ -179,7 +179,7 @@ $(document).ready(function () {
 			minSlides: 1
 		});
 	});
-		
+
 	$('.button-close').click(function () {
 		$(this).closest('.cover').fadeToggle(400);
 		return false;
