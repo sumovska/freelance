@@ -150,7 +150,7 @@ $(document).ready(function () {
 	});
 
 	/* News script */
-	$('.news .unit').each(function () {
+	$('.news .unit, .special .unit').each(function () {
 		var _self = $('.inform', this);
 		$('.link, .photo a', this).click(function () {
 			var _a = $(this);
