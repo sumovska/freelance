@@ -1,5 +1,5 @@
-/*!
- * Project: Rosrealt
+/*
+ * Project: Rosrielt
  * File: Main styles
  */
 
@@ -18,7 +18,7 @@ html {
 }
 body {
 	width: 100%;
-	min-width: 600px;
+	min-width: 760px;
 	min-height: 100%;
 	padding-top: 69px;
 	padding-left: 44px;
@@ -141,7 +141,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-radio.disabled.checked .jq-radio__div { opacity: .5; }
 /* === SELECT === */
 .jq-selectbox { vertical-align: middle; cursor: pointer; position: relative; display: inline-block; }
-.jq-selectbox__select { height: 30px; padding: 0 49px 0 9px; border: 1px solid #d6d6d6; border-radius: 1px; color: #676767; font: 13px/18px Arial, Helvetica, sans-serif; background: #fff; transition: border-color .2s; }
+.jq-selectbox__select { height: 30px; padding: 0 30px 0 9px; border: 1px solid #d6d6d6; border-radius: 1px; color: #676767; font: 13px/18px Arial, Helvetica, sans-serif; background: #fff; transition: border-color .2s; }
 .jq-selectbox.focused .jq-selectbox__select { border-color: #a09f9e; }
 .jq-selectbox.disabled .jq-selectbox__select { cursor: default; background: #f6f5f3; }
 .jq-selectbox__select-text { width: 100%; height: 28px; padding: 6px 0 0; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -221,6 +221,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line-2-col .col { width: 50%; padding: 0 10px; float: left; }
 .form-line-3-col .col { width: 33.3%; padding: 0 10px; float: left; }
 .form .select { width: 100%; display: block; }
+input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, textarea.large { height: 37px; padding-top: 10px; padding-bottom: 10px; }
+.jq-selectbox.large .jq-selectbox__dropdown { top: 36px; }
+.jq-selectbox.large .jq-selectbox__select { height: 37px; }
+.jq-selectbox.large .jq-selectbox__select-text { padding-top: 9px; }
 /* ==================================================================================================
    Стили для плагина DateTimePicker 2.4.1 @homepage http://xdsoft.net/jqplugins/datetimepicker/
    ================================================================================================== */
@@ -430,7 +434,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	transition: background-color .2s;
 }
 .nav .menu > li > a:hover, .nav .menu > li > a:focus {
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .6);
 }
 .nav .menu > li .new {
 	width: 16px;
@@ -454,7 +458,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	bottom: 0;
 	left: 44px;
 	z-index: -1;
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .6);
 }
 .nav .menu > li > a:before {
 	width: 30px;
@@ -576,7 +580,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	height: 38px;
 	display: block;
 	cursor: pointer;
-	background: rgba(0, 0, 0, .5);
+	background: rgba(0, 0, 0, .6);
 	transition: background-color .2s;
 }
 .footer .support .toggle {
@@ -770,11 +774,11 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	top: 0;
 	left: 6px;
 	background: #ff7200;
-	transition: background-color .2s;
+	transition: background-color .1s;
 }
 .close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
 .close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.close:hover:before, .close:hover:after, .close:focus:before, .close:focus:after { background: #a09f9e; }
+.close:hover:before, .close:hover:after, .close:focus:before, .close:focus:after { background: #000; }
 /* ==========================================================================
    _Иконки
    ========================================================================== */
@@ -829,6 +833,18 @@ a.icon-delete:hover:before { opacity: 1; }
 /* Открыть в новом окне */
 .icon-window:before { background-position: -60px -90px; }
 .icon-window:after { background-position: -60px -120px; }
+/* Пин */
+.icon-pin:before { background-position: -180px -90px; }
+.icon-pin:after { background-position: -180px -120px; }
+/* Позвонить */
+.icon-phone:before { background-position: -210px -90px; }
+.icon-phone:after { background-position: -210px -120px; }
+/* Фото */
+.icon-photo:before { background-position: -240px -90px; }
+.icon-photo:after { background-position: -240px -120px; }
+/* Восклицательный знак */
+.icon-alert:before { background-position: -270px -90px; }
+.icon-alert:after { background-position: -270px -120px; }
 /* ==========================================================================
    _Таблица (дефолтная)
    ========================================================================== */
@@ -1342,6 +1358,231 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	font-style: normal;
 }
 /* ==========================================================================
+   _Фильтр собственников
+   ========================================================================== */
+.filter {
+	padding: 10px;
+	margin: 0;
+	background-color: rgba(0, 0, 0, .6);
+	position: relative;
+	z-index: 100;
+}
+.table-filter {
+	width: 100%;
+	border-collapse: collapse;
+	display: table;
+}
+.table-filter .tr {
+	display: table-row;
+}
+.table-filter .td {
+	width: 18%;
+	padding: 10px;
+	display: table-cell;
+	vertical-align: top;
+	white-space: nowrap;
+}
+.table-filter .td-right { text-align: right; }
+.table-filter .td-right input[type="reset"] {
+	padding: 8px;
+	height: 30px;
+	text-shadow: 1px 1px 0 #a64a00;
+	background: #e06400;
+}
+.table-filter .td p {
+	margin-bottom: 0;
+	display: block;
+}
+.table-filter .td .select {
+	width: 100%;
+	display: block;
+}
+.filter .table-filter:first-of-type .td:last-of-type { padding-right: 60px; }
+.filter .table-filter input[type="text"], .filter .table-filter .jq-selectbox {
+	width: 100%;
+	min-width: 70px;
+}
+.filter .table-filter label.range {
+	margin: 0 14px 0 0;
+	display: inline-block;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	color: #fff;
+}
+.filter .table-filter input[type="text"].small {
+	width: 42px;
+	min-width: 0;
+	margin: 0 5px;
+	text-align: center;
+}
+.filter .table-filter label.checkbox {
+	height: 30px;
+	padding: 0 0 0 38px;
+	margin: 0 14px 0 0;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 30px;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	color: #fff;
+}
+.filter .table-filter label.checkbox .jq-checkbox {
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.filter .checkbox .jq-checkbox .jq-checkbox__div {
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	left: -1px;
+	background: url('../img/sprite.png') no-repeat -120px -90px;
+	background-size: 300px auto;
+}
+.filter .inside {
+	display: none;
+}
+.filter.open .inside {
+	display: block;
+}
+.filter .inside .table-filter:first-of-type .td:last-of-type { padding-right: 10px; }
+.filter .toggle {
+	width: 30px;
+	height: 30px;
+	border-radius: 1px;
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	text-decoration: none;
+	background: #fe7b0f;
+	transition: background-color .1s;
+	z-index: 50;
+}
+.filter .toggle:hover {
+	background-color: #f56e00;
+}
+.filter .toggle:before {
+	width: 9px;
+	height: 18px;
+	border-right: 3px solid #fff;
+	border-left: 3px solid #fff;
+	margin: -9px 0 0 -8px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.filter .toggle:after {
+	width: 3px;
+	height: 18px;
+	margin: -9px 0 0 -2px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+}
+.filter .toggle:before, .filter .toggle:after {
+	-webkit-transition: -webkit-transform .2s;
+	-webkit-transform: rotate(90deg);
+	-moz-transition: -moz-transform .2s;
+	-moz-transform: rotate(90deg);
+	transition: transform .2s;
+	transform: rotate(90deg);
+}
+.filter.open .toggle:before, .filter.open .toggle:after {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+/* ==========================================================================
+   _NOTICE
+   ========================================================================== */
+.notice {
+	width: 492px;
+	padding: 20px;
+	position: relative;
+	float: right;
+	cursor: default;
+	z-index: 5;
+}
+.notice .entry {
+	width: 452px;
+	padding: 18px 20px 12px;
+	margin-bottom: 20px;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+	line-height: 16px;
+	letter-spacing: .025em;
+	background: rgba(0, 0, 0, .6);
+}
+.notice .entry:last-of-type { margin-bottom: 0; }
+.notice p {
+	margin-bottom: 10px;
+}
+.notice .h {
+	margin-bottom: 4px;
+	display: block;
+	letter-spacing: .025em;
+	text-transform: uppercase;
+	color: #ff7c0f;
+}
+.notice .link:hover {
+	color: #ff7b10;
+	text-decoration: none;
+}
+.notice .close {
+	width: 18px;
+	height: 18px;
+	border-bottom-left-radius: 4px;
+	display: block;
+	top: 0;
+	right: 0;
+	background: #ff7c12;
+	transition: background-color .2s;
+}
+.notice .close:before, .notice .close:after {
+	background-color: #fff;
+	top: 0;
+	left: 4px;
+}
+.notice .close:hover, .notice .close:focus {
+	background: #f56e00;
+}
+/* ==========================================================================
+   _Карта
+   ========================================================================== */
+.map {
+	height: 370px;
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+.fullpage .map {
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+a[href^="http://maps.google.com/maps"] { display: none !important }
+.gmnoprint a, .gmnoprint span, .gm-style-cc { display: none; }
+.gmnoprint div { background: none !important; }
+/* ==========================================================================
    _Блоки
    ========================================================================== */
 /* Высота input=file на странице 'карточка пользователя' */
@@ -1349,284 +1590,39 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	height: 193px;
 	padding: 100px 9px 9px 9px;
 }
-input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, textarea.large { height: 37px; padding-top: 10px; padding-bottom: 10px; }
-.jq-selectbox.large .jq-selectbox__dropdown { top: 36px; }
-.jq-selectbox.large .jq-selectbox__select { height: 37px; }
-.jq-selectbox.large .jq-selectbox__select-text { padding-top: 9px; }
-/* ==========================================================================
-   _HELP
-   ========================================================================== */
-/*
-.help {
-	width: 460px;
-	position: absolute;
-	top: 0;
-	display: none;
+.block-owners {
+	height: 100%;
+	margin: -20px;
 }
-.help .inside {
-	padding: 17px 20px 20px;
-	font-size: 14px;
-	line-height: 16px;
-	letter-spacing: -.03em;
-	background: #fff;
-	position: relative;
-	border: 1px solid #d6d6d6;
+.fullpage { height: 100%; padding-bottom: 0; }
+.fullpage .container {
+	height: 100%;
 }
-.help .h {
-	margin-bottom: 17px;
-	text-transform: uppercase;
-}
-.help .h span {
-	color: #ff7b10;
-}
-.help .text p {
-	margin-bottom: 13px;
-}
-.help .amount {
-	padding: 0 17px;
-	display: inline-block;
-}
-/* ==========================================================================
-   _OWNERS
-   ========================================================================== */
-.owners .wrapper {
-	position: relative;
-	padding-top: 0;
-	padding-left: 0;
-	padding-right: 0;
-}
-.owners .map {
+.block-owners-filtered {
 	position: relative;
 }
-.owners .filter {
-	margin: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
+.block-owners-filtered .filter {
+	position: fixed;
+	top: 69px;
+	left: 210px;
 	right: 0;
 }
-.owners .table {
-	margin-bottom: 20px;
-}
-.owners .status .link-add-1 .plus:before { background-position: -25px 0; }
-.owners .status .link-add-2 .plus:before { background-position: 0 0; }
-/* ==========================================================================
-   _MAP
-   ========================================================================== */
-.map {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
-.map-small {
-	height: 370px;
-	bottom: auto;
-}
-/* ==========================================================================
-   _FILTER
-   ========================================================================== */
-.filter {
-	padding: 20px;
-	margin: -20px -20px 20px;
-	background-color: rgba(0, 0, 0, .5);
-	position: relative;
-	z-index: 100;
-}
-.filter .toggle {
-	width: 31px;
-	height: 30px;
-	display: block;
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	text-decoration: none;
-	background: #fe7b0f;
-	border-radius: 1px;
-	transition: background-color .1s;
-	z-index: 50;
-}
-.filter .toggle:hover {
-	background-color: #df6300;
-}
-.filter .toggle span {
-	width: 15px;
-	height: 19px;
-	display: block;
-	margin: 0 auto;
-	position: relative;
-	top: 6px;
-	border-right: 3px solid #fff;
-	border-left: 3px solid #fff;
-}
-.filter .toggle span:before {
-	width: 3px;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-	position: absolute;
-	left: 3px;
-	top: 0;
-	bottom: 0;
-	background: #fff;
-}
-.filter .inside {
-	display: none;
-	padding-top: 20px;
-}
-.filter .stroke {
-	width: 100%;
-	margin-bottom: 20px;
-	display: table;
-}
-.filter .stroke:last-of-type {
-	margin-bottom: 0;
-}
-.filter .stroke-1 {
-	padding-right: 53px;
-	position: relative;
-	margin-bottom: 0;
-}
-.filter .stroke .tr {
-	display: table-row;
-}
-.filter .td {
-	padding: 0 10px;
-	display: table-cell;
-	vertical-align: top;
-	white-space: nowrap;
-}
-.filter .td:last-of-type {
-	text-align: right;
-	padding-right: 0;
-}
-.filter .td:first-of-type {
-	padding-left: 0;
-}
-.filter .td p {
-	margin-bottom: 0;
-}
-.filter label {
-	margin-right: 18px;
-	margin-bottom: 0;
-	display: inline-block;
-	text-transform: uppercase;
-	color: #fff;
-}
-.filter .jq-selectbox {
-	text-align: left;
-}
-.filter .checkbox {
-	font-size: 13px;
-}
-.filter .checkbox .jq-checkbox {
-	width: 32px;
-	height: 30px;
-	margin: 0 0 0 6px;
-	background-position: 0 -155px;
-}
-.filter .checkbox .jq-checkbox .jq-checkbox__div {
-	width: 20px;
-	height: 20px;
-	margin: 6px 0 0 8px;
-	background-position: 0 -155px;
-}
-.filter .td input[type="text"], .filter .td .jq-selectbox {
-	width: 100%;
-}
-.filter .cell-small input[type="text"] {
-	width: 42px;
-	margin: 0 5px;
-	text-align: center;
-}
-/* ==========================================================================
-   _NOTICES
-   ========================================================================== */
-.notices {
-	width: 452px;
-	float: right;
-	right: 0;
-	left: auto;
-	color: #fff;
-	font-size: 14px;
-	line-height: 16px;
-}
-.notices ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.notices li {
-	width: 452px;
-	padding: 17px 20px 14px;
-	margin-bottom: 20px;
-	position: relative;
-	background-color: rgba(0, 0, 0, .6);
-	letter-spacing: -.012em;
-	z-index: 1;
-}
-.notices li:before {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	background-color: rgba(0, 0, 0, .6);
-	/*
-	filter: blur(15px);
-	-webkit-filter: blur(15px);
-	-moz-filter: blur(15px);
-	-o-filter: blur(15px);
-	-ms-filter: blur(15px);
-	*/
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: -1;
-}
-.notices li:last-of-type {
-	margin-bottom: 0;
-}
-.notices .close {
-	width: 18px;
-	height: 18px;
-	display: block;
-	top: 0;
-	right: 0;
-	background-color: #ff7c12;
-	border-bottom-left-radius: 3px;
-}
-.notices .close:before, .notices .close:after {
-	background-color: #fff;
-	top: 4px;
-	left: 8px;
-}
-.notices .h {
-	margin-bottom: 4px;
-	display: block;
-	text-transform: uppercase;
-	color: #ff7c0f;
-	letter-spacing: -.03em;
-}
-.notices .text {
-	margin-bottom: 9px;
+.nav-closed .block-owners-filtered .filter {
+	left: 44px;
 }
 /* ==========================================================================
    _Адаптивность
    ========================================================================== */
 @media (max-width: 1279px) {
 	.container { padding-left: 20px; }
-	.header .h1 { font-size: 18px; }
-	.header .status { font-size: 14px; }
 	.nav .menu, .nav-closed .nav .menu { width: 44px; }
 	.nav-fixed .nav .menu { width: 210px; }
 	.nav:hover .menu { width: 210px; }
 	.nav .toggle:before, .nav .toggle:after { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); transform: rotate(0deg); }
 	.nav-fixed .nav .toggle:before, .nav-fixed .nav .toggle:after { -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
+	.block-owners-filtered .filter { left: 44px; }
 }
-@media (max-width: 999px) {
+@media (max-width: 980px) {
 	.header .h1 { top: 5px; left: 5px; right: 5px; text-align: center; }
 	.header .add { width: 33px; height: 33px; padding: 0; overflow: hidden; text-indent: -1000px; left: auto; right: 20px; z-index: 20; }
 	.header .add:before { text-indent: 0; background: none; }
@@ -1635,6 +1631,15 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 	.header .status li:before, .header .status li:after { display: none; }
 	.content, .aside { padding: 0; display: block; }
 	.form-line.form-submit { text-align: center; }
+	.filter .table-filter input[type="text"], .filter .table-filter .jq-selectbox { min-width: 50px; }
+	.filter .inside .table-filter, .filter .inside .table-filter .tr, .filter .inside .table-filter .td { display: block; }
+	.filter .inside .table-filter label.range { font-size: 12px; }
+	.filter .inside .table-filter label.checkbox { font-size: 12px; }
+	.filter .inside .table-filter .td { width: auto; }
+	.filter .inside .table-filter .tr:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
+	.filter .inside .table-filter .td-half { width: 50%; float: left; }
+	.filter .inside .table-filter .td-center { text-align: center; }
+	.filter .inside .table-filter .td-center input[type="reset"] { margin: 20px auto 0; display: block; }
 }
 @media (max-width: 759px) {
 }

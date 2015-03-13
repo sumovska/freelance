@@ -146,6 +146,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Подвал */
 	$('.footer').each(function () {
 		$('.help', this).each(function () {
 			var _help = $(this);
@@ -169,7 +170,15 @@ $(document).ready(function () {
 	/* Фильтр */
 	$('.filter').each(function () {
 		$('.toggle').click(function () {
-			$(this).siblings('.inside').fadeToggle();
+			$(this).closest('.filter').toggleClass('open');
+			return false;
+		});
+	});
+
+	/* Сообщения */
+	$('.notice .entry').each(function () {
+		$('.close', this).click(function () {
+			$(this).closest('.entry').slideToggle(200);
 			return false;
 		});
 	});
