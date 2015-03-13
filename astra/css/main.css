@@ -2028,6 +2028,42 @@ h6, .h6 {
 .block-item .radiobox-color-14 .jq-radio .jq-radio__div { background-color: #42312a; }
 .block-item .radiobox-color-15 .jq-radio .jq-radio__div { background-color: #4c4b53; }
 .block-item .radiobox-color-16 .jq-radio .jq-radio__div { background-color: #12151a; }
+.block-item .carousel {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.block-item .carousel:after {
+	display: block;
+}
+.block-item .carousel li {
+	padding: 50px;
+}
+.block-item .bx-wrapper {
+	height: 100%;
+	position: relative;
+}
+.block-item .bx-pager {
+	margin-top: 2px;
+	position: absolute;
+	top: 50%;
+	left: -38px;
+}
+.block-item .bx-pager-item {
+	padding: 4px 0;
+}
+.block-item .bx-pager-item a {
+	width: 10px;
+	height: 10px;
+	display: block;
+	text-indent: -1000px;
+	overflow: hidden;
+	border: 1px solid #162335;
+	border-radius: 50%;
+}
+.block-item .bx-pager-item a.active {
+	background: #162335;
+}
 .block-item-add {
 	padding-bottom: 36px;
 }
@@ -2329,6 +2365,7 @@ h6, .h6 {
 	height: 70px;
 	padding: 16px 10px 20px;
 	position: relative;
+	overflow: hidden;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2348,6 +2385,7 @@ h6, .h6 {
 	display: inline-block;
 }
 .prev-next .prev, .prev-next .next {
+	overflow: hidden;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -2380,15 +2418,35 @@ h6, .h6 {
 	left: 0;
 	bottom: 0;
 	background: rgba(22, 35, 53, .8);
-	opacity: 0;
+	opacity: 1;
 	z-index: 5;
 	transition: opacity .3s ease;
 }
 .prev-next .link:hover .topsheet {
-	opacity: 1;
+	opacity: 0;
+}
+.prev-next .pic {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	z-index: 4;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	-webkit-transition: -webkit-transform .3s ease;
+	-webkit-transform: scale(1);
+	transition: transform .3s ease;
+	transform: scale(1);
+}
+.prev-next .link:hover .pic {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
 }
 .prev-next .text {
 	margin-top: -8px;
+	display: block;
 	text-transform: uppercase;
 	position: absolute;
 	top: 50%;
@@ -2696,51 +2754,6 @@ h6, .h6 {
 	height: 30px;
 	float: left;
 	text-align: center;
-}
-/* ==========================================================================
-   _FEATURES
-   ========================================================================== */
-.features {
-	margin-bottom: 40px;
-}
-.features .carousel {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.features .carousel:after {
-	display: block;
-}
-.features .carousel li {
-	padding: 50px;
-}
-.features .block-item {
-	margin-bottom: 0;
-}
-.features .bx-wrapper {
-	height: 100%;
-	position: relative;
-}
-.features .bx-pager {
-	margin-top: 2px;
-	position: absolute;
-	top: 50%;
-	left: -38px;
-}
-.features .bx-pager-item {
-	padding: 4px 0;
-}
-.features .bx-pager-item a {
-	width: 10px;
-	height: 10px;
-	display: block;
-	text-indent: -1000px;
-	overflow: hidden;
-	border: 1px solid #162335;
-	border-radius: 50%;
-}
-.features .bx-pager-item a.active {
-	background: #162335;
 }
 /* ==========================================================================
    _CATALOG-FULL

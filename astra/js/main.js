@@ -160,17 +160,13 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.features').each(function () {
+	$('.block-item').each(function () {
 		var _self = $(this);
 		/* Features carousel */
 		$('.carousel').bxSlider({
 			controls: false,
 			mode: 'vertical',
 			adaptiveHeight: true
-		});
-		$('.block-item-add .close').click(function () {
-			_self.fadeToggle(400);
-			return false;
 		});
 	});
 
