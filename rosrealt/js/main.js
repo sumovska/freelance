@@ -8,10 +8,7 @@ $(document).ready(function () {
 	FastClick.attach(document.body);
 
 	/* Формы */
-	$('input:not(.file-photo), select').styler();
-	$('input.file-photo').styler({
-		filePlaceholder: 'Добавить<br>фото'
-	});
+	$('input, select').styler();
 
 	/* Навигация */
 	$('.nav').each(function () {
@@ -53,17 +50,89 @@ $(document).ready(function () {
 		return false;
 	});
 
+	/* Новая задача */
+	$('.task-create').each(function () {
+		var from = $('.date-from', this), to = $('.date-to', this);
+		from.datetimepicker({
+			lang: 'ru',
+			format: 'd.m.Y',
+			closeOnDateSelect: true,
+			timepicker: false,
+			onShow: function () {
+				this.setOptions({
+					maxDate: to.val() ? to.val() : false
+				})
+			}
+		});
+		to.datetimepicker({
+			lang: 'ru',
+			format: 'd.m.Y',
+			closeOnDateSelect: true,
+			timepicker: false,
+			onShow: function () {
+				this.setOptions({
+					minDate: from.val() ? from.val() : false
+				})
+			}
+		});
+	});
+
 	/* Список задач */
 	$('.task-list').each(function () {
 		$('.task', this).each(function () {
-			var _self = $(this);
-			$('.toggle', this).click(function () {
-				$(this).toggleClass('active');
-				$('.space', _self).slideToggle(300, function () {
-					_self.toggleClass('open');
-				});
+			var _self = $(this), date = $('.date', this);
+			date.datetimepicker({
+				lang: 'ru',
+				format: 'd.m.Y',
+				closeOnDateSelect: true,
+				timepicker: false
+			});
+			$('.icon-edit', this).click(function () {
+				_self.removeClass('disabled').addClass('editing');
+				$(':input', _self).prop('disabled', false).trigger('refresh');
 				return false;
 			});
+			$('.icon-save', this).click(function () {
+				_self.addClass('disabled').removeClass('editing').removeClass('open');
+				$(':input', _self).prop('disabled', true).trigger('refresh');
+				return false;
+			});
+			$('.icon-delete', this).click(function () {
+				_self.remove();
+				return false;
+			});
+			$('.toggle', this).click(function () {
+				$(this).toggleClass('active');
+				_self.toggleClass('open');
+				return false;
+			});
+		});
+	});
+
+	/* Статистика задач */
+	$('.stats .date').each(function () {
+		var from = $('.date-from', this), to = $('.date-to', this);
+		from.datetimepicker({
+			lang: 'ru',
+			format: 'd.m.Y',
+			closeOnDateSelect: true,
+			timepicker: false,
+			onShow: function () {
+				this.setOptions({
+					maxDate: to.val() ? to.val() : false
+				})
+			}
+		});
+		to.datetimepicker({
+			lang: 'ru',
+			format: 'd.m.Y',
+			closeOnDateSelect: true,
+			timepicker: false,
+			onShow: function () {
+				this.setOptions({
+					minDate: from.val() ? from.val() : false
+				})
+			}
 		});
 	});
 

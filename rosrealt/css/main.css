@@ -30,7 +30,7 @@ body {
 	min-width: 950px;
 	padding: 20px;
 }
-.wrapper:after, .nav:after, .container:after, .content:after, .aside:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden }
+.wrapper:after, .nav:after, .container:after, .content:after, .aside:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .container {
 	padding: 20px 20px 20px 186px;
 	position: relative;
@@ -109,7 +109,7 @@ h6, .h6 {
 	text-transform: uppercase;
 }
 /* ==================================================================================================
-   Стили форм для плагина Form Styler 1.6.2 (https://github.com/Dimox/jQueryFormStyler)
+   Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
 /* === INPUT === */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 30px; padding: 7px 9px; border: 1px solid #d6d6d6; border-radius: 1px; box-shadow: none; outline: none; -webkit-appearance: none; color: #676767; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: border-color .2s; }
@@ -146,7 +146,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox.disabled .jq-selectbox__select { cursor: default; background: #f6f5f3; }
 .jq-selectbox__select-text { width: 100%; height: 28px; padding: 6px 0 0; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .jq-selectbox .placeholder { color: #676767; }
-.jq-selectbox.disabled .placeholder { }
+.jq-selectbox.disabled .placeholder {; }
 .jq-selectbox__trigger { width: 39px; height: 100%; position: absolute; top: 0; right: 0; }
 .jq-selectbox__trigger-arrow { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 .jq-selectbox__trigger-arrow:before, .jq-selectbox__trigger-arrow:after { width: 2px; height: 7px; border-radius: 2px; margin: -3px 0 0 0; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: #d6d6d6; transition: background-color .2s; }
@@ -202,7 +202,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 ::-moz-placeholder { color: #676767; opacity: 1; }
 /*noinspection CssInvalidPseudoSelector*/
 :-ms-input-placeholder { color: #676767; opacity: 1; }
-.form { cursor: default; display: block }
+.form { cursor: default; display: block; }
 .form:after, .form-line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .checkbox, .radio { padding-left: 28px; display: inline-block; vertical-align: middle; position: relative; }
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
@@ -221,6 +221,91 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line-2-col .col { width: 50%; padding: 0 10px; float: left; }
 .form-line-3-col .col { width: 33.3%; padding: 0 10px; float: left; }
 .form .select { width: 100%; display: block; }
+/* ==================================================================================================
+   Стили для плагина DateTimePicker 2.4.1 @homepage http://xdsoft.net/jqplugins/datetimepicker/
+   ================================================================================================== */
+.xdsoft_datetimepicker { box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506); background: #fff; border: 1px solid #a09f9e; color: #333; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 8px; padding-left: 0; padding-top: 2px; position: absolute; z-index: 9999; -moz-box-sizing: border-box; box-sizing: border-box; display: none; }
+.xdsoft_datetimepicker iframe { position: absolute; left: 0; top: 0; width: 75px; height: 210px; background: transparent; border: none; }
+.xdsoft_noselect { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.xdsoft_noselect::selection { background: transparent; }
+.xdsoft_noselect::-moz-selection { background: transparent; }
+.xdsoft_datetimepicker.xdsoft_inline { display: inline-block; position: static; box-shadow: none; }
+.xdsoft_datetimepicker * { -moz-box-sizing: border-box; box-sizing: border-box; padding: 0; margin: 0; }
+.xdsoft_datetimepicker .xdsoft_datepicker, .xdsoft_datetimepicker .xdsoft_timepicker { display: none; }
+.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active { display: block; }
+.xdsoft_datetimepicker .xdsoft_datepicker { width: 224px; float: left; margin-left: 8px; }
+.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_datepicker { width: 256px; }
+.xdsoft_datetimepicker .xdsoft_timepicker { width: 58px; float: left; text-align: center; margin-left: 8px; margin-top: 0; }
+.xdsoft_datetimepicker .xdsoft_datepicker.active + .xdsoft_timepicker { margin-top: 8px; margin-bottom: 3px; }
+.xdsoft_datetimepicker .xdsoft_mounthpicker { position: relative; text-align: center; }
+.xdsoft_datetimepicker .xdsoft_label i, .xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_today_button { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0NBRjI1NjM0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0NBRjI1NjQ0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0FGMjU2MTQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0FGMjU2MjQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoNEP54AAAIOSURBVHja7Jq9TsMwEMcxrZD4WpBYeKUCe+kTMCACHZh4BFfHO/AAIHZGFhYkBBsSEqxsLCAgXKhbXYOTxh9pfJVP+qutnZ5s/5Lz2Y5I03QhWji2GIcgAokWgfCxNvcOCCGKqiSqhUp0laHOne05vdEyGMfkdxJDVjgwDlEQgYQBgx+ULJaWSXXS6r/ER5FBVR8VfGftTKcITNs+a1XpcFoExREIDF14AVIFxgQUS+h520cdud6wNkC0UBw6BCO/HoCYwBhD8QCkQ/x1mwDyD4plh4D6DDV0TAGyo4HcawLIBBSLDkHeH0Mg2yVP3l4TQMZQDDsEOl/MgHQqhMNuE0D+oBh0CIr8MAKyazBH9WyBuKxDWgbXfjNf32TZ1KWm/Ap1oSk/R53UtQ5xTh3LUlMmT8gt6g51Q9p+SobxgJQ/qmsfZhWywGFSl0yBjCLJCMgXail3b7+rumdVJ2YRss4cN+r6qAHDkPWjPjdJCF4n9RmAD/V9A/Wp4NQassDjwlB6XBiCxcJQWmZZb8THFilfy/lfrTvLghq2TqTHrRMTKNJ0sIhdo15RT+RpyWwFdY96UZ/LdQKBGjcXpcc1AlSFEfLmouD+1knuxBDUVrvOBmoOC/rEcN7OQxKVeJTCiAdUzUJhA2Oez9QTkp72OTVcxDcXY8iKNkxGAJXmJCOQwOa6dhyXsOa6XwEGAKdeb5ET3rQdAAAAAElFTkSuQmCC) !important; }
+.xdsoft_datetimepicker .xdsoft_label i { opacity: .5; background-position: -92px -19px; display: inline-block; width: 9px; height: 20px; vertical-align: middle; }
+.xdsoft_datetimepicker .xdsoft_prev { float: left; background-position: -20px 0 !important; }
+.xdsoft_datetimepicker .xdsoft_today_button { float: left; background-position: -70px 0; margin-left: 5px; }
+.xdsoft_datetimepicker .xdsoft_next { float: right; background-position: 0 0 !important; }
+.xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_today_button { background-color: transparent; background-repeat: no-repeat; border: 0 none; cursor: pointer; display: block; height: 30px; opacity: .5; outline: medium none; overflow: hidden; padding: 0; position: relative; text-indent: 100%; white-space: nowrap; width: 20px; min-width: 0; }
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next { float: none; background-position: -40px -15px !important; height: 15px; width: 30px; display: block; margin-left: 14px; margin-top: 7px; }
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev { background-position: -40px 0; margin-bottom: 7px; margin-top: 0; }
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box { height: 151px; overflow: hidden; border-bottom: 1px solid #ddd; }
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div { background: #f5f5f5; border-top: 1px solid #ddd; color: #666; font-size: 12px; text-align: center; border-collapse: collapse; cursor: pointer; border-bottom-width: 0; height: 25px; line-height: 25px; }
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:first-child { border-top-width: 0; }
+.xdsoft_datetimepicker .xdsoft_today_button:hover, .xdsoft_datetimepicker .xdsoft_next:hover, .xdsoft_datetimepicker .xdsoft_prev:hover { opacity: 1; background: inherit; }
+.xdsoft_datetimepicker .xdsoft_label { display: inline; position: relative; z-index: 9999; margin: 0; padding: 5px 3px; font-size: 14px; line-height: 20px; font-weight: 700; background-color: #fff; float: left; width: 182px; text-align: center; cursor: pointer; }
+.xdsoft_datetimepicker .xdsoft_label:hover > span { text-decoration: underline; }
+.xdsoft_datetimepicker .xdsoft_label:hover i { opacity: 1; }
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select { border: 1px solid #ccc; position: absolute; right: 0; top: 30px; z-index: 101; display: none; background: #fff; max-height: 160px; overflow-y: hidden; }
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_monthselect { right: -7px; }
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect { right: 2px; }
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover { color: #fff; background: #ff8000; }
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option { padding: 2px 10px 2px 5px; text-decoration: none !important; }
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current { background: #3af; box-shadow: #178fe5 0 1px 3px 0 inset; color: #fff; font-weight: 700; }
+.xdsoft_datetimepicker .xdsoft_month { width: 100px; text-align: right; }
+.xdsoft_datetimepicker .xdsoft_calendar { clear: both; }
+.xdsoft_datetimepicker .xdsoft_year { width: 48px; margin-left: 5px; }
+.xdsoft_datetimepicker .xdsoft_calendar table { border-collapse: collapse; width: 100%; }
+.xdsoft_datetimepicker .xdsoft_calendar td > div { padding-right: 5px; }
+.xdsoft_datetimepicker .xdsoft_calendar th { height: 25px; }
+.xdsoft_datetimepicker .xdsoft_calendar td, .xdsoft_datetimepicker .xdsoft_calendar th { width: 14.2857142%; background: #f5f5f5; border: 1px solid #ddd; color: #666; font-size: 12px; text-align: right; vertical-align: middle; padding: 0; border-collapse: collapse; cursor: pointer; height: 25px; }
+.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar td, .xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar th { width: 12.5%; }
+.xdsoft_datetimepicker .xdsoft_calendar th { background: #f1f1f1; }
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today { color: #3af; }
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default, .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current { background: #3af; box-shadow: #178fe5 0 1px 3px 0 inset; color: #fff; font-weight: 700; }
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month, .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled, .xdsoft_datetimepicker .xdsoft_time_box > div > div.xdsoft_disabled { opacity: .5; cursor: default; }
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled { opacity: .2; }
+.xdsoft_datetimepicker .xdsoft_calendar td:hover, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:hover { color: #fff !important; background: #ff8000 !important; box-shadow: none !important; }
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current.xdsoft_disabled:hover, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current.xdsoft_disabled:hover { background: #3af !important; box-shadow: #178fe5 0 1px 3px 0 inset !important; color: #fff !important; }
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled:hover, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_disabled:hover { color: inherit !important; background: inherit !important; box-shadow: inherit !important; }
+.xdsoft_datetimepicker .xdsoft_calendar th { font-weight: 700; text-align: center; color: #999; cursor: default; }
+.xdsoft_datetimepicker .xdsoft_copyright { color: #ccc !important; font-size: 10px; clear: both; float: none; margin-left: 8px; }
+.xdsoft_datetimepicker .xdsoft_copyright a { color: #eee !important; }
+.xdsoft_datetimepicker .xdsoft_copyright a:hover { color: #aaa !important; }
+.xdsoft_time_box { position: relative; border: 1px solid #ccc; }
+.xdsoft_scrollbar > .xdsoft_scroller { background: #ccc !important; height: 20px; border-radius: 3px; }
+.xdsoft_scrollbar { position: absolute; width: 7px; right: 0; top: 0; bottom: 0; cursor: pointer; }
+.xdsoft_scroller_box { position: relative; }
+.xdsoft_datetimepicker.xdsoft_dark { box-shadow: 0 5px 15px -5px rgba(255, 255, 255, 0.506); background: #000; border-bottom: 1px solid #444; border-left: 1px solid #333; border-right: 1px solid #333; border-top: 1px solid #333; color: #ccc; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box { border-bottom: 1px solid #222; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div { background: #0a0a0a; border-top: 1px solid #222; color: #999; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label { background-color: #000; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select { border: 1px solid #333; background: #000; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover { color: #000; background: #007fff; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current { background: #c50; box-shadow: #b03e00 0 1px 3px 0 inset; color: #000; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label i, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_prev, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_next, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_today_button { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUExQUUzOTA0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUExQUUzOTE0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQTFBRTM4RTQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQTFBRTM4RjQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp0VxGEAAAIASURBVHja7JrNSgMxEMebtgh+3MSLr1T1Xn2CHoSKB08+QmR8Bx9A8e7RixdB9CKCoNdexIugxFlJa7rNZneTbLIpM/CnNLsdMvNjM8l0mRCiQ9Ye61IKCAgZAUnH+mU3MMZaHYChBnJUDzWOFZdVfc5+ZFLbrWDeXPwbxIqrLLfaeS0hEBVGIRQCEiZoHQwtlGSByCCdYBl8g8egTTAWoKQMRBRBcZxYlhzhKegqMOageErsCHVkk3hXIFooDgHB1KkHIHVgzKB4ADJQ/A1jAFmAYhkQqA5TOBtocrKrgXwQA8gcFIuAIO8sQSA7hidvPwaQGZSaAYHOUWJABhWWw2EMIH9QagQERU4SArJXo0ZZL18uvaxejXt/Em8xjVBXmvFr1KVm/AJ10tRe2XnraNqaJvKE3KHuUbfK1E+VHB0q40/y3sdQSxY4FHWeKJCunP8UyDdqJZenT3ntVV5jIYCAh20vT7ioP8tpf6E2lfEMwERe+whV1MHjwZB7PBiCxcGQWwKZKD62lfGNnP/1poFAA60T7rF1UgcKd2id3KDeUS+oLWV8DfWAepOfq00CgQabi9zjcgJVYVD7PVzQUAUGAQkbNJTBICDhgwYTjDYD6XeW08ZKh+A4pYkzenOxXUbvZcWz7E8ykRMnIHGX1XPl+1m2vPYpL+2qdb8CDAARlKFEz/ZVkAAAAABJRU5ErkJggg==); }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th { background: #0a0a0a; border: 1px solid #222; color: #999; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th { background: #0e0e0e; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_today { color: #c50; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_default, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_current, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current { background: #c50; box-shadow: #b03e00 0 1px 3px 0 inset; color: #000; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td:hover, .xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div:hover { color: #000 !important; background: #007fff !important; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th { color: #666; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright { color: #333 !important; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright a { color: #111 !important; }
+.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright a:hover { color: #555 !important; }
+.xdsoft_dark .xdsoft_time_box { border: 1px solid #333; }
+.xdsoft_dark .xdsoft_scrollbar > .xdsoft_scroller { background: #333 !important; }
+.xdsoft_datetimepicker .xdsoft_save_selected { display: block; border: 1px solid #ddd !important; margin-top: 5px; width: 100%; color: #454551; font-size: 13px; }
+.xdsoft_datetimepicker .blue-gradient-button { font-family: "museo-sans", "Book Antiqua", sans-serif; font-size: 12px; font-weight: 300; color: #82878c; height: 28px; position: relative; padding: 4px 17px 4px 33px; border: 1px solid #d7d8da; background: -moz-linear-gradient(top, #fff 0%, #f4f8fa 73%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(73%, #f4f8fa)); background: -webkit-linear-gradient(top, #fff 0%, #f4f8fa 73%); background: -o-linear-gradient(top, #fff 0%, #f4f8fa 73%); background: -ms-linear-gradient(top, #fff 0%, #f4f8fa 73%); background: linear-gradient(to bottom, #fff 0%, #f4f8fa 73%); }
+.xdsoft_datetimepicker .blue-gradient-button:hover, .xdsoft_datetimepicker .blue-gradient-button:focus, .xdsoft_datetimepicker .blue-gradient-button:hover span, .xdsoft_datetimepicker .blue-gradient-button:focus span { color: #454551; background: -moz-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f8fa), color-stop(73%, #fff)); background: -webkit-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: -o-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: -ms-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: linear-gradient(to bottom, #f4f8fa 0%, #fff 73%); }
+.xdsoft_datetimepicker .xdsoft_today_button { display: none !important; }
 /* ==========================================================================
    _Шапка
    ========================================================================== */
@@ -262,7 +347,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	top: 20px;
 	color: #323232;
 }
-.header .status:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden }
+.header .status:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .header .status li {
 	margin: 0 0 0 20px;
 	padding: 5px 0 5px 43px;
@@ -468,7 +553,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	top: 10px;
 	left: 10px;
 }
-.footer .links:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden }
+.footer .links:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .footer .links li {
 	padding: 0 10px;
 	float: left;
@@ -630,6 +715,60 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 .close:hover:before, .close:hover:after, .close:focus:before, .close:focus:after { background: #a09f9e; }
 /* ==========================================================================
+   _Иконки
+   ========================================================================== */
+.icon {
+	width: 36px;
+	height: 37px;
+	border: 1px solid #d6d6d6;
+	display: block;
+	position: relative;
+	transition: border-color .2s;
+	background: #fff;
+}
+a.icon {
+	cursor: pointer;
+}
+.icon:before, .icon:after {
+	width: 30px;
+	height: 30px;
+	margin: -15px 0 0 -15px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 1;
+	z-index: 1;
+	background: url('../img/sprite.png') no-repeat 100px 100px;
+	background-size: 300px auto;
+	transition: opacity .3s;
+}
+.icon:after { opacity: 0; z-index: 2; }
+a.icon:hover:before { opacity: 0; }
+a.icon:hover:after { opacity: 1; }
+a.icon:focus { border-color: #a09f9e !important; }
+/* Календарь */
+.icon-calendar:before { background-position: -90px -90px; }
+.icon-calendar:after { background-position: -90px -120px; }
+/* Сохранить */
+.icon-save:before { background-position: -120px -120px; }
+a.icon-save:hover:before { opacity: 1; }
+.icon-save:after { display: none; }
+/* Удалить */
+.icon-delete:before { background-position: -150px -120px; }
+a.icon-delete:hover:before { opacity: 1; }
+.icon-delete:after { display: none; }
+/* Редактирование */
+.icon-edit:before { background-position: 0 -90px; }
+.icon-edit:after { background-position: 0 -120px; }
+/* Мегафон */
+.icon-mega:before { background-position: -30px -90px; }
+.icon-mega:after { background-position: -30px -120px; }
+/* Открыть в новом окне */
+.icon-window:before { background-position: -60px -90px; }
+.icon-window:after { background-position: -60px -120px; }
+/* ==========================================================================
    _Таблица (дефолтная)
    ========================================================================== */
 .table {
@@ -689,33 +828,8 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: -11px;
 	display: block;
 	position: relative;
+	background: none;
 }
-.table .icon:before, .table .icon:after {
-	width: 30px;
-	height: 30px;
-	margin: -15px 0 0 -15px;
-	content: ' ';
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 1;
-	background: url('../img/sprite.png') no-repeat 100px 100px;
-	background-size: 300px auto;
-	transition: opacity .3s;
-}
-.table .icon:after { opacity: 0; z-index: 2; }
-.table .icon:hover:before, .table .icon:focus:before { opacity: 0; }
-.table .icon:hover:after, .table .icon:focus:after { opacity: 1; }
-/* Иконка 'Редактировать' */
-.table .icon.edit:before { background-position: 0 -90px; }
-.table .icon.edit:after { background-position: 0 -120px; }
-/* Иконка 'Мегафон' */
-.table .icon.mega:before { background-position: -30px -90px; }
-.table .icon.mega:after { background-position: -30px -120px; }
-/* Иконка 'Открыть в новом окне' */
-.table .icon.window:before { background-position: -60px -90px; }
-.table .icon.window:after { background-position: -60px -120px; }
 .table .td input[type="text"], .filter .td .jq-selectbox {
 	width: 100%;
 }
@@ -723,125 +837,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	position: relative;
 	bottom: 0;
 }
-/* ==========================================================================
-   _Статистика
-   ========================================================================== */
-.stats {
-	width: 100%;
-	position: relative;
-}
-.stats a { color: #2f79bd; }
-.stats a:hover, .stats a:focus { text-decoration: none; }
-.stats:after, .stats .main:after, .stats .date:after, .stats .actions:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden }
-/* Основные данные */
-.stats .main {
-	padding: 13px 15px;
-	margin: 0;
-	border: 1px solid #dadad9;
-	font-size: 13px;
-	line-height: 18px;
-	letter-spacing: .04em;
-	color: #676767;
-	background: #fff;
-}
-.stats .main p { margin: 0 0 7px; }
-.stats .main p:nth-child(2n) { margin-bottom: 17px; }
-.stats .main p:last-of-type { margin: 0; }
-.stats .main strong { font-weight: normal; text-transform: uppercase; }
-.stats .date {
-	padding-left: 36px;
-	position: relative;
-	cursor: default;
-}
-.stats .date .icon-calendar {
-	width: 36px;
-	border: 1px solid #d6d6d6;
-	position: absolute;
-	top: -1px;
-	left: 0;
-	bottom: -1px;
-	z-index: 4;
-	background: #fff;
-	transition: border-color .2s;
-}
-.stats .date .icon-calendar:focus {
-	border-color: #a09f9e;
-}
-.stats .date .text {
-	width: 50%;
-	padding: 10px;
-	border-right: 1px solid #d6d6d6;
-	display: block;
-	float: left;
-	color: #676767;
-	text-align: center;
-}
-.stats .actions {
-	height: 366px;
-	padding: 13px 15px;
-	border: 1px solid #dadad9;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: .04em;
-	overflow: auto;
-	overflow-x: hidden;
-	background: #fff;
-}
-.stats .actions p {
-	margin-bottom: 5px;
-}
-.stats .actions .time {
-	margin-bottom: 6px;
-	display: block;
-	font-weight: bold;
-	font-style: normal;
-}
-/* ==========================================================================
-   _Иконки
-   ========================================================================== */
-.icon {
-	width: 36px;
-	height: 37px;
-	border: 1px solid #d6d6d6;
-	display: block;
-	position: relative;
-	cursor: pointer;
-	transition: border-color .2s;
-	background: #fff;
-}
-.icon:before, .icon:after {
-	width: 30px;
-	height: 30px;
-	margin: -15px 0 0 -15px;
-	content: ' ';
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	opacity: 1;
-	z-index: 1;
-	background: url('../img/sprite.png') no-repeat 100px 100px;
-	background-size: 300px auto;
-	transition: opacity .3s;
-}
-.icon:after { opacity: 0; z-index: 2; }
-.icon:hover:before { opacity: 0; }
-.icon:hover:after { opacity: 1; }
-.icon:focus { border-color: #a09f9e !important; }
-/* Календарь */
-.icon-calendar:before { background-position: -90px -90px; }
-.icon-calendar:after { background-position: -90px -120px; }
-/* Сохранить */
-.icon-save:before { background-position: -120px -120px; }
-.icon-save:hover:before { opacity: 1; }
-.icon-save:after { display: none; }
-/* Удалить */
-.icon-delete:before { background-position: -150px -120px; }
-.icon-delete:hover:before { opacity: 1; }
-.icon-delete:after { display: none; }
-/* Редактирование */
-.icon-edit:before { background-position: 0 -90px; }
-.icon-edit:after { background-position: 0 -120px; }
 /* ==========================================================================
    _Инпут с редактированием
    ========================================================================== */
@@ -859,6 +854,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	width: 35px;
 	height: 35px;
 	border-width: 0 0 0 1px;
+	cursor: pointer;
 	position: absolute;
 	top: 1px;
 	right: 1px;
@@ -870,6 +866,44 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .secure-space-enabled .icon-edit { display: none; }
 .secure-space .icon-save { display: none; }
 .secure-space-enabled .icon-save { display: block; }
+/* ==========================================================================
+   _Инпут с редактированием
+   ========================================================================== */
+.datepicker {
+	padding-left: 34px;
+	display: block;
+	position: relative;
+	background: #fff;
+}
+.datepicker:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
+.datepicker .icon-calendar {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.task-create .datepicker .icon-calendar {
+	border: 1px solid #d6d6d6;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	transition: border-color .2s;
+	background: none;
+}
+.datepicker input[type="text"] {
+	width: 100%;
+	position: relative;
+	text-align: center;
+	background: transparent;
+}
+.datepicker input.date-from, .datepicker input.date-to {
+	width: 50%;
+	float: left;
+}
+.datepicker input.date-from {
+	left: 1px;
+}
+.datepicker input.date-to {
+	border-left-color: transparent;
+}
 /* ==========================================================================
    _Кнопка 'Поставить задачу сотруднику'
    ========================================================================== */
@@ -939,49 +973,29 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	position: relative;
 }
 .task-create .form-line-last .select {
-	width: 61%;
-	padding-right: 34px;
+	width: 56%;
 	float: left;
 	position: relative;
 }
 .task-create input[disabled], .task-create textarea[disabled] {
 	z-index: 0 !important;
-	background: rgba(205, 205, 205, .2);
+	background: #f6f5f3;
 }
-/*
-.task-create .form-line-last .select .jq-selectbox.large .jq-selectbox__select {
-	background: rgba(205, 205, 205, .2);
-}
-*/
-.task-create .form-line-last .select .jq-selectbox.large.focused .jq-selectbox__select,
-.task-create .form-line-last .select .jq-selectbox.large.opened .jq-selectbox__select,
 .task-create .form-line-last .select .jq-selectbox.large.changed .jq-selectbox__select {
 	background: none;
 }
-.task-create .icon-calendar {
+.task-create .datepicker {
+	width: 44%;
+	padding-left: 34px;
+	float: left;
+}
+.task-create .datepicker .icon-calendar {
 	border: 1px solid #d6d6d6;
 	border-left-color: transparent;
 	border-right-color: transparent;
-	position: absolute;
-	top: 0;
-	right: -1px;
-	z-index: 101;
-	transition: border-color .2s;
+	left: -1px;
 	background: none;
-}
-.task-create .icon-calendar:focus { border-color: #a09f9e; }
-.task-create .form-line-last input.date-from, .task-create .form-line-last input.date-to {
-	width: 19.5%;
-	float: left;
-	position: relative;
-	z-index: 1;
-	text-align: center;
-}
-.task-create .form-line-last input.date-from:hover, .task-create .form-line-last input.date-from:hover, .task-create .form-line-last input.date-from:focus, .task-create .form-line-last input.date-from:focus {
-	z-index: 2;
-}
-.task-create .form-line-last input.date-to {
-	margin-left: -1px;
+	transition: border-color .2s;
 }
 .task-create .add-space {
 	width: 93px;
@@ -990,7 +1004,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 0;
+	z-index: 5;
 }
 .task-create .add-space input {
 	height: 35px;
@@ -1010,8 +1024,12 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	box-shadow: inset 0 0 0 1px #d6d6d6;
 	background: #fff;
 }
+.task-list .task.disabled {
+	background: #f6f5f3;
+}
 .task-list .input {
 	margin: 0 184px 0 0;
+	transition: margin-right .1s;
 }
 .task-list .input input {
 	width: 100%;
@@ -1020,19 +1038,25 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	position: relative;
 	background: none;
 }
-.task-list input[disabled], .task-list textarea[disabled] {
-	z-index: 0 !important;
-	background: rgba(205, 205, 205, .2) !important;
-}
 .task-list .actions {
 	width: 184px;
-	padding: 0 35px 0 34px;
+	height: 37px;
+	padding: 0 35px 0 0;
 	margin-top: -37px;
+	margin-bottom: -1px;
 	position: relative;
 	float: right;
+	overflow: hidden;
+	transition: width .1s, padding-right .1s;
 }
-.task-list .actions .icon-calendar {
-	border-top-color: transparent;
+.task-list .actions .datepicker {
+	background: none;
+}
+.task-list .task.disabled .actions {
+	background: #fff;
+}
+.task-list .actions .datepicker .icon-calendar {
+	border-right-color: transparent;
 	border-left-color: transparent;
 	position: absolute;
 	top: 0;
@@ -1040,33 +1064,39 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	z-index: 2;
 	background: none;
 }
-.task-list .actions .date {
-	width: 100%;
-	padding: 7px 5px 7px 10px;
-	border: 1px solid #d6d6d6;
-	margin: 0;
-	color: #676767;
-	line-height: 21px;
-	letter-spacing: 0;
-	text-transform: uppercase;
-	display: block;
-	position: relative;
-	z-index: 0;
-	background: none !important;
+.task-list .actions .datepicker .date { z-index: 5; }
+.task-list .actions .datepicker .date-yellow { background: #ffdeaa !important; }
+.task-list .actions .datepicker .date-orange { background: #ff7979 !important; }
+.task-list .task.editing .input { transition: none; }
+.task-list .task.editing .actions { transition: none; }
+.task-list .actions .icon-edit {
+	border-left-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 148px;
+	background: none;
 }
-.task-list .actions .date-yellow { background: #ffdeaa !important; }
-.task-list .actions .date-orange { background: #ff7979 !important; }
+.task-list .actions .icon-edit:focus {
+	border: 1px solid #d6d6d6 !important;
+}
+.task-list .actions .icon-edit:focus:before { opacity: 0; }
+.task-list .actions .icon-edit:focus:after { opacity: 1; }
+.task-list .task.disabled:hover .input { margin: 0 219px 0 0; }
+.task-list .task.disabled:hover .actions { width: 219px; padding-right: 70px; }
+.task-list .task.disabled:hover .actions .icon-edit { display: block; }
+.task-list .task:not(.disabled) .input { margin: 0 254px 0 0; }
+.task-list .task:not(.disabled) .actions { width: 254px; padding-right: 105px; }
 .task-list .actions .toggle {
 	width: 36px;
 	height: 37px;
 	border: 1px solid #d6d6d6;
-	border-top-color: transparent;
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 2;
-	transition: border-color .3s;
+	background: #fff;
+	transition: border-color .2s;
 }
 .task-list .actions .toggle:before {
 	width: 18px;
@@ -1103,15 +1133,14 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	transition: transform .2s;
 	transform: rotate(0deg);
 }
-.task-list .task .actions .toggle.active:before, .task-list .task .actions .toggle.active:after {
+.task-list .task.open .actions .toggle:before, .task-list .task.open .actions .toggle:after {
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
-.task-list .actions .toggle:hover:before { background-color: #ff7b10; }
-.task-list .actions .toggle:hover:after { border-color: #ff7b10; }
-.task-list .actions .toggle:focus { border-color: #a09f9e !important; }
+.task-list .actions .toggle:hover:before, .task-list .actions .toggle:focus:before { background-color: #ff7b10; }
+.task-list .actions .toggle:hover:after, .task-list .actions .toggle:focus:after { border-color: #ff7b10; }
 .task-list .task:first-child { margin: 0; }
 .task-list .task:first-child .input input, .task-list .task:first-child .actions .icon-calendar, .task-list .task:first-child .actions .toggle { border-top-color: #d6d6d6; }
 .task-list .task:first-child .input input:focus { border-color: #a09f9e; }
@@ -1126,9 +1155,12 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 }
 .task-list .task.open .space { display: block; }
 .task-list .form-line { margin: 0 0 -1px 0; }
-.task-list .form-line-last {
+.task-list .form-line-last:not(.disabled) {
 	padding-right: 70px;
 	margin: 0;
+}
+.task-list .task.disabled .form-line-last {
+	padding-right: 0;
 }
 .task-list .space textarea {
 	width: 100%;
@@ -1145,30 +1177,108 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	background: none;
 }
 .task-list .space textarea:focus, .task-list .space input[type="text"]:focus { border-color: #a09f9e !important; }
-.task-list .space .buttons {
+.task-list .buttons {
 	width: 71px;
 	height: 37px;
 	margin-top: -37px;
+	display: none;
 	float: right;
 	position: relative;
+	left: -35px;
 	z-index: 10;
+	background: #fff;
 }
-.task-list .space .buttons .icon-save {
-	border-left-color: transparent;
-	border-right-color: transparent;
-	border-bottom-color: transparent;
+.task-list .task.editing .buttons {
+	display: block;
+	position: relative;
+	top: auto;
+	right: auto;
+}
+.task-list .task.editing.open .buttons {
+	margin-top: -37px;
+	float: right;
+	position: relative;
+	top: auto;
+	right: auto;
+}
+.task-list .buttons .icon-save {
 	position: absolute;
 	top: 0;
 	right: 0;
 	background: none;
 }
-.task-list .space .buttons .icon-delete {
-	border-left-color: transparent;
-	border-bottom-color: transparent;
+.task-list .buttons .icon-delete {
 	position: absolute;
 	top: 0;
 	left: 0;
 	background: none;
+}
+.task-list .task.editing.open .input { margin-right: 184px; }
+.task-list .task.editing.open .actions { width: 184px; padding-right: 35px; }
+.task-list .task.editing.open .actions .icon-edit { display: none; }
+.task-list .task.editing.open .buttons { left: auto; z-index: 11; background: none; }
+.task-list .task.editing.open .buttons .icon-save, .task-list .task.editing.open .buttons .icon-delete { border-left-color: transparent; background: none; }
+/* ==========================================================================
+   _Статистика
+   ========================================================================== */
+.stats {
+	width: 100%;
+	position: relative;
+}
+.stats a { color: #2f79bd; }
+.stats a:hover, .stats a:focus { text-decoration: none; }
+.stats:after, .stats .main:after, .stats .date:after, .stats .actions:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
+/* Основные данные */
+.stats .main {
+	padding: 13px 15px;
+	margin: 0;
+	border: 1px solid #dadad9;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: .04em;
+	color: #676767;
+	background: #fff;
+}
+.stats .main p { margin: 0 0 7px; }
+.stats .main p:nth-child(2n) { margin-bottom: 17px; }
+.stats .main p:last-of-type { margin: 0; }
+.stats .main strong { font-weight: normal; text-transform: uppercase; }
+.stats .date {
+	margin: -1px 0;
+	position: relative;
+	z-index: 5;
+	cursor: default;
+}
+.stats .date .datepicker { background: #f6f5f3; }
+.stats .date .datepicker input { background: none; }
+.stats .date .text {
+	width: 50%;
+	padding: 10px;
+	border-right: 1px solid #d6d6d6;
+	display: block;
+	float: left;
+	color: #676767;
+	text-align: center;
+}
+.stats .actions {
+	height: 366px;
+	padding: 13px 15px;
+	border: 1px solid #dadad9;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: .04em;
+	overflow: auto;
+	overflow-x: hidden;
+	background: #fff;
+}
+.stats .actions p {
+	margin-bottom: 5px;
+}
+.stats .actions .time {
+	margin-bottom: 6px;
+	display: block;
+	font-weight: bold;
+	font-style: normal;
 }
 /* ==========================================================================
    _Блоки
