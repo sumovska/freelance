@@ -33,13 +33,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-@font-face {
-	font-family: 'Futura DemiC';
-	src: url('../fonts/futurademic-italic.eot');
-	src: url('../fonts/futurademic-italic.eot?#iefix') format('embedded-opentype'), url('../fonts/futurademic-italic.woff') format('woff'), url('../fonts/futurademic-italic.ttf') format('truetype');
-	font-weight: normal;
-	font-style: italic;
-}
 /* ==========================================================================
    _HTML
    ========================================================================== */
@@ -296,7 +289,7 @@ h6, .h6 {
    _Parallel (Link in parallelogram)
    ========================================================================== */
 .parallel {
-	padding: 12px 26px 11px 22px;
+	padding: 12px 24px 11px 24px;
 	display: inline-block;
 	font-size: 12px;
 	line-height: 16px;
@@ -316,7 +309,7 @@ h6, .h6 {
 	overflow: hidden;
 	position: absolute;
 	top: 0;
-	left: -5px;
+	left: 0;
 	right: 0;
 	bottom: 0;
 	-webkit-transform: skew(-45deg);
@@ -495,7 +488,7 @@ h6, .h6 {
 }
 .footer .subscribe .parallel {
 	margin: 0 5px 0 9px;
-	padding: 9px 19px 8px 15px;
+	padding: 9px 17px 8px 17px;
 	font-size: 10px;
 	display: inline-block;
 	vertical-align: middle;
@@ -731,6 +724,7 @@ h6, .h6 {
 	transition: background-color .1s ease;
 }
 .header .cart:hover {
+	text-shadow: 1px 0px 2px #000;
 	background: #b9ad97;
 }
 /* Header toggle */
@@ -906,6 +900,10 @@ h6, .h6 {
 	max-width: 180px;
 	margin: 0 auto;
 	display: block;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .75);
+}
+.index .wowslider .text .parallel:hover {
+	text-shadow: none;
 }
 .index .carousel > li {
 	position: relative;
@@ -1382,7 +1380,7 @@ h6, .h6 {
    ========================================================================== */
 .about .unit .inform {
 	padding-top: 118px;
-	padding-bottom: 92px;
+	padding-bottom: 108px;
 }
 .about .units .unit:nth-child(2n) .inform {
 	padding-top: 148px;
@@ -1412,16 +1410,16 @@ h6, .h6 {
 	margin: 0;
 }
 .about .unit .inform .text {
-	margin-bottom: 12px;
+	margin-bottom: 30px;
 }
 .about .unit .inform .sign {
-	width: 210px;
-	height: 133px;
+	width: 160px;
+	height: 100px;
 	margin: 0 auto;
 }
 .about .unit .inform .sign img {
-	width: 187px;
-	height: 133px;
+	width: 100%;
+	height: auto;
 	display: block;
 }
 .about .unit .inform .list {
@@ -1453,7 +1451,7 @@ h6, .h6 {
 }
 .about .unit .inform .link .parallel {
 	margin: 0 auto;
-	padding: 10px 19px 8px 15px;
+	padding: 10px 17px 8px 17px;
 	font-size: 10px;
 	line-height: 12px;
 	letter-spacing: 0.02em;
@@ -1743,6 +1741,12 @@ h6, .h6 {
 .inner .text .hr {
 	width: 558px;
 	margin-bottom: 52px;
+}
+.inner .text .parallel {
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .75);
+}
+.inner .text .parallel:hover {
+	text-shadow: none;
 }
 /* ==========================================================================
    _BLOCK-CART
@@ -3493,6 +3497,12 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 .fancybox-skin .fancybox-prev span:after { left: 16px; top: 17px; }
 .fancybox-skin .fancybox-next span:before { left: 18px; top: 6px; }
 .fancybox-skin .fancybox-next span:after { left: 18px; top: 17px; }
+.fancybox-button-close { padding-right: 26px; display: block; font-size: 12px; line-height: 14px; font-weight: bold; text-decoration: none; text-transform: uppercase; position: absolute; top: 97px; left: 20px; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); transform: rotate(-90deg); }
+.fancybox-button-close span { width: 18px; height: 18px; display: block; position: absolute; right: 0; top: -2px; border-radius: 50%; border: none; outline: none; background: #162335; }
+.fancybox-button-close span:hover { opacity: .8; }
+.fancybox-button-close span:before, .fancybox-button-close span:after { width: 2px; height: 14px; border-radius: 3px; position: absolute; top: 2px; left: 8px; display: block; overflow: hidden; content: ' '; background: #fff; }
+.fancybox-button-close span:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+.fancybox-button-close span:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 /* ==========================================================================
    _POPUP
    ========================================================================== */
@@ -3586,6 +3596,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	max-width: 1040px;
 	height: 724px;
 	padding: 0;
+	overflow: hidden;
 }
 .popup-gallery .carousel .pic {
 	width: auto;
@@ -3599,7 +3610,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	margin-top: 2px;
 	position: absolute;
 	top: 50%;
-	left: -48px;
+	left: -55px;
 }
 .popup-gallery .bx-pager-item {
 	padding: 4px 0;
@@ -3723,16 +3734,6 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	color: #454f5d;
 	cursor: default;
 	text-decoration: none;
-}
-.popup-instruction .likes {
-	padding-left: 42px;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-}
-.popup-instruction .likes .count {
-	margin: 0 6px;
-	display: inline-block;
 }
 .popup-instruction .functions .line {
 	margin-bottom: 0;
