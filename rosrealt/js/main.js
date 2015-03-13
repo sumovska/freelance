@@ -58,6 +58,8 @@ $(document).ready(function () {
 			format: 'd.m.Y',
 			closeOnDateSelect: true,
 			timepicker: false,
+			scrollMonth: false,
+			scrollInput: false,
 			onShow: function () {
 				this.setOptions({
 					maxDate: to.val() ? to.val() : false
@@ -69,6 +71,8 @@ $(document).ready(function () {
 			format: 'd.m.Y',
 			closeOnDateSelect: true,
 			timepicker: false,
+			scrollMonth: false,
+			scrollInput: false,
 			onShow: function () {
 				this.setOptions({
 					minDate: from.val() ? from.val() : false
@@ -85,7 +89,9 @@ $(document).ready(function () {
 				lang: 'ru',
 				format: 'd.m.Y',
 				closeOnDateSelect: true,
-				timepicker: false
+				timepicker: false,
+				scrollMonth: false,
+				scrollInput: false
 			});
 			$('.icon-edit', this).click(function () {
 				_self.removeClass('disabled').addClass('editing');
@@ -117,6 +123,8 @@ $(document).ready(function () {
 			format: 'd.m.Y',
 			closeOnDateSelect: true,
 			timepicker: false,
+			scrollMonth: false,
+			scrollInput: false,
 			onShow: function () {
 				this.setOptions({
 					maxDate: to.val() ? to.val() : false
@@ -128,6 +136,8 @@ $(document).ready(function () {
 			format: 'd.m.Y',
 			closeOnDateSelect: true,
 			timepicker: false,
+			scrollMonth: false,
+			scrollInput: false,
 			onShow: function () {
 				this.setOptions({
 					minDate: from.val() ? from.val() : false

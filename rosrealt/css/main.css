@@ -206,7 +206,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form:after, .form-line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .checkbox, .radio { padding-left: 28px; display: inline-block; vertical-align: middle; position: relative; }
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
-.jq-file.file-photo { width: 100%; margin: 0 auto; display: block !important; }
+.jq-file.file-photo { width: 100%; max-width: 350px; margin: 0 auto; display: block !important; }
 .jq-file.file-photo .jq-file__name { height: 210px; padding: 112px 9px 9px 9px; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: #e3e3e3; transition: border-color .2s, color .2s; }
 .jq-file.file-photo.changed .jq-file__name { text-transform: none; }
 .jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; transition: opacity .2s; }
@@ -1029,7 +1029,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 }
 .task-list .input {
 	margin: 0 184px 0 0;
-	transition: margin-right .1s;
+	/* transition: margin-right .1s; */
 }
 .task-list .input input {
 	width: 100%;
@@ -1047,7 +1047,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	position: relative;
 	float: right;
 	overflow: hidden;
-	transition: width .1s, padding-right .1s;
+	/* transition: width .1s, padding-right .1s; */
 }
 .task-list .actions .datepicker {
 	background: none;
@@ -1067,8 +1067,6 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .task-list .actions .datepicker .date { z-index: 5; }
 .task-list .actions .datepicker .date-yellow { background: #ffdeaa !important; }
 .task-list .actions .datepicker .date-orange { background: #ff7979 !important; }
-.task-list .task.editing .input { transition: none; }
-.task-list .task.editing .actions { transition: none; }
 .task-list .actions .icon-edit {
 	border-left-color: transparent;
 	position: absolute;
@@ -1223,6 +1221,8 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
    ========================================================================== */
 .stats {
 	width: 100%;
+	max-width: 450px;
+	margin: 0 auto;
 	position: relative;
 }
 .stats a { color: #2f79bd; }
