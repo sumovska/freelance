@@ -358,6 +358,8 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 	position: relative;
 	float: left;
 }
+.header .status li.name a { color: #323232; }
+.header .status li.name a:hover { color: #ff7b10; }
 .header .status li:before {
 	width: 33px;
 	height: 33px;
@@ -567,13 +569,12 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 .footer .support, .footer .messages, .footer .help {
 	width: 44px;
 	height: 38px;
-	white-space: nowrap;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 44px;
 }
-.footer .support { width: auto; right: 172px; }
-.footer .messages { right: 44px; }
+.footer .support { width: auto; right: 216px; }
+.footer .messages { right: 88px; }
 /* Кнопки */
 .footer .support .toggle, .footer .messages .toggle, .footer .help .toggle {
 	width: 44px;
@@ -627,17 +628,17 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 .footer .support .toggle:after { width: 44px; height: 38px; left: 100%; top: 0; background: rgba(0, 0, 0, .8); }
 .footer .messages .toggle:before { background-position: -240px 0; }
 .footer .help .toggle:before { background-position: -270px 0; }
-.footer .help .tooltip {
-	min-width: 138px;
-	padding: 19px 17px 12px;
+.footer .messages .tooltip, .footer .help .tooltip {
+	min-width: 140px;
+	padding: 12px 17px;
 	border: 1px solid #d6d6d6;
 	display: none;
 	position: absolute;
-	right: 10px;
+	right: -24px;
 	bottom: 58px;
 	background: #fff;
 }
-.footer .help .tooltip:after, .footer .help .tooltip:before {
+.footer .tooltip:after, .footer .tooltip:before {
 	width: 0;
 	height: 0;
 	border: solid transparent;
@@ -647,19 +648,20 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 	left: 100%;
 	pointer-events: none;
 }
-.footer .help .tooltip:after {
+.footer .tooltip:after {
 	border-color: rgba(136, 183, 213, 0);
 	border-top-color: #fff;
 	border-width: 6px;
-	margin-left: -25px;
+	margin-left: -50px;
 }
-.footer .help .tooltip:before {
+.footer .tooltip:before {
 	border-color: rgba(194, 225, 245, 0);
 	border-top-color: #d6d6d6;
 	border-width: 7px;
-	margin-left: -26px;
+	margin-left: -51px;
 }
-.footer .help.active .tooltip {
+.footer .help.active .tooltip,
+.footer .messages.active .tooltip {
 	display: block;
 }
 .footer .help .list {
@@ -678,7 +680,7 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 }
 .footer .help .list > li > ul {
 	padding: 0;
-	margin: 18px 0;
+	margin: 23px 0 18px;
 	list-style: none;
 	display: none;
 }
@@ -688,6 +690,15 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 .footer .help .list > li.open > a { color: #ff7b10; }
 .footer .help .list > li.open > ul { display: block; }
 .footer .help .list > li:last-of-type > ul { margin-bottom: 0; }
+.footer .messages .tooltip {
+	min-width: 400px;
+	padding: 19px;
+	line-height: 16px;
+}
+.footer .messages p { margin-bottom: 12px; }
+.footer .messages .date { margin-bottom: 16px; font-size: 14px; }
+.footer .messages .do { margin: 0; display: block; }
+.footer .messages .do a { margin-right: 25px; }
 /* ==========================================================================
    _Оранжевая кнопка/ссылка с плюсом
    ========================================================================== */

@@ -148,20 +148,25 @@ $(document).ready(function () {
 
 	/* Подвал */
 	$('.footer').each(function () {
-		$('.help', this).each(function () {
-			var _help = $(this);
+		var _buttons = $('.help, .messages', this);
+		_buttons.each(function () {
+			var _self = $(this);
 			$('.toggle', this).click(function () {
-				_help.toggleClass('active');
-				$('.sub', _help).click(function () {
-					$(this).closest('li').toggleClass('open').siblings('li.open').removeClass('open');
-					return false;
+				console.log(_buttons.filter('.active'));
+				$(this).parent().siblings('.active').removeClass('active').find('.tooltip').hide().removeAttr('style');
+				$('.tooltip', _self).fadeToggle(100, function () {
+					_self.toggleClass('active');
 				});
+				return false;
+			});
+			$('.sub', this).click(function () {
+				$(this).closest('li').toggleClass('open').siblings('li.open').removeClass('open');
 				return false;
 			});
 			$('body').bind("click", function (event) {
 				var target = $(event.target);
-				if ((target.closest('.tooltip-help').length === 0)) {
-					_help.removeClass('active');
+				if ((target.closest('.tooltip-help').length === 0) || (target.closest('.tooltip-messages').length === 0)) {
+					_self.removeClass('active');
 				}
 			});
 		});
