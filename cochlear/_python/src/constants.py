@@ -1,7 +1,0 @@
-
-VIEW_MODES = (CRF_MODE, CR220_MODE, HISTORY_MODE) = 'crf_view cr220_view history_view'.split()
-
-AWS_KEY_ID = 'AKIAJ4R5D3F3SH7KNXPA'
-AWS_SECRET = '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'
-AWS_EMAILS_REGION = 'us-east-1'
-AWS_SERIALS_REGION='ap-southeast-2'
