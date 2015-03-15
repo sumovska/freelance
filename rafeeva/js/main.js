@@ -13,10 +13,10 @@ $(document).ready(function () {
 		window.slider.bxSlider({
 			infinteLoop: false,
 			responsive: true,
+			adaptiveHeight: true,
 			swipeThreshold: 20,
 			preloadImages: 'all',
 			pager: false,
-			controls: false,
 			onSliderLoad: function () {
 				var temp;
 				$('li.bx-clone:last-of-type', window.slider).remove();
@@ -29,6 +29,14 @@ $(document).ready(function () {
 
 	/* Fastclick for mobile devices */
 	FastClick.attach(document.body);
+
+
+	/* Navigation toggles */
+	$('html').bind('mousedown touchstart', function (e) {
+		if ($(e.target).closest('.nav').length < 1) {
+			$(this).removeClass('navigation-open').removeClass('contacts-open');
+		}
+	});
 
 	/* Navigation toggle */
 	$('.toggle-navigation').click(function () {
@@ -43,15 +51,15 @@ $(document).ready(function () {
 	});
 
 	/* Month init */
-	$('.month').each(function () {
+	$('.calendar').each(function () {
+		var _self = $(this);
 		$(window).on('scroll touchmove', function () {
 			/* Toggle fixed header */
-			if ($(window).scrollTop() > 250) {
-				$('.month').addClass('month-fixed');
+			if ($(window).scrollTop() > 240) {
+				_self.addClass('calendar-fixed');
 			} else {
-				$('.month').removeClass('month-fixed');
+				_self.removeClass('calendar-fixed');
 			}
 		});
 	});
-
 });
