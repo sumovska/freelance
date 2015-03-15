@@ -885,14 +885,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background-image: url(../img/temp/line-bluel.png);
 }
 .recommend .info {
-	margin-bottom: 18px;
+	margin-bottom: 70px;
 }
 .recommend .info .wrapper {
 	padding-top: 86px;
 	position: relative;
 }
 .recommend .inside {
-	min-height: 241px;
+	min-height: 190px;
 	position: relative;
 	padding: 50px 400px 24px 24px;
 }
@@ -1013,23 +1013,24 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	z-index: 20;
 }
 .recommend .carousel {
-	height: 340px;
-	margin: -40px auto 0;
+	height: 600px;
 	padding: 0;
+	margin: -300px auto 0;
 	list-style: none;
-	text-align: center;
-	font: bold 14px 'Fedra Sans Pro', Arial, sans-serif;
+	position: relative;
+	z-index: 1;
 }
 .recommend .carousel .slick-list {
 	height: 100%;
 }
 .recommend .carousel .slick-track {
-	top: 50px;
+	padding-top: 300px;
 }
 .recommend .carousel .item {
 	padding: 0 23px;
 	display: inline-block;
 	opacity: .6;
+	position: relative;
 	text-align: center;
 	transition: opacity .4s linear;
 }
@@ -1071,6 +1072,64 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border: 4px solid #fff;
 	border-radius: 50%;
 }
+.recommend .carousel .name {
+	text-align: center;
+	font: bold 14px 'Fedra Sans Pro', Arial, sans-serif;
+}
+.recommend .carousel .tooltip {
+	width: 321px;
+	padding: 14px 9px 14px 23px;
+	border-left: 1px solid rgba(255, 255, 255, .5);
+	border-right: 1px solid rgba(255, 255, 255, .5);
+	margin: 0 0 0 165px;
+	font-size: 15px;
+	line-height: 18px;
+	text-align: left;
+	opacity: 0;
+	position: absolute;
+	bottom: 246px;
+	left: 50%;
+	transition: opacity .4s ease;
+}
+.recommend .carousel .slick-center .tooltip {
+	opacity: 1;
+}
+.recommend .carousel .tooltip .arrow {
+	width: 69px;
+	height: 79px;
+	display: block;
+	content: ' ';
+	position: absolute;
+	bottom: 30px;
+	left: -82px;
+	background: url('../img/arrow.png') no-repeat 0 0;
+}
+.recommend .carousel .tooltip p {
+	margin: 0;
+	display: block;
+	position: relative;
+	z-index: 5;
+}
+.recommend .carousel .tooltip p.small {
+	padding: 5px 14px 14px 14px;
+	margin: 16px 0 0 -14px;
+	font-size: 13px;
+	line-height: 18px;
+	background: rgba(8, 23, 77, .2);
+}
+.recommend .carousel .tooltip:before, .recommend .carousel .tooltip:after {
+	width: 17px;
+	border-top: 1px solid rgba(255, 255, 255, .5);
+	border-bottom: 1px solid rgba(255, 255, 255, .5);
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+}
+.recommend .carousel .tooltip:after { left: auto; right: 0; }
 .recommend .carousel .slick-prev, .recommend .carousel .slick-next {
 	width: 30px;
 	height: 30px;

@@ -26,6 +26,7 @@ $(document).ready(function () {
 
 	/* Recommend carousel */
 	$('.recommend').each(function () {
+		$('.tooltip', this).append('<i class="arrow"></i>');
 		$('.carousel', this).slick({
 			infinite: true,
 			swipeToSlide: true,
@@ -33,7 +34,7 @@ $(document).ready(function () {
 			slidesToShow: 5,
 			slidesToScroll: 1,
 			autoplay: true,
-			autoplaySpeed: 2000,
+			autoplaySpeed: 3000,
 			prevArrow: '<span class="slick-prev"></span>',
 			nextArrow: '<span class="slick-next"></span>'
 		});
@@ -43,10 +44,13 @@ $(document).ready(function () {
 	$('.fancybox-popup').fancybox({
 		padding: 0,
 		margin: 80,
+		fitToView: false,
+		scrolling: 'no',
 		helpers: {
 			media: {},
 			overlay: {
-				speedIn: 250,
+				speedIn: 300,
+				speedOut: 300,
 				css: {
 					'background': 'rgba(0, 0, 0, 0.8)'
 				}
