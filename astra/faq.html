@@ -67,15 +67,15 @@
 			<div class="wrapper">
 				<form class="form" action="faq.html" method="post">
 					<div class="line line-cols">
-						<div class="col"><input type="text" placeholder="Виталий"></div>
-						<div class="col"><input type="text" placeholder="vitaly@mail.ru"></div>
+						<div class="col"><input type="text" name="name" placeholder="Имя" value="Виталий" required></div>
+						<div class="col"><input type="text" name="email" placeholder="E-Mail" value="vitaly@mail.ru" required></div>
 					</div>
 					<div class="line"><label><textarea>Добрый день!</textarea></label></div>
 					<div class="capture">
 						<div class="line line-cols">
 							<div class="col">
 								<span class="pic"><img src="img/temp/captcha.png" alt=""></span>
-								<input type="text" placeholder="3845">
+								<input type="text" name="captcha" value="3845">
 							</div>
 							<div class="col">
 								<span class="subscribe">Введите, пожалуйста, код, <br>указанный на картинке.</span>
@@ -83,7 +83,7 @@
 						</div>
 					</div>
 					<div class="submit">
-						<button>Отправить</button>
+						<button type="submit">Отправить</button>
 					</div>
 				</form>
 				<div class="comments">
