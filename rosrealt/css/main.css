@@ -207,7 +207,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .checkbox, .radio { padding-left: 28px; display: inline-block; vertical-align: middle; position: relative; }
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
 .jq-file.file-photo { width: 100%; max-width: 350px; margin: 0 auto; display: block !important; }
-.jq-file.file-photo .jq-file__name { height: 210px; padding: 112px 9px 9px 9px; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: #e3e3e3; transition: border-color .2s, color .2s; }
+.jq-file.file-photo .jq-file__name { height: 193px; padding: 100px 9px 9px 9px; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: #e3e3e3; transition: border-color .2s, color .2s; }
 .jq-file.file-photo.changed .jq-file__name { text-transform: none; }
 .jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; transition: opacity .2s; }
 .jq-file.file-photo:hover .jq-file__name, .jq-file.file-photo.focused .jq-file__name { border-color: #a09f9e; color: #a09f9e; }
@@ -222,6 +222,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line-3-col .col { width: 33.3%; padding: 0 10px; float: left; }
 .form .select { width: 100%; display: block; }
 input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, textarea.large { height: 37px; padding-top: 10px; padding-bottom: 10px; }
+textarea.large { height: 96px; }
 .jq-selectbox.large .jq-selectbox__dropdown { top: 36px; }
 .jq-selectbox.large .jq-selectbox__select { height: 37px; }
 .jq-selectbox.large .jq-selectbox__select-text { padding-top: 9px; }
@@ -435,8 +436,8 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 	white-space: nowrap;
 	transition: background-color .2s;
 }
-.nav .menu > li > a:hover, .nav .menu > li > a:focus {
-	background-color: rgba(0, 0, 0, .6);
+.nav .menu > li > a:hover, .nav .menu > li > a:focus, .nav .menu > li.active > a {
+	background-color: rgba(0, 0, 0, .7);
 }
 .nav .menu > li .new {
 	width: 16px;
@@ -460,7 +461,7 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 	bottom: 0;
 	left: 44px;
 	z-index: -1;
-	background-color: rgba(0, 0, 0, .6);
+	background-color: rgba(0, 0, 0, .7);
 }
 .nav .menu > li > a:before {
 	width: 30px;
@@ -581,7 +582,7 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 	height: 38px;
 	display: block;
 	cursor: pointer;
-	background: rgba(0, 0, 0, .6);
+	background: rgba(0, 0, 0, .7);
 	transition: background-color .2s;
 }
 .footer .support .toggle {
@@ -630,7 +631,7 @@ input[type="email"].large, input[type="number"].large, input[type="password"].la
 .footer .help .toggle:before { background-position: -270px 0; }
 .footer .messages .tooltip, .footer .help .tooltip {
 	min-width: 140px;
-	padding: 12px 17px;
+	padding: 14px 19px;
 	border: 1px solid #d6d6d6;
 	display: none;
 	position: absolute;
@@ -1069,7 +1070,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	z-index: 0 !important;
 	background: #f6f5f3;
 }
-.task-create .form-line-last .select .jq-selectbox.large.changed .jq-selectbox__select {
+.task-create .form-line-last .select .jq-selectbox.changed .jq-selectbox__select {
 	background: none;
 }
 .task-create .datepicker {
@@ -1374,7 +1375,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .filter {
 	padding: 10px;
 	margin: 0;
-	background-color: rgba(0, 0, 0, .6);
+	background-color: rgba(0, 0, 0, .7);
 	position: relative;
 	z-index: 100;
 }
@@ -1538,7 +1539,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	color: #fff;
 	line-height: 16px;
 	letter-spacing: .025em;
-	background: rgba(0, 0, 0, .6);
+	background: rgba(0, 0, 0, .7);
 }
 .notice .entry:last-of-type { margin-bottom: 0; }
 .notice p {
@@ -1596,11 +1597,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 /* ==========================================================================
    _Блоки
    ========================================================================== */
-/* Высота input=file на странице 'карточка пользователя' */
-.block-staff-card .jq-file.file-photo .jq-file__name {
-	height: 193px;
-	padding: 100px 9px 9px 9px;
-}
+
 .block-owners {
 	height: 100%;
 	margin: -20px;

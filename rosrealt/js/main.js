@@ -165,8 +165,9 @@ $(document).ready(function () {
 			});
 			$('body').bind("click", function (event) {
 				var target = $(event.target);
-				if ((target.closest('.tooltip-help').length === 0) || (target.closest('.tooltip-messages').length === 0)) {
+				if (target.closest('.tooltip').length === 0) {
 					_self.removeClass('active');
+					$('.tooltip', _self).hide();
 				}
 			});
 		});
