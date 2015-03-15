@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Superdom</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="css/ie.css">
+		<script src="js/vendor/html5shiv.js"></script>
+		<script src="js/vendor/respond-1.4.2.min.js"></script>
+		<script src="js/vendor/pie-1.0.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="navbar navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Включить навигацию</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="img/logo.png" alt="Superdom"></a>
+				</div>
+				<nav class="navbar-collapse collapse">
+					<ul class="nav nav-justified navbar-nav">
+						<li>
+							<a href="#">Заказ отеля</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Коста Гарраф</a></li>
+								<li><a href="#">Коста Дорада</a></li>
+								<li><a href="#">Барселона</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Продажа</a></li>
+						<li>
+							<a href="#">Аренда</a>
+						</li>
+						<li><a href="#">Юридическое сопровождение</a></li>
+						<li><a href="#">Заказ сервиса</a></li>
+					</ul>
+					<div class="navbar-buttons">
+						<div class="btn-group btn-square-group navbar-language">
+							<button type="button" class="btn btn-square btn-default dropdown-toggle" data-toggle="dropdown">RU<span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">EN</a></li>
+								<li><a href="#">IL</a></li>
+							</ul>
+						</div>
+						<div class="navbar-divider"></div>
+						<button class="btn btn-square btn-primary navbar-btn" type="button">Разместить объявление</button>
+						<button class="btn btn-square btn-default navbar-btn" type="button">Войти</button>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- start gallery -->
+	<div class="gallery">
+		<ul class="carousel">
+			<li class="item"><img src="img/gallery/01.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/02-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/02.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/03-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/03.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/04-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/04.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/05-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/05.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/06-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/06.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/07-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/07.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/08-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/08.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/09-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/09.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/10-bw.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/10.jpg" alt=""></li>
+			<li class="item"><img src="img/gallery/01-bw.jpg" alt=""></li>
+		</ul>
+	</div>
+	<!-- end gallery -->
+
+	<!-- start filter form -->
+	<div class="filter">
+		<div class="container">
+			<div class="row">
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs nav-tabs-filter">
+					<li class="active"><a href="#tab-sell" data-toggle="tab"><span>Продажа</span></a></li>
+					<li><a href="#tab-rent" data-toggle="tab"><span>Аренда</span></a></li>
+					<li><a href="#tab-search" data-toggle="tab"><span>Поиск по референции</span></a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="tab-sell">
+						<form method="post" action="#" role="form">
+							<div class="row">
+								<div class="col-1 col-lg-4 col-md-4 col-sm-4">
+									<div class="form-group">
+										<label class="control-label" for="sell-country">Страна</label>
+										<select class="form-select" name="sell-country" id="sell-country">
+											<option value="">Любая</option>
+											<option value="es">Испания</option>
+											<option value="dk">Дания</option>
+											<option value="gr">Греция</option>
+											<option value="de">Германия</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="sell-coast">Побережье</label>
+										<select class="form-select" name="sell-coast" id="sell-coast">
+											<option value="">Любое</option>
+											<option value="0">Коста Гарраф</option>
+											<option value="1">Коста Дорада</option>
+											<option value="1">Барселона</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="sell-city">Город</label>
+										<select class="form-select" name="sell-city" id="sell-city">
+											<option value="">Любой</option>
+											<option value="0">Барселона</option>
+											<option value="1">Пальма-де-Мальорка</option>
+											<option value="1">Валенсия</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="sell-category">Категория</label>
+										<select class="form-select" name="sell-category" id="sell-category">
+											<option value="">Любая</option>
+											<option value="0">Эконом</option>
+											<option value="1">Люкс</option>
+											<option value="1">Семейный</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-2 col-lg-5 col-md-5 col-sm-5">
+									<div class="form-group">
+										<label class="control-label control-label-top" for="sell-square">Жилплощадь,&nbsp;м<sup>2</sup></label>
+										<div class="form-slider-space">
+											<input class="form-slider" type="text" name="sell-square" id="sell-square" value="60,100" data-slider-min="30" data-slider-max="300" data-slider-step="5" data-slider-value="[60,100]">
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="sell-squareFrom" id="sell-squareFrom" value=""></label>
+											<span class="div">-</span>
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="sell-squareTo" id="sell-squareTo" value=""></label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label control-label-top" for="sell-price">Цена,&nbsp;&euro;</label>
+										<div class="form-slider-space">
+											<input class="form-slider" type="text" name="sell-price" id="sell-price" value="100000,200000" data-slider-min="10000" data-slider-max="500000" data-slider-step="5" data-slider-value="[100000,200000]">
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="sell-priceFrom" id="sell-priceFrom" value=""></label>
+											<span class="div">-</span>
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="sell-priceTo" id="sell-priceTo" value=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="col-3 col-lg-3 col-md-3 col-sm-3">
+									<div class="form-group">
+										<label class="control-label" for="sell-bedrooms">Количество спален&nbsp;(от)</label>
+										<select class="form-select" name="sell-bedrooms" id="sell-bedrooms">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="sell-toilets">Количество санузлов&nbsp;(от)</label>
+										<select class="form-select" name="sell-toilets" id="sell-toilets">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="sell-distance">Расстояние до&nbsp;моря</label>
+										<select class="form-select" name="sell-distance" id="sell-distance">
+											<option value="">Любое</option>
+											<option value="1">Менее 500м</option>
+											<option value="2">Менее 1км</option>
+											<option value="3">Менее 2км</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row row-blue">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<button type="submit" class="btn btn-default btn-submit">Начать поиск</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane fade" id="tab-rent">
+						<form method="post" action="#" role="form">
+							<div class="row">
+								<div class="col-1 col-lg-4 col-md-4 col-sm-4">
+									<div class="form-group">
+										<label class="control-label" for="rent-country">Страна</label>
+										<select class="form-select" name="rent-country" id="rent-country">
+											<option value="">Любая</option>
+											<option value="es">Испания</option>
+											<option value="dk">Дания</option>
+											<option value="gr">Греция</option>
+											<option value="de">Германия</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="rent-coast">Побережье</label>
+										<select class="form-select" name="rent-coast" id="rent-coast">
+											<option value="">Любое</option>
+											<option value="0">Коста Гарраф</option>
+											<option value="1">Коста Дорада</option>
+											<option value="1">Барселона</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="rent-city">Город</label>
+										<select class="form-select" name="rent-city" id="rent-city">
+											<option value="">Любой</option>
+											<option value="0">Барселона</option>
+											<option value="1">Пальма-де-Мальорка</option>
+											<option value="1">Валенсия</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="rent-category">Категория</label>
+										<select class="form-select" name="rent-category" id="rent-category">
+											<option value="">Любая</option>
+											<option value="0">Эконом</option>
+											<option value="1">Люкс</option>
+											<option value="1">Семейный</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-2 col-lg-5 col-md-5 col-sm-5">
+									<div class="input-daterange">
+										<div class="form-group">
+											<label class="control-label" for="rent-checkIn">Дата въезда</label>
+											<input class="form-control form-datepicker" type="text" name="rent-checkIn" id="rent-checkIn" value="">
+										</div>
+										<div class="form-group">
+											<label class="control-label" for="rent-checkOut">Дата выезда</label>
+											<input class="form-control form-datepicker" type="text" name="rent-checkOut" id="rent-checkOut">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label control-label-top" for="rent-price">Цена за сутки,&nbsp;&euro;</label>
+										<div class="form-slider-space">
+											<input class="form-slider" type="text" name="rent-price" id="rent-price" value="150,500" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[150,500]">
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="rent-priceFrom" id="rent-priceFrom" value=""></label>
+											<span class="div">-</span>
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="rent-priceTo" id="rent-priceTo" value=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="col-3 col-lg-3 col-md-3 col-sm-3">
+									<div class="form-group">
+										<label class="control-label" for="rent-visitors">Количество человек&nbsp;(от)</label>
+										<select class="form-select" name="rent-visitors" id="rent-visitors">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="rent-bedrooms">Количество спален&nbsp;(от)</label>
+										<select class="form-select" name="rent-bedrooms" id="rent-bedrooms">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="rent-distance">Расстояние до&nbsp;моря</label>
+										<select class="form-select" name="rent-distance" id="rent-distance">
+											<option value="">Любое</option>
+											<option value="1">Менее 500м</option>
+											<option value="2">Менее 1км</option>
+											<option value="3">Менее 2км</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row row-blue">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<button type="submit" class="btn btn-default btn-submit">Начать поиск</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane fade" id="tab-search">
+						<form method="post" action="#" role="form">
+							<div class="row">
+								<div class="col-1 col-lg-4 col-md-4 col-sm-4">
+									<div class="form-group">
+										<label class="control-label" for="search-country">Страна</label>
+										<select class="form-select" name="search-country" id="search-country">
+											<option value="">Любая</option>
+											<option value="es">Испания</option>
+											<option value="dk">Дания</option>
+											<option value="gr">Греция</option>
+											<option value="de">Германия</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="search-coast">Побережье</label>
+										<select class="form-select" name="search-coast" id="search-coast">
+											<option value="">Любое</option>
+											<option value="0">Коста Гарраф</option>
+											<option value="1">Коста Дорада</option>
+											<option value="1">Барселона</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="search-city">Город</label>
+										<select class="form-select" name="search-city" id="search-city">
+											<option value="">Любой</option>
+											<option value="0">Барселона</option>
+											<option value="1">Пальма-де-Мальорка</option>
+											<option value="1">Валенсия</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="search-category">Категория</label>
+										<select class="form-select" name="search-category" id="search-category">
+											<option value="">Любая</option>
+											<option value="0">Эконом</option>
+											<option value="1">Люкс</option>
+											<option value="1">Семейный</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-2 col-lg-5 col-md-5 col-sm-5">
+									<div class="form-group">
+										<label class="control-label control-label-top" for="search-square">Жилплощадь,&nbsp;м<sup>2</sup></label>
+										<div class="form-slider-space">
+											<input class="form-slider" type="text" name="search-square" id="search-square" value="60,100" data-slider-min="30" data-slider-max="300" data-slider-step="5" data-slider-value="[60,100]">
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="search-squareFrom" id="search-squareFrom" value=""></label>
+											<span class="div">-</span>
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="search-squareTo" id="search-squareTo" value=""></label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label control-label-top" for="search-price">Цена,&nbsp;&euro;</label>
+										<div class="form-slider-space">
+											<input class="form-slider" type="text" name="search-price" id="search-price" value="100000,200000" data-slider-min="10000" data-slider-max="500000" data-slider-step="5" data-slider-value="[100000,200000]">
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="search-priceFrom" id="search-priceFrom" value=""></label>
+											<span class="div">-</span>
+											<label><input class="form-control form-range" type="text" disabled="disabled" name="search-priceTo" id="search-priceTo" value=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="col-3 col-lg-3 col-md-3 col-sm-3">
+									<div class="form-group">
+										<label class="control-label" for="search-bedrooms">Количество спален&nbsp;(от)</label>
+										<select class="form-select" name="search-bedrooms" id="search-bedrooms">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="search-toilets">Количество санузлов&nbsp;(от)</label>
+										<select class="form-select" name="search-toilets" id="search-toilets">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="search-distance">Расстояние до&nbsp;моря</label>
+										<select class="form-select" name="search-distance" id="search-distance">
+											<option value="">Любое</option>
+											<option value="1">Менее 500м</option>
+											<option value="2">Менее 1км</option>
+											<option value="3">Менее 2км</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row row-blue">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<button type="submit" class="btn btn-default btn-submit">Начать поиск</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+	</div>
+	<!-- end filter form -->
+
+	<!-- start jumbotron -->
+	<section class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<h1 class="h1">Покупайте&nbsp;недвижимость в&nbsp;<strong>Испании</strong></h1>
+				<p>Старикам не нужна компания. Их нужно изолировать и изучать, чтобы выяснить, нет ли в них каких-нибудь полезных для нас веществ.</p>
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+	<!-- end jumbotron -->
+
+	<!-- start recent properties -->
+	<section class="properties">
+		<div class="container">
+			<h2 class="h2">Интересные предложения</h2>
+			<div class="row">
+				<div class="col col-lg-3 col-md-3 col-sm-6">
+					<div class="item">
+						<div class="in">
+							<a href="#" class="thumbnail">
+								<img src="img/temp/properties-1.jpg" alt="Фото">
+								<span class="type">Вилла</span>
+							</a>
+							<h4 class="h4"><a href="#">Кастельдефельс</a></h4>
+							<p>Бельямар, Коста Гарраф</p>
+						</div>
+						<p class="deal">Продажа</p>
+						<p class="price">&euro;15 477 568</p>
+						<ul class="details">
+							<li class="square"><span>2,412м<sup>2</sup></span></li>
+							<li class="sleep"><span>6 сп-н</span></li>
+							<li class="bath"><span>3 ван.</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-6">
+					<div class="item">
+						<div class="in">
+							<a href="#" class="thumbnail">
+								<img src="img/temp/properties-2.jpg" alt="Фото">
+								<span class="type">Аппартаменты</span>
+							</a>
+							<h4 class="h4"><a href="#">Кастельдефельс</a></h4>
+							<p>Бельямар, Коста Гарраф</p>
+						</div>
+						<p class="deal">Продажа</p>
+						<p class="price">&euro;15 477 568</p>
+						<ul class="details">
+							<li class="square"><span>2,412м<sup>2</sup></span></li>
+							<li class="sleep"><span>6 сп-н</span></li>
+							<li class="bath"><span>3 ван.</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-6">
+					<div class="item">
+						<div class="in">
+							<a href="#" class="thumbnail">
+								<img src="img/temp/properties-3.jpg" alt="Фото">
+								<span class="type">Вилла</span>
+							</a>
+							<h4 class="h4"><a href="#">Кастельдефельс</a></h4>
+							<p>Бельямар, Коста Гарраф</p>
+						</div>
+						<p class="deal">Продажа</p>
+						<p class="price">&euro;15 477 568</p>
+						<ul class="details">
+							<li class="square"><span>2,412м<sup>2</sup></span></li>
+							<li class="sleep"><span>6 сп-н</span></li>
+							<li class="bath"><span>3 ван.</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-6">
+					<div class="item">
+						<div class="in">
+							<a href="#" class="thumbnail">
+								<img src="img/temp/properties-4.jpg" alt="Фото">
+								<span class="type">Аппартаменты</span>
+							</a>
+							<h4 class="h4"><a href="#">Кастельдефельс</a></h4>
+							<p>Бельямар, Коста Гарраф</p>
+						</div>
+						<p class="deal">Продажа</p>
+						<p class="price">&euro;15 477 568</p>
+						<ul class="details">
+							<li class="square"><span>2,412м<sup>2</sup></span></li>
+							<li class="sleep"><span>6 сп-н</span></li>
+							<li class="bath"><span>3 ван.</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+	<!-- end recent properties -->
+
+	<!-- start services section -->
+	<section class="services">
+		<div class="container">
+			<h2 class="h1">Как мы работаем</h2>
+			<div class="row">
+				<div class="col col-lg-4 col-md-4 col-sm-4">
+					<figure class="icon"><img src="img/icon-listings.png" alt="Заявки"></figure>
+					<h4 class="h5">Оставляете заявку</h4>
+					<p>Не вижу смысла выходить из дома. Мы все равно каждый раз возвращаемся обратно.</p>
+				</div>
+				<div class="col col-lg-4 col-md-4 col-sm-4">
+					<figure class="icon"><img src="img/icon-agents.png" alt="Агенты"></figure>
+					<h4 class="h5">Встречаетесь с нашим агентом</h4>
+					<p>Нельзя постоянно винить себя за что-то. Обвините себя разок, и спокойно живите дальше.</p>
+				</div>
+				<div class="col col-lg-4 col-md-4 col-sm-4">
+					<figure class="icon"><img src="img/icon-compass.png" alt="Объекты"></figure>
+					<h4 class="h5">Посещаете объект</h4>
+					<p>Во Франции никто не зовет меня &laquo;жирным придурком&raquo;. Здесь я гурман!</p>
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+
+	<!-- start appeal section -->
+	<section class="appeal">
+		<div class="container">
+			<div class="row">
+				<div class="col col-sm-8 col-sm-offset-4 col-xs-offset-0">
+					<h2 class="h1">Слово руководителя</h2>
+					<figure class="photo"><img class="img-circle" src="img/temp/ceo.jpg" alt="Марина Будон"></figure>
+					<h2 class="name"><span>Марина Будон</span></h2>
+					<p class="quote">Я взбирался на самые высокие горы, опускался в самые низкие лощины. Побывал в Африке и Японии. Даже слетал в космос. Но сейчас я, не задумываясь, променял бы все это на что-нибудь сладенькое.</p>
+					<div class="video">
+						<iframe src="http://www.youtube.com/embed/b3_vv4766Gk" allowfullscreen="allowfullscreen"></iframe>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<img class="background" src="img/appeal.jpg" alt="">
+		<!-- end container -->
+	</section>
+
+	<!-- start widgets section -->
+	<section class="widgets">
+		<div class="container">
+			<div class="row">
+				<div class="col col-lg-6 col-md-6 col-sm-6">
+					<div class="recentWidget">
+						<h3 class="h2">Новости</h3>
+						<div class="recentEntry">
+							<p class="h3"><a href="#">Я не стану лукавить: быть отцом непросто. <br>Не то что матерью</a></p>
+							<p>Чтобы тебя любили, приходится быть со всеми хорошим каждый день. Чтобы ненавидели &ndash; напрягаться не приходится вообще.</p>
+							<a href="#" class="btn btn-square btn-primary">Подробнее</a>
+							<span class="date">10.05.2014</span>
+						</div>
+						<div class="recentEntry">
+							<p class="h3"><a href="#">В спорте главное не победа. Главное &ndash; чтобы удалось напиться!</a></p>
+							<p>И когда же я наконец пойму, что ответы на жизненные вопросы находятся не на дне бутылки. Они в телевизоре!</p>
+							<a href="#" class="btn btn-square btn-primary">Подробнее</a>
+							<span class="date">10.05.2014</span>
+						</div>
+					</div>
+				</div>
+				<div class="col col-lg-6 col-md-6 col-sm-6">
+					<div class="recentWidget">
+						<h3 class="h2">FAQ</h3>
+						<div class="recentEntry">
+							<p class="h3"><a href="#">Если ты будешь злиться на меня каждый раз, когда я делаю глупость, мне придется прекратить делать глупости!</a></p>
+							<p>Когда дело касается комплиментов, женщины становятся неуемными кровососущими монстрами и требуют еще, еще и еще. Но если удовлетворить их желание, плата будет сладкой.</p>
+						</div>
+						<div class="recentEntry">
+							<p class="h3"><a href="#">Единственно важное в жизни &ndash; быть популярным</a></p>
+							<p>Старикам не нужна компания. Их нужно изолировать и изучать, чтобы выяснить, нет ли в них каких-нибудь полезных для нас веществ.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+	<!-- end widgets section -->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col col-lg-5 col-md-5 col-sm-5">
+					<h2 class="h3 footerLogo"><img src="img/logoWhite.png" alt="Superdom"></h2>
+					<p class="footerAbout">Испанское агенство недвижимости Superdom оказывает полный спектр услуг по покупке недвижимости в Испании , недвижимость от банков, недорогая недвижимость , комерческая недвижимость и дизаин домов, постпродажное обслуживание.</p>
+				</div>
+				<div class="col col-lg-4 col-md-4 col-sm-4">
+					<h3 class="h3">Навигация</h3>
+					<ul class="footerNav">
+						<li><a href="#">Почему мы?</a></li>
+						<li><a href="#">Стратегический консалтинг оценка недвижимости</a></li>
+						<li><a href="#">Оформление виз</a></li>
+						<li><a href="#">Послепродажное обслуживание</a></li>
+					</ul>
+				</div>
+				<div class="col col-lg-3 col-md-3 col-sm-3">
+					<h2 class="h3">Контакты</h2>
+					<ul class="contactList">
+						<li class="mail"><a href="mailto:dom@superdom.es">dom@superdom.es</a></li>
+						<li class="phone">+34 62835-99-29</li>
+						<li class="address">Pau Claris 79 3-2A<br> 08010 Barcelona, Spain</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end footer container -->
+	</footer>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+	<script src="js/vendor/bootstrap.min.js"></script>
+
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

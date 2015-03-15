@@ -1,0 +1,194 @@
+/*!
+ * Project: Superdom
+ * File: IE styles
+ * Author: Sergiy Miroshnychenko
+ */
+
+/* _all
+ ----------------------------------------------------------------------- */
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+img { -ms-interpolation-mode: bicubic; }
+fieldset { padding-top: 0; }
+textarea { overflow: auto; }
+div { zoom: 1; }
+
+/* _IE8
+----------------------------------------------------------------------- */
+@font-face {
+	font-family: 'Proxima Nova Light';
+	src: url('../fonts/proxima_nova_light-webfont.eot');
+	src: url('../fonts/proxima_nova_light-webfont.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Proxima Nova Bold';
+	src: url('../fonts/proxima_nova_bold-webfont.eot');
+	src: url('../fonts/proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.h1, .h2 {
+	font-family: 'Proxima Nova Light', Helvetica, Arial, sans-serif\9  !important;
+	font-weight: normal\9  !important;
+}
+.h3, .h5, .jumbotron .h1 strong, .appeal .name span, .appeal .quote, .recentWidget .date, .properties .details {
+	font-family: 'Proxima Nova Bold', Helvetica, Arial, sans-serif\9  !important;
+	font-weight: normal\9  !important;
+}
+
+.jumbotron .h1 {
+	font-size: 36px\9  !important;
+}
+
+.filter > .container > .row:after { display: none\9; }
+.filter > .container > .row > .after { filter: alpha(opacity=70)\9; }
+
+.btn-submit {
+	background: #1e2e3f;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#394f5d', endColorstr='#1e2e3f', GradientType=0);
+}
+.btn-submit:hover {
+	background: #0a0f14;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#394f5d', endColorstr='#0a0f14', GradientType=0);
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+	margin-left: 15px\9  !important;
+}
+.nav-justified > li {
+	width: auto\9  !important;
+	min-width: 170px\9  !important;
+	display: block\9  !important;
+	float: left\9  !important;
+}
+.navbar-nav > li > a {
+	height: auto\9  !important;
+	padding: 0 14px 8px 14px\9  !important;
+}
+.navbar-nav > li > a:before {
+	display: none\9  !important;
+}
+
+.appeal .h1 {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#4cffffff', endColorstr='#4cffffff')\9;
+}
+.appeal .name span, .appeal .quote {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#4c000000', endColorstr='#4c000000')\9;
+}
+
+.bootstrap-select {
+	/*width: 220px\9; IE8 and below*/
+	width: 220 px\0; /*IE9 and below*/
+}
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdd49a', endColorstr='#fdf59a', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	color:#333\9;
+	background-color: #fbf069\9;
+}
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.active,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled:hover.active {
+	color:#fff\9;
+	background-color: #818181\9;
+}
+.datepicker table tr td.range.today,
+.datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today.disabled:hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3c17a', endColorstr='#f3e97a', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled:hover.active {
+	background-color: #efe24b\9;
+}
+.datepicker table tr td.selected,
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected.disabled:hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3', endColorstr='#808080', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover:active,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled:hover.active {
+	background-color: #666\9;
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active {
+	background-color: #039\9;
+}
+
+.datepicker table tr td span.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active {
+	background-color: #039\9;
+}
+
+.datepicker.dropdown-menu {
+	*border-right-width: 2px;
+	*border-bottom-width: 2px;
+}
+
+.bx-wrapper {
+	*zoom: 1;
+}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+	*zoom: 1;
+	*display: inline;
+}
+.bx-wrapper .bx-caption {
+	background: #666\9;
+}

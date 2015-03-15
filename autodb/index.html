@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Auto DB</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.ui.slider.css"/>
+	<link rel="stylesheet" href="css/jquery.ui.theme.css"/>
+	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.mouse.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.slider.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.mwheelintent.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="js/jquery.fileinput.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/pie.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<!--Wrapper-->
+<div class="wrapper wrapper-flex">
+
+	<!--Header-->
+	<div class="header">
+		<!--logo-->
+		<p class="logo"><a href="index.html"><img src="images/logo.png" alt="Auto DB"/></a></p>
+		<!--nav-->
+		<div class="navigation">
+			<ul>
+				<li class="active"><a href="#">All</a></li>
+				<li><a href="#">Cars &amp; SUVs</a></li>
+				<li><a href="#">ATVs &amp; Snowmobiles</a></li>
+				<li><a href="#">Jet Ski &amp; Watercrafts </a></li>
+				<li><a href="#">Heavy Trucks</a></li>
+				<li><a href="#">Motorcycles</a></li>
+			</ul>
+		</div>
+		<!--nav-->
+	</div>
+	<!--Header-->
+
+	<!--Content-->
+	<div class="content content-twocols">
+	<!--leftcolumn-->
+		<div class="leftcolumn">
+			<p class="city"><span>Toronto, ON</span></p>
+			<div class="sidebar">
+				<!--Search-->
+				<form action="#">
+				<div class="searchWidget">
+					<p class="search">
+						<label><input type="text" value="Search..." onfocus="if(this.value == 'Search...') {this.value='';};" onblur="if(this.value === '') {this.value='Search...';};"/></label>
+						<input type="submit" value="" title="Search"/>
+						<a href="#" class="close"></a>
+					</p>
+					<p class="inputs">
+						<label class="checkbox"><input type="checkbox" value=""/>New</label>
+						<label class="checkbox"><input type="checkbox" value=""/>Used</label>
+					</p>
+				</div>
+				<!--Search-->
+				<!--Price Range-->
+				<div class="sidebarWidget sidebarWidgetOpen">
+					<p class="h"><span class="space"><strong>Price Range</strong></span></p>
+					<div class="sidebarBox sidebarSlider">
+						<div id="PriceRange" class="slider"></div>
+						<span class="inputArea">
+							<input type="text" class="valueInput alignleft" id="pricemin"/>
+							<input type="text" class="valueInput alignright" id="pricemax"/>
+						</span>
+					</div>
+				</div>
+				<!--Price Range-->
+				<!--Year-->
+				<div class="sidebarWidget sidebarWidgetOpen">
+					<p class="h"><span class="space"><strong>Year</strong></span></p>
+					<div class="sidebarBox sidebarSlider">
+						<div id="year" class="slider"></div>
+						<span class="inputArea">
+							<input type="text" class="valueInput alignleft" id="yearmin"/>
+							<input type="text" class="valueInput alignright" id="yearmax"/>
+						</span>
+					</div>
+				</div>
+				<!--Year-->
+				<!--Brand-->
+				<div class="sidebarWidget">
+					<p class="h"><span class="space"><strong>Brand</strong></span></p>
+					<div class="sidebarBox">
+						<div class="scroll">
+							<ul class="cb-list">
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Hyundai</span> <strong>18</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Honda</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Ford</span> <strong>82</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Chevrolet</span> <strong>12</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>General Motors</span> <strong>8</strong></label></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Brand-->
+				<!--Exterior Colour-->
+				<div class="sidebarWidget">
+					<p class="h"><span class="space"><strong>Exterior Colour</strong></span></p>
+					<div class="sidebarBox">
+						<div class="scroll">
+							<ul class="cb-list">
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Silver</span> <strong>18</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Black</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Red</span> <strong>82</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>White</span> <strong>12</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Blue</span> <strong>8</strong></label></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Exterior Colour-->
+				<!--Interior  Colour-->
+				<div class="sidebarWidget">
+					<p class="h"><span class="space"><strong>Interior Colour</strong></span></p>
+					<div class="sidebarBox">
+						<div class="scroll">
+							<ul class="cb-list">
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Black</span> <strong>18</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Brown</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Red</span> <strong>82</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>White</span> <strong>12</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Khaki</span> <strong>8</strong></label></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Interior  Colour-->
+				<!--Transmission-->
+				<div class="sidebarWidget">
+					<p class="h"><span class="space"><strong>Transmission</strong></span></p>
+					<div class="sidebarBox">
+						<div class="scroll">
+							<ul class="cb-list">
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Automatic</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Manual</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Automatic</span> <strong>82</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Manual</span> <strong>12</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Automatic</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Manual</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Automatic</span> <strong>82</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Manual</span> <strong>12</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Automatic</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Manual</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Automatic</span> <strong>82</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Manual</span> <strong>12</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Automatic</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>6 Speed Manual</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Automatic</span> <strong>82</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>8 Speed Manual</span> <strong>12</strong></label></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Transmission-->
+				<!--Carproof-->
+				<div class="sidebarWidget">
+					<p class="h"><span class="space"><strong>Carproof</strong></span></p>
+					<div class="sidebarBox">
+						<div class="scroll">
+							<ul class="cb-list">
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Verified</span> <strong>34</strong></label></li>
+								<li><label class="checkbox"><input type="checkbox" value=""/><span>Not verified</span> <strong>34</strong></label></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Carproof-->
+				<!--Price Range-->
+				<div class="sidebarWidget">
+					<p class="h"><span class="space"><strong>Trailer Length</strong></span></p>
+					<div class="sidebarBox sidebarSlider">
+						<div id="TrailerLength" class="slider"></div>
+						<span class="inputArea">
+							<input type="text" class="valueInput alignleft" id="minvalue"/>
+							<input type="text" class="valueInput alignright" id="maxvalue"/>
+						</span>
+					</div>
+				</div>
+				<!--Price Range-->
+				</form>
+			</div>
+		</div>
+		<!--leftcolumn-->
+
+		<!--rightcolumn-->
+		<div class="rightcolumn">
+			<div class="area">
+				<div class="region">
+					<ul>
+						<li><a href="#">All</a></li>
+						<li class="active"><a href="#">City of Toronto</a></li>
+						<li><a href="#">Durham Region</a></li>
+						<li><a href="#">York Region</a></li>
+						<li><a href="#">Mississauga</a></li>
+						<li><a href="#">Brampton</a></li>
+						<li><a href="#">Oakville</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="contentArea">
+				<div class="h">
+					<h6 class="dateHeading">Wednesday, June 27th</h6>
+					<div class="postAdd">
+						<small>Page 1</small>
+						<span><a href="post-ad.html">Post Ad (free)</a></span>
+						<span class="black"><a href="login.html">Login</a></span>
+					</div>
+				</div>
+				<div class="catalog">
+					<div class="item">
+						<h6><a href="#">2007 Mercedes Benz - MINT COND. BLACK ON BLACK $10k OBO</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="location"><span>King/Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mercedes Benz</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">Silver 2010 Hyundai for LEASE Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Queen St E &amp; Carlaw</span></p>
+							<p class="heading">
+								<span class="model"><strong>Hyundai</strong> (2010)</span>
+								<span class="photos">1/7</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">AUDI A4 FULLY LOADED, Must See LEASE FOR $400/MO!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="location"><span>DIXON AND ROGERS</span></p>
+							<p class="heading">
+								<span class="model"><strong>Audi</strong> (2011)</span>
+								<span class="photos">1/2</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong> $800/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">BRAND NEW FORD FIESTA FOR LEASE OR PURCHASE! BEST DEAL!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="location"><span>Yonge St and Charles</span></p>
+							<p class="heading">
+								<span class="model"><strong>Ford</strong> (2012)</span>
+								<span class="photos">1/8</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong></span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">SILVER Mitsubishi lancer *2011* New Model - Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Bloor st west &amp; Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mitsubishi</strong> (2011)</span>
+								<span class="photos">1/4</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">NEW MODEL ** Chevrolet Spark ** available for lease or financings</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Hwy 401 &amp; 427</span></p>
+							<p class="heading">
+								<span class="model"><strong>Chevrolet</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $500/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">2007 Mercedes Benz - MINT COND. BLACK ON BLACK $10k OBO</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="location"><span>King/Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mercedes Benz</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">Silver 2010 Hyundai for LEASE Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Queen St E &amp; Carlaw</span></p>
+							<p class="heading">
+								<span class="model"><strong>Hyundai</strong> (2010)</span>
+								<span class="photos">1/7</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">AUDI A4 FULLY LOADED, Must See LEASE FOR $400/MO!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="location"><span>DIXON AND ROGERS</span></p>
+							<p class="heading">
+								<span class="model"><strong>Audi</strong> (2011)</span>
+								<span class="photos">1/2</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong> $800/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">BRAND NEW FORD FIESTA FOR LEASE OR PURCHASE! BEST DEAL!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="location"><span>Yonge St and Charles</span></p>
+							<p class="heading">
+								<span class="model"><strong>Ford</strong> (2012)</span>
+								<span class="photos">1/8</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong></span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">SILVER Mitsubishi lancer *2011* New Model - Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Bloor st west &amp; Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mitsubishi</strong> (2011)</span>
+								<span class="photos">1/4</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">NEW MODEL ** Chevrolet Spark ** available for lease or financings</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Hwy 401 &amp; 427</span></p>
+							<p class="heading">
+								<span class="model"><strong>Chevrolet</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $500/mo</span>
+						</div>
+					</div>
+				</div>
+				<div class="h">
+					<h6 class="dateHeading">Wednesday, June 27th</h6>
+				</div>
+				<div class="catalog">
+					<div class="item">
+						<h6><a href="#">2007 Mercedes Benz - MINT COND. BLACK ON BLACK $10k OBO</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="location"><span>King/Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mercedes Benz</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">Silver 2010 Hyundai for LEASE Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Queen St E &amp; Carlaw</span></p>
+							<p class="heading">
+								<span class="model"><strong>Hyundai</strong> (2010)</span>
+								<span class="photos">1/7</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">AUDI A4 FULLY LOADED, Must See LEASE FOR $400/MO!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="location"><span>DIXON AND ROGERS</span></p>
+							<p class="heading">
+								<span class="model"><strong>Audi</strong> (2011)</span>
+								<span class="photos">1/2</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong> $800/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">BRAND NEW FORD FIESTA FOR LEASE OR PURCHASE! BEST DEAL!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="location"><span>Yonge St and Charles</span></p>
+							<p class="heading">
+								<span class="model"><strong>Ford</strong> (2012)</span>
+								<span class="photos">1/8</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong></span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">SILVER Mitsubishi lancer *2011* New Model - Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Bloor st west &amp; Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mitsubishi</strong> (2011)</span>
+								<span class="photos">1/4</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">NEW MODEL ** Chevrolet Spark ** available for lease or financings</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Hwy 401 &amp; 427</span></p>
+							<p class="heading">
+								<span class="model"><strong>Chevrolet</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $500/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">2007 Mercedes Benz - MINT COND. BLACK ON BLACK $10k OBO</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="location"><span>King/Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mercedes Benz</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">Silver 2010 Hyundai for LEASE Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Queen St E &amp; Carlaw</span></p>
+							<p class="heading">
+								<span class="model"><strong>Hyundai</strong> (2010)</span>
+								<span class="photos">1/7</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong> $300/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">AUDI A4 FULLY LOADED, Must See LEASE FOR $400/MO!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="location"><span>DIXON AND ROGERS</span></p>
+							<p class="heading">
+								<span class="model"><strong>Audi</strong> (2011)</span>
+								<span class="photos">1/2</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong> $800/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">BRAND NEW FORD FIESTA FOR LEASE OR PURCHASE! BEST DEAL!</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage3.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage4.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="location"><span>Yonge St and Charles</span></p>
+							<p class="heading">
+								<span class="model"><strong>Ford</strong> (2012)</span>
+								<span class="photos">1/8</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Lease</strong></span>
+							<span><strong>Buy</strong></span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">SILVER Mitsubishi lancer *2011* New Model - Low Monthly Payments</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage5.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Bloor st west &amp; Bathurst</span></p>
+							<p class="heading">
+								<span class="model"><strong>Mitsubishi</strong> (2011)</span>
+								<span class="photos">1/4</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $400/mo</span>
+						</div>
+					</div>
+					<div class="item">
+						<h6><a href="#">NEW MODEL ** Chevrolet Spark ** available for lease or financings</a></h6>
+						<div class="main">
+							<p class="pic pic-active"><a href="#"><img src="images/carimage6.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage1.jpg" alt="" /></a></p>
+							<p class="pic"><a href="#"><img src="images/carimage2.jpg" alt="" /></a></p>
+							<p class="location"><span>Hwy 401 &amp; 427</span></p>
+							<p class="heading">
+								<span class="model"><strong>Chevrolet</strong> (2007)</span>
+								<span class="photos">1/3</span>
+							</p>
+						</div>
+						<div class="leasing">
+							<span><strong>Buy</strong> $500/mo</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--rightcolumn-->
+	</div>
+	<!--Content-->
+
+</div>
+<!--wrapper-->
+</body>
+</html>

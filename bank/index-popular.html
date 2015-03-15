@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Банк заслуг</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/text.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="js/jquery.masonry.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/html5.js"></script>
+	<script type="text/javascript" src="js/pie.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="wrap">
+	<header class="header">
+		<div class="space">
+			<p class="logo"></p>
+			<p class="profile">
+				<img src="img/temp/50x50-1.jpg" alt="">
+				<span class="name">Ирина <br>Симоненко</span>
+			</p>
+			<nav class="menu">
+				<ul>
+					<li class="active"><a href="index.html">Главная</a></li>
+					<li class="arrow"><a href="projects.html">Все проекты</a></li>
+					<li class="arrow"><a href="users.html">Участники</a></li>
+					<li><a href="market.html">Маркет</a></li>
+					<li><a href="about.html">О банке</a></li>
+				</ul>
+			</nav>
+			<nav class="menu menu-secondary">
+				<ul>
+					<li><a href="profile.html">Профиль</a></li>
+					<li><a href="viewed.html">Просмотренные</a></li>
+					<li><a href="fav.html">Избранное</a></li>
+					<li class="border"><a href="login.html">Выход</a></li>
+				</ul>
+			</nav>
+			<div class="form form-search">
+				<form action="#">
+					<p class="line">
+						<input type="text" value="Поиск" onfocus="if(this.value == 'Поиск') {this.value='';};"  onblur="if(this.value == '') {this.value='Поиск';};">
+						<input type="submit" value="">
+					</p>
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<aside class="sidebar">
+			<nav class="nav">
+				<ul>
+					<li class="li-add"><a href="create.html"></a></li>
+					<li class="li-currency"><a href="finance.html"><var class="blue">90</var><var class="green">150</var></p></a></li>
+					<li class="li-alarm"><a href="#"><var class="blue">90</var></a></li>
+					<li class="li-grid"><a href="#"></a></li>
+					<li class="li-mail"><a href="messages.html"></a></li>
+					<li class="li-settings"><a href="#"></a></li>
+				</ul>
+			</nav>
+		</aside>
+		<div class="content">
+			<div class="top-nav">
+				<nav>
+					<ul>
+						<li><a href="index.html">Все проекты</a></li>
+						<li><a href="index-my.html">Мои проекты</a></li>
+						<li class="active"><a href="index-popular.html">Популярные проекты</a></li>
+						<li><a href="index-new.html">Новые проекты</a></li>
+					</ul>
+					<p class="filter"><a href="#"></a></p>
+				</nav>
+			</div>
+			<div class="block-filter projects-filter-visible">
+				<div class="form form-filter">
+					<form action="#">
+						<p class="line">
+							<input type="text" value="Название проекта для поиска" onfocus="if(this.value == 'Название проекта для поиска') {this.value='';};"  onblur="if(this.value == '') {this.value='Название проекта для поиска';};">
+							<select class="select-month">
+								<option selected="selected">Месяц</option>
+								<option>Январь</option>
+								<option>Февраль</option>
+								<option>Март</option>
+								<option>Апрель</option>
+								<option>Май</option>
+								<option>Июнь</option>
+								<option>Июль</option>
+								<option>Август</option>
+								<option>Сентябрь</option>
+								<option>Октябрь</option>
+								<option>Ноябрь</option>
+								<option>Декабрь</option>
+							</select>
+							<select class="select-day">
+								<option selected="selected">День</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+							</select>
+							<select class="select-year">
+								<option selected="selected">Год</option>
+								<option>2010</option>
+								<option>2011</option>
+								<option>2012</option>
+								<option>2013</option>
+							</select>
+							<button class="submit submit-done">Искать проект</button>
+						</p>
+					</form>
+				</div>
+			</div>
+			<div class="block-alert">
+				<span class="ico-alert"></span><span class="text">В этом разделе демонстрируются проекты близкие к завершению и имеющие высокий процент посещаемости.</span>
+			</div>
+			<div class="index">
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-3.jpg" width="210" height="270" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">9 июня 2012</p>
+						<ul class="social-small">
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<h2 class="h2"><a href="project.html">Счастливый час!</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анна <br>Антипова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-26.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-4.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-27.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="#video" class="popup-show"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-video"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">9 июня 2012</p>
+						<ul class="social-small">
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">English club</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-1.jpg" width="210" height="160" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Оксана <br>Смирнова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-24.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-3.jpg" width="210" height="270" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">9 июня 2012</p>
+						<ul class="social-small">
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<h2 class="h2"><a href="project.html">Счастливый час!</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анна <br>Антипова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-26.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-4.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-27.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">9 июня 2012</p>
+						<ul class="social-small">
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">English club</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-1.jpg" width="210" height="160" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Оксана <br>Смирнова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-24.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="space">
+			<nav class="menu">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="projects.html">Все проекты</a></li>
+					<li><a href="users.html">Участники</a></li>
+					<li><a href="market.html">Маркет</a></li>
+					<li><a href="about.html">О банке</a></li>
+				</ul>
+			</nav>
+			<ul class="social">
+				<li class="fb"><a href="#" title="Facebook"></a></li>
+				<li class="tw"><a href="#" title="Twitter"></a></li>
+				<li class="vk"><a href="#" title="Vkontakte"></a></li>
+				<li class="rss"><a href="#" title="RSS"></a></li>
+			</ul>
+			<p class="copyright">&copy; Учреждение культуры &laquo;Клаудвочер&raquo;</p>
+		</div>
+	</footer>
+</div>
+
+<div class="popup popup-video">
+	<a class="close popup-close" href="#close"></a>
+	<img src="img/temp/video.jpg" alt="">
+	<strong class="title">Аренда дам попользоваться фотоаппаратом Canon</strong>
+	<ul class="social-small social-small-dark">
+		<li class="fb"><a href="#" title="Facebook"></a></li>
+		<li class="tw"><a href="#" title="Twitter"></a></li>
+		<li class="vk"><a href="#" title="Vkontakte"></a></li>
+	</ul>
+</div>
+<div class="overlay"></div>
+</body>
+</html>

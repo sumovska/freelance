@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Auto DB</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.ui.slider.css"/>
+	<link rel="stylesheet" href="css/jquery.ui.theme.css"/>
+	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.mouse.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.slider.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.mwheelintent.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="js/jquery.fileinput.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/pie.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<!--Wrapper-->
+<div class="wrapper wrapper-twocols">
+
+	<!--Header-->
+	<div class="header">
+		<!--logo-->
+		<p class="logo"><a href="index.html"><img src="images/logo.png" alt="Auto DB"/></a></p>
+		<!--nav-->
+		<div class="navigation">
+			<ul>
+				<li class="active"><a href="#">All</a></li>
+				<li><a href="#">Cars &amp; SUVs</a></li>
+				<li><a href="#">ATVs &amp; Snowmobiles</a></li>
+				<li><a href="#">Jet Ski &amp; Watercrafts </a></li>
+				<li><a href="#">Heavy Trucks</a></li>
+				<li><a href="#">Motorcycles</a></li>
+			</ul>
+		</div>
+		<!--nav-->
+	</div>
+	<!--Header-->
+
+	<!--Content-->
+	<div class="content">
+		<!--leftcolumn-->
+		<div class="leftcolumn">
+			<p class="left-heading">Update</p>
+			<div class="sidebar">
+				<div class="sidebarWidget sidebarWidgetOpen">
+					<p class="h"><span class="space"><strong>My AutoDB</strong></span></p>
+					<div class="sidebarBox sidebarContent">
+						<ul class="list">
+							<li><a href="account-manage-ads.html">Manage Ads</a></li>
+							<li><a href="account-post-ad.html">Post New Ad</a></li>
+							<li><a href="account-photos.html">Photo Manager</a></li>
+							<li><a href="account-update.html">My Account</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sidebarWidget sidebarWidgetOpen">
+					<p class="h"><span class="space"><strong>Quick Statistics</strong></span></p>
+					<div class="sidebarBox sidebarContent">
+						<table class="stats">
+							<tr>
+								<th>Total Ads Posted</th>
+								<td><a href="#">3</a></td>
+							</tr>
+							<tr>
+								<th>Active Ads</th>
+								<td><a href="#">2</a></td>
+							</tr>
+							<tr>
+								<th>Expired Ads</th>
+								<td><a href="#">1</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--leftcolumn-->
+		<!--rightcolumn-->
+		<div class="rightcolumn">
+			<div class="right-heading">
+				<p class="name"><strong>Welcome John Smith</strong> (jsmith209@gmail.com)</p>
+				<p class="logout"><a href="#">Logout</a></p>
+			</div>
+			<div class="block block-noborder">
+				<form class="form createform" action="#">
+					<div class="row row-grey">
+						<label class="pre">Change Password</label>
+						<div class="space">
+							<div class="default field-password">
+								<div class="node">
+									<label>
+										<input class="fake" type="text" value="Password" title="Password"/>
+										<input id="cpassword" name="cpassword" type="password" value=""/>
+									</label>
+								</div>
+								<span class="strength">Password Strength <i></i></span>
+							</div>
+							<div class="spacer"></div>
+							<label class="default field-password">
+								<input class="fake" type="text" value="Confirm Password"/>
+								<input id="cpasswordconfirm" name="cpasswordconfirm" type="password" value=""/>
+							</label>
+							<div class="spacer"></div>
+						</div>
+					</div>
+					<div class="row">
+						<label class="pre">&nbsp;</label>
+						<div class="space">
+							<input class="w203" type="submit" value="Update Password"/>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="block block-noborder">
+				<form class="form createform" action="#">
+					<div class="row row-grey">
+						<label class="pre">Basic Information <small class="req">Required</small></label>
+						<div class="space">
+							<label class="default">
+								<input id="cname" name="cname" class="w415" type="text" value="First Name &amp; Last Name" title="First Name &amp; Last Name" onfocus="if (this.value === 'First Name &amp; Last Name') {this.value = ''}" onblur="if (this.value === '') {this.value = 'First Name &amp; Last Name'}"/>
+							</label>
+							<div class="spacer"></div>
+							<div class="node">
+								<label class="default">
+									<input id="cwarr" name="cwarr" class="w37 with-ed" type="text" value="Warr." title="Warr." onfocus="if (this.value === 'Warr.') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Warr.'}"/>
+									<span class="ed">years</span>
+								</label>
+							</div>
+							<div class="node">
+								<label class="selectbox">
+									<select id="ctype" name="ctype">
+										<option value="" selected="selected">Type of Business</option>
+										<option value="1">Auto</option>
+										<option value="2">Photo</option>
+										<option value="3">Moto</option>
+									</select>
+								</label>
+							</div>
+							<div class="spacer"></div>
+							<div class="node">
+								<label class="selectbox">
+									<select id="cownership" name="cownership">
+										<option value="" selected="selected">Ownership</option>
+										<option value="1">Auto</option>
+										<option value="2">Photo</option>
+										<option value="3">Moto</option>
+									</select>
+								</label>
+							</div>
+							<div class="node">
+								<label class="selectbox">
+									<select id="csource" name="csource">
+										<option value="" selected="selected">Primary Source of Sales</option>
+										<option value="1">Auto</option>
+										<option value="2">Photo</option>
+										<option value="3">Moto</option>
+									</select>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<label class="pre">Leasing/Financing</label>
+						<div class="space">
+							<div class="node select-leasing">
+								<div class="node node-flex">
+									<label class="checkbox"><input name="clease" type="checkbox" checked="checked"/>Lease</label>
+									<label class="default">
+										<input class="w37 with-ed" type="text" maxlength="5" value=""/>
+										<span class="ed">$/month</span>
+									</label>
+								</div>
+							</div>
+							<div class="node select-leasing">
+								<div class="node node-flex">
+									<label class="checkbox"><input name="cbuy" type="checkbox"/>Buy</label>
+									<label class="default">
+										<input class="w37 with-ed" type="text" maxlength="5" disabled="disabled" value=""/>
+										<span class="ed">$/month</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row row-grey">
+						<label class="pre">Specifications</label>
+						<div class="space">
+							<div class="node">
+								<div class="node node-flex">
+									<label class="selectbox w85 m">
+										<select id="cmake" name="cmake">
+											<option value="" selected="selected">Make</option>
+											<option value="1">Honda</option>
+											<option value="2">Nissan</option>
+											<option value="3">Ford</option>
+										</select>
+									</label>
+								</div>
+								<div class="node node-flex">
+									<label class="default">
+										<input id="cyear" name="cyear" class="w37 with-ed" type="text" value="Year" title="Year" onfocus="if (this.value === 'Year') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Year'}"/>
+										<span class="ed">year</span>
+									</label>
+								</div>
+							</div>
+							<div class="node">
+								<div class="node node-flex">
+									<label class="selectbox w103 m">
+										<select id="cmodel" name="cmodel">
+											<option value="" selected="selected">Model</option>
+											<option value="1">X-trail</option>
+											<option value="2">Note</option>
+											<option value="3">Tiida</option>
+										</select>
+									</label>
+								</div>
+								<label class="checkbox"><input type="checkbox"/>Salvage?</label>
+								<div class="spacer"></div>
+								<label class="selectbox w103">
+									<select id="ctrans" name="ctrans">
+										<option value="" selected="selected">Trans.</option>
+										<option value="1">X-trail</option>
+										<option value="2">Note</option>
+										<option value="3">Tiida</option>
+									</select>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<label class="pre">Mileage Allowance (Lease)</label>
+						<div class="space">
+							<div class="node">
+								<div class="node node-flex">
+									<label class="selectbox w112 m">
+										<select id="ckm" name="ckm">
+											<option value="" selected="selected">KM</option>
+											<option value="1">Honda</option>
+											<option value="2">Nissan</option>
+											<option value="3">Ford</option>
+										</select>
+									</label>
+								</div>
+								<div class="node node-flex">
+									<label class="selectbox w85">
+										<select id="cduration" name="cduration">
+											<option value="" selected="selected">Year</option>
+											<option value="1">Honda</option>
+											<option value="2">Nissan</option>
+											<option value="3">Ford</option>
+										</select>
+									</label>
+								</div>
+							</div>
+							<div class="node">
+								<label class="selectbox w103">
+									<select id="cextra" name="cextra">
+										<option value="" selected="selected">Extra KM</option>
+										<option value="1">X-trail</option>
+										<option value="2">Note</option>
+										<option value="3">Tiida</option>
+									</select>
+								</label>
+								<div class="spacer"></div>
+								<label class="selectbox w103">
+									<select id="coverage" name="coverage">
+										<option value="" selected="selected">Overage</option>
+										<option value="1">X-trail</option>
+										<option value="2">Note</option>
+										<option value="3">Tiida</option>
+									</select>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row row-grey">
+						<label class="pre">Contact Settings <small class="req">Required</small></label>
+						<div class="space">
+							<label class="default">
+								<input id="cemail" name="cemail" class="w415" type="text" value="Email Address" title="Email Address" onfocus="if (this.value === 'Email Address') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Email Address'}"/>
+							</label>
+							<div class="spacer"></div>
+							<label class="default">
+								<input id="cemailconfirm" name="cemailconfirm" class="w415" type="text" value="Confirm Email Address" title="Confirm Email Address" onfocus="if (this.value === 'Confirm Email Address') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Confirm Email Address'}"/>
+							</label>
+							<div class="spacer"></div>
+							<label class="checkbox"><input type="checkbox" checked="checked"/>Allow responses via email form</label>
+							<div class="spacer"></div>
+							<label class="default">
+								<input id="cphone" name="cphone" type="text" value="Phone Number" title="Phone Number" onfocus="if (this.value === 'Phone Number') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Phone Number'}"/>
+								<span class="small">This will appear in your ad. <br/>Optional, can be left blank.</span>
+							</label>
+							<div class="spacer"></div>
+						</div>
+					</div>
+					<div class="row">
+						<label class="pre">&nbsp;</label>
+						<div class="space">
+							<input type="submit" value="Update"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--fullcolumn-->
+	</div>
+	<!--Content-->
+	<div class="footer">
+		<p class="copyright">&copy; 2012 AutoDB</p>
+		<ul class="nav">
+			<li><a href="#">Help Center</a></li>
+			<li><a href="#">Terms &amp; Conditions</a></li>
+			<li><a href="#">Posting Policy</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</div>
+</div>
+<!--wrapper-->
+</body>
+</html>

@@ -1,0 +1,18 @@
+RDT_PARSER_VERSION = '1.0.0'
+
+FILES = ['timemeasure.c']
+
+LINKER = 'ARM Linker, RVCT4.0 [Build 728]'
+
+DATA_FILE = 'data.hex'
+
+RESERVED_REGIONS = [(2164301824L, 320), (2164302144L, 12)]
+
+fw_crc_field = 0xe7dd
+
+FWVERSION = '"TEMPORARY BUILD"'
+
+VERSION = '"TEMPORARY BUILD"'
+
+COMPILER = 'ARM C/C++ Compiler, RVCT4.0 [Build 728]'
+

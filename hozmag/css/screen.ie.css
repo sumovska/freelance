@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/* -----------------------------------------------------------------------
+* Filename: screen.ie.css
+*/
+
+/* _all
+ ----------------------------------------------------------------------- */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+img {-ms-interpolation-mode:bicubic;}
+fieldset {padding-top:0;}
+textarea {overflow:auto;}
+form.inline div, form.inline p {vertical-align:middle;}
+form.inline label {position:relative;top:-0.25em;}
+form.inline input.checkbox, form.inline input.radio, form.inline input.button, form.inline button {margin:0.5em 0;}
+
+div, .popup * {zoom:1;}
+
+.header .links li.first-child {border:none;}
+.header .nav .list > li.first-child {padding-top:4px;padding-right:4px;cursor:default;}
+.header .nav .list > li.nth-child-2 > a {border-left:none;}
+.header .nav .list > li.last-child > a {border-right:none;}
+.footer .nav > li.first-child {padding-left:0;border-left:none;}
+.promo .link * {cursor:pointer;}
+.catalog-list-2col .item.nth-child-2n {margin-right:-40px;}
+.catalog-list-4col .item.nth-child-4n {margin-right:-40px;}
+.block-catalog-list-carousel-vertical .bx-viewport {height:568px !important;}
+
+.cart-form .cart-links {float:none;position:absolute;top:9px;right:0;}
+
+.ui-range-slider .ui-slider-handle.last-child {margin-left:-6px;background-position:-140px -460px;}
+.range-slider .range-steps li.last-child {height:11px;margin-left:0;}
+.header .sub-col .sub-list.last-child {margin:0;}
+
+.radiobox-group .radiobox-inactive {
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+}
+.radiobox-group .radiobox {
+line-height:18px;
+}
+.radiobox-group .radiobox-inactive:before, .radiobox-group .radiobox-inactive .before {
+margin-top:-2px;
+}
+
+
+/* _ie7
+----------------------------------------------------------------------- */
+body {*cursor:default;}
+table td, table th {*padding:0;*border-spacing:0;}
+.header .links li {*display:inline;}
+.block-catalog-list-carousel-vertical .bx-viewport {*height:583px !important;}
+.cart-form input[type="submit"], .form-cart-contents .tab input[type="submit"] {*width:92px;*height:28px;}
+.login-form input[type="submit"] {*width:58px;*height:28px;}
+.form-cart-contents .tab .small {*display:inline;}
+.header .sub-list li.strong > .before {*top:5px;}

@@ -1,0 +1,52 @@
+/* -----------------------------------------------------------------------
+* Filename: ie.css
+* Project: Tigersoft
+* Author: Sergiy Miroshnychenko
+*/
+
+/* _all
+ ----------------------------------------------------------------------- */
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+img { -ms-interpolation-mode: bicubic; }
+fieldset { padding-top: 0; }
+textarea { overflow: auto; }
+form.inline div, form.inline p { vertical-align: middle; }
+form.inline label { position: relative; top: -0.25em; }
+form.inline input.checkbox, form.inline input.radio, form.inline input.button, form.inline button { margin: 0.5em 0; }
+
+div { zoom: 1; }
+
+.profit .list li:before {
+	display: none;
+}
+
+.howmuch .phone:before, .reviews .list li:before, .questions .phone:before {
+	display: none;
+}
+.howmuch .phone .before, .reviews .list li .before, .questions .phone .before {
+	filter: alpha(opacity=10); /* IE 7 and Earlier */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+}
+.ui-helper-zfix {
+	filter: Alpha(Opacity=0);
+}
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
+	filter: Alpha(Opacity=70);
+}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+	filter: Alpha(Opacity=35);
+}
+.ui-widget-overlay {
+	filter: Alpha(Opacity=50);
+}
+.ui-widget-shadow {
+	filter: Alpha(Opacity=20);
+}
+.ui-helper-clearfix { zoom: 1; }
+
+/* _ie7
+----------------------------------------------------------------------- */
+body { *cursor: default; }
+table td, table th { padding: 0; border-spacing: 0; }

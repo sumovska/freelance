@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Symmetry Media</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<!--[if IE]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<header class="header">
+		<p class="logo"><a href="index.html"><img src="img/logo.svg" alt="Symmetry Media"></a></p>
+		<nav class="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="work.html">Work</a></li>
+				<li><a href="clients.html">Clients</a></li>
+				<li class="active"><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="content content-contact">
+		<div class="wrapper">
+			<div class="contact">
+				<h1 class="h1">Contact</h1>
+				<p>Symmetry Media is an award-winning film and video production company based in Sydney, Australia. We produce commercials for TV and web, branded content, motion graphics and animation, corporate films and events coverage – just about anything you can think of!</p>
+				<p>Get in touch to see how we can help you reach your marketing and communications goals.</p>
+				<h3 class="h3">We can’t wait to hear from you!</h3>
+				<ul class="contact-list">
+					<li>Email: <a href="mailto:info@symmetrymedia.com">info@symmetrymedia.com</a></li>
+					<li>Phone: <a href="tel:+61-2-8607-8625">(+61) 2 8607 8625</a></li>
+					<li><small>ABN 68 600 097 907</small></li>
+				</ul>
+				<form class="form form-contact" action="./mail.php">
+					<div class="col-1">
+						<p class="line"><input class="required" type="text" name="name" placeholder="Name" value=""></p>
+						<p class="line"><input type="text" name="company" placeholder="Company" value=""></p>
+						<p class="line"><input class="required" type="email" name="email" placeholder="Email" value=""></p>
+						<p class="line"><input type="text" name="phone" placeholder="phone" value=""></p>
+					</div>
+					<div class="col-2">
+						<p class="line"><textarea class="required" name="message" placeholder="Message"></textarea></p>
+					</div>
+					<div class="col-2">
+						<p class="line submits">
+							<input type="submit" value="Submit">
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="video">
+			<video id="video" preload autoplay loop muted poster="./video/water.jpg">
+			</video>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script>
+		$(window).load(function () {
+			if (!$.browser.mozilla && $.browser.name != 'mozilla') {
+				$('#video').append('<source src="./video/water.mp4" type="video/mp4">');
+			}
+			$('#video').append('<source src="./video/water.webm" type="video/webm">').append('<source src="./video/water.ogv" type="video/ogg">');
+		});
+	</script>
+	<script src="js/main.js"></script>
+</body>
+</html>

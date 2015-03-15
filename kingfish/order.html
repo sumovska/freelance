@@ -1,0 +1,133 @@
+<!DOCTYPE html class="no-js">
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Царь Рыба</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+	<header class="header">
+		<p class="logo"><a href="index.html"><img src="img/logo.png" alt="Царь рыба"></a></p>
+		<p class="slogan">Суши по вашему велению!</p>
+		<p class="cart"><span class="h">В&nbsp;корзине&nbsp;</span>5&nbsp;товаров <span class="line">на&nbsp;сумму&nbsp;1020<span class="rub">p</span></span></p>
+		<a class="toggle" href="#"></a>
+		<nav class="nav">
+			<ul>
+				<li><a href="actions.html">Акции</a></li>
+				<li><a href="contacts.html">Контактная информация</a></li>
+				<li><a href="#">О нас</a></li>
+			</ul>
+		</nav>
+		<a href="order.html" class="order">Оформить заказ</a>
+	</header>
+
+	<form class="form" action="order.html" method="post">
+		<section class="wrapper form-cart">
+			<h1 class="heading"><span class="span">Оформление заказа</span></h1>
+			<div class="cart-right">
+				<div class="catalog-one">
+					<strong class="title">Не хотите добавить сладкого?</strong>
+					<a href="product.html" class="area">
+						<span class="pic"><img src="img/temp/catalog/6s.jpg" alt=""></span>
+						<span class="description">
+							<strong class="h2">Наслаждение</strong>
+							<span class="price">200<span class="rub">p</span><span class="weight">180г</span></span>
+						</span>
+					</a>
+					<span class="cart-add">
+						<a class="link" href="#">В корзину</a>
+						<label class="counter"><a class="minus" href="#">-</a><input class="n" type="text" value="1"><a class="plus" href="#">+</a></label>
+					</span>
+				</div>
+			</div>
+			<div class="cart-left">
+				<div class="cart-table">
+					<div class="line">
+						<div class="item">
+							<div class="pic"><a href="product.html"><img src="img/temp/catalog/2s.jpg" alt=""></a></div>
+							<p class="name"><a href="product.html">Мацахиро</a></p>
+							<p class="cost"><span class="in"><span class="c">270</span><span class="rub">p</span></span></p>
+							<div class="count">
+								<label class="counter"><a class="minus" href="#">-</a><input class="n" type="text" value="1"><a class="plus" href="#">+</a></label>
+								<a class="restore" href="#">Вернуть</a>
+							</div>
+							<p class="price"><span class="in"><span class="p">270</span><span class="rub">p</span></span></p>
+							<div class="action"><a class="delete" href="#"></a><a class="revert" href="#"></a></div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="item">
+							<div class="pic"><a href="product.html"><img src="img/temp/catalog/3s.jpg" alt=""></a></div>
+							<p class="name"><a href="product.html">Сяке маки</a></p>
+							<p class="cost"><span class="in"><span class="c">110</span><span class="rub">p</span></span></p>
+							<div class="count">
+								<label class="counter"><a class="minus" href="#">-</a><input class="n" type="text" value="1"><a class="plus" href="#">+</a></label>
+								<a class="restore" href="#">Вернуть</a>
+							</div>
+							<p class="price"><span class="in"><span class="p">220</span><span class="rub">p</span></span></p>
+							<div class="action"><a class="delete" href="#"></a><a class="revert" href="#"></a></div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="item">
+							<div class="pic"><a href="product.html"><img src="img/temp/catalog/4s.jpg" alt=""></a></div>
+							<p class="name"><a href="product.html">Калифорния с креветкой</a></p>
+							<p class="cost"><span class="in"><span class="c">215</span><span class="rub">p</span></span></p>
+							<div class="count">
+								<label class="counter"><a class="minus" href="#">-</a><input class="n" type="text" value="2"><a class="plus" href="#">+</a></label>
+								<a class="restore" href="#">Вернуть</a>
+							</div>
+							<p class="price"><span class="in"><span class="p">430</span><span class="rub">p</span></span></p>
+							<div class="action"><a class="delete" href="#"></a><a class="revert" href="#"></a></div>
+						</div>
+					</div>
+				</div>
+				<p class="cart-bottom delivery">
+					<span class="left">Доставка</span>
+					<span class="right">Бесплатно</span>
+				</p>
+				<p class="cart-bottom total">
+					<span class="left">Итоговая сумма</span>
+					<span class="right"><span class="t">810</span><span class="rub">p</span></span>
+				</p>
+			</div>
+		</section>
+		<section class="wrapper form-address">
+			<h1 class="heading"><span class="span">Адрес доставки</span></h1>
+			<p class="line line-phone">
+				<label class="for" for="cart-phone">Телефон</label>
+				<input id="cart-phone" type="text" value="+7 923 123 4567">
+			</p>
+			<p class="line line-address">
+				<label class="for" for="cart-address">Адрес</label>
+				<input id="cart-address" type="text" value="ул. Яковлева 14, кв. 22, 3 подъезд, 4 этаж, домофон: 22">
+			</p>
+			<p class="line">
+				<label class="for" for="cart-comments">Комментарии</label>
+				<textarea id="cart-comments"></textarea>
+			</p>
+			<p class="line">
+				<input type="submit" value="Заказать">
+			</p>
+		</section>
+	</form>
+
+	<footer class="footer">
+		<p class="logo"><img src="img/logo-small.png" alt="Царь рыба"></p>
+		<p class="copyright">2014 &copy; Царь-рыба<br> Суши в Томске, доставка роллов и сашими</p>
+		<p class="contacts"><strong>Заказать суши по телефону <a class="tel" href="tel:+7-3822-22-71-34">227-134</a></strong><br> Заказ 9:00&ndash;22:00 &nbsp; Доставка 10:00&ndash;23:00</p>
+	</footer>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

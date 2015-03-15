@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Auto DB</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.ui.slider.css"/>
+	<link rel="stylesheet" href="css/jquery.ui.theme.css"/>
+	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.mouse.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.slider.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.mwheelintent.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="js/jquery.fileinput.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/pie.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<!--Wrapper-->
+<div class="wrapper wrapper-twocols">
+
+	<!--Header-->
+	<div class="header">
+		<!--logo-->
+		<p class="logo"><a href="index.html"><img src="images/logo.png" alt="Auto DB"/></a></p>
+		<!--nav-->
+		<div class="navigation">
+			<ul>
+				<li class="active"><a href="#">All</a></li>
+				<li><a href="#">Cars &amp; SUVs</a></li>
+				<li><a href="#">ATVs &amp; Snowmobiles</a></li>
+				<li><a href="#">Jet Ski &amp; Watercrafts </a></li>
+				<li><a href="#">Heavy Trucks</a></li>
+				<li><a href="#">Motorcycles</a></li>
+			</ul>
+		</div>
+		<!--nav-->
+	</div>
+	<!--Header-->
+
+	<!--Content-->
+	<div class="content">
+		<!--leftcolumn-->
+		<div class="leftcolumn">
+			<p class="left-heading">Post New Ad</p>
+			<div class="sidebar">
+				<div class="sidebarWidget sidebarWidgetOpen">
+					<p class="h"><span class="space"><strong>My AutoDB</strong></span></p>
+					<div class="sidebarBox sidebarContent">
+						<ul class="list">
+							<li><a href="account-manage-ads.html">Manage Ads</a></li>
+							<li><a href="account-post-ad.html">Post New Ad</a></li>
+							<li><a href="account-photos.html">Photo Manager</a></li>
+							<li><a href="account-update.html">My Account</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sidebarWidget sidebarWidgetOpen">
+					<p class="h"><span class="space"><strong>Quick Statistics</strong></span></p>
+					<div class="sidebarBox sidebarContent">
+						<table class="stats">
+							<tr>
+								<th>Total Ads Posted</th>
+								<td><a href="#">3</a></td>
+							</tr>
+							<tr>
+								<th>Active Ads</th>
+								<td><a href="#">2</a></td>
+							</tr>
+							<tr>
+								<th>Expired Ads</th>
+								<td><a href="#">1</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--leftcolumn-->
+		<!--rightcolumn-->
+		<div class="rightcolumn">
+			<div class="right-heading">
+				<p class="name"><strong>Welcome John Smith</strong> (jsmith209@gmail.com)</p>
+				<p class="logout"><a href="#">Logout</a></p>
+			</div>
+			<div class="block block-noborder">
+				<form class="form postform" action="#">
+					<div class="row row-grey">
+						<label class="default">
+							<input class="counting w415" id="ctitle" name="ctitle" type="text" value="Your ad title" title="Your ad title" maxlength="75" onfocus="if (this.value === 'Your ad title') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Your ad title'}"/>
+						</label>
+						<span class="counter"><var>75</var> characters left</span>
+						<div class="spacer"></div>
+						<label class="default">
+							<textarea id="cdescription" name="cdescription" cols="10" rows="10" onfocus="if (this.value === 'Enter a description') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Enter a description'}" title="Enter a description">Enter a description</textarea>
+						</label>
+					</div>
+					<div class="row">
+						<div class="gallery gallery-narrow">
+							<h6 class="h-photos">Photos</h6>
+							<p class="h-legend">= Listing Thumbnail</p>
+							<div class="block">
+								<ul class="list">
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>1</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>2</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>3</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>4</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>5</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>6</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>7</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+									<li><label class="checkbox listing"><input type="checkbox"></label><label class="checkbox"><input type="checkbox"><var>8</var><span class="pic"><img src="images/carimage-75x75-1.jpg" alt=""/></span></label></li>
+								</ul>
+							</div>
+							<ul class="pager">
+								<li>&lt;</li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">&gt;</a></li>
+							</ul>
+							<p class="grey-link"><a href="#">Upload Photo</a></p>
+						</div>
+					</div>
+					<div class="row row-grey">
+						<div class="node">
+							<label class="selectbox">
+								<select id="ccategory" name="ccategory">
+									<option value="" selected="selected">Category</option>
+									<option value="1">Auto</option>
+									<option value="2">Photo</option>
+									<option value="3">Moto</option>
+								</select>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="node">
+							<label class="selectbox">
+								<select id="carea" name="carea">
+									<option value="" selected="selected">Area</option>
+									<option value="1">San Francisco</option>
+									<option value="2">New York</option>
+									<option value="3">Los Angeles</option>
+								</select>
+							</label>
+						</div>
+						<div class="node">
+							<label class="default"><input id="clocation" name="clocation" type="text" title="Streets, Intersection, Area, etc" value="Streets, Intersection, Area, etc" onfocus="if (this.value === 'Streets, Intersection, Area, etc') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Streets, Intersection, Area, etc'}"/></label>
+						</div>
+						<div class="clear"></div>
+						<strong class="location">(Toronto, ON) <a href="account-location.html">Change Location?</a></strong>
+					</div>
+					<div class="row row-grey">
+						<label class="default"><input id="cphone" name="cphone" type="text" value="Phone Number" title="Phone Number" onfocus="if (this.value === 'Phone Number') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Phone Number'}"/></label>
+						<span class="small">This will appear in your ad.<br/>Optional, can be left blank.</span>
+					</div>
+					<div class="row">
+						<div class="space">
+							<div class="node select-leasing">
+								<div class="node node-flex">
+									<label class="checkbox"><input name="clease" type="checkbox" checked="checked"/>Lease</label>
+									<label class="default">
+										<input class="w37 with-ed" type="text" maxlength="5" value=""/>
+										<span class="ed">$/month</span>
+									</label>
+								</div>
+							</div>
+							<div class="node select-leasing">
+								<div class="node node-flex">
+									<label class="checkbox"><input name="cbuy" type="checkbox"/>Buy</label>
+									<label class="default">
+										<input class="w37 with-ed" type="text" maxlength="5" disabled="disabled" value=""/>
+										<span class="ed">$/month</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row row-grey">
+						<div class="space">
+							<label class="checkbox"><input type="checkbox" checked="checked"/>Allow responses via email form</label>
+						</div>
+					</div>
+					<div class="row">
+						<span class="small">By posting, I have read and agree to the <strong><a href="#">terms &amp; conditions</a></strong><br/> and certify the content does not violate the <strong><a href="#">posting policy</a></strong></span>
+						<input type="submit" value="Post Ad"/>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--fullcolumn-->
+	</div>
+	<!--Content-->
+	<div class="footer">
+		<p class="copyright">&copy; 2012 AutoDB</p>
+		<ul class="nav">
+			<li><a href="#">Help Center</a></li>
+			<li><a href="#">Terms &amp; Conditions</a></li>
+			<li><a href="#">Posting Policy</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</div>
+</div>
+<!--wrapper-->
+</body>
+</html>

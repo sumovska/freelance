@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Банк заслуг</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/text.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="js/jquery.masonry.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/html5.js"></script>
+	<script type="text/javascript" src="js/pie.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="wrap">
+	<header class="header">
+		<div class="space">
+			<p class="logo"></p>
+			<p class="profile">
+				<img src="img/temp/50x50-1.jpg" alt="">
+				<span class="name">Ирина <br>Симоненко</span>
+			</p>
+			<nav class="menu">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li class="arrow"><a href="projects.html">Все проекты</a></li>
+					<li class="arrow"><a href="users.html">Участники</a></li>
+					<li><a href="market.html">Маркет</a></li>
+					<li><a href="about.html">О банке</a></li>
+				</ul>
+			</nav>
+			<nav class="menu menu-secondary">
+				<ul>
+					<li><a href="profile.html">Профиль</a></li>
+					<li><a href="viewed.html">Просмотренные</a></li>
+					<li><a href="fav.html">Избранное</a></li>
+					<li class="border"><a href="login.html">Выход</a></li>
+				</ul>
+			</nav>
+			<div class="form form-search">
+				<form action="#">
+					<p class="line">
+						<input type="text" value="Поиск" onfocus="if(this.value == 'Поиск') {this.value='';};"  onblur="if(this.value == '') {this.value='Поиск';};">
+						<input type="submit" value="">
+					</p>
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<aside class="sidebar">
+			<nav class="nav">
+				<ul>
+					<li class="li-add"><a href="create.html"></a></li>
+					<li class="li-currency li-currency-active"><a href="finance.html"><var class="blue">90</var><var class="green">150</var></p></a></li>
+					<li class="li-alarm"><a href="#"><var class="blue">90</var></a></li>
+					<li class="li-grid"><a href="#"></a></li>
+					<li class="li-mail"><a href="messages.html"></a></li>
+					<li class="li-settings"><a href="#"></a></li>
+				</ul>
+			</nav>
+		</aside>
+		<div class="content">
+			<div class="left-col">
+				<div class="projects">
+					<div class="top-nav">
+						<nav>
+							<ul>
+								<li class="active"><a href="finance.html">Все операции</a></li>
+								<li><a href="#">Благодарности <strong class="price">190</strong></a></li>
+								<li><a href="#">Заслуги <strong class="price">1600</strong></a></li>
+								<li><a href="#">Вклады <strong class="price">5000</strong></a></li>
+							</ul>
+							<p class="filter"><a href="#"></a></p>
+						</nav>
+					</div>
+					<div class="block-filter">
+						<div class="form form-filter">
+							<form action="#">
+								<p class="line">
+									<input type="text" value="Название проекта для поиска" onfocus="if(this.value == 'Название проекта для поиска') {this.value='';};"  onblur="if(this.value == '') {this.value='Название проекта для поиска';};">
+									<select class="select-month">
+										<option selected="selected">Месяц</option>
+										<option>Январь</option>
+										<option>Февраль</option>
+										<option>Март</option>
+										<option>Апрель</option>
+										<option>Май</option>
+										<option>Июнь</option>
+										<option>Июль</option>
+										<option>Август</option>
+										<option>Сентябрь</option>
+										<option>Октябрь</option>
+										<option>Ноябрь</option>
+										<option>Декабрь</option>
+									</select>
+									<select class="select-day">
+										<option selected="selected">День</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+										<option>11</option>
+										<option>12</option>
+										<option>13</option>
+										<option>14</option>
+										<option>15</option>
+										<option>16</option>
+										<option>17</option>
+										<option>18</option>
+										<option>19</option>
+										<option>20</option>
+										<option>21</option>
+										<option>22</option>
+										<option>23</option>
+										<option>24</option>
+										<option>25</option>
+										<option>26</option>
+										<option>27</option>
+										<option>28</option>
+										<option>29</option>
+										<option>30</option>
+										<option>31</option>
+									</select>
+									<select class="select-year">
+										<option selected="selected">Год</option>
+										<option>2010</option>
+										<option>2011</option>
+										<option>2012</option>
+										<option>2013</option>
+									</select>
+									<button class="submit submit-done">Искать проект</button>
+								</p>
+							</form>
+						</div>
+					</div>
+					<div class="projects-left">
+						<div class="date index-1">
+							<p class="numbers">
+								<span class="day">5</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-1.jpg" width="135" height="139" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Мастер-класс по изготовлению косметики ручной работы</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-2.jpg" width="135" height="181" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Мастер-класс по изготовлению косметики ручной работы</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+						</div>
+						<div class="date date-green index-4">
+							<p class="numbers">
+								<span class="day">10</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block block-green">
+								<p class="close"><a href="#close"></a></p>
+								<div class="green-banner">
+									<a href="#pay" class="popup-show">
+										<span class="logo"><img src="img/temp/logo-1.png" alt="Qiwi"></span>
+										<span class="price">200</span>
+									</a>
+								</div>
+							</article>
+						</div>
+						<div class="date index-5">
+							<p class="numbers">
+								<span class="day">14</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-3.jpg" width="135" height="122" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Мастер-класс по изготовлению косметики ручной работы</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+						</div>
+						<div class="date index-6">
+							<p class="numbers">
+								<span class="day">21</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-3.jpg" width="135" height="91" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Лесные выходные</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+						</div>
+						<div class="date index-8">
+							<p class="numbers">
+								<span class="day">27</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-4.jpg" width="135" height="45" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Лесные выходные</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+						</div>
+					</div>
+					<div class="projects-right">
+						<div class="date index-2">
+							<p class="numbers">
+								<span class="day">6</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-5.jpg" width="135" height="122" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Мастер-класс по изготовлению косметики ручной работы</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+						</div>
+						<div class="date index-3">
+							<p class="numbers">
+								<span class="day">7</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-6.jpg" width="135" height="122" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Счастливый час!</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+							<article class="block block-green">
+								<p class="close"><a href="#close"></a></p>
+								<div class="green-banner">
+									<a href="#pay" class="popup-show">
+										<span class="logo"><img src="img/temp/logo-2.png" alt="Webmoney"></span>
+										<span class="price">130</span>
+									</a>
+								</div>
+							</article>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-3.jpg" width="135" height="174" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Мастер-класс по изготовлению косметики ручной работы</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+						</div>
+						<div class="date index-7">
+							<p class="numbers">
+								<span class="day">23</span>
+								<span class="month">окт</span>
+								<span class="year">2012</span>
+							</p>
+							<article class="block">
+								<p class="close"><a href="#close"></a></p>
+								<p class="pic"><a href="project.html"><img src="img/temp/135-3.jpg" width="135" height="120" alt=""><span class="ico ico-photo"></span></a></p>
+								<div class="text">
+									<h2 class="h1"><a href="project.html">Мастер-класс по изготовлению косметики ручной работы</a></h2>
+									<p>Дорогие коллеги! Позвольте доставить вам удовольствие и приготовить тонизирующий напиток Кофе по-вен&hellip;</p>
+									<p class="prices"><a href="#">15</a><a class="green" href="#">21</a><a class="grey" href="#">60</a></p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="space">
+			<nav class="menu">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="projects.html">Все проекты</a></li>
+					<li><a href="users.html">Участники</a></li>
+					<li><a href="market.html">Маркет</a></li>
+					<li><a href="about.html">О банке</a></li>
+				</ul>
+			</nav>
+			<ul class="social">
+				<li class="fb"><a href="#" title="Facebook"></a></li>
+				<li class="tw"><a href="#" title="Twitter"></a></li>
+				<li class="vk"><a href="#" title="Vkontakte"></a></li>
+				<li class="rss"><a href="#" title="RSS"></a></li>
+			</ul>
+			<p class="copyright">&copy; Учреждение культуры &laquo;Клаудвочер&raquo;</p>
+		</div>
+	</footer>
+</div>
+<div class="popup popup-pay">
+	<a class="close popup-close" href="#close"></a>
+	<form action="#">
+		<p class="heading">Сумма к оплате</p>
+		<div class="blue">
+			<div class="left">
+				<input type="text" value="1500">
+				<span class="rub">руб.</span>
+			</div>
+			<div class="right">
+				<input type="text" value="100">
+				<span class="cur"></span>
+			</div>
+		</div>
+		<div class="white">
+			<p class="title">Robokassa – www.Robokassa.ru<span class="percent">6%</span></p>
+			<ul class="pays">
+				<li><img src="img/temp/pay-1.png" alt=""></li>
+				<li><img src="img/temp/pay-2.png" alt=""></li>
+				<li><img src="img/temp/pay-3.png" alt=""></li>
+			</ul>
+		</div>
+		<div class="sub">
+			<label class="checkbox"><input type="checkbox" checked="checked">С правилами ознакомлен и полностью согласен</label>
+			<button class="submit submit-done">Оформить платёж</button>
+		</div>
+	</form>
+</div>
+<div class="overlay"></div>
+</body>
+</html>

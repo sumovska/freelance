@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+/* -----------------------------------------------------------------------
+* Filename: ie.css
+*/
+
+/* _all
+ ----------------------------------------------------------------------- */
+sup {
+vertical-align: text-top;
+}
+sub {
+vertical-align: text-bottom;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+fieldset {
+padding-top: 0;
+}
+textarea {
+overflow: auto;
+}
+
+.wrapper {
+-webkit-box-shadow: 0 -15px 15px #000;
+-moz-box-shadow: 0 -15px 15px #000;
+-ms-box-shadow: 0 -15px 15px #000;
+box-shadow: 0 -15px 15px #000;
+}
+
+div, .form .row, .sbSelector {
+zoom: 1;
+}
+
+input[type="text"], input[type="password"], textarea {
+background: #fff url(../images/input-box.png) repeat-x 0 0;
+}
+
+input[type="submit"], button {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#d11000', endColorstr = '#93140a', GradientType = 0); /* IE6-8 */
+}
+input[type="submit"]:hover, button:hover {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#d10600', endColorstr = '#841109', GradientType = 0); /* IE6-8 */
+}
+input[type="submit"]:active, button:active {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#841109', endColorstr = '#c10300', GradientType = 0); /* IE6-8 */
+}
+.sbHolder {
+background: #fff url('../images/selectbox.png') repeat-x 0 100%;
+}
+.file .customfile-input {
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 0);
+}
+.sbHolderDisabled {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#f1f1f1', endColorstr = '#eaeaea', GradientType = 0); /* IE6-9 */
+}
+
+.footer {
+background: url('../images/footer.png') repeat-x 0 0;
+}
+
+.file-input .upload a, .grey-link a {
+background: #f7f7f7 url('../images/file.png') repeat-x 0 100%;
+}
+
+.media-ie .wrapper {
+max-width: 950px;
+margin: 0 auto;
+}
+.media-ie .header {
+max-width: 950px;
+left: auto;
+right: auto;
+}
+.media-ie .area {
+left: auto;
+right: auto;
+}
+
+/* _ie7
+----------------------------------------------------------------------- */
+body {
+*cursor: default;
+}
+.catalog .pic a {
+*width: 100%;
+*display: block;
+*vertical-align: middle;
+*cursor: pointer;
+}
+.catalog .pic span {
+*display: inline-block;
+*height: 100%;
+*vertical-align: middle;
+*cursor: pointer;
+}
+.catalog .pic img {
+*vertical-align: middle;
+}
+.region .after {
+*width: 100%;
+*height: 9px;
+*content: "\0020";
+*display: block;
+*position: absolute;
+*top: 100%;
+*left: 0;
+*background: url(../images/bottom-shadow.png) repeat-x 0 0;
+}
+.catalog .pic-active {
+*display: inline-block;
+}
+
+input[type="text"], input[type="password"], textarea, button, label, .radiobox, .checkbox {
+*display: inline-block;
+*vertical-align: middle;
+*overflow: hidden;
+}
+
+.file {
+*height: 30px;
+}
+.file .customfile-feedback {
+*top: -53px;
+}
+
+.form .node {
+*display: inline;
+}
+.form .ed {
+*left: -4px;
+}
+.manageadsform > .links li {
+*display: inline;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Symmetry Media</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<!--[if IE]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<header class="header">
+		<p class="logo"><img src="img/logo.svg" alt="Symmetry Media"></p>
+		<nav class="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="work.html">Work</a></li>
+				<li><a href="clients.html">Clients</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="content content-index">
+		<a class="showreel fancybox-video" href="http://vimeo.com/93590419"><img src="img/showreel.svg" alt="Play our showreel"></a>
+		<div class="video">
+			<video id="video" preload autoplay loop muted poster="./video/field.jpg">
+			</video>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script>
+		$(window).load(function () {
+			if (!$.browser.mozilla && $.browser.name != 'mozilla') {
+				$('#video').append('<source src="./video/field.mp4" type="video/mp4">');
+			}
+			$('#video').append('<source src="./video/field.webm" type="video/webm">').append('<source src="./video/field.ogv" type="video/ogg">');
+		});
+	</script>
+	<script src="js/main.js"></script>
+</body>
+</html>

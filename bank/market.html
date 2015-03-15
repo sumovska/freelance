@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Банк заслуг</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/text.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="js/jquery.masonry.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/html5.js"></script>
+	<script type="text/javascript" src="js/pie.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="wrap">
+	<header class="header">
+		<div class="space">
+			<p class="logo"></p>
+			<p class="profile">
+				<img src="img/temp/50x50-1.jpg" alt="">
+				<span class="name">Ирина <br>Симоненко</span>
+			</p>
+			<nav class="menu">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li class="arrow"><a href="projects.html">Все проекты</a></li>
+					<li class="arrow"><a href="users.html">Участники</a></li>
+					<li class="active"><a href="market.html">Маркет</a></li>
+					<li><a href="about.html">О банке</a></li>
+				</ul>
+			</nav>
+			<nav class="menu menu-secondary">
+				<ul>
+					<li><a href="profile.html">Профиль</a></li>
+					<li><a href="viewed.html">Просмотренные</a></li>
+					<li><a href="fav.html">Избранное</a></li>
+					<li class="border"><a href="login.html">Выход</a></li>
+				</ul>
+			</nav>
+			<div class="form form-search">
+				<form action="#">
+					<p class="line">
+						<input type="text" value="Поиск" onfocus="if(this.value == 'Поиск') {this.value='';};"  onblur="if(this.value == '') {this.value='Поиск';};">
+						<input type="submit" value="">
+					</p>
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<aside class="sidebar">
+			<nav class="nav">
+				<ul>
+					<li class="li-add"><a href="create.html"></a></li>
+					<li class="li-currency"><a href="finance.html"><var class="blue">90</var><var class="green">150</var></p></a></li>
+					<li class="li-alarm"><a href="#"><var class="blue">90</var></a></li>
+					<li class="li-grid"><a href="#"></a></li>
+					<li class="li-mail"><a href="messages.html"></a></li>
+					<li class="li-settings"><a href="#"></a></li>
+				</ul>
+			</nav>
+		</aside>
+		<div class="content">
+			<div class="top-nav">
+				<nav>
+					<ul>
+						<li><a href="market-my.html">Мой маркет</a></li>
+						<li class="active"><a href="market.html">Все</a></li>
+						<li><a href="market-services.html">Услуги</a></li>
+						<li><a href="market-items.html">Товары</a></li>
+						<li><a href="market-free.html">Отдам даром</a></li>
+					</ul>
+					<p class="cart"><a href="market-cart.html"><span>В корзине <strong>2 товара</strong></span></a></p>
+				</nav>
+			</div>
+			<div class="block-alert">
+				<span class="ico-alert"></span><span class="text">Вашему вниманию представлен полный список товаров и услуг предлагаемых Вашими коллегами.</span>
+			</div>
+			<div class="index">
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-5.jpg" width="210" height="225" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">11 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Счастливый час!</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">5</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анна <br>Антипова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-26.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block block-added">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-6.jpg" width="210" height="135" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">30</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-27.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-video"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">11</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block block-added">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">4</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">9 июня 2012</p>
+						<ul class="social-small">
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">English club</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">30</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-1.jpg" width="210" height="160" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">30</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Оксана <br>Смирнова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-24.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">100</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">60</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-3.jpg" width="210" height="270" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">9 июня 2012</p>
+						<ul class="social-small">
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<h2 class="h2"><a href="project.html">Счастливый час!</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">25</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анна <br>Антипова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-26.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-4.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">30</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-27.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">40</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">30</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">9 июня 2012</p>
+						<ul class="social-small">
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">English club</a></h2>
+					<p>Дорогие коллеги! Я уже шесть лет преподаю английский в качестве репетитора и готова попреподават&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">30</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-1.jpg" width="210" height="160" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+					</header>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">30</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Оксана <br>Смирнова</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-24.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<p class="pic"><a href="project.html"><img src="img/temp/210-2.jpg" width="210" height="140" alt=""><span class="ico ico-photo"></span></a></p>
+					<header class="index-header">
+						<p class="date">10 июня 2012</p>
+						<ul class="social-small">
+							<li class="fb"><a href="#" title="Facebook"></a></li>
+							<li class="tw"><a href="#" title="Twitter"></a></li>
+							<li class="vk"><a href="#" title="Vkontakte"></a></li>
+						</ul>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">50</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Валерий <br>Мифодовский</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+				<article class="block">
+					<p class="close"><a href="#close"></a></p>
+					<header class="index-header">
+						<p class="date">18 июня 2012</p>
+					</header>
+					<div class="clear"></div>
+					<h2 class="h2"><a href="project.html">Лесные выходные</a></h2>
+					<p>Друзья, давайте выйдем из офиса и подарим жизнь новому лесу! Предлагаю присоединиться к акции&hellip;</p>
+					<div class="price-space">
+						<p class="price"><span class="num">20</span></p>
+						<p class="buy"><a href="#" class="submit submit-done">Добавить в корзину</a></p>
+						<p class="remove"><a href="#" class="submit submit-done">Удалить из корзины</a></p>
+					</div>
+					<footer class="index-footer">
+						<p class="h2 name"><strong>Анатолий <br>Шинт</strong></p>
+						<p class="avatar"><a href="user.html"><img src="img/temp/50x50-25.jpg" alt=""></a></p>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="space">
+			<nav class="menu">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="projects.html">Все проекты</a></li>
+					<li><a href="users.html">Участники</a></li>
+					<li><a href="market.html">Маркет</a></li>
+					<li><a href="about.html">О банке</a></li>
+				</ul>
+			</nav>
+			<ul class="social">
+				<li class="fb"><a href="#" title="Facebook"></a></li>
+				<li class="tw"><a href="#" title="Twitter"></a></li>
+				<li class="vk"><a href="#" title="Vkontakte"></a></li>
+				<li class="rss"><a href="#" title="RSS"></a></li>
+			</ul>
+			<p class="copyright">&copy; Учреждение культуры &laquo;Клаудвочер&raquo;</p>
+		</div>
+	</footer>
+</div>
+
+<div class="popup popup-wallet">
+	<a class="close popup-close" href="#close"></a>
+	<strong class="title">Недостаточно средств для осуществления покупки</strong>
+</div>
+<div class="overlay-white"></div>
+</body>
+</html>

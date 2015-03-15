@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Symmetry Media</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<!--[if IE]>
+	<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<header class="header">
+		<p class="logo"><a href="index.html"><img src="img/logo.svg" alt="Symmetry Media"></a></p>
+		<nav class="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="work.html">Work</a></li>
+				<li class="active"><a href="clients.html">Clients</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="content content-clients">
+		<div class="wrapper">
+			<div class="clients">
+				<h3 class="h3">We work with some of the biggest brands and marketing agencies of today across a variety of engagement scenarios.</h3><br>
+				<ul class="list">
+					<li><img src="img/clients/1.png" alt=""></li>
+					<li><img src="img/clients/2.png" alt=""></li>
+					<li><img src="img/clients/3.png" alt=""></li>
+					<li><img src="img/clients/4.png" alt=""></li>
+					<li><img src="img/clients/5.png" alt=""></li>
+					<li><img src="img/clients/7.png" alt=""></li>
+					<li><img src="img/clients/15.png" alt=""></li>
+					<li><img src="img/clients/8.png" alt=""></li>
+					<li><img src="img/clients/9.png" alt=""></li>
+					<li><img src="img/clients/10.png" alt=""></li>
+					<li><img src="img/clients/11.png" alt=""></li>
+					<li><img src="img/clients/12.png" alt=""></li>
+					<li><img src="img/clients/13.png" alt=""></li>
+					<li><img src="img/clients/14.png" alt=""></li>
+					<li><img src="img/clients/6.png" alt=""></li>
+				</ul>
+			</div>
+		</div>
+		<div class="video">
+			<video id="video" preload autoplay loop muted poster="./video/sparks.jpg">
+			</video>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script>
+		$(window).load(function () {
+			if (!$.browser.mozilla && $.browser.name != 'mozilla') {
+				$('#video').append('<source src="./video/sparks.mp4" type="video/mp4">');
+			}
+			$('#video').append('<source src="./video/sparks.webm" type="video/webm">').append('<source src="./video/sparks.ogv" type="video/ogg">');
+		});
+	</script>
+	<script src="js/main.js"></script>
+</body>
+</html>

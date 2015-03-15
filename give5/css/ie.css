@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/* -----------------------------------------------------------------------
+* Filename: ie.css
+*/
+
+/* _all
+ ----------------------------------------------------------------------- */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+img {-ms-interpolation-mode:bicubic;}
+fieldset {padding-top:0;}
+textarea {overflow:auto;}
+
+div {zoom:1;}
+
+.nav-section:before, .nav-section:after,.block-filters:before, .block-filters:after {display:none;}
+.block-filters .before, .block-filters .after, .nav-section .before, .nav-section .after {
+    width: 10px;
+    height: 10px;
+    display: block;
+    overflow: hidden;
+    visibility: visible;
+    content: "\0020";
+    text-indent: -100px;
+    clear: none;
+    position: absolute;
+    z-index: 20;
+    background: url('../img/ico/block.png') no-repeat 0 0;
+}
+.block-filters .before, .nav-section .before {
+    margin-top: -9px;
+    left: -1px;
+    top: 100%;
+    background-position: 0 0;
+}
+.block-filters .after, .nav-section .after {
+    right: -1px;
+    bottom: -1px;
+    background-position: -10px 0;
+}
+
+.item-form .submit {padding-top:3px;}
+.item-form .submit:after {top:4px;}
+
+/* _ie7
+----------------------------------------------------------------------- */
+body {*cursor:default;}
+input[type="text"], input[type="password"], textarea {*display:inline;}

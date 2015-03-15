@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Auto DB</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.ui.slider.css"/>
+	<link rel="stylesheet" href="css/jquery.ui.theme.css"/>
+	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.mouse.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.slider.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.mwheelintent.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="js/jquery.fileinput.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/pie.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<!--Wrapper-->
+<div class="wrapper">
+
+	<!--Header-->
+	<div class="header">
+		<!--logo-->
+		<p class="logo"><a href="index.html"><img src="images/logo.png" alt="Auto DB"/></a></p>
+		<!--nav-->
+		<div class="navigation">
+			<ul>
+				<li class="active"><a href="#">All</a></li>
+				<li><a href="#">Cars &amp; SUVs</a></li>
+				<li><a href="#">ATVs &amp; Snowmobiles</a></li>
+				<li><a href="#">Jet Ski &amp; Watercrafts </a></li>
+				<li><a href="#">Heavy Trucks</a></li>
+				<li><a href="#">Motorcycles</a></li>
+			</ul>
+		</div>
+		<!--nav-->
+	</div>
+	<!--Header-->
+
+	<!--Content-->
+	<div class="content">
+		<p class="breadcrumbs"><a href="index.html">Home</a> &gt; <span class="current">Post New Ad (<strong>Toronto, ON</strong>)</span></p>
+		<!--fullcolumn-->
+		<div class="fullcolumn">
+			<h1>Post New Ad <small>It’s FREE!</small></h1>
+			<div class="post-content">
+				<div class="block">
+					<form class="form postform" action="#">
+						<div class="row row-grey">
+							<label class="default">
+								<input class="counting w415" id="ctitle" name="ctitle" type="text" value="Your ad title" maxlength="75" title="Your ad title" onfocus="if (this.value === 'Your ad title') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Your ad title'}"/>
+							</label>
+							<span class="counter"><var>75</var> characters left</span>
+							<div class="spacer"></div>
+							<label class="default">
+								<textarea id="cdescription" name="cdescription" cols="10" rows="10" onfocus="if (this.value === 'Enter a description') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Enter a description'}" title="Enter a description">Enter a description</textarea>
+							</label>
+						</div>
+						<div class="row">
+							<h6 class="h-photos">Photos</h6>
+							<label class="file-input">
+								<input type="file"/>
+								<span class="upload"><a href="#">Upload Photo</a></span>
+							</label>
+						</div>
+						<div class="row row-grey">
+							<div class="node">
+								<label class="selectbox">
+									<select id="ccategory" name="ccategory">
+										<option value="" selected="selected">Category</option>
+										<option value="1">Auto</option>
+										<option value="2">Photo</option>
+										<option value="3">Moto</option>
+									</select>
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="node">
+								<label class="selectbox">
+									<select id="carea" name="carea">
+										<option value="" selected="selected">Area</option>
+										<option value="1">San Francisco</option>
+										<option value="2">New York</option>
+										<option value="3">Los Angeles</option>
+									</select>
+								</label>
+							</div>
+							<div class="node">
+								<label class="default"><input id="clocation" name="clocation" type="text" value="Streets, Intersection, Area, etc" title="Streets, Intersection, Area, etc" onfocus="if (this.value === 'Streets, Intersection, Area, etc') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Streets, Intersection, Area, etc'}"/></label>
+							</div>
+							<div class="clear"></div>
+							<strong class="location">(Toronto, ON) <a href="account-location.html">Change Location?</a></strong>
+						</div>
+						<div class="row row-grey">
+							<label class="default"><input id="cemail" name="cemail" type="text" value="Email Address" title="Email Address" onfocus="if (this.value === 'Email Address') {this.value = ''}" onblur="if (this.value === '') {this.value = 'Email Address'}"/></label>
+							<span class="small">We will never share your email<br/> address or display it publicly.</span>
+						</div>
+						<div class="row">
+							<span class="small">By posting, I have read and agree to the <strong><a href="#">terms &amp; conditions</a></strong><br/> and certify the content does not violate the <strong><a href="#">posting policy</a></strong></span>
+							<input type="submit" value="Post Ad"/>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="post-sidebar">
+				<div class="block block-terms">
+					<h5>Posting Policy</h5>
+					<p class="pre">I agree:</p>
+					<ul class="list">
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non malesuada magna. Suspendisse sit amet feugiat nisl.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+						<li>Mauris non malesuada magna. Suspendisse sit amet feugiat nisl.</li>
+						<li>Mauris non malesuada magna. Suspendisse sit amet feugiat nisl.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non malesuada magna. Suspendisse sit amet feugiat nisl. In consectetur, diam sed hendrerit tincidunt, elit lacus fringilla.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					</ul>
+					<p class="important"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non malesuada magna. Suspendisse sit amet feugiat nisl. </strong></p>
+				</div>
+				<div class="terms-links">
+					<a href="#">Terms &amp; Conditions</a>
+					<a href="#">Privacy Policy</a>
+				</div>
+			</div>
+		</div>
+		<!--fullcolumn-->
+	</div>
+	<!--Content-->
+	<div class="footer">
+		<p class="copyright">&copy; 2012 AutoDB</p>
+		<ul class="nav">
+			<li><a href="#">Help Center</a></li>
+			<li><a href="#">Terms &amp; Conditions</a></li>
+			<li><a href="#">Posting Policy</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</div>
+</div>
+<!--wrapper-->
+</body>
+</html>

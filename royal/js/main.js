@@ -201,7 +201,7 @@ $(document).ready(function () {
 
 	/* Cart block */
 	$('.button-close').click(function () {
-		$(this).closest('.cover').fadeToggle(200);
+		$(this).closest('.entry').fadeToggle(200);
 		return false;
 	});
 

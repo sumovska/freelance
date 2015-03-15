@@ -1,0 +1,321 @@
+/*
+ 960 Grid System ~ Text CSS.
+ Learn more ~ http://960.gs/
+
+ Licensed under GPL and MIT.
+ */
+
+/* `Fonts
+ ----------------------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: 'PF Agora Sans Pro';
+    src: url('../fonts/pfagorasanspro-reg-webfont.eot');
+    src: url('../fonts/pfagorasanspro-reg-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/pfagorasanspro-reg-webfont.woff') format('woff'), url('../fonts/pfagorasanspro-reg-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PF Agora Sans Pro';
+    src: url('../fonts/pfagorasanspro-bold-webfont.eot');
+    src: url('../fonts/pfagorasanspro-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/pfagorasanspro-bold-webfont.woff') format('woff'), url('../fonts/pfagorasanspro-bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PF Agora Sans Pro';
+    src: url('../fonts/pfagorasanspro-black-webfont.eot');
+    src: url('../fonts/pfagorasanspro-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/pfagorasanspro-black-webfont.woff') format('woff'), url('../fonts/pfagorasanspro-black-webfont.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+
+    }
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helveticaneuecyr-roman-webfont-webfont.eot');
+    src: url('../fonts/helveticaneuecyr-roman-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneuecyr-roman-webfont-webfont.woff') format('woff'), url('../fonts/helveticaneuecyr-roman-webfont-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helveticaneuecyr-bold-webfont-webfont.eot');
+    src: url('../fonts/helveticaneuecyr-bold-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneuecyr-bold-webfont-webfont.woff') format('woff'), url('../fonts/helveticaneuecyr-bold-webfont-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+/* `Basic HTML
+ ----------------------------------------------------------------------------------------------------*/
+body {
+    font: 13px/20px 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    color: #424242;
+}
+pre, code {
+    font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+}
+hr {
+    border: 0 #ccc solid;
+    border-top-width: 1px;
+    clear: both;
+    height: 0;
+}
+
+/* `Headings
+ ----------------------------------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PF Agora Sans Pro', 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: normal;
+}
+h1, .h1 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: normal;
+}
+h2, .h2 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+    text-transform: uppercase;
+}
+h3, .h3 {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+h4, .h4 {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: normal;
+    text-transform: uppercase;
+}
+h5, .h5 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    text-transform: uppercase;
+}
+h6, .h6 {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+/* `Spacing
+ ----------------------------------------------------------------------------------------------------*/
+
+ol {
+    list-style: decimal;
+}
+ul {
+    list-style: disc;
+}
+li {
+    margin-left: 30px;
+}
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset, figure {
+    margin-bottom: 20px;
+}
+a {
+    color: #03acdf;
+    text-decoration: underline;
+}
+a:hover, a:focus, a:visited {
+    text-decoration: none;
+}
+
+/* `Forms
+ ----------------------------------------------------------------------------------------------------*/
+label, input, select, textarea, button {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+input[type="text"], input[type="password"], textarea {
+    width: 144px;
+    padding: 4px 7px;
+    border: 1px solid #c0c0c0;
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    color: #424242;
+    background: #f8f8f8;
+}
+textarea {
+    width: 200px;
+    height: 80px;
+}
+input[type="submit"], button {
+    padding: 4px 12px;
+    border: none;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'PF Agora Sans Pro', 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 #83a600;
+    text-transform: uppercase;
+    background: #b4cc02 url('../img/submit.png') repeat-x 0 50%;
+}
+
+label.checkbox {
+    min-width: 18px;
+    min-height: 14px;
+    padding: 1px 8px 1px 24px;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    background: url('../img/checkbox.png') no-repeat 0 50%;
+}
+label.checkbox-checked {
+    background-position: -400px 50%;
+}
+label.checkbox input {
+    padding: 0;
+    margin: 0;
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+}
+
+/* _selectbox
+ ----------------------------------------------------------------------------------------------------*/
+.sbHolder {
+    height: 24px;
+    padding-right: 30px;
+    border-top: 1px solid #c0c0c0;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #e6e6e6;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 16px;
+    display: inline-block;
+    color: #8e8e8e;
+    position: relative;
+    outline: none;
+    background: #f8f8f8;
+}
+.sbHolder:focus .sbSelector {
+}
+.sbSelector {
+    min-width: 92px;
+    height: 16px;
+    padding: 4px 9px;
+    display: block;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover {
+    color: #424242;
+    outline: none;
+    text-decoration: none;
+}
+.sbToggle {
+    width: 20px;
+    height: 24px;
+    display: block;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url('../img/ico/arrow-5.png') no-repeat 0 10px;
+}
+.sbToggle:hover {
+    background-position: 0 -190px;
+}
+.sbToggleOpen {
+    background-position: 0 -90px;
+}
+.sbToggleOpen:hover {
+    background-position: 0 -290px;
+}
+.sbHolderDisabled {
+    background-color: #3C3C3C;
+    border: solid 1px #515151;
+}
+.sbHolderDisabled .sbHolder {
+}
+.sbHolderDisabled .sbToggle {
+}
+.sbOptions {
+    min-width: 133px;
+    max-height: 250px !important;
+    padding: 0;
+    border: 1px solid #eee;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    left: -1px;
+    top: 24px !important;
+    z-index: 1;
+    overflow: hidden;
+    overflow-y: scroll;
+    background: #f8f8f8;
+}
+.sbOptions li {
+    padding: 0 7px;
+    margin: 0;
+    display: block;
+    white-space: nowrap;
+}
+.sbOptions a {
+    border-top: 1px solid #dfdcd7;
+    display: block;
+    outline: none;
+    padding: 4px 2px;
+}
+.sbOptions li:first-child a {
+    border: none;
+}
+.sbOptions a:link, .sbOptions a:visited {
+    color: #424242;
+    text-decoration: none;
+}
+.sbOptions a:hover, .sbOptions a:focus, .sbOptions a.sbFocus {
+    color: #01b6ed;
+}
+.sbOptions li.last a {
+    border-bottom: none;
+}
+.sbOptions .sbDisabled {
+    border-bottom: dotted 1px #515151;
+    color: #999;
+    display: block;
+    padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup {
+    border-bottom: dotted 1px #515151;
+    color: #EBB52D;
+    display: block;
+    font-weight: bold;
+    padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub {
+    padding-left: 17px;
+}
+
+.clear {
+    height: 0;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    clear: both;
+    content: "\0020";
+}

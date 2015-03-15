@@ -1,0 +1,1028 @@
+/* -----------------------------------------------------------------------
+* Filename: main.css
+* Project: Tigersoft
+* Author: Sergiy Miroshnychenko
+*/
+
+/* _layout
+ ----------------------------------------------------------------------- */
+.wrap {
+	width: 100%;
+	min-width: 950px;
+	min-height: 100%;
+	margin: 0 auto;
+	position: relative;
+	background: url('../img/wrap.png') repeat-x 0 0;
+}
+.wrap:before, .wrap > .before {
+	width: 100%;
+	height: 258px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	background: url('../img/wrap-before.png') repeat-x 0 0;
+}
+.wrap:after, .content:after, .tab:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.content {
+	width: 100%;
+	position: relative;
+	overflow: visible;
+	overflow-x: hidden;
+}
+.tab {
+	width: 100%;
+	display: none;
+	position: relative;
+	top: 0;
+}
+.tab-active {
+	display: block;
+}
+
+/* _header
+ ----------------------------------------------------------------------- */
+.header {
+	width: 950px;
+	height: 100px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 10;
+}
+.header .logo {
+	width: 211px;
+	height: 31px;
+	margin: 0;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 35px;
+	left: 49px;
+	text-indent: -500px;
+	background: url('../img/logo.png') no-repeat 0 0;
+}
+.header .logo a {
+	width: 211px;
+	height: 31px;
+	display: block;
+	overflow: hidden;
+	text-indent: -500px;
+}
+
+.header .nav {
+	position: absolute;
+	top: 34px;
+	right: 40px;
+}
+.header .nav ul {
+	margin: 0;
+	list-style: none;
+	overflow: hidden;
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	text-shadow: 0 1px 0 #e5e5e7;
+	-moz-text-shadow: 0 1px 0 #e5e5e7;
+	-webkit-text-shadow: 0 1px 0 #e5e5e7;
+	color: #3b3b40;
+}
+.header .nav ul li {
+	padding: 11px 9px 11px 11px;
+	float: left;
+	background: url('../img/sprite.png') no-repeat 0 0;
+}
+.header .nav ul li:first-child {
+	background: none;
+}
+.header .nav ul li a {
+	border-bottom: 1px dotted #3b527f;
+	display: block;
+	color: #3b527f;
+	text-decoration: none;
+}
+.header .nav ul li a:hover {
+	border-color: #1e69bf;
+	color: #1e69bf;
+}
+.header .nav ul li.active a {
+	border: none;
+	color: #3b3b40;
+	cursor: default;
+}
+
+/* _footer
+ ----------------------------------------------------------------------- */
+.footer {
+	width: 910px;
+	min-height: 70px;
+	padding: 55px 0 25px 0;
+	margin: 0 auto;
+	position: relative;
+	z-index: 10;
+	background: url('../img/footer.png') no-repeat 0 0;
+}
+.footer .toggles {
+	padding-left: 65px;
+	margin: 0;
+	list-style: none;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	line-height: 20px;
+}
+.footer .toggles li {
+	width: 250px;
+	float: left;
+}
+.footer .toggles .link {
+	padding-left: 15px;
+	line-height: 18px;
+	margin-bottom: 21px;
+	background: url('../img/sprite.png') no-repeat 0 -843px;
+}
+.footer .toggles .link-active {
+	background-position: 0 -869px;
+}
+.footer .toggles .link a {
+	border-bottom: 1px dotted #3c537f;
+	color: #3c537f;
+	text-decoration: none;
+}
+.footer .toggles .link a:hover {
+	border: none;
+}
+.footer .toggles .space {
+	padding: 0 15px;
+	display: none;
+}
+.footer .author {
+	margin: 0;
+	display: block;
+	position: absolute;
+	top: 56px;
+	right: 80px;
+	font-size: 13px;
+	line-height: 18px;
+	z-index: 10;
+}
+.contacts-map {
+	width: 100%;
+	height: 350px;
+	border-top: 1px solid #f2f2f2;
+	display: none;
+	position: relative;
+	overflow: hidden;
+	background: #f7f7f7;
+}
+.contacts-map .yandex-map {
+	position: relative;
+	z-index: 5;
+}
+.contacts-map .loading {
+	width: 100%;
+	margin: -10px 0 0 0;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	text-align: center;
+	cursor: default;
+	color: #666;
+	font-size: 12px;
+}
+
+/* _display
+ ----------------------------------------------------------------------- */
+.display {
+	width: 950px;
+	height: 830px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 5;
+}
+.display:before, .display .before {
+	width: 1050px;
+	height: 830px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: -100px;
+	left: -50px;
+	z-index: 1;
+	background: url('../img/display.png') no-repeat 0 1px;
+}
+.display .on {
+	width: 7px;
+	height: 8px;
+	display: none;
+	position: absolute;
+	right: 61px;
+	bottom: 340px;
+	z-index: 5;
+	background: url('../img/sprite.png') no-repeat 0 -912px;
+}
+.display .cursor {
+	width: 20px;
+	height: 4px;
+	display: none;
+	position: absolute;
+	left: 100px;
+	top: 80px;
+	z-index: 5;
+	background: #fff;
+}
+.display .title {
+	width: 650px;
+	margin: 0;
+	display: none;
+	font: 42px/48px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #fff;
+	text-align: center;
+	position: absolute;
+	top: 80px;
+	left: 150px;
+	z-index: 10;
+	cursor: default;
+}
+.display .title em {
+	margin-top: 24px;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 25px;
+	display: block;
+	color: #888;
+}
+.display .step {
+	width: 650px;
+	margin: 0;
+	display: none;
+	font: 42px/48px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #fff;
+	text-align: center;
+	position: absolute;
+	top: 300px;
+	left: 150px;
+	z-index: 10;
+	cursor: default;
+}
+.display .step em {
+	margin: 10px 0 5px 0;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 25px;
+	display: block;
+	color: #ff5232;
+}
+.display .step-4 {
+	font-size: 54px;
+}
+.display .step-4 em {
+	margin-bottom: 13px;
+	font-size: 31px;
+}
+.display .preloader {
+	width: 32px;
+	height: 32px;
+	margin-left: -16px;
+	display: none;
+	position: absolute;
+	top: 245px;
+	left: 50%;
+	z-index: 10;
+	background: url('../img/preloader.gif') no-repeat 0 0;
+}
+
+/* _profit
+ ----------------------------------------------------------------------- */
+.profit {
+	width: 950px;
+	margin: 0 auto 110px auto;
+	position: relative;
+	z-index: 10;
+}
+.tab-service .profit {
+	margin-top: -205px;
+}
+.profit .list {
+	padding: 0 0 0 100px;
+	margin: 0;
+	list-style: none;
+}
+.profit:after, .profit .list:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.profit .list li {
+	width: 240px;
+	padding: 0 10px 0 0;
+	float: left;
+	position: relative;
+	color: #676767;
+}
+.profit .list li.li-1:before, .profit .list li.li-2:before, .profit .list li.li-3:before,
+.profit .list li.li-1 i, .profit .list li.li-2 i, .profit .list li.li-3 i {
+	width: 26px;
+	height: 25px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url('../img/sprite.png') no-repeat 0 -50px;
+}
+.profit .list li.li-1, .profit .list li.li-2, .profit .list li.li-3 {
+	padding-top: 40px;
+}
+.profit .list li.li-1:before, .profit .list li.li-1 i {
+	width: 26px;
+	height: 25px;
+	top: 7px;
+	left: 1px;
+	background-position: 0 -50px;
+}
+.profit .list li.li-2:before, .profit .list li.li-2 i {
+	width: 27px;
+	height: 28px;
+	top: 5px;
+	left: 0;
+	background-position: 0 -100px;
+}
+.profit .list li.li-3:before, .profit .list li.li-3 i {
+	width: 38px;
+	height: 23px;
+	top: 8px;
+	left: 1px;
+	background-position: 0 -150px;
+}
+.profit .list strong {
+	margin-bottom: 10px;
+	display: block;
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #000;
+}
+.profit .list li:hover {
+	color: #444;
+}
+
+/* _why
+ ----------------------------------------------------------------------- */
+.why {
+	width: 950px;
+	margin: 0 auto 60px auto;
+	position: relative;
+	z-index: 10;
+}
+.why .h2 {
+	margin-bottom: 60px;
+}
+.why .list {
+	padding: 0 0 0 100px;
+	margin: -1px 0 0 0;
+	list-style: none;
+	color: #676767;
+	clear: both;
+}
+.why:after, .why .list:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.why .list li {
+	width: 240px;
+	padding: 0 10px 70px 0;
+	float: left;
+	position: relative;
+}
+.why .list li.arrow {
+	width: 180px;
+	padding-right: 70px;
+	margin-top: -20px;
+	clear: left;
+}
+.why .list li.arrow:before, .why .list li.arrow .before {
+	width: 37px;
+	height: 20px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: 25px;
+	right: 28px;
+	background: url('../img/sprite.png') no-repeat 0 -200px;
+}
+.why .list strong {
+	margin-bottom: 10px;
+	display: block;
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #000;
+}
+.why .list var {
+	font-style: normal;
+	font-weight: bold;
+}
+
+/* _howmuch
+ ----------------------------------------------------------------------- */
+.howmuch {
+	width: 950px;
+	margin: 0 auto 100px auto;
+	position: relative;
+	z-index: 10;
+}
+.howmuch .phone {
+	width: 350px;
+	height: 40px;
+	padding: 17px 0 23px 0;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	font: 40px/40px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	letter-spacing: 1px;
+	color: #444;
+	cursor: default;
+	text-align: center;
+	background: #fff;
+}
+.howmuch .phone:before, .howmuch .phone .before {
+	width: 350px;
+	height: 10px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	opacity: 0.1;
+	background: #000;
+}
+.howmuch .slider {
+	width: 350px;
+	padding: 12px 0 0 0;
+	margin: 0 auto 36px auto;
+	display: block;
+	position: relative;
+	left: -3px;
+}
+.howmuch .slider .num {
+	width: 100px;
+	height: 83px;
+	padding: 6px 0 0 0;
+	margin: 0 auto 10px auto;
+	font: 40px/40px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #fff;
+	display: block;
+	text-align: center;
+	cursor: default;
+	background: url('../img/howmuch.png') no-repeat 0 0;
+}
+.howmuch .slider .num input[type="text"] {
+	width: 88px;
+	padding: 0;
+	border: none;
+	margin: 0 auto;
+	display: block;
+	font: 40px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #fff;
+	text-align: center;
+	background: none;
+}
+.howmuch .slider .total {
+	margin: 0;
+	display: block;
+	font: 20px/25px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	text-align: right;
+	color: #000;
+	position: relative;
+	cursor: default;
+}
+.howmuch .slider .total strong {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #888;
+	font-weight: normal;
+}
+.howmuch .slider .total var {
+	border-bottom: 2px solid #ff4c33;
+	font-style: normal;
+}
+.howmuch .slider .bar {
+	width: 350px;
+	height: 5px;
+	border: none;
+	margin: 0 0 20px 0;
+	background: url('../img/howmuch.png') no-repeat 0 -95px;
+}
+.howmuch .slider .ui-slider-handle {
+	width: 13px;
+	height: 13px;
+	border: none;
+	margin: 0 0 0 -6px;
+	display: block;
+	overflow: hidden;
+	background: url('../img/howmuch.png') no-repeat -110px 0;
+}
+.howmuch .slider .bar em {
+	display: block;
+	position: absolute;
+	top: -20px;
+	font-size: 13px;
+	line-height: 20px;
+	font-style: normal;
+	cursor: default;
+	color: #888;
+}
+.howmuch .slider .bar .from {
+	left: 0;
+}
+.howmuch .slider .bar .to {
+	right: 0;
+}
+.howmuch .slider .bar var {
+	font-weight: bold;
+	font-style: normal;
+}
+.howmuch .slider .title {
+	width: 255px;
+	position: absolute;
+	left: -200px;
+	top: 19px;
+	cursor: default;
+}
+.howmuch .slider .new {
+	width: 200px;
+	padding: 0 0 42px 22px;
+	position: absolute;
+	right: -250px;
+	top: 89px;
+	cursor: default;
+}
+.howmuch .slider .new strong {
+	margin-bottom: 10px;
+	display: block;
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #ff4c33;
+}
+.howmuch .slider .new:before {
+	width: 43px;
+	height: 40px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	background: url('../img/sprite.png') no-repeat 0 -250px;
+}
+.howmuch .server {
+	width: 80px;
+	padding-top: 25px;
+	margin: 0;
+	position: absolute;
+	top: 28px;
+	right: 0;
+	font-size: 13px;
+	line-height: 15px;
+	text-align: center;
+}
+.howmuch .server-visible {
+	background: url('../img/server.png') no-repeat 32px 0;
+}
+.howmuch .server .link {
+	border-bottom: 1px dotted #3b527f;
+	color: #3b527f;
+	text-decoration: none;
+}
+.howmuch .server .link:hover {
+	border: none;
+}
+.howmuch .server input {
+	display: none;
+}
+.howmuch .server .plus, .howmuch .server .minus {
+	width: 20px;
+	height: 20px;
+	display: none;
+	font-size: 16px;
+	line-height: 20px;
+	text-decoration: none;
+	text-align: center;
+	position: absolute;
+	top: 0;
+}
+.howmuch .server .plus:hover, .howmuch .server .minus:hover {
+	background: #eaeaea;
+}
+.howmuch .server .plus {
+	right: 10px;
+}
+.howmuch .server .minus {
+	left: 11px;
+}
+.howmuch .server-visible .plus, .howmuch .server-visible .minus {
+	display: block;
+}
+
+/* _reviews
+ ----------------------------------------------------------------------- */
+.reviews {
+	width: 1000px;
+	padding: 4px 0 0 0;
+	margin: 0 auto 83px auto;
+	position: relative;
+	z-index: 10;
+}
+.reviews .h2 {
+	margin-bottom: 55px;
+}
+.reviews .carousel-prev, .reviews .carousel-next {
+	width: 100px;
+	height: 100px;
+	margin-top: -50px;
+	position: absolute;
+	top: 50%;
+}
+.reviews .carousel-prev img, .reviews .carousel-next img {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.reviews .carousel-prev {
+	left: -50px;
+}
+.reviews .carousel-next {
+	right: -50px;
+}
+.reviews .carousel {
+	width: 800px;
+	padding: 0 100px;
+	position: relative;
+	overflow: hidden;
+}
+.reviews .carousel .jcarousel-container {
+	overflow: hidden;
+}
+.reviews .jcarousel-prev, .reviews .jcarousel-next {
+	width: 62px;
+	height: 100px;
+	margin: -50px 0 0 0;
+	display: block;
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+}
+.reviews .jcarousel-prev {
+	left: 0;
+	background: url('../img/sprite.png') no-repeat 20px -300px;
+}
+.reviews .jcarousel-prev:hover {
+	background-position: 20px -500px;
+	background-color: #f5f5f5;
+}
+.reviews .jcarousel-next {
+	right: 0;
+	background: url('../img/sprite.png') no-repeat 24px -400px;
+}
+.reviews .jcarousel-next:hover {
+	background-position: 24px -600px;
+	background-color: #f5f5f5;
+}
+.reviews .list {
+	width: 800px;
+	padding-bottom: 10px !important;
+	margin: 0;
+	list-style: none;
+	overflow: hidden;
+}
+.reviews .list li {
+	width: 590px;
+	padding: 44px 110px 36px 100px;
+	float: left;
+	position: relative;
+	background: #fff;
+}
+.reviews .list li:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.reviews .list li:before, .reviews .list li .before {
+	width: 800px;
+	height: 10px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	opacity: 0.1;
+	background: #000;
+}
+.reviews .list .left {
+	width: 180px;
+	float: left;
+}
+.reviews .list .right {
+	width: 390px;
+	float: right;
+}
+.reviews .list .from {
+	margin-bottom: 40px;
+}
+.reviews .list .from strong {
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+}
+.reviews .list .logo {
+	margin: -14px 0 34px 0;
+}
+.reviews .list .logo img {
+	display: block;
+}
+.reviews .list .name {
+	margin-bottom: 22px;
+	font: 15px/18px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+}
+.reviews .list .channel {
+	margin-bottom: 12px;
+	font-size: 13px;
+	line-height: 20px;
+}
+.reviews .list .url {
+	font-size: 13px;
+	line-height: 20px;
+}
+.reviews .list .url a {
+	color: #3b527f;
+}
+
+/* _contacts
+ ----------------------------------------------------------------------- */
+.contacts {
+	width: 950px;
+	margin: 0 auto 45px auto;
+	position: relative;
+	z-index: 10;
+}
+.contacts:after, .contacts .left:after, .contacts .right:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.contacts .left {
+	width: 350px;
+	padding: 0 0 0 100px;
+	float: left;
+}
+.contacts .right {
+	width: 380px;
+	padding-right: 20px;
+	float: right;
+}
+.contacts .title {
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+}
+.contacts .phone {
+	margin-left: -2px;
+	font: 40px/40px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	color: #444;
+}
+.contacts .links {
+	width: 100%;
+	margin: 0;
+	list-style: none;
+	font-size: 13px;
+	line-height: 20px;
+	letter-spacing: -0.2px;
+	overflow: hidden;
+}
+.contacts .links li {
+	padding: 0 23px;
+	float: left;
+	background: url('../img/sprite.png') no-repeat 0 -725px;
+}
+.contacts .links li a {
+	color: #3b527f;
+}
+.contacts .links li.skype { background-position: 0 -697px; }
+.contacts .links li.mail { background-position: 0 -745px; }
+.contacts .links li.icq { background-position: 0 -798px; }
+
+/* _support
+ ----------------------------------------------------------------------- */
+.support {
+	width: 950px;
+	margin: 0 auto 100px auto;
+	position: relative;
+	z-index: 10;
+}
+.support .logo {
+	width: 96px;
+	height: 45px;
+	margin: 0 auto 40px auto;
+	display: block;
+	overflow: hidden;
+	text-indent: -1000px;
+	background: url('../img/1c.png') no-repeat 0 0;
+}
+.support .h2 {
+	margin-bottom: 60px;
+}
+.support .list {
+	padding: 0 0 0 100px;
+	margin: -1px 0 0 0;
+	list-style: none;
+	color: #000;
+	clear: both;
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+}
+.support:after, .support .list:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.support .list li {
+	width: 340px;
+	padding: 0 60px 20px 0;
+	float: left;
+	position: relative;
+}
+.support .list li:nth-child(3) {
+	clear: left;
+}
+.support .list li.arrow {
+	width: 320px;
+	padding: 40px 0 0 0;
+	margin: 0 auto;
+	left: -65px;
+	font: 15px/20px Arial, Tahoma, sans-serif;
+	float: none;
+	clear: both;
+}
+.support .list li.arrow:before, .support .list li.arrow .before {
+	width: 37px;
+	height: 20px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: 40px;
+	left: -50px;
+	background: url('../img/sprite.png') no-repeat 0 -200px;
+}
+
+/* _faq
+ ----------------------------------------------------------------------- */
+.faq {
+	width: 800px;
+	margin: 0 auto 60px auto;
+	position: relative;
+	z-index: 10;
+}
+.faq:after, .faq .list:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.faq .h2 {
+	margin-bottom: 60px;
+}
+.faq .list {
+	width: 350px;
+	padding: 0 50px 0 0;
+	margin: 0;
+	float: left;
+	list-style: none;
+	position: relative;
+	left: 25px;
+}
+.faq .list li {
+	padding-bottom: 10px;
+}
+.faq .list li:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.faq .list .question {
+	padding: 0 0 12px 0;
+	margin: 0;
+	display: block;
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+}
+.faq .list .question a {
+	border-bottom: 1px dotted #3b527f;
+	color: #3b527f;
+	text-decoration: none;
+}
+.faq .list .question a:hover {
+	border-color: #1e69bf;
+	color: #1e69bf;
+}
+.faq .list .answer {
+	width: 100%;
+	padding: 0 0 40px 0;
+	margin: 0;
+	display: none;
+}
+.faq .list li.active .question a {
+	border: none;
+}
+.faq .list li.active .answer {
+	display: block;
+}
+
+/* _questions
+ ----------------------------------------------------------------------- */
+.questions {
+	width: 350px;
+	margin: 0 auto 75px auto;
+	position: relative;
+	z-index: 10;
+	line-height: 20px;
+}
+.questions p {
+	margin: 0 0 15px 0;
+}
+.questions .title {
+	margin: 0 0 10px 0;
+	font: 15px/20px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+}
+.questions .phone {
+	width: 350px;
+	height: 40px;
+	padding: 17px 0 23px 0;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	font: 40px/40px 'Ubuntu Medium', Arial, Tahoma, sans-serif;
+	letter-spacing: 1px;
+	color: #444;
+	cursor: default;
+	text-align: center;
+	background: #fff;
+}
+.questions .phone:before, .questions .phone .before {
+	width: 350px;
+	height: 10px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	opacity: 0.1;
+	background: #000;
+}
+.questions:before, .questions .before {
+	width: 37px;
+	height: 20px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	cursor: default;
+	position: absolute;
+	top: 0;
+	left: -50px;
+	background: url('../img/sprite.png') no-repeat 0 -200px;
+}
