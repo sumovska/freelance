@@ -31,7 +31,7 @@
 	<nav class="nav">
 		<ul id="menu" class="menu">
 			<li class="active"><a href="owners.html" class="owners" title="Собственники">Собственники <span class="new">29</span></a></li>
-			<li><a href="#" class="top" title="Топ 6">Топ 6</a></li>
+			<li><a href="#" class="topchart" title="Топ 6">Топ 6</a></li>
 			<li><a href="#" class="sell" title="Мои объекты">Мои объекты</a></li>
 			<li><a href="#" class="archive" title="Архив">Архив</a></li>
 			<li><a href="#" class="pins" title="Закладки">Закладки <span class="new">99</span></a></li>
@@ -44,116 +44,120 @@
 			<li><a href="#" class="details" title="Детализация">Детализация</a></li>
 		</ul>
 		<a href="#menu" class="toggle" title="Раскрыть меню"></a>
+		<a href="#" class="top" title="Наверх"></a>
 	</nav>
 
-	<div class="container">
-		<div class="block-owners">
+	<div class="container fullpage">
+		<div class="block-owners block-owners-full">
 
-			<div class="filter">
-				<form class="form" action="#">
-					<div class="table-filter">
-						<div class="tr">
-							<div class="td">
-								<label class="select">
-									<select>
-										<option selected>Действие</option>
-										<option>Действие</option>
-										<option>Действие</option>
-									</select>
-								</label>
-							</div>
-							<div class="td">
-								<label class="select">
-									<select>
-										<option selected>Тип недвижимости</option>
-										<option>Тип недвижимости</option>
-										<option>Тип недвижимости</option>
-									</select>
-								</label>
-							</div>
-							<div class="td"><input type="text" placeholder="Цена" value=""></div>
-							<div class="td">
-								<label class="select">
-									<select>
-										<option selected>Станция метро / район</option>
-										<option>Станция метро / район</option>
-										<option>Станция метро / район</option>
-										<option>Станция метро / район</option>
-									</select>
-								</label>
-							</div>
-							<div class="td"><input type="text" placeholder="Улица" value=""></div>
-						</div>
-					</div>
-					<a class="toggle" href="#"></a>
-					<div class="inside">
+			<div class="filter-space">
+				<div class="filter">
+					<form class="form" action="#">
 						<div class="table-filter">
 							<div class="tr">
 								<div class="td">
-									<p>
-										<label class="range">Комнаты <input class="small" type="text" placeholder="От" value="">-<input class="small" type="text" placeholder="До" value=""></label>
-										<label class="range">Общая площадь <input class="small" type="text" placeholder="От" value="">-<input class="small" type="text" placeholder="До" value=""></label>
-										<label class="range">Площаль кухни <input class="small" type="text" placeholder="От" value="">-<input class="small" type="text" placeholder="До" value=""></label>
-									</p>
-								</div>
-								<div class="td td-half"><input type="text" placeholder="Уровни" value=""></div>
-								<div class="td td-half">
 									<label class="select">
 										<select>
-											<option selected>Санузел</option>
-											<option>Санузел</option>
-											<option>Санузел</option>
+											<option selected>Действие</option>
+											<option>Действие</option>
+											<option>Действие</option>
 										</select>
 									</label>
 								</div>
+								<div class="td">
+									<label class="select">
+										<select>
+											<option selected>Тип недвижимости</option>
+											<option>Тип недвижимости</option>
+											<option>Тип недвижимости</option>
+										</select>
+									</label>
+								</div>
+								<div class="td"><input type="text" placeholder="Цена" value=""></div>
+								<div class="td">
+									<label class="select">
+										<select>
+											<option selected>Станция метро / район</option>
+											<option>Станция метро / район</option>
+											<option>Станция метро / район</option>
+											<option>Станция метро / район</option>
+										</select>
+									</label>
+								</div>
+								<div class="td"><input type="text" placeholder="Улица" value=""></div>
 							</div>
 						</div>
-						<div class="table-filter">
-							<div class="tr">
-								<div class="td td-center">
-									<p>
-										<label class="checkbox">Квартира-студия <input type="checkbox"></label>
-										<label class="checkbox">Газ в доме <input type="checkbox" checked></label>
-										<label class="checkbox">Охрана <input type="checkbox"></label>
-									</p>
+						<a class="toggle" href="#"></a>
+						<div class="inside">
+							<div class="table-filter">
+								<div class="tr">
+									<div class="td">
+										<p>
+											<label class="range">Комнаты <input class="small" type="text" placeholder="От" value="">-<input class="small" type="text" placeholder="До" value=""></label>
+											<label class="range">Общая площадь <input class="small" type="text" placeholder="От" value="">-<input class="small" type="text" placeholder="До" value=""></label>
+											<label class="range">Площаль кухни <input class="small" type="text" placeholder="От" value="">-<input class="small" type="text" placeholder="До" value=""></label>
+										</p>
+									</div>
+									<div class="td td-half"><input type="text" placeholder="Уровни" value=""></div>
+									<div class="td td-half">
+										<label class="select">
+											<select>
+												<option selected>Санузел</option>
+												<option>Санузел</option>
+												<option>Санузел</option>
+											</select>
+										</label>
+									</div>
 								</div>
-								<div class="td td-center td-right">
-									<p>
-										<label class="checkbox">Отображать топ 6 <input type="checkbox" checked></label>
-										<input type="reset" value="Сбросить">
-									</p>
+							</div>
+							<div class="table-filter">
+								<div class="tr">
+									<div class="td td-center">
+										<p>
+											<label class="checkbox">Квартира-студия <input type="checkbox"></label>
+											<label class="checkbox">Газ в доме <input type="checkbox" checked></label>
+											<label class="checkbox">Охрана <input type="checkbox"></label>
+										</p>
+									</div>
+									<div class="td td-center td-right">
+										<p>
+											<label class="checkbox">Отображать топ 6 <input class="checkbox-top" type="checkbox"></label>
+											<input type="reset" value="Сбросить">
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
+					</form>
+				</div>
+				<span class="add check-top">ТОП 6</span>
+				<div class="notice">
+					<div class="entry">
+						<p class="h">Раздел собственники:</p>
+						<p>Актуальная база объектов недвижимости от собственников без дублей. Все объекты собственников прозваниваются операторами и модерируются каждые 7 дней.</p>
+						<a class="link" href="#">Больше не показывать</a>
+						<a class="close" href="#" title="Закрыть"></a>
 					</div>
-				</form>
-			</div>
-
-			<div class="notice">
-				<div class="entry">
-					<p class="h">Раздел собственники:</p>
-					<p>Актуальная база объектов недвижимости от собственников без дублей. Все объекты собственников прозваниваются операторами и модерируются каждые 7 дней.</p>
-					<a class="link" href="#">Больше не показывать</a>
-					<a class="close" href="#" title="Закрыть"></a>
-				</div>
-				<div class="entry">
-					<p>Укажите в фильтре необходимые данные и все собственники отобразятся на карте вашего города.</p>
-					<a class="link" href="#">Больше не показывать</a>
-					<a class="close" href="#" title="Закрыть"></a>
-				</div>
-				<div class="entry">
-					<p>Если у вас возникнет любой вопрос, Вы можете задать его нашему специалисту в окне online чата поддержки клиентов.</p>
-					<a class="link" href="#">Больше не показывать</a>
-					<a class="close" href="#" title="Закрыть"></a>
+					<div class="entry">
+						<p>Укажите в фильтре необходимые данные и все собственники отобразятся на карте вашего города.</p>
+						<a class="link" href="#">Больше не показывать</a>
+						<a class="close" href="#" title="Закрыть"></a>
+					</div>
+					<div class="entry">
+						<p>Если у вас возникнет любой вопрос, Вы можете задать его нашему специалисту в окне online чата поддержки клиентов.</p>
+						<a class="link" href="#">Больше не показывать</a>
+						<a class="close" href="#" title="Закрыть"></a>
+					</div>
 				</div>
 			</div>
 
 			<div id="map" class="map">
 				<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false&language=ru-RU"></script>
 				<script type="text/javascript">
-					google.maps.event.addDomListener(window, 'load', init);
-					function init() {
-						var pos = new google.maps.LatLng(55.749792, 37.632495);
+					google.maps.event.addDomListener(window, 'load', mapInit);
+					google.maps.event.addDomListener(window, 'resize', mapCenter);
+					function mapInit() {
+						window.pos = new google.maps.LatLng(55.749792, 37.632495);
 						var mapOptions = {
 							zoom: 10,
 							panControl: false,
@@ -170,11 +174,16 @@
 							center: pos
 						};
 						var mapElement = document.getElementById('map');
-						var map = new google.maps.Map(mapElement, mapOptions);
+						window.map = new google.maps.Map(mapElement, mapOptions);
 						new google.maps.Marker({
 							position: pos,
 							map: map
 						});
+					}
+					function mapCenter() {
+						var center = map.getCenter();
+						google.maps.event.trigger(map, "resize");
+						map.setCenter(center);
 					}
 				</script>
 			</div>
@@ -216,10 +225,11 @@
 						<a href="#" class="sub">Разделы меню</a>
 						<ul>
 							<li><a href="#">Собственники</a></li>
-							<li><a href="#">Все объекты</a></li>
-							<li><a href="#">Вся аренда</a></li>
+							<li><a href="#">Топ 6</a></li>
+							<li><a href="#">Мои объекты</a></li>
 							<li><a href="#">Архив</a></li>
-							<li><a href="#">Все клиенты</a></li>
+							<li><a href="#">Закладки</a></li>
+							<li><a href="#">Клиенты</a></li>
 							<li><a href="#">Сотрудники</a></li>
 							<li><a href="#">Задачи</a></li>
 							<li><a href="#">На портале</a></li>
