@@ -22,6 +22,21 @@ $(document).ready(function () {
 	});
 	$('textarea').flexible();
 
+	/* Кастомный скролл */
+	$('.scroll').perfectScrollbar({
+		suppressScrollY: true
+	});
+
+	/* Шапка */
+	$('.header').each(function () {
+		var _header = $(this);
+		$(this).append('<a href="#" class="toggle"></a>');
+		$('.toggle', this).click(function () {
+			_header.toggleClass('open').addClass('visible');
+			return false;
+		});
+	});
+
 	/* Навигация */
 	$('.nav').each(function () {
 		var body = $('body');
@@ -45,6 +60,36 @@ $(document).ready(function () {
 				body.addClass('nav-top');
 			} else {
 				body.removeClass('nav-top');
+			}
+		});
+	});
+
+	/* Подвал */
+	$('.footer').each(function () {
+		var _buttons = $('.help, .messages', this);
+		_buttons.each(function () {
+			var _self = $(this);
+			$('.toggle', this).click(function () {
+				$(this).parent().siblings('.active').removeClass('active').find('.tooltip').hide();
+				$('.tooltip', _self).fadeToggle(300, function () {
+					_self.toggleClass('active');
+				});
+				return false;
+			});
+			$('.sub', this).click(function () {
+				$(this).siblings('ul').slideToggle(function () {
+					$(this).closest('li').toggleClass('open');
+				});
+				return false;
+			});
+		});
+		$(document).on('click touchstart', function (event) {
+			var target = $(event.target);
+			if ($('.tooltip:visible').length > 0) {
+				if ((target.closest('.tooltip').length === 0) && (target.closest('.footer').length === 0)) {
+					_buttons.removeClass('active');
+					$('.tooltip:visible', _buttons).fadeOut(300);
+				}
 			}
 		});
 	});
@@ -218,36 +263,6 @@ $(document).ready(function () {
 		}).click(function (event) {
 			event.stopPropagation();
 			return false;
-		});
-	});
-
-	/* Подвал */
-	$('.footer').each(function () {
-		var _buttons = $('.help, .messages', this);
-		_buttons.each(function () {
-			var _self = $(this);
-			$('.toggle', this).click(function () {
-				$(this).parent().siblings('.active').removeClass('active').find('.tooltip').hide();
-				$('.tooltip', _self).fadeToggle(300, function () {
-					_self.toggleClass('active');
-				});
-				return false;
-			});
-			$('.sub', this).click(function () {
-				$(this).siblings('ul').slideToggle(function () {
-					$(this).closest('li').toggleClass('open');
-				});
-				return false;
-			});
-		});
-		$(document).on('click touchstart', function (event) {
-			var target = $(event.target);
-			if ($('.tooltip:visible').length > 0) {
-				if ((target.closest('.tooltip').length === 0) && (target.closest('.footer').length === 0)) {
-					_buttons.removeClass('active');
-					$('.tooltip:visible', _buttons).fadeOut(300);
-				}
-			}
 		});
 	});
 

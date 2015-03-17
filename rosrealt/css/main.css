@@ -19,7 +19,7 @@ html {
 }
 body {
 	width: 100%;
-	min-width: 760px;
+	min-width: 640px;
 	min-height: 100%;
 	padding-top: 69px;
 	padding-left: 44px;
@@ -379,10 +379,34 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 .fancybox-skin .fancybox-close:hover:before, .fancybox-skin .fancybox-close:hover:after { }
 /* ==========================================================================
+   Стили для плагина perfect-scrollbar 0.6.1 @homepage http://noraesae.github.com/perfect-scrollbar/
+   ========================================================================== */
+.ps-container { overflow: hidden !important; }
+.ps-container.ps-active-x > .ps-scrollbar-x-rail, .ps-container.ps-active-y > .ps-scrollbar-y-rail { display: block; }
+.ps-container.ps-in-scrolling { pointer-events: none; }
+.ps-container.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail { background-color: #eee; opacity: .9; }
+.ps-container.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x { background-color: #999; }
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail { background-color: #eee; opacity: .9; }
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y { background-color: #999; }
+.ps-container > .ps-scrollbar-x-rail { display: none; position: absolute; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; opacity: 0; -webkit-transition: background-color .2s linear, opacity .2s linear; -moz-transition: background-color .2s linear, opacity .2s linear; -o-transition: background-color .2s linear, opacity .2s linear; transition: background-color .2s linear, opacity .2s linear; bottom: 3px; height: 8px; }
+.ps-container > .ps-scrollbar-x-rail > .ps-scrollbar-x { position: absolute; background-color: #aaa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; -webkit-transition: background-color .2s linear; -moz-transition: background-color .2s linear; -o-transition: background-color .2s linear; transition: background-color .2s linear; bottom: 0; height: 8px; }
+.ps-container > .ps-scrollbar-y-rail { display: none; position: absolute; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; opacity: 0; -webkit-transition: background-color .2s linear, opacity .2s linear; -moz-transition: background-color .2s linear, opacity .2s linear; -o-transition: background-color .2s linear, opacity .2s linear; transition: background-color .2s linear, opacity .2s linear; right: 3px; width: 8px; }
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y { position: absolute; background-color: #aaa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; -webkit-transition: background-color .2s linear; -moz-transition: background-color .2s linear; -o-transition: background-color .2s linear; transition: background-color .2s linear; right: 0; width: 8px; }
+.ps-container:hover.ps-in-scrolling { pointer-events: none; }
+.ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail { background-color: #eee; opacity: .9; }
+.ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x { background-color: #999; }
+.ps-container:hover.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail { background-color: #eee; opacity: .9; }
+.ps-container:hover.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y { background-color: #999; }
+.ps-container:hover > .ps-scrollbar-x-rail, .ps-container:hover > .ps-scrollbar-y-rail { opacity: .6; }
+.ps-container:hover > .ps-scrollbar-x-rail:hover { background-color: #eee; opacity: .9; }
+.ps-container:hover > .ps-scrollbar-x-rail:hover > .ps-scrollbar-x { background-color: #999; }
+.ps-container:hover > .ps-scrollbar-y-rail:hover { background-color: #eee; opacity: .9; }
+.ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y { background-color: #999; }
+/* ==========================================================================
    _Шапка
    ========================================================================== */
 .header {
-	min-width: 600px;
+	min-width: 640px;
 	height: 69px;
 	border-bottom: 1px solid #dddcda;
 	position: fixed;
@@ -392,6 +416,61 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	z-index: 100;
 	cursor: default;
 	background: #fff;
+}
+.header .toggle {
+	width: 33px;
+	height: 33px;
+	border-radius: 1px;
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	text-decoration: none;
+	background: #ff7c20;
+	transition: background-color .2s;
+	z-index: 50;
+}
+.header .toggle:hover {
+	background-color: #fc6418;
+}
+.header .toggle:before {
+	width: 9px;
+	height: 18px;
+	border-right: 3px solid #fff;
+	border-left: 3px solid #fff;
+	margin: -9px 0 0 -8px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.header .toggle:after {
+	width: 3px;
+	height: 18px;
+	margin: -9px 0 0 -2px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+}
+.header .toggle:before, .header .toggle:after {
+	-webkit-transition: -webkit-transform .2s;
+	-webkit-transform: rotate(90deg);
+	-moz-transition: -moz-transform .2s;
+	-moz-transform: rotate(90deg);
+	transition: transform .2s;
+	transform: rotate(90deg);
+}
+.header.open .toggle:before, .header.open .toggle:after {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
 }
 .header .h1 {
 	padding: 5px 0;
@@ -639,7 +718,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
    _Подвал
    ========================================================================== */
 .footer {
-	min-width: 600px;
+	min-width: 596px;
 	height: 38px;
 	position: fixed;
 	bottom: 0;
@@ -1003,6 +1082,15 @@ a.icon-delete:hover:before { opacity: 1; }
 /* ==========================================================================
    _Таблица (дефолтная)
    ========================================================================== */
+.scroll {
+	overflow: scroll;
+	overflow-y: hidden;
+	position: relative;
+}
+.scroll.ps-container.ps-active-x {
+	padding: 0 0 16px 20px;
+	margin: 0 -20px;
+}
 .table {
 	width: 100%;
 	display: table;
@@ -1219,7 +1307,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .task-list .task textarea { height: 52px; }
 .task-list .task input:focus, .task-list .task textarea:focus { border-color: #a09f9e !important; z-index: 11; }
 /* Невидимая область */
-.task-list .task .space { width: 100%; margin-bottom: -1px; position: relative; top: -1px; display: none; }
+.task-list .task .space { width: 100%; margin-top: -1px; position: relative; display: none; }
 .task-list .task .space .form-line { margin: -1px 0 0 0; }
 .task-list .task .space .form-line:first-child { margin: 0; }
 .task-list .task.open .space { display: block; overflow: hidden; }
@@ -1345,7 +1433,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	width: 18%;
 	padding: 10px;
 	display: table-cell;
-	vertical-align: top;
+	vertical-align: middle;
 	white-space: nowrap;
 }
 .table-filter .td-right { text-align: right; }
@@ -1382,34 +1470,40 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	text-align: center;
 }
 .filter .table-filter label.checkbox {
-	height: 30px;
-	padding: 0 0 0 38px;
-	margin: 0 14px 0 0;
-	display: inline-block;
-	font-size: 13px;
-	line-height: 30px;
 	letter-spacing: .05em;
 	text-transform: uppercase;
+	font-size: 11px;
+	line-height: 18px;
 	color: #fff;
 }
-.filter .table-filter label.checkbox .jq-checkbox {
-	width: 30px;
-	height: 30px;
-	margin: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.filter .checkbox .jq-checkbox .jq-checkbox__div {
-	width: 30px;
-	height: 30px;
-	margin: 0;
-	top: -1px;
-	right: -1px;
-	bottom: -1px;
-	left: -1px;
-	background: url('../img/sprite.png') no-repeat -120px -90px;
-	background-size: 300px auto;
+@media (min-width: 767px) {
+	.filter .table-filter label.checkbox {
+		height: 30px;
+		padding: 0 0 0 38px;
+		margin: 0 14px 0 0;
+		display: inline-block;
+		font-size: 13px;
+		line-height: 30px;
+	}
+	.filter .table-filter label.checkbox .jq-checkbox {
+		width: 30px;
+		height: 30px;
+		margin: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.filter .checkbox .jq-checkbox .jq-checkbox__div {
+		width: 30px;
+		height: 30px;
+		margin: 0;
+		top: -1px;
+		right: -1px;
+		bottom: -1px;
+		left: -1px;
+		background: url('../img/sprite.png') no-repeat -120px -90px;
+		background-size: 300px auto;
+	}
 }
 .filter .inside {
 	display: none;
@@ -1485,7 +1579,6 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	z-index: 5;
 }
 .notice .entry {
-	width: 452px;
 	padding: 18px 20px 12px;
 	margin-bottom: 20px;
 	position: relative;
@@ -1562,6 +1655,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	padding: 0;
 	margin: 0 !important;
 }
+.block-owners .scroll.ps-container.ps-active-x { padding: 0 0 16px; margin: 0; }
 .block-owners:after, .filter-space:after, .block-owners .controls:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .block-owners .filter-space {
 	height: 70px;
@@ -1683,25 +1777,43 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	.header .status { font-size: 13px; }
 }
 @media (max-width: 999px) {
-	.header .h1 { top: 5px; left: 5px; right: 5px; text-align: center; }
-	.header .button { width: 33px; height: 33px; padding: 0; overflow: hidden; text-indent: -1000px; left: auto; right: 20px; z-index: 20; }
+	.header .h1 { left: 74px; }
+	.header .button { width: 33px; height: 33px; padding: 0; overflow: hidden; text-indent: -1000px; z-index: 30; }
 	.header .button:before { text-indent: 0; background: none; }
-	.header .status { top: 40px; left: 0; text-align: center; }
-	.header .status li { padding: 0; margin: 0 15px; float: none; display: inline-block; }
-	.header .status li:before, .header .status li:after { display: none; }
+	.header .status { padding-top: 20px; position: absolute; top: 0; right: 0; left: 0; bottom: 0; z-index: 2; visibility: hidden; opacity: 0; text-align: center; background: #fff; transition: opacity .4s ease; }
+	.header.visible .status { visibility: visible; }
+	.header.open .status { opacity: 1; }
+	.header .status li { margin: 0 5px; float: none; display: inline-block; }
 	.content, .aside { padding: 0; display: block; }
 	.aside { padding-top: 15px; }
 	.aside-fixed { width: auto; padding: 0; position: relative; top: auto; right: auto; bottom: auto; }
 	.form-line.form-submit { text-align: center; }
 	.filter .table-filter input[type="text"], .filter .table-filter .jq-selectbox { min-width: 50px; }
-	.filter .inside .table-filter, .filter .inside .table-filter .tr, .filter .inside .table-filter .td { display: block; }
-	.filter .inside .table-filter label.range { font-size: 12px; }
-	.filter .inside .table-filter label.checkbox { font-size: 12px; }
-	.filter .inside .table-filter .td { width: auto; }
-	.filter .inside .table-filter .tr:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
-	.filter .inside .table-filter .td-half { width: 50%; float: left; }
-	.filter .inside .table-filter .td-center { text-align: center; }
-	.filter .inside .table-filter .td-center input[type="reset"] { margin: 20px auto 0; display: block; }
+	.filter .inside .table-filter-ranges { text-align: center; }
+	.filter .inside .table-filter-ranges, .filter .inside .table-filter-ranges .tr, .filter .inside .table-filter-ranges .td { display: block; }
+	.filter .inside .table-filter-ranges .tr:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
+	.filter .inside .table-filter-ranges .td { width: auto; display: inline-block; }
+	.filter .inside .table-filter-ranges label.range { margin-right: 0; font-size: 12px; }
+	.filter .inside .table-filter-ranges .td-half { width: 50%; float: left; text-align: left; }
+	.filter .inside .table-filter-ranges .td-half input[type="text"], .filter .inside .table-filter-ranges .td-half .jq-selectbox { max-width: 350px; display: block; margin: 0 auto; }
+	.filter .inside .table-filter label.checkbox { margin-right: 6px; font-size: 12px; }
+}
+@media (max-width: 767px) {
+	.block-owners .filter-space { min-width: 596px; }
+	.notice { width: 340px; }
+	.footer .support .toggle { width: 0; padding: 0; overflow: hidden; text-indent: -1000px; }
+	.table-filter { table-layout: fixed; }
+	.table-filter .td { padding: 10px 5px; }
+	.filter .table-filter:first-of-type .td:last-of-type { padding-right: 50px; }
+}
+@media (max-width: 720px) {
+	.filter .inside .table-filter label.range, .filter .inside .table-filter label.checkbox { font-size: 11px; }
+	.filter .table-filter input[type="text"].small { width: 32px; padding: 3px 4px; font-size: 11px; }
+	.filter .inside .table-filter .td { vertical-align: top; }
+	.filter .inside .table-filter .td-right { text-align: right; }
+	.filter .inside .table-filter .td-right .checkbox { display: block; float: right; }
+	.filter .inside .table-filter .td-right input[type="reset"] { margin-top: 15px; clear: both; display: block; float: right; }
+	.filter .inside .table-filter-ranges .td-half input[type="text"], .filter .inside .table-filter-ranges .td-half .jq-selectbox { max-width: 280px; }
 }
 /* ==========================================================================
    _Стили для печати
