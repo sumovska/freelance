@@ -41,7 +41,7 @@ $(document).ready(function () {
 		});
 		/* Появление/исчезновение кнопки 'Вверх' */
 		$(window).on('scroll touchmove', function () {
-			if ($(window).scrollTop() > 49) {
+			if ($(window).scrollTop() > 29) {
 				body.addClass('nav-top');
 			} else {
 				body.removeClass('nav-top');
@@ -234,7 +234,9 @@ $(document).ready(function () {
 				return false;
 			});
 			$('.sub', this).click(function () {
-				$(this).closest('li').toggleClass('open').siblings('li.open').removeClass('open');
+				$(this).siblings('ul').slideToggle(function () {
+					$(this).closest('li').toggleClass('open');
+				});
 				return false;
 			});
 		});

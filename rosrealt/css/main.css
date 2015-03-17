@@ -602,19 +602,19 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 /* Скролл вверх */
 .nav .top {
 	width: 44px;
-	height: 37px;
+	height: 38px;
 	display: block;
 	opacity: 0;
 	position: absolute;
 	left: 0;
-	bottom: 50px;
+	bottom: 0;
 	background: #000;
 	transition: opacity .2s;
 }
 .nav-top .nav .top {
 	opacity: 1;
 }
-@media (max-height: 785px) {
+@media (max-height: 700px) {
 	.nav-top .nav .top { opacity: 0; }
 }
 .nav .top:before {
@@ -664,10 +664,10 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	height: 38px;
 	position: absolute;
 	top: 0;
-	right: 44px;
+	right: 0;
 }
-.footer .support { width: auto; right: 220px; }
-.footer .messages { right: 88px; }
+.footer .support { width: auto; right: 176px; }
+.footer .messages { right: 44px; }
 /* Кнопки */
 .footer .support .toggle, .footer .messages .toggle, .footer .help .toggle {
 	width: 44px;
@@ -728,9 +728,12 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	border: 1px solid #d6d6d6;
 	display: none;
 	position: absolute;
-	right: -24px;
+	right: 20px;
 	bottom: 58px;
 	background: #fff;
+}
+.footer .messages .tooltip {
+	right: -14px;
 }
 .footer .tooltip:after, .footer .tooltip:before {
 	width: 0;
@@ -742,18 +745,20 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	left: 100%;
 	pointer-events: none;
 }
-.footer .tooltip:after {
-	border-color: rgba(136, 183, 213, 0);
-	border-top-color: #fff;
-	border-width: 6px;
-	margin-left: -50px;
-}
 .footer .tooltip:before {
 	border-color: rgba(194, 225, 245, 0);
 	border-top-color: #d6d6d6;
 	border-width: 7px;
-	margin-left: -51px;
+	margin-left: -21px;
 }
+.footer .tooltip:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #fff;
+	border-width: 6px;
+	margin-left: -20px;
+}
+.footer .messages .tooltip:before { margin-left: -41px; }
+.footer .messages .tooltip:after { margin-left: -40px; }
 .footer .help.active .tooltip,
 .footer .messages.active .tooltip {
 	display: block;
@@ -765,9 +770,6 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 }
 .footer .help .list a {
 	color: #5c5c5c;
-}
-.footer .help .list a:hover {
-	text-decoration: none;
 }
 .footer .help .list > li {
 	padding: 0 0 5px;
@@ -781,7 +783,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .footer .help .list > li > ul > li {
 	padding: 0 0 4px;
 }
-.footer .help .list > li.open > a { color: #ff7c20; }
+.footer .help .list a:hover, .footer .help .list > li.open > a { color: #ff7c20; }
 .footer .help .list > li.open > ul { display: block; }
 .footer .help .list > li:last-of-type > ul { margin-bottom: 0; }
 .footer .messages .tooltip {
@@ -1536,6 +1538,9 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .map.small {
 	height: 370px !important;
 }
+@media (max-height: 768px) {
+	.map { height: 540px; }
+}
 a[href^="http://maps.google.com/maps"] { display: none !important }
 .gmnoprint a, .gmnoprint span, .gm-style-cc { display: none; }
 .gmnoprint div { background: none !important; }
@@ -1688,9 +1693,6 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	.filter .inside .table-filter .td-half { width: 50%; float: left; }
 	.filter .inside .table-filter .td-center { text-align: center; }
 	.filter .inside .table-filter .td-center input[type="reset"] { margin: 20px auto 0; display: block; }
-}
-@media (max-height: 768px) {
-	.map { height: 540px; }
 }
 /* ==========================================================================
    _Стили для печати
