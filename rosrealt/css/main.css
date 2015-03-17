@@ -214,13 +214,13 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
 .jq-file.file-photo { width: 100%; max-width: 350px; border: 1px solid #d6d6d6; margin: 0 auto; display: block !important; background: #e3e3e3; transition: border-color .1s; }
 .jq-file.file-photo:hover { border-color: #a09f9e; }
-.jq-file.file-photo .jq-file__name { height: 193px; padding: 100px 9px 9px 9px; border-color: transparent; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: none; -webkit-transition: -webkit-transform .05s; -webkit-transform: scale(1); transition: transform .05s; transform: scale(1); }
+.jq-file.file-photo .jq-file__name { height: 191px; padding: 100px 9px 9px 9px; border-color: transparent; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: none; -webkit-transition: -webkit-transform .05s; -webkit-transform: scale(1); transition: transform .05s; transform: scale(1); }
 .jq-file.file-photo.changed { overflow: hidden; }
 .jq-file.file-photo.changed:hover { border-color: #d6d6d6; }
-.jq-file.file-photo.changed .jq-file__name { display: none; text-transform: none; }
-.jq-file.file-photo.changed .jq-file__img { width: 100%; display: block; }
+.jq-file.file-photo.changed .jq-file__name { height: auto; padding: 6px 9px; display: block; position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; font-size: 12px; line-height: 14px; color: #fff; white-space: nowrap; text-transform: none; text-align: left; background: rgba(0, 0, 0, .75); }
+.jq-file.file-photo.changed .jq-file__img { max-width: 100%; display: block; margin: 0 auto; }
 .jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; }
-.jq-file.file-photo:hover .jq-file__name, .jq-file.file-photo.focused .jq-file__name { border-color: transparent; background: none; -webkit-transform: scale(.97); transform: scale(.97); }
+.jq-file.file-photo:not(.changed):hover .jq-file__name, .jq-file:not(.changed).file-photo.focused .jq-file__name { border-color: transparent; background: none; -webkit-transform: scale(.97); transform: scale(.97); }
 .jq-file.file-photo .jq-file__browse { display: none; }
 .form-line { width: 100%; margin-bottom: 15px; clear: left; }
 .form-submit { padding-top: 15px; margin-bottom: 0; }
@@ -728,7 +728,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	border: 1px solid #d6d6d6;
 	display: none;
 	position: absolute;
-	right: 20px;
+	right: 15px;
 	bottom: 58px;
 	background: #fff;
 }
@@ -1233,6 +1233,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .task-list .task.disabled .icon-edit:hover:before { opacity: 0; }
 .task-list .task.disabled .icon-edit:hover:after { opacity: 1; }
 .task-list .task.disabled:hover .icon-edit { opacity: 1; }
+.task-list .task.disabled .icon-edit:hover { background-color: #fff; }
 .task-list .task.animating .icon-edit { display: none; }
 .task-list .task.open .icon-edit { right: 1px; top: 88px; }
 .task-list .task.open:not(.disabled) .icon-edit { z-index: 1; }
@@ -1245,10 +1246,11 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 /* Иконка разворачивания */
 .task-list .task .toggle { width: 36px; height: 37px; border: 1px solid #d6d6d6; border-left-color: transparent; display: block; cursor: pointer; position: absolute; top: 0; right: 0; z-index: 5; background: #f6f5f3; transition: background-color .2s; }
 .task-list .task:not(.disabled) .toggle { background: #fff; }
-.task-list .task .toggle:before { width: 18px; height: 3px; margin: -1px 0 0 -9px; content: ' '; display: block; overflow: hidden; position: absolute; top: 50%; left: 50%; background: #838383; }
-.task-list .task .toggle:after { width: 18px; height: 9px; border-top: 3px solid #838383; border-bottom: 3px solid #838383; margin: -7px 0 0 -9px; content: ' '; display: block; overflow: hidden; position: absolute; top: 50%; left: 50%; }
-.task-list .task .toggle:hover:before, .task-list .task .toggle:focus:before { background-color: #ff7c20; }
-.task-list .task .toggle:hover:after, .task-list .task .toggle:focus:after { border-color: #ff7c20; }
+.task-list .task .toggle:before { width: 18px; height: 3px; margin: -2px 0 0 -9px; content: ' '; display: block; overflow: hidden; position: absolute; top: 50%; left: 50%; background: #838383; }
+.task-list .task .toggle:after { width: 18px; height: 9px; border-top: 3px solid #838383; border-bottom: 3px solid #838383; margin: -8px 0 0 -9px; content: ' '; display: block; overflow: hidden; position: absolute; top: 50%; left: 50%; }
+.task-list .task .toggle:hover { background: #fff; }
+.task-list .task .toggle:hover:before { background-color: #ff7c20; }
+.task-list .task .toggle:hover:after { border-color: #ff7c20; }
 .task-list .task .toggle:before, .task-list .toggle:after { -webkit-transition: -webkit-transform .3s ease, border-color .1s, background-color .1s; -webkit-transform: rotate(0deg); -moz-transition: -moz-transform .3s ease, border-color .1s, background-color .1s; -moz-transform: rotate(0deg); transition: transform .3s ease, border-color .1s, background-color .1s; transform: rotate(0deg); }
 .task-list .task .toggle.active:before, .task-list .task .toggle.active:after { -webkit-transform: rotate(90deg) !important; -moz-transform: rotate(90deg) !important; -ms-transform: rotate(90deg) !important; transform: rotate(90deg) !important; }
 /* ==========================================================================
