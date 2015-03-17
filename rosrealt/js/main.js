@@ -2,11 +2,9 @@
 /*global window, console, document, $, jQuery, PIE */
 
 /* При входе с устройства с разрешением меньше 640 пкс, сайт отображается в уменьшенном в 2 раза варианте */
-(function (doc) {
-	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	var viewport = document.getElementById('viewport');
-	if (w < 640) {
-		viewport.setAttribute("content", "width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=2.0");
+(function () {
+	if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 640) {
+		document.getElementById('viewport').setAttribute("content", "width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=2.0");
 	}
 }(document));
 
@@ -82,8 +80,8 @@ $(document).ready(function () {
 		_buttons.each(function () {
 			var _self = $(this);
 			$('.toggle', this).click(function () {
-				$(this).parent().siblings('.active').removeClass('active').find('.tooltip').hide();
-				$('.tooltip', _self).fadeToggle(300, function () {
+				$(this).parent().siblings('.active').removeClass('active').find('.dropdown').hide();
+				$('.dropdown', _self).fadeToggle(300, function () {
 					_self.toggleClass('active');
 				});
 				return false;
@@ -97,10 +95,10 @@ $(document).ready(function () {
 		});
 		$(document).on('click touchstart', function (event) {
 			var target = $(event.target);
-			if ($('.tooltip:visible').length > 0) {
-				if ((target.closest('.tooltip').length === 0) && (target.closest('.footer').length === 0)) {
+			if ($('.dropdown:visible').length > 0) {
+				if ((target.closest('.dropdown').length === 0) && (target.closest('.footer').length === 0)) {
 					_buttons.removeClass('active');
-					$('.tooltip:visible', _buttons).fadeOut(300);
+					$('.dropdown:visible', _buttons).fadeOut(300);
 				}
 			}
 		});

@@ -244,7 +244,7 @@ textarea.large { height: 96px; }
 .jq-selectbox.large .jq-selectbox__select-text { padding-top: 9px; }
 input[type="email"].error, input[type="number"].error, input[type="password"].error, input[type="search"].error, input[type="tel"].error, input[type="text"].error, input[type="url"].error, textarea.error { border-color: #fc6418 !important; }
 /* ==================================================================================================
-   Стили для плагина DateTimePicker 2.4.1 @homepage http://xdsoft.net/jqplugins/datetimepicker/
+   Стили для плагина DateTimePicker v2.4.1 @homepage http://xdsoft.net/jqplugins/datetimepicker/
    ================================================================================================== */
 .xdsoft_datetimepicker { box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506); background: #fff; border: 1px solid #a09f9e; color: #333; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 8px; padding-left: 0; padding-top: 2px; position: absolute; z-index: 9999; -moz-box-sizing: border-box; box-sizing: border-box; display: none; }
 .xdsoft_datetimepicker iframe { position: absolute; left: 0; top: 0; width: 75px; height: 210px; background: transparent; border: none; }
@@ -329,7 +329,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .xdsoft_datetimepicker .blue-gradient-button:hover, .xdsoft_datetimepicker .blue-gradient-button:focus, .xdsoft_datetimepicker .blue-gradient-button:hover span, .xdsoft_datetimepicker .blue-gradient-button:focus span { color: #454551; background: -moz-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f8fa), color-stop(73%, #fff)); background: -webkit-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: -o-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: -ms-linear-gradient(top, #f4f8fa 0%, #fff 73%); background: linear-gradient(to bottom, #f4f8fa 0%, #fff 73%); }
 .xdsoft_datetimepicker .xdsoft_today_button { display: none !important; }
 /* ==========================================================================
-   Стили для плагина fancyBox 2.1.5 @homepage http://fancyapps.com/fancybox/
+   Стили для плагина fancyBox v2.1.5 @homepage http://fancyapps.com/fancybox/
    ========================================================================== */
 .fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox-image, .fancybox-wrap iframe, .fancybox-wrap object, .fancybox-nav, .fancybox-nav span, .fancybox-tmp { padding: 0; margin: 0; border: 0; outline: none; vertical-align: top; }
 .fancybox-wrap { position: absolute; top: 0; left: 0; z-index: 8020; }
@@ -379,7 +379,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 .fancybox-skin .fancybox-close:hover:before, .fancybox-skin .fancybox-close:hover:after { }
 /* ==========================================================================
-   Стили для плагина perfect-scrollbar 0.6.1 @homepage http://noraesae.github.com/perfect-scrollbar/
+   Стили для плагина perfect-scrollbar v0.6.1 @homepage http://noraesae.github.com/perfect-scrollbar/
    ========================================================================== */
 .ps-container { overflow: hidden !important; }
 .ps-container.ps-active-x > .ps-scrollbar-x-rail, .ps-container.ps-active-y > .ps-scrollbar-y-rail { display: block; }
@@ -402,6 +402,10 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .ps-container:hover > .ps-scrollbar-x-rail:hover > .ps-scrollbar-x { background-color: #999; }
 .ps-container:hover > .ps-scrollbar-y-rail:hover { background-color: #eee; opacity: .9; }
 .ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y { background-color: #999; }
+/* ==========================================================================
+   Стили для плагина Tooltipster v3.3.0 @homepage http://iamceege.github.io/tooltipster/
+   ========================================================================== */
+
 /* ==========================================================================
    _Шапка
    ========================================================================== */
@@ -807,9 +811,9 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .footer .support .toggle:after { width: 44px; height: 38px; left: 100%; top: 0; background: rgba(0, 0, 0, .8); }
 .footer .messages .toggle:before { background-position: -240px 0; }
 .footer .help .toggle:before { background-position: -270px 0; }
-.footer .messages .tooltip, .footer .help .tooltip {
+.footer .messages .dropdown, .footer .help .dropdown {
 	min-width: 140px;
-	padding: 14px 19px;
+	padding: 12px 19px;
 	border: 1px solid #d6d6d6;
 	display: none;
 	position: absolute;
@@ -817,10 +821,10 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	bottom: 58px;
 	background: #fff;
 }
-.footer .messages .tooltip {
+.footer .messages .dropdown {
 	right: -14px;
 }
-.footer .tooltip:after, .footer .tooltip:before {
+.footer .dropdown:after, .footer .dropdown:before {
 	width: 0;
 	height: 0;
 	border: solid transparent;
@@ -830,22 +834,22 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	left: 100%;
 	pointer-events: none;
 }
-.footer .tooltip:before {
+.footer .dropdown:before {
 	border-color: rgba(194, 225, 245, 0);
 	border-top-color: #d6d6d6;
 	border-width: 7px;
 	margin-left: -21px;
 }
-.footer .tooltip:after {
+.footer .dropdown:after {
 	border-color: rgba(136, 183, 213, 0);
 	border-top-color: #fff;
 	border-width: 6px;
 	margin-left: -20px;
 }
-.footer .messages .tooltip:before { margin-left: -41px; }
-.footer .messages .tooltip:after { margin-left: -40px; }
-.footer .help.active .tooltip,
-.footer .messages.active .tooltip {
+.footer .messages .dropdown:before { margin-left: -41px; }
+.footer .messages .dropdown:after { margin-left: -40px; }
+.footer .help.active .dropdown,
+.footer .messages.active .dropdown {
 	display: block;
 }
 .footer .help .list {
@@ -861,7 +865,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 }
 .footer .help .list > li > ul {
 	padding: 0;
-	margin: 23px 0 18px;
+	margin: 8px 0;
 	list-style: none;
 	display: none;
 }
@@ -870,8 +874,8 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 }
 .footer .help .list a:hover, .footer .help .list > li.open > a { color: #ff7c20; }
 .footer .help .list > li.open > ul { display: block; }
-.footer .help .list > li:last-of-type > ul { margin-bottom: 0; }
-.footer .messages .tooltip {
+.footer .help .list > li:last-of-type, .footer .help .list > li:last-of-type > ul { padding-bottom: 0; margin-bottom: 0; }
+.footer .messages .dropdown {
 	min-width: 400px;
 	padding: 19px;
 	line-height: 16px;
