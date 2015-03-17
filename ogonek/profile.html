@@ -70,81 +70,72 @@
 			<ul>
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#">О компании</a></li>
-				<li><a href="news.html">Инфо-центр</a></li>
+				<li><a href="#">Инфо-центр</a></li>
 				<li><a href="#">Клиентам</a></li>
 				<li><a href="#">Дилерам</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
+
 		</div>
 	</nav>
 
 	<div class="hgroup">
 		<div class="wrapper">
 			<p class="breadcrumbs"><a href="index.html">Главная</a> &#8595;</p>
-			<h1 class="h1 h1-inline">Корзина заказа</h1>
+			<h1 class="h1 h1-inline">Личный кабинет</h1>
+			<ul class="tabs">
+				<li class="active"><a href="profile.html">профиль</a></li>
+				<li><a href="cabinet-history.html">мои заказы</a></li>
+				<li><a href="cabinet-favorite.html">избранное</a></li>
+			</ul>
 		</div>
 	</div>
 
 	<article class="container">
 		<div class="wrapper">
-			<form class="block-cart" action="#">
-				<table class="table-cart">
-					<tr>
-						<td class="td-pic"><p class="pic"><img src="img/temp/cart-1.jpg" alt=""></p></td>
-						<td class="td-name">
-							<p class="name">Огнетушитель ОП-6 (з)</p>
-							<span class="small">238-59865</span>
-						</td>
-						<td class="td-number">
-							<div class="number">
-								<span class="up"></span>
-								<label><input type="text" maxlength="2" value="3"></label>
-								<span class="down"></span>
-							</div>
-						</td>
-						<td class="td-price">
-							<span class="small">Цена товара</span>
-							<p class="price">2 548 руб.</p>
-						</td>
-						<td class="td-sum">	
-							<span class="small">Цена за 3 товара</span>
-							<p class="price">7 644 руб.</p>
-						</td>
-						<td class="td-delete"><a class="delete" href="#">Удалить</a></td>
-					</tr>
-					<tr>
-						<td class="td-pic"><p class="pic"><img src="img/temp/cart-2.jpg" alt=""></p></td>
-						<td class="td-name">
-							<p class="name">Огнетушитель ОП-15</p>
-							<span class="small">238-59865</span></td>
-						<td class="td-number">
-							<div class="number">
-								<span class="up"></span>
-								<label><input type="text" maxlength="2" value="1"></label>
-								<span class="down"></span>
-							</div>
-						</td>
-						<td class="td-price">
-							<span class="small">Цена товара</span>
-							<p class="price">550 руб.</p>
-						</td>
-						<td class="td-sum">
-							<span class="small">Цена за 1 товар</span>
-							<p class="price"> 550 руб.</p>
-						</td>
-						<td class="td-delete"><a class="delete" href="#">Удалить</a></td>
-					</tr>
-				</table>
-				<div class="total">
-					<div class="left">
-						<p class="h6">доставка и оплата</p>
-						<p class="text">Компаний «Огонек» имеет собственную транспортно-экспедиционную службу, что позволяет оказывать целый ряд комплексных услуг.</p>
-						<p class="more"><a href="#">Узнать подробнее</a> &#8594;</p>
-					</div>
-					<div class="right">
-						<p class="sum"><span>Общая стоимость</span> 2 548 руб.</p>
-						<p class="submit"><input type="submit" value="Оформить заказ"></p>
-					</div>
+			<div class="unit-side">
+				<p class="name">Здравствуйте, <br>Павлов Николай Владимирович</p>
+				<a class="out" href="#">выйти</a>
+			</div>
+			<form class="form-private" action="#">
+				<div class="unit">
+					<h2 class="h2">Персональные данные</h2>
+					<p class="form-line">
+						<label class="for">Ваши ФИО</label>
+						<input type="text" placeholder="Павлов Николай Владимирович" style="background-image:url('img/temp/icon-1.png')">
+					</p>
+					<p class="form-line">
+						<label class="for">Email</label>
+						<input type="text" placeholder="nick_pavlov@yandex.ru" style="background-image:url('img/temp/icon-2.png')">
+					</p>
+					<p class="form-line">
+						<label class="for">Номер телефона</label>
+						<input type="text" placeholder="+7 (909) 469-49-99" style="background-image:url('img/temp/icon-3.png')">
+					</p>
+					<p class="checkbox-line">
+						<label class="checkbox"><input type="checkbox"> Подписаться на SMS-уведомления</label>
+					</p>
+					<p class="submit">
+						<input type="submit" value="Сохранить изменения">
+					</p>
+				</div>
+				<div class="unit">
+					<h2 class="h2">Изменение пароля</h2>
+					<p class="form-line">
+						<label class="for">Текущий пароль</label>
+						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-4.png')">
+					</p>
+					<p class="form-line">
+						<label class="for">Новый пароль</label>
+						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-4.png')">
+					</p>
+					<p class="form-line">
+						<label class="for">Подтверждение нового пароля</label>
+						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-5.png')">
+					</p>
+					<p class="submit">
+						<input type="submit" value="Изменить пароль">
+					</p>
 				</div>
 			</form>
 		</div>

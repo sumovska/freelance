@@ -66,14 +66,14 @@
 
 	<nav class="nav">
 		<div class="wrapper">
-			<a class="price" href="#">Прайс-лист</a>
+			<a class="price" href="price.html">Прайс-лист</a>
 			<ul>
-				<li><a href="#">Каталог</a></li>
+				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#">О компании</a></li>
 				<li><a href="#">Инфо-центр</a></li>
 				<li><a href="#">Клиентам</a></li>
 				<li><a href="#">Дилерам</a></li>
-				<li><a href="#">Контакты</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 
 		</div>
@@ -81,11 +81,11 @@
 
 	<div class="hgroup">
 		<div class="wrapper">
-			<p class="breadcrumbs"><a href="#">Главная</a> &#8595;</p>
+			<p class="breadcrumbs"><a href="index.html">Главная</a> &#8595;</p>
 			<h1 class="h1 h1-inline">Личный кабинет</h1>
 			<ul class="tabs">
-				<li class="active"><a href="cabinet-profile.html">профиль</a></li>
-				<li><a href="cabinet-orders.html">мои заказы</a></li>
+				<li><a href="profile.html">профиль</a></li>
+				<li class="active"><a href="cabinet-history.html">мои заказы</a></li>
 				<li><a href="cabinet-favorite.html">избранное</a></li>
 			</ul>
 		</div>
@@ -97,47 +97,67 @@
 				<p class="name">Здравствуйте, <br>Павлов Николай Владимирович</p>
 				<a class="out" href="#">выйти</a>
 			</div>
-			<form class="form-private" action="#">
-				<div class="unit">
-					<h2 class="h2">Персональные данные</h2>
-					<p class="form-line">
-						<label class="for">Ваши ФИО</label>
-						<input type="text" placeholder="Павлов Николай Владимирович" style="background-image:url('img/temp/icon-1.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Email</label>
-						<input type="text" placeholder="nick_pavlov@yandex.ru" style="background-image:url('img/temp/icon-2.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Номер телефона</label>
-						<input type="text" placeholder="+7 (909) 469-49-99" style="background-image:url('img/temp/icon-3.png')">
-					</p>
-					<p class="checkbox-line">
-						<label class="checkbox"><input type="checkbox"> Подписаться на SMS-уведомления</label>
-					</p>
-					<p class="submit">
-						<input type="submit" value="Сохранить изменения">
-					</p>
+			<form class="form-private">
+				<div class="orders">
+					<div class="item">
+						<div class="heading">
+							<p class="number">Заказ №654378</p>
+							<p class="date">16 января 2015</p>
+							<p class="status status-ready">выполнен</p>
+						</div>
+						<table class="table-order">
+							<tr>
+								<td class="td-name"><p>Огнетушитель ОП-8 (з)</p></td>
+								<td class="td-amount"><p>750 руб. <strong>х2</strong></p></td>
+								<td class="td-price"><p>1 500 руб.</p></td>
+							</tr>
+							<tr>
+								<td class="td-name"><p>Пожарные рукава для крана</p></td>
+								<td class="td-amount"><p>4 580 руб. <strong>х1</strong></p></td>
+								<td class="td-price"><p>4 580 руб.</p></td>
+							</tr>
+							<tr>
+								<td class="td-name"><p>Гидрант Н-1,25</p></td>
+								<td class="td-amount"><p>7 990 руб. <strong>х3</strong></p></td>
+								<td class="td-price"><p>23 970 руб.</p></td>
+							</tr>
+						</table>
+					</div>
+					<div class="item">
+						<div class="heading">
+							<p class="number">Заказ №654377</p>
+							<p class="date">02 января 2015</p>
+							<p class="status status-process">обрабатывается</p>
+						</div>
+						<table class="table-order">
+							<tr>
+								<td class="td-name"><p>Огнетушитель ОП-8 (з)</p></td>
+								<td class="td-amount"><p>750 руб. <strong>х2</strong></p></td>
+								<td class="td-price"><p>1 500 руб.</p></td>
+							</tr>
+							<tr>
+								<td class="td-name"><p>Пожарные рукава для крана</p></td>
+								<td class="td-amount"><p>4 580 руб. <strong>х1</strong></p></td>
+								<td class="td-price"><p>4 580 руб.</p></td>
+							</tr>
+						</table>
+					</div>
+					<div class="item">
+						<div class="heading">
+							<p class="number">Заказ №654378</p>
+							<p class="date">02 января 2015</p>
+							<p class="status status-cancel">отменен</p>
+						</div>
+						<table class="table-order">
+							<tr>
+								<td class="td-name"><p>Огнетушитель ОП-8 (з)</p></td>
+								<td class="td-amount"><p>750 руб. <strong>х2</strong></p></td>
+								<td class="td-price"><p>1 500 руб.</p></td>
+							</tr>
+						</table>
+					</div>
 				</div>
-				<div class="unit">
-					<h2 class="h2">Изменение пароля</h2>
-					<p class="form-line">
-						<label class="for">Текущий пароль</label>
-						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-4.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Новый пароль</label>
-						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-4.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Подтверждение нового пароля</label>
-						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-5.png')">
-					</p>
-					<p class="submit">
-						<input type="submit" value="Изменить пароль">
-					</p>
-				</div>
-			</form>
+			</div>
 		</div>
 		<div class="features-list">
 			<div class="wrapper">
@@ -157,25 +177,25 @@
 			<div class="col col-nav">
 				<p class="h6">Вся информация</p>
 				<ul class="list">
-					<li><a href="#">Каталог</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
 					<li><a href="#">О компании</a></li>
-					<li><a href="#">Инфо-центр</a></li>
+					<li><a href="news.html">Инфо-центр</a></li>
 					<li><a href="#">Клиентам</a></li>
 					<li><a href="#">Дилерам</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a href="#">Прайс-лист</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="price.html">Прайс-лист</a></li>
 				</ul>
 			</div>
 			<div class="col col-map">
 				<h6 class="h6">Мы вас ждем</h6>
-				<a class="pic" href="#"><img src="img/temp/map-small.jpg" alt=""></a>
-				<a class="link" href="#">Схема проезда 	&#8594;</a>
+				<img class="pic" src="img/temp/map-small.jpg" alt="">
+				<a class="link" href="contacts.html#map">Схема проезда 	&#8594;</a>
 			</div>
 			<div class="col col-contacts">
 				<h6 class="h6">Контактная информация</h6>
-				<a class="tel" href="#">+7 (495) 518-54-22</a>
-				<a class="adr" href="#">г. Москва, ул. Донецкая, 30</a>
-				<a class="mail" href="#">info@tdogonek.ru</a>
+				<a class="tel" href="tel:+7495-518-54-22">+7 (495) 518-54-22</a>
+				<span class="adr">г. Москва, ул. Донецкая, 30</span>
+				<a class="mail" href="mailto:info@tdogonek.ru">info@tdogonek.ru</a>
 			</div>
 		</div>
 	</footer>

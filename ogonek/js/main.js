@@ -129,7 +129,7 @@ $(document).ready(function () {
 	});
 
 	/* Tabs */
-	$('.tabs').each(function () {
+	$('.form-private .tabs').each(function () {
 		var _self = this;
 		$('a', this).click(function () {
 			var where = $(this).prop('href').replace(/^.*#(.*)/, "$1");

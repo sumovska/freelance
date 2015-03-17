@@ -192,7 +192,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-select-multiple.disabled li.selected, .jq-select-multiple li.selected.disabled { background: #ccc; color: #fff; }
 .jq-select-multiple li.optgroup { font-weight: bold; }
 .jq-select-multiple li.option { padding-left: 25px; }
-.selectbox-small .jq-selectbox { width: 248px; }
+.selectbox-small .jq-selectbox { width: 220px; }
 .selectbox-small .jq-selectbox__select { height: 32px; }
 .selectbox-small .jq-selectbox__select-text { height: 28px; padding-top: 5px; }
 /* === FILE === */
@@ -530,7 +530,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
    ========================================================================== */
 .header {
 	height: 260px;
-	background: url(../img/header.png) 50% 0 no-repeat;
+	background: url(../img/header.jpg) 50% 0 no-repeat;
 	background-size: cover;
 }
 .header .wrapper {
@@ -588,7 +588,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	height: 247px;
 	font-size: 12px;
 	line-height: 18px;
-	background: url(../img/footer.png) 50% 0 no-repeat;
+	background: url(../img/footer.jpg) 50% 0 no-repeat;
 	background-size: cover;
 }
 .footer .wrapper {
@@ -641,11 +641,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	width: 200px;
 	height: 100px;
 	margin-bottom: 8px;
-	display: block;
-	text-decoration: none;
-}
-.footer .col-map .pic img {
-	width: 100%;
 	display: block;
 }
 .footer .col-map .link {
@@ -767,8 +762,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .hgroup {
 	margin-top: 20px;
 	background: #f7f7f7;
-	position: relative;
-	z-index: 110;
 }
 .hgroup .wrapper {
 	padding-top: 12px;
@@ -855,6 +848,9 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	border-style: solid;
 	border-width: 7px 6.5px 0 6.5px;
 	border-color: #2c7fc9 transparent transparent transparent;
+}
+.tab-hidden {
+	display: none;
 }
 /* ==========================================================================
    _FEATURES
@@ -1275,12 +1271,13 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .news .more {
 	margin-bottom: 0;
 	color: #6e6e6e;
+	transition: color .3s ease;
 }
 .news .more a {
 	color: #6e6e6e;
 }
 .news .more:hover, .news .more:hover a {
-	color: #00529c;
+	color: #333;
 }
 .date-news {
 	width: 48px;
@@ -1625,6 +1622,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .step .selectbox-small {
 	padding-left: 22px;
 }
+.step .selectbox-small .jq-selectbox { width: 248px; }
 .step-3 .col-1 { width: 235px; }
 .step-3 .col-2 { width: 170px; }
 .step-3 .col-3 { width: 235px; }
@@ -1676,16 +1674,10 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .address .contacts .h5-up {
 	margin-bottom: 11px;
 }
-.address .contacts .link {
+.address .contacts .line {
 	margin-bottom: 3px;
 }
-.address .contacts .link:before { top: 1px; }
-.tab-hidden {
-	display: none;
-}
-.table-price {
-	width: 100%;
-}
+.address .contacts .line:before { top: 1px; }
 /* ==========================================================================
    _ORDERS
    ========================================================================== */
@@ -1953,7 +1945,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .aside-main .contacts {
 	padding: 26px 30px;
 }
-.aside-main .contacts .tel {
+.aside-main .contacts .line-tel {
 	font-size: 19px;
 	letter-spacing: .01em;
 }
@@ -1969,14 +1961,14 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	margin-bottom: 14px;
 	font-weight: 600;
 }
-.contacts .link {
+.contacts .line {
 	padding-left: 22px;
 	display: block;
 	position: relative;
 }
-.contacts .link-tel { margin-bottom: 4px; text-decoration: none; cursor: default; color: #4c4c4c; }
-.contacts .link-adr { color: #4c4c4c; text-decoration: none; }
-.contacts .link:before {
+.contacts .line-tel { margin-bottom: 4px; text-decoration: none; cursor: default; color: #4c4c4c; }
+.contacts .line-adr { color: #4c4c4c; }
+.contacts .line:before {
 	width: 20px;
 	height: 20px;
 	display: block;
@@ -1989,11 +1981,14 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	background: url(../img/sprite.png) -60px -50px no-repeat;
 	background-size: 100px auto;
 }
-.contacts .link-tel:before { background-position: -60px -50px; }
-.contacts .link-adr:before { background-position: 0 -50px; }
-.contacts .link-mail:before { background-position: -30px -50px; }
-.contacts .link-time:before { background-position: -30px -75px; }
-.contacts .download {
+.contacts .line-tel:before { background-position: -60px -50px; }
+.contacts .line-adr:before { background-position: 0 -50px; }
+.contacts .line-mail:before { background-position: -30px -50px; }
+.contacts .line-time:before { background-position: -30px -75px; }
+/* ==========================================================================
+   _DOWNLOAD
+   ========================================================================== */
+.download {
 	padding: 9px 20px 8px 55px;
 	display: inline-block;
 	font-size: 10px;
@@ -2004,11 +1999,11 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	background: #f7f7f7;
 	position: relative;
 }
-.contacts .download strong {
+.download strong {
 	color: #333;
 	display: block;
 }
-.contacts .download .icon {
+.download .icon {
 	width: 40px;
 	display: block;
 	background: #00529c;
@@ -2017,14 +2012,14 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	top: 0;
 	bottom: 0;
 }
-.contacts .download .icon:before, .contacts .download .icon:after {
+.download .icon:before, .download .icon:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 	position: absolute;
 }
-.contacts .download .icon:before {
+.download .icon:before {
 	width: 25px;
 	height: 25px;
 	margin: -12px 0 0 -12px;
@@ -2033,7 +2028,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	background: url(../img/sprite.png) -60px -20px no-repeat;
 	background-size: 100px auto;
 }
-.contacts .download .icon:after {
+.download .icon:after {
 	width: 0;
 	height: 0;
 	margin-top: -4px;
@@ -2140,9 +2135,13 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 }
 .last-news .more {
 	margin-bottom: 0;
+	transition: color .3s ease;
 }
 .last-news .more a {
 	color: #6e6e6e;
+}
+.last-news .more:hover, .last-news .more:hover a {
+	color: #333;
 }
 /* ==========================================================================
    _SIDEBAR
@@ -2420,16 +2419,16 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	float: left;
 	background: transparent;
 }
-.contact-us .contacts .link {
+.contact-us .contacts .line {
 	margin-bottom: 4px;
 }
-.contact-us .contacts .link-tel {
+.contact-us .contacts .line-tel {
 	margin-bottom: 13px;
 	padding-left: 0;
 	font-size: 26px;
 	letter-spacing: -.03em;
 }
-.contact-us .contacts .link-tel:before {
+.contact-us .contacts .line-tel:before {
 	display: none;
 }
 .form-send {
@@ -2545,6 +2544,59 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	position: absolute;
 	left: 1px;
 	top: -6px;
+}
+/* ==========================================================================
+   _PRICE-LIST
+   ========================================================================== */
+.price-list .wrapper {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.price-list .file {
+	padding-left: 20px;
+	margin-bottom: 29px;
+}
+.price-list .file .fn {
+	padding: 0 14px;
+	display: inline-block;
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+.price-list .download {
+	width: 220px;
+}
+.table-price {
+	width: 100%;
+}
+.table-price tr:nth-child(2n+1) {
+	background: #f7f7f7;
+}
+.table-price th {
+	padding: 7px 19px;
+	text-align: left;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	background: #1266b1;
+}
+.table-price td {
+	padding: 5px 19px 4px;
+}
+.table-price .td-name { width: 100%; }
+.table-price .th-amount, .table-price .td-amount { padding-right: 90px; }
+.table-price .th-sum, .table-price .td-sum { padding-right: 24px; }
+.table-price .td-amount {
+	font-weight: 700;
+	white-space: nowrap;
+}
+.table-price .td-sum {
+	font-weight: 700;
+	color: #ec2020;
+	white-space: nowrap;
+}
+.table-price p {
+	margin-bottom: 0;
 }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
