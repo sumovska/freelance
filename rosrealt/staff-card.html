@@ -98,6 +98,8 @@
 								<select class="large secure" disabled>
 									<option value="0" selected>Личный счет</option>
 									<option value="1">Корпоративный счет</option>
+									<option value="2">Дополнительный счет</option>
+									<option value="3">Левый счет</option>
 								</select>
 							</label>
 							<span class="icon icon-edit" title="Редактировать"></span>
@@ -112,7 +114,7 @@
 					<div class="task-create">
 						<div class="form-line"><input class="large" type="text" placeholder="Укажите тему задачи" value=""></div>
 						<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
-						<div class="form-line form-line-last">
+						<div class="form-line">
 							<div class="select">
 								<label>
 									<select class="large">
@@ -126,7 +128,7 @@
 							<label class="datepicker">
 								<span class="icon icon-calendar"></span>
 								<input type="text" class="large date-from" placeholder="Дата начала" value="">
-								<input type="text" class="large date-to" placeholder="Дата завершения" value="">
+								<input type="text" class="large date-to" placeholder="Дата конца" value="">
 							</label>
 							<span class="add-space"><input type="submit" value="Добавить"></span>
 						</div>
@@ -134,99 +136,99 @@
 
 					<div class="task-list">
 						<div class="task disabled">
-							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
-							<div class="actions">
-								<label class="datepicker">
-									<span class="icon icon-calendar"></span>
-									<input type="text" class="large date" placeholder="Дата завершения" value="12.01.2015" disabled>
-								</label>
-								<a href="#" class="icon icon-edit" title="Редактировать"></a>
-								<a class="toggle" href="#"></a>
+							<div class="form-line">
+								<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
+								<div class="actions">
+									<label class="datepicker">
+										<span class="icon icon-calendar"></span>
+										<input type="text" class="large date" placeholder="Дата конца" value="12.01.2015" disabled>
+									</label>
+								</div>
 							</div>
+							<a class="toggle" href="#" title="Развернуть"></a>
 							<div class="space">
 								<div class="form-line"><textarea placeholder="Подробное описание задачи" disabled></textarea></div>
-								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value="" disabled></div>
+								<div class="form-line"><input type="text" class="large" placeholder="От: Иванов Иван Иванович" value="" disabled></div>
+								<span class="icon icon-save" title="Сохранить"></span>
+								<span class="icon icon-delete" title="Удалить"></span>
 							</div>
-							<div class="buttons">
-								<a class="icon icon-delete" href="#" title="Удалить"></a>
-								<a class="icon icon-save" href="#" title="Сохранить"></a>
-							</div>
-						</div>
-						<div class="task editing">
-							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
-							<div class="actions">
-								<label class="datepicker">
-									<span class="icon icon-calendar"></span>
-									<input type="text" class="large date" placeholder="Дата завершения" value="12.01.2015" disabled>
-								</label>
-								<a href="#" class="icon icon-edit" title="Редактировать"></a>
-								<a class="toggle" href="#"></a>
-							</div>
-							<div class="space">
-								<div class="form-line"><textarea placeholder="Подробное описание задачи" disabled></textarea></div>
-								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value="" disabled></div>
-							</div>
-							<div class="buttons">
-								<a class="icon icon-delete" href="#" title="Удалить"></a>
-								<a class="icon icon-save" href="#" title="Сохранить"></a>
-							</div>
+							<span class="icon icon-edit" title="Редактировать"></span>
 						</div>
 						<div class="task disabled">
-							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
-							<div class="actions">
-								<label class="datepicker">
-									<span class="icon icon-calendar"></span>
-									<input type="text" class="large date" placeholder="Дата завершения" value="12.01.2015" disabled>
-								</label>
-								<a href="#" class="icon icon-edit" title="Редактировать"></a>
-								<a class="toggle" href="#"></a>
+							<div class="form-line">
+								<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
+								<div class="actions">
+									<label class="datepicker">
+										<span class="icon icon-calendar"></span>
+										<input type="text" class="large date" placeholder="Дата конца" value="12.01.2015" disabled>
+									</label>
+								</div>
 							</div>
+							<a class="toggle" href="#" title="Развернуть"></a>
 							<div class="space">
 								<div class="form-line"><textarea placeholder="Подробное описание задачи" disabled></textarea></div>
-								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value="" disabled></div>
+								<div class="form-line"><input type="text" class="large" placeholder="От: Иванов Иван Иванович" value="" disabled></div>
+								<span class="icon icon-save" title="Сохранить"></span>
+								<span class="icon icon-delete" title="Удалить"></span>
 							</div>
-							<div class="buttons">
-								<a class="icon icon-delete" href="#" title="Удалить"></a>
-								<a class="icon icon-save" href="#" title="Сохранить"></a>
-							</div>
+							<span class="icon icon-edit" title="Редактировать"></span>
 						</div>
 						<div class="task disabled">
-							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
-							<div class="actions">
-								<label class="datepicker">
-									<span class="icon icon-calendar"></span>
-									<input type="text" class="large date" placeholder="Дата завершения" value="12.01.2015" disabled>
-								</label>
-								<a href="#" class="icon icon-edit" title="Редактировать"></a>
-								<a class="toggle" href="#"></a>
+							<div class="form-line">
+								<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
+								<div class="actions">
+									<label class="datepicker">
+										<span class="icon icon-calendar"></span>
+										<input type="text" class="large date" placeholder="Дата конца" value="12.01.2015" disabled>
+									</label>
+								</div>
 							</div>
+							<a class="toggle" href="#" title="Развернуть"></a>
 							<div class="space">
 								<div class="form-line"><textarea placeholder="Подробное описание задачи" disabled></textarea></div>
-								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value="" disabled></div>
+								<div class="form-line"><input type="text" class="large" placeholder="От: Иванов Иван Иванович" value="" disabled></div>
+								<span class="icon icon-save" title="Сохранить"></span>
+								<span class="icon icon-delete" title="Удалить"></span>
 							</div>
-							<div class="buttons">
-								<a class="icon icon-delete" href="#" title="Удалить"></a>
-								<a class="icon icon-save" href="#" title="Сохранить"></a>
-							</div>
+							<span class="icon icon-edit" title="Редактировать"></span>
 						</div>
-						<div class="task editing open">
-							<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value=""></div>
-							<div class="actions">
-								<label class="datepicker">
-									<span class="icon icon-calendar"></span>
-									<input type="text" class="large date" placeholder="Дата завершения" value="12.01.2015">
-								</label>
-								<a href="#" class="icon icon-edit" title="Редактировать"></a>
-								<a class="toggle" href="#"></a>
+						<div class="task disabled">
+							<div class="form-line">
+								<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
+								<div class="actions">
+									<label class="datepicker">
+										<span class="icon icon-calendar"></span>
+										<input type="text" class="large date" placeholder="Дата конца" value="12.01.2015" disabled>
+									</label>
+								</div>
 							</div>
+							<a class="toggle" href="#" title="Развернуть"></a>
 							<div class="space">
-								<div class="form-line"><textarea placeholder="Подробное описание задачи"></textarea></div>
-								<div class="form-line form-line-last"><input type="text" class="large" placeholder="Поставщик: Иванов Иван Иванович" value=""></div>
+								<div class="form-line"><textarea placeholder="Подробное описание задачи" disabled></textarea></div>
+								<div class="form-line"><input type="text" class="large" placeholder="От: Иванов Иван Иванович" value="" disabled></div>
+								<span class="icon icon-save" title="Сохранить"></span>
+								<span class="icon icon-delete" title="Удалить"></span>
 							</div>
-							<div class="buttons">
-								<a class="icon icon-delete" href="#" title="Удалить"></a>
-								<a class="icon icon-save" href="#" title="Сохранить"></a>
+							<span class="icon icon-edit" title="Редактировать"></span>
+						</div>
+						<div class="task disabled">
+							<div class="form-line">
+								<div class="input"><input type="text" class="large" placeholder="Заголовок поступившей задачи" value="" disabled></div>
+								<div class="actions">
+									<label class="datepicker">
+										<span class="icon icon-calendar"></span>
+										<input type="text" class="large date" placeholder="Дата конца" value="12.01.2015" disabled>
+									</label>
+								</div>
 							</div>
+							<a class="toggle" href="#" title="Развернуть"></a>
+							<div class="space">
+								<div class="form-line"><textarea placeholder="Подробное описание задачи" disabled></textarea></div>
+								<div class="form-line"><input type="text" class="large" placeholder="От: Иванов Иван Иванович" value="" disabled></div>
+								<span class="icon icon-save" title="Сохранить"></span>
+								<span class="icon icon-delete" title="Удалить"></span>
+							</div>
+							<span class="icon icon-edit" title="Редактировать"></span>
 						</div>
 					</div>
 				</div>
@@ -246,7 +248,7 @@
 							<label class="datepicker">
 								<span class="icon icon-calendar"></span>
 								<input type="text" class="large date-from" placeholder="Дата начала" value="01.01.2015">
-								<input type="text" class="large date-to" placeholder="Дата завершения" value="31.01.2015">
+								<input type="text" class="large date-to" placeholder="Дата конца" value="31.01.2015">
 							</label>
 						</div>
 						<div class="actions">

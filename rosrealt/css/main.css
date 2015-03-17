@@ -117,8 +117,8 @@ h6, .h6 {
    Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
 /* === INPUT === */
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 30px; padding: 7px 9px; border: 1px solid #d6d6d6; border-radius: 1px; box-shadow: none; outline: none; -webkit-appearance: none; color: #676767; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: border-color .2s; }
-textarea { width: 400px; height: 95px; overflow: auto; resize: none; }
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 30px; padding: 7px 9px; border: 1px solid #d6d6d6; border-radius: 1px; box-shadow: none; outline: none; -webkit-appearance: none; color: #676767; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: border-color .1s, background-color .1s; }
+textarea { width: 400px; height: 95px; max-height: 300px; overflow: auto; resize: none; }
 input[type="email"]:not([disabled]):focus, input[type="number"]:not([disabled]):focus, input[type="password"]:not([disabled]):focus, input[type="search"]:not([disabled]):focus, input[type="tel"]:not([disabled]):focus, input[type="text"]:not([disabled]):focus, input[type="url"]:not([disabled]):focus, textarea:not([disabled]):focus { border-color: #a09f9e; }
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled] { cursor: default; background: #f6f5f3; }
 /* === BUTTON === */
@@ -163,7 +163,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox ul { padding: 0; margin: 0; }
 .jq-selectbox li { min-height: 28px; padding: 5px 9px; color: #323232; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; white-space: nowrap; }
 .jq-selectbox li.selected { background-color: #d6d6d6; }
-.jq-selectbox li:hover { background-color: #ff7c20; color: #fff; }
+.jq-selectbox li:hover { background-color: #d6d6d6; }
 .jq-selectbox li.disabled { color: #aaa; }
 .jq-selectbox li.disabled:hover { background: none; }
 .jq-selectbox li.optgroup { font-weight: bold; }
@@ -235,6 +235,7 @@ textarea.large { height: 96px; }
 .jq-selectbox.large .jq-selectbox__dropdown { top: 36px; }
 .jq-selectbox.large .jq-selectbox__select { height: 37px; }
 .jq-selectbox.large .jq-selectbox__select-text { padding-top: 9px; }
+input[type="email"].error, input[type="number"].error, input[type="password"].error, input[type="search"].error, input[type="tel"].error, input[type="text"].error, input[type="url"].error, textarea.error { border-color: #fc6418 !important; }
 /* ==================================================================================================
    Стили для плагина DateTimePicker 2.4.1 @homepage http://xdsoft.net/jqplugins/datetimepicker/
    ================================================================================================== */
@@ -606,12 +607,15 @@ textarea.large { height: 96px; }
 	opacity: 0;
 	position: absolute;
 	left: 0;
-	bottom: 58px;
+	bottom: 50px;
 	background: #000;
 	transition: opacity .2s;
 }
 .nav-top .nav .top {
 	opacity: 1;
+}
+@media (max-height: 785px) {
+	.nav-top .nav .top { opacity: 0; }
 }
 .nav .top:before {
 	width: 30px;
@@ -636,7 +640,7 @@ textarea.large { height: 96px; }
 	left: 44px;
 	right: 0;
 	z-index: 70;
-	background: rgba(255, 255, 255, .6);
+	background: rgba(255, 255, 255, .7);
 }
 .footer .links {
 	margin: 0;
@@ -836,22 +840,22 @@ a.add:hover, a.add:focus {
 	border: 1px solid #d6d6d6;
 	color: #676767;
 	letter-spacing: 0;
-	background: #f6f5f3;
+	background: #fff;
 	transition: background-color .2s;
+}
+a.add-white:hover, a.add-white:focus {
+	color: #676767;
+	background: #f6f5f3;
 }
 .add-white:before {
 	width: 34px;
 	border-right: 1px solid #d6d6d6;
 	content: ' ';
 	z-index: 1;
-	background: #fff;
+	background: #f9f9f9;
 	transition: background-color .2s;
 }
-a.add-white:hover, a.add-white:focus {
-	color: #676767;
-	background: #fff;
-}
-a.add-white:hover:before, a.add-white:focus:before { background: #f9f9f9; }
+a.add-white:hover:before, a.add-white:focus:before { background: #fff; }
 .add-white .icon {
 	width: 34px;
 	height: auto;
@@ -1066,6 +1070,7 @@ a.icon-delete:hover:before { opacity: 1; }
 .secure {
 	position: relative;
 }
+.secure-space-enabled .secure .jq-selectbox__trigger { right: 35px; }
 input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled .jq-selectbox__select {
 	background: #fff;
 }
@@ -1082,6 +1087,8 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .secure-space.col .icon { right: 11px; }
 .secure-space .icon-edit { opacity: 0; transition: opacity .1s; }
 .secure-space:hover .icon-edit { opacity: 1; }
+.secure-space:hover .icon-edit:hover:before { opacity: 0; }
+.secure-space:hover .icon-edit:hover:after { opacity: 1; }
 .secure-space-enabled .icon-edit { display: none; }
 .secure-space .icon-save { display: none; }
 .secure-space-enabled .icon-save { display: block; }
@@ -1100,11 +1107,14 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	top: 0;
 	left: 0;
 }
+.datepicker .icon-calendar:after, .datepicker .icon-calendar:hover:before { opacity: 0; }
+.datepicker .icon-calendar:hover:after { opacity: 1; }
 .task-create .datepicker .icon-calendar {
 	border: 1px solid #d6d6d6;
 	border-left-color: transparent;
 	border-right-color: transparent;
 	transition: border-color .2s;
+	cursor: pointer;
 	background: none;
 }
 .datepicker input[type="text"] {
@@ -1194,209 +1204,56 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 /* ==========================================================================
    Список задач
    ========================================================================== */
-.task-list {
-	margin-bottom: 15px;
-	position: relative;
-	background: #fff;
-}
+.task-list { margin-bottom: 15px; position: relative; background: #fff; }
 .task-list:after, .task-list .task:after, .task-list .input:after, .task-list .actions:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
-.task-list .task {
-	margin-top: -1px;
-	box-shadow: inset 0 0 0 1px #d6d6d6;
-	background: #fff;
-}
-.task-list .task.disabled {
-	background: #f6f5f3;
-}
-.task-list .input {
-	margin: 0 184px 0 0;
-	/* transition: margin-right .1s; */
-}
-.task-list .input input {
-	width: 100%;
-	border-top-color: transparent;
-	display: block;
-	position: relative;
-	background: none;
-}
-.task-list .actions {
-	width: 184px;
-	height: 37px;
-	padding: 0 35px 0 0;
-	margin-top: -37px;
-	margin-bottom: -1px;
-	position: relative;
-	float: right;
-	overflow: hidden;
-	/* transition: width .1s, padding-right .1s; */
-}
-.task-list .actions .datepicker {
-	background: none;
-}
-.task-list .task.disabled .actions {
-	background: #fff;
-}
-.task-list .actions .datepicker .icon-calendar {
-	border-right-color: transparent;
-	border-left-color: transparent;
-	position: absolute;
-	top: 0;
-	left: -1px;
-	z-index: 2;
-	background: none;
-}
-.task-list .actions .datepicker .date { z-index: 5; }
-.task-list .actions .datepicker .date-yellow { background: #ffdeaa !important; }
-.task-list .actions .datepicker .date-orange { background: #ff7979 !important; }
-.task-list .actions .icon-edit {
-	border-left-color: transparent;
-	position: absolute;
-	top: 0;
-	left: 148px;
-	background: none;
-}
-.task-list .actions .icon-edit:focus {
-	border: 1px solid #d6d6d6 !important;
-}
-.task-list .actions .icon-edit:focus:before { opacity: 0; }
-.task-list .actions .icon-edit:focus:after { opacity: 1; }
-.task-list .task.disabled:hover .input { margin: 0 219px 0 0; }
-.task-list .task.disabled:hover .actions { width: 219px; padding-right: 70px; }
-.task-list .task.disabled:hover .actions .icon-edit { display: block; }
-.task-list .task:not(.disabled) .input { margin: 0 254px 0 0; }
-.task-list .task:not(.disabled) .actions { width: 254px; padding-right: 105px; }
-.task-list .actions .toggle {
-	width: 36px;
-	height: 37px;
-	border: 1px solid #d6d6d6;
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2;
-	background: #fff;
-	transition: border-color .2s;
-}
-.task-list .actions .toggle:before {
-	width: 18px;
-	height: 3px;
-	margin: -1px 0 0 -9px;
-	content: ' ';
-	display: block;
-	overflow: hidden;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	background: #838383;
-	transition: background-color .2s;
-}
-.task-list .actions .toggle:after {
-	width: 18px;
-	height: 9px;
-	border-top: 3px solid #838383;
-	border-bottom: 3px solid #838383;
-	margin: -7px 0 0 -9px;
-	content: ' ';
-	display: block;
-	overflow: hidden;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transition: border-color .2s;
-}
-.task-list .actions .toggle:before, .task-list .actions .toggle:after {
-	-webkit-transition: -webkit-transform .2s;
-	-webkit-transform: rotate(0deg);
-	-moz-transition: -moz-transform .2s;
-	-moz-transform: rotate(0deg);
-	transition: transform .2s;
-	transform: rotate(0deg);
-}
-.task-list .task.open .actions .toggle:before, .task-list .task.open .actions .toggle:after {
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-.task-list .actions .toggle:hover:before, .task-list .actions .toggle:focus:before { background-color: #ff7c20; }
-.task-list .actions .toggle:hover:after, .task-list .actions .toggle:focus:after { border-color: #ff7c20; }
-.task-list .task:first-child { margin: 0; }
-.task-list .task:first-child .input input, .task-list .task:first-child .actions .icon-calendar, .task-list .task:first-child .actions .toggle { border-top-color: #d6d6d6; }
-.task-list .task:first-child .input input:focus { border-color: #a09f9e; }
-.task-list .space {
-	width: 100%;
-	margin: 0 0 -1px 0;
-	display: none;
-	overflow: hidden;
-	position: relative;
-	top: -1px;
-	z-index: 10;
-}
-.task-list .task.open .space { display: block; }
-.task-list .form-line { margin: 0 0 -1px 0; }
-.task-list .form-line-last:not(.disabled) {
-	padding-right: 70px;
-	margin: 0;
-}
-.task-list .task.disabled .form-line-last {
-	padding-right: 0;
-}
-.task-list .space textarea {
-	width: 100%;
-	height: 52px;
-	border-top-color: transparent;
-	border-bottom-color: transparent;
-	display: block;
-	position: relative;
-	z-index: 15;
-	background: none;
-}
-.task-list .space input[type="text"]:last-of-type {
-	border-bottom-color: transparent;
-	background: none;
-}
-.task-list .space textarea:focus, .task-list .space input[type="text"]:focus { border-color: #a09f9e !important; }
-.task-list .buttons {
-	width: 71px;
-	height: 37px;
-	margin-top: -37px;
-	display: none;
-	float: right;
-	position: relative;
-	left: -35px;
-	z-index: 10;
-	background: #fff;
-}
-.task-list .task.editing .buttons {
-	display: block;
-	position: relative;
-	top: auto;
-	right: auto;
-}
-.task-list .task.editing.open .buttons {
-	margin-top: -37px;
-	float: right;
-	position: relative;
-	top: auto;
-	right: auto;
-}
-.task-list .buttons .icon-save {
-	position: absolute;
-	top: 0;
-	right: 0;
-	background: none;
-}
-.task-list .buttons .icon-delete {
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: none;
-}
-.task-list .task.editing.open .input { margin-right: 184px; }
-.task-list .task.editing.open .actions { width: 184px; padding-right: 35px; }
-.task-list .task.editing.open .actions .icon-edit { display: none; }
-.task-list .task.editing.open .buttons { left: auto; z-index: 11; background: none; }
-.task-list .task.editing.open .buttons .icon-save, .task-list .task.editing.open .buttons .icon-delete { border-left-color: transparent; background: none; }
+/* Название задачи */
+.task-list .task { margin-bottom: -1px; position: relative; transition: background-color .1s; }
+.task-list .task:hover { background: #f6f5f3; }
+.task-list .task:not(.disabled) { background: transparent; }
+.task-list .task .form-line { margin: 0; box-shadow: inset 0 0 0 1px #d6d6d6; }
+.task-list .task .input { margin: 0 184px 0 0; }
+.task-list .task input, .task-list .task textarea { width: 100%; display: block; position: relative; z-index: 10; background: none; transition: none; }
+.task-list .task textarea { height: 52px; }
+.task-list .task input:focus, .task-list .task textarea:focus { border-color: #a09f9e !important; z-index: 11; }
+/* Невидимая область */
+.task-list .task .space { width: 100%; margin-bottom: -1px; position: relative; top: -1px; display: none; }
+.task-list .task .space .form-line { margin: -1px 0 0 0; }
+.task-list .task .space .form-line:first-child { margin: 0; }
+.task-list .task.open .space { display: block; overflow: hidden; }
+/* Область с кнопками */
+.task-list .task .actions { width: 149px; height: 35px; position: absolute; top: 1px; right: 35px; z-index: 15; background: #f6f5f3; transition: background-color .1s; }
+.task-list .task:not(.disabled) .actions { background: #fff; }
+/* Выбор даты */
+.task-list .task .actions .datepicker { margin: -1px 0; position: relative; background: none; }
+.task-list .task .actions .datepicker .icon-calendar { width: 34px; border: none; cursor: pointer; border-left-color: transparent; position: absolute; top: 0; left: 0; z-index: 2; background: none; }
+.task-list .task .actions .datepicker .date { border-top-color: transparent; border-bottom-color: transparent; z-index: 5; }
+.task-list .task.disabled .actions .datepicker .icon-calendar { cursor: default; }
+.task-list .task.disabled .actions .datepicker .icon-calendar:hover:before { opacity: 1; }
+.task-list .task.disabled .actions .datepicker .icon-calendar:hover:after { opacity: 0; }
+/* Иконка редактирования */
+.task-list .task .icon-edit { width: 35px; height: 35px; border-width: 0 0 0 1px; position: absolute; top: 1px; right: 185px; display: block; opacity: 0; z-index: 15; background: #f6f5f3; transition: none; }
+.task-list .task.disabled .icon-edit { cursor: pointer; transition: opacity .2s; z-index: 20; }
+.task-list .task.disabled .icon-edit:hover:before { opacity: 0; }
+.task-list .task.disabled .icon-edit:hover:after { opacity: 1; }
+.task-list .task.disabled:hover .icon-edit { opacity: 1; }
+.task-list .task.animating .icon-edit { display: none; }
+.task-list .task.open .icon-edit { right: 1px; top: 88px; }
+.task-list .task.open:not(.disabled) .icon-edit { z-index: 1; }
+/* Иконка сохранения */
+.task-list .task .icon-save { width: 35px; height: 35px; margin-bottom: -37px; margin-right: 1px; display: none; cursor: pointer; float: right; position: relative; top: -36px; z-index: 15; border-width: 0 0 0 1px; }
+.task-list .task:not(.disabled) .icon-save { display: block; }
+/* Иконка удаления */
+.task-list .task .icon-delete { width: 35px; height: 35px; margin-bottom: -37px; margin-right: 36px; display: none; cursor: pointer; float: right; position: relative; top: -36px; z-index: 15; border-width: 0 0 0 1px; }
+.task-list .task:not(.disabled) .icon-delete { display: block; }
+/* Иконка разворачивания */
+.task-list .task .toggle { width: 36px; height: 37px; border: 1px solid #d6d6d6; border-left-color: transparent; display: block; cursor: pointer; position: absolute; top: 0; right: 0; z-index: 5; background: #f6f5f3; transition: background-color .2s; }
+.task-list .task:not(.disabled) .toggle { background: #fff; }
+.task-list .task .toggle:before { width: 18px; height: 3px; margin: -1px 0 0 -9px; content: ' '; display: block; overflow: hidden; position: absolute; top: 50%; left: 50%; background: #838383; }
+.task-list .task .toggle:after { width: 18px; height: 9px; border-top: 3px solid #838383; border-bottom: 3px solid #838383; margin: -7px 0 0 -9px; content: ' '; display: block; overflow: hidden; position: absolute; top: 50%; left: 50%; }
+.task-list .task .toggle:hover:before, .task-list .task .toggle:focus:before { background-color: #ff7c20; }
+.task-list .task .toggle:hover:after, .task-list .task .toggle:focus:after { border-color: #ff7c20; }
+.task-list .task .toggle:before, .task-list .toggle:after { -webkit-transition: -webkit-transform .3s ease, border-color .1s, background-color .1s; -webkit-transform: rotate(0deg); -moz-transition: -moz-transform .3s ease, border-color .1s, background-color .1s; -moz-transform: rotate(0deg); transition: transform .3s ease, border-color .1s, background-color .1s; transform: rotate(0deg); }
+.task-list .task .toggle.active:before, .task-list .task .toggle.active:after { -webkit-transform: rotate(90deg) !important; -moz-transform: rotate(90deg) !important; -ms-transform: rotate(90deg) !important; transform: rotate(90deg) !important; }
 /* ==========================================================================
    _Статистика
    ========================================================================== */

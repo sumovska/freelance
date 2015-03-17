@@ -4,7 +4,7 @@
 /* On document ready */
 $(document).ready(function () {
 
-	/* Сокраещние интервала по клику для тач-девайсов */
+	/* Сокращение интервала по клику для тач-девайсов */
 	FastClick.attach(document.body);
 
 	/* Формы */
@@ -23,6 +23,7 @@ $(document).ready(function () {
 			reader.readAsDataURL($(this).prop('files')[0]);
 		}
 	});
+	$('textarea').flexible();
 
 	/* Навигация */
 	$('.nav').each(function () {
@@ -65,11 +66,18 @@ $(document).ready(function () {
 		}
 		$('.icon-edit', space).click(function () {
 			space.addClass('secure-space-enabled');
-			input.prop('disabled', false).trigger('refresh');
+			input.prop('disabled', false).trigger('refresh').focus();
+			return false;
 		});
 		$('.icon-save', space).click(function () {
-			space.removeClass('secure-space-enabled');
-			input.prop('disabled', true).trigger('refresh');
+			if (input.val() === '') {
+				input.addClass('error');
+			} else {
+				input.removeClass('error');
+				space.removeClass('secure-space-enabled');
+				input.prop('disabled', true).trigger('refresh');
+			}
+			return false;
 		});
 	});
 
@@ -94,6 +102,9 @@ $(document).ready(function () {
 					maxDate: to.val() ? to.val() : false
 				})
 			}
+		}).click(function (event) {
+			event.stopPropagation();
+			return false;
 		});
 		to.datetimepicker({
 			lang: 'ru',
@@ -107,13 +118,38 @@ $(document).ready(function () {
 					minDate: from.val() ? from.val() : false
 				})
 			}
+		}).click(function (event) {
+			event.stopPropagation();
+			return false;
 		});
 	});
 
 	/* Список задач */
 	$('.task-list').each(function () {
 		$('.task', this).each(function () {
-			var _self = $(this), date = $('.date', this);
+			function toggleSpace(status) {
+				console.log(status);
+				if (typeof status === "undefined") {
+					status = _self.is('.open');
+				}
+				_self.addClass('animating');
+				console.log(status);
+				if (status) {
+					toggle.removeClass('active');
+					$('.space', _self).slideUp(300, function () {
+						_self.removeClass('open').removeClass('animating');
+					});
+				} else {
+					toggle.addClass('active');
+					$('.space', _self).slideDown(300, function () {
+						_self.removeClass('animating');
+					});
+					_self.addClass('open');
+				}
+				return false;
+			}
+
+			var _self = $(this), date = $('.date', this), toggle = $('.toggle', this);
 			date.datetimepicker({
 				lang: 'ru',
 				format: 'd.m.Y',
@@ -121,24 +157,30 @@ $(document).ready(function () {
 				timepicker: false,
 				scrollMonth: false,
 				scrollInput: false
+			}).click(function (event) {
+				event.stopPropagation();
+				return false;
 			});
 			$('.icon-edit', this).click(function () {
-				_self.removeClass('disabled').addClass('editing');
+				_self.removeClass('disabled');
+				toggleSpace(false);
 				$(':input', _self).prop('disabled', false).trigger('refresh');
 				return false;
 			});
 			$('.icon-save', this).click(function () {
-				_self.addClass('disabled').removeClass('editing').removeClass('open');
+				_self.addClass('disabled');
+				toggleSpace();
 				$(':input', _self).prop('disabled', true).trigger('refresh');
 				return false;
 			});
 			$('.icon-delete', this).click(function () {
-				_self.remove();
+				_self.slideUp(300, function () {
+					_self.remove();
+				});
 				return false;
 			});
-			$('.toggle', this).click(function () {
-				$(this).toggleClass('active');
-				_self.toggleClass('open');
+			toggle.click(function () {
+				toggleSpace();
 				return false;
 			});
 		});
@@ -159,6 +201,9 @@ $(document).ready(function () {
 					maxDate: to.val() ? to.val() : false
 				})
 			}
+		}).click(function (event) {
+			event.stopPropagation();
+			return false;
 		});
 		to.datetimepicker({
 			lang: 'ru',
@@ -172,6 +217,9 @@ $(document).ready(function () {
 					minDate: from.val() ? from.val() : false
 				})
 			}
+		}).click(function (event) {
+			event.stopPropagation();
+			return false;
 		});
 	});
 
