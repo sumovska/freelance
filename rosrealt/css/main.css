@@ -53,8 +53,14 @@ body {
 }
 .aside-fixed {
 	width: 305px;
+	padding-bottom: 58px;
 	min-width: 305px;
+	overflow: auto;
+	overflow-x: hidden;
 	position: fixed;
+	top: 89px;
+	right: 20px;
+	bottom: 0;
 }
 /* ==========================================================================
    _Текстовые стили
@@ -1201,7 +1207,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 /* ==========================================================================
    Список задач
    ========================================================================== */
-.task-list { margin-bottom: 15px; position: relative; background: #fff; }
+.task-list { margin-bottom: 0; position: relative; background: #fff; }
 .task-list:after, .task-list .task:after, .task-list .input:after, .task-list .actions:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 /* Название задачи */
 .task-list .task { margin-bottom: -1px; position: relative; transition: background-color .1s; }
@@ -1684,7 +1690,8 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	.header .status li { padding: 0; margin: 0 15px; float: none; display: inline-block; }
 	.header .status li:before, .header .status li:after { display: none; }
 	.content, .aside { padding: 0; display: block; }
-	.aside-fixed { width: auto; position: relative; }
+	.aside { padding-top: 15px; }
+	.aside-fixed { width: auto; padding: 0; position: relative; top: auto; right: auto; bottom: auto; }
 	.form-line.form-submit { text-align: center; }
 	.filter .table-filter input[type="text"], .filter .table-filter .jq-selectbox { min-width: 50px; }
 	.filter .inside .table-filter, .filter .inside .table-filter .tr, .filter .inside .table-filter .td { display: block; }
