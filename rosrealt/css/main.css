@@ -390,8 +390,8 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y { background-color: #999; }
 .ps-container > .ps-scrollbar-x-rail { display: none; position: absolute; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; opacity: 0; -webkit-transition: background-color .2s linear, opacity .2s linear; -moz-transition: background-color .2s linear, opacity .2s linear; -o-transition: background-color .2s linear, opacity .2s linear; transition: background-color .2s linear, opacity .2s linear; bottom: 3px; height: 8px; }
 .ps-container > .ps-scrollbar-x-rail > .ps-scrollbar-x { position: absolute; background-color: #aaa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; -webkit-transition: background-color .2s linear; -moz-transition: background-color .2s linear; -o-transition: background-color .2s linear; transition: background-color .2s linear; bottom: 0; height: 8px; }
-.ps-container > .ps-scrollbar-y-rail { display: none; position: absolute; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; opacity: 0; -webkit-transition: background-color .2s linear, opacity .2s linear; -moz-transition: background-color .2s linear, opacity .2s linear; -o-transition: background-color .2s linear, opacity .2s linear; transition: background-color .2s linear, opacity .2s linear; right: 3px; width: 8px; }
-.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y { position: absolute; background-color: #aaa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; -webkit-transition: background-color .2s linear; -moz-transition: background-color .2s linear; -o-transition: background-color .2s linear; transition: background-color .2s linear; right: 0; width: 8px; }
+.ps-container > .ps-scrollbar-y-rail { display: none; position: absolute; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; opacity: 0; -webkit-transition: background-color .2s linear, opacity .2s linear; -moz-transition: background-color .2s linear, opacity .2s linear; -o-transition: background-color .2s linear, opacity .2s linear; transition: background-color .2s linear, opacity .2s linear; right: 3px; width: 8px; z-index: 300; }
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y { position: absolute; background-color: #aaa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; -webkit-transition: background-color .2s linear; -moz-transition: background-color .2s linear; -o-transition: background-color .2s linear; transition: background-color .2s linear; right: 0; width: 8px; z-index: 300; }
 .ps-container:hover.ps-in-scrolling { pointer-events: none; }
 .ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail { background-color: #eee; opacity: .9; }
 .ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x { background-color: #999; }
@@ -421,7 +421,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	width: 33px;
 	height: 33px;
 	border-radius: 1px;
-	display: block;
+	display: none;
 	position: absolute;
 	top: 20px;
 	right: 20px;
@@ -1355,6 +1355,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	max-width: 450px;
 	margin: 0 auto;
 	position: relative;
+	z-index: 10;
 }
 .stats a { color: #2f79bd; }
 .stats a:hover, .stats a:focus { text-decoration: none; }
@@ -1777,6 +1778,8 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	.header .status { font-size: 13px; }
 }
 @media (max-width: 999px) {
+	body { min-height: 658px; }
+	.header .toggle { display: block; }
 	.header .h1 { left: 74px; }
 	.header .button { width: 33px; height: 33px; padding: 0; overflow: hidden; text-indent: -1000px; z-index: 30; }
 	.header .button:before { text-indent: 0; background: none; }

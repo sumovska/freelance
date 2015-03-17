@@ -1,6 +1,15 @@
 /*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true */
 /*global window, console, document, $, jQuery, PIE */
 
+/* При входе с устройства с разрешением меньше 640 пкс, сайт отображается в уменьшенном в 2 раза варианте */
+(function (doc) {
+	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	var viewport = document.getElementById('viewport');
+	if (w < 640) {
+		viewport.setAttribute("content", "width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=2.0");
+	}
+}(document));
+
 /* On document ready */
 $(document).ready(function () {
 
@@ -25,6 +34,9 @@ $(document).ready(function () {
 	/* Кастомный скролл */
 	$('.scroll').perfectScrollbar({
 		suppressScrollY: true
+	});
+	$('.aside-fixed').perfectScrollbar({
+		suppressScrollX: true
 	});
 
 	/* Шапка */
