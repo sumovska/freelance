@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Огонек</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="css/ie.css">
+	<script src="js/vendor/html5-3.6-pie-1.0.0.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<div class="top">
+		<div class="wrapper">
+			<div class="search">
+				<span class="toggle"></span>
+				<form class="form-in" action="#" method="post">
+					<p class="title">Поиск товара</p>
+					<p class="line">
+						<input type="text" placeholder="Название товара или артикул">
+						<input type="submit" value="Искать" title="Искать">
+					</p>
+					<span class="close"></span>
+				</form>
+			</div>
+			<div class="contact">
+				<a class="tel" href="tel:+7-495-518-54-22">+7 (495) 518-54-22</a>
+				<div class="callback">
+					<a class="link" href="#">Заказать звонок</a>
+					<form class="form-in" action="#">
+						<p class="title">Введите данные</p>
+						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
+						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
+						<p class="submit"><input type="submit" value="Позвоните мне"></p>
+						<span class="close"></span>
+					</form>
+				</div>
+			</div>	
+			<a class="cart" href="cart.html">Корзина <span class="amount">0</span></a>
+		</div>
+	</div>
+
+	<header class="header">
+		<div class="wrapper">
+			<p class="logo logo-1"><img src="img/logo-1.png" alt=""></p>
+			<p class="logotype">
+				<a href="index.html"><img src="img/logo.png" alt=""></a>
+				<span class="slogan">Новые горизонты безопасности</span>
+			</p>
+			<p class="logo logo-2"><img src="img/logo-2.png" alt=""></p>
+			<ul class="features">
+				<li><span class="icon"><img src="img/icons/1.png" alt=""></span> Работаем только по предоплате</li>
+				<li><span class="icon"><img src="img/icons/2.png" alt=""></span> Работаем напрямую с производителями товара</li>
+				<li><span class="icon"><img src="img/icons/3.png" alt=""></span> качество товаров соответствует гостам рф</li>
+			</ul>
+		</div>
+	</header>
+
+	<nav class="nav">
+		<div class="wrapper">
+			<a class="price" href="#">Прайс-лист</a>
+			<ul>
+				<li><a href="#">Каталог</a></li>
+				<li><a href="#">О компании</a></li>
+				<li><a href="#">Инфо-центр</a></li>
+				<li><a href="#">Клиентам</a></li>
+				<li><a href="#">Дилерам</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ul>
+
+		</div>
+	</nav>
+
+	<div class="hgroup">
+		<div class="wrapper">
+			<p class="breadcrumbs"><a href="#">Главная</a> &#8594; <a href="#">Корзина</a> &#8595;</p>
+			<h1 class="h1 h1-inline">оформление заказа</h1>
+		</div>
+	</div>
+
+	<article class="container">
+		<div class="wrapper">
+				<div class="unit-side unit-side-goods">
+					<p class="price"><span class="amount">2 товара</span> на сумму <span class="red">2 548 руб.</span></p>
+					<p class="products">
+						<span class="line">Огнетушитель ОП-6 (3) <span class="amount">х3</span></span>
+						<span class="line">Огнетушитель ОП-15 <span class="amount">х1</span></span>
+					</p>
+					<a class="out" href="#">&#8592; Вернуться в корзину</a>
+				</div>
+				<form class="form-private" action="#">
+					<div class="unit">
+						<h2 class="h2">Укажите контактные данные</h2>
+						<div class="step step-1">
+							<p class="form-line">
+								<label class="for">Ваши ФИО</label>
+								<input type="text" placeholder="Павлов Николай Владимирович" style="background-image:url('img/temp/icon-1.png')">
+							</p>
+							<p class="form-line">
+								<label class="for">Email</label>
+								<input type="text" placeholder="nick_pavlov@yandex.ru" style="background-image:url('img/temp/icon-2.png')">
+							</p>
+							<p class="form-line">
+								<label class="for">Номер телефона</label>
+								<input type="text" placeholder="+7 (909) 469-49-99" style="background-image:url('img/temp/icon-3.png')">
+							</p>
+							<p class="checkbox-line">
+								<label class="checkbox"><input type="checkbox"> Оповещать о смене статуса заказа по SMS</label>
+							</p>
+						</div>
+						<h2 class="h2">Способ доставки</h2>
+						<div class="step">
+							<ul class="tabs">
+								<li><a href="#pickup">Самовывоз</a></li>
+								<li class="active"><a href="#delivery">Доставка по адресу</a></li>
+							</ul>
+							<div class="tab tab-delivery">
+								<p class="form-line form-line-2-col">
+									<span class="col">
+										<label class="for">Город</label>
+										<input type="text" placeholder="Краснодар">
+									</span>
+									<span class="col">
+										<label class="for">Индекс</label>
+										<input type="text" placeholder="350000">
+									</span>
+								</p>
+								<p class="form-line">
+									<label class="for">Адрес</label>
+									<input type="text" placeholder="ул. Крестьянская, 19">
+								</p>
+							</div>
+							<div class="tab tab-pickup tab-hidden">
+								<p class="form-line"><label class="radio"><input type="radio"> Склад — г. Москва, Донецкая, 30</label></p>
+								<p class="form-line"><label class="radio"><input type="radio"> Ближайший пункт выдачи</label></p>
+								<p class="selectbox-small">
+									<select>
+										<option>выберите пункт выдачи</option>
+										<option>выберите пункт выдачи</option>
+										<option>выберите пункт выдачи</option>
+									</select>
+								</p>
+								<div class="address" style="background-image:url('img/temp/map.jpg')">
+									<div class="contacts">
+										<p class="h5 h5-up">Склад тд «огонек»</p>
+										<a class="link link-tel" href="#"><strong>+7 (495) 518-54-22</strong></a>
+										<a class="link link-adr" href="#">г. Москва, ул. Донецкая, 30</a>
+										<span class="link link-time">пн-пт с 9:00 до 18:00</span>
+										<a class="link link-mail" href="#">info@tdogonek.ru</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<h2 class="h2">Способ оплаты</h2>
+						<div class="step step-3">
+							<ul class="tabs">
+								<li><a href="#cashless">Безналичный расчет</a></li>
+								<li class="active"><a href="#card">Банковская карта</a></li>
+							</ul>
+							<div class="tab tab-card">
+								<p class="form-line form-line-2-col">
+									<span class="col">
+										<label class="for">Номер карты</label>
+										<input type="text" placeholder="">
+									</span>
+									<span class="col">
+										<label class="for">Имя держателя карты</label>
+										<input type="text" placeholder="">
+									</span>
+								</p>
+								<p class="form-line form-line-3-col">
+									<span class="col col-1">
+										<label class="for">Срок действия карты</label>
+										<span class="selectbox">
+											<select>
+												<option>месяц</option>
+												<option>январь</option>
+												<option>февраль</option>
+												<option>март</option>
+												<option>апрель</option>
+												<option>май</option>
+												<option>июнь</option>
+												<option>июль</option>
+												<option>август</option>
+												<option>сентябрь</option>
+												<option>октябрь</option>
+												<option>ноябрь</option>
+												<option>декабрь</option>
+											</select>
+											<select>
+												<option>год</option>
+												<option>2015</option>
+												<option>2014</option>
+												<option>2013</option>
+											</select>
+										</span>
+									</span>
+									<span class="col col-2">
+										<label class="for">CVV-код</label>
+										<input type="text" placeholder="">
+									</span>
+									<span class="col col-3">Три последние цифры на оборотной стороне банковской карты</span>
+								</p>
+							</div>
+							<div class="tab tab-cashless tab-hidden">
+								<p class="form-line form-line-2-col">
+									<span class="col">
+										<label class="for">ИНН</label>
+										<input type="text" placeholder="">
+									</span>
+									<span class="col">
+										<label class="for">КПП</label>
+										<input type="text" placeholder="">
+									</span>
+								</p>
+								<p class="form-line">
+									<label class="for">Расчетный счет</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="form-line">
+									<label class="for">Корреспондентский счет</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="form-line">
+									<label class="for">Банк получателя</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="form-line form-line-2-col">
+									<span class="col">
+										<label class="for">БИК</label>
+										<input type="text" placeholder="">
+									</span>
+									<span class="col">
+										<label class="for">ОКПО</label>
+										<input type="text" placeholder="">
+									</span>
+								</p>
+								<p class="form-line">
+									<label class="for">ОГРН</label>
+									<input type="text" placeholder="">
+								</p>
+								<p class="form-line">
+									<label class="for">ОКВЭД</label>
+									<input type="text" placeholder="">
+								</p>
+							</div>
+							<p class="submit"><input type="submit" value="Отправить заказ"></p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="features-list">
+			<div class="wrapper">
+				<ul class="features">
+					<li><span class="icon"><img src="img/icons/1.png" alt=""></span> Работаем только по предоплате</li>
+					<li><span class="icon"><img src="img/icons/2.png" alt=""></span> Работаем напрямую с производителями товара</li>
+					<li><span class="icon"><img src="img/icons/3.png" alt=""></span> качество товаров соответствует гостам рф</li>
+				</ul>
+			</div>
+		</div>
+	</article>
+
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="logo"><img src="img/logo.png" alt=""></p>
+			<p class="copyright">© 2014. Все права защищены. <br>ООО ТПК «Огонек»</p>
+			<div class="col col-nav">
+				<p class="h6">Вся информация</p>
+				<ul class="list">
+					<li><a href="#">Каталог</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Инфо-центр</a></li>
+					<li><a href="#">Клиентам</a></li>
+					<li><a href="#">Дилерам</a></li>
+					<li><a href="#">Контакты</a></li>
+					<li><a href="#">Прайс-лист</a></li>
+				</ul>
+			</div>
+			<div class="col col-map">
+				<h6 class="h6">Мы вас ждем</h6>
+				<a class="pic" href="#"><img src="img/temp/map-small.jpg" alt=""></a>
+				<a class="link" href="#">Схема проезда 	&#8594;</a>
+			</div>
+			<div class="col col-contacts">
+				<h6 class="h6">Контактная информация</h6>
+				<a class="tel" href="#">+7 (495) 518-54-22</a>
+				<a class="adr" href="#">г. Москва, ул. Донецкая, 30</a>
+				<a class="mail" href="#">info@tdogonek.ru</a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

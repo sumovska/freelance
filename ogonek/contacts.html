@@ -82,62 +82,75 @@
 	<div class="hgroup">
 		<div class="wrapper">
 			<p class="breadcrumbs"><a href="#">Главная</a> &#8595;</p>
-			<h1 class="h1 h1-inline">Личный кабинет</h1>
-			<ul class="tabs">
-				<li class="active"><a href="cabinet-profile.html">профиль</a></li>
-				<li><a href="cabinet-orders.html">мои заказы</a></li>
-				<li><a href="cabinet-favorite.html">избранное</a></li>
-			</ul>
+			<h1 class="h1">Контактная информация</h1>
 		</div>
 	</div>
 
 	<article class="container">
 		<div class="wrapper">
-			<div class="unit-side">
-				<p class="name">Здравствуйте, <br>Павлов Николай Владимирович</p>
-				<a class="out" href="#">выйти</a>
+			<div class="contact-us">
+				<div class="contacts">
+					<a class="link link-tel" href="#">+7 (495) 518-54-22</a>
+					<p>
+						<a class="link link-adr" href="#">г. Москва, ул. Донецкая, 30</a>
+						<span class="link link-time">пн-пт с 9:00 до 18:00</span>
+						<a class="link link-mail" href="#">info@tdogonek.ru</a>
+					</p>
+					<a class="download" href="#"><span class="icon"></span><strong>скачать</strong> реквизиты компании</a>
+				</div>
+				<form class="form-send" action="#">
+					<h2 class="h2">Напишите нам письмо</h2>
+					<p class="form-line form-line-2-col">
+						<span class="col"><input type="text" placeholder="Ваше имя" style="background-image:url('img/temp/icon-1.png')"></span>
+						<span class="col"><input type="text" placeholder="Ваш Email" style="background-image:url('img/temp/icon-2.png')"></span>
+					</p>
+					<p class="form-line"><textarea placeholder="Ваше сообщение"></textarea></p>
+					<p class="submit"><input type="submit" value="Отправить письмо"></p>
+				</form>
 			</div>
-			<form class="form-private" action="#">
-				<div class="unit">
-					<h2 class="h2">Персональные данные</h2>
-					<p class="form-line">
-						<label class="for">Ваши ФИО</label>
-						<input type="text" placeholder="Павлов Николай Владимирович" style="background-image:url('img/temp/icon-1.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Email</label>
-						<input type="text" placeholder="nick_pavlov@yandex.ru" style="background-image:url('img/temp/icon-2.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Номер телефона</label>
-						<input type="text" placeholder="+7 (909) 469-49-99" style="background-image:url('img/temp/icon-3.png')">
-					</p>
-					<p class="checkbox-line">
-						<label class="checkbox"><input type="checkbox"> Подписаться на SMS-уведомления</label>
-					</p>
-					<p class="submit">
-						<input type="submit" value="Сохранить изменения">
-					</p>
+			<h2 class="h1">Схема проезда</h2>
+			<div class="block-map">
+				<div class="inform">
+					<span class="close"></span>
+					<p class="h"><img class="icon" src="img/temp/icon-6.png" alt=""> Пешком</p>
+					<p>Необходимо выходить со ст. метро Курская кольцевая или радиальная по указателю «Ул.Казакова, Театр им. Гоголя»</p>
+					<p class="h"><img class="icon" src="img/temp/icon-7.png" alt=""> На автомобиле</p>
+					<p>Если вы едете из Москвы на автомобиле, то вам нужна трасса М4-ДОН. Такая дорога в среднем занимает от 17 до 20 часов.</p>
 				</div>
-				<div class="unit">
-					<h2 class="h2">Изменение пароля</h2>
-					<p class="form-line">
-						<label class="for">Текущий пароль</label>
-						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-4.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Новый пароль</label>
-						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-4.png')">
-					</p>
-					<p class="form-line">
-						<label class="for">Подтверждение нового пароля</label>
-						<input type="password" placeholder="********" style="background-image:url('img/temp/icon-5.png')">
-					</p>
-					<p class="submit">
-						<input type="submit" value="Изменить пароль">
-					</p>
+				<div id="map" class="map">
+					<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false&language=ru-RU"></script>
+					<script type="text/javascript">
+						google.maps.event.addDomListener(window, 'load', init);
+						function init() {
+							var pos = new google.maps.LatLng(55.6448795, 37.7057433);
+							var mapOptions = {
+								zoom: 15,
+								panControl: false,
+								mapTypeControl: false,
+								scaleControl: false,
+								streetViewControl: false,
+								overviewMapControl: false,
+								scrollwheel: false,
+								navigationControl: false,
+								disableDefaultUI: true,
+								zoomControlOptions: {
+									style: google.maps.ZoomControlStyle.SMALL
+								},
+								center: pos
+							};
+							var mapElement = document.getElementById('map');
+							var map = new google.maps.Map(mapElement, mapOptions);
+							var marker_image = 'img/pin.png';
+							var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(75, 75));
+							marker = new google.maps.Marker({
+								position: pos,
+								map: map,
+								icon: pinIcon
+							});
+						}
+					</script>
 				</div>
-			</form>
+			</div>
 		</div>
 		<div class="features-list">
 			<div class="wrapper">
