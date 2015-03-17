@@ -47,7 +47,6 @@ $(document).ready(function () {
 				body.removeClass('nav-top');
 			}
 		});
-		$(window).scroll();
 	});
 
 	/* Кнопка закрытия */
@@ -267,11 +266,11 @@ $(document).ready(function () {
 			});
 		}
 
-		var _self = $(this), _map = $('.map').eq(0), _height = +_map.height();
+		var _self = $(this), _map = $('.map').eq(0), _height = +_map.height(), _events = 'scroll touchstart touchmove touchend touchcancel';
 
 		$('.check-top', this).each(function () {
 			var _check = $(this);
-			$(window).on('scroll touchmove', function () {
+			$(window).on(_events, function () {
 				_self.toggleClass('filter-space-subhidden', (_check.offset().top - 20) > _height);
 			});
 		});
@@ -280,7 +279,7 @@ $(document).ready(function () {
 		$(this).on('click', '.toggle', function () {
 			$(this).closest('.filter').find('.inside').slideToggle(300, function () {
 				$(this).closest('.filter').toggleClass('open');
-				$(window).trigger('scroll');
+				$(window).trigger(_events);
 			});
 			return false;
 		});
@@ -289,7 +288,7 @@ $(document).ready(function () {
 			$(this).toggleClass('minify');
 			$('.map').eq(0).toggleClass('small');
 			_height = +_map.height();
-			$(window).trigger('scroll');
+			$(window).trigger(_events);
 			if (typeof(mapCenter) == "function") {
 				mapCenter();
 			}
