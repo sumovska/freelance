@@ -4,9 +4,6 @@
 /* On document ready */
 $(document).ready(function () {
 
-	/* Сокращение интервала по клику для тач-девайсов */
-	FastClick.attach(document.body);
-
 	/* Формы */
 	$('input, select').styler();
 	/* input:file с подгрузкой превью */
@@ -30,7 +27,7 @@ $(document).ready(function () {
 		var body = $('body');
 		/* Кнопка 'Зафиксировать/показать меню' */
 		$('.toggle', this).click(function () {
-			if ($(window).width() < 1280) {
+			if ($(window).width() <= 1366) {
 				body.toggleClass('nav-fixed');
 			} else {
 				body.toggleClass('nav-closed');
@@ -55,7 +52,11 @@ $(document).ready(function () {
 
 	/* Кнопка закрытия */
 	$('.note .close').click(function () {
-		$(this).closest('.note').slideUp(100);
+		$(this).closest('.note').animate({opacity: 0}, function () {
+			$(this).slideUp(300, function () {
+				$(this).remove();
+			});
+		});
 	});
 
 	/* Инпут с редактированием */
@@ -128,12 +129,10 @@ $(document).ready(function () {
 	$('.task-list').each(function () {
 		$('.task', this).each(function () {
 			function toggleSpace(status) {
-				console.log(status);
 				if (typeof status === "undefined") {
 					status = _self.is('.open');
 				}
 				_self.addClass('animating');
-				console.log(status);
 				if (status) {
 					toggle.removeClass('active');
 					$('.space', _self).slideUp(300, function () {
@@ -229,9 +228,8 @@ $(document).ready(function () {
 		_buttons.each(function () {
 			var _self = $(this);
 			$('.toggle', this).click(function () {
-				console.log(_buttons.filter('.active'));
-				$(this).parent().siblings('.active').removeClass('active').find('.tooltip').hide().removeAttr('style');
-				$('.tooltip', _self).fadeToggle(100, function () {
+				$(this).parent().siblings('.active').removeClass('active').find('.tooltip').hide();
+				$('.tooltip', _self).fadeToggle(300, function () {
 					_self.toggleClass('active');
 				});
 				return false;
@@ -240,13 +238,15 @@ $(document).ready(function () {
 				$(this).closest('li').toggleClass('open').siblings('li.open').removeClass('open');
 				return false;
 			});
-			$('body').bind("click", function (event) {
-				var target = $(event.target);
-				if (target.closest('.tooltip').length === 0) {
-					_self.removeClass('active');
-					$('.tooltip', _self).hide();
+		});
+		$(document).on('click touchstart', function (event) {
+			var target = $(event.target);
+			if ($('.tooltip:visible').length > 0) {
+				if ((target.closest('.tooltip').length === 0) && (target.closest('.footer').length === 0)) {
+					_buttons.removeClass('active');
+					$('.tooltip:visible', _buttons).fadeOut(300);
 				}
-			});
+			}
 		});
 	});
 
@@ -259,10 +259,18 @@ $(document).ready(function () {
 			}
 		}
 
+		function closeNotice() {
+			$(this).closest('.entry').animate({opacity: 0}, function () {
+				$(this).slideToggle(300, function () {
+					$(this).remove();
+				});
+			});
+		}
+
 		var _self = $(this);
 		/* Разворачивание/сворачивание формы */
 		$(this).on('click', '.toggle', function () {
-			$(this).closest('.filter').find('.inside').slideToggle(200, function () {
+			$(this).closest('.filter').find('.inside').slideToggle(300, function () {
 				$(this).closest('.filter').toggleClass('open');
 				return false;
 			});
@@ -270,7 +278,6 @@ $(document).ready(function () {
 		/* Увеличение карты по клику */
 		$(this).on('click', '.magnify', function () {
 			$(this).toggleClass('minify');
-			$('.block-owners').toggleClass('block-owners-full');
 			$('.map').eq(0).toggleClass('small');
 			if (typeof(mapCenter) == "function") {
 				mapCenter();
@@ -279,12 +286,12 @@ $(document).ready(function () {
 		});
 		/* 'Больше не показывать' уведомления */
 		$(this).on('click', '.notice .link', function () {
-			$(this).closest('.entry').slideToggle(200);
+			closeNotice.call(this);
 			return false;
 		});
 		/* Закрытие уведомлений */
 		$(this).on('click', '.notice .close', function () {
-			$(this).closest('.entry').slideToggle(200);
+			closeNotice.call(this);
 			return false;
 		});
 		/* Разворачивание/сворачивание формы */
@@ -305,4 +312,16 @@ $(document).ready(function () {
 		padding: 0,
 		margin: 50
 	});
+
+	/* Баг datetimepicker */
+	if ($('.xdsoft_datetimepicker').length > 0) {
+		$(document).on('click touchstart', function (event) {
+			var target = $(event.target);
+			if ($('.xdsoft_datetimepicker:visible').length > 0) {
+				if ((target.closest('.xdsoft_datetimepicker').length === 0)) {
+					$('.xdsoft_datetimepicker').hide();
+				}
+			}
+		});
+	}
 });
