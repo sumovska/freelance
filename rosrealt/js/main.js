@@ -83,7 +83,7 @@ $(document).ready(function () {
 	});
 
 	/* Показывает/прячет форму добавления задачи */
-	$('.add-task').click(function () {
+	$('.button-task').click(function () {
 		$('.task-create').slideToggle(300, 'swing');
 		return false;
 	});
@@ -267,18 +267,29 @@ $(document).ready(function () {
 			});
 		}
 
-		var _self = $(this);
+		var _self = $(this), _map = $('.map').eq(0), _height = +_map.height();
+
+		$('.check-top', this).each(function () {
+			var _check = $(this);
+			$(window).on('scroll touchmove', function () {
+				_self.toggleClass('filter-space-subhidden', (_check.offset().top - 20) > _height);
+			});
+		});
+
 		/* Разворачивание/сворачивание формы */
 		$(this).on('click', '.toggle', function () {
 			$(this).closest('.filter').find('.inside').slideToggle(300, function () {
 				$(this).closest('.filter').toggleClass('open');
-				return false;
+				$(window).trigger('scroll');
 			});
+			return false;
 		});
 		/* Увеличение карты по клику */
 		$(this).on('click', '.magnify', function () {
 			$(this).toggleClass('minify');
 			$('.map').eq(0).toggleClass('small');
+			_height = +_map.height();
+			$(window).trigger('scroll');
 			if (typeof(mapCenter) == "function") {
 				mapCenter();
 			}
@@ -311,6 +322,14 @@ $(document).ready(function () {
 	$('.fancybox-popup').fancybox({
 		padding: 0,
 		margin: 50
+	});
+
+	/* Пейджер */
+	$('.pagination').each(function () {
+		$(this).on('click', '.next', function () {
+			$('.icon', this).toggleClass('icon-preloader');
+			return false;
+		});
 	});
 
 	/* Баг datetimepicker */

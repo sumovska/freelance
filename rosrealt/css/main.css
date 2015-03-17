@@ -212,18 +212,18 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form:after, .form-line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .checkbox, .radio { padding-left: 28px; display: inline-block; vertical-align: middle; position: relative; outline: none; -webkit-appearance: none; }
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
-.jq-file.file-photo { width: 100%; max-width: 350px; border: 1px solid #d6d6d6; margin: 0 auto; display: block !important; background: #e3e3e3; transition: border-color .2s, color .2s; }
+.jq-file.file-photo { width: 100%; max-width: 350px; border: 1px solid #d6d6d6; margin: 0 auto; display: block !important; background: #e3e3e3; transition: border-color .1s; }
 .jq-file.file-photo:hover { border-color: #a09f9e; }
-.jq-file.file-photo .jq-file__name { height: 193px; padding: 100px 9px 9px 9px; border-color: transparent; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: none; -webkit-transition: -webkit-transform .1s; -webkit-transform: scale(1); transition: transform .1s; transform: scale(1); }
+.jq-file.file-photo .jq-file__name { height: 193px; padding: 100px 9px 9px 9px; border-color: transparent; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: none; -webkit-transition: -webkit-transform .05s; -webkit-transform: scale(1); transition: transform .05s; transform: scale(1); }
 .jq-file.file-photo.changed { overflow: hidden; }
 .jq-file.file-photo.changed:hover { border-color: #d6d6d6; }
 .jq-file.file-photo.changed .jq-file__name { display: none; text-transform: none; }
 .jq-file.file-photo.changed .jq-file__img { width: 100%; display: block; }
-.jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; transition: opacity .2s; }
-.jq-file.file-photo:hover .jq-file__name, .jq-file.file-photo.focused .jq-file__name { border-color: transparent; color: #a09f9e; background: none; -webkit-transform: scale(.97); transform: scale(.97); }
-.jq-file.file-photo:hover .jq-file__name:before, .jq-file.file-photo.focused .jq-file__name:before { opacity: .5; }
+.jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; }
+.jq-file.file-photo:hover .jq-file__name, .jq-file.file-photo.focused .jq-file__name { border-color: transparent; background: none; -webkit-transform: scale(.97); transform: scale(.97); }
 .jq-file.file-photo .jq-file__browse { display: none; }
 .form-line { width: 100%; margin-bottom: 15px; clear: left; }
+.form-submit { padding-top: 15px; margin-bottom: 0; }
 .form-line .form-line:last-of-type { margin: 0; }
 .form-line input[type="email"], .form-line input[type="number"], .form-line input[type="password"], .form-line input[type="search"], .form-line input[type="tel"], .form-line input[type="text"], .form-line input[type="url"], .form-line textarea, .form-line .jq-selectbox, .form-line .jq-file { width: 100%; }
 .form-line .note { min-height: 0; margin: 15px 0 0; }
@@ -395,7 +395,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	left: 160px;
 	top: 20px;
 }
-.header .add {
+.header .button {
 	display: block;
 	position: absolute;
 	left: 20px;
@@ -796,7 +796,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 /* ==========================================================================
    _Оранжевая кнопка/ссылка
    ========================================================================== */
-.add {
+.button {
 	padding: 10px 10px 10px 43px;
 	border-radius: 1px;
 	display: inline-block;
@@ -811,12 +811,12 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	background: #ff7c20;
 	transition: background-color .1s;
 }
-a.add:hover, a.add:focus {
+a.button:hover, a.button:focus {
 	color: #fff;
 	text-decoration: none;
 	background: #fc6418;
 }
-.add:before {
+.button:before {
 	width: 33px;
 	border-radius: 1px;
 	display: block;
@@ -835,7 +835,7 @@ a.add:hover, a.add:focus {
 /* ==========================================================================
    _Белая кнопка/ссылка
    ========================================================================== */
-.add-white {
+.button-white {
 	padding: 11px 10px 11px 45px;
 	border: 1px solid #d6d6d6;
 	color: #676767;
@@ -843,11 +843,11 @@ a.add:hover, a.add:focus {
 	background: #fff;
 	transition: background-color .2s;
 }
-a.add-white:hover, a.add-white:focus {
+a.button-white:hover, a.button-white:focus {
 	color: #676767;
 	background: #f6f5f3;
 }
-.add-white:before {
+.button-white:before {
 	width: 34px;
 	border-right: 1px solid #d6d6d6;
 	content: ' ';
@@ -855,8 +855,8 @@ a.add-white:hover, a.add-white:focus {
 	background: #f9f9f9;
 	transition: background-color .2s;
 }
-a.add-white:hover:before, a.add-white:focus:before { background: #fff; }
-.add-white .icon {
+a.button-white:hover:before, a.button-white:focus:before { background: #fff; }
+.button-white .icon {
 	width: 34px;
 	height: auto;
 	border: none;
@@ -989,6 +989,9 @@ a.icon-delete:hover:before { opacity: 1; }
 /* Тег */
 .icon-tag:before { background-position: -150px -150px; }
 .icon-tag:after { background-position: -150px -180px; }
+/* Прелоадер */
+.icon-preloader:before { background: url('../img/preloader.gif') no-repeat 50% 50%; background-size: 24px 24px; }
+.icon-preloader:after { display: none; }
 /* ==========================================================================
    _Таблица (дефолтная)
    ========================================================================== */
@@ -997,10 +1000,10 @@ a.icon-delete:hover:before { opacity: 1; }
 	display: table;
 	border-left: 1px solid #d6d6d6;
 	border-right: 1px solid #d6d6d6;
+	margin-bottom: 10px;
 	border-collapse: collapse;
 	line-height: 14px;
 	color: #676767;
-	background: #fff;
 }
 .table .tr {
 	display: table-row;
@@ -1125,8 +1128,8 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .datepicker input.date-to {
 	border-left-color: transparent;
 }
-.add-task {
-	padding: 11px 25px 11px 55px;
+.button-task {
+	padding: 11px 17px 11px 55px;
 }
 /* ==========================================================================
    Форма новой задачи
@@ -1181,7 +1184,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	background: none;
 	transition: border-color .2s;
 }
-.task-create .add-space {
+.task-create .button-space {
 	width: 93px;
 	border: 1px solid #d6d6d6;
 	display: block;
@@ -1190,7 +1193,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	right: 0;
 	z-index: 5;
 }
-.task-create .add-space input {
+.task-create .button-space input {
 	height: 35px;
 	padding: 11px 10px;
 }
@@ -1562,15 +1565,15 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	position: relative;
 	top: 20px;
 	left: 20px;
-	display: inline-block;
+	display: none;
+	float: left;
 	cursor: default;
-	opacity: 0;
 	background: rgba(252, 100, 24, .75);
-	transition: opacity .1s;
 }
 .block-owners .filter-space .check-top.visible {
-	opacity: 1;
+	display: inline-block;
 }
+.block-owners .filter-space-subhidden .check-top { visibility: hidden; }
 .block-owners .filter-space .check-top:before {
 	width: 29px;
 	border: 2px solid #fc6418;
@@ -1591,6 +1594,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	opacity: .5;
 	transition: opacity .2s;
 }
+.block-owners .filter-space-subhidden .magnify { visibility: hidden; }
 .block-owners .filter-space .magnify:hover {
 	opacity: .9;
 }
@@ -1633,7 +1637,7 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 .pagination {
 	padding: 20px 0;
 }
-.pagination .add {
+.pagination .button {
 	margin-right: 16px;
 }
 .block-owners .icon-phone .number {
@@ -1663,10 +1667,13 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	.block-owners .filter-space { left: 44px; }
 	.block-owners { margin-left: -20px; }
 }
-@media (max-width: 980px) {
+@media (max-width: 1099px) {
+	.header .status { font-size: 13px; }
+}
+@media (max-width: 999px) {
 	.header .h1 { top: 5px; left: 5px; right: 5px; text-align: center; }
-	.header .add { width: 33px; height: 33px; padding: 0; overflow: hidden; text-indent: -1000px; left: auto; right: 20px; z-index: 20; }
-	.header .add:before { text-indent: 0; background: none; }
+	.header .button { width: 33px; height: 33px; padding: 0; overflow: hidden; text-indent: -1000px; left: auto; right: 20px; z-index: 20; }
+	.header .button:before { text-indent: 0; background: none; }
 	.header .status { top: 40px; left: 0; text-align: center; }
 	.header .status li { padding: 0; margin: 0 15px; float: none; display: inline-block; }
 	.header .status li:before, .header .status li:after { display: none; }
