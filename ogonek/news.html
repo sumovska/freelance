@@ -37,8 +37,8 @@
 					<a class="link" href="#">Заказать звонок</a>
 					<form class="form-in" action="#">
 						<p class="title">Введите данные</p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
+						<p class="line"><input type="text" placeholder="Ваше имя" style="background-image:url('img/icons/16.png')"></p>
+						<p class="line"><input type="text" placeholder="Ваш телефон" style="background-image:url('img/icons/15.png')"></p>
 						<p class="submit"><input type="submit" value="Позвоните мне"></p>
 						<span class="close"></span>
 					</form>
@@ -67,15 +67,28 @@
 	<nav class="nav">
 		<div class="wrapper">
 			<a class="price" href="price.html">Прайс-лист</a>
-			<ul>
+			<ul class="list">
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#">О компании</a></li>
-				<li><a href="news.html">Инфо-центр</a></li>
-				<li><a href="#">Клиентам</a></li>
+				<li class="sub">
+					<a href="#">Инфо-центр</a>
+					<ul>
+						<li><a href="news.html">Новости</a></li>
+						<li><a href="#">Статьи</a></li>
+						<li><a href="#">Правила и нормы пожарной безопасности</a></li>
+					</ul>
+				</li>
+				<li class="sub">
+					<a href="#">Клиентам</a>
+					<ul>
+						<li><a href="delivery.html">Доставка и оплата</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Новинки</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Дилерам</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
-
 		</div>
 	</nav>
 
@@ -100,36 +113,36 @@
 							<span class="date-news"><span class="day">25</span> дек. 2014</span>
 							<a href="news-item.html"><img src="img/temp/news-1.jpg" alt=""></a>
 						</div>
-						<p class="h2">Компания «огонек» на Ежегодной Партнерской конференции Motorola</p>
+						<p class="h2"><a href="news-item.html">Компания «огонек» на Ежегодной Партнерской конференции Motorola</a></p>
 						<p class="text">Зеркало гомогенно тормозит квантовый луч. Взрыв мономолекулярно облучает наносекундный объект, поскольку любое другое поведение нарушало...</p>
-						<p class="more"><a href="news-item.html">Подробнее</a> &#8594;</p>
+						<a class="more" href="news-item.html">Подробнее <span class="arrow">&#8594;</span></a>
 					</div>
 					<div class="item">
 						<div class="pic">
 							<span class="date-news"><span class="day">17</span> ноя. 2014</span>
 							<a href="news-item.html"><img src="img/temp/news-2.jpg" alt=""></a>
 						</div>
-						<p class="h2">Компания «огонек» - спонсор Экспедиции «Платиновый пояс России»</p>
+						<p class="h2"><a href="news-item.html">Компания «огонек» - спонсор Экспедиции «Платиновый пояс России»</a></p>
 						<p class="text">Впервые группа из четырех человек за 80 дней в автономном непрерывном режиме должна преодолеть самую сложную часть Уральского...</p>
-						<p class="more"><a href="news-item.html">Подробнее</a> &#8594;</p>
+						<a class="more" href="news-item.html">Подробнее <span class="arrow">&#8594;</span></a>
 					</div>
 					<div class="item">
 						<div class="pic">
 							<span class="date-news"><span class="day">02</span> сен. 2014</span>
 							<a href="news-item.html"><img src="img/temp/news-3.jpg" alt=""></a>
 						</div>
-						<p class="h2">Посещение штаб-квартиры Vertex Standard в Токио</p>
+						<p class="h2"><a href="news-item.html">Посещение штаб-квартиры Vertex Standard в Токио</a></p>
 						<p class="text">Компания образована в результате слияния двух японских радиогигантов Yaesu Musen Company и Standard Communications Corp. в 1998 г. С октября 2000 г. объединенная фирма называется Vertex...</p>
-						<p class="more"><a href="news-item.html">Подробнее</a> &#8594;</p>
+						<a class="more" href="news-item.html">Подробнее <span class="arrow">&#8594;</span></a>
 					</div>
 					<div class="item">
 						<div class="pic">
 							<span class="date-news"><span class="day">30</span> авг. 2014</span>
 							<a href="news-item.html"><img src="img/temp/news-4.jpg" alt=""></a>
 						</div>
-						<p class="h2">Компания «огонек» приняла участие в выставке «Пожарная безопасность XXI века»</p>
+						<p class="h2"><a href="news-item.html">Компания «огонек» приняла участие в выставке «Пожарная безопасность XXI века»</a></p>
 						<p class="text">По итогам выставки нами был получен диплом "за разработку нового оборудования и техники для ликвидации пожаров". Благодарим всех, кто...</p>
-						<p class="more"><a href="news-item.html">Подробнее</a> &#8594;</p>
+						<a class="more" href="news-item.html">Подробнее <span class="arrow">&#8594;</span></a>
 					</div>
 				</div>
 				<div class="pager">
@@ -179,7 +192,7 @@
 			<div class="col col-map">
 				<h6 class="h6">Мы вас ждем</h6>
 				<img class="pic" src="img/temp/map-small.jpg" alt="">
-				<a class="link" href="contacts.html#map">Схема проезда 	&#8594;</a>
+				<a class="link" href="contacts.html#map">Схема проезда <span class="arrow">&#8594;</span></a>
 			</div>
 			<div class="col col-contacts">
 				<h6 class="h6">Контактная информация</h6>

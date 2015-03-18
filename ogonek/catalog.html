@@ -37,8 +37,8 @@
 					<a class="link" href="#">Заказать звонок</a>
 					<form class="form-in" action="#">
 						<p class="title">Введите данные</p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
+						<p class="line"><input type="text" placeholder="Ваше имя" style="background-image:url('img/icons/16.png')"></p>
+						<p class="line"><input type="text" placeholder="Ваш телефон" style="background-image:url('img/icons/15.png')"></p>
 						<p class="submit"><input type="submit" value="Позвоните мне"></p>
 						<span class="close"></span>
 					</form>
@@ -67,19 +67,32 @@
 	<nav class="nav">
 		<div class="wrapper">
 			<a class="price" href="price.html">Прайс-лист</a>
-			<ul>
+			<ul class="list">
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#">О компании</a></li>
-				<li><a href="#">Инфо-центр</a></li>
-				<li><a href="#">Клиентам</a></li>
+				<li class="sub">
+					<a href="#">Инфо-центр</a>
+					<ul>
+						<li><a href="news.html">Новости</a></li>
+						<li><a href="#">Статьи</a></li>
+						<li><a href="#">Правила и нормы пожарной безопасности</a></li>
+					</ul>
+				</li>
+				<li class="sub">
+					<a href="#">Клиентам</a>
+					<ul>
+						<li><a href="delivery.html">Доставка и оплата</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Новинки</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Дилерам</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
-
 		</div>
 	</nav>
 
-	<div class="hgroup hgroup-2">
+	<div class="hgroup hgroup-nav">
 		<div class="wrapper">
 			<div class="menu menu-close">
 			<h2 class="h2"><a href="#"><img class="icon" src="img/icons/4.png" alt=""> Каталог товаров</a></h2>
@@ -192,6 +205,7 @@
 			<aside class="aside">
 				<form class="filter" action="#">
 					<div class="entry entry-open">
+						<span class="close"></span>
 						<p class="h5">Тип</p>
 						<div class="in">
 							<label class="checkbox-small"><input type="checkbox"> Порошковые</label>
@@ -203,6 +217,7 @@
 						</div>
 					</div>
 					<div class="entry entry-open">
+						<span class="close"></span>
 						<p class="h5">Кол-во ОТВ</p>
 						<div class="in">
 							<label class="checkbox-small"><input type="checkbox"> 2 кг</label>
@@ -229,7 +244,7 @@
 				<div class="contacts">
 					<p class="h5 h5-up">Свяжитесь с нами</p>
 					<a class="line line-tel" href="tel:+7495-518-54-22">+7 (495) 518-54-22</a>
-					<span class="line line-adr">г. Москва, ул. Донецкая, 30</span>
+					<span class="line line-adr">г. Москва, <br>ул. Донецкая, 30</span>
 					<a class="line line-mail" href="mailto:info@tdogonek.ru">info@tdogonek.ru</a>
 				</div>
 			</aside>
@@ -258,7 +273,7 @@
 					</div>
 				</div>
 				<div class="catalog">
-					<div class="list">
+					<div class="list list-border">
 						<div class="item">
 							<a class="favorite" href="#">
 								<span class="add">Добавить <br>в избранное</span>
@@ -398,7 +413,7 @@
 								<span class="code">238-59865</span>
 							</a>
 							<div class="price">
-								<span class="sum">587 руб.</span>
+								<span class="sum">2 548 руб.</span>
 								<a class="more" href="#">Уточнить цену</a>
 								<a class="to-cart" href="#"></a>
 							</div>
@@ -414,7 +429,7 @@
 								<span class="code">238-59865</span>
 							</a>
 							<div class="price">
-								<span class="sum">587 руб.</span>
+								<span class="sum">850 руб.</span>
 								<a class="more" href="#">Уточнить цену</a>
 								<a class="to-cart" href="#"></a>
 							</div>
@@ -430,7 +445,7 @@
 								<span class="code">238-59865</span>
 							</a>
 							<div class="price">
-								<span class="sum">587 руб.</span>
+								<span class="sum">990 руб.</span>
 								<a class="more" href="#">Уточнить цену</a>
 								<a class="to-cart" href="#"></a>
 							</div>
@@ -446,7 +461,7 @@
 								<span class="code">238-59865</span>
 							</a>
 							<div class="price">
-								<span class="sum">587 руб.</span>
+								<span class="sum">1 100 руб.</span>
 								<a class="more" href="#">Уточнить цену</a>
 								<a class="to-cart" href="#"></a>
 							</div>
@@ -463,6 +478,18 @@
 					</div>
 				</div>
 			</section>
+		</div>
+		<div class="article">
+			<div class="wrapper">
+				<div class="picture">
+					<p class="title"><span>Гарнтия качества <br>и надежности</span></p>
+					<img src="img/temp/article-2.jpg" alt="">
+				</div>
+				<h1 class="h1">Огнетушители от компании ООО ТПК «Огонек»</h1>
+				<p>Плазменное образование, как следует из совокупности экспериментальных наблюдений, поглощает наносекундный бозе-конденсат. Как в резонаторе газового лазера.</p>
+				<p>Погранслой, в рамках ограничений классической механики, тормозит фотон, в итоге возможно появление обратной связи и <a href="#">огнетушители</a>. Кристалл отталкивает экранированный поток. При погружении в жидкий кислород гетерогенная структура облучает внутримолекулярный фотон почти так же, как в резонаторе газового лазера.
+				</p>
+			</div>
 		</div>
 		<div class="features-list">
 			<div class="wrapper">
@@ -494,7 +521,7 @@
 			<div class="col col-map">
 				<h6 class="h6">Мы вас ждем</h6>
 				<img class="pic" src="img/temp/map-small.jpg" alt="">
-				<a class="link" href="contacts.html#map">Схема проезда 	&#8594;</a>
+				<a class="link" href="contacts.html#map">Схема проезда <span class="arrow">&#8594;</span></a>
 			</div>
 			<div class="col col-contacts">
 				<h6 class="h6">Контактная информация</h6>

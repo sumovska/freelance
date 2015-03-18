@@ -69,37 +69,39 @@ $(document).ready(function () {
 
 	/* Cart */
 	$('.table-cart').each(function () {
-		$('.number').each(function () {
-			var input = $('input', this), up = $('.up', this), down = $('.down', this);
-			input.keydown(function (e) {
-				if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-					(e.keyCode == 65 && e.ctrlKey === true) ||
-					(e.keyCode >= 35 && e.keyCode <= 39)) {
-					return;
-				}
-				if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-					e.preventDefault();
-				}
-			});
-			up.click(function () {
-				if (+input.val() < 10) {
-					input.val(+input.val() + 1);
-				}
-			});
-			down.click(function () {
-				if (+input.val() > 0) {
-					input.val(+input.val() - 1);
-				}
-			});
-		});
 		$('.td-delete .delete', this).click(function() {
 			$(this).closest('tr').fadeToggle(200);
 			return false;
 		});
 	});
 
+	/* Count */
+	$('.count').each(function () {
+		var input = $('input', this), up = $('.up', this), down = $('.down', this);
+		input.keydown(function (e) {
+			if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+				(e.keyCode == 65 && e.ctrlKey === true) ||
+				(e.keyCode >= 35 && e.keyCode <= 39)) {
+				return;
+			}
+			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+				e.preventDefault();
+			}
+		});
+		up.click(function () {
+			if (+input.val() < 10) {
+				input.val(+input.val() + 1);
+			}
+		});
+		down.click(function () {
+			if (+input.val() > 0) {
+				input.val(+input.val() - 1);
+			}
+		});
+	});
+
 	/* Menu */
-	$('.menu').each(function() {
+	$('.hgroup .menu').each(function() {
 		$('.h2', this).click(function() {
 			$(this).siblings('ul').fadeToggle(200).closest('.menu').toggleClass('menu-close');
 			return false;
@@ -107,10 +109,13 @@ $(document).ready(function () {
 	});
 
 	/* Filter */
-	$('.filter').each(function() {
-		$('.entry .h5', this).click(function() {
+	$('.filter .entry').each(function() {
+		$('.h5', this).click(function() {
 			$(this).siblings('.in').slideDown(200).closest('.entry').addClass('entry-open');
 		});
+		$('.close', this).click(function() {
+			$(this).siblings('.in').slideUp(200).closest('.entry').removeClass('entry-open');
+		})
 	});
 
 	/* Catalog */
@@ -138,4 +143,12 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+	/* Nav hover */
+	$('.nav .sub', this).hover(function() { 
+		$(this).closest('.nav').addClass('nav-hover'); 
+	}, function() {
+		$(this).closest('.nav').removeClass('nav-hover'); 
+	});
+
 });
