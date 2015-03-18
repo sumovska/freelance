@@ -564,7 +564,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
    ========================================================================== */
 .header {
 	height: 260px;
-	background: url(../img/header.jpg) 50% 0 no-repeat;
+	background: #2155a9 url(../img/header.jpg) 50% 0 no-repeat;
 	background-size: cover;
 }
 .header .wrapper {
@@ -622,7 +622,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	height: 247px;
 	font-size: 12px;
 	line-height: 18px;
-	background: url(../img/footer.jpg) 50% 0 no-repeat;
+	background: #1d4b9a url(../img/footer.jpg) 50% 0 no-repeat;
 	background-size: cover;
 }
 .footer .wrapper {
@@ -1811,6 +1811,21 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	font-size: 12px;
 	float: right;
 	background: #fff;
+	position: relative;
+}
+.address .contacts:before {
+	width: 0;
+	height: 0;
+	margin-top: -2px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: -15px;
+	top: 50%;
+	border-style: solid;
+	border-width: 13px 15px 13px 0;
+	border-color: transparent #fff transparent transparent;
 }
 .address .contacts .h5-up {
 	margin-bottom: 11px;
