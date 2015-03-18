@@ -530,6 +530,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
    ========================================================================== */
 .header {
 	height: 260px;
+	cursor: default;
 	background: #2155a9 url(../img/header.jpg) 50% -20px no-repeat;
 }
 .header .wrapper {
@@ -587,6 +588,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	height: 247px;
 	font-size: 12px;
 	line-height: 18px;
+	cursor: default;
 	background: #1d4b9a url(../img/header.jpg) 50% 0 no-repeat;
 }
 .footer .wrapper {
@@ -2627,6 +2629,9 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .block-map .map {
 	height: 420px;
 }
+a[href^="http://maps.google.com/maps"] { display: none !important }
+.gmnoprint a, .gmnoprint span, .gm-style-cc { display: none; }
+.gmnoprint div { background: none !important; }
 .block-map .inform {
 	width: 360px;
 	padding: 33px 28px 22px;
