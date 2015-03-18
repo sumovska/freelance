@@ -184,9 +184,11 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox li.optgroup { font-weight: bold; }
 .jq-selectbox li.optgroup:hover { background: none; color: #323232; cursor: default; }
 .jq-selectbox li.option { padding-left: 25px; }
-.selectbox-small .jq-selectbox { width: 220px; }
-.selectbox-small .jq-selectbox__select { height: 32px; }
-.selectbox-small .jq-selectbox__select-text { height: 28px; padding-top: 5px; }
+.jq-file__browse { position: absolute; top: 1px; right: 1px; padding: 0 10px; border-left: 1px solid #ccc; border-radius: 0 4px 4px 0; background: #f1f1f1 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC') repeat-x; box-shadow: inset 1px -1px #f1f1f1, inset 0 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, 0.1); color: #333; text-shadow: 1px 1px #fff; font: 14px/30px Arial, sans-serif }
+.jq-file:hover .jq-file__browse { background-color: #e6e6e6; background-position: 0 -10px }
+.jq-file:active .jq-file__browse { background: #f5f5f5; box-shadow: inset 1px 1px 3px #ddd }
+.jq-file.disabled .jq-file__name { color: #888 }
+.jq-file.disabled, .jq-file.disabled .jq-file__browse { border-color: #ccc; background: #f5f5f5; box-shadow: none; color: #888 }
 /* ==========================================================================
    _Дефолтная форма
    ========================================================================== */
@@ -213,6 +215,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line-2-col .col { width: 50%; padding: 0 10px; float: left; }
 .form-line-3-col .col { width: 33.3%; padding: 0 10px; float: left; }
 .form .select { width: 100%; display: block; }
+.selectbox-small .jq-selectbox { width: 220px; }
+.selectbox-small .jq-selectbox__select { height: 32px; }
+.selectbox-small .jq-selectbox__select-text { height: 28px; padding-top: 5px; }
 .reset { margin-bottom: 0; position: relative; }
 .reset:before, .reset:after { width: 1px; height: 12px; display: block; content: ' '; overflow: hidden; clear: both; position: absolute; left: 4px; top: 16px; background: #999; transition: background-color .2s ease; }
 .reset:before { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
