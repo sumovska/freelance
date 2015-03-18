@@ -35,6 +35,7 @@
    ========================================================================== */
 * {
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 html {
 	width: 100%;
@@ -142,7 +143,6 @@ button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="su
 button:after { content: ''; }
 button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover,
 button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):focus, input[type="reset"]:focus { background: #3096df; }
-button:not([disabled]):active, input[type="button"]:not([disabled]):active, input[type="submit"]:not([disabled]):active, input[type="reset"]:active { padding-top: 11px; padding-bottom: 9px; background: #ff7b10; }
 button[disabled], input[type="button"][disabled], input[type="submit"][disabled] { cursor: default; opacity: .75; background: #8d8d8d !important; }
 button[disabled]:before, input[type="button"][disabled]:before, input[type="submit"][disabled]:before { text-shadow: none; background: #585858 !important; }
 /* === CHECKBOX === */
@@ -185,9 +185,11 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox li.optgroup { font-weight: bold; }
 .jq-selectbox li.optgroup:hover { background: none; color: #323232; cursor: default; }
 .jq-selectbox li.option { padding-left: 25px; }
-.selectbox-small .jq-selectbox { width: 220px; }
-.selectbox-small .jq-selectbox__select { height: 32px; }
-.selectbox-small .jq-selectbox__select-text { height: 28px; padding-top: 5px; }
+.jq-file__browse { position: absolute; top: 1px; right: 1px; padding: 0 10px; border-left: 1px solid #ccc; border-radius: 0 4px 4px 0; background: #f1f1f1 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC') repeat-x; box-shadow: inset 1px -1px #f1f1f1, inset 0 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, 0.1); color: #333; text-shadow: 1px 1px #fff; font: 14px/30px Arial, sans-serif }
+.jq-file:hover .jq-file__browse { background-color: #e6e6e6; background-position: 0 -10px }
+.jq-file:active .jq-file__browse { background: #f5f5f5; box-shadow: inset 1px 1px 3px #ddd }
+.jq-file.disabled .jq-file__name { color: #888 }
+.jq-file.disabled, .jq-file.disabled .jq-file__browse { border-color: #ccc; background: #f5f5f5; box-shadow: none; color: #888 }
 /* ==========================================================================
    _Дефолтная форма
    ========================================================================== */
@@ -214,6 +216,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line-2-col .col { width: 50%; padding: 0 10px; float: left; }
 .form-line-3-col .col { width: 33.3%; padding: 0 10px; float: left; }
 .form .select { width: 100%; display: block; }
+.selectbox-small .jq-selectbox { width: 220px; }
+.selectbox-small .jq-selectbox__select { height: 32px; }
+.selectbox-small .jq-selectbox__select-text { height: 28px; padding-top: 5px; }
 .reset { margin-bottom: 0; position: relative; }
 .reset:before, .reset:after { width: 1px; height: 12px; display: block; content: ' '; overflow: hidden; clear: both; position: absolute; left: 4px; top: 16px; background: #999; transition: background-color .2s ease; }
 .reset:before { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
@@ -669,7 +674,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	text-decoration: none;
 	cursor: default;
 }
-.footer .adr {
+.footer .address {
 	margin-bottom: 4px;
 	padding-left: 23px;
 	display: block;
@@ -681,7 +686,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	padding-left: 24px;
 	position: relative;
 }
-.footer .adr:before, .footer .mail:before {
+.footer .address:before, .footer .mail:before {
 	width: 20px;
 	height: 20px;
 	display: block;
@@ -693,7 +698,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	background: url(../img/sprite.png) 0 -50px no-repeat;
 	background-size: 150px auto;
 }
-.footer .adr:before {
+.footer .address:before {
 	background-position: -25px -55px;
 }
 .footer .mail:before {
@@ -2203,8 +2208,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	position: absolute;
 	left: -2px;
 	top: 0;
-	background-repeat: no-repeat;
-	background-position: 0 0;
+	background: url(../img/icons/5.png) no-repeat 0 0;
 	background-size: cover;
 	transition: opacity .3s ease;
 }
@@ -2341,7 +2345,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	overflow: hidden;
 	clear: both;
 	border-style: solid;
-	border-width: 4px 3.5px 0 3.5px;
+	border-width: 4px 3px 0 3px;
 	border-color: #565656 transparent transparent transparent;
 }
 .entry {
@@ -2661,13 +2665,13 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 .block-map .inform:before {
 	bottom: -28px;
 	left: -16px;
-	border-width: 12.5px 15px 12.5px 0;
+	border-width: 12px 15px 12px 0;
 	border-color: transparent rgba(0, 0, 0, .2) transparent transparent;
 }
 .block-map .inform:after {
 	bottom: -27px;
 	left: -17px;
-	border-width: 12.5px 15px 12.5px 0;
+	border-width: 12px 15px 12px 0;
 	border-color: transparent #fff transparent transparent;
 }
 .block-map .inform p:last-of-type {
