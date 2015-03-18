@@ -74,36 +74,6 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Подвал */
-	$('.footer').each(function () {
-		var _buttons = $('.help, .messages', this);
-		_buttons.each(function () {
-			var _self = $(this);
-			$('.toggle', this).click(function () {
-				$(this).parent().siblings('.active').removeClass('active').find('.dropdown').hide();
-				$('.dropdown', _self).fadeToggle(300, function () {
-					_self.toggleClass('active');
-				});
-				return false;
-			});
-			$('.sub', this).click(function () {
-				$(this).siblings('ul').slideToggle(function () {
-					$(this).closest('li').toggleClass('open');
-				});
-				return false;
-			});
-		});
-		$(document).on('click touchstart', function (event) {
-			var target = $(event.target);
-			if ($('.dropdown:visible').length > 0) {
-				if ((target.closest('.dropdown').length === 0) && (target.closest('.footer').length === 0)) {
-					_buttons.removeClass('active');
-					$('.dropdown:visible', _buttons).fadeOut(300);
-				}
-			}
-		});
-	});
-
 	/* Кнопка закрытия */
 	$('.note .close').click(function () {
 		$(this).closest('.note').animate({opacity: 0}, function () {
@@ -369,4 +339,89 @@ $(document).ready(function () {
 			}
 		});
 	}
+
+	/* Подвал */
+	$('.footer').each(function () {
+		var _buttons = $('.help, .messages', this);
+		_buttons.each(function () {
+			var _self = $(this);
+			$('.toggle', this).click(function () {
+				$(this).parent().siblings('.active').removeClass('active').find('.dropdown').hide();
+				$('.dropdown', _self).fadeToggle(300, function () {
+					_self.toggleClass('active');
+				});
+				return false;
+			});
+			$('.sub', this).click(function () {
+				$(this).siblings('ul').slideToggle(function () {
+					$(this).closest('li').toggleClass('open');
+				});
+				return false;
+			});
+		});
+		$(document).on('click touchstart', function (event) {
+			var target = $(event.target);
+			if ($('.dropdown:visible').length > 0) {
+				if ((target.closest('.dropdown').length === 0) && (target.closest('.footer').length === 0)) {
+					_buttons.removeClass('active');
+					$('.dropdown:visible', _buttons).fadeOut(300);
+				}
+			}
+		});
+	});
+
+	/* Тултипы раздела 'Помощь' */
+	$.ajax({
+		url: "help.html",
+		cache: false
+	}).done(function (html) {
+		$('body').append(html);
+		$('[data-tooltip-link]').each(function () {
+			var _w = 415, _link = $(this), _id = +_link.attr('data-tooltip-link'), _source = $('[data-tooltip-source=' + _id + ']'), _pointer = $('[data-tooltip-pointer="' + _id + '"]');
+			if (_source.is('[data-width]')) {
+				_w = _source.attr('data-width');
+			}
+			_pointer.tooltipster({
+				content: _source.html(),
+				theme: 'tooltipster-help',
+				minWidth: _w,
+				maxWidth: _w,
+				position: _source.attr('data-position'),
+				offsetX: _source.attr('data-offset-x'),
+				offsetY: _source.attr('data-offset-y'),
+				trigger: '',
+				contentAsHTML: true,
+				autoClose: true,
+				onlyOne: true,
+				interactive: true,
+				positionTracker: true,
+				functionReady: function (origin, tooltip) {
+					$(tooltip).attr('data-pointer', $(origin).attr('data-tooltip-pointer'));
+					if (_source.is('[data-class]')) {
+						$(tooltip).addClass(_source.attr('data-class'));
+					}
+				}
+			});
+			_link.click(function () {
+				/*$(this).closest('li').toggleClass('active').siblings('li.active').removeClass('active');*/
+				_pointer.tooltipster('show');
+				return false;
+			});
+		});
+		$(document).on('click touchstart', '.tooltipster-base .next', function (event) {
+			$('[data-tooltip-pointer="' + $(this).attr('data-next') + '"]').tooltipster('show');
+			return false;
+		});
+		$(document).on('click touchstart', function (event) {
+			var target = $(event.target), a = $('.tooltipster-base:visible');
+			console.log(a.length);
+			if (a.length > 0) {
+				if ((target.closest('.tooltipster-base').length === 0) && (!target.is('.tooltipster-base'))) {
+					a.each(function () {
+						$('[data-tooltip-pointer="' + $(this).attr('data-pointer') + '"]').tooltipster('hide');
+					})
+				}
+			}
+		});
+	});
 });
