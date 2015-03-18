@@ -10,7 +10,7 @@ $(document).ready(function () {
 	FastClick.attach(document.body);
 
 	/* Scroll top button */
-	$('.filter .scroll-top').click(function() {
+	$('.filter .scroll-top').click(function () {
 		$(this).toggleClass('scroll-top-open').siblings('.inside').fadeToggle(200).closest('.filter').toggleClass('filter-open');
 		return false;
 	});
@@ -274,8 +274,8 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.check-all .jq-checkbox').click(function(){
-    	$('.check input:checkbox').not(this).click();
+	$('.check-all .jq-checkbox').click(function () {
+		$('.check input:checkbox').not(this).click();
 	});
 
 	/* IE fixes */
