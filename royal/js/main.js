@@ -8,8 +8,16 @@ $(document).ready(function () {
 	$('input, select').styler();
 
 	/* Scroll top button */
-	$('.filter .scroll-top').click(function () {
-		$(this).toggleClass('scroll-top-open').siblings('.inside').fadeToggle(200).closest('.filter').toggleClass('filter-open');
+	$('.filter .toggle').click(function () {
+		var o = 1, _self = $(this);
+		if ($(this).is('.open')) {
+			o = 0;
+		}
+		$(this).siblings('.inside').animate({opacity: o}, function () {
+			$(this).slideToggle(function () {
+				_self.toggleClass('open');
+			});
+		});
 		return false;
 	});
 
@@ -127,6 +135,7 @@ $(document).ready(function () {
 			infinteLoop: false,
 			responsive: true,
 			adaptiveHieght: true,
+			useCSS: true,
 			swipeThreshold: 20,
 			speed: 800,
 			preloadImages: 'all',
