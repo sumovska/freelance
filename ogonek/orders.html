@@ -37,8 +37,8 @@
 					<a class="link" href="#">Заказать звонок</a>
 					<form class="form-in" action="#">
 						<p class="title">Введите данные</p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
+						<p class="line"><input type="text" placeholder="Ваше имя" style="background-image:url('img/icons/16.png')"></p>
+						<p class="line"><input type="text" placeholder="Ваш телефон" style="background-image:url('img/icons/15.png')"></p>
 						<p class="submit"><input type="submit" value="Позвоните мне"></p>
 						<span class="close"></span>
 					</form>
@@ -67,11 +67,25 @@
 	<nav class="nav">
 		<div class="wrapper">
 			<a class="price" href="price.html">Прайс-лист</a>
-			<ul>
+			<ul class="list">
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#">О компании</a></li>
-				<li><a href="#">Инфо-центр</a></li>
-				<li><a href="#">Клиентам</a></li>
+				<li class="sub">
+					<a href="#">Инфо-центр</a>
+					<ul>
+						<li><a href="news.html">Новости</a></li>
+						<li><a href="#">Статьи</a></li>
+						<li><a href="#">Правила и нормы пожарной безопасности</a></li>
+					</ul>
+				</li>
+				<li class="sub">
+					<a href="#">Клиентам</a>
+					<ul>
+						<li><a href="delivery.html">Доставка и оплата</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Новинки</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Дилерам</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
@@ -87,13 +101,13 @@
 
 	<article class="container">
 		<div class="wrapper">
-				<div class="unit-side unit-side-goods">
+				<div class="sideunit sideunit-goods">
 					<p class="price"><span class="amount">2 товара</span> на сумму <span class="red">2 548 руб.</span></p>
 					<p class="products">
 						<span class="line">Огнетушитель ОП-6 (3) <span class="amount">х3</span></span>
 						<span class="line">Огнетушитель ОП-15 <span class="amount">х1</span></span>
 					</p>
-					<a class="out" href="#">&#8592; Вернуться в корзину</a>
+					<a class="out" href="cart.html">&#8592; Вернуться в корзину</a>
 				</div>
 				<form class="form-private" action="#">
 					<div class="unit">
@@ -101,18 +115,18 @@
 						<div class="step step-1">
 							<p class="form-line">
 								<label class="for">Ваши ФИО</label>
-								<input type="text" placeholder="Павлов Николай Владимирович" style="background-image:url('img/temp/icon-1.png')">
+								<input type="text" placeholder="Павлов Николай Владимирович" style="background-image:url('img/icons/5.png')">
 							</p>
 							<p class="form-line">
 								<label class="for">Email</label>
-								<input type="text" placeholder="nick_pavlov@yandex.ru" style="background-image:url('img/temp/icon-2.png')">
+								<input type="text" placeholder="nick_pavlov@yandex.ru" style="background-image:url('img/icons/6.png')">
 							</p>
 							<p class="form-line">
 								<label class="for">Номер телефона</label>
-								<input type="text" placeholder="+7 (909) 469-49-99" style="background-image:url('img/temp/icon-3.png')">
+								<input type="text" placeholder="+7 (909) 469-49-99" style="background-image:url('img/icons/7.png')">
 							</p>
 							<p class="checkbox-line">
-								<label class="checkbox"><input type="checkbox"> Оповещать о смене статуса заказа по SMS</label>
+								<label class="checkbox"><input type="checkbox" checked=""> Оповещать о смене статуса заказа по SMS</label>
 							</p>
 						</div>
 						<h2 class="h2">Способ доставки</h2>
@@ -138,8 +152,8 @@
 								</p>
 							</div>
 							<div class="tab tab-pickup tab-hidden">
-								<p class="form-line"><label class="radio"><input type="radio"> Склад — г. Москва, Донецкая, 30</label></p>
-								<p class="form-line"><label class="radio"><input type="radio"> Ближайший пункт выдачи</label></p>
+								<p class="form-line"><label class="radio"><input type="radio" name="address"> Склад — г. Москва, Донецкая, 30</label></p>
+								<p class="form-line"><label class="radio"><input type="radio" name="address" checked=""> Ближайший пункт выдачи</label></p>
 								<p class="selectbox-small">
 									<select>
 										<option>выберите пункт выдачи</option>
@@ -150,7 +164,7 @@
 								<div class="address" style="background-image:url('img/temp/map.jpg')">
 									<div class="contacts">
 										<p class="h5 h5-up">Склад тд «огонек»</p>
-										<a class="line line-tel" href="#"><strong>+7 (495) 518-54-22</strong></a>
+										<a class="line line-tel" href="tel:+7495-518-54-22"><strong>+7 (495) 518-54-22</strong></a>
 										<span class="line line-adr">г. Москва, ул. Донецкая, 30</span>
 										<span class="line line-time">пн-пт с 9:00 до 18:00</span>
 										<a class="line line-mail" href="#">info@tdogonek.ru</a>
@@ -287,7 +301,7 @@
 			<div class="col col-map">
 				<h6 class="h6">Мы вас ждем</h6>
 				<img class="pic" src="img/temp/map-small.jpg" alt="">
-				<a class="link" href="contacts.html#map">Схема проезда 	&#8594;</a>
+				<a class="link" href="contacts.html#map">Схема проезда <span class="arrow">&#8594;</span></a>
 			</div>
 			<div class="col col-contacts">
 				<h6 class="h6">Контактная информация</h6>

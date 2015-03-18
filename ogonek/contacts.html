@@ -37,8 +37,8 @@
 					<a class="link" href="#">Заказать звонок</a>
 					<form class="form-in" action="#">
 						<p class="title">Введите данные</p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
-						<p class="line"><input type="text" placeholder="Название товара или артикул"></p>
+						<p class="line"><input type="text" placeholder="Ваше имя" style="background-image:url('img/icons/16.png')"></p>
+						<p class="line"><input type="text" placeholder="Ваш телефон" style="background-image:url('img/icons/15.png')"></p>
 						<p class="submit"><input type="submit" value="Позвоните мне"></p>
 						<span class="close"></span>
 					</form>
@@ -67,15 +67,28 @@
 	<nav class="nav">
 		<div class="wrapper">
 			<a class="price" href="price.html">Прайс-лист</a>
-			<ul>
+			<ul class="list">
 				<li><a href="catalog.html">Каталог</a></li>
 				<li><a href="#">О компании</a></li>
-				<li><a href="#">Инфо-центр</a></li>
-				<li><a href="#">Клиентам</a></li>
+				<li class="sub">
+					<a href="#">Инфо-центр</a>
+					<ul>
+						<li><a href="news.html">Новости</a></li>
+						<li><a href="#">Статьи</a></li>
+						<li><a href="#">Правила и нормы пожарной безопасности</a></li>
+					</ul>
+				</li>
+				<li class="sub">
+					<a href="#">Клиентам</a>
+					<ul>
+						<li><a href="delivery.html">Доставка и оплата</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Новинки</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Дилерам</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
-
 		</div>
 	</nav>
 
@@ -96,15 +109,15 @@
 						<span class="line line-time">пн-пт с 9:00 до 18:00</span>
 						<a class="line line-mail" href="mailto:info@tdogonek.ru">info@tdogonek.ru</a>
 					</p>
-					<a class="download" href="#"><span class="icon"></span><strong>скачать</strong> реквизиты компании</a>
+					<a class="download" href="#"><span class="icon" style="background-image:url('img/icons/12.png')"></span><strong>скачать</strong> реквизиты компании</a>
 				</div>
 				<form class="form-send" action="#">
 					<h2 class="h2">Напишите нам письмо</h2>
 					<p class="form-line form-line-2-col">
-						<span class="col"><input type="text" placeholder="Ваше имя" style="background-image:url('img/temp/icon-1.png')"></span>
-						<span class="col"><input type="text" placeholder="Ваш Email" style="background-image:url('img/temp/icon-2.png')"></span>
+						<span class="col"><input type="text" placeholder="Ваше имя" style="background-image:url('img/icons/5.png')"></span>
+						<span class="col"><input type="text" placeholder="Ваш Email" style="background-image:url('img/icons/6.png')"></span>
 					</p>
-					<p class="form-line"><textarea placeholder="Ваше сообщение"></textarea></p>
+					<p class="form-line"><textarea placeholder="Ваше сообщение" style="background-image:url('img/icons/17.png')"></textarea></p>
 					<p class="submit"><input type="submit" value="Отправить письмо"></p>
 				</form>
 			</div>
@@ -112,9 +125,9 @@
 			<div class="block-map">
 				<div class="inform">
 					<span class="close"></span>
-					<p class="h"><img class="icon" src="img/temp/icon-6.png" alt=""> Пешком</p>
+					<p class="h"><img class="icon" src="img/icons/10.png" alt=""> Пешком</p>
 					<p>Необходимо выходить со ст. метро Курская кольцевая или радиальная по указателю «Ул.Казакова, Театр им. Гоголя»</p>
-					<p class="h"><img class="icon" src="img/temp/icon-7.png" alt=""> На автомобиле</p>
+					<p class="h"><img class="icon" src="img/icons/11.png" alt=""> На автомобиле</p>
 					<p>Если вы едете из Москвы на автомобиле, то вам нужна трасса М4-ДОН. Такая дорога в среднем занимает от 17 до 20 часов.</p>
 				</div>
 				<div id="map" class="map">
@@ -182,7 +195,7 @@
 			<div class="col col-map">
 				<h6 class="h6">Мы вас ждем</h6>
 				<img class="pic" src="img/temp/map-small.jpg" alt="">
-				<a class="link" href="contacts.html#map">Схема проезда 	&#8594;</a>
+				<a class="link" href="contacts.html#map">Схема проезда <span class="arrow">&#8594;</span></a>
 			</div>
 			<div class="col col-contacts">
 				<h6 class="h6">Контактная информация</h6>
