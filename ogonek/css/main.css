@@ -861,7 +861,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	top: 12px;
 	background: url(../img/sprite.png) 0 -85px no-repeat;
 	background-size: 150px auto;
-	transition: opacity .2s ease;
 }
 .nav .price:before { opacity: 1; }
 .nav .price:after { opacity: 0; background-position: -35px -85px; }
@@ -887,6 +886,9 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	position: absolute;
 	left: 30px;
 	top: 0;
+}
+.hgroup-nav .menu-open {
+	z-index: 110;
 }
 .hgroup .h1 {
 	margin-bottom: 0;
@@ -1051,7 +1053,11 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .menu > ul {
 	margin: 0;
 	padding: 18px 0 0 0;
+	display: none;
 	list-style: none;
+}
+.menu-open > ul {
+	display: block;
 }
 .menu > ul:before, .menu > ul:after {
 	height: 1px;
@@ -1064,9 +1070,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 }
 .menu > ul:before { background: #216eb3; top: 0; }
 .menu > ul:after { background: #3a87cc; top: 1px; }
-.menu-close > ul {
-	display: none;
-}
 .menu > ul > li > a {
 	margin: 0 -30px;
 	padding: 1px 38px 2px 39px;
@@ -1253,6 +1256,11 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	padding: 0 10px;
 	float: left;
 	text-align: center;
+	opacity: .5;
+	transition: opacity .2s ease;
+}
+.index .carousel .slick-active {
+	opacity: 1;
 }
 .index .carousel .pic {
 	margin: 0 auto 16px;
@@ -1534,18 +1542,31 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	bottom: 0;
 }
 .slider .slider-nav .item {
-	width: 80px !important;
 	margin: 0 0 6px;
 	cursor: pointer;
+	float: none;
+	border: none;
+}
+.slider .slider-nav .item .pic {
+	display: block;
+	position: relative;
+}
+.slider .slider-nav .item .pic:before {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 3px solid transparent;
 }
 .slider .slider-nav .item img {
-	width: 100%;
-	height: auto;
 	display: block;
 }
-.slider .slider-nav .slick-active {
+.slider .slider-nav .slick-active .pic:before {
 	border-color: #ec2020;
-	border-width: 3px;
 }
 .slider-news {
 	margin-top: -5px;
@@ -2273,7 +2294,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
    _ARTICLE
    ========================================================================== */
 .article {
-	padding-top: 4px;
+	padding-top: 5px;
 }
 .article .wrapper {
 	padding-top: 14px;
@@ -2293,18 +2314,20 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	height: auto;
 	display: block;
 }
-.article .picture .title {
+.article .picture figcaption {
 	color: #fff;
 	font-size: 14px;
 	line-height: 19px;
+	cursor: default;
 	text-transform: uppercase;
 	position: absolute;
 	top: 26px;
 	left: 32px;
 }
-.article .picture .title span {
-	padding: 4px 1px;
+.article .picture figcaption span {
+	padding: 4px 0;
 	display: inline;
+	letter-spacing: .03em;
 	background: #ec2020;
 	box-shadow: 9px 0 0 #ec2020, -9px 0 0 #ec2020;
 }
@@ -2899,7 +2922,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	bottom: -31px;
 }
 .product .show-all a {
-	width: 205px;
 	padding: 4px 16px 6px;
 	display: inline-block;
 	font-size: 12px;
