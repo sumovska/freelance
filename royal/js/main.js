@@ -3,15 +3,23 @@
 
 /* On document ready */
 $(document).ready(function () {
+
 	/* Init forms */
 	$('input, select').styler();
-
-	/* Fastclick for mobile devices */
-	FastClick.attach(document.body);
 
 	/* Scroll top button */
 	$('.filter .scroll-top').click(function () {
 		$(this).toggleClass('scroll-top-open').siblings('.inside').fadeToggle(200).closest('.filter').toggleClass('filter-open');
+		return false;
+	});
+
+	/* Scroll top button */
+	$('.scroll-top').append('<span></span>').click(function () {
+		if (Modernizr.touch) {
+			$('html, body').animate({scrollTop: 0}, 0);
+		} else {
+			$('html, body').animate({scrollTop: 0}, 300);
+		}
 		return false;
 	});
 

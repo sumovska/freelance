@@ -44,13 +44,14 @@
    ========================================================================== */
 * {
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 html {
 	width: 100%;
 	height: 100%;
 	font: 16px/25px Roboto, Arial, sans-serif;
 	color: #fff;
-	background: #001b41;
+	background: #001b41 url('../img/pattern.png') repeat 100% 0;
 }
 body {
 	width: 100%;
@@ -59,7 +60,19 @@ body {
 	padding: 0 0 0 240px;
 	position: relative;
 	cursor: default;
-	background: #001b41;
+	/*background: #001b41;*/
+}
+body:before {
+	width: 240px;
+	content: "\0020";
+	display: block;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 0;
+	background: #001b41 url('../img/blue.png') repeat 0 0;
 }
 .container {
 	width: 100%;
@@ -298,15 +311,16 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .header:before {
 	width: 240px;
 	height: 1px;
-	box-shadow: 0 0 25px #000;
+	border-bottom: 1px solid #003265;
+	/*box-shadow: 0 0 25px #000;*/
 	display: block;
 	content: ' ';
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 89px;
+	top: 99px;
 	z-index: 1;
-	background: #0d3d6e;
+	background: #000;
 }
 .header .footer {
 	position: absolute;
@@ -316,26 +330,27 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	position: relative;
 }
 .header .logo {
-	height: 90px;
-	padding: 30px 30px 29px;
-	border-bottom: 1px solid #0d3d6e;
+	width: 100%;
+	height: 100px;
+	padding: 10px 20px;
 	margin: 0;
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 2;
-	background: #0d3d6e linear-gradient(to bottom, rgba(0, 32, 64, 1) 0%, rgba(0, 39, 79, 1) 50%, rgba(0, 51, 102, 1) 100%);
+	/* background: #0d3d6e linear-gradient(to bottom, rgba(0, 32, 64, 1) 0%, rgba(0, 39, 79, 1) 50%, rgba(0, 51, 102, 1) 100%); */
 }
 .header .logo a {
-	padding: 30px;
+	padding: 10px 20px;
 	border: none;
-	margin: -30px;
+	margin: -10px -20px;
 	display: block;
 	outline: none;
 }
 .header .logo img {
-	width: 180px;
+	height: 80px;
+	margin: 0 auto;
 	display: block;
 }
 .header .nav-toggle {
@@ -384,7 +399,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-color: #ff5c26;
 }
 .header .nav {
-	margin-top: 90px;
+	margin-top: 100px;
 }
 .header .nav .ul {
 	padding: 0;
@@ -4692,9 +4707,9 @@ body > .search-toggle {
 	.header { width: 240px; height: 100%; left: -240px; background: none; padding: 0; }
 	.header:before { display: none; }
 	.header .scroll { height: 100%; padding: 20px; overflow: scroll; }
-	.header .logo { width: 200px; height: 60px; padding: 20px 10px 20px 60px; border: none; position: absolute; left: 240px; background: #001b41; }
+	.header .logo { width: 200px; height: 60px; padding: 5px 10px 5px 60px; border: none; position: absolute; left: 240px; background: #001b41; }
 	.header .logo a { padding: 0; margin: 0; }
-	.header .logo img { width: 120px; height: auto; }
+	.header .logo img { width: auto; height: 50px; margin: 0 0 0 10px; }
 	.header .nav { margin: 0; }
 	.header .nav .ul { margin-right: 0; }
 	.header .nav-toggle { display: block; position: absolute; left: 245px; }
@@ -4853,9 +4868,9 @@ body > .search-toggle {
 	body > .search-toggle { display: block; }
 	.phone-mobile { height: 60px; padding: 15px 0; margin: 0; display: block; position: absolute; top: 60px; left: 0; right: 0; font: bold 20px/28px 'Gotham Pro', Helvetica, Arial, sans-serif; text-align: center; background: #001b41; }
 	.phone-mobile a { color: #fff; outline: none; border: none; }
-	.logo-mobile { min-width: 320px; height: 61px; padding: 20px 10px; border-bottom: 1px solid #003164; box-shadow: inset 0 -1px 0 #010101; margin: 0; display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 2; background: #001b41; }
+	.logo-mobile { min-width: 320px; height: 61px; padding: 5px 10px; border-bottom: 1px solid #003164; box-shadow: inset 0 -1px 0 #010101; margin: 0; display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 2; background: #001b41; }
 	.logo-mobile a { padding: 0; border: none; margin: 0; display: block; outline: none; }
-	.logo-mobile img { width: 120px; height: auto; margin: 0 auto; display: block; }
+	.logo-mobile img { width: auto; height: 50px; margin: 0 auto; display: block; }
 	.top { position: absolute; top: 120px; z-index: 100; }
 	.header-fixed .top { position: fixed; top: 60px; }
 	.top .wrapper { padding: 2px 20px 2px 2px; margin-left: 0; }
