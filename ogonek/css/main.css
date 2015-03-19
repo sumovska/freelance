@@ -185,11 +185,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox li.optgroup { font-weight: bold; }
 .jq-selectbox li.optgroup:hover { background: none; color: #323232; cursor: default; }
 .jq-selectbox li.option { padding-left: 25px; }
-.jq-file__browse { position: absolute; top: 1px; right: 1px; padding: 0 10px; border-left: 1px solid #ccc; border-radius: 0 4px 4px 0; background: #f1f1f1 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC') repeat-x; box-shadow: inset 1px -1px #f1f1f1, inset 0 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, 0.1); color: #333; text-shadow: 1px 1px #fff; font: 14px/30px Arial, sans-serif }
-.jq-file:hover .jq-file__browse { background-color: #e6e6e6; background-position: 0 -10px }
-.jq-file:active .jq-file__browse { background: #f5f5f5; box-shadow: inset 1px 1px 3px #ddd }
-.jq-file.disabled .jq-file__name { color: #888 }
-.jq-file.disabled, .jq-file.disabled .jq-file__browse { border-color: #ccc; background: #f5f5f5; box-shadow: none; color: #888 }
 /* ==========================================================================
    _Дефолтная форма
    ========================================================================== */
@@ -938,7 +933,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	bottom: -8px;
 	left: 50%;
 	border-style: solid;
-	border-width: 7px 6.5px 0 6.5px;
+	border-width: 7px 6px 0 6px;
 	border-color: #2c7fc9 transparent transparent transparent;
 }
 .tab-hidden {
@@ -1120,8 +1115,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	-ms-user-select: none;
 	user-select: none;
 	-webkit-touch-callout: none;
-	-khtml-user-select: none;
-	-ms-touch-action: pan-y;
 	touch-action: pan-y;
 	-webkit-tap-highlight-color: transparent;
 }
@@ -1775,7 +1768,7 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 }
 .step-3 .col-3 {
 	padding-top: 28px;
-	padding-left: 0px;
+	padding-left: 0;
 	font-size: 12px;
 	line-height: 14px;
 }
@@ -1783,11 +1776,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	padding-top: 16px;
 	padding-bottom: 16px;
 	font-size: 18px;
-}
-.address {
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 .address:after {
 	display: block;
@@ -1829,7 +1817,6 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
    _ORDERS
    ========================================================================== */
 .orders {
-	padding-top: 18px;
 	padding: 18px 30px 30px;
 	background: #f7f7f7;
 }
@@ -2169,10 +2156,9 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .download .icon {
 	width: 40px;
 	display: block;
-	background: #00529c;
+
+	background: #00529c no-repeat 50% 50%;
 	background-size: 25px 25px;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 	position: absolute;
 	left: 0;
 	top: 0;

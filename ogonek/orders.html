@@ -134,7 +134,7 @@
 							<li><a href="#pickup">Самовывоз</a></li>
 							<li class="active"><a href="#delivery">Доставка по адресу</a></li>
 						</ul>
-						<div class="tab tab-delivery">
+						<div id="delivery" class="tab tab-delivery">
 							<p class="form-line form-line-2-col">
 								<span class="col">
 									<label class="for">Город</label>
@@ -150,15 +150,17 @@
 								<input type="text" placeholder="ул. Крестьянская, 19">
 							</p>
 						</div>
-						<div class="tab tab-pickup tab-hidden">
+						<div id="pickup" class="tab tab-pickup tab-hidden">
 							<p class="form-line"><label class="radio"><input type="radio" name="address"> Склад — г. Москва, Донецкая, 30</label></p>
 							<p class="form-line"><label class="radio"><input type="radio" name="address" checked=""> Ближайший пункт выдачи</label></p>
 							<p class="selectbox-small">
-								<select>
-									<option>выберите пункт выдачи</option>
-									<option>выберите пункт выдачи</option>
-									<option>выберите пункт выдачи</option>
-								</select>
+								<label>
+									<select title="">
+										<option>выберите пункт выдачи</option>
+										<option>выберите пункт выдачи</option>
+										<option>выберите пункт выдачи</option>
+									</select>
+								</label>
 							</p>
 							<div class="address">
 								<img src="img/temp/map.png" alt="">
@@ -178,7 +180,7 @@
 							<li><a href="#cashless">Безналичный расчет</a></li>
 							<li class="active"><a href="#card">Банковская карта</a></li>
 						</ul>
-						<div class="tab tab-card">
+						<div id="card" class="tab tab-card">
 							<p class="form-line form-line-2-col">
 								<span class="col">
 									<label class="for">Номер карты</label>
@@ -193,27 +195,31 @@
 								<span class="col col-1">
 									<label class="for">Срок действия карты</label>
 									<span class="selectbox">
-										<select>
-											<option>месяц</option>
-											<option>январь</option>
-											<option>февраль</option>
-											<option>март</option>
-											<option>апрель</option>
-											<option>май</option>
-											<option>июнь</option>
-											<option>июль</option>
-											<option>август</option>
-											<option>сентябрь</option>
-											<option>октябрь</option>
-											<option>ноябрь</option>
-											<option>декабрь</option>
-										</select>
-										<select>
-											<option>год</option>
-											<option>2015</option>
-											<option>2014</option>
-											<option>2013</option>
-										</select>
+										<label>
+											<select>
+												<option>месяц</option>
+												<option>январь</option>
+												<option>февраль</option>
+												<option>март</option>
+												<option>апрель</option>
+												<option>май</option>
+												<option>июнь</option>
+												<option>июль</option>
+												<option>август</option>
+												<option>сентябрь</option>
+												<option>октябрь</option>
+												<option>ноябрь</option>
+												<option>декабрь</option>
+											</select>
+										</label>
+										<label>
+											<select>
+												<option>год</option>
+												<option>2015</option>
+												<option>2014</option>
+												<option>2013</option>
+											</select>
+										</label>
 									</span>
 								</span>
 								<span class="col col-2">
@@ -223,7 +229,7 @@
 								<span class="col col-3">Три последние цифры на оборотной стороне банковской карты</span>
 							</p>
 						</div>
-						<div class="tab tab-cashless tab-hidden">
+						<div id="cashless" class="tab tab-cashless tab-hidden">
 							<p class="form-line form-line-2-col">
 								<span class="col">
 									<label class="for">ИНН</label>
