@@ -11,7 +11,7 @@ $(document).ready(function () {
 	$('.top').each(function () {
 		$('.search').each(function () {
 			$('.toggle', this).click(function () {
-				$(this).addClass('toggle-active').siblings('.form-in').slideDown(200);
+				$(this).addClass('toggle-active').siblings('.form-in').fadeToggle(200);
 				return false;
 			});
 			$('.close', this).click(function () {
@@ -21,7 +21,7 @@ $(document).ready(function () {
 		});
 		$('.callback').each(function () {
 			$('.link', this).click(function () {
-				$(this).addClass('link-active').siblings('.form-in').slideDown(200);
+				$(this).addClass('link-active').siblings('.form-in').fadeToggle(200);
 				return false;
 			});
 			$('.close', this).click(function () {
