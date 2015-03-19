@@ -232,10 +232,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .file-uploaded .file { height: 75px; border: 1px solid #d6d6d6; position: relative; overflow: hidden; border-radius: 1px; margin-bottom: 15px; }
 .file-uploaded .file:first-child, .file-uploaded .file:hover { height: auto; }
 .file-uploaded .file:last-child { margin: 0; }
-/* .file-uploaded .file:before { width: 15px; height: 15px; content: ' '; display: block; position: absolute; top: 4px; right: 4px; background: url('../img/sprite.png') no-repeat -60px -60px; background-size: 150px auto; z-index: 20; } */
+.file-uploaded .file:before { width: 15px; height: 15px; content: ' '; display: block; position: absolute; top: 4px; right: 4px; background: url('../img/sprite.png') no-repeat -60px -60px; background-size: 150px auto; z-index: 20; }
 .file-uploaded .file .name { padding: 6px 9px; display: block; position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; font-size: 12px; line-height: 14px; color: #fff; white-space: nowrap; text-transform: none; text-align: left; background: rgba(0, 0, 0, .65); }
 .file-uploaded .file .img { max-width: 100%; display: block; margin: 0 auto; }
-.file-uploaded .file .close { position: absolute; right: 4px; top: 4px; z-index: 20; }
+.file-uploaded .file .close { position: absolute; right: 4px; bottom: 2px; top: auto; z-index: 20; }
 .file-uploaded .file .close:before, .file-uploaded .close:after { background: #ff7b10 !important; }
 /* */
 .preloader { width: 100%; height: 30px; overflow: hidden; position: relative; margin-bottom: 15px; border: 1px solid #d6d6d6; background: #fff; }
@@ -459,7 +459,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .tooltipster-help .tooltipster-content .h { font-size: 14px; line-height: 18px; text-transform: uppercase; }
 .tooltipster-help .tooltipster-content strong { font-weight: normal; text-transform: uppercase; }
 .tooltipster-help .tooltipster-content .orange { color: #ff7b10; }
-.tooltipster-help .tooltipster-content .do { font-size: 14px; line-height: 18px; }
+.tooltipster-help .tooltipster-content .do { margin: 0; font-size: 14px; line-height: 18px; }
 .tooltipster-help .tooltipster-content .prev { margin: 0 8px 0 0; }
 .tooltipster-help .tooltipster-content .next { margin: 0 10px; }
 .tooltipster-help .tooltipster-arrow span { display: none; }
@@ -471,6 +471,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .tooltipster-help .tooltipster-arrow-top-right .tooltipster-arrow-border:before { bottom: 15px; left: -20px; -webkit-transform: skew(23deg, 30deg); -moz-transform: skew(23deg, 30deg); -ms-transform: skew(23deg, 30deg); -o-transform: skew(23deg, 30deg); transform: skew(23deg, 30deg); }
 .tooltipster-help .tooltipster-arrow-right .tooltipster-arrow-border { width: 30px; height: 55px; margin-top: -61px; top: 50%; left: -29px; }
 .tooltipster-help .tooltipster-arrow-right .tooltipster-arrow-border:before { width: 100px; height: 50px; top: 23px; left: 15px; -webkit-transform: skew(30deg, 23deg); -moz-transform: skew(30deg, 23deg); -ms-transform: skew(30deg, 23deg); -o-transform: skew(30deg, 23deg); transform: skew(30deg, 23deg); }
+.tooltipster-help .close { top: 6px; right: 6px; }
 .tooltipster-help.tooltipster-arrow-right-alt .tooltipster-arrow-right .tooltipster-arrow-border { width: 30px; height: 55px; margin-top: 8px; top: 50%; left: -29px; }
 .tooltipster-help.tooltipster-arrow-right-alt .tooltipster-arrow-right .tooltipster-arrow-border:before { width: 100px; height: 50px; top: -21px; left: 15px; -webkit-transform: skew(-30deg, -23deg); -moz-transform: skew(-30deg, -23deg); -ms-transform: skew(-30deg, -23deg); -o-transform: skew(-30deg, -23deg); transform: skew(-30deg, -23deg); }
 .tooltipster-help.help-1 .tooltipster-arrow-border { margin-top: -112px; }
@@ -892,7 +893,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	background: #fff;
 }
 .footer .messages .dropdown {
-	right: -14px;
+	right: -24px;
 }
 .footer .dropdown:after, .footer .dropdown:before {
 	width: 0;

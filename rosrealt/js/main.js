@@ -440,6 +440,11 @@ $(document).ready(function () {
 			$('[data-tooltip-pointer="' + $(this).attr('data-next') + '"]').tooltipster('show');
 			return false;
 		});
+		$(document).on('click touchstart', '.tooltipster-base .close', function (event) {
+			$('[data-tooltip-pointer="' + $(this).closest('.tooltipster-base').attr('data-pointer') + '"]').tooltipster('hide');
+			$('.overlay').fadeOut(100);
+			return false;
+		});
 		$(document).on('click touchstart', function (event) {
 			var target = $(event.target), a = $('.tooltipster-base:visible');
 			if (a.length > 0) {
