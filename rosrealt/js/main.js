@@ -28,10 +28,21 @@ $(document).ready(function () {
 		}
 	});
 	$('textarea').flexible();
+	$(document).on('click touchstart', '.file-uploaded .close', function (event) {
+		$(this).closest('.file').animate({opacity: 0}, function () {
+			$(this).slideUp(function () {
+				$(this).remove();
+			});
+		});
+		return false;
+	});
 
 	/* Кастомный скролл */
 	$('.scroll').perfectScrollbar({
 		suppressScrollY: true
+	});
+	$('.stats .actions').perfectScrollbar({
+		suppressScrollX: true
 	});
 	$('.aside-fixed').perfectScrollbar({
 		suppressScrollX: true
@@ -184,6 +195,11 @@ $(document).ready(function () {
 				event.stopPropagation();
 				return false;
 			});
+			$('.input', this).click(function () {
+				if (_self.is('.disabled')) {
+					toggleSpace();
+				}
+			});
 			$('.icon-edit', this).click(function () {
 				_self.removeClass('disabled');
 				toggleSpace(false);
@@ -267,7 +283,7 @@ $(document).ready(function () {
 
 		$('.check-top', this).each(function () {
 			var _check = $(this);
-			$(window).on('scroll touchstart touchmove touchend resize', function () {
+			$(window).on('scroll touchmove resize', function () {
 				_self.toggleClass('filter-space-subhidden', (_check.offset().top - 20) > _height);
 			});
 		});
@@ -285,7 +301,7 @@ $(document).ready(function () {
 			$(this).toggleClass('minify');
 			$('.map').eq(0).toggleClass('small');
 			_height = +_map.height();
-			$(window).trigger(_events);
+			$(window).trigger('resize');
 			if (typeof(mapCenter) == "function") {
 				mapCenter();
 			}
@@ -310,6 +326,10 @@ $(document).ready(function () {
 		/* Иконка 'добавить в закладки' */
 		$(this).on('click', '.link-pin', function () {
 			$(this).toggleClass('icon-pinhover').toggleClass('active').closest('.tr').toggleClass('active');
+			return false;
+		});
+		$(this).on('click', '.icon-phone', function () {
+			$(this).toggleClass('active');
 			return false;
 		});
 	});
@@ -375,7 +395,7 @@ $(document).ready(function () {
 		url: "help.html",
 		cache: false
 	}).done(function (html) {
-		$('body').append(html);
+		$('body').append('<div class="overlay"></div>').append(html);
 		$('[data-tooltip-link]').each(function () {
 			var _w = 415, _link = $(this), _id = +_link.attr('data-tooltip-link'), _source = $('[data-tooltip-source=' + _id + ']'), _pointer = $('[data-tooltip-pointer="' + _id + '"]');
 			if (_source.is('[data-width]')) {
@@ -400,6 +420,10 @@ $(document).ready(function () {
 					if (_source.is('[data-class]')) {
 						$(tooltip).addClass(_source.attr('data-class'));
 					}
+				},
+				functionBefore: function (origin, continueTooltip) {
+					$('.overlay').fadeIn(200);
+					continueTooltip();
 				}
 			});
 			_link.click(function () {
@@ -416,16 +440,44 @@ $(document).ready(function () {
 			$('[data-tooltip-pointer="' + $(this).attr('data-next') + '"]').tooltipster('show');
 			return false;
 		});
+		$(document).on('click touchstart', '.tooltipster-base .close', function (event) {
+			$('[data-tooltip-pointer="' + $(this).closest('.tooltipster-base').attr('data-pointer') + '"]').tooltipster('hide');
+			$('.overlay').fadeOut(100);
+			return false;
+		});
 		$(document).on('click touchstart', function (event) {
 			var target = $(event.target), a = $('.tooltipster-base:visible');
-			console.log(a.length);
 			if (a.length > 0) {
 				if ((target.closest('.tooltipster-base').length === 0) && (!target.is('.tooltipster-base'))) {
 					a.each(function () {
 						$('[data-tooltip-pointer="' + $(this).attr('data-pointer') + '"]').tooltipster('hide');
+						$('.overlay').fadeOut(100);
 					})
 				}
 			}
 		});
 	});
+
+	/* Баги в IE */
+	if ($.browser.msie && $.browser.version < 10) {
+		$(":input[placeholder]").each(function () {
+			$(this).val($(this).attr('placeholder'));
+			$(this).focus(function () {
+				if ($(this).val() === $(this).attr('placeholder')) {
+					$(this).val('');
+				}
+			});
+			$(this).blur(function () {
+				if ($(this).val() === '') {
+					$(this).val($(this).attr('placeholder'));
+				}
+			});
+		});
+		$('.jq-file').each(function () {
+			var _self = $(this);
+			$('.jq-file__name', this).click(function () {
+				$('input[type=file]', _self).trigger('click');
+			});
+		});
+	}
 });
