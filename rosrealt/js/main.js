@@ -195,6 +195,13 @@ $(document).ready(function () {
 				event.stopPropagation();
 				return false;
 			});
+			$('.input', this).click(function () {
+				if (_self.is('.disabled')) {
+					_self.removeClass('disabled');
+					toggleSpace(false);
+					$(':input', _self).prop('disabled', false).trigger('refresh');
+				}
+			});
 			$('.icon-edit', this).click(function () {
 				_self.removeClass('disabled');
 				toggleSpace(false);
