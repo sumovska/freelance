@@ -263,11 +263,11 @@ $(document).ready(function () {
 			});
 		}
 
-		var _self = $(this), _map = $('.map').eq(0), _height = +_map.height(), _events = 'scroll touchstart touchmove touchend touchcancel';
+		var _self = $(this), _map = $('.map').eq(0), _height = +_map.height();
 
 		$('.check-top', this).each(function () {
 			var _check = $(this);
-			$(window).on(_events, function () {
+			$(window).on('scroll touchstart touchmove touchend resize', function () {
 				_self.toggleClass('filter-space-subhidden', (_check.offset().top - 20) > _height);
 			});
 		});
@@ -276,7 +276,7 @@ $(document).ready(function () {
 		$(this).on('click', '.toggle', function () {
 			$(this).closest('.filter').find('.inside').slideToggle(300, function () {
 				$(this).closest('.filter').toggleClass('open');
-				$(window).trigger(_events);
+				$(window).trigger('resize');
 			});
 			return false;
 		});
@@ -407,6 +407,10 @@ $(document).ready(function () {
 				_pointer.tooltipster('show');
 				return false;
 			});
+		});
+		$(document).on('click touchstart', '.tooltipster-base .prev', function (event) {
+			$('[data-tooltip-pointer="' + $(this).attr('data-prev') + '"]').tooltipster('show');
+			return false;
 		});
 		$(document).on('click touchstart', '.tooltipster-base .next', function (event) {
 			$('[data-tooltip-pointer="' + $(this).attr('data-next') + '"]').tooltipster('show');
