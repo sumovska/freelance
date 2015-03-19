@@ -301,7 +301,7 @@ $(document).ready(function () {
 			$(this).toggleClass('minify');
 			$('.map').eq(0).toggleClass('small');
 			_height = +_map.height();
-			$(window).trigger(_events);
+			$(window).trigger('resize');
 			if (typeof(mapCenter) == "function") {
 				mapCenter();
 			}
