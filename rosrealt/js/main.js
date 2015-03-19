@@ -452,4 +452,27 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	/* Баги в IE */
+	if ($.browser.msie && $.browser.version < 10) {
+		$(":input[placeholder]").each(function () {
+			$(this).val($(this).attr('placeholder'));
+			$(this).focus(function () {
+				if ($(this).val() === $(this).attr('placeholder')) {
+					$(this).val('');
+				}
+			});
+			$(this).blur(function () {
+				if ($(this).val() === '') {
+					$(this).val($(this).attr('placeholder'));
+				}
+			});
+		});
+		$('.jq-file').each(function () {
+			var _self = $(this);
+			$('.jq-file__name', this).click(function () {
+				$('input[type=file]', _self).trigger('click');
+			});
+		});
+	}
 });
