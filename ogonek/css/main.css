@@ -1274,11 +1274,14 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	height: 40px;
 	display: block;
 	cursor: pointer;
-	position: relative;
 	opacity: 1;
 	position: absolute;
 	bottom: -66px;
 	background: #00529c;
+	transition: background .2s ease;
+}
+.index .slick-prev:hover, .index .slick-next:hover {
+	background: #333;
 }
 .index .slick-prev { left: 539px; }
 .index .slick-next { left: 580px; }
@@ -1311,6 +1314,10 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .index .slick-next:after { top: 9px; }
 .index .slick-disabled {
 	opacity: .5;
+	cursor: default;
+}
+.index .slick-disabled:hover {
+	background: #00529c;
 }
 /* ==========================================================================
    _NEWS
