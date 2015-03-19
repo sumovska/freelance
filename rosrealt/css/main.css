@@ -124,7 +124,7 @@ h6, .h6 {
    Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
 /* === INPUT === */
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 30px; padding: 7px 9px 6px; border: 1px solid #d6d6d6; border-radius: 1px; box-shadow: none; outline: none; -webkit-appearance: none; color: #676767; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: border-color .1s, background-color .1s; }
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 30px; padding: 7px 9px 6px; border: 1px solid #d6d6d6; border-radius: 1px; box-shadow: none; outline: none; -webkit-appearance: none; color: #676767; -webkit-text-fill-color: #676767; font: 13px Arial, Helvetica, sans-serif; letter-spacing: .03em; background: #fff; transition: border-color .1s, background-color .1s; }
 textarea { width: 400px; height: 95px; max-height: 300px; overflow: auto; resize: none; }
 input[type="email"]:not([disabled]):focus, input[type="number"]:not([disabled]):focus, input[type="password"]:not([disabled]):focus, input[type="search"]:not([disabled]):focus, input[type="tel"]:not([disabled]):focus, input[type="text"]:not([disabled]):focus, input[type="url"]:not([disabled]):focus, textarea:not([disabled]):focus { border-color: #a09f9e; }
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled] { cursor: default; background: #f6f5f3; opacity: 1; }
@@ -1401,7 +1401,9 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 /* Выбор даты */
 .task-list .task .actions .datepicker { margin: -1px 0; position: relative; background: none; }
 .task-list .task .actions .datepicker .icon-calendar { width: 34px; border: none; cursor: pointer; border-left-color: transparent; position: absolute; top: 0; left: 0; z-index: 2; background: none; }
-.task-list .task .actions .datepicker .date { border-top-color: transparent; border-bottom-color: transparent; z-index: 5; }
+.task-list .task .actions .datepicker .date { height: 35px; padding-top: 10px; padding-bottom: 9px; border-top-color: transparent; border-bottom-color: transparent; margin-top: 1px; z-index: 5; }
+.task-list .task .actions-yellow .datepicker .date { background: #ffdeaa; }
+.task-list .task .actions-orange .datepicker .date { background: #ff7979; }
 .task-list .task.disabled .actions .datepicker .icon-calendar { cursor: default; }
 .task-list .task.disabled .actions .datepicker .icon-calendar:hover:before { opacity: 1; }
 .task-list .task.disabled .actions .datepicker .icon-calendar:hover:after { opacity: 0; }
