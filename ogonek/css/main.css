@@ -646,13 +646,8 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .footer .list li a:hover {
 	text-decoration: underline;
 }
-.footer .col-map .pic {
-	width: 200px;
-	height: 100px;
-	margin-bottom: 8px;
-	display: block;
-}
 .footer .col-map .link {
+	display: block;
 	color: #333;
 	text-decoration: none;
 	position: relative;
@@ -660,7 +655,16 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 .footer .col-map .link:hover {
 	text-decoration: underline;
 }
-.footer .col-map .link .arrow {
+.footer .col-map .pic {
+	width: 200px;
+	height: 100px;
+	margin-bottom: 8px;
+	display: block;
+}
+.footer .col-map .text {
+	position: relative;
+}
+.footer .col-map .arrow {
 	position: absolute;
 	top: 0;
 	right: -14px;
@@ -1009,6 +1013,10 @@ button.red, input[type="button"].red, input[type="submit"].red, input[type="rese
 	padding: 16px 30px 14px;
 	font-weight: 600;
 	position: relative;
+	transition: opacity .2s ease;
+}
+.menu .h2:hover {
+	opacity: .9;
 }
 .menu .h2 a {
 	padding: 10px 10px 0 35px;
