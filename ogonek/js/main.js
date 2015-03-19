@@ -153,4 +153,20 @@ $(document).ready(function () {
 		$(this).closest('.nav').removeClass('nav-hover');
 	});
 
+	/* IE fixes */
+	if ($.browser.msie && $.browser.version < 10) {
+		$(":input[placeholder]").each(function () {
+			$(this).val($(this).attr('placeholder'));
+			$(this).focus(function () {
+				if ($(this).val() === $(this).attr('placeholder')) {
+					$(this).val('');
+				}
+			});
+			$(this).blur(function () {
+				if ($(this).val() === '') {
+					$(this).val($(this).attr('placeholder'));
+				}
+			});
+		});
+	}
 });
