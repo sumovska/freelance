@@ -762,8 +762,8 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .nav .top {
 	width: 44px;
 	height: 38px;
-	display: block;
-	opacity: 0;
+	display: none;
+	opacity: 1;
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -771,10 +771,10 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	transition: opacity .2s;
 }
 .nav-top .nav .top {
-	opacity: 1;
+	display: block;
 }
 @media (max-height: 700px) {
-	.nav-top .nav .top { opacity: 0; }
+	.nav-top .nav .top { display: none; }
 }
 .nav .top:before {
 	width: 30px;
