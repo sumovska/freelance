@@ -228,6 +228,19 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; }
 .jq-file.file-photo:not(.changed):hover .jq-file__name, .jq-file:not(.changed).file-photo.focused .jq-file__name { border-color: transparent; background: none; -webkit-transform: scale(.97); transform: scale(.97); }
 .jq-file.file-photo .jq-file__browse { display: none; }
+/* */
+.file-uploaded .file { height: 75px; border: 1px solid #d6d6d6; position: relative; overflow: hidden; border-radius: 1px; margin-bottom: 15px; }
+.file-uploaded .file:first-child, .file-uploaded .file:hover { height: auto; }
+.file-uploaded .file:last-child { margin: 0; }
+.file-uploaded .file:before { width: 15px; height: 15px; content: ' '; display: block; position: absolute; top: 4px; right: 4px; background: url('../img/sprite.png') no-repeat -60px -60px; background-size: 150px auto; z-index: 20; }
+.file-uploaded .file .name { padding: 6px 9px; display: block; position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; font-size: 12px; line-height: 14px; color: #fff; white-space: nowrap; text-transform: none; text-align: left; background: rgba(0, 0, 0, .65); }
+.file-uploaded .file .img { max-width: 100%; display: block; margin: 0 auto; }
+.file-uploaded .file .close { position: absolute; right: 4px; bottom: 2px; top: auto; z-index: 20; }
+.file-uploaded .file .close:before, .file-uploaded .close:after { background: #ff7b10 !important; }
+/* */
+.preloader { width: 100%; height: 30px; overflow: hidden; position: relative; margin-bottom: 15px; border: 1px solid #d6d6d6; background: #fff; }
+.preloader .bar { display: block; position: absolute; top: 0; left: 0; bottom: 0; background: #ff750f url('../img/preloader.png') repeat-x 50% 50%; }
+/* */
 .form-line { width: 100%; margin-bottom: 15px; clear: left; }
 .form-submit { padding-top: 15px; margin-bottom: 0; }
 .form-line .form-line:last-of-type { margin: 0; }
@@ -462,6 +475,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .tooltipster-help.tooltipster-arrow-right-alt .tooltipster-arrow-right .tooltipster-arrow-border:before { width: 100px; height: 50px; top: -21px; left: 15px; -webkit-transform: skew(-30deg, -23deg); -moz-transform: skew(-30deg, -23deg); -ms-transform: skew(-30deg, -23deg); -o-transform: skew(-30deg, -23deg); transform: skew(-30deg, -23deg); }
 .tooltipster-help.help-1 .tooltipster-arrow-border { margin-top: -112px; }
 .tooltipster-help.help-final .tooltipster-arrow-border { right: 20px; }
+.overlay { display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 69; background: rgba(0, 0, 0, .2); }
 /* ==========================================================================
    _Шапка
    ========================================================================== */
@@ -1103,7 +1117,7 @@ a.icon.active:after { display: none; }
 .icon-calendar:before { background-position: -90px -90px; }
 .icon-calendar:after { background-position: -90px -120px; }
 /* Сохранить */
-.icon-save:before { background-position: -120px -120px; }
+.icon-save:before { background-position: -120px -150px; }
 a.icon-save:hover:before { opacity: 1; }
 .icon-save:after { display: none; }
 /* Удалить */

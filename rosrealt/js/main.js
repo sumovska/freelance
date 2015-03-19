@@ -28,6 +28,14 @@ $(document).ready(function () {
 		}
 	});
 	$('textarea').flexible();
+	$(document).on('click touchstart', '.file-uploaded .close', function (event) {
+		$(this).closest('.file').animate({opacity: 0}, function () {
+			$(this).slideUp(function () {
+				$(this).remove();
+			});
+		});
+		return false;
+	});
 
 	/* Кастомный скролл */
 	$('.scroll').perfectScrollbar({
@@ -375,7 +383,7 @@ $(document).ready(function () {
 		url: "help.html",
 		cache: false
 	}).done(function (html) {
-		$('body').append(html);
+		$('body').append('<div class="overlay"></div>').append(html);
 		$('[data-tooltip-link]').each(function () {
 			var _w = 415, _link = $(this), _id = +_link.attr('data-tooltip-link'), _source = $('[data-tooltip-source=' + _id + ']'), _pointer = $('[data-tooltip-pointer="' + _id + '"]');
 			if (_source.is('[data-width]')) {
@@ -400,6 +408,10 @@ $(document).ready(function () {
 					if (_source.is('[data-class]')) {
 						$(tooltip).addClass(_source.attr('data-class'));
 					}
+				},
+				functionBefore: function (origin, continueTooltip) {
+					$('.overlay').fadeIn(200);
+					continueTooltip();
 				}
 			});
 			_link.click(function () {
@@ -418,11 +430,11 @@ $(document).ready(function () {
 		});
 		$(document).on('click touchstart', function (event) {
 			var target = $(event.target), a = $('.tooltipster-base:visible');
-			console.log(a.length);
 			if (a.length > 0) {
 				if ((target.closest('.tooltipster-base').length === 0) && (!target.is('.tooltipster-base'))) {
 					a.each(function () {
 						$('[data-tooltip-pointer="' + $(this).attr('data-pointer') + '"]').tooltipster('hide');
+						$('.overlay').fadeOut(100);
 					})
 				}
 			}
