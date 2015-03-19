@@ -41,6 +41,9 @@ $(document).ready(function () {
 	$('.scroll').perfectScrollbar({
 		suppressScrollY: true
 	});
+	$('.stats .actions').perfectScrollbar({
+		suppressScrollX: true
+	});
 	$('.aside-fixed').perfectScrollbar({
 		suppressScrollX: true
 	});

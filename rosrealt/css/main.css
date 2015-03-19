@@ -1363,21 +1363,28 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	position: absolute;
 	top: 0;
 	right: 0;
+	bottom: 0;
 	z-index: 5;
 }
 .task-create .button-space input {
+	width: 100%;
 	height: 35px;
 	padding: 11px 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 /* ==========================================================================
    Список задач
    ========================================================================== */
-.task-list { margin-bottom: 0; position: relative; background: #fff; }
+.task-list { margin-bottom: 0; position: relative; background: #f6f5f3; }
 .task-list:after, .task-list .task:after, .task-list .input:after, .task-list .actions:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 /* Название задачи */
 .task-list .task { margin-bottom: -1px; position: relative; transition: background-color .1s; }
-.task-list .task:hover { background: #f6f5f3; }
-.task-list .task:not(.disabled) { background: transparent; }
+.task-list .task.disabled:hover { background: #f9f9f9; }
+.task-list .task:not(.disabled) { background: #fff; }
 .task-list .task .form-line { margin: 0; box-shadow: inset 0 0 0 1px #d6d6d6; }
 .task-list .task .input { margin: 0 184px 0 0; }
 .task-list .task input, .task-list .task textarea { width: 100%; display: block; position: relative; z-index: 10; background: none; transition: none; }
@@ -1389,7 +1396,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .task-list .task .space .form-line:first-child { margin: 0; }
 .task-list .task.open .space { display: block; overflow: hidden; }
 /* Область с кнопками */
-.task-list .task .actions { width: 149px; height: 35px; position: absolute; top: 1px; right: 35px; z-index: 15; background: #f6f5f3; transition: background-color .1s; }
+.task-list .task .actions { width: 149px; height: 35px; position: absolute; top: 1px; right: 35px; z-index: 15; transition: background-color .1s; }
 .task-list .task:not(.disabled) .actions { background: #fff; }
 /* Выбор даты */
 .task-list .task .actions .datepicker { margin: -1px 0; position: relative; background: none; }
@@ -1476,6 +1483,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: .04em;
+	position: relative;
 	overflow: auto;
 	overflow-x: hidden;
 	background: #fff;
