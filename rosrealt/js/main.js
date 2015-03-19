@@ -197,9 +197,7 @@ $(document).ready(function () {
 			});
 			$('.input', this).click(function () {
 				if (_self.is('.disabled')) {
-					_self.removeClass('disabled');
-					toggleSpace(false);
-					$(':input', _self).prop('disabled', false).trigger('refresh');
+					toggleSpace();
 				}
 			});
 			$('.icon-edit', this).click(function () {
@@ -285,7 +283,7 @@ $(document).ready(function () {
 
 		$('.check-top', this).each(function () {
 			var _check = $(this);
-			$(window).on('scroll touchstart touchmove touchend resize', function () {
+			$(window).on('scroll touchmove resize', function () {
 				_self.toggleClass('filter-space-subhidden', (_check.offset().top - 20) > _height);
 			});
 		});
@@ -328,6 +326,10 @@ $(document).ready(function () {
 		/* Иконка 'добавить в закладки' */
 		$(this).on('click', '.link-pin', function () {
 			$(this).toggleClass('icon-pinhover').toggleClass('active').closest('.tr').toggleClass('active');
+			return false;
+		});
+		$(this).on('click', '.icon-phone', function () {
+			$(this).toggleClass('active');
 			return false;
 		});
 	});

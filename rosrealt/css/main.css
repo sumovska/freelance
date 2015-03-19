@@ -232,10 +232,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .file-uploaded .file { height: 75px; border: 1px solid #d6d6d6; position: relative; overflow: hidden; border-radius: 1px; margin-bottom: 15px; }
 .file-uploaded .file:first-child, .file-uploaded .file:hover { height: auto; }
 .file-uploaded .file:last-child { margin: 0; }
-.file-uploaded .file:before { width: 15px; height: 15px; content: ' '; display: block; position: absolute; top: 4px; right: 4px; background: url('../img/sprite.png') no-repeat -60px -60px; background-size: 150px auto; z-index: 20; }
+/* .file-uploaded .file:before { width: 15px; height: 15px; content: ' '; display: block; position: absolute; top: 4px; right: 4px; background: url('../img/sprite.png') no-repeat -60px -60px; background-size: 150px auto; z-index: 20; } */
 .file-uploaded .file .name { padding: 6px 9px; display: block; position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; font-size: 12px; line-height: 14px; color: #fff; white-space: nowrap; text-transform: none; text-align: left; background: rgba(0, 0, 0, .65); }
 .file-uploaded .file .img { max-width: 100%; display: block; margin: 0 auto; }
-.file-uploaded .file .close { position: absolute; right: 4px; bottom: 2px; top: auto; z-index: 20; }
+.file-uploaded .file .close { position: absolute; right: 4px; top: 4px; z-index: 20; }
 .file-uploaded .file .close:before, .file-uploaded .close:after { background: #ff7b10 !important; }
 /* */
 .preloader { width: 100%; height: 30px; overflow: hidden; position: relative; margin-bottom: 15px; border: 1px solid #d6d6d6; background: #fff; }
@@ -1832,6 +1832,9 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 .pagination .button {
 	margin-right: 16px;
 }
+.block-owners .icon-phone {
+	cursor: pointer;
+}
 .block-owners .icon-phone .number {
 	padding: 11px 0 3px 9px;
 	border-left: 1px solid #d6d6d6;
@@ -1840,10 +1843,15 @@ a[href^="http://maps.google.com/maps"] { display: none !important }
 	top: 0;
 	bottom: 0;
 	right: 100%;
+	cursor: default;
 	white-space: nowrap;
 	background: #fff;
 }
-.block-owners .icon-phone:hover .number {
+.block-owners .icon-phone:before, .block-owners .icon-phone:after { transition: none; }
+.block-owners .icon-phone:hover:before { opacity: 0; }
+.block-owners .icon-phone:hover:after { opacity: 1; }
+.block-owners .icon-phone:hover:after { background-position: -210px -120px; }
+.block-owners .icon-phone.active .number {
 	display: block;
 	color: #676767;
 }
