@@ -295,6 +295,14 @@ $(document).ready(function () {
 		$('.check input:checkbox').not(this).click();
 	});
 
+	$('.form-message').each(function () {
+		var _self = $(this);
+		$('.link', this).click(function () {
+			_self.toggleClass('open');
+			return false;
+		});
+	});
+
 	/* IE fixes */
 	if ($.browser.msie) {
 		if ($.browser.versionNumber < 9) {
