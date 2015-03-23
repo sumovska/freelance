@@ -29,7 +29,7 @@
 			<div class="wrapper">
 				<div class="nav-in">
 					<ul>
-						<li><a href="#">Услуги</a></li>
+						<li class="hide"><a href="#">Услуги</a></li>
 						<li><a href="#">Доставка</a></li>
 						<li><a href="#">Оплата</a></li>
 						<li class="delivery">
@@ -59,7 +59,7 @@
 						<li><a href="#">Контакты</a></li>
 						<li><a href="#">Новости</a></li>
 						<li><a href="#">Отзывы</a></li>
-						<li><a href="#">Статьи</a></li>
+						<li class="hide"><a href="#">Статьи</a></li>
 					</ul>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 				<div class="all-goods">
 					<a class="link" href="#"><span class="toggle"></span>Все товары</a>
 					<div class="inside">
-						<ul class="sections">
+						<ul class="list">
 							<li><a href="#">Мобильные телефоны</a></li>
 							<li><a href="#">Планшенты</a></li>
 							<li class="addition">
@@ -122,10 +122,10 @@
 								<li><a href="#">Смена пароля</a></li>
 							</ul>
 						</div>
-					</li>	
+					</li>
 					<li class="out"><a href="#">Выход</a></li>
 				</ul>
-				<a class="cart" href="#">Корзина</a>
+				<a class="cart" href="#"><span class="amount">23</span>Корзина</a>
 			</div>
 		</div>
 	</header>
@@ -135,7 +135,7 @@
 			<p class="breadcrumbs"><a class="home" href="#">Главная</a> <a href="#">Мобильные телефоны</a> HTC</p>
 			<hgroup class="hgroup">
 				<h1 class="h1">Смартфоны</h1>
-			</hgroup>	
+			</hgroup>
 		</div>
 	</div>
 
@@ -150,10 +150,11 @@
 		<div class="wrapper">
 			<aside class="aside">
 				<div class="filter">
+					<p class="toggle"><span class="open"></span>Показать фильтр товаров<span class="close"></span></p>
 					<form action="#">
 						<label class="reset"><input type="reset" value="Сброс параметров"></label>
 						<div class="entry">
-							<p class="h5">Особые предложения</p>
+							<p class="h5">Особые предложения <span class="switch"></span></p>
 							<ul class="list">
 								<li><a href="#">Скидки <span class="amount">(23)</span></a></li>
 								<li><a href="#">Новинки <span class="amount">(0)</span></a></li>
@@ -163,7 +164,7 @@
 							</ul>
 						</div>
 						<div class="entry">
-							<p class="h5">Класс</p>
+							<p class="h5">Класс <span class="switch"></span></p>
 							<ul class="list">
 								<li><a href="#">Для девушек <span class="amount">(63)</span></a></li>
 								<li><a href="#">Все смартфоны</a></li>
@@ -175,7 +176,7 @@
 							</ul>
 						</div>
 						<div class="entry">
-							<p class="h5">Производители</p>
+							<p class="h5">Производители <span class="switch"></span></p>
 							<ul class="list list-red">
 								<li><a href="#">Samsung <span class="amount">(46)</span></a></li>
 								<li><a href="#">Nokia <span class="amount">(38)</span></a></li>
@@ -192,14 +193,14 @@
 							</ul>
 						</div>
 						<div class="entry">
-							<p class="h5">Цена</p>
+							<p class="h5">Цена <span class="switch"></span></p>
 							<div id="slider" class="price-slider">
 								<div class="item"></div>
-								<p class="line"><input type="text" class="from" value="1200"> &#8212; <input type="text" class="to" value="5000"> руб. <input type="submit" value="Ок"></p>
+								<p class="line"><input type="text" class="from" value="1200" title=""> &#8212; <input type="text" class="to" value="5000" title=""> руб. <input type="submit" value="Ок"></p>
 							</div>
 						</div>
 						<div class="entry">
-							<p class="h5">Операционная система</p>
+							<p class="h5">Операционная система <span class="switch"></span></p>
 							<ul class="list">
 								<li><a href="#">Android <span class="amount">(87)</span></a></li>
 								<li><a href="#">Windows Phone <span class="amount">(28)</span></a></li>
@@ -211,14 +212,14 @@
 							</ul>
 						</div>
 						<div class="entry">
-							<p class="h5">Разрешение экрана</p>
+							<p class="h5">Разрешение экрана <span class="switch"></span></p>
 							<ul class="list">
 								<li><a href="#">FullHD (1920x1080) <span class="amount">(25)</span></a></li>
 								<li><a href="#">HD (1280x720) <span class="amount">(39)</span></a></li>
 							</ul>
 						</div>
 						<div class="entry">
-							<p class="h5">Диагональ дисплея</p>
+							<p class="h5">Диагональ дисплея <span class="switch"></span></p>
 							<ul class="list">
 								<li><a href="#">До 5&quot; <span class="amount">(144)</span></a></li>
 								<li><a href="#">Более 5&quot; <span class="amount">(54)</span></a></li>
@@ -233,7 +234,7 @@
 							</ul>
 						</div>
 						<div class="entry">
-							<p class="h5">Беспроводные технологии</p>
+							<p class="h5">Беспроводные технологии <span class="switch"></span></p>
 							<ul class="list">
 								<li><a href="#">c поддержкой Bluetooth <span class="amount">(1)</span></a></li>
 								<li><a href="#">с поддержкой Wi-Fi <span class="amount">(1)</span></a></li>
@@ -241,7 +242,7 @@
 							</ul>
 						</div>
 						<div class="entry">
-							<p class="h5">Цвет</p>
+							<p class="h5">Цвет <span class="switch"></span></p>
 							<ul class="list">
 								<li><a href="#">Black <span class="amount">(157)</span></a></li>
 								<li><a href="#">Blue <span class="amount">(15)</span></a></li>
@@ -272,7 +273,7 @@
 										<span class="rate rate-5"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Samsung S 7562 Galaxy S Duos Chic White La Fleur</p>
+									<p class="name"><a href="item.html">Samsung S 7562 Galaxy S Duos Chic White La Fleur</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>18 999 руб.</span>
@@ -293,7 +294,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-2.jpg" alt="">
 								</div>
 								<div class="info">
@@ -301,7 +302,7 @@
 										<span class="rate rate-4"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">HTC Windows Phone 8S Domino A620e</p>
+									<p class="name"><a href="item.html">HTC Windows Phone 8S Domino A620e</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>6 900 руб.</span>
@@ -322,7 +323,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-sale">Распродажа</span></div>
+									<div class="cap"><span class="flag flag-sale">Распродажа</span></div>
 									<img src="img/temp/catalog-3.jpg" alt="">
 								</div>
 								<div class="info">
@@ -330,7 +331,7 @@
 										<span class="rate rate-5"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">HTC One X White S720e UACRF 16GB</p>
+									<p class="name"><a href="item.html">HTC One X White S720e UACRF 16GB</a></p>
 									<div class="bottom">
 										<div class="price">
 											<div class="old">
@@ -355,7 +356,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-4.jpg" alt="">
 								</div>
 								<div class="info">
@@ -363,7 +364,7 @@
 										<span class="rate rate-5"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Смартфон APPLE iPhone 4S 16GB Black</p>
+									<p class="name"><a href="item.html">Смартфон APPLE iPhone 4S 16GB Black</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>24 890 руб.</span>
@@ -384,7 +385,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-5.jpg" alt="">
 								</div>
 								<div class="info">
@@ -392,7 +393,7 @@
 										<span class="rate rate-4"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Смартфон HTC One S Black</p>
+									<p class="name"><a href="item.html">Смартфон HTC One S Black</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>13 999 руб.</span>
@@ -413,7 +414,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-6.jpg" alt="">
 								</div>
 								<div class="info">
@@ -421,7 +422,7 @@
 										<span class="rate rate-4"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Смартфон SAMSUNG I9105 Galaxy S II Plus Blue</p>
+									<p class="name"><a href="item.html">Смартфон SAMSUNG I9105 Galaxy S II Plus Blue</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>7 600 руб.</span>
@@ -451,7 +452,7 @@
 										<span class="rate rate-5"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Samsung S 7562 Galaxy S Duos Chic White La Fleur</p>
+									<p class="name"><a href="item.html">Samsung S 7562 Galaxy S Duos Chic White La Fleur</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>18 999 руб.</span>
@@ -472,7 +473,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-2.jpg" alt="">
 								</div>
 								<div class="info">
@@ -480,7 +481,7 @@
 										<span class="rate rate-4"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">HTC Windows Phone 8S Domino A620e</p>
+									<p class="name"><a href="item.html">HTC Windows Phone 8S Domino A620e</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>6 900 руб.</span>
@@ -501,7 +502,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-sale">Распродажа</span></div>
+									<div class="cap"><span class="flag flag-sale">Распродажа</span></div>
 									<img src="img/temp/catalog-3.jpg" alt="">
 								</div>
 								<div class="info">
@@ -509,7 +510,7 @@
 										<span class="rate rate-5"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">HTC One X White S720e UACRF 16GB</p>
+									<p class="name"><a href="item.html">HTC One X White S720e UACRF 16GB</a></p>
 									<div class="bottom">
 										<div class="price">
 											<div class="old">
@@ -534,7 +535,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-4.jpg" alt="">
 								</div>
 								<div class="info">
@@ -542,7 +543,7 @@
 										<span class="rate rate-5"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Смартфон APPLE iPhone 4S 16GB Black</p>
+									<p class="name"><a href="item.html">Смартфон APPLE iPhone 4S 16GB Black</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>24 890 руб.</span>
@@ -563,7 +564,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-5.jpg" alt="">
 								</div>
 								<div class="info">
@@ -571,7 +572,7 @@
 										<span class="rate rate-4"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Смартфон HTC One S Black</p>
+									<p class="name"><a href="item.html">Смартфон HTC One S Black</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>13 999 руб.</span>
@@ -592,7 +593,7 @@
 						<div class="in">
 							<div class="product">
 								<div class="pic">
-									<div class="cap"><span class="mark mark-new">Новинка</span></div>
+									<div class="cap"><span class="flag flag-new">Новинка</span></div>
 									<img src="img/temp/catalog-6.jpg" alt="">
 								</div>
 								<div class="info">
@@ -600,7 +601,7 @@
 										<span class="rate rate-4"></span>
 										<a class="to-reviews" href="#">13 отзывов</a>
 									</p>
-									<p class="name">Смартфон SAMSUNG I9105 Galaxy S II Plus Blue</p>
+									<p class="name"><a href="item.html">Смартфон SAMSUNG I9105 Galaxy S II Plus Blue</a></p>
 									<div class="bottom">
 										<div class="price">
 											<span>7 600 руб.</span>
@@ -635,6 +636,11 @@
 						<li><a href="#">6</a></li>
 					</ul>
 				</div>
+				<div class="article">
+					<p class="title">Что важно знать о мобильных телефонах</p>
+					<img class="pic" src="img/temp/article-2.jpg" alt="">
+					<p>Генеративная поэтика непосредственно нивелирует символ, и это является некими межсловесными отношениями другого типа, природу которых еще предстоит конкретизировать далее. Обсценная идиома начинает возврат к стереотипам, именно об этом говорил Б.В.Томашевский в своей работе 1925 года. Реципиент притягивает экзистенциальный ямб, именно об этом говорил Б.В.Томашевский в своей работе 1925 года. Стиль, соприкоснувшись в чем-то со своим главным антагонистом в постструктурной поэтике, сложен. Размер, за счет использования параллелизмов и повторов на разных языковых уровнях, текстологически отражает диссонансный дактиль, и это является некими межсловесными отношениями другого типа, природу которых еще предстоит конкретизировать далее.</p>
+				</div>
 			</section>
 		</div>
 	</div>
@@ -662,11 +668,36 @@
 							<ul class="list">
 								<li><a href="#">Услуги</a></li>
 								<li><a href="#">Доставка</a></li>
-								<li><a href="#">Оплата</a></li>
-								<li><a href="#">Пункты выдачи</a></li>
-								<li><a href="#">Контакты</a></li>
+								<li>
+									<a href="#">Оплата</a>
+									<ul>
+										<li><a href="#">Наличными</a></li>
+										<li><a href="#">Элестронные деньги</a></li>
+										<li><a href="#">Безналичный расчет</a></li>
+									</ul>
+								</li>
+								<li class="hidden"><a href="#">Пункты выдачи</a></li>
+								<li class="hidden"><a href="#">Контакты</a></li>
 								<li><a href="#">Новости</a></li>
 								<li><a href="#">Отзывы</a></li>
+							</ul>
+							<ul class="list list-hidden">
+								<li>
+									<a href="#">Пункты выдачи</a>
+									<ul>
+										<li><a href="#">м. Академическая</a></li>
+										<li><a href="#">м. Китай Город</a></li>
+										<li><a href="#">м. Политех</a></li>
+										<li><a href="#">м. Саратовское</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Контакты</a>
+									<ul>
+										<li><a href="#">г. Москва</a></li>
+										<li><a href="#">г. Киев</a></li>
+									</ul>
+								</li>
 							</ul>
 						</div>
 						<div class="col">
@@ -688,12 +719,12 @@
 						</div>
 					</div>
 				</div>
-				<form class="form form-callback" action="#">
-					<h5 class="h4">Напишите нам</h5>
-					<p class="line"><input type="text" placeholder="Ваше имя"></p>
-					<p class="line"><input type="text" placeholder="Ваш e-mail"></p>
-					<p class="line"><textarea>Задайте ваш вопрос</textarea></p>
-					<p class="submit"><input type="submit" value="Отправить"></p>
+				<form class="form-callback" action="#">
+					<p class="h4">Напишите нам</p>
+					<p class="form-line"><input type="text" placeholder="Ваше имя"></p>
+					<p class="form-line"><input type="text" placeholder="Ваш e-mail"></p>
+					<p class="form-line"><textarea title="">Задайте ваш вопрос</textarea></p>
+					<p class="form-submit"><input type="submit" value="Отправить"></p>
 				</form>
 			</div>
 		</div>

@@ -57,5 +57,68 @@ $(document).ready(function () {
 		});
 		$('.item', this).Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 	});
+
+	function checkWidth() {
+		var windowSize = $(window).width();
+
+		if (windowSize > 768) {
+			$('.catalog-small').removeClass('carousel-small');
+		}
+		else if (windowSize < 767) {
+			$('.catalog-small').addClass('carousel-small').slick({
+				slidesToScroll: 1,
+				slidesToShow: 2,
+				variableWidth: true,
+				centerMode: true,
+				focusOnSelect: true,
+				arrows: false,
+				responsive: [
+					{
+						breakpoint: 667,
+						settings: {
+							slidesToShow: 1,
+							centerMode: true
+						}
+					}
+				]
+			});
+			$('.offers').slick({
+				slidesToScroll: 1,
+				slidesToShow: 2,
+				arrows: false,
+				responsive: [
+					{
+						breakpoint: 667,
+						settings: {
+							slidesToShow: 1,
+							centerMode: true
+						}
+					}
+				]
+			});
+		}
+	}
+
+	// Execute on load
+	checkWidth();
+	// Bind event listener
+	$(window).resize(checkWidth);
+
+	/* Popup script */
+	$('.fancybox-popup').fancybox({
+		padding: 0
+	});
+
+	$('.filter').each(function(){
+		$('.open').click(function() {
+			$(this).closest('.toggle').addClass('toggle-active').siblings('form').fadeIn(200);
+		});
+		$('.close').click(function() {
+			$(this).closest('.toggle').removeClass('toggle-active').siblings('form').fadeOut(200);
+		});
+		$('.h5 .switch').click(function() {
+			$(this).closest('.h5').toggleClass('h5-active').siblings('.list', '.price-slider').fadeToggle(200);
+		});
+	});
 });
 

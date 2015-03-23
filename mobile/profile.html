@@ -21,7 +21,7 @@
 	<header class="header">
 		<div class="wrapper">
 			<div class="space">
-				<p class="logo"><img src="img/logo.png" alt=""></p>
+				<p class="logo"><a href="index.html"><img src="img/logo.png" alt=""></a></p>
 				<a class="callback" href="#">Заказать звонок</a>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 			<div class="wrapper">
 				<div class="nav-in">
 					<ul>
-						<li><a href="#">Услуги</a></li>
+						<li class="hide"><a href="#">Услуги</a></li>
 						<li><a href="#">Доставка</a></li>
 						<li><a href="#">Оплата</a></li>
 						<li class="delivery">
@@ -59,7 +59,7 @@
 						<li><a href="#">Контакты</a></li>
 						<li><a href="#">Новости</a></li>
 						<li><a href="#">Отзывы</a></li>
-						<li><a href="#">Статьи</a></li>
+						<li class="hide"><a href="#">Статьи</a></li>
 					</ul>
 				</div>
 			</div>
@@ -68,14 +68,14 @@
 			<div class="wrapper">
 				<div class="search">
 					<form action="#">
-						<input type="text" value="" placeholder="Поиск">
+						<input type="text" value="" placeholder="Введите запрос">
 						<input type="submit" value="" title="Искать">
 					</form>
 				</div>
 				<div class="all-goods">
 					<a class="link" href="#"><span class="toggle"></span>Все товары</a>
 					<div class="inside">
-						<ul class="sections">
+						<ul class="list">
 							<li><a href="#">Мобильные телефоны</a></li>
 							<li><a href="#">Планшенты</a></li>
 							<li class="addition">
@@ -125,7 +125,7 @@
 					</li>
 					<li class="out"><a href="#">Выход</a></li>
 				</ul>
-				<a class="cart" href="#">Корзина</a>
+				<a class="cart" href="#"><span class="amount">23</span> Корзина</a>
 			</div>
 		</div>
 	</header>
@@ -153,21 +153,25 @@
 			<div class="content">
 				<form class="form-profile" action="#">
 					<h2 class="h2">Мои настройки</h2>
-					<p class="form-line">info@name.ru <span class="fn">Вы не можете сменить e-mail</span></p>
-					<p class="form-line"><input type="text" placeholder="Ваш телефон"></p>
-					<p class="form-line"><input type="text" placeholder="Катерина Ларина"></p>
-					<p class="form-line">
-						<span class="h4">Адрес доставки</span>
-						<a class="add" href="#">Добавить адрес</a>
-					</p>
-					<p class="form-line"><input type="text" placeholder="Город"></p>
-					<p class="form-line form-line-col">
-						<span class="col col-50"><input type="text" placeholder="Улица"></span>
-						<span class="col col-25"><input type="text" placeholder="Дом"></span>
-						<span class="col col-25"><input type="text" placeholder="Квартира"></span>
-					</p>
-					<p class="form-line"><textarea placeholder="Дополнительная информация"></textarea></p>
-					<p class="form-line"><a href="#">Сменить пароль</a></p>
+					<p class="mail">info@name.ru <span class="fn">Вы не можете сменить e-mail</span></p>
+					<div class="unit">
+						<p class="form-line"><input type="text" placeholder="Ваш телефон"></p>
+						<p class="form-line"><input type="text" placeholder="Катерина Ларина"></p>
+					</div>
+					<div class="unit">
+						<p class="form-line">
+							<span class="h4">Адрес доставки</span>
+							<a class="add" href="#">Добавить адрес</a>
+						</p>
+						<p class="form-line"><input type="text" placeholder="Город"></p>
+						<p class="form-line form-line-col">
+							<span class="col col-50"><input type="text" placeholder="Улица"></span>
+							<span class="col col-25"><input type="text" placeholder="Дом"></span>
+							<span class="col col-25"><input type="text" placeholder="Квартира"></span>
+						</p>
+						<p class="form-line"><textarea placeholder="Дополнительная информация"></textarea></p>
+						<p class="form-line"><a href="#">Сменить пароль</a></p>
+					</div>
 					<div class="social">
 						<p class="h4">Свяжите свой профиль с профилями социальных сетей</p>
 						<ul class="list">
@@ -208,11 +212,36 @@
 							<ul class="list">
 								<li><a href="#">Услуги</a></li>
 								<li><a href="#">Доставка</a></li>
-								<li><a href="#">Оплата</a></li>
-								<li><a href="#">Пункты выдачи</a></li>
-								<li><a href="#">Контакты</a></li>
+								<li>
+									<a href="#">Оплата</a>
+									<ul>
+										<li><a href="#">Наличными</a></li>
+										<li><a href="#">Элестронные деньги</a></li>
+										<li><a href="#">Безналичный расчет</a></li>
+									</ul>
+								</li>
+								<li class="hidden"><a href="#">Пункты выдачи</a></li>
+								<li class="hidden"><a href="#">Контакты</a></li>
 								<li><a href="#">Новости</a></li>
 								<li><a href="#">Отзывы</a></li>
+							</ul>
+							<ul class="list list-hidden">
+								<li>
+									<a href="#">Пункты выдачи</a>
+									<ul>
+										<li><a href="#">м. Академическая</a></li>
+										<li><a href="#">м. Китай Город</a></li>
+										<li><a href="#">м. Политех</a></li>
+										<li><a href="#">м. Саратовское</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Контакты</a>
+									<ul>
+										<li><a href="#">г. Москва</a></li>
+										<li><a href="#">г. Киев</a></li>
+									</ul>
+								</li>
 							</ul>
 						</div>
 						<div class="col">
@@ -234,12 +263,12 @@
 						</div>
 					</div>
 				</div>
-				<form class="form form-callback" action="#">
-					<h5 class="h4">Напишите нам</h5>
-					<p class="line"><input type="text" placeholder="Ваше имя"></p>
-					<p class="line"><input type="text" placeholder="Ваш e-mail"></p>
-					<p class="line"><label><textarea>Задайте ваш вопрос</textarea></label></p>
-					<p class="submit"><input type="submit" value="Отправить"></p>
+				<form class="form-callback" action="#">
+					<p class="h4">Напишите нам</p>
+					<p class="form-line"><input type="text" placeholder="Ваше имя"></p>
+					<p class="form-line"><input type="text" placeholder="Ваш e-mail"></p>
+					<p class="form-line"><textarea title="">Задайте ваш вопрос</textarea></p>
+					<p class="form-submit"><input type="submit" value="Отправить"></p>
 				</form>
 			</div>
 		</div>
