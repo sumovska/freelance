@@ -54,10 +54,11 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Где купить</p> 
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Где купить</p>
 
-		<div class="block-buy">
-			<p>Мы производим и продаем оптом <a href="#">мужские костюмы</a>, <a href="#">мужские пиджаки</a>, <a href="#">мужские пальто</a>, <a href="#">мужские куртки</a>, <a href="#">мужские плащи</a>, <a href="#">мужской трикотаж</a>, <a href="#">школьные костюмы для мальчиков</a> и <a href="#">детский трикотаж</a>.</p>
+		<div class="where">
+			<p>Мы производим и продаем оптом <a href="#">мужские костюмы</a>, <a href="#">мужские пиджаки</a>, <a href="#">мужские пальто</a>, <a href="#">мужские куртки</a>, <a href="#">мужские плащи</a>, <a href="#">мужской трикотаж</a>, <a href="#">школьные костюмы для мальчиков</a> и
+				<a href="#">детский трикотаж</a>.</p>
 
 			<div class="block-map">
 				<div class="map">
@@ -82,49 +83,38 @@
 				</script>
 				<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
 			</div>
-		
-			<form class="form form" action="#">
-				<div class="columns">
-					<div class="column col-1">
-						<div class="line line-search line-search-1">
+
+			<form class="form form-where" action="where.html" method="post">
+				<div class="list">
+					<div class="col col-1-2">
+						<div class="line line-city">
 							<label class="for">Город</label>
-							<span>
-								<input type="text" placeholder="Саратов">
-								<button type="submit">Поиск</button>
-							</span>
+							<input type="text" placeholder="Саратов">
+							<button>Поиск</button>
 						</div>
 					</div>
-					<div class="column col-2">
-						<div class="for line line-search line-search-2">
+					<div class="col col-1-2">
+						<div class="for line line-asortment">
 							<label class="for" for="select-search">Ассортимент</label>
-							<span class="in in-1">
-								<select id="select-search">
-									<option value="">Детские костюмы и брюки</option>
-									<option value="0">Детские костюмы и брюки</option>
-									<option value="1">Детские костюмы и брюки</option>
-								</select>
-							</span>
-							<span class="in in-2">
-								<button type="submit">Найти</button>
-							</span>
+							<select id="select-search">
+								<option value="" selected>Детские костюмы и брюки</option>
+								<option value="0">Детские костюмы и брюки</option>
+								<option value="1">Детские костюмы и брюки</option>
+							</select>
+							<button type="submit">Найти</button>
 						</div>
 					</div>
-				</div>
-				<div class="sale">
-					<div class="line">
-						<span class="check"><input id="check1" type="checkbox" checked=""></span>
-						<label for="check1">Со скидочным купоном</label>
+					<div class="col line">
+						<label class="checkbox"><input type="checkbox" checked>Со скидочным купоном</label>
+						<label class="checkbox"><input type="checkbox" checked>Наличие акций</label>
+						<label class="checkbox"><input type="checkbox" checked>Показать все</label>
 					</div>
-					<div class="line">
-						<span class="check"><input id="check2" type="checkbox" checked=""></span>
-						<label for="check2">Наличие акций</label>
-					</div>
-					<div class="line">
-						<span class="check"><input id="check3" type="checkbox" checked=""></span>
-						<label for="check3">Показать все</label>
+					<div class="col line submit">
+						<button type="submit">Найти</button>
 					</div>
 				</div>
 			</form>
+
 			<div class="tabs-abc">
 				<ul class="triggers">
 					<li class="active">

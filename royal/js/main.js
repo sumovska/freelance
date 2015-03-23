@@ -316,6 +316,7 @@ $(document).ready(function () {
 		nextEffect: 'fade',
 		prevEffect: 'fade',
 		fitToView: false,
+		autosize: true,
 		beforeShow: function () {
 			initForms();
 			initGallery();
