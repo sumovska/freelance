@@ -193,7 +193,7 @@ fieldset {
 .jq-radio.focused { border: 1px solid #08c }
 .jq-radio.disabled { opacity: .55 }
 .jq-file { width: 270px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); border-radius: 4px }
-.jq-file input { cursor: pointer; height: auto; line-height: 1em }
+.jq-file input { cursor: default; height: auto; line-height: 1em }
 .jq-file__name { -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; height: 32px; padding: 0 80px 0 10px; color: #333; font: 14px/30px Arial, sans-serif; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; border: 1px solid #ccc; border-bottom-color: #b3b3b3; border-radius: 4px; box-shadow: inset 1px 1px #f1f1f1; background: #fff }
 .focused .jq-file__name { border: 1px solid #5794bf }
 .jq-file__browse { position: absolute; top: 1px; right: 1px; padding: 0 10px; border-left: 1px solid #ccc; border-radius: 0 4px 4px 0; background: #f1f1f1 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC') repeat-x; box-shadow: inset 1px -1px #f1f1f1, inset 0 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, 0.1); color: #333; text-shadow: 1px 1px #fff; font: 14px/30px Arial, sans-serif }
@@ -287,8 +287,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .form label.for { margin-bottom: 5px; display: block; }
 .form:after, .form .line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .form .line-file { margin-top: -4px; margin-bottom: 17px; }
-.jq-file.file-add-image { width: 100%; border-radius: 0; box-shadow: none; margin: -5px 0 0 0; display: block; position: relative; }
-.jq-file.file-add-image .jq-file__name { height: auto; padding: 3px 0 3px 25px; border: none; border-radius: 0; box-shadow: none; font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif; letter-spacing: -.01em; text-transform: uppercase; position: relative; cursor: pointer; }
+.jq-file.file-add-image { width: 100%; border-radius: 0; box-shadow: none; margin: -5px 0 0 0; display: block; position: relative; cursor: default; }
+.jq-file.file-add-image .jq-file__name { height: auto; padding: 3px 0 3px 25px; border: none; border-radius: 0; box-shadow: none; font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif; letter-spacing: -.01em; text-transform: uppercase; position: relative; }
 .jq-file.file-add-image .jq-file__name:before { width: 16px; height: 13px; display: block; content: ' '; position: absolute; top: 3px; left: 0; background: url('../img/sprite.png') no-repeat -210px -420px; }
 .jq-file.file-add-image .jq-file__browse { display: none; }
 /* ==========================================================================
@@ -3847,7 +3847,7 @@ body > .search-toggle {
 }
 .form-data .cover {
 	margin-bottom: 9px;
-	padding-right: 30px;
+	padding-right: 20px;
 	position: relative;
 }
 .form-data .cover .button-close {
@@ -3861,9 +3861,8 @@ body > .search-toggle {
 .form-data .submit button[type="submit"] {
 }
 .form-data .add {
-	margin-bottom: 10px;
-	text-transform: uppercase;
-	font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif;
+	margin-bottom: 20px;
+	display: block;
 }
 .form-data .add a {
 	padding-left: 26px;
@@ -3884,48 +3883,44 @@ body > .search-toggle {
 	top: 7px;
 	background: url(../img/sprite.png) -210px -420px no-repeat;
 }
+.form-data .add-good {
+	margin: 3px 0 10px;
+	font: 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
 .form-data .add-good a {
-	padding-left: 0;
+	padding: 8px 0 8px 40px;
+	border: none;
+	display: block;
+	text-decoration: none;
 }
 .form-data .add-good a:before {
-	display: none;
-}
-.form-data .add-good .plus {
 	width: 30px;
 	height: 30px;
-	margin-right: 10px;
-	padding: 2px;
-	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	background: linear-gradient(to bottom, #7a7a7a 0%, #242424 100%);
-}
-.form-data .add-good .plus span {
-	width: 100%;
-	height: 100%;
 	display: block;
-	position: relative;
-	background: #fff;
-}
-.form-data .add-good .plus span:before, .form-data .add-good .plus span:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
+	content: " ";
 	position: absolute;
-	top: 8px;
-	left: 12px;
-	background: #515151;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: linear-gradient(to bottom, rgba(122, 122, 122, 1) 0%, rgba(37, 37, 37, 1) 100%);
 }
-.form-data .add-good .plus span:before {
-	width: 2px;
-	height: 10px;
-}
-.form-data .add-good .plus span:after {
-	width: 10px;
-	height: 2px;
-	top: 12px;
-	left: 8px;
+.form-data .add-good a:after {
+	width: 26px;
+	height: 26px;
+	display: block;
+	content: "+";
+	font-size: 22px;
+	line-height: 26px;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-align: center;
+	color: #515151;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	z-index: 2;
+	background: #fff;
 }
 /* ==========================================================================
    _BLOCK-MANAGE
@@ -3972,7 +3967,7 @@ body > .search-toggle {
 	display: block;
 }
 .block-manage .sale {
-	padding-top: 7px;
+	padding-top: 3px;
 	font-size: 14px;
 	letter-spacing: -.03em;
 	color: #999;
@@ -4081,6 +4076,7 @@ body > .search-toggle {
 }
 .shops .name {
 	width: 460px;
+	padding-right: 60px;
 	float: left;
 }
 .shops .name .tags {
@@ -4139,6 +4135,14 @@ body > .search-toggle {
 /* ==========================================================================
    _LOGIN
    ========================================================================== */
+.gallery {
+	text-align: left;
+	position: relative;
+}
+.gallery .bx-wrapper {
+	margin: 0 !important;
+	position: relative;
+}
 .gallery ul {
 	margin: 0;
 	padding: 0;
@@ -4480,17 +4484,26 @@ body > .search-toggle {
 	margin-right: 10px;
 }
 .popup-edit .h2 {
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 	color: #212121;
 }
 .popup-edit .h2 span {
 	color: #036;
 }
+.popup-edit .line {
+	margin-bottom: 12px;
+}
+.popup-edit .line label.for {
+	margin-bottom: 2px;
+	display: block;
+	line-height: 24px;
+}
 .popup-edit .columns {
 	margin-left: -10px;
 	margin-right: -10px;
-	padding-bottom: 35px;
+	padding-bottom: 60px;
 }
+.popup-edit .columns:before { left: 0; right: 0; }
 .popup-edit .goods {
 	margin: 0 0 14px;
 	font: bold 10px/11px 'Gotham Pro', Helvetica, Arial, sans-serif;
@@ -4516,6 +4529,7 @@ body > .search-toggle {
 	clear: both;
 }
 .popup-edit .goods .name span {
+	height: 20px;
 	padding: 5px 7px;
 	float: left;
 	display: block;
@@ -4534,6 +4548,15 @@ body > .search-toggle {
 	display: block;
 	top: 0;
 	border-bottom: none;
+}
+.popup-edit .unit-2 {
+	margin-top: 6px;
+}
+.popup-edit .form-data .add-file {
+	margin: 12px 0;
+	position: relative;
+	z-index: 5000;
+	display: block;
 }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
@@ -4570,7 +4593,7 @@ body > .search-toggle {
 .fancybox-title-inside-wrap { margin-top: 10px; }
 .fancybox-title-over-wrap { position: absolute; bottom: 0; left: 0; color: #fff; padding: 10px; background: #000; background: rgba(0, 0, 0, .8); }
 .fancybox-skin, .fancybox-opened .fancybox-skin { border-radius: 0; box-shadow: none; background: #fff; }
-.fancybox-skin .fancybox-close { width: 30px; height: 30px; display: block; top: -30px; right: -30px; outline: none; background: none; transition: background-color .2s ease; }
+.fancybox-skin .fancybox-close { width: 30px; height: 30px; display: block; top: -35px; right: -35px; outline: none; background: none; transition: background-color .2s ease; }
 .fancybox-skin .fancybox-close:before { width: 2px; height: 30px; display: block; content: ' '; overflow: hidden; position: absolute; top: 0; left: 50%; background: #fff; border-radius: 2px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
 .fancybox-skin .fancybox-close:after { width: 2px; height: 30px; display: block; content: ' '; overflow: hidden; position: absolute; top: 0; left: 50%; background: #fff; border-radius: 2px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 .fancybox-skin .fancybox-close:hover:before, .fancybox-skin .fancybox-close:hover:after { background: #f39420; }
@@ -4819,7 +4842,7 @@ body > .search-toggle {
 	.questions .line { width: 100%; }
 	.shops .item { margin-bottom: 26px; padding-bottom: 72px; }
 	.shops .item:last-child { padding-bottom: 34px; }
-	.shops .name { width: 100%; margin-bottom: 35px; float: none; }
+	.shops .name { width: 100%; margin-bottom: 35px; float: none; padding: 0; }
 	.shops .name .edit { position: absolute; bottom: 38px; left: 0; right: 0; }
 	.shops .item:last-child .name .edit { bottom: 0; }
 	.shops .gallery { width: 100%; float: none; }
@@ -4983,7 +5006,7 @@ body > .search-toggle {
 	.actions .item .term { width: 100%; margin-bottom: 20px; padding-top: 0; padding-right: 100px; float: none; }
 	.actions .item .term .new { right: 0; left: auto; }
 	.actions .item .define { padding-left: 0; }
-	.map { margin: 0 -20px 30px; }
+	.map { margin: 0 -20px; }
 	.block-search:before { left: -20px; right: -20px; }
 	.block-search .form { padding-top: 55px; position: relative; }
 	.block-search .form label.for { margin-bottom: 7px; }
@@ -5014,6 +5037,16 @@ body > .search-toggle {
 	.catalog-new .in { padding-left: 50px; }
 	.catalog-new .scroll .mCSB_scrollTools { display: none !important; }
 	.block-orders .table-price .info .hidden { display: none; }
+	.block-manage .sale { margin: 0; }
+	.form-data .list { overflow: visible; }
+	.form-data .columns:before { left: -20px; right: -20px; }
+	.form-message.open .submit { margin-top: 36px; }
+	.block-manage .form-data .submit button[type="submit"] { padding-top: 17px; padding-bottom: 17px; }
+	.popup-edit { width: 100%; }
+	.popup-edit .form-data .columns:before { left: 0; right: 0; }
+	.popup-edit .gallery-popup { margin-bottom: 20px; }
+	.fancybox-skin .fancybox-close { top: 20px; right: 20px; }
+	.fancybox-skin .fancybox-close:before, .fancybox-skin .fancybox-close:after { background: #000; }
 }
 @media (max-width: 486px) {
 	.catalog-grey .catalog { width: auto; }
@@ -5042,6 +5075,7 @@ body > .search-toggle {
 	.block-orders .table-order { padding-top: 25px; }
 	.table-order .tr .name { padding: 0 0 30px 0; }
 	.table-order .tr .pic { width: 58px; text-align: left; }
+	.block-manage .form-data { margin-bottom: 41px; }
 	.block-orders .table-price .tr { padding: 17px 20px; }
 	.block-orders .table-price .tr .td { padding: 0; }
 }
@@ -5066,8 +5100,8 @@ body > .search-toggle {
 	.block-order .kind { margin-bottom: 0; padding-bottom: 0; }
 	.block-order .kind:before { display: none; }
 	.popup-ask, .popup-callback { width: 200px; }
-	.popup-edit { width: 260px; padding-left: 10px; padding-right: 10px; }
-	.popup-edit .form-data .line-adr span:first-child { width: 85%; }
-	.popup-edit .form-data .line-adr span { width: 15%; }
+	.popup-edit .form-data .line-adr span:first-child { width: 75%; }
+	.popup-edit .form-data .line-adr span { width: 20%; }
+	.popup-edit .form-data .submit button[type="submit"] { padding-left: 5px; padding-right: 5px; }
 	.block-item .info .options .colors span { border-bottom: none; }
 }

@@ -749,6 +749,22 @@ h6, .h6 {
 	background: #162335;
 }
 /* Header scroll */
+@keyframes blink {
+	0% { opacity: .3 }
+	50% { opacity: 1 }
+	100% { opacity: .3 }
+}
+@-moz-keyframes blink {
+	0% { opacity: .3 }
+	50% { opacity: 1 }
+	100% { opacity: .3 }
+}
+@-webkit-keyframes blink {
+	0% { opacity: .3 }
+	50% { opacity: 1 }
+	100% { opacity: .3 }
+}
+
 .header .scroll {
 	padding-left: 17px;
 	cursor: default;
@@ -762,6 +778,10 @@ h6, .h6 {
 	text-decoration: none;
 	z-index: 10;
 	transition: opacity .3s ease;
+	
+	-webkit-animation: blink 5s infinite;
+	-moz-animation: blink 5s infinite;
+	animation: blink 5s infinite;
 }
 .header .scroll:hover {
 	opacity: .8;
