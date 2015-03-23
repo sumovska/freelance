@@ -1,11 +1,51 @@
 /*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true */
 /*global window, console, document, $, jQuery, PIE */
+function initForms() {
+	/* Init forms */
+	$('input, select').styler();
+}
+
+function initGallery() {
+	/* Gallery */
+	$('.gallery:visible:not(.gallery-inited)').each(function (i) {
+		var slider = $('.carousel', this).bxSlider({
+			pager: false,
+			responsive: true,
+			minSlides: 3,
+			maxSlides: 8,
+			moveSlides: 1,
+			slideWidth: 80,
+			slideMargin: 10,
+			useCSS: true,
+			infiniteLoop: false,
+			hideControlOnEnd: true,
+			adaptiveHeight: true
+		});
+		$('.button-close', this).click(function () {
+			$(this).closest('li').fadeOut(function () {
+				$(this).remove();
+				slider.reloadSlider();
+			});
+			return false;
+		});
+		$('.fancybox-gallery', this).fancybox({
+			padding: 0,
+			margin: 45,
+			autoSize: true,
+			fitToView: true,
+			loop: false,
+			helpers: {
+				media: {}
+			}
+		});
+		$(this).addClass('gallery-inited');
+	});
+}
 
 /* On document ready */
 $(document).ready(function () {
 
-	/* Init forms */
-	$('input, select').styler();
+	initForms();
 
 	/* Scroll top button */
 	$('.filter .toggle').click(function () {
@@ -242,66 +282,33 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Gallery */
-	function initGallery() {
-		$('.gallery:visible:not(.gallery-inited)').each(function (i) {
-			var slider = $('.carousel', this).bxSlider({
-				pager: false,
-				responsive: true,
-				minSlides: 3,
-				maxSlides: 8,
-				moveSlides: 1,
-				slideWidth: 80,
-				slideMargin: 10,
-				useCSS: true,
-				infiniteLoop: false,
-				hideControlOnEnd: true,
-				adaptiveHeight: true
-			});
-			$('.button-close', this).click(function () {
-				$(this).closest('li').fadeOut(function () {
-					$(this).remove();
-					slider.reloadSlider();
-				});
-				return false;
-			});
-			$('.fancybox-gallery', this).fancybox({
-				padding: 0,
-				margin: 45,
-				autoSize: true,
-				fitToView: true,
-				loop: false,
-				helpers: {
-					media: {}
-				}
-			});
-			$(this).addClass('gallery-inited');
-		});
-	}
-
 	initGallery();
 
 	/* Fancybox script */
-	$('.fancybox, .fancybox-popup').fancybox({
-		padding: 20,
-		margin: 20,
-		nextEffect: 'fade',
-		prevEffect: 'fade',
-		afterShow: function () {
-			initGallery();
-		},
-		helpers: {
-			overlay: {
-				speedIn: 250,
-				css: {
-					'background': 'rgba(0, 0, 0, 0.9)'
+	$('.fancybox-popup').each(function () {
+		var _self = $(this).fancybox({
+			padding: 20,
+			margin: 20,
+			nextEffect: 'fade',
+			prevEffect: 'fade',
+			fitToView: false,
+			beforeShow: function () {
+				initForms();
+				initGallery();
+			},
+			helpers: {
+				overlay: {
+					speedIn: 250,
+					css: {
+						'background': 'rgba(0, 0, 0, 0.9)'
+					}
 				}
 			}
-		}
+		});
 	});
 
 	/* Orders block */
-	$('.block-orders').each(function () {
+	$('.cabinet-orders').each(function () {
 		$('.number', this).click(function () {
 			$(this).closest('.order').toggleClass('order-open');
 			return false;
