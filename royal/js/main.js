@@ -243,36 +243,53 @@ $(document).ready(function () {
 	});
 
 	/* Gallery */
-	$('.gallery').each(function () {
-		$('.carousel', this).bxSlider({
-			pager: false,
-			responsive: true,
-			minSlides: 3,
-			maxSlides: 8,
-			moveSlides: 1,
-			slideWidth: 80,
-			slideMargin: 10,
-			useCSS: true,
-			infiniteLoop: false,
-			hideControlOnEnd: true
+	function initGallery() {
+		$('.gallery:visible:not(.gallery-inited)').each(function (i) {
+			var slider = $('.carousel', this).bxSlider({
+				pager: false,
+				responsive: true,
+				minSlides: 3,
+				maxSlides: 8,
+				moveSlides: 1,
+				slideWidth: 80,
+				slideMargin: 10,
+				useCSS: true,
+				infiniteLoop: false,
+				hideControlOnEnd: true,
+				adaptiveHeight: true
+			});
+			$('.button-close', this).click(function () {
+				$(this).closest('li').fadeOut(function () {
+					$(this).remove();
+					slider.reloadSlider();
+				});
+				return false;
+			});
+			$('.fancybox-gallery', this).fancybox({
+				padding: 0,
+				margin: 45,
+				autoSize: true,
+				fitToView: true,
+				loop: false,
+				helpers: {
+					media: {}
+				}
+			});
+			$(this).addClass('gallery-inited');
 		});
-		$('.fancybox-gallery', this).fancybox({
-			padding: 0,
-			margin: 45,
-			autoSize: true,
-			fitToView: true,
-			loop: false,
-			helpers: {
-				media: {}
-			}
-		});
-	});
+	}
+
+	initGallery();
 
 	/* Fancybox script */
 	$('.fancybox, .fancybox-popup').fancybox({
-		margin: 40,
+		padding: 20,
+		margin: 20,
 		nextEffect: 'fade',
 		prevEffect: 'fade',
+		afterShow: function () {
+			initGallery();
+		},
 		helpers: {
 			overlay: {
 				speedIn: 250,
