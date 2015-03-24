@@ -123,7 +123,7 @@ fieldset { border: 0; margin: 0; padding: 0; }
 .jq-radio.focused { border: 1px solid #08c }
 .jq-radio.disabled { opacity: .55 }
 .jq-file { width: 270px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); border-radius: 4px }
-.jq-file input { cursor: default; height: auto; line-height: 1em }
+.jq-file input { cursor: pointer; height: auto; line-height: 1em; max-width: none !important; }
 .jq-file__name { -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; height: 32px; padding: 0 80px 0 10px; color: #333; font: 14px/30px Arial, sans-serif; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; border: 1px solid #ccc; border-bottom-color: #b3b3b3; border-radius: 4px; box-shadow: inset 1px 1px #f1f1f1; background: #fff }
 .focused .jq-file__name { border: 1px solid #5794bf }
 .jq-file__browse { position: absolute; top: 1px; right: 1px; padding: 0 10px; border-left: 1px solid #ccc; border-radius: 0 4px 4px 0; background: #f1f1f1 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAIAAABi9+OQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+v//PxM2zMDAQEtxgAADAF2uTe9L4getAAAAAElFTkSuQmCC') repeat-x; box-shadow: inset 1px -1px #f1f1f1, inset 0 0 #f1f1f1, 0 1px 2px rgba(0, 0, 0, 0.1); color: #333; text-shadow: 1px 1px #fff; font: 14px/30px Arial, sans-serif }
@@ -224,6 +224,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .form:after, .form .line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .form label { font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif; text-transform: uppercase; }
 .form label.for { margin-bottom: 5px; display: block; }
+.form label.for.for-white { white-space: nowrap; }
 .form .list { margin: 0 -10px; }
 .form .col { padding: 0 10px; }
 .form .col-1-2 { width: 50%; float: left; }
@@ -2967,8 +2968,8 @@ body > .search-toggle {
 .map-space {
 	margin-bottom: 40px;
 }
-.container > .map-space {
-	margin-bottom: 0;
+.container > .map-space:last-child {
+	margin-bottom: -40px;
 }
 .map {
 	margin: 0 -40px;
@@ -3762,16 +3763,6 @@ body > .search-toggle {
 	margin-bottom: 32px;
 	font-size: 17px;
 	color: #036;
-}
-.form-data .line label.for {
-	display: block;
-	margin-bottom: 6px;
-}
-.form-data .line input[type="password"], .form-data .line textarea {
-	width: 100%;
-}
-.form-data .line textarea {
-	height: 140px;
 }
 .form-data .cover {
 	margin-bottom: 9px;
