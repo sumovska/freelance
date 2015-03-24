@@ -128,7 +128,7 @@ $(document).ready(function () {
 			delay: 20 * 300,
 			width: 640,
 			height: 360,
-			autoPlay: true,
+			autoPlay: false,
 			autoPlayVideo: false,
 			playPause: false,
 			stopOnHover: false,
