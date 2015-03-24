@@ -55,12 +55,12 @@
 
 	<div class="container">
 		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Контакты</p>
-		
-		<div class="contact">
-			<h2 class="h2">Как нас найти</h2>
+
+		<article class="contact">
+			<h1 class="h2">Как нас найти</h1>
 			<div class="info">
 				<div class="col">
-					<p>Офис оптовых продаж и склад компании «Роял Спирит» располагаются на востоке Москвы в районе станций метро «Шоссе Энтузиастов» и «Перово».</p>
+					<p>Офис оптовых продаж и склад компании &laquo;Роял Спирит&raquo; располагаются на востоке Москвы в районе станций метро &laquo;Шоссе Энтузиастов&raquo; и &laquo;Перово&raquo;.</p>
 				</div>
 				<div class="col">
 					<p class="line line-adr"><strong>Адрес:</strong> 111141, город Москва, улица Плеханова, дом 17, строение 2</p>
@@ -68,32 +68,36 @@
 					<p class="line line-time"><strong>Время работы:</strong> с 9:00 до18:00 ежедневно, кроме субботы и воскресенья</p>
 				</div>
 			</div>
-			<div class="map">
-				<div id="ymaps-map-id_14211551600804933022" class="space"></div>
+
+			<div class="map-space">
+				<div class="map">
+					<div id="ymaps-map-id_14211551600804933022" class="space"></div>
+				</div>
+				<script type="text/javascript">
+					function fid_14211551600804933022(ymaps) {
+						var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+							center: [37.764285, 55.749202],
+							zoom: 16,
+							type: "yandex#map"
+						});
+						map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
+						myGeoObject = new ymaps.GeoObject({
+							geometry: {
+								type: "Point",
+								coordinates: [37.764285, 55.749202]
+							}
+						});
+						map.geoObjects.add(myGeoObject);
+					}
+				</script>
+				<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
 			</div>
-			<script type="text/javascript">
-				function fid_14211551600804933022(ymaps) {
-					var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
-						center: [37.764285, 55.749202],
-						zoom: 16,
-						type: "yandex#map"
-					});
-					map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
-					myGeoObject = new ymaps.GeoObject({
-						geometry: {
-							type: "Point",
-							coordinates: [37.764285, 55.749202]
-						}
-					});
-					map.geoObjects.add(myGeoObject);
-				}
-			</script>
-			<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
+
 			<div class="info">
 				<div class="col">
 					<h2 class="h2">Как доехать на общественном транспорте</h2>
-					<p><strong>ОТ МЕТРО &laquo;ШОССЕ ЭНТУЗИАСТОВ&raquo;:</strong> автобусы № 254, № 46 и маршрутное такси № 69 до остановки &laquo;Вентиляторный завод&raquo;</p>
-					<p><strong>ОТ МЕТРО &laquo;ПЕРОВО&raquo;:</strong> троллейбус № 77 и маршрутные такси № 246, № 249, № 627 до остановки &laquo;Улица Плеханова&raquo;</p>
+					<p><strong>ОТ МЕТРО &laquo;ШОССЕ ЭНТУЗИАСТОВ&raquo;:</strong> автобусы №254, №46 и маршрутное такси №69 до остановки &laquo;Вентиляторный завод&raquo;</p>
+					<p><strong>ОТ МЕТРО &laquo;ПЕРОВО&raquo;:</strong> троллейбус №77 и маршрутные такси №246, №249, №627 до остановки &laquo;Улица Плеханова&raquo;</p>
 				</div>
 				<div class="col">
 					<h2 class="h2">Как найти офис на территории</h2>
@@ -103,7 +107,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		</article>
 	</div>
 
 	<aside class="top">
@@ -125,9 +129,9 @@
 	</aside>
 
 	<footer class="footer">
-		<p class="ask"><a href="#ask" class="fancybox-popup">Задать вопрос</a> или <a href="faq.html">посмотреть FAQ</a></p>
+		<p class="ask"><a href="popup-ask.html" class="fancybox-popup" data-fancybox-type="ajax">Задать вопрос</a> или <a href="faq.html">посмотреть FAQ</a></p>
 		<p class="phone"><a href="tel:+7-495-234-57-17">+7 (495) 234-57-17</a></p>
-		<p class="callback"><a class="js fancybox-popup" href="#callback">Обратный звонок</a></p>
+		<p class="callback"><a class="js fancybox-popup" href="popup-callback.html" data-fancybox-type="ajax">Обратный звонок</a></p>
 		<p class="wholesale">Только оптовые продажи</p>
 		<ul class="social">
 			<li class="vk"><a href="#" title="Вконтакте"></a></li>
@@ -139,63 +143,6 @@
 		<p class="copyright">&copy; &laquo;Royal Spirit&raquo;, 2014</p>
 		<p class="author">Разработка сайта &ndash; <a href="http://delovsaite.ru" target="_blank">Дело в сайте</a></p>
 	</footer>
-
-	<div class="popups">
-		<div id="ask" class="popup popup-ask">
-			<form class="form" action="#">
-				<p class="h2">Задать вопрос</p>
-				<div class="line">
-					<label for="ask-name" class="for">Имя <span class="red">*</span></label>
-					<input id="ask-name" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="ask-email" class="for">E-mail <span class="red">*</span></label>
-					<input id="ask-email" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="ask-city" class="for">Город <span class="red">*</span></label>
-					<select id="ask-city">
-						<option value="">Выберите город</option>
-						<option value="1">Москва</option>
-						<option value="2">Санкт-Петербург</option>
-						<option value="3">Екатуринбург</option>
-					</select>
-				</div>
-				<div class="line">
-					<label for="ask-phone" class="for">Телефон</label>
-					<input id="ask-phone" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="ask-question" class="for">Вопрос <span class="red">*</span></label>
-					<textarea id="ask-question"></textarea>
-				</div>
-				<div class="line">
-					<button type="submit">Отправить</button>
-				</div>
-			</form>
-		</div>
-
-		<div id="callback" class="popup popup-callback">
-			<form class="form" action="#">
-				<p class="h2">Обратный звонок</p>
-				<div class="line">
-					<label for="callback-name" class="for">Имя <span class="red">*</span></label>
-					<input id="callback-name" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="callback-email" class="for">E-mail <span class="red">*</span></label>
-					<input id="callback-email" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="callback-phone" class="for">Телефон</label>
-					<input id="callback-phone" type="text" value="">
-				</div>
-				<div class="line">
-					<button type="submit">Заказать</button>
-				</div>
-			</form>
-		</div>
-	</div>
 
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>

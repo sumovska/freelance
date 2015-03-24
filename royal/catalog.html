@@ -79,7 +79,7 @@
 			</div>
 		</div>
 
-		<form class="form" action="#">
+		<form class="form" action="catalog.html" method="post">
 			<div class="sort">
 				<div class="line">
 					<label for="form-sort" class="for">Сортировать по</label>
@@ -161,17 +161,25 @@
 									<option value="2">Вискоза</option>
 								</select>
 							</div>
-							<div class="line line-narrow">
-								<label for="form-field-4" class="for">Пуговицы</label>
-								<input id="form-field-4" type="text" value="" placeholder="">
-							</div>
-							<div class="line line-narrow">
-								<label for="form-field-5" class="for">Шлицы</label>
-								<select id="form-field-5">
-									<option value="">Вискоза</option>
-									<option value="1">Вискоза</option>
-									<option value="2">Вискоза</option>
-								</select>
+							<div class="line">
+								<div class="list">
+									<div class="col col-1-2">
+										<div class="line">
+											<label for="form-field-4" class="for">Пуговицы</label>
+											<input id="form-field-4" type="text" value="" placeholder="">
+										</div>
+									</div>
+									<div class="col col-1-2">
+										<div class="line">
+											<label for="form-field-5" class="for">Шлицы</label>
+											<select id="form-field-5">
+												<option value="">Вискоза</option>
+												<option value="1">Вискоза</option>
+												<option value="2">Вискоза</option>
+											</select>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="col col-1-3">
@@ -309,9 +317,9 @@
 	</aside>
 
 	<footer class="footer">
-		<p class="ask"><a href="#ask" class="fancybox-popup">Задать вопрос</a> или <a href="faq.html">посмотреть FAQ</a></p>
+		<p class="ask"><a href="popup-ask.html" class="fancybox-popup" data-fancybox-type="ajax">Задать вопрос</a> или <a href="faq.html">посмотреть FAQ</a></p>
 		<p class="phone"><a href="tel:+7-495-234-57-17">+7 (495) 234-57-17</a></p>
-		<p class="callback"><a class="js fancybox-popup" href="#callback">Обратный звонок</a></p>
+		<p class="callback"><a class="js fancybox-popup" href="popup-callback.html" data-fancybox-type="ajax">Обратный звонок</a></p>
 		<p class="wholesale">Только оптовые продажи</p>
 		<ul class="social">
 			<li class="vk"><a href="#" title="Вконтакте"></a></li>
@@ -323,63 +331,6 @@
 		<p class="copyright">&copy; &laquo;Royal Spirit&raquo;, 2014</p>
 		<p class="author">Разработка сайта &ndash; <a href="http://delovsaite.ru" target="_blank">Дело в сайте</a></p>
 	</footer>
-
-	<div class="popups">
-		<div id="ask" class="popup popup-ask">
-			<form class="form" action="#">
-				<p class="h2">Задать вопрос</p>
-				<div class="line">
-					<label for="ask-name" class="for">Имя <span class="red">*</span></label>
-					<input id="ask-name" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="ask-email" class="for">E-mail <span class="red">*</span></label>
-					<input id="ask-email" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="ask-city" class="for">Город <span class="red">*</span></label>
-					<select id="ask-city">
-						<option value="">Выберите город</option>
-						<option value="1">Москва</option>
-						<option value="2">Санкт-Петербург</option>
-						<option value="3">Екатуринбург</option>
-					</select>
-				</div>
-				<div class="line">
-					<label for="ask-phone" class="for">Телефон</label>
-					<input id="ask-phone" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="ask-question" class="for">Вопрос <span class="red">*</span></label>
-					<textarea id="ask-question"></textarea>
-				</div>
-				<div class="line">
-					<button type="submit">Отправить</button>
-				</div>
-			</form>
-		</div>
-
-		<div id="callback" class="popup popup-callback">
-			<form class="form" action="#">
-				<p class="h2">Обратный звонок</p>
-				<div class="line">
-					<label for="callback-name" class="for">Имя <span class="red">*</span></label>
-					<input id="callback-name" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="callback-email" class="for">E-mail <span class="red">*</span></label>
-					<input id="callback-email" type="text" value="">
-				</div>
-				<div class="line">
-					<label for="callback-phone" class="for">Телефон</label>
-					<input id="callback-phone" type="text" value="">
-				</div>
-				<div class="line">
-					<button type="submit">Заказать</button>
-				</div>
-			</form>
-		</div>
-	</div>
 
 	<script src="js/vendor/jquery-1.11.1.min.js"></script>
 	<script src="js/plugins.js"></script>
