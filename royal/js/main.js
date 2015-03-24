@@ -2,7 +2,9 @@
 /*global window, console, document, $, jQuery, PIE */
 function initForms() {
 	/* Формы */
-	$('input, select').styler();
+	$('input, select').styler({
+		selectPlaceholder: ''
+	});
 }
 
 function initGallery() {

@@ -65,61 +65,71 @@
 
 		<div class="cabinet-data">
 			<form class="form form-data" action="cabinet-data.html" method="post">
-				<div class="col-1">
-					<h3 class="h3">Изменение личных данных</h3>
-					<div class="line">
-						<label for="data-name" class="for">Имя</label>
-						<input id="data-name" type="text" value="">
-					</div>
-					<div class="line">
-						<label for="data-surname" class="for">Фамилия</label>
-						<input id="data-surname" type="text" value="">
-					</div>
-					<div class="line">
-						<label for="data-phone" class="for">Телефон</label>
-						<input id="data-phone" type="text" value="">
-					</div>
-					<div class="line">
-						<label for="data-company" class="for">Название организации</label>
-						<input id="data-company" type="text" value="">
-					</div>
-					<div class="line">
-						<label for="data-city" class="for select-city">Город</label>
-						<select id="data-city">
-							<option value="">Выберите</option>
-							<option value="0">Москва</option>
-							<option value="1">Санкт-Петербург</option>
-							<option value="2">Екатеринбург</option>
-						</select>
-					</div>
-					<div class="line line-address">
+				<div class="list">
+					<div class="col col-1">
+						<h3 class="h3">Изменение личных данных</h3>
 						<div class="line">
-							<label for="data-street" class="for">Улица</label>
-							<input id="data-street" type="text" value="">
+							<label for="data-name" class="for">Имя</label>
+							<input id="data-name" type="text" value="">
 						</div>
 						<div class="line">
-							<label for="data-home" class="for">Дом</label>
-							<input id="data-home" type="text" value="">
+							<label for="data-surname" class="for">Фамилия</label>
+							<input id="data-surname" type="text" value="">
+						</div>
+						<div class="line">
+							<label for="data-phone" class="for">Телефон</label>
+							<input id="data-phone" type="text" value="">
+						</div>
+						<div class="line">
+							<label for="data-company" class="for">Название организации</label>
+							<input id="data-company" type="text" value="">
+						</div>
+						<div class="line">
+							<label for="data-city" class="for select-city">Город</label>
+							<select id="data-city">
+								<option value="">Выберите</option>
+								<option value="0">Москва</option>
+								<option value="1">Санкт-Петербург</option>
+								<option value="2">Екатеринбург</option>
+							</select>
+						</div>
+						<div class="line">
+							<div class="list">
+								<div class="col col-4-5">
+									<div class="line">
+										<label class="for">Улица</label>
+										<input type="text" placeholder="">
+									</div>
+								</div>
+								<div class="col col-1-5">
+									<div class="line">
+										<label class="for">Дом</label>
+										<input type="text" placeholder="">
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-2">
-					<h3 class="h3">Изменение пароля</h3>
-					<div class="line">
-						<label for="password-old" class="for">Старый пароль</label>
-						<input id="password-old" type="password" value="">
+					<div class="col col-2">
+						<h3 class="h3">Изменение пароля</h3>
+						<div class="line">
+							<label for="password-old" class="for">Старый пароль</label>
+							<input id="password-old" type="password" value="">
+						</div>
+						<div class="line">
+							<label for="password-new" class="for">Новый пароль</label>
+							<input id="password-new" type="password" value="">
+						</div>
+						<div class="line">
+							<label for="password-confirm" class="for">Подтвердите</label>
+							<input id="password-confirm" type="password" value="">
+						</div>
 					</div>
-					<div class="line">
-						<label for="password-new" class="for">Новый пароль</label>
-						<input id="password-new" type="password" value="">
+					<div class="col">
+						<div class="line submit submit-line">
+							<button type="submit">Отправить на модерацию</button>
+						</div>
 					</div>
-					<div class="line">
-						<label for="password-confirm" class="for">Подтвердите</label>
-						<input id="password-confirm" type="password" value="">
-					</div>
-				</div>
-				<div class="line submit">
-					<button type="submit">Отправить на модерацию</button>
 				</div>
 			</form>
 		</div>
