@@ -56,33 +56,31 @@
 	<div class="container">
 		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Поиск</p>
 
-		<div class="search-box">
-			<form class="form" action="search.html" method="post">
-				<div class="look">
-					<input type="text" placeholder="Мужское пальто">
-					<button type="submit">Поиск</button>
+		<form class="form form-search" action="search.html" method="post">
+			<div class="look">
+				<input type="text" placeholder="Мужское пальто">
+				<button type="submit">Поиск</button>
+			</div>
+			<div class="sort">
+				<div class="line">
+					<label for="form-sort" class="for">Сортировать по</label>
+					<select id="form-sort">
+						<option value="">названию</option>
+						<option value="1">цене</option>
+						<option value="2">рейтингу</option>
+						<option value="3">новизне</option>
+					</select>
 				</div>
-				<div class="sort">
-					<div class="line">
-						<label for="form-sort" class="for">Сортировать по</label>
-						<select id="form-sort">
-							<option value="">названию</option>
-							<option value="1">цене</option>
-							<option value="2">рейтингу</option>
-							<option value="3">новизне</option>
-						</select>
-					</div>
-					<ul class="list">
-						<li>Сортировать по</li>
-						<li><a href="#">названию</a></li>
-						<li class="active"><a href="#">цене</a></li>
-						<li><a href="#">рейтингу</a></li>
-						<li><a href="#">новизне</a></li>
-					</ul>
-				</div>
-				<p class="result">Результатов: <span>3</span></p>
-			</form>
-		</div>
+				<ul class="list">
+					<li>Сортировать по</li>
+					<li><a href="#">названию</a></li>
+					<li class="active"><a href="#">цене</a></li>
+					<li><a href="#">рейтингу</a></li>
+					<li><a href="#">новизне</a></li>
+				</ul>
+			</div>
+			<p class="result">Результатов: <span>3</span></p>
+		</form>
 
 		<div class="catalog-search">
 			<div class="catalog">

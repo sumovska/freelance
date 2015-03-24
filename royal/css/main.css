@@ -219,7 +219,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _Формы
    ========================================================================== */
 .form { display: block; }
-.form .line { margin-bottom: 20px; clear: both; }
+.form .line { margin: 0 0 20px 0; clear: both; display: block; }
 .form .line .line { margin: 0; }
 .form:after, .form .line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .form label { font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif; text-transform: uppercase; }
@@ -740,6 +740,74 @@ body > .search-toggle {
 .footer .social .tw a:before { background-position: -40px 0; }
 .footer .social .in a:before { background-position: -60px 0; }
 .footer .author { margin: 0; }
+/* ==========================================================================
+   _Авторизация
+   ========================================================================== */
+.login {
+	width: 376px;
+	padding: 20px;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 280px;
+	box-shadow: 0 1px 10px rgba(102, 102, 102, .5);
+	font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif;
+	z-index: 200;
+	background: rgba(255, 255, 255, .95);
+}
+.login .form {
+	padding-bottom: 0;
+}
+.login .form .title {
+	padding: 14px 18px 12px;
+	margin: -20px -20px 20px;
+	color: #fff;
+	text-transform: uppercase;
+	background: #036;
+}
+.login .form .title a {
+	border-color: #40668c;
+	color: #fff;
+}
+.login .form label {
+	color: #222;
+}
+.login .form .remember {
+	margin-bottom: 0;
+	float: left;
+}
+.login .form .remember .jq-checkbox {
+	margin-right: 7px;
+}
+.login .form .forgot {
+	margin-top: 4px;
+	margin-bottom: 0;
+	float: right;
+}
+.login .form .submit {
+	margin-bottom: 0;
+}
+.login .form .submit input[type="button"] {
+	padding-left: 28px;
+	padding-right: 28px;
+}
+/* ==========================================================================
+   _Восстановление пароля
+   ========================================================================== */
+.form-recovery .h2 {
+	margin-bottom: 34px;
+}
+.form-recovery .mail {
+	width: 51.4%;
+	max-width: 350px;
+	margin-right: 20px;
+	float: left;
+}
+.form-recovery .submit {
+	padding-top: 0;
+	clear: none;
+	float: left;
+}
 /* ==========================================================================
    _Хлебные крошки
    ========================================================================== */
@@ -1335,7 +1403,7 @@ body > .search-toggle {
 	transform: rotate(45deg);
 }
 /* ==========================================================================
-   _TESTIMONIALS
+   _Отзывы
    ========================================================================== */
 .testimonials {
 	margin: 0 -30px 0 -30px;
@@ -1384,7 +1452,7 @@ body > .search-toggle {
 	text-transform: uppercase;
 }
 /* ==========================================================================
-   _SCROLLBAR
+   _Скролл кастомный
    ========================================================================== */
 .mCustomScrollbar { touch-action: none; }
 .mCustomScrollbar.mCS_no_scrollbar { touch-action: auto; }
@@ -1465,7 +1533,7 @@ body > .search-toggle {
 .mCS-rounded-dark.mCSB_scrollTools .mCSB_buttonLeft { background-position: -80px -112px; }
 .mCS-rounded-dark.mCSB_scrollTools .mCSB_buttonRight { background-position: -80px -128px; }
 /* ==========================================================================
-   _REWARDS
+   _Награды
    ========================================================================== */
 .rewards {
 	padding: 30px 0;
@@ -1515,7 +1583,7 @@ body > .search-toggle {
 	position: relative;
 }
 /* ==========================================================================
-   _TWO COLS
+   _Две колонки
    ========================================================================== */
 .two {
 	padding: 0 0 40px 0;
@@ -1672,7 +1740,7 @@ body > .search-toggle {
 .two.two-files .col { position: relative; }
 .two.two-files .col:first-child:before { display: none; }
 /* ==========================================================================
-   _SORT
+   _Сортировка
    ========================================================================== */
 .pre {
 	margin-bottom: 35px;
@@ -1770,7 +1838,7 @@ body > .search-toggle {
 	transform: rotate(-45deg);
 }
 /* ==========================================================================
-   _NAV_DEFAULT
+   _Навигация (default)
    ========================================================================== */
 .nav-default {
 	padding: 20px 0 20px 40px;
@@ -1816,91 +1884,8 @@ body > .search-toggle {
 	color: #ff5c26;
 }
 /* ==========================================================================
-   _CATALOG_NEW
+   _Каталог
    ========================================================================== */
-.catalog-search {
-	margin-right: -10px;
-}
-.catalog-new {
-	margin: 0 -40px 45px;
-	position: relative;
-}
-.catalog-new:before {
-	height: 2px;
-	overflow: hidden;
-	display: block;
-	content: ' ';
-	position: absolute;
-	top: 30px;
-	left: 0;
-	right: 0;
-	z-index: 1;
-	background: #f5f5f5;
-}
-.catalog-new .h2 {
-	padding: 14px 16px;
-	border: 2px solid #f5f5f5;
-	margin: 0 0 0 40px;
-	font-size: 24px;
-	line-height: 30px;
-	color: #ff5c26;
-	letter-spacing: -.025em;
-	display: inline-block;
-	position: relative;
-	z-index: 3;
-	background: #fff;
-}
-.catalog-new .scroll {
-	margin-top: -50px;
-	position: relative;
-	z-index: 2;
-}
-.catalog-new .scroll .mCSB_scrollTools {
-	position: absolute;
-	top: 9px;
-	left: 550px;
-	right: 0;
-}
-.catalog-new .catalog {
-	display: table-row;
-}
-.catalog-new .catalog .item {
-	display: table-cell;
-	float: none;
-}
-.catalog-new .scroll {
-	width: 100%;
-	margin-bottom: 0;
-	overflow: hidden;
-	position: relative;
-}
-.catalog-new .mCSB_horizontal.mCSB_inside > .mCSB_container {
-	margin-bottom: 30px;
-}
-.catalog-new .in {
-	padding: 70px 0 0 40px;
-	display: table;
-}
-/* ==========================================================================
-   _CATALOG_GREY
-   ========================================================================== */
-.catalog-grey {
-	padding: 0 40px;
-	margin: 0 -40px;
-	position: relative;
-	z-index: 1;
-}
-.catalog-grey .catalog {
-	position: relative;
-	z-index: 1;
-}
-.catalog-grey .catalog .item {
-	padding-top: 40px;
-	padding-bottom: 35px;
-	margin: 0;
-}
-.catalog {
-}
 .catalog:after, .catalog .item:after {
 	width: 100%;
 	content: "\0020";
@@ -2035,7 +2020,91 @@ body > .search-toggle {
 .catalog .more .button:hover { color: #fff; }
 .catalog .more .button:hover:before { display: none; }
 /* ==========================================================================
-   _ITEM
+   _Каталог (вариации)
+   ========================================================================== */
+.catalog-search {
+	margin-right: -10px;
+}
+.catalog-new {
+	margin: 0 -40px 45px;
+	position: relative;
+}
+.catalog-new:before {
+	height: 2px;
+	overflow: hidden;
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 30px;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background: #f5f5f5;
+}
+.catalog-new .h2 {
+	padding: 14px 16px;
+	border: 2px solid #f5f5f5;
+	margin: 0 0 0 40px;
+	font-size: 24px;
+	line-height: 30px;
+	color: #ff5c26;
+	letter-spacing: -.025em;
+	display: inline-block;
+	position: relative;
+	z-index: 3;
+	background: #fff;
+}
+.catalog-new .scroll {
+	margin-top: -50px;
+	position: relative;
+	z-index: 2;
+}
+.catalog-new .scroll .mCSB_scrollTools {
+	position: absolute;
+	top: 9px;
+	left: 550px;
+	right: 0;
+}
+.catalog-new .catalog {
+	display: table-row;
+}
+.catalog-new .catalog .item {
+	display: table-cell;
+	float: none;
+}
+.catalog-new .scroll {
+	width: 100%;
+	margin-bottom: 0;
+	overflow: hidden;
+	position: relative;
+}
+.catalog-new .mCSB_horizontal.mCSB_inside > .mCSB_container {
+	margin-bottom: 30px;
+}
+.catalog-new .in {
+	padding: 70px 0 0 40px;
+	display: table;
+}
+/* ==========================================================================
+   _Каталог (серый)
+   ========================================================================== */
+.catalog-grey {
+	padding: 0 40px;
+	margin: 0 -40px;
+	position: relative;
+	z-index: 1;
+}
+.catalog-grey .catalog {
+	position: relative;
+	z-index: 1;
+}
+.catalog-grey .catalog .item {
+	padding-top: 40px;
+	padding-bottom: 35px;
+	margin: 0;
+}
+/* ==========================================================================
+   _Позиция каталога
    ========================================================================== */
 .block-item {
 	padding: 0 0 44px 0;
@@ -2434,7 +2503,7 @@ body > .search-toggle {
 	float: none;
 }
 /* ==========================================================================
-   _TABS
+   _Табы
    ========================================================================== */
 .tabs-list:after {
 	display: block;
@@ -2493,7 +2562,7 @@ body > .search-toggle {
 	border-bottom: 1px solid #eee;
 }
 /* ==========================================================================
-   _ACTION
+   _Акции
    ========================================================================== */
 .actions {
 	position: relative;
@@ -2600,7 +2669,6 @@ body > .search-toggle {
 	position: absolute;
 	bottom: 43px;
 	right: 38px;
-	/*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdhN2E3YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNDI0MjQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);*/
 	background: linear-gradient(to bottom, #7a7a7a 0%, #242424 100%);
 }
 .actions .item .define .to-cart span {
@@ -2644,7 +2712,7 @@ body > .search-toggle {
 	background: #ff4949;
 }
 /* ==========================================================================
-   _LIST-DEFAULT
+   _Список (дефолтный)
    ========================================================================== */
 .list-default {
 	margin-bottom: 9px;
@@ -2698,7 +2766,7 @@ body > .search-toggle {
 	display: block;
 }
 /* ==========================================================================
-   _CONTACT-US
+   _Контакты
    ========================================================================== */
 .contact {
 	font-size: 14px;
@@ -2776,12 +2844,130 @@ body > .search-toggle {
 	text-transform: uppercase;
 }
 /* ==========================================================================
-   _MAP
+   _Где купить
    ========================================================================== */
-.block-map {
+.form-where {
+	margin-bottom: 10px;
+}
+.form-where .line-city {
+	padding-right: 60px;
+	position: relative;
+}
+.form-where .line-city input[type="text"] {
+	width: 100%;
+	border-right: 0;
+}
+.form-where .line-city button {
+	width: 60px;
+	padding-left: 0;
+	padding-right: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.form-where .line-asortment {
+	padding-right: 150px;
+	position: relative;
+}
+.form-where .line-asortment button {
+	width: 130px;
+	padding-left: 0;
+	padding-right: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.form-where .checkbox { margin-right: 40px; }
+.form-where .submit {
+	display: none;
+}
+/* ==========================================================================
+   _Где купить - Табы
+   ========================================================================== */
+.tabs-abc {
+	color: #666;
+}
+.tabs-abc .h3 {
+	margin-bottom: 6px;
+	color: #036;
+	font-size: 17px;
+}
+.tabs-abc .triggers {
+	margin: 0 -40px 30px -40px;
+	padding: 0 25px;
+	list-style: none;
+	color: #202020;
+	font: bold 11px/16px 'Gotham Pro', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	background: #f5f5f5;
+	box-shadow: inset 0 1px 5px rgba(102, 102, 102, .25);
+}
+.tabs-abc .triggers:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tabs-abc .triggers li {
+	margin: 0 -2px;
+	float: left;
+	border: 2px solid transparent;
+}
+.tabs-abc .triggers li.active {
+	background: #fff;
+	border: 2px solid #036;
+}
+.tabs-abc .triggers li a {
+	display: block;
+	border-bottom: none;
+}
+.tabs-abc .triggers li a:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tabs-abc .triggers .letter {
+	padding: 5px 15px;
+	float: left;
+}
+.tabs-abc .triggers .letter-mobile {
+	display: none;
+}
+.tabs-abc .tab {
+	margin: 0 -22px;
+}
+.tabs-abc .tab-hidden {
+	display: none;
+}
+.tabs-abc .tab:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tabs-abc .tab .col {
+	width: 21.6%;
+	padding: 0 22px;
+	float: left;
+}
+.tabs-abc .tab .col .line {
+	margin-bottom: 24px;
+}
+.tabs-abc .tab .col .line span {
+	margin-bottom: 5px;
+	display: block;
+}
+.tabs-abc .tab .col .line span:last-of-type {
+	margin-bottom: 0;
+}
+/* ==========================================================================
+   _Карта
+   ========================================================================== */
+.map-space {
 	margin-bottom: 40px;
 }
-.container > .block-map {
+.container > .map-space {
 	margin-bottom: 0;
 }
 .map {
@@ -2800,14 +2986,14 @@ body > .search-toggle {
 	display: block;
 }
 /* ==========================================================================
-   _SEARCH_BOX
+   _Форма поиска
    ========================================================================== */
-.search-box {
+.form-search {
 	position: relative;
 	margin-bottom: 36px;
 	padding-bottom: 40px;
 }
-.search-box:before {
+.form-search:before {
 	height: 4px;
 	content: ' ';
 	display: block;
@@ -2817,37 +3003,37 @@ body > .search-toggle {
 	right: 0;
 	background: url('../img/sprite.png') repeat-x 50% -283px;
 }
-.search-box .form {
+.form-search {
 	padding-top: 7px;
 	padding-bottom: 17px;
 }
-.search-box .form .look {
+.form-search .look {
 	width: 54%;
 	float: left;
 	position: relative;
 }
-.search-box .form .look input[type="text"] {
+.form-search .look input[type="text"] {
 	width: 100%;
 }
-.search-box .form .look button[type="submit"] {
+.form-search .look button[type="submit"] {
 	width: 90px;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 }
-.search-box .form .sort {
+.form-search .sort {
 	padding: 0;
 	margin: 0;
 	float: right;
 }
-.search-box .form .sort:before {
+.form-search .sort:before {
 	background: transparent;
 }
-.search-box .form .sort .list li {
+.form-search .sort .list li {
 	margin: 0;
 }
-.search-box .result {
+.form-search .result {
 	margin: 17px 0 -4px 0;
 	display: block;
 	float: left;
@@ -2855,13 +3041,13 @@ body > .search-toggle {
 	font: 11px/13px 'Gotham Pro', Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 }
-.search-box .result span {
+.form-search .result span {
 	color: #036;
 	font-size: 14px;
 	line-height: 17px;
 }
 /* ==========================================================================
-   _STEPS
+   _Шаги
    ========================================================================== */
 .steps {
 	margin: 0 0 40px;
@@ -2918,7 +3104,7 @@ body > .search-toggle {
 	text-align: left;
 }
 /* ==========================================================================
-   _TABLE
+   _Таблица
    ========================================================================== */
 .table {
 	width: 100%;
@@ -2971,7 +3157,7 @@ body > .search-toggle {
 	border-bottom: none;
 }
 /* ==========================================================================
-   _TABLE-ORDER
+   _Таблица (заказ)
    ========================================================================== */
 .table-order .all {
 	margin-bottom: 30px;
@@ -3075,7 +3261,7 @@ body > .search-toggle {
 	background: #222;
 }
 /* ==========================================================================
-   _TABLE-INFO
+   _Таблица (инфармация о заказе)
    ========================================================================== */
 .table-info {
 	margin-bottom: 69px;
@@ -3202,7 +3388,7 @@ body > .search-toggle {
 	transform: rotate(-45deg);
 }
 /* ==========================================================================
-   _TOTAL
+   _Всего
    ========================================================================== */
 .total {
 	font-family: 'Gotham Pro', Helvetica, Arial, sans-serif;
@@ -3286,7 +3472,7 @@ body > .search-toggle {
 	color: #fff;
 }
 /* ==========================================================================
-   _BLOCK-ORDER
+   _Блока заказа
    ========================================================================== */
 .block-order .tabs-list .submenu-triggers li a.short {
 	display: none;
@@ -3372,7 +3558,96 @@ body > .search-toggle {
 	margin-bottom: 0;
 }
 /* ==========================================================================
-   _CABINET-ORDERS
+   _Кабинет
+   ========================================================================== */
+.cabinet {
+	font-size: 14px;
+	line-height: 20px;
+	overflow: hidden;
+}
+.cabinet:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.cabinet .h3 {
+	margin-bottom: 28px;
+	font-size: 17px;
+	color: #036;
+}
+.cabinet .cols {
+	margin: 0 -20px;
+}
+.cabinet .cols:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.cabinet .col {
+	padding: 0 20px;
+}
+.cabinet .col:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.cabinet .col-1 {
+	width: 63%;
+	padding-right: 60px;
+	float: left;
+}
+.cabinet .col-2 {
+	width: 36%;
+	float: right;
+}
+.cabinet .orders {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.cabinet .orders li {
+	margin-bottom: 30px;
+}
+.cabinet .orders li:last-child {
+	margin-bottom: 0;
+}
+.cabinet .orders li .date {
+	font: bold 11px/16px 'Gotham Pro', Helvetica, Arial, sans-serif;
+}
+.cabinet .orders li p {
+	margin-bottom: 0;
+}
+/* ==========================================================================
+   _Кабинет - Сообщение
+   ========================================================================== */
+.cabinet-message {
+	padding-top: 5px;
+	margin-bottom: 0;
+	font: bold 14px/22px 'Gotham Pro', Helvetica, Arial, sans-serif;
+}
+.cabinet-message:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.cabinet-message .pic {
+	width: 70px;
+	height: 70px;
+	display: block;
+	float: left;
+}
+.cabinet-message .name {
+	margin-right: -20px;
+	padding: 14px 20px;
+	float: left;
+}
+.cabinet-message .name .link {
+	margin-top: 3px;
+	font-size: 11px;
+	line-height: 14px;
+	display: block;
+}
+/* ==========================================================================
+   _Кабинет - Заказы
    ========================================================================== */
 .cabinet-orders {
 	padding-right: 20px;
@@ -3467,93 +3742,7 @@ body > .search-toggle {
 	display: block;
 }
 /* ==========================================================================
-   _CABINET
-   ========================================================================== */
-.cabinet {
-	font-size: 14px;
-	line-height: 20px;
-	overflow: hidden;
-}
-.cabinet:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.cabinet .h3 {
-	margin-bottom: 28px;
-	font-size: 17px;
-	color: #036;
-}
-.cabinet .cols {
-	margin: 0 -20px;
-}
-.cabinet .cols:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.cabinet .col {
-	padding: 0 20px;
-}
-.cabinet .col:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.cabinet .col-1 {
-	width: 63%;
-	padding-right: 60px;
-	float: left;
-}
-.cabinet .col-2 {
-	width: 36%;
-	float: right;
-}
-.cabinet .orders {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.cabinet .orders li {
-	margin-bottom: 30px;
-}
-.cabinet .orders li:last-child {
-	margin-bottom: 0;
-}
-.cabinet .orders li .date {
-	font: bold 11px/16px 'Gotham Pro', Helvetica, Arial, sans-serif;
-}
-.cabinet .orders li p {
-	margin-bottom: 0;
-}
-.cabinet-message {
-	padding-top: 5px;
-	margin-bottom: 0;
-	font: bold 14px/22px 'Gotham Pro', Helvetica, Arial, sans-serif;
-}
-.cabinet-message:after { display: block; content: ' '; overflow: hidden; clear: both; }
-.cabinet-message .pic {
-	width: 70px;
-	height: 70px;
-	display: block;
-	float: left;
-}
-.cabinet-message .name {
-	margin-right: -20px;
-	padding: 14px 20px;
-	float: left;
-}
-.cabinet-message .name .link {
-	margin-top: 3px;
-	font-size: 11px;
-	line-height: 14px;
-	display: block;
-}
-/* ==========================================================================
-   _FORM-DATA
+   _Кабинет - Данные (форма)
    ========================================================================== */
 .form-data .col-1:after, .form-data .col-2:after, .form-data .unit:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .form-data {
@@ -3617,6 +3806,9 @@ body > .search-toggle {
 	top: 7px;
 	background: url(../img/sprite.png) -210px -420px no-repeat;
 }
+/* ==========================================================================
+   _Кабинет - Добавить ассортимент
+   ========================================================================== */
 .add-goods {
 	margin: 3px 0 10px;
 	font: 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif;
@@ -3657,13 +3849,13 @@ body > .search-toggle {
 	background: #fff;
 }
 /* ==========================================================================
-   _FORM-EDIT
+   _Кабинет - Форма редактирования
    ========================================================================== */
 .form-edit .form-space {
 	max-width: 690px;
 }
 /* ==========================================================================
-   CABINET-MANAGER
+   _Кабинет - Менеджер
    ========================================================================== */
 .cabinet-manager {
 	margin-bottom: 20px;
@@ -3737,7 +3929,7 @@ body > .search-toggle {
 	right: 0;
 }
 /* ==========================================================================
-   _SHOPS
+   _Кабинет - Магазины
    ========================================================================== */
 .shops {
 	margin-bottom: 35px;
@@ -3832,7 +4024,7 @@ body > .search-toggle {
 	margin: 0 !important;
 }
 /* ==========================================================================
-   _LOGIN
+   _Кабинет - Галерея
    ========================================================================== */
 .gallery {
 	text-align: left;
@@ -3906,199 +4098,13 @@ body > .search-toggle {
 	right: 0;
 }
 /* ==========================================================================
-   _LOGIN
-   ========================================================================== */
-.login {
-	width: 376px;
-	padding: 20px;
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 280px;
-	box-shadow: 0 1px 10px rgba(102, 102, 102, .5);
-	font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif;
-	z-index: 200;
-	background: rgba(255, 255, 255, .95);
-}
-.login .form {
-	padding-bottom: 0;
-}
-.login .form .title {
-	padding: 14px 18px 12px;
-	margin: -20px -20px 20px;
-	color: #fff;
-	text-transform: uppercase;
-	background: #036;
-}
-.login .form .title a {
-	border-color: #40668c;
-	color: #fff;
-}
-.login .form label {
-	color: #222;
-}
-.login .form .remember {
-	margin-bottom: 0;
-	float: left;
-}
-.login .form .remember .jq-checkbox {
-	margin-right: 7px;
-}
-.login .form .forgot {
-	margin-top: 4px;
-	margin-bottom: 0;
-	float: right;
-}
-.login .form .submit {
-	margin-bottom: 0;
-}
-.login .form .submit input[type="button"] {
-	padding-left: 28px;
-	padding-right: 28px;
-}
-/* ==========================================================================
-   _BLOCK-ADD
+   _Кабинет - Добавление магазина
    ========================================================================== */
 .block-add .list .columns {
 	max-width: 710px;
 	margin-left: -10px;
 	margin-right: -10px;
 	padding-bottom: 33px;
-}
-/* ==========================================================================
-   _WHERE
-   ========================================================================== */
-.form-where {
-	margin-bottom: 10px;
-}
-.form-where .line-city {
-	padding-right: 60px;
-	position: relative;
-}
-.form-where .line-city input[type="text"] {
-	width: 100%;
-	border-right: 0;
-}
-.form-where .line-city button {
-	width: 60px;
-	padding-left: 0;
-	padding-right: 0;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-.form-where .line-asortment {
-	padding-right: 150px;
-	position: relative;
-}
-.form-where .line-asortment button {
-	width: 130px;
-	padding-left: 0;
-	padding-right: 0;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-.form-where .checkbox { margin-right: 40px; }
-.form-where .submit {
-	display: none;
-}
-/* ==========================================================================
-   _TABS-LETTERS
-   ========================================================================== */
-.tabs-abc {
-	color: #666;
-}
-.tabs-abc .h3 {
-	margin-bottom: 6px;
-	color: #036;
-	font-size: 17px;
-}
-.tabs-abc .triggers {
-	margin: 0 -40px 30px -40px;
-	padding: 0 25px;
-	list-style: none;
-	color: #202020;
-	font: bold 11px/16px 'Gotham Pro', Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	background: #f5f5f5;
-	box-shadow: inset 0 1px 5px rgba(102, 102, 102, .25);
-}
-.tabs-abc .triggers:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.tabs-abc .triggers li {
-	margin: 0 -2px;
-	float: left;
-	border: 2px solid transparent;
-}
-.tabs-abc .triggers li.active {
-	background: #fff;
-	border: 2px solid #036;
-}
-.tabs-abc .triggers li a {
-	display: block;
-	border-bottom: none;
-}
-.tabs-abc .triggers li a:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.tabs-abc .triggers .letter {
-	padding: 5px 15px;
-	float: left;
-}
-.tabs-abc .triggers .letter-mobile {
-	display: none;
-}
-.tabs-abc .tab {
-	margin: 0 -22px;
-}
-.tabs-abc .tab-hidden {
-	display: none;
-}
-.tabs-abc .tab:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.tabs-abc .tab .col {
-	width: 21.6%;
-	padding: 0 22px;
-	float: left;
-}
-.tabs-abc .tab .col .line {
-	margin-bottom: 24px;
-}
-.tabs-abc .tab .col .line span {
-	margin-bottom: 5px;
-	display: block;
-}
-.tabs-abc .tab .col .line span:last-of-type {
-	margin-bottom: 0;
-}
-/* ==========================================================================
-   _RECOVERY
-   ========================================================================== */
-.recovery .h2 {
-	margin-bottom: 34px;
-}
-.recovery .mail {
-	width: 51.4%;
-	max-width: 350px;
-	margin-right: 20px;
-	float: left;
-}
-.recovery .submit {
-	padding-top: 0;
-	clear: none;
-	float: left;
 }
 /* ==========================================================================
    _POPUP_CALLBACK
@@ -4290,7 +4296,7 @@ body > .search-toggle {
 .fancybox-skin .fancybox-next span:after { left: 13px; top: 12px; }
 .fancybox-skin .fancybox-prev:hover span:before, .fancybox-skin .fancybox-prev:hover span:after, .fancybox-skin .fancybox-next:hover span:before, .fancybox-skin .fancybox-next:hover span:after { background: #f39420; }
 /* ==========================================================================
-   _PRINT STYLES
+   _Стили для печати
    ========================================================================== */
 @media print {
 	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
@@ -4306,7 +4312,7 @@ body > .search-toggle {
 	h2, h3 { page-break-after: avoid; }
 }
 /* ==========================================================================
-   _RESPONSIVE < 1024px
+   _Адаптивность (Десктоп)
    ========================================================================== */
 @media (max-width: 1470px) {
 	.catalog .item:nth-child(5n + 1) { clear: none; }
@@ -4332,8 +4338,8 @@ body > .search-toggle {
 	.block-item .info .options .col:nth-child(2) .size { text-align: right; }
 	.feature .text { width: 388px; padding-right: 46px; }
 	.map { margin-right: -66px; }
-	.search-box { padding-bottom: 44px; }
-	.search-box .form { padding-bottom: 0; }
+	.form-search { padding-bottom: 44px; }
+	.form-search { padding-bottom: 0; }
 	.tabs-list .submenu-triggers { margin-bottom: 34px; }
 	.actions .item .define { padding-right: 0; }
 }
@@ -4346,9 +4352,12 @@ body > .search-toggle {
 @media (max-width: 1266px) {
 	.catalog .item:nth-child(4n + 1) { clear: none; }
 	.catalog .item:nth-child(3n + 1) { clear: left; }
-	.search-box .form .look { width: 48%; }
+	.form-search .look { width: 48%; }
 	.shops .gallery { width: 320px; }
 }
+/* ==========================================================================
+   _Адаптивность (Планшет)
+   ========================================================================== */
 @media (max-width: 1160px) {
 	html { background: #001b41 url('../img/blue.png') repeat 0 0; }
 	.container { padding-right: 55px; }
@@ -4405,13 +4414,13 @@ body > .search-toggle {
 	.tabs-abc .triggers li { margin-left: -1px; margin-right: -1px; }
 	.tabs-abc .triggers .letter { padding-right: 7px; padding-left: 7px; }
 	.tabs-abc .tab .col { width: 31.4%; }
-	.recovery .line-mail { width: 53.4%; }
+	.form-recovery .line-mail { width: 53.4%; }
 	.contact .info { margin: 0 0 4px; }
 	.contact .info .col, .contact .info .col:last-child { width: 100%; padding: 0; margin-bottom: 30px; float: none; }
-	.search-box .form .sort { margin-right: 45px; }
-	.search-box .form .look { width: 100%; margin-bottom: 10px; float: none; }
-	.search-box .form .look button[type="submit"] { width: 60px; padding-left: 5px; padding-right: 5px; }
-	.search-box .result { margin: 7px 0 0; clear: none; }
+	.form-search .sort { margin-right: 45px; }
+	.form-search .look { width: 100%; margin-bottom: 10px; float: none; }
+	.form-search .look button[type="submit"] { width: 60px; padding-left: 5px; padding-right: 5px; }
+	.form-search .result { margin: 7px 0 0; clear: none; }
 }
 @media (min-width: 1024px) {
 	.header .nav { display: block !important; }
@@ -4564,7 +4573,7 @@ body > .search-toggle {
 	.cabinet-orders .table-info .tr .td:nth-child(even) { padding-top: 0; }
 	.cabinet-orders .table-info .tr .td:nth-child(odd) { border-bottom: none; }
 	.tabs-abc .tab .col { width: 50%; }
-	.search-box .form .sort { margin-right: 0; }
+	.form-search .sort { margin-right: 0; }
 	.cabinet-manager .cabinet-message { width: 345px; }
 	.steps { display: none; }
 	.steps-small { display: block; }
@@ -4580,6 +4589,9 @@ body > .search-toggle {
 	.steps-small.steps-small-open li:first-child a:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 	.steps-small li a span { padding-top: 6px; text-align: center; }
 }
+/* ==========================================================================
+   _Адаптивность (Мобила)
+   ========================================================================== */
 @media (max-width: 600px) {
 	.container { padding: 160px 20px 20px; }
 	.container .index:first-child { margin-top: 0; }
@@ -4676,12 +4688,12 @@ body > .search-toggle {
 	.actions .item .term .new { right: 0; left: auto; }
 	.actions .item .define { padding-left: 0; }
 	.map { margin-left: -20px; margin-right: -20px; }
-	.search-box:before { left: -20px; right: -20px; }
-	.search-box .form { padding-top: 55px; position: relative; }
-	.search-box .form label.for { margin-bottom: 7px; }
-	.search-box .form .sort { width: 100%; float: none; }
-	.search-box .result { margin: 0; position: absolute; top: 20px; left: 0; font-size: 17px; }
-	.search-box .result span { font-size: 20px; }
+	.form-search:before { left: -20px; right: -20px; }
+	.form-search { padding-top: 55px; position: relative; }
+	.form-search label.for { margin-bottom: 7px; }
+	.form-search .sort { width: 100%; float: none; }
+	.form-search .result { margin: 0; position: absolute; top: 20px; left: 0; font-size: 17px; }
+	.form-search .result span { font-size: 20px; }
 	.questions .line { padding-right: 0; padding-left: 0; }
 	.questions .line .date { position: relative; float: left; display: block; }
 	.questions .line .pic { margin: 0 20px 10px 0; position: relative; float: left; display: block; }
@@ -4691,10 +4703,10 @@ body > .search-toggle {
 	.login .form .title { margin: 0; padding-top: 10px; padding-bottom: 35px; color: #036; background: #fff; text-align: center; font-size: 20px; line-height: 25px; }
 	.login .form .title a { color: #036; }
 	.login .form .title span { display: none; }
-	.recovery .h2 { margin-bottom: 35px; text-align: center; }
-	.recovery .mail { width: 100%; max-width: none; float: none; padding-right: 0; }
-	.recovery .submit { float: none; }
-	.recovery button { width: 100%; font-size: 14px; padding-top: 15px; padding-bottom: 15px; }
+	.form-recovery .h2 { margin-bottom: 35px; text-align: center; }
+	.form-recovery .mail { width: 100%; max-width: none; float: none; padding-right: 0; }
+	.form-recovery .submit { float: none; }
+	.form-recovery button { width: 100%; font-size: 14px; padding-top: 15px; padding-bottom: 15px; }
 	.catalog-new { margin-bottom: 0; }
 	.catalog-new:before { top: 17px; }
 	.catalog-new .h2 { width: 126px; padding: 5px 16px; margin: 0 auto; display: block; font-size: 20px; line-height: 24px; }

@@ -30,17 +30,41 @@ function initGallery() {
 			});
 			return false;
 		});
-		$('.fancybox-gallery', this).fancybox({
-			padding: 0,
-			margin: 45,
-			autoSize: true,
-			fitToView: true,
-			loop: false,
-			helpers: {
-				media: {}
-			}
-		});
+		initFancybox();
 		$(this).addClass('gallery-inited');
+	});
+}
+
+function initFancybox() {
+	/* Всплывающие окна (Fancybox) */
+	$('.fancybox-popup').fancybox({
+		padding: 20,
+		margin: 20,
+		wrapCSS: 'fancybox-default',
+		nextEffect: 'fade',
+		prevEffect: 'fade',
+		fitToView: false,
+		autosize: true,
+		beforeShow: function () {
+			initForms();
+			initGallery();
+		},
+		helpers: {
+			overlay: {
+				speedIn: 250,
+				css: {
+					'background': 'rgba(0, 0, 0, 0.9)'
+				}
+			}
+		}
+	});
+
+	/* Всплывающая галерея (Fancybox) */
+	$('.fancybox-gallery').fancybox({
+		padding: 0,
+		margin: 50,
+		nextEffect: 'fade',
+		prevEffect: 'fade'
 	});
 }
 
@@ -310,37 +334,8 @@ $(document).ready(function () {
 	/* Галерея в кабинете */
 	initGallery();
 
-	/* Всплывающие окна (Fancybox) */
-	$('.fancybox-popup').fancybox({
-		padding: 20,
-		margin: 20,
-		wrapCSS: 'fancybox-default',
-		nextEffect: 'fade',
-		prevEffect: 'fade',
-		fitToView: false,
-		autosize: true,
-		beforeShow: function () {
-			initForms();
-			initGallery();
-		},
-		helpers: {
-			overlay: {
-				speedIn: 250,
-				css: {
-					'background': 'rgba(0, 0, 0, 0.9)'
-				}
-			}
-		}
-	});
-
-	/* Всплывающая галерея (Fancybox) */
-	$('.fancybox-gallery').fancybox({
-		padding: 0,
-		margin: 50,
-		nextEffect: 'fade',
-		prevEffect: 'fade'
-	});
-
+	/* Попапы */
+	initFancybox();
 
 	/* IE баги */
 	if ($.browser.msie) {
