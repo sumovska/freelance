@@ -2518,7 +2518,7 @@ body > .search-toggle {
 	display: none;
 }
 .tabs-list .submenu-triggers {
-	margin-bottom: 25px;
+	margin-bottom: 30px;
 }
 /* ==========================================================================
    _FEATURE
@@ -3082,6 +3082,8 @@ body > .search-toggle {
 	border-bottom: transparent;
 }
 .steps li.active a {
+	padding-top: 23px;
+	padding-bottom: 23px;
 	color: #ff5c26;
 	cursor: default;
 }
@@ -3112,19 +3114,8 @@ body > .search-toggle {
 .table {
 	width: 100%;
 	margin-bottom: 36px;
-	padding-bottom: 30px;
 	position: relative;
 	display: table;
-}
-.table:before {
-	height: 4px;
-	content: ' ';
-	display: block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: url('../img/sprite.png') repeat-x 50% -283px;
 }
 .table .tr {
 	display: table-row;
@@ -3162,20 +3153,22 @@ body > .search-toggle {
 /* ==========================================================================
    _Таблица (заказ)
    ========================================================================== */
-.table-order .all {
+.order-all {
 	margin-bottom: 30px;
 	font-size: 20px;
 	line-height: 25px;
 	color: #212121;
 	letter-spacing: -.07em;
 }
-.table-order .all .number {
+.order-all .number {
 	color: #036;
 	font-weight: bold;
 	font-family: 'Gotham Pro', Helvetica, Arial, sans-serif;
 	letter-spacing: 0;
 }
-.table-order .tr .check { width: 36px; }
+.table-order .tr p { margin: 0; }
+.table-order .tr .th.check { width: 36px; padding-top: 0; }
+.table-order .tr .td.check { width: 36px; padding-top: 8px; }
 .table-order .tr .pic { width: 6%; padding-right: 10px; }
 .table-order .tr .name { padding-right: 25px; }
 .table-order .tr .price { width: 7%; padding-left: 40px; white-space: nowrap; }
@@ -3394,7 +3387,19 @@ body > .search-toggle {
    _Всего
    ========================================================================== */
 .total {
+	padding-top: 30px;
 	font-family: 'Gotham Pro', Helvetica, Arial, sans-serif;
+	position: relative;
+}
+.total:before {
+	height: 4px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: url('../img/sprite.png') repeat-x 50% -283px;
 }
 .total:after {
 	display: block;
@@ -3409,10 +3414,9 @@ body > .search-toggle {
 	float: left;
 }
 .total .col-2 {
-	width: 200px;
 	position: absolute;
 	left: 50%;
-	margin-left: -10px;
+	margin-left: -23px;
 }
 .total .col-3 {
 	float: right;
@@ -3425,8 +3429,8 @@ body > .search-toggle {
 	font: normal 14px/22px Roboto, Helvetica, Arial, sans-serif;
 }
 .total .h2 {
+	padding-top: 10px;
 	margin-bottom: 0;
-	padding-top: 3px;
 	color: #212121;
 }
 .total .line {
@@ -3439,85 +3443,52 @@ body > .search-toggle {
 .total .line input[type="text"] {
 	width: 110px;
 }
-.total .link {
+.total .submit { clear: none; }
+.total .submit button {
 	width: 220px;
 	height: 50px;
-	border: none;
-	display: block;
-	position: relative;
 	font-size: 14px;
-	text-transform: uppercase;
-	text-align: center;
-	z-index: 1;
-	background: linear-gradient(to bottom, #7a7a7a 0%, #242424 100%);
-}
-.total .link:before {
-	width: 216px;
-	height: 46px;
-	display: block;
-	content: ' ';
-	position: absolute;
-	top: 2px;
-	left: 2px;
-	z-index: 2;
-	background: #fff;
-}
-.total .link:hover:before {
-	background-color: transparent;
-}
-.total .link span {
-	color: #212121;
-	position: relative;
-	top: 13px;
-	z-index: 2;
-}
-.total .link:hover span {
-	color: #fff;
 }
 /* ==========================================================================
    _Блока заказа
    ========================================================================== */
-.block-order .tabs-list .submenu-triggers li a.short {
+.form-order .tabs-list .submenu-triggers li a.short {
 	display: none;
 }
-.block-order .tab:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.block-order .tab-hidden {
-	display: none;
-}
-.block-order .form .h3 {
-	margin-bottom: 12px;
-}
-.block-order .form .columns {
+.form-order .tab:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.form-order .tab-hidden { display: none; }
+.form-order .list .h3 { margin-bottom: 15px; color: #036; }
+.form-order .list .h4 { margin-bottom: 15px; color: #036; }
+.form-order .col-1 { width: 370px; float: left; }
+.form-order .col-2 { width: 240px; float: right; }
+.form-order .list {
+	max-width: 710px;
 	margin-bottom: 26px;
 	padding-bottom: 24px;
 }
-.block-order .line-select {
+.form-order .line-select {
 	width: 350px;
 	margin-bottom: 43px;
 }
-.block-order .line label .cost {
+.form-order .line label .cost {
 	display: block;
 	text-transform: none;
-	letter-spacing: -.08em;
+	letter-spacing: 0;
 	font: bold 12px/22px Roboto, Helvetica, Arial, sans-serif;
 }
-.block-order .line label a {
+.form-order .line label a {
 	color: #666;
 }
-.block-order .form .line textarea {
+.form-order .line textarea {
 	height: 90px;
 }
-.block-order .kind {
-	margin-bottom: 32px;
-	padding-bottom: 6px;
+.form-order .kind {
+	padding-bottom: 10px;
+	margin: -6px 0 34px 0;
 	position: relative;
 }
-.block-order .kind:before {
+.form-order .kind:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.form-order .kind:before {
 	height: 4px;
 	content: ' ';
 	display: block;
@@ -3527,38 +3498,14 @@ body > .search-toggle {
 	right: 0;
 	background: url('../img/sprite.png') repeat-x 50% -283px;
 }
-.block-order .kind:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-.block-order .kind:last-child:before {
-	display: none;
-}
-.block-order .line .jq-radio {
-	margin: -4px 0 0 0;
-}
-.block-order .col-2 .line label {
-	margin-bottom: 12px;
-	padding-left: 30px;
-	display: block;
-}
-.block-order .col-2 .line .jq-radio {
-	float: left;
-}
-.block-order .col-2 .line .jq-selectbox {
-	width: 220px;
-}
-.block-order .in {
-	display: block;
-	padding-left: 30px;
-	padding-bottom: 14px;
+.form-order .kind:last-child { margin-bottom: 0; padding-bottom: 0; }
+.form-order .kind:last-child:before { display: none; }
+.form-order .kind .h4 { margin-bottom: 4px; }
+.form-order .radio, .form-order .checkbox { margin-bottom: 5px; display: block; }
+.form-order .in {
+	padding: 0 0 5px 0;
 	border-bottom: 1px solid #eee;
-}
-.block-order .in label {
-	margin-bottom: 12px;
-}
-.block-order .in label:last-child {
-	margin-bottom: 0;
+	margin: 0 0 -6px 30px;
 }
 /* ==========================================================================
    _Кабинет
@@ -4001,6 +3948,11 @@ body > .search-toggle {
 	margin-bottom: 10px;
 }
 .tags .tags { margin-top: 10px; }
+.tags .selector .button-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 /* ==========================================================================
    _Кабинет - Загрузчик картинок
    ========================================================================== */
@@ -4247,7 +4199,6 @@ body > .search-toggle {
 	.map { margin-right: -66px; }
 	.form-search { padding-bottom: 44px; }
 	.form-search { padding-bottom: 0; }
-	.tabs-list .submenu-triggers { margin-bottom: 34px; }
 	.actions .item .define { padding-right: 0; }
 }
 @media (max-width: 1365px) {
@@ -4308,7 +4259,7 @@ body > .search-toggle {
 	.table-order .tr .price { width: 16%; }
 	.table-order .tr .size { padding: 0 18px; }
 	.table-order .tr .close { width: 22px; }
-	.total .col-2 { margin-left: -32px; }
+	.total .col-2 { margin-left: -24px; }
 	.total .col .line { padding: 0; }
 	.table-info .tr .td:nth-child(odd) { width: 38%; }
 	.table-info .tr .td:nth-child(even) { width: 62%; }
@@ -4442,9 +4393,15 @@ body > .search-toggle {
 	.cabinet-orders .table-price .info { padding-left: 0; }
 	.cabinet-orders .table-price .info dd { float: left; padding-left: 10px; }
 	.table-info .info { padding-left: 0; }
-	.block-order .line-select { display: none; }
-	.tabs-list .submenu-triggers { margin-bottom: 22px; }
 	.form .col-1-2 { width: 100%; float: none; }
+	.total:before { left: -20px; right: -20px; }
+	.total .h2 { padding-top: 5px; }
+	.total .col { width: 100%; margin-bottom: 30px; display: block; float: none; }
+	.total .col-2 { margin-bottom: 0; position: relative; left: 0; margin-left: auto; }
+	.total .col .line input[type="text"] { width: 100%; }
+	.total .submit { padding-top: 20px; }
+	.total .submit button { width: 280px; margin: 0 auto; display: block; }
+	.form-order .line-select { display: none; }
 }
 @media (max-width: 755px) {
 	.catalog-grey .catalog { width: 460px; margin: 0 auto; }
@@ -4453,7 +4410,7 @@ body > .search-toggle {
 	.catalog .more { display: block; }
 	.table-order { margin-bottom: 19px; padding-bottom: 18px; }
 	.table-order .tr { margin-bottom: 24px; padding-bottom: 15px; display: block; border-bottom: 1px solid #eee; }
-	.table-order .tr-1 { display: none; }
+	.table-order .tr-head { display: none; }
 	.table-order .tr:last-child { border-bottom: none; margin-bottom: 0; }
 	.table-order .tr .td { display: block; float: left; border-bottom: transparent; }
 	.table-order .tr .price { width: 50%; clear: left; padding-bottom: 0; padding-top: 0; padding-left: 0; float: right; line-height: 18px; text-align: right; }
@@ -4464,8 +4421,6 @@ body > .search-toggle {
 	.table-order .tr .pic { padding-top: 0; margin-top: -4px; }
 	.table-order .tr .name { width: 100%; display: block; float: none; padding-top: 0; padding-right: 30px; white-space: normal; }
 	.table-order .tr .type { width: 50%; padding: 0; text-transform: uppercase; }
-	.total .col { width: 100%; margin-bottom: 34px; display: block; float: none; }
-	.total .col-2 { position: relative; left: 0; margin-left: auto; }
 	.table { display: block; }
 	.table-info .tr { display: block; }
 	.table-info .tr .td:nth-child(odd) { width: 100%; display: block; }
@@ -4493,6 +4448,8 @@ body > .search-toggle {
 	.steps-small.steps-small-open li:first-child a:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
 	.steps-small.steps-small-open li:first-child a:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
 	.steps-small li a span { padding-top: 6px; text-align: center; }
+	.form-order .col-1 { width: 60%; }
+	.form-order .col-2 { width: 40%; }
 }
 /* ==========================================================================
    _Адаптивность (Мобила)
@@ -4640,6 +4597,15 @@ body > .search-toggle {
 	.form-message .submit button { width: 100%; max-width: 350px; margin: 0 auto; padding: 16px 19px; font-size: 14px; display: block; }
 	.fancybox-default .fancybox-skin .fancybox-close { top: 20px; right: 20px; }
 	.fancybox-default .fancybox-close:before, .fancybox-default .fancybox-skin .fancybox-close:after { background: #000; }
+	.form-order .tabs-list .submenu-triggers li a.full { display: none; }
+	.form-order .tabs-list .submenu-triggers li a.short { display: block; }
+	.form-order .tab { margin-bottom: 0; padding-bottom: 0; }
+	.form-order .list { margin-bottom: 14px; padding-bottom: 0; }
+	.form-order .col-1, .form-order .col-2 { width: 100%; float: none; }
+	.form-order .col-1 { margin-bottom: 10px; }
+	.form-order .kind { margin-bottom: 4px; padding-bottom: 0; }
+	.form-order .kind:before { display: none; }
+	.form-order .kind .h4 { margin-bottom: 10px; }
 }
 @media (max-width: 486px) {
 	.catalog-grey .catalog { width: auto; }
@@ -4655,7 +4621,7 @@ body > .search-toggle {
 	.cabinet-orders { margin-left: -20px; margin-right: -20px; }
 	.cabinet-orders .order { border-left-color: transparent; border-right-color: transparent; margin-bottom: -1px; }
 	.cabinet-orders .table-order { padding-top: 25px; }
-	.table-order .tr .name { padding: 0 0 30px 0; }
+	.table-order .tr .name { padding: 0 30px 30px 0; }
 	.table-order .tr .pic { width: 58px; text-align: left; }
 	.cabinet-orders .table-price .tr { padding: 17px 20px; }
 	.cabinet-orders .table-price .tr .td { padding: 0; }
@@ -4671,14 +4637,6 @@ body > .search-toggle {
 	.block-item .info .options .tag:before, .block-item .info .options .tag:after { display: none; }
 	.block-item .info .options .tag .in { padding: 17px 0 17px 4px; }
 	.block-item .info .options .tag .in:before { display: none; }
-	.block-order .tabs-list .submenu-triggers li a.full { display: none; }
-	.block-order .tabs-list .submenu-triggers li a.short { display: block; }
-	.total .col .line input[type="text"] { width: 100%; }
-	.total .col .link { width: 280px; margin: 0 auto; }
-	.total .col .link:before { width: 276px; }
-	.block-order .tab { margin-bottom: 20px; padding-bottom: 6px; }
-	.block-order .kind { margin-bottom: 0; padding-bottom: 0; }
-	.block-order .kind:before { display: none; }
 	.popup { min-width: 240px; }
 	.block-item .info .options .colors span { border-bottom: none; }
 }

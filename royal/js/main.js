@@ -80,7 +80,7 @@ function initTags(scope) {
 	$('.tags:not(.inited)', scope).each(function () {
 		var _self = $(this);
 		$('.add a', _self).click(function () {
-			$('<div class="selector"><select data-placeholder="Выберите&hellip;"><option value="" selected>Выберите&hellip;</option><option value="Верхняя одежда">Верхняя одежда</option><option value="Костюмы">Костюмы</option><option value="Трикотаж">Трикотаж</option></select></div>').insertAfter($(this).parent());
+			$('<div class="selector"><select data-placeholder="Выберите&hellip;"><option value="" selected>Выберите&hellip;</option><option value="Верхняя одежда">Верхняя одежда</option><option value="Костюмы">Костюмы</option><option value="Трикотаж">Трикотаж</option></select><a href="#" class="button-close"></a></div>').insertAfter($(this).parent());
 			initForms(_self);
 			return false;
 		});
@@ -92,6 +92,12 @@ function initTags(scope) {
 		});
 		_self.on('mousedown', '.name .button-close', function () {
 			$(this).closest('.name').fadeOut(function () {
+				$(this).remove();
+			});
+			return false;
+		});
+		_self.on('mousedown', '.button-close', function () {
+			$(this).closest('.selector').fadeOut(function () {
 				$(this).remove();
 			});
 			return false;
@@ -409,6 +415,15 @@ $(document).ready(function () {
 
 	/* Теги */
 	initTags();
+
+	/* Корзина */
+	$('.table-order').each(function () {
+		$(this).on('change', '.checkbox-toggle input', function () {
+			console.log('a');
+			$(this).closest('.table').find('.jq-checkbox:not(.checkbox-toggle) :checkbox').prop('checked', $(this).is(':checked')).change().trigger('refresh');
+			return false;
+		});
+	});
 
 	/* IE баги */
 	if ($.browser.msie) {

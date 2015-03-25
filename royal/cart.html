@@ -54,9 +54,10 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Корзина</p> 
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> Корзина</p>
 
-		<form action="" class="form">
+		<form action="order.html" class="form form-order" method="post">
+
 			<ul class="steps">
 				<li class="active"><a href="cart.html"><span>1</span>Корзина</a></li>
 				<li><a href="order.html"><span>2</span>Оформление</a></li>
@@ -67,60 +68,47 @@
 				<li><a href="order.html"><span>2</span>Оформление</a></li>
 				<li><a href="confirm.html"><span>3</span>Подтверждение</a></li>
 			</ul>
+
+			<p class="order-all">В корзине <span class="number">7</span> товаров на <span class="number">15 500</span> <span class="rub">p</span></p>
 			<div class="table table-order">
-				<p class="all">В корзине <span class="number">7</span> товаров на <span class="number">15 500</span> <span class="rub">p</span></p>
-				<div class="tags-add">
-					<div class="tr tr-1 cover">
-						<div class="th check check-all">
-							<div class="line"><input type="checkbox"></div>
-						</div>
-						<div class="th pic"></div>
-						<div class="th name">Товар</div>
-						<div class="th price">Цена</div>
-						<div class="th size">Размеры</div>
-						<div class="th sum">Итого</div>
-						<div class="th close"><a class="button-close" href="#"></a></div>
-					</div>
-					<div class="tr cover">
-						<div class="td check">
-							<div class="line"><input type="checkbox" checked></div>
-						</div>
-						<div class="td pic"><img src="img/temp/catalog-2.jpg" alt=""></div>
-						<div class="td name">Мужское пальто <span>АКАПУЛЬКО ПМ-673-570</span></div>
-						<div class="td price"><span class="hidden">Цена:</span> 2 500 <span class="rub">p</span></div>
-						<div class="td size"><a href="#">Посмотреть размеры</a></div>
-						<div class="td sum"><span class="hidden">Итого:</span> 5 000 <span class="rub">p</span></div>
-						<div class="td close"><a class="button-close" href="#"></a></div>
-					</div>
-					<div class="tr cover">
-						<div class="td check">
-							<div class="line"><input type="checkbox"></div>
-						</div>
-						<div class="td pic"><img src="img/temp/catalog-1.jpg" alt=""></div>
-						<div class="td name">Мужское пальто <span>КЕНТАВР ПМ-669-12</span></div>
-						<div class="td price"><span class="hidden">Цена:</span> 2 000 <span class="rub">p</span></div>
-						<div class="td size"><a href="#">Посмотреть размеры</a></div>
-						<div class="td sum"><span class="hidden">Итого:</span> 10 000 <span class="rub">p</span></div>
-						<div class="td close"><a class="button-close" href="#"></a></div>
-					</div>
+				<div class="tr tr-head">
+					<div class="th check"><label><input class="checkbox-toggle" type="checkbox" value=""></label></div>
+					<div class="th pic"></div>
+					<div class="th name"><p>Товар</p></div>
+					<div class="th price"><p>Цена</p></div>
+					<div class="th size"><p>Размеры</p></div>
+					<div class="th sum"><p>Итого</p></div>
+					<div class="th close"><a class="button-close" href="#"></a></div>
+				</div>
+				<div class="tr">
+					<div class="td check"><label><input type="checkbox" value=""></label></div>
+					<div class="td pic"><img src="img/temp/catalog-2.jpg" alt=""></div>
+					<div class="td name"><p>Мужское пальто <span>АКАПУЛЬКО ПМ-673-570</span></p></div>
+					<div class="td price"><span class="hidden">Цена:</span> 2 500 <span class="rub">p</span></div>
+					<div class="td size"><a href="popup-size.html" class="fancybox-popup" data-fancybox-type="ajax">Посмотреть размеры</a></div>
+					<div class="td sum"><span class="hidden">Итого:</span> 5 000 <span class="rub">p</span></div>
+					<div class="td close"><a class="button-close" href="#"></a></div>
+				</div>
+				<div class="tr">
+					<div class="td check"><label><input type="checkbox" value=""></label></div>
+					<div class="td pic"><img src="img/temp/catalog-1.jpg" alt=""></div>
+					<div class="td name"><p>Мужское пальто <span>КЕНТАВР ПМ-669-12</span></p></div>
+					<div class="td price"><span class="hidden">Цена:</span> 2 000 <span class="rub">p</span></div>
+					<div class="td size"><a href="popup-size.html" class="fancybox-popup" data-fancybox-type="ajax">Посмотреть размеры</a></div>
+					<div class="td sum"><span class="hidden">Итого:</span> 10 000 <span class="rub">p</span></div>
+					<div class="td close"><a class="button-close" href="#"></a></div>
 				</div>
 			</div>
 			<div class="total">
-				<div class="col col-1">
-					<h2 class="h2">Итого: <span class="number">15 000</span> <span class="rub">p</span></h2>
-				</div>
+				<div class="col col-1"><h2 class="h2">Итого: <span class="number">15 000</span> <span class="rub">p</span></h2></div>
 				<div class="col col-2">
-					<div class="line">
-						<label>Промо-код</label>
-						<input type="text" placeholder="XXX-XX-XX">
-					</div>
+					<div class="line"><label class="for" for="promo">Промо-код</label><input id="promo" type="text" placeholder="XXX-XX-XX"></div>
 				</div>
-				<div class="col col-3">
-					<a class="link" href="#"><span>Оформить заказ</span></a>
+				<div class="col col-3 submit">
+					<button type="submit">Оформить заказ</button>
 				</div>
 			</div>
 		</form>
-
 	</div>
 
 	<aside class="top">
