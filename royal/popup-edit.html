@@ -1,56 +1,96 @@
 <div id="edit" class="popup popup-edit">
-	<form class="form" action="#">
-		<div class="list">
-			<h2 class="h2">Магазин <span>&laquo;Невская перспектива&raquo;</span></h2>
-			<div class="columns">
-				<div class="unit">
-					<div class="line">
-						<label class="for">Название</label>
-						<input type="text" placeholder="Невская перспектива">
+	<form class="form form-edit" action="#">
+		<h2 class="h2">Магазин <span>&laquo;Невская перспектива&raquo;</span></h2>
+		<div class="list form-space">
+			<div class="col col-1-2">
+				<div class="line">
+					<label for="edit-name" class="for">Название торгового центра</label>
+					<input id="edit-name" type="text" value="">
+				</div>
+			</div>
+			<div class="col col-1-2">
+				<div class="line">
+					<label for="edit-shop" class="for">Название магазина</label>
+					<input id="edit-shop" type="text" value="">
+				</div>
+			</div>
+			<div class="col col-1-2">
+				<div class="list">
+					<div class="col col-1-2">
+						<div class="line">
+							<label for="edit-floor" class="for">Этаж</label>
+							<input id="edit-floor" type="text" value="">
+						</div>
 					</div>
-					<div class="line">
-						<label for="choose_city" class="for">Город</label>
-						<select id="choose_city">
-							<option selected>Санкт-Петербург</option>
-							<option>Москва</option>
-							<option>Екатеринбург</option>
-						</select>
-					</div>
-					<div class="line line-adr">
-						<span>
-							<label class="for">Улица</label>
-							<input type="text" placeholder="Невский проспект">
-						</span>
-						<span>
-							<label class="for">Дом</label>
-							<input type="text" placeholder="220">
-						</span>
-					</div>
-					<div class="line">
-						<label class="for">Телефон</label>
-						<input type="text" placeholder="+7 (812) 220-20-20, 345-55-00">
+					<div class="col col-1-2">
+						<div class="line">
+							<label for="edit-section" class="for">Номер секции</label>
+							<input id="edit-section" type="text" value="">
+						</div>
 					</div>
 				</div>
-				<div class="unit unit-2">
-					<div class="line">
-						<div class="add-goods">
-							<a href="#">Добавить ассортимент</a>
-						</div>
-						<div class="goods">
-							<span class="name cover"><span>Верхняя одежда</span> <a class="button-close" href="#"></a></span>
-							<span class="name cover"><span>Трикотаж</span> <a class="button-close" href="#"></a></span>
-							<span class="name cover"><span>Костюмы</span> <a class="button-close" href="#"></a></span>
+			</div>
+			<div class="col col-1-2">
+				<div class="line">
+					<label for="edit-city" class="for">Город</label>
+					<select id="edit-city">
+						<option value="" selected></option>
+						<option value="1">Москва</option>
+						<option value="2">Санкт-Петербург</option>
+						<option value="3">Екатеринбург</option>
+					</select>
+				</div>
+			</div>
+			<div class="col col-1-2">
+				<div class="list">
+					<div class="col col-4-5">
+						<div class="line">
+							<label for="edit-street" class="for">Улица</label>
+							<input id="edit-street" type="text" value="">
 						</div>
 					</div>
-					<div class="line">
-						<label class="add-file">
-							<input class="file-add-image" type="file" data-placeholder="Добавить изображения">
+					<div class="col col-1-5">
+						<div class="line">
+							<label for="edit-house" class="for">Дом</label>
+							<input id="edit-house" type="text" value="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col col-1-2">
+				<div class="list">
+					<div class="col col-1-2">
+						<div class="line">
+							<label for="edit-phone-1" class="for for-white">Основной телефон</label>
+							<input id="edit-phone-1" type="text" value="">
+						</div>
+					</div>
+					<div class="col col-1-2">
+						<div class="line">
+							<label for="edit-phone-2" class="for">Дополнительный</label>
+							<input id="edit-phone-2" type="text" value="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col col-1-2">
+				<div class="line">
+					<div class="tags">
+						<p class="add"><a href="#">Добавить ассортимент</a></p>
+						<span class="name"><span>Верхняя одежда</span><a href="#" class="button-close" title="Удалить"></a></span>
+						<span class="name"><span>Костюмы</span><a href="#" class="button-close" title="Удалить"></a></span>
+						<span class="name"><span>Трикотаж</span><a href="#" class="button-close" title="Удалить"></a></span>
+					</div>
+				</div>
+			</div>
+			<div class="col col-1-2">
+				<div class="line">
+					<div class="image-loader">
+						<label class="file-add">
+							<input class="file-add-image" type="file" data-placeholder="Добавить изображения" multiple>
 						</label>
-						<div class="gallery gallery-popup">
+						<div class="gallery gallery-loader">
 							<ul class="carousel">
-								<li><img src="img/temp/gallery-2s.jpg" alt=""><a class="button-close" href="#"></a></li>
-								<li><img src="img/temp/gallery-1s.jpg" alt=""><a class="button-close" href="#"></a></li>
-								<li><img src="img/temp/gallery-3s.jpg" alt=""><a class="button-close" href="#"></a></li>
 								<li><img src="img/temp/gallery-2s.jpg" alt=""><a class="button-close" href="#"></a></li>
 								<li><img src="img/temp/gallery-1s.jpg" alt=""><a class="button-close" href="#"></a></li>
 								<li><img src="img/temp/gallery-3s.jpg" alt=""><a class="button-close" href="#"></a></li>
@@ -60,10 +100,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="submit">
-			<div class="line">
-				<button type="submit">Отправить на модерацию</button>
-			</div>
+		<div class="line submit submit-line">
+			<button type="submit">Отправить на модерацию</button>
 		</div>
 	</form>
 </div>

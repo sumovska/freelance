@@ -1,16 +1,20 @@
 /*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true */
 /*global window, console, document, $, jQuery, PIE */
-function initForms() {
-	/* Формы */
-	$('input, select').styler({
+
+/* Формы */
+function initForms(scope) {
+	if (typeof scope === 'undefined') scope = document;
+	$('input, select', scope).styler({
 		selectPlaceholder: ''
 	});
 }
 
-function initGallery() {
-	/* Галерея в кабинете */
-	$('.gallery:visible:not(.gallery-inited)').each(function (i) {
-		var slider = $('.carousel', this).bxSlider({
+/* Галерея в кабинете */
+function initGallery(scope) {
+	var slider;
+	if (typeof scope === 'undefined') scope = document;
+	$('.gallery:visible:not(.gallery-inited):not(.gallery-hidden)', scope).each(function (i) {
+		slider = $('.carousel', this).bxSlider({
 			pager: false,
 			responsive: true,
 			minSlides: 3,
@@ -23,31 +27,26 @@ function initGallery() {
 			hideControlOnEnd: true,
 			adaptiveHeight: true
 		});
-		$('.button-close', this).click(function () {
-			$(this).closest('li').fadeOut(function () {
-				$(this).remove();
-				slider.reloadSlider();
-			});
-			return false;
-		});
-		initFancybox();
+		initFancybox(this);
 		$(this).addClass('gallery-inited');
 	});
+	if (typeof slider != 'undefined') return slider;
 }
 
-function initFancybox() {
-	/* Всплывающие окна (Fancybox) */
-	$('.fancybox-popup').fancybox({
+/* Всплывающие окна (Fancybox) */
+function initFancybox(scope) {
+	if (typeof scope === 'undefined') scope = document;
+	$('.fancybox-popup', scope).fancybox({
 		padding: 20,
-		margin: 20,
+		margin: 40,
 		wrapCSS: 'fancybox-default',
 		nextEffect: 'fade',
 		prevEffect: 'fade',
-		fitToView: false,
-		autosize: true,
+		fitToView: true,
 		beforeShow: function () {
-			initForms();
-			initGallery();
+			initForms($('.fancybox-wrap'));
+			initGallery($('.fancybox-wrap'));
+			initTags($('.fancybox-wrap'));
 		},
 		helpers: {
 			overlay: {
@@ -58,13 +57,84 @@ function initFancybox() {
 			}
 		}
 	});
-
 	/* Всплывающая галерея (Fancybox) */
-	$('.fancybox-gallery').fancybox({
+	$('.fancybox-gallery', scope).fancybox({
 		padding: 0,
 		margin: 50,
 		nextEffect: 'fade',
-		prevEffect: 'fade'
+		prevEffect: 'fade',
+		helpers: {
+			overlay: {
+				speedIn: 250,
+				css: {
+					'background': 'rgba(0, 0, 0, 0.9)'
+				}
+			}
+		}
+	});
+}
+
+/* Теги */
+function initTags(scope) {
+	if (typeof scope === 'undefined') scope = document;
+	$('.tags:not(.inited)', scope).each(function () {
+		var _self = $(this);
+		$('.add a', _self).click(function () {
+			$('<div class="selector"><select data-placeholder="Выберите&hellip;"><option value="" selected>Выберите&hellip;</option><option value="Верхняя одежда">Верхняя одежда</option><option value="Костюмы">Костюмы</option><option value="Трикотаж">Трикотаж</option></select></div>').insertAfter($(this).parent());
+			initForms(_self);
+			return false;
+		});
+		_self.on('change', '.selector select', function () {
+			if ($(this).val()) {
+				$('<span class="name"><span>' + $(this).val() + '</span><a href="#" class="button-close" title="Удалить"></a></span>').insertAfter($('.selector:last', _self));
+				$(this).closest('.selector').remove();
+			}
+		});
+		_self.on('mousedown', '.name .button-close', function () {
+			$(this).closest('.name').fadeOut(function () {
+				$(this).remove();
+			});
+			return false;
+		});
+		_self.addClass('inited');
+	});
+	$('.image-loader:not(.inited)', scope).each(function () {
+		function loader(current) {
+			var reader = new FileReader(), img = $('<img alt="">');
+			reader.onload = function (e) {
+				$('<li/>').append(img.attr('src', e.target.result)).append('<a href="#" class="button-close"></a>').appendTo(gallery);
+				if (typeof carousel != 'undefined') carousel.reloadSlider();
+			};
+			reader.readAsDataURL(current);
+		}
+
+		var _self = $(this), gallery = $('.gallery .carousel', _self), carousel;
+		gallery.closest('.gallery').removeClass('gallery-hidden');
+		carousel = initGallery(_self);
+		if ($('li', carousel).length === 0) {
+			gallery.closest('.gallery').addClass('gallery-hidden');
+		}
+		_self.on('change', '.file-add input:file', function () {
+			var arr = $(this).prop('files');
+			if (arr.length > 0) {
+				$('li', gallery).remove();
+				gallery.closest('.gallery').removeClass('gallery-hidden');
+			}
+			for (var i = 0; i < arr.length; i++) {
+				loader(arr[i]);
+			}
+		});
+		_self.on('mousedown', '.button-close', function () {
+			$(this).closest('li').fadeOut(function () {
+				$(this).remove();
+				carousel.reloadSlider();
+			});
+			if ($('li', carousel).length === 0) {
+				gallery.closest('.gallery').addClass('gallery-hidden');
+			}
+			return false;
+		});
+		_self.addClass('inited');
 	});
 }
 
@@ -336,6 +406,9 @@ $(document).ready(function () {
 
 	/* Попапы */
 	initFancybox();
+
+	/* Теги */
+	initTags();
 
 	/* IE баги */
 	if ($.browser.msie) {

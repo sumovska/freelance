@@ -71,40 +71,40 @@
 			<li><a href="#">Создание акции</a></li>
 		</ul>
 
-		<form class="form form-edit" action="#">
+		<form class="form form-edit" action="cabinet-shops-add.html">
 			<div class="list form-space">
 				<div class="col col-1-2">
 					<div class="line">
-						<label class="for">Название торгового центра</label>
-						<input type="text" placeholder="">
+						<label for="edit-name" class="for">Название торгового центра</label>
+						<input id="edit-name" type="text" value="">
 					</div>
 				</div>
 				<div class="col col-1-2">
 					<div class="line">
-						<label class="for">Название магазина</label>
-						<input type="text" placeholder="">
+						<label for="edit-shop" class="for">Название магазина</label>
+						<input id="edit-shop" type="text" value="">
 					</div>
 				</div>
 				<div class="col col-1-2">
 					<div class="list">
 						<div class="col col-1-2">
 							<div class="line">
-								<label class="for">Этаж</label>
-								<input type="text" placeholder="">
+								<label for="edit-floor" class="for">Этаж</label>
+								<input id="edit-floor" type="text" value="">
 							</div>
 						</div>
 						<div class="col col-1-2">
 							<div class="line">
-								<label class="for">Номер секции</label>
-								<input type="text" placeholder="">
+								<label for="edit-section" class="for">Номер секции</label>
+								<input id="edit-section" type="text" value="">
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col col-1-2">
 					<div class="line">
-						<label class="for">Город</label>
-						<select>
+						<label for="edit-city" class="for">Город</label>
+						<select id="edit-city">
 							<option value="" selected></option>
 							<option value="1">Москва</option>
 							<option value="2">Санкт-Петербург</option>
@@ -116,14 +116,14 @@
 					<div class="list">
 						<div class="col col-4-5">
 							<div class="line">
-								<label class="for">Улица</label>
-								<input type="text" placeholder="">
+								<label for="edit-street" class="for">Улица</label>
+								<input id="edit-street" type="text" value="">
 							</div>
 						</div>
 						<div class="col col-1-5">
 							<div class="line">
-								<label class="for">Дом</label>
-								<input type="text" placeholder="">
+								<label for="edit-house" class="for">Дом</label>
+								<input id="edit-house" type="text" value="">
 							</div>
 						</div>
 					</div>
@@ -132,30 +132,36 @@
 					<div class="list">
 						<div class="col col-1-2">
 							<div class="line">
-								<label class="for for-white">Основной телефон</label>
-								<input type="text" placeholder="">
+								<label for="edit-phone-1" class="for for-white">Основной телефон</label>
+								<input id="edit-phone-1" type="text" value="">
 							</div>
 						</div>
 						<div class="col col-1-2">
 							<div class="line">
-								<label class="for">Дополнительный</label>
-								<input type="text" placeholder="">
+								<label for="edit-phone-2" class="for">Дополнительный</label>
+								<input id="edit-phone-2" type="text" value="">
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col col-1-2">
 					<div class="line">
-						<div class="add-goods">
-							<a href="#">Добавить ассортимент</a>
+						<div class="tags">
+							<p class="add"><a href="#">Добавить ассортимент</a></p>
 						</div>
 					</div>
 				</div>
 				<div class="col col-1-2">
 					<div class="line">
-						<label class="add-file">
-							<input class="file-add-image" type="file" data-placeholder="Добавить изображения" multiple>
-						</label>
+						<div class="image-loader">
+							<label class="file-add">
+								<input class="file-add-image" type="file" data-placeholder="Добавить изображения" multiple>
+							</label>
+							<div class="gallery gallery-loader gallery-hidden">
+								<ul class="carousel">
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

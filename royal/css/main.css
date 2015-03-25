@@ -211,8 +211,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .jq-radio.focused { border-color: #f6f6f6; }
 .jq-radio.checked .jq-radio__div { background: #ff5c26; box-shadow: none; width: 8px; height: 8px; margin: 0; position: absolute; top: 4px; left: 4px; border-radius: 50%; }
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; top: 0; left: 0; margin: 0; }
-.jq-file.file-add-image { width: 100%; border-radius: 0; box-shadow: none; margin: 0; display: block; position: relative; cursor: default; }
-.jq-file.file-add-image .jq-file__name { height: auto; padding: 3px 0 3px 25px; border: none; border-radius: 0; box-shadow: none; font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif; letter-spacing: -.01em; text-transform: uppercase; position: relative; }
+label.file-add { width: 100%; height: 30px; padding: 5px 0; position: relative; display: inline-block; }
+.jq-file.file-add-image { width: 100%; border-radius: 0; box-shadow: none; margin: 0; display: inline-block; position: relative; cursor: default; }
+.jq-file.file-add-image .jq-file__name { width: 100%; overflow: hidden; text-overflow: ellipsis; height: auto; padding: 3px 0 3px 25px; border: none; border-radius: 0; box-shadow: none; font: bold 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif; letter-spacing: -.01em; white-space: nowrap; text-transform: uppercase; position: relative; transition: color .1s; }
+.jq-file.file-add-image:hover .jq-file__name, .jq-file.file-add-image.focused .jq-file__name { color: #666; }
 .jq-file.file-add-image .jq-file__name:before { width: 16px; height: 13px; display: block; content: ' '; position: absolute; top: 3px; left: 0; background: url('../img/sprite.png') no-repeat -210px -420px; }
 .jq-file.file-add-image .jq-file__browse { display: none; }
 /* ==========================================================================
@@ -3244,7 +3246,7 @@ body > .search-toggle {
 	top: 5px;
 	left: 9px;
 	background: #fff;
-	transition: background .3s ease;
+	transition: background-color .05s;
 }
 .button-close:before {
 	-webkit-transform: rotate(-45deg);
@@ -3258,8 +3260,8 @@ body > .search-toggle {
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
-.button-close:hover:before, .button-close:hover:after {
-	background: #222;
+.button-close:hover:before, .button-close:hover:after, .button-close:focus:before, .button-close:focus:after {
+	background: #ff5b26;
 }
 /* ==========================================================================
    _Таблица (инфармация о заказе)
@@ -3764,87 +3766,11 @@ body > .search-toggle {
 	font-size: 17px;
 	color: #036;
 }
-.form-data .cover {
-	margin-bottom: 9px;
-	padding-right: 20px;
-	position: relative;
-}
-.form-data .cover .button-close {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-.form-data .add {
-	margin-bottom: 20px;
-	display: block;
-}
-.form-data .add a {
-	padding-left: 26px;
-	display: block;
-	line-height: 30px;
-	border-bottom: none;
-	position: relative;
-}
-.form-data .add a:before {
-	width: 16px;
-	height: 16px;
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-	position: absolute;
-	left: 0;
-	top: 7px;
-	background: url(../img/sprite.png) -210px -420px no-repeat;
-}
 /* ==========================================================================
-   _Кабинет - Добавить ассортимент
+   _Кабинет - Форма добавления/редактирования
    ========================================================================== */
-.add-goods {
-	margin: 3px 0 10px;
-	font: 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-}
-.add-goods a {
-	padding: 8px 0 8px 40px;
-	border: none;
-	display: block;
-	text-decoration: none;
-}
-.add-goods a:before {
-	width: 30px;
-	height: 30px;
-	display: block;
-	content: " ";
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	background: linear-gradient(to bottom, rgba(122, 122, 122, 1) 0%, rgba(37, 37, 37, 1) 100%);
-}
-.add-goods a:after {
-	width: 26px;
-	height: 26px;
-	display: block;
-	content: "+";
-	font-size: 22px;
-	line-height: 26px;
-	font-family: 'Roboto', Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	text-align: center;
-	color: #515151;
-	position: absolute;
-	top: 2px;
-	left: 2px;
-	z-index: 2;
-	background: #fff;
-}
-/* ==========================================================================
-   _Кабинет - Форма редактирования
-   ========================================================================== */
-.form-edit .form-space {
-	max-width: 690px;
-}
+.form-edit .form-space { max-width: 710px; }
+.form-edit .submit-line { margin-bottom: 0; }
 /* ==========================================================================
    _Кабинет - Менеджер
    ========================================================================== */
@@ -3930,10 +3856,6 @@ body > .search-toggle {
 	padding-bottom: 40px;
 	position: relative;
 }
-.shops .item:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
 .shops .item:before {
 	height: 4px;
 	content: ' ';
@@ -3944,9 +3866,6 @@ body > .search-toggle {
 	right: 0;
 	background: url('../img/sprite.png') repeat-x 50% -283px;
 }
-.shops .item:last-child:before {
-	display: none;
-}
 .shops .item:after {
 	display: block;
 	content: ' ';
@@ -3956,55 +3875,31 @@ body > .search-toggle {
 .shops .h2 {
 	margin-bottom: 15px;
 }
-.shops .name {
+.shops .info {
 	width: 460px;
 	padding-right: 60px;
 	float: left;
 }
-.shops .name .tags {
-	margin: 0 0 7px;
-	font: bold 10px/11px 'Gotham Pro', Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-}
-.shops .name .tags:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.shops .name .tags > * {
-	margin-right: 7px;
-	margin-bottom: 7px;
-	padding: 5px 7px;
-	display: inline-block;
-	color: #fff;
-	border-bottom: none;
-	background: #036 linear-gradient(to bottom, rgba(50, 91, 132, 1) 0%, rgba(3, 53, 104, 1) 100%);
-	transition: background .3s ease;
-}
-.shops .name .tags > a:hover {
-	background: #036 linear-gradient(to bottom, rgba(3, 53, 104, 1) 0%, rgba(50, 91, 132, 1) 100%);
-}
-.shops .name .address {
+.shops .info .address {
 	margin-bottom: 12px;
 	display: block;
 	font-size: 14px;
 	line-height: 20px;
 	color: #666;
 }
-.shops .name .address .tel {
+.shops .info .address .tel {
 	color: #666;
 	border-bottom: none;
 	cursor: default;
 	white-space: nowrap;
 }
-.shops .name .address .tel:focus {
+.shops .info .address .tel:focus {
 	color: #222;
 }
-.shops .name .edit {
+.shops .info .edit {
 	font: bold 11px/18px 'Gotham Pro', Helvetica, Arial, sans-serif;
 }
-.shops .name .edit a {
+.shops .info .edit a {
 	margin-right: 6px;
 }
 .shops .gallery {
@@ -4013,6 +3908,105 @@ body > .search-toggle {
 }
 .shops .gallery .bx-wrapper {
 	margin: 0 !important;
+}
+/* ==========================================================================
+   _Кабинет - Теги
+   ========================================================================== */
+.tags {
+	margin: 0 0 7px;
+	font: bold 10px/11px 'Gotham Pro', Helvetica, Arial, sans-serif;
+	position: relative;
+	text-transform: uppercase;
+}
+.tags:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
+.tags .name {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	display: block;
+	float: left;
+	color: #fff;
+}
+.tags .name:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.tags .name span {
+	height: 20px;
+	padding: 5px 7px;
+	float: left;
+	display: block;
+	border-bottom: none;
+	background: #036 linear-gradient(to bottom, rgba(50, 91, 132, 1) 0%, rgba(3, 53, 104, 1) 100%);
+	transition: background .3s ease;
+}
+.tags .button-close {
+	border-bottom: none;
+	float: left;
+	display: block;
+	top: 0;
+	background: #f3f5f8;
+}
+.tags .button-close:before, .tags .button-close:after { background: #666; }
+.tags .button-close:hover:before, .tags .button-close:hover:after,
+.tags .button-close:focus:before, .tags .button-close:focus:after { background-color: #ff5b26; }
+.tags .add {
+	margin: 0 0 10px 0;
+	font: 11px/14px 'Gotham Pro', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
+.tags .add a {
+	padding: 8px 0 8px 40px;
+	border: none;
+	display: inline-block;
+	text-decoration: none;
+	transition: color .1s;
+}
+.tags .add a:hover, .tags .add a:focus { color: #666; }
+.tags .add a:before {
+	width: 30px;
+	height: 30px;
+	display: block;
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: linear-gradient(to bottom, rgba(122, 122, 122, 1) 0%, rgba(37, 37, 37, 1) 100%);
+}
+.tags .add a:after {
+	width: 26px;
+	height: 26px;
+	display: block;
+	content: "+";
+	font-size: 22px;
+	line-height: 26px;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-align: center;
+	color: #515151;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	z-index: 2;
+	background: #fff;
+	transition: color .1s, background-color .05s;
+}
+.tags .add a:hover:after, .tags .add a:focus:after { color: #fff; background-color: transparent; }
+.tags .selector {
+	width: 100%;
+	padding-right: 30px;
+	position: relative;
+	margin-bottom: 10px;
+}
+.tags .tags { margin-top: 10px; }
+/* ==========================================================================
+   _Кабинет - Загрузчик картинок
+   ========================================================================== */
+.image-loader .gallery-hidden { display: none; }
+.image-loader .gallery {
+	width: 100%;
 }
 /* ==========================================================================
    _Кабинет - Галерея
@@ -4038,6 +4032,7 @@ body > .search-toggle {
 }
 .gallery ul li {
 	width: 70px !important;
+	margin-right: 10px;
 	float: left;
 	position: relative;
 }
@@ -4045,7 +4040,7 @@ body > .search-toggle {
 	display: block;
 	border-bottom: none;
 }
-.gallery ul li a img {
+.gallery ul li img {
 	width: 70px;
 	height: 70px;
 	display: block;
@@ -4149,93 +4144,14 @@ body > .search-toggle {
 	display: none;
 }
 .popup-edit {
-	width: 690px;
+	max-width: 690px;
 	padding: 0;
 	box-sizing: content-box;
 	cursor: default;
 	background: #fff;
 }
-.popup-edit .form {
-	padding-bottom: 0;
-}
-.popup-edit .form .cover {
-	margin-right: 10px;
-}
-.popup-edit .h2 {
-	margin-bottom: 30px;
-	color: #212121;
-}
-.popup-edit .h2 span {
-	color: #036;
-}
-.popup-edit .line {
-	margin-bottom: 12px;
-}
-.popup-edit .line label.for {
-	margin-bottom: 2px;
-	display: block;
-	line-height: 24px;
-}
-.popup-edit .columns {
-	margin-left: -10px;
-	margin-right: -10px;
-	padding-bottom: 60px;
-}
-.popup-edit .columns:before { left: 0; right: 0; }
-.popup-edit .goods {
-	margin: 0 0 14px;
-	font: bold 10px/11px 'Gotham Pro', Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-}
-.popup-edit .goods:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.popup-edit .goods .name {
-	margin-right: 10px;
-	margin-bottom: 10px;
-	display: block;
-	float: left;
-	color: #fff;
-}
-.popup-edit .goods .name:after {
-	display: block;
-	content: ' ';
-	overflow: hidden;
-	clear: both;
-}
-.popup-edit .goods .name span {
-	height: 20px;
-	padding: 5px 7px;
-	float: left;
-	display: block;
-	border-bottom: none;
-	background: #036 linear-gradient(to bottom, rgba(50, 91, 132, 1) 0%, rgba(3, 53, 104, 1) 100%);
-	transition: background .3s ease;
-}
-.popup-edit .button-close {
-	background: #f3f5f8;
-}
-.popup-edit .button-close:before, .popup-edit .button-close:after {
-	background: #666;
-}
-.popup-edit .goods .name .button-close {
-	float: left;
-	display: block;
-	top: 0;
-	border-bottom: none;
-}
-.popup-edit .unit-2 {
-	margin-top: 6px;
-}
-.popup-edit .form .add-file {
-	margin: 12px 0;
-	position: relative;
-	z-index: 5000;
-	display: block;
-}
+.popup-edit .form-edit { width: 690px; overflow: hidden; }
+.popup-edit .form-edit .form-space { margin: 0 -10px; }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
    ========================================================================== */
@@ -4397,7 +4313,7 @@ body > .search-toggle {
 	.table-info .tr .td:nth-child(odd) { width: 38%; }
 	.table-info .tr .td:nth-child(even) { width: 62%; }
 	.questions .line { width: 84.4%; padding-right: 188px; }
-	.shops .name { width: 355px; }
+	.shops .info { width: 355px; }
 	.form-where .col-1-2:nth-child(1) { width: 39.5%; }
 	.form-where .col-1-2:nth-child(2) { width: 60.5%; }
 	.form-where .checkbox { margin-right: 33px; }
@@ -4463,12 +4379,6 @@ body > .search-toggle {
 	.map { margin-right: -40px; }
 	.login { left: 250px; }
 	.tabs-abc .triggers { margin-right: -40px; }
-	.popup-edit { width: 350px; }
-	.popup-edit .columns { margin-right: 0; margin-left: 0; padding-bottom: 0; }
-	.popup-edit .unit > .line { width: 100%; padding: 0; float: none; }
-	.popup-edit .unit-2 > .line { margin-bottom: 20px; padding-top: 19px; border-top: 1px solid #eee; }
-	.popup-edit .unit-2 > .line .goods { margin-bottom: 0; }
-	.popup-edit .unit-2 > .line .goods .name:last-child { margin-bottom: 0; }
 	.login .form .title { padding: 24px 18px 22px; }
 	.cabinet-orders { margin-right: -20px; }
 	.form-data { margin-right: 0; }
@@ -4477,6 +4387,9 @@ body > .search-toggle {
 @media (max-width: 985px) {
 	.catalog .item:nth-child(4n + 1) { clear: none; }
 	.catalog .item:nth-child(3n + 1) { clear: left; }
+}
+@media (max-width: 820px) {
+	.popup-edit .form-edit { width: auto; }
 }
 @media (max-width: 767px) {
 	.top .links li { padding: 10px 0 10px 10px; }
@@ -4508,9 +4421,8 @@ body > .search-toggle {
 	.block-add .list .column { width: 100%; padding: 0; }
 	.questions .line { width: 100%; }
 	.shops .item { margin-bottom: 26px; padding-bottom: 72px; }
-	.shops .item:last-child { padding-bottom: 34px; }
-	.shops .name { width: 100%; margin-bottom: 35px; float: none; padding: 0; }
-	.shops .name .edit { position: absolute; bottom: 38px; left: 0; right: 0; }
+	.shops .info { width: 100%; margin-bottom: 35px; float: none; padding: 0; }
+	.shops .info .edit { position: absolute; bottom: 38px; left: 0; right: 0; }
 	.shops .item:last-child .name .edit { bottom: 0; }
 	.shops .gallery { width: 100%; float: none; }
 	.touch .gallery .bx-controls-direction a { display: none; }
@@ -4532,6 +4444,7 @@ body > .search-toggle {
 	.table-info .info { padding-left: 0; }
 	.block-order .line-select { display: none; }
 	.tabs-list .submenu-triggers { margin-bottom: 22px; }
+	.form .col-1-2 { width: 100%; float: none; }
 }
 @media (max-width: 755px) {
 	.catalog-grey .catalog { width: 460px; margin: 0 auto; }
@@ -4561,6 +4474,7 @@ body > .search-toggle {
 	.table-info .number .td:nth-child(odd) { width: 70%; display: table-cell; }
 	.table-info .number .td:nth-child(even) { width: 30%; display: table-cell; }
 	.login { width: 300px; }
+	.cabinet-orders .order-open { border-left-color: transparent; border-right-color: transparent; }
 	.cabinet-orders .table-info .tr .td:nth-child(even) { padding-top: 0; }
 	.cabinet-orders .table-info .tr .td:nth-child(odd) { border-bottom: none; }
 	.tabs-abc .tab .col { width: 50%; }
@@ -4724,7 +4638,6 @@ body > .search-toggle {
 	.form-message .submit { padding-top: 50px; }
 	.form-message .submit:before { left: -20px; right: -20px; }
 	.form-message .submit button { width: 100%; max-width: 350px; margin: 0 auto; padding: 16px 19px; font-size: 14px; display: block; }
-	.popup-edit { width: 100%; }
 	.fancybox-default .fancybox-skin .fancybox-close { top: 20px; right: 20px; }
 	.fancybox-default .fancybox-close:before, .fancybox-default .fancybox-skin .fancybox-close:after { background: #000; }
 }
