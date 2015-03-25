@@ -54,15 +54,22 @@
 	</header>
 
 	<div class="container">
-		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="catalog.html">Корзина</a></span> Подтверждение</p> 
+		<p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span><a href="cart.html">Корзина</a></span> Подтверждение</p>
 
 		<div class="block-order">
-			<form action="" class="form">
+			<form action="index.html" class="form" method="post">
+
 				<ul class="steps">
 					<li><a href="cart.html"><span class="number">1</span>Корзина</a></li>
 					<li><a href="order.html"><span class="number">2</span>Оформление</a></li>
 					<li class="active"><a href="confirm.html"><span class="number">3</span>Подтверждение</a></li>
 				</ul>
+				<ul class="steps steps-small">
+					<li><a href="cart.html"><span>1</span>Корзина</a></li>
+					<li><a href="order.html"><span>2</span>Оформление</a></li>
+					<li class="active"><a href="confirm.html"><span>3</span>Подтверждение</a></li>
+				</ul>
+
 				<div class="table table-info">
 					<div class="tr number">
 						<div class="td"><h2 class="h2">Заказ <span class="h-orange">№ 34000</span></h2></div>
@@ -74,7 +81,7 @@
 						</div>
 					</div>
 					<div class="tr">
-						<div class="td title">Параметры заказа</div>
+						<div class="td title"><p>Параметры заказа</p></div>
 						<div class="td">
 							<dl class="info">
 								<dt>Тип плательщика</dt>
@@ -83,7 +90,7 @@
 						</div>
 					</div>
 					<div class="tr">
-						<div class="td title title-2">Данные для доставки</div>
+						<div class="td title title-2"><p>Данные для доставки</p></div>
 						<div class="td">
 							<dl class="info">
 								<dt>Индекс</dt>
@@ -98,7 +105,7 @@
 						</div>
 					</div>
 					<div class="tr">
-						<div class="td title title-3">Параметры доставки и оплаты</div>
+						<div class="td title title-3"><p>Параметры доставки и оплаты</p></div>
 						<div class="td">
 							<dl class="info">
 								<dt>Тип оплаты</dt>
@@ -114,41 +121,37 @@
 				<div class="table table-order">
 					<div class="tr tr-1">
 						<div class="th pic"></div>
-						<div class="th name">Товар</div>
-						<div class="th price">Цена</div>
-						<div class="th type">Тип</div>
-						<div class="th size">Размеры</div>
-						<div class="th sum">Итого</div>
+						<div class="th name"><p>Товар</p></div>
+						<div class="th price"><p>Цена</p></div>
+						<div class="th type"><p>Тип</p></div>
+						<div class="th size"><p>Размеры</p></div>
+						<div class="th sum"><p>Итого</p></div>
 					</div>
 					<div class="tr">
 						<div class="td pic"><img src="img/temp/catalog-2.jpg" alt=""></div>
-						<div class="td name">Мужское пальто <span>АКАПУЛЬКО ПМ-673-570</span></div>
-						<div class="td price"><span class="hidden">Цена:</span> 2 500 <span class="rub">p</span></div>
-						<div class="td type"><span class="hidden">Тип:</span> Базовый</div>
-						<div class="td size"><a href="#">Посмотреть размеры</a></div>
-						<div class="td sum"><span class="hidden">Итого:</span> 5 000 <span class="rub">p</span></div>
+						<div class="td name"><p>Мужское пальто <span>АКАПУЛЬКО ПМ-673-570</span></p></div>
+						<div class="td price"><p><span class="hidden">Цена:</span> 2 500 <span class="rub">p</span></p></div>
+						<div class="td type"><p><span class="hidden">Тип:</span> Базовый</p></div>
+						<div class="td size"><a href="popup-size.html" class="fancybox-popup" data-fancybox-type="ajax">Посмотреть размеры</a></div>
+						<div class="td sum"><p><span class="hidden">Итого:</span> 5 000 <span class="rub">p</span></p></div>
 					</div>
 					<div class="tr">
 						<div class="td pic"><img src="img/temp/catalog-1.jpg" alt=""></div>
-						<div class="td name">Мужское пальто <span>КЕНТАВР ПМ-669-12</span></div>
-						<div class="td price"><span class="hidden">Цена:</span> 2 000 <span class="rub">p</span></div>
-						<div class="td type"><span class="hidden">Тип:</span> Базовый</div>
-						<div class="td size"><a href="#">Посмотреть размеры</a></div>
-						<div class="td sum"><span class="hidden">Итого:</span> 10 000 <span class="rub">p</span></div>
+						<div class="td name"><p>Мужское пальто <span>КЕНТАВР ПМ-669-12</span></p></div>
+						<div class="td price"><p><span class="hidden">Цена:</span> 2 000 <span class="rub">p</span></p></div>
+						<div class="td type"><p><span class="hidden">Тип:</span> Базовый</p></div>
+						<div class="td size"><a href="popup-size.html" class="fancybox-popup" data-fancybox-type="ajax">Посмотреть размеры</a></div>
+						<div class="td sum"><p><span class="hidden">Итого:</span> 10 000 <span class="rub">p</span></p></div>
 					</div>
 				</div>
 				<div class="total">
-					<div class="col col-1">
-						<h2 class="h2">Итого: <span class="number">15 000</span> <span class="rub">p</span></h2>
-						<p class="fn">Включая стоимость доставки</p>
-					</div>
-					<div class="col col-3">
-						<a class="link" href="#"><span>Оформить заказ</span></a>
+					<div class="col col-1"><h2 class="h2">Итого: <span class="number">15 000</span> <span class="rub">p</span></h2></div>
+					<div class="col col-3 submit">
+						<button type="submit">Оформить заказ</button>
 					</div>
 				</div>
 			</form>
 		</div>
-
 	</div>
 
 	<aside class="top">
