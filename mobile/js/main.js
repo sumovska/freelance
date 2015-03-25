@@ -62,42 +62,52 @@ $(document).ready(function () {
 		var windowSize = $(window).width();
 
 		if (windowSize > 768) {
-			$('.catalog-small').removeClass('carousel-small');
 		}
-		else if (windowSize < 767) {
-			$('.catalog-small').addClass('carousel-small').slick({
-				slidesToScroll: 1,
-				slidesToShow: 2,
-				variableWidth: true,
-				centerMode: true,
-				focusOnSelect: true,
-				arrows: false,
-				responsive: [
-					{
-						breakpoint: 667,
-						settings: {
-							slidesToShow: 1,
-							centerMode: true
+		else {
+			if (windowSize <= 768) {
+				$('.catalog-small').slick({
+					slidesToScroll: 1,
+					slidesToShow: 2,
+					variableWidth: true,
+					centerMode: true,
+					arrows: false,
+					responsive: [
+						{
+							breakpoint: 667,
+							settings: {
+								slidesToShow: 1,
+								centerMode: true
+							}
 						}
-					}
-				]
-			});
-			$('.offers').slick({
-				slidesToScroll: 1,
-				slidesToShow: 2,
-				arrows: false,
-				responsive: [
-					{
-						breakpoint: 667,
-						settings: {
-							slidesToShow: 1,
-							centerMode: true
+					]
+				});
+				$('.offers').slick({
+					slidesToScroll: 1,
+					slidesToShow: 2,
+					infinite: true,
+					centerMode: true,
+					arrows: false,
+					responsive: [
+						{
+							breakpoint: 667,
+							settings: {
+								slidesToShow: 1,
+								centerMode: true
+							}
 						}
-					}
-				]
-			});
+					]
+				});
+				$('.featured').each(function () {
+					$('.list').slick({
+						slidesToShow: 4,
+						arrows: false
+					});
+				});
+				$('.slick-cloned').removeClass('slick-active');
+			}
 		}
 	}
+
 
 	// Execute on load
 	checkWidth();
@@ -109,16 +119,26 @@ $(document).ready(function () {
 		padding: 0
 	});
 
-	$('.filter').each(function(){
-		$('.open').click(function() {
+	$('.filter').each(function () {
+		$('.open').click(function () {
 			$(this).closest('.toggle').addClass('toggle-active').siblings('form').fadeIn(200);
 		});
-		$('.close').click(function() {
+		$('.close').click(function () {
 			$(this).closest('.toggle').removeClass('toggle-active').siblings('form').fadeOut(200);
 		});
-		$('.h5 .switch').click(function() {
+		$('.h5 .switch').click(function () {
 			$(this).closest('.h5').toggleClass('h5-active').siblings('.list', '.price-slider').fadeToggle(200);
 		});
 	});
+
+	$('.tabs').each(function () {
+		$('.list li a', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			return false;
+		});
+	});
+
 });
 
