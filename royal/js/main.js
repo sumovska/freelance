@@ -334,10 +334,9 @@ $(document).ready(function () {
 	});
 
 	/* Block-item */
-	$('.block-item .info').each(function () {
-		$('.colors li a').click(function () {
-			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
-		});
+	$('.colors li a').click(function () {
+		$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
+		return false;
 	});
 
 	/* Tabs-list toggle */
