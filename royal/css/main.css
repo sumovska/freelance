@@ -4505,18 +4505,24 @@ body > .search-toggle {
 	.cabinet-orders { margin-right: -20px; }
 	.form-data { margin-right: 0; }
 	.form-data .col-2 { width: 230px; padding-left: 0; float: right; }
+	.popup-size .h1 { margin-bottom: 26px; }
+	.table-sizes-small { margin: 0 -10px 10px; }
 	.table-sizes-small, .table-sizes-small .tr { display: block; }
 	.table-sizes-small .tr-head { display: none; }
 	.table-sizes-small .tr { border-bottom: 1px solid #eee; }
-	.table-sizes-small .tr .td { width: 60px; margin: 0 20px 20px 0; float: left; display: none; }
+	.table-sizes-small .tr .td { margin: 0 10px; padding: 7px 0; float: left; display: none; }
 	.table-sizes-small .tr .td-toggle { width: 100%; margin-bottom: 0; display: block; float: none; position: relative }
-	.table-sizes-small .tr .td-toggle .switch { display: inline-block; }
+	.table-sizes-small .tr .td-toggle .switch { display: inline-block; cursor: pointer; }
 	.table-sizes-small .tr .td-toggle .switch { width: 30px; height: 30px; position: absolute; top: 2px; right: 2px; }
 	.table-sizes-small .tr .td-toggle .switch:before, .table-sizes-small .tr .td-toggle .switch:after { width: 5px; height: 14px; display: block; content: ' '; overflow: hidden; clear: both; position: absolute; top: 8px; background: #222; }
 	.table-sizes-small .tr .td-toggle .switch:before { left: 16px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
 	.table-sizes-small .tr .td-toggle .switch:after { left: 9px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+	.table-sizes-small .tr-active .td { display: block; }
+	.table-sizes-small .tr-active .td-toggle { margin-bottom: 16px; }
+	.table-sizes-small .tr-active .td-toggle .switch:before { left: 9px; }
+	.table-sizes-small .tr-active .td-toggle .switch:after { left: 16px; }
 	.table-sizes-small .tr-active .td-toggle .hide { display: inline-block; }
-	.table-sizes .size { display: block; }
+	.table-sizes-small .size { display: block; text-align: left; }
 }
 @media (max-width: 985px) {
 	.catalog .item:nth-child(4n + 1) { clear: none; }

@@ -171,6 +171,11 @@ function initNumbers(scope) {
 			}
 		});
 	});
+	$('.table-sizes').each(function() {
+		$('.td-toggle', this).click(function() {
+			$(this).closest('.tr').toggleClass('tr-active');
+		});
+	});
 }
 
 /* On document ready */
@@ -477,13 +482,6 @@ $(document).ready(function () {
 			console.log('a');
 			$(this).closest('.table').find('.jq-checkbox:not(.checkbox-toggle) :checkbox').prop('checked', $(this).is(':checked')).change().trigger('refresh');
 			return false;
-		});
-	});
-
-	/* Размерная таблица */
-	$('.table-sizes').each(function() {
-		$('.td-toggle', this).click(function() {
-			$(this).closest('.tr').toggleClass('tr-active');
 		});
 	});
 
