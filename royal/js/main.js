@@ -161,7 +161,7 @@ function initNumbers(scope) {
 			}
 		});
 		up.click(function () {
-			if (+input.val() < 10) {
+			if (+input.val() < 99) {
 				input.val(+input.val() + 1);
 			}
 		});
@@ -477,6 +477,13 @@ $(document).ready(function () {
 			console.log('a');
 			$(this).closest('.table').find('.jq-checkbox:not(.checkbox-toggle) :checkbox').prop('checked', $(this).is(':checked')).change().trigger('refresh');
 			return false;
+		});
+	});
+
+	/* Размерная таблица */
+	$('.table-sizes').each(function() {
+		$('.td-toggle', this).click(function() {
+			$(this).closest('.tr').toggleClass('tr-active');
 		});
 	});
 

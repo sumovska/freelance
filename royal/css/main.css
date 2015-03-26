@@ -4150,8 +4150,43 @@ body > .search-toggle {
 .popup-edit .form-edit { width: 690px; overflow: hidden; }
 .popup-edit .form-edit .form-space { margin: 0 -10px; }
 /* ==========================================================================
+   _POPUP_SIZE
+   ========================================================================== */
+.popup-size .h1 {
+	margin-bottom: 32px;
+}
+.inside-grey {
+	padding-top: 22px;
+	background: #f5f5f5;
+	box-shadow: inset 0 1px 14px 1px rgba(102, 102, 102, .25);
+}
+/* ==========================================================================
    _TABLE_SIZES
    ========================================================================== */
+.table-sizes {
+	margin-bottom: 10px;
+}
+.table-sizes .tr .th, .table-sizes .tr .td {
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	text-align: center;
+	border-bottom: none;
+}
+.table-sizes .tr .th {
+	padding-bottom: 10px;
+}
+.table-sizes .tr .td:nth-child(1) {
+	text-align: left;
+	padding-left: 0;
+	padding-right: 4px;
+}
+.table-sizes .tr .td-toggle .switch, .table-sizes .tr .td-toggle .hide { display: none; }
+.table-sizes .size {
+	margin-bottom: 6px;
+	font-size: 16px;
+	display: none;
+}
 .table-sizes .number {
 	width: 60px;
 	padding-right: 18px;
@@ -4167,11 +4202,83 @@ body > .search-toggle {
 	width: 18px;
 	height: 15px;
 	display: block;
+	cursor: pointer;
 	position: absolute;
 	right: 0;
 	top: 0;
 }
 .table-sizes .number .down { top: auto; bottom: 0; }
+.table-sizes .number .up:before, .table-sizes .number .up:after, .table-sizes .number .down:before, .table-sizes .number .down:after {
+	width: 1px;
+	height: 8px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: 5px;
+	background: #fff;
+}
+.table-sizes .number .up:before, .table-sizes .number .down:before {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.table-sizes .number .up:after, .table-sizes .number .down:after {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.table-sizes .number .up:after, .table-sizes .number .down:before { left: 6px; }
+.table-sizes .number .up:before, .table-sizes .number .down:after { left: 11px; }
+.table-sizes .number .down:before, .table-sizes .number .down:after { top: 4px; }
+/* ==========================================================================
+   _TABLE_TOTAL
+   ========================================================================== */
+.table-total {
+	width: 360px;
+}
+.table-total .tr .td {
+	padding: 7px 15px;
+}
+.table-total .tr .td:nth-child(1) {
+	padding-left: 0;
+}
+.table-total .tr .td:nth-last-child(1) {
+	padding-right: 0;
+}
+.table-total .tr .td-price {
+	padding-left: 46px;
+}
+.table-total p {
+	margin-bottom: 0;
+}
+.table-total .size {
+	color: #666;
+	font: 11px 'Gotham Pro', Arial, sans-serif;
+}
+.table-total .price {
+	font-size: 28px;
+	color: #036;
+}
+.table-total .price .rub {
+	color: #000;
+}
+.table-total .button-close {
+	position: relative;
+	top: 2px;
+}
+.table-total .all {
+	text-transform: uppercase;
+	color: #666;
+	font: 11px 'Gotham Pro', Arial, sans-serif;
+	position: relative;
+	top: 5px;
+}
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
    ========================================================================== */
@@ -4398,6 +4505,18 @@ body > .search-toggle {
 	.cabinet-orders { margin-right: -20px; }
 	.form-data { margin-right: 0; }
 	.form-data .col-2 { width: 230px; padding-left: 0; float: right; }
+	.table-sizes-small, .table-sizes-small .tr { display: block; }
+	.table-sizes-small .tr-head { display: none; }
+	.table-sizes-small .tr { border-bottom: 1px solid #eee; }
+	.table-sizes-small .tr .td { width: 60px; margin: 0 20px 20px 0; float: left; display: none; }
+	.table-sizes-small .tr .td-toggle { width: 100%; margin-bottom: 0; display: block; float: none; position: relative }
+	.table-sizes-small .tr .td-toggle .switch { display: inline-block; }
+	.table-sizes-small .tr .td-toggle .switch { width: 30px; height: 30px; position: absolute; top: 2px; right: 2px; }
+	.table-sizes-small .tr .td-toggle .switch:before, .table-sizes-small .tr .td-toggle .switch:after { width: 5px; height: 14px; display: block; content: ' '; overflow: hidden; clear: both; position: absolute; top: 8px; background: #222; }
+	.table-sizes-small .tr .td-toggle .switch:before { left: 16px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+	.table-sizes-small .tr .td-toggle .switch:after { left: 9px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+	.table-sizes-small .tr-active .td-toggle .hide { display: inline-block; }
+	.table-sizes .size { display: block; }
 }
 @media (max-width: 985px) {
 	.catalog .item:nth-child(4n + 1) { clear: none; }
@@ -4706,6 +4825,11 @@ body > .search-toggle {
 	.table-order .tr .pic { width: 58px; text-align: left; }
 	.cabinet-orders .table-price .tr { padding: 17px 20px; }
 	.cabinet-orders .table-price .tr .td { padding: 0; }
+	.popup-size .h1 { font-size: 24px; }
+	.table-total { width: 100%; }
+	.table-total .tr .td { padding-left: 4px; padding-right: 4px; }
+	.table-total .tr .td-price { text-align: right; }
+	.table-total .price { font-size: 20px; }
 }
 @media (max-width: 400px) {
 	.index { height: 200px; }
