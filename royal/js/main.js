@@ -37,7 +37,7 @@ function initGallery(scope) {
 function initFancybox(scope) {
 	if (typeof scope === 'undefined') scope = document;
 	$('.fancybox-popup', scope).fancybox({
-		padding: 20,
+		padding: 0,
 		margin: 20,
 		wrapCSS: 'fancybox-default',
 		nextEffect: 'fade',
