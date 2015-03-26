@@ -347,13 +347,13 @@ $(document).ready(function () {
 			} else {
 				_scroll.removeAttr('style');
 			}
+			_scroll.mCustomScrollbar("update");
 		});
 		_scroll.mCustomScrollbar({
 			axis: "y",
 			scrollInertia: 100,
 			scrollButtons: {enable: false},
 			autoHideScrollbar: false,
-			mouseWheel: {invert: false},
 			theme: "rounded-dark",
 			autoExpandScrollbar: true
 		});

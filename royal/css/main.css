@@ -2152,9 +2152,9 @@ body > .search-toggle {
 .block-item .images.open .scroll .mCSB_inside > .mCSB_container {
 	margin-right: 0 !important;
 }
-.block-item .mCSB_scrollTools { right: 10px; }
 .block-item .mCS-rounded-dark.mCSB_scrollTools.mCSB_scrollTools_vertical {
 	width: 20px;
+	right: 10px;
 }
 .block-item .mCS-rounded-dark.mCSB_scrollTools.mCSB_scrollTools_vertical .mCSB_draggerContainer {
 	width: 20px !important;
@@ -2186,8 +2186,8 @@ body > .search-toggle {
 .block-item .images .list li:first-child { display: block; }
 .block-item .images.open .list li { display: block !important; }
 .block-item .images .pic {
-	width: 100%;
-	max-width: 350px;
+	width: 350px;
+	height: 490px;
 	margin: 0 auto;
 	display: block;
 	cursor: pointer;
@@ -4501,6 +4501,10 @@ body > .search-toggle {
 	.block-item .info .options .tag .note { display: block; position: absolute; right: 20px; bottom: 18px; }
 	.block-item .info .options .buy { width: 100%; padding-right: 0; }
 	.block-item .info .options .buy .to-cart { width: 100%; }
+	.block-item .info .options .colors { width: auto; }
+	.block-item .images .scroll { width: 350px; margin: 0 auto; }
+	.block-item .images.open .scroll { max-height: 560px; right: auto; left: 50%; margin-left: -175px; }
+	.block-item .images .new { right: 50%; margin-right: -160px; }
 }
 /* ==========================================================================
    _Адаптивность (Мобила)
@@ -4685,4 +4689,13 @@ body > .search-toggle {
 	.three .item { width: 100%; height: 130px; }
 	.news .picture { margin-left: -20px; margin-right: -20px; }
 	.popup { min-width: 240px; }
+	.block-item .images { min-height: 440px; }
+	.block-item .images .list { width: 280px; }
+	.block-item .images .pic { width: 100%; height: auto; }
+	.block-item .images .scroll { width: 280px; min-height: 440px; height: 440px; }
+	.block-item .images.open .scroll { max-height: 440px; }
+	.block-item .images.open .scroll { margin-left: -140px; }
+	.block-item .images.open .list { width: 320px; }
+	.block-item .images .new { margin-right: -100px; }
+	.block-item .mCS-rounded-dark.mCSB_scrollTools.mCSB_scrollTools_vertical { right: 30px; }
 }
