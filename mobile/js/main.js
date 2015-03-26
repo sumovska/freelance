@@ -18,6 +18,11 @@ $(document).ready(function () {
 		});
 	});
 
+	/*  Всплывающие окна (Fancybox) */
+	$('.fancybox-popup').fancybox({
+		padding: 0
+	});
+
 	/* Слайдер с навигацией */
 	$('.slider').each(function () {
 		$('.slider-for').slick({
@@ -113,17 +118,11 @@ $(document).ready(function () {
 	}
 
 	runSlider();
-
 	var r;
 
 	$(window).resize(function () {
 		clearTimeout(r);
 		r = setTimeout(runSlider, 500);
-	});
-
-	/*  Всплывающие окна (Fancybox) */
-	$('.fancybox-popup').fancybox({
-		padding: 0
 	});
 
 	/* Сворачивание/разворачивание фильтра */
