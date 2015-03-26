@@ -60,67 +60,66 @@ $(document).ready(function () {
 		$('.item', this).Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 	});
 
-	/* Включение карусели на маленьких разрешениях */
-	function checkWidth() {
-		var windowSize = $(window).width();
-
-		if (windowSize > 768) {
-		}
-		else {
-			if (windowSize <= 768) {
-				$('.catalog-small').slick({
-					slidesToScroll: 1,
-					slidesToShow: 2,
-					variableWidth: true,
-					centerMode: true,
-					arrows: false,
-					responsive: [
-						{
-							breakpoint: 600,
-							settings: {
-								slidesToShow: 1,
-								centerMode: true
-							}
+	function runSlider() {
+		if ($(window).width() > 768) {
+			$('.catalog-small').unslick("unslick");
+		} else {
+			$('.catalog-small').slick({
+				slidesToScroll: 1,
+				slidesToShow: 2,
+				variableWidth: true,
+				centerMode: true,
+				arrows: false,
+				responsive: [
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1,
+							centerMode: true
 						}
-					]
-				});
-				$('.offers').slick({
-					slidesToScroll: 1,
-					slidesToShow: 2,
-					infinite: true,
-					centerMode: true,
-					arrows: false,
-					responsive: [
-						{
-							breakpoint: 600,
-							settings: {
-								slidesToShow: 1,
-								centerMode: true
-							}
+					}
+				]
+			});
+			$('.offers').slick({
+				slidesToScroll: 1,
+				slidesToShow: 2,
+				infinite: true,
+				centerMode: true,
+				arrows: false,
+				responsive: [
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1,
+							centerMode: true
 						}
-					]
-				});
-				$('.featured-list').slick({
-					slidesToScroll: 1,
-					slidesToShow: 4,
-					arrows: false,
-					variableWidth: true
-				});
-				$('.tabs-list').slick({
-					slidesToShow: 5,
-					variableWidth: true,
-					prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
-					nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>'
-				});
-				$('.slick-cloned').removeClass('slick-active');
-			}
+					}
+				]
+			});
+			$('.featured-list').slick({
+				slidesToScroll: 1,
+				slidesToShow: 4,
+				arrows: false,
+				variableWidth: true
+			});
+			$('.tabs-list').slick({
+				slidesToShow: 5,
+				variableWidth: true,
+				prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
+				nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>'
+			});
+			$('.slick-cloned').removeClass('slick-active');
 		}
 	}
 
-	// Execute on load
-	checkWidth();
-	// Bind event listener
-	$(window).resize(checkWidth);
+	runSlider();
+
+	var r;
+
+	$(window).resize(function () {
+		clearTimeout(r);
+		r = setTimeout(runSlider, 500);
+	});
 
 	/*  Всплывающие окна (Fancybox) */
 	$('.fancybox-popup').fancybox({
