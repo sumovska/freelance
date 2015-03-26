@@ -334,9 +334,36 @@ $(document).ready(function () {
 	});
 
 	/* Block-item */
-	$('.colors li a').click(function () {
-		$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
-		return false;
+	$('.block-item').each(function () {
+		var _images = $('.images', this), _scroll = $('.images .scroll', this);
+		$('.colors li a', this).click(function () {
+			$(this).closest('li').toggleClass('active').siblings('.active').removeClass('active');
+			return false;
+		});
+		$('.pic', _images).click(function () {
+			_images.toggleClass('open');
+			if (_images.is('.open')) {
+				_scroll.height(+$('.container').height());
+			} else {
+				_scroll.removeAttr('style');
+			}
+		});
+		_scroll.mCustomScrollbar({
+			axis: "y",
+			scrollInertia: 100,
+			scrollButtons: {enable: false},
+			autoHideScrollbar: false,
+			mouseWheel: {invert: false},
+			theme: "rounded-dark",
+			autoExpandScrollbar: true
+		});
+		$(document).on('click touchstart', function (event) {
+			var target = $(event.target);
+			if ((target.closest('.images').length === 0) && (!target.is('.images'))) {
+				_images.removeClass('open');
+				_scroll.removeAttr('style');
+			}
+		});
 	});
 
 	/* Tabs-list toggle */
