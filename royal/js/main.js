@@ -44,9 +44,11 @@ function initFancybox(scope) {
 		prevEffect: 'fade',
 		fitToView: true,
 		beforeShow: function () {
-			initForms($('.fancybox-wrap'));
-			initGallery($('.fancybox-wrap'));
-			initTags($('.fancybox-wrap'));
+			var wrap = $('.fancybox-wrap');
+			initForms(wrap);
+			initGallery(wrap);
+			initTags(wrap);
+			initNumbers(wrap);
 		},
 		helpers: {
 			overlay: {
@@ -141,6 +143,33 @@ function initTags(scope) {
 			return false;
 		});
 		_self.addClass('inited');
+	});
+}
+
+function initNumbers(scope) {
+	if (typeof scope === 'undefined') scope = document;
+	$('.number', scope).each(function () {
+		var input = $('input', this), up = $('.up', this), down = $('.down', this);
+		input.keydown(function (e) {
+			if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+				(e.keyCode == 65 && e.ctrlKey === true) ||
+				(e.keyCode >= 35 && e.keyCode <= 39)) {
+				return;
+			}
+			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+				e.preventDefault();
+			}
+		});
+		up.click(function () {
+			if (+input.val() < 10) {
+				input.val(+input.val() + 1);
+			}
+		});
+		down.click(function () {
+			if (+input.val() > 0) {
+				input.val(+input.val() - 1);
+			}
+		});
 	});
 }
 
@@ -468,6 +497,7 @@ $(document).ready(function () {
 		}
 	}
 
+	initNumbers();
 	resizeEvent();
 	scrollEvent();
 });
