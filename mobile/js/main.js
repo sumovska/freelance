@@ -6,6 +6,7 @@ $(document).ready(function () {
 	/* Init forms */
 	$('input, select').styler();
 
+	/* Карусель на главной */
 	$('.index').each(function () {
 		$('.carousel', this).slick({
 			adaptiveHeight: false,
@@ -17,7 +18,7 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Slider carousel */
+	/* Слайдер с навигацией */
 	$('.slider').each(function () {
 		$('.slider-for').slick({
 			slidesToShow: 1,
@@ -41,6 +42,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Ценовая прокрутка */
 	$('.price-slider').each(function () {
 		$('.item', this).noUiSlider({
 			start: [1200, 6000],
@@ -58,6 +60,7 @@ $(document).ready(function () {
 		$('.item', this).Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 	});
 
+	/* Включение карусели на маленьких разрешениях */
 	function checkWidth() {
 		var windowSize = $(window).width();
 
@@ -73,7 +76,7 @@ $(document).ready(function () {
 					arrows: false,
 					responsive: [
 						{
-							breakpoint: 667,
+							breakpoint: 600,
 							settings: {
 								slidesToShow: 1,
 								centerMode: true
@@ -89,7 +92,7 @@ $(document).ready(function () {
 					arrows: false,
 					responsive: [
 						{
-							breakpoint: 667,
+							breakpoint: 600,
 							settings: {
 								slidesToShow: 1,
 								centerMode: true
@@ -97,28 +100,34 @@ $(document).ready(function () {
 						}
 					]
 				});
-				$('.featured').each(function () {
-					$('.list').slick({
-						slidesToShow: 4,
-						arrows: false
-					});
+				$('.featured-list').slick({
+					slidesToScroll: 1,
+					slidesToShow: 4,
+					arrows: false,
+					variableWidth: true
+				});
+				$('.tabs-list').slick({
+					slidesToShow: 5,
+					variableWidth: true,
+					prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
+					nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>'
 				});
 				$('.slick-cloned').removeClass('slick-active');
 			}
 		}
 	}
 
-
 	// Execute on load
 	checkWidth();
 	// Bind event listener
 	$(window).resize(checkWidth);
 
-	/* Popup script */
+	/*  Всплывающие окна (Fancybox) */
 	$('.fancybox-popup').fancybox({
 		padding: 0
 	});
 
+	/* Сворачивание/разворачивание фильтра */
 	$('.filter').each(function () {
 		$('.open').click(function () {
 			$(this).closest('.toggle').addClass('toggle-active').siblings('form').fadeIn(200);
@@ -131,8 +140,9 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Табы */
 	$('.tabs').each(function () {
-		$('.list li a', this).click(function () {
+		$('.tabs-list li a', this).click(function () {
 			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
 			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
 			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
