@@ -775,7 +775,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	cursor: default;
 }
 .index .carousel .text {
-	width: 500px;
+	/*width: 500px;*/
 	margin: 0 auto;
 	position: relative;
 	left: -30px;
@@ -931,6 +931,49 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .index .pager li a.active:hover:after {
 	opacity: 1;
+}
+.index .sale {
+	width: 490px;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.index .sale .item {
+	margin: 2px;
+	padding: 10px;
+	background: rgba(255, 255, 255, .9);
+}
+.index .sale .line {
+	display: table;
+}
+.index .sale .line .in {
+	display: table-row;
+}
+.index .sale .col {
+	padding: 10px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.index .sale .col:nth-child(1) {
+	width: 170px;
+	text-align: right;
+}
+.index .sale .col:nth-child(2) { text-align: center; background: #ececec; }
+.index .sale .col:nth-child(3) { background: #ffd642; }
+.index .sale .old, .index .line .new { }
+.index .sale .old {
+	font-weight: normal;
+}
+.index .sale .item p {
+	margin-bottom: 0;
+}
+.index .sale .discount {
+	font-size: 12px;
+	font-style: italic;
+}
+.index .sale .discount .color {
+	color: #1074d5;
+	font-weight: bold;
 }
 /* ==========================================================================
    _BLUE
