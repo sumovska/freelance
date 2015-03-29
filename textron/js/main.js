@@ -142,6 +142,20 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Popup script */
+	$('.fancybox-popup').fancybox({
+		padding: 0,
+		fitToView: false,
+		helpers: {
+			media: {},
+			overlay: {
+				css: {
+					'background': 'rgba(0, 0, 0, 0.8)'
+				}
+			}
+		}
+	});
+
 	/* Cart */
 	$('.cart .number').each(function () {
 		var input = $('input', this), up = $('.up', this), down = $('.down', this);
