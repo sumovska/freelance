@@ -215,7 +215,7 @@ textarea { width: 300px; height: 80px; overflow: auto; resize: none; }
 button:after { content: '' }
 button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, input[type="reset"]:hover, button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[type="submit"]:not([disabled]):focus, input[type="reset"]:focus { border-color: #ff9700; color: #fff; text-shadow: 0 1px 1px #000; }
 button[disabled], input[type="button"][disabled], input[type="submit"][disabled] { background: #f5f5f5; box-shadow: none; color: #888; }
-.checkbox, .radio { font: 12px/17px 'Gotham Pro', Helvetica, Arial, sans-serif; cursor: pointer; }
+.checkbox, .radio { cursor: pointer; }
 .jq-checkbox { width: 20px; height: 20px; border: 2px solid #036; border-radius: 0; box-shadow: none; background: #fff; overflow: visible !important; text-align: left; }
 .jq-checkbox.focused { border-color: #fff; }
 .jq-checkbox .jq-checkbox__div { width: 20px; height: 20px; margin: 0; position: absolute; top: -5px; left: 2px; background: none; }
@@ -870,7 +870,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	clear: both;
 }
 .product .triggers li {
-	width: 104px;
 	height: 32px;
 	margin-right: 9px;
 	text-align: center;
@@ -911,7 +910,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .product .triggers li a {
 	height: 100%;
-	padding-top: 7px;
+	padding: 7px 7px 0 10px;
 	display: block;
 	color: #8b8b8b;
 	text-decoration: none;
@@ -991,6 +990,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	text-align: center;
 	border-bottom: 1px solid #d8d8d8;
 }
+.product .tab .size-active .in {
+	padding: 0 30px 0 40px;
+	display: block;
+}
 .product .tab .in:after {
 	display: block;
 	content: ' ';
@@ -1005,22 +1008,32 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-color: transparent;
 }
 .product .tab .col {
-	margin-bottom: 0;
-	padding: 13px 24px 8px;
-	display: inline-block;
-	vertical-align: top;
+	width: 50%;
+	padding: 13px 5px 8px;
+	float: left;
 }
-.product .tab .col-1 {
-	padding-left: 41px;
+.product .tab .radio {
+	display: block;
+	text-align: center;
 }
-.product .tab .price {
+.product .tab .radio .price {
 	margin-bottom: 8px;
 	display: block;
 	font-size: 24px;
 	line-height: 26px;
 }
-.product .tab .price .small {
+.product .tab .radio .price .small {
 	font-size: 18px;
+}
+.product .tab .radio .count {
+	max-width: 70px;
+	padding: 3px;
+	border-radius: 3px;
+	margin: 0 auto 10px;
+	display: block;
+	font-size: 14px;
+	line-height: 18px;
+	background-color: #fff;
 }
 .product .to-cart {
 	padding: 16px 18px 13px 20px;
@@ -1065,7 +1078,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	content: ' ';
 	overflow: hidden;
 	position: absolute;
-	right: 7px;
+	right: 5px;
 	border-style: solid;
 }
 .product .amount .up:before { top: 6px; border-width: 0 4px 6px 4px; border-color: transparent transparent #232323 transparent; }
@@ -1090,7 +1103,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: url(../img/sprite.png) -65px -55px no-repeat;
 	background-size: 100px auto;
 }
-.product .sum {
+.product .total {
 	margin-bottom: 16px;
 	padding: 0 40px 0 18px;
 	display: block;
