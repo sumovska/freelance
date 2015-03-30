@@ -72,7 +72,7 @@ $(document).ready(function () {
 		});
 
 		function runSlider() {
-			if ($(window).width() > 768) {
+			if ($(window).width() > 999) {
 				$('.catalog-small-carosel').unslick();
 				$('.offers-carousel').unslick();
 				$('.tabs-list-carousel').unslick();
