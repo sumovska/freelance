@@ -91,7 +91,7 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Recent projects init */
+	/* Recent projects iniblock-numbert */
 	$('.block-recent-projects').each(function () {
 		/* Recent projects carousel */
 		$('.carousel', this).bxSlider({
@@ -167,7 +167,7 @@ $(document).ready(function () {
 		return false;
 	});
 
-	$('.block-number').each(function () {
+	$('.block-number:not(.block-number-static)').each(function () {
 		function count() {
 			$('.number', _number).each(function () {
 				var _self = $(this), myInterval, max = +_self.attr('data-counter'), counter = 0, len = max.toString().length, mask = '', i = 0, temp = 0, speed = +_self.attr('data-speed'), step = +_self.attr('data-step');
@@ -235,6 +235,11 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+	$('.block-number-timer').countdown('2015/05/05', function (event) {
+		$(this).html(event.strftime('<div class="col"><div class="number"><span>%D</span><span>%D</span></div><p class="legend">дни</p></div><div class="col"><div class="number"><span>%H</span><span>%H</span></div><p class="legend">часы</p></div><div class="col"><div class="number"><span>%M</span><span>%M</span></div><p class="legend">минуты</p></div>'));
+	});
+
 
 	/* IE fixes */
 	if ($.browser.msie) {
