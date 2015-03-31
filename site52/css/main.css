@@ -1652,6 +1652,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	display: block;
 	text-decoration: none;
 }
+.services .list .cap .link:after { width: 100%; display: block; content: ' '; overflow: hidden; clear: both; }
 .services .list .cap .name {
 	text-transform: uppercase;
 	margin-bottom: 4px;
@@ -1668,19 +1669,62 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: rgba(60, 60, 60, 0);
 	opacity: 0.5;
 }
-.services .list .cap .price {
+.services .list .cap .badge {
+	padding: 3px 6px 1px 9px;
+	line-height: 16px;
+	display: block;
+	color: #3c3c3c;
+	font-weight: normal;
+	position: absolute;
+	top: -9px;
+	right: -13px;
+	background: #ffd541;
 	-webkit-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
 	-moz-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
 	-o-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
 	-ms-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
 	transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
 }
-.services .list .cap .link:hover .price {
+.services .list .cap .badge:before {
+	width: 0;
+	height: 0;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	border-style: solid;
+	border-width: 6px 6px 0 0;
+	border-color: #ffd642 transparent transparent transparent;
+}
+.services .list .cap .price {
+	float: left;
+	-webkit-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
+	-moz-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
+	-o-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
+	-ms-transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
+	transition: opacity .3s ease, text-shadow .3s ease, color .3s ease;
+}
+.services .list .cap .price.old {
 	color: #3c3c3c;
+	text-decoration: line-through;
+}
+.services .list .cap .price.new {
+	color: red;
+	font-weight: bold;
+	float: right;
 }
 .services .list li.blur .cap .link .price {
 	text-shadow: 0 0 5px rgba(0, 157, 255, 0.9);
 	color: rgba(0, 157, 255, 0);
+	opacity: 0.5;
+}
+.services .list li.blur .cap .link .price.old { text-shadow: 0 0 5px rgba(60, 60, 60, 0.9); color: rgba(60, 60, 60, 0); }
+.services .list li.blur .cap .link .price.new { text-shadow: 0 0 5px rgba(255, 0, 0, 0.9); color: rgba(255, 0, 0, 0); }
+.services .list li.blur .cap .badge {
+	text-shadow: 0 0 5px rgba(60, 60, 60, 0.9);
+	color: rgba(60, 60, 60, 0);
 	opacity: 0.5;
 }
 .services .list .naming {
