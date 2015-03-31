@@ -52,6 +52,13 @@
 	font-style: normal;
 }
 @font-face {
+	font-family: 'Sunday';
+	src: url('../fonts/sunday-regular.eot');
+	src: url('../fonts/sunday-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/sunday-regular.woff') format('woff'), url('../fonts/sunday-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
 	font-family: 'Rouble';
 	src: url('../fonts/rouble-webfont.eot');
 	src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/rouble-webfont.woff') format('woff'), url('../fonts/rouble-webfont.ttf') format('truetype');
@@ -1038,14 +1045,15 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .index .carousel .wrapper-sale .text .block-number .col { width: 33.3%; }
 .index .carousel .wrapper-sale .text .block-number .col .number { margin-bottom: 8px; }
 .index .carousel .wrapper-sale .text .block-number .col .number:before { left: -30px; right: -30px; }
-.index .carousel .wrapper-sale .text .block-number-timer .col .number > span { width: 50px; border-left: 12px solid #333; border-right: 12px solid #333; text-align: left; overflow: hidden; position: relative; background: #333; }
-.index .carousel .wrapper-sale .text .block-number-timer .col .number > span:last-child { margin-left: 2px; text-indent: -28px; }
-.index .carousel .wrapper-sale .text .block-number-timer { overflow: hidden; position: relative; }
-.index .carousel .wrapper-sale .text .block-number-timer:before, .index .carousel .wrapper-sale .text .block-number-timer:after {
+.block-number-timer .col .number > span { width: 50px; border-left: 12px solid #333; border-right: 12px solid #333; text-align: left; overflow: hidden; position: relative; background: #333; }
+.block-number-timer .col .number > span:last-child { margin-left: 2px; text-indent: -28px; }
+.block-number-timer .col .legend { margin: 0; display: block; }
+.block-number-timer { overflow: hidden; position: relative; }
+.block-number-timer:before, .block-number-timer:after {
 	width: 30px;
 	height: 70px;
 	margin-left: -83px;
-	content: ':';
+	content: ':' !important;
 	display: block;
 	font-size: 60px;
 	line-height: 70px;
@@ -1067,7 +1075,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 }
-.index .carousel .wrapper-sale .text .block-number-timer:after { margin-left: 51px; }
+.block-number-timer:after { margin-left: 51px; }
 @-moz-keyframes blinker {
 	0% { opacity: 1.0; }
 	50% { opacity: 0.0; }
@@ -1083,9 +1091,109 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	50% { opacity: 0.0; }
 	100% { opacity: 1.0; }
 }
-.index .carousel .wrapper-sale .text .block-number .col .legend { margin: 0; display: block; }
-.index .carousel .wrapper-sale .text .more { margin: 6px 0 0 0; text-align: center }
-.index .carousel .wrapper-sale .text .more img { display: inline-block; }
+.index .carousel .wrapper-sale .text .link-more {
+	margin: 4px 0 0 0;
+}
+.link-more {
+	margin: 0;
+	text-align: center;
+}
+.link-more a {
+	padding: 4px 37px 6px;
+	border: 1px solid #c8141d;
+	border-radius: 4px;
+	box-shadow: 0 5px 0 #c8141d, 0 3px 6px black;
+	display: inline-block;
+	position: relative;
+	font: 21px/24px 'Sunday', Helvetica, Arial, sans-serif;
+	color: #fff;
+	letter-spacing: .01em;
+	text-align: center;
+	text-decoration: none;
+	background: #e7202a;
+	transition: background-color .1s linear;
+}
+.link-more a:before, .link-more a:after {
+	content: '\00ab';
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 11px;
+}
+.link-more a:after {
+	content: '\00bb';
+	left: auto;
+	right: 11px;
+}
+.link-more a:hover, .link-more a:focus {
+	background-color: #da1e28;
+}
+.link-more a:active {
+	top: 1px;
+}
+/* ==========================================================================
+   _BANNER-TIMER
+   ========================================================================== */
+.banner-timer {
+	width: 100%;
+	min-height: 200px;
+	margin-bottom: 50px;
+	position: relative;
+	background: #b5dcdd url('../img/temp/timer/background.png') repeat-x 50% 0;
+}
+.banner-timer:before {
+	width: 300px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	background: url('../img/temp/timer/picture.png') no-repeat 0 0;
+}
+.banner-timer .link-more {
+	position: absolute;
+	right: 23px;
+	bottom: 17px;
+	z-index: 2;
+}
+.banner-timer .link-more a {
+	padding: 6px 54px 12px;
+	border-radius: 5px;
+	font-size: 26px;
+}
+.banner-timer .link-more a:before, .banner-timer .link-more a:after { top: 7px; }
+.banner-timer .text {
+	width: 300px;
+	margin: 0;
+	position: absolute;
+	bottom: 9px;
+	right: 256px;
+	font: 26px/36px 'Sunday', Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-align: center;
+	cursor: default;
+}
+.banner-timer .text big {
+	display: block;
+	font-size: 42px;
+	line-height: 86px;
+	color: #e7202a;
+}
+.banner-timer .text big em {
+	font-style: normal;
+	font-size: 100px;
+	color: #e7202a;
+}
+.banner-timer .text em {
+	font-style: normal;
+	color: #333;
+}
+.banner-timer .block-number { margin: 0; max-width: 405px; position: absolute; bottom: 20px; left: 10px; }
+.banner-timer .block-number .col { width: 33.3%; }
+.banner-timer .block-number .col .number { margin-bottom: 8px; }
+.banner-timer .block-number .col .number:before { left: -30px; right: -30px; }
 /* ==========================================================================
    _BLUE
    ========================================================================== */
@@ -4358,8 +4466,11 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-project-start .next { margin-right: -333px; }
 	.index .sale { display: none; }
 	.index .carousel .wrapper-sale .text { width: auto; margin: 0 auto; float: none; left: auto; }
-	.index .carousel .wrapper-sale .text .block-number-timer .col .number > span { width: 40px; border-left: 8px solid #333; border-right: 8px solid #333; }
-	.index .carousel .wrapper-sale .text .block-number-timer .col .number > span:last-child { text-indent: -24px; }
+	.block-number-timer .col .number > span { width: 40px; border-left: 8px solid #333; border-right: 8px solid #333; }
+	.block-number-timer .col .number > span:last-child { text-indent: -24px; }
+	.banner-timer .text { width: 400px; left: 10px; right: auto; bottom: auto; top: 6px; font-size: 20px; line-height: 30px; }
+	.banner-timer .text big { display: inline-block; font-size: inherit; line-height: inherit; }
+	.banner-timer .text big em { font-size: 36px; line-height: inherit; }
 }
 @media (max-width: 759px) {
 	.wrapper { width: 100%; }
@@ -4447,12 +4558,17 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-recent-projects-seo .all { position: relative; }
 	.buttons-links li { width: 75%; margin: 0 auto 20px; float: none; }
 	.block-number { display: block; }
-	.block-number .col, .block-number-three .col { width: 100%; margin: 0 auto 20px; display: block; float: none; }
+	.block-number:not(.block-number-static) .col, .block-number-three:not(.block-number-static) .col { width: 100%; margin: 0 auto 20px; display: block; float: none; }
 	.index .sale { width: 492px; padding-left: 0; padding-right: 0; margin: 0 auto; float: none; }
 	.index .sale .item { width: auto; }
 	.index .sale .item .col.old { display: block; }
-	.index .carousel .wrapper-sale .text .block-number { display: table; }
-	.index .carousel .wrapper-sale .text .block-number .col { display: table-cell; }
+	.block-number-timer { display: table; }
+	.block-number-timer .col { display: table-cell; }
+	.banner-timer { padding: 20px 10px 30px; }
+	.banner-timer:before { display: none; }
+	.banner-timer .block-number { margin: 0 auto 10px; position: relative; left: auto; bottom: auto; }
+	.banner-timer .text { margin: 10px auto 20px; position: relative; left: auto; right: auto; top: auto; bottom: auto; }
+	.banner-timer .link-more { position: relative; right: auto; bottom: auto; }
 }
 @media (max-width: 650px) {
 	.block-process .list { padding: 0; }
@@ -4502,9 +4618,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.index .sale .item .col.name { width: auto; padding-left: 0; padding-right: 0; margin: 0; font-size: 15px; text-align: right; float: none; }
 	.index .sale .item .col.old { display: none; }
 	.index .sale .item .col.new { margin: 0; position: absolute; top: 4px; right: 10px; }
+	.index .carousel .wrapper-sale { padding: 100px 20px 40px; }
 	.index .carousel .wrapper-sale .text .title { margin-bottom: 20px; }
 	.index .carousel .wrapper-sale .text .slogan { margin: 0 0 20px 0; }
-	.index .carousel .wrapper-sale .text .block-number { width: 300px; padding-left: 0; padding-right: 0; margin: 0 auto; }
+	.index .carousel .wrapper-sale .text .block-number-timer { width: 300px; padding-left: 0; padding-right: 0; margin: 0 auto 10px; }
 	.index .carousel .wrapper-sale .text .block-number-timer:before { margin-left: -65px; }
 	.index .carousel .wrapper-sale .text .block-number-timer:after { margin-left: 34px; }
 }
@@ -4537,6 +4654,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-features .list li { width: 100%; padding: 0; float: none; }
 	.block-information .list li { padding-right: 0; }
 	.block-process .list li { width: 100%; }
+	.banner-timer .text { width: auto; }
 }
 @media (max-width: 400px) {
 	.header .nav .sublist > ul { width: 100%; margin-left: 0; }
@@ -4553,9 +4671,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	.block-project .project-name dd { margin-left: 0; }
 	.block-kinds .about .pic { width: 100%; }
 	.block-kinds .about .list li { width: 100%; }
-	.index .carousel .wrapper-sale .text .block-number { width: auto; margin: 0 -10px; }
-	.index .carousel .wrapper-sale .text .block-number-timer:before { margin-left: -75px; }
-	.index .carousel .wrapper-sale .text .block-number-timer:after { margin-left: 44px; }
+	.index .carousel .wrapper-sale { padding-left: 10px; padding-right: 10px; }
+	.index .carousel .wrapper-sale .text .block-number-timer { margin-left: auto; margin-right: auto; }
+	.block-number-timer:before { margin-left: -75px; }
+	.block-number-timer:after { margin-left: 44px; }
 }
 /* ==========================================================================
    _PRINT STYLES

@@ -76,7 +76,6 @@ $(document).ready(function () {
 	$('.about').each(function () {
 		var _self = $(this);
 		$('.more, .close', this).click(function () {
-			var _more = $(this);
 			_self.parent().find('.about').toggle();
 			return false;
 		});
@@ -236,7 +235,12 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.block-number-timer').countdown('2015/05/05', function (event) {
+	$('#timer-sale').countdown('2015/05/05', function (event) {
+		$(this).html(event.strftime('<div class="col"><div class="number"><span>%D</span><span>%D</span></div><p class="legend">дни</p></div><div class="col"><div class="number"><span>%H</span><span>%H</span></div><p class="legend">часы</p></div><div class="col"><div class="number"><span>%M</span><span>%M</span></div><p class="legend">минуты</p></div>'));
+	});
+
+
+	$('#timer-banner').countdown('2015/05/05', function (event) {
 		$(this).html(event.strftime('<div class="col"><div class="number"><span>%D</span><span>%D</span></div><p class="legend">дни</p></div><div class="col"><div class="number"><span>%H</span><span>%H</span></div><p class="legend">часы</p></div><div class="col"><div class="number"><span>%M</span><span>%M</span></div><p class="legend">минуты</p></div>'));
 	});
 
