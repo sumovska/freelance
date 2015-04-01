@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="img/favicon.png">
 
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 	<!--[if lte IE 9]>
@@ -17,7 +18,6 @@
 	<![endif]-->
 </head>
 <body>
-
 	<nav class="nav">
 		<div class="wrapper">
 			<ul class="list">
@@ -117,7 +117,7 @@
 			<section class="content">
 				<h2 class="h2">Плитняк "Бордо" из кварцито-песчаника</h2>
 				<div class="block-item">
-					<form class="form" action="#">
+					<form class="form form-item" action="index.html">
 						<div class="product">
 							<div class="photo">
 								<a class="fancybox-gallery" href="img/temp/item-1.jpg" data-fancybox-group="item"><img class="pic" src="img/temp/item-1.jpg" alt=""></a>
@@ -136,237 +136,547 @@
 							</div>
 							<div class="inform">
 								<ul class="triggers">
-									<li class="active"><a href="#">до 1 т</a></li>
-									<li><a href="#">до 3 тонн</a></li>
-									<li><a href="#">до 20 тонн</a></li>
+									<li class="active" data-min="0" data-max="1"><a href="#r1">до 1 тонны</a></li>
+									<li data-min="1" data-max="3"><a href="#r2">до 3 т.</a></li>
+									<li data-min="3" data-max="20"><a href="#r3">до 20 т.</a></li>
+									<li data-min="20" data-max="max"><a href="#r4">от 20 т.</a></li>
 								</ul>
-								<div class="tab tab-s">
-									<div class="size">
+								<div class="tab tab-r1">
+									<div class="size size-active">
 										<a class="link" href="#">Толщина 10-15 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">119 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="119" data-mass="0.01" data-unit="шт." data-item="1-1" checked>
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title="" checked=""></p>
+												<label class="radio">
+													<span class="price">2400 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2400" data-mass="0.1" data-unit="м<sup>2</sup>" data-item="1-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 15 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">130 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="130" data-mass="0.015" data-unit="шт." data-item="2-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">2450 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2450" data-mass="0.15" data-unit="м<sup>2</sup>" data-item="2-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 20 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input title="" type="radio" name="type"></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">142 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="142" data-mass="0.021" data-unit="шт." data-item="3-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">2750 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2750" data-mass="0.2" data-unit="м<sup>2</sup>" data-item="3-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 30 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">151 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="151" data-mass="0.03" data-unit="шт." data-item="4-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">2900 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2900" data-mass="0.3" data-unit="м<sup>2</sup>" data-item="4-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 40 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">160 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="160" data-mass="0.04" data-unit="шт." data-item="5-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">3100 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3100" data-mass="0.4" data-unit="м<sup>2</sup>" data-item="5-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 50 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">175 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="175" data-mass="0.04" data-unit="шт." data-item="6-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">3200 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3200" data-mass="0.5" data-unit="м<sup>2</sup>" data-item="6-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 60-70 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">200 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="200" data-mass="0.07" data-unit="шт." data-item="7-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">3500 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3500" data-mass="0.7" data-unit="м<sup>2</sup>" data-item="7-2">
+												</label>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="tab tab-m tab-hidden">
-									<div class="size">
+								<div class="tab tab-r2 tab-hidden">
+									<div class="size size-active">
 										<a class="link" href="#">Толщина 10-15 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">109 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="109" data-mass="0.01" data-unit="шт." data-item="1-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">2300 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2300" data-mass="0.1" data-unit="м<sup>2</sup>" data-item="1-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 15 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">120 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="120" data-mass="0.015" data-unit="шт." data-item="2-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">2350 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2350" data-mass="0.15" data-unit="м<sup>2</sup>" data-item="2-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 20 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">132 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="132" data-mass="0.02" data-unit="шт." data-item="3-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">2650 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2650" data-mass="0.2" data-unit="м<sup>2</sup>" data-item="3-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 30 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">141 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="141" data-mass="0.03" data-unit="шт." data-item="4-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab tab-l tab-hidden">
-									<div class="size">
-										<a class="link" href="#">Толщина 30 мм <span class="switch"></span></a>
-										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
-											</div>
-											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">2800 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2800" data-mass="0.3" data-unit="м<sup>2</sup>" data-item="4-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 40 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">150 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="150" data-mass="0.04" data-unit="шт." data-item="5-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">3000 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3000" data-mass="0.4" data-unit="м<sup>2</sup>" data-item="5-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 50 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">165 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="165" data-mass="0.04" data-unit="шт." data-item="6-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">3100 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3100" data-mass="0.5" data-unit="м<sup>2</sup>" data-item="6-2">
+												</label>
 											</div>
 										</div>
 									</div>
 									<div class="size">
 										<a class="link" href="#">Толщина 60-70 мм <span class="switch"></span></a>
 										<div class="in">
-											<div class="col col-1">
-												<span class="price">109 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 шт."></p>
-												<p class="line"><input title="" type="radio" name="type"></p>
+											<div class="col">
+												<label class="radio">
+													<span class="price">190 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="190" data-mass="0.07" data-unit="шт." data-item="7-1">
+												</label>
 											</div>
 											<div class="col">
-												<span class="price">2 300 <span class="small">руб.</span></span>
-												<p class="line"><input type="text" placeholder="за 1 м"></p>
-												<p class="line"><input type="radio" name="type" title=""></p>
+												<label class="radio">
+													<span class="price">3400 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3400" data-mass="0.7" data-unit="м<sup>2</sup>" data-item="7-2">
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab tab-r3 tab-hidden">
+									<div class="size size-active">
+										<a class="link" href="#">Толщина 10-15 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">99 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="99" data-mass="0.01" data-unit="шт." data-item="1-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2200 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2200" data-mass="0.1" data-unit="м<sup>2</sup>" data-item="1-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 15 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">110 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="110" data-mass="0.015" data-unit="шт." data-item="2-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2250 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2250" data-mass="0.15" data-unit="м<sup>2</sup>" data-item="2-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 20 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">122 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="122" data-mass="0.02" data-unit="шт." data-item="3-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2550 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2550" data-mass="0.2" data-unit="м<sup>2</sup>" data-item="3-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 30 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">131 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="131" data-mass="0.03" data-unit="шт." data-item="4-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2700 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2700" data-mass="0.3" data-unit="м<sup>2</sup>" data-item="4-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 40 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">140 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="140" data-mass="0.04" data-unit="шт." data-item="5-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2900 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2900" data-mass="0.4" data-unit="м<sup>2</sup>" data-item="5-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 50 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">155 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="155" data-mass="0.04" data-unit="шт." data-item="6-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">3000 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3000" data-mass="0.5" data-unit="м<sup>2</sup>" data-item="6-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 60-70 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">190 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="190" data-mass="0.07" data-unit="шт." data-item="7-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">3400 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3400" data-mass="0.7" data-unit="м<sup>2</sup>" data-item="7-2">
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab tab-r4 tab-hidden">
+									<div class="size size-active">
+										<a class="link" href="#">Толщина 10-15 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">89 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="89" data-mass="0.01" data-unit="шт." data-item="1-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2100 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2100" data-mass="0.1" data-unit="м<sup>2</sup>" data-item="1-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 15 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">100 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="100" data-mass="0.015" data-unit="шт." data-item="2-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2150 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2150" data-mass="0.15" data-unit="м<sup>2</sup>" data-item="2-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 20 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">112 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="112" data-mass="0.02" data-unit="шт." data-item="3-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2450 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2450" data-mass="0.2" data-unit="м<sup>2</sup>" data-item="3-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 30 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">121 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="121" data-mass="0.03" data-unit="шт." data-item="4-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2600 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2600" data-mass="0.3" data-unit="м<sup>2</sup>" data-item="4-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 40 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">130 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="130" data-mass="0.04" data-unit="шт." data-item="5-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">2800 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="2800" data-mass="0.4" data-unit="м<sup>2</sup>" data-item="5-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 50 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">155 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="155" data-mass="0.04" data-unit="шт." data-item="6-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">3000 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3000" data-mass="0.5" data-unit="м<sup>2</sup>" data-item="6-2">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<a class="link" href="#">Толщина 60-70 мм <span class="switch"></span></a>
+										<div class="in">
+											<div class="col">
+												<label class="radio">
+													<span class="price">190 <span class="small">руб.</span></span>
+													<span class="count">за 1 шт.</span>
+													<input type="radio" name="type" value="190" data-mass="0.07" data-unit="шт." data-item="7-1">
+												</label>
+											</div>
+											<div class="col">
+												<label class="radio">
+													<span class="price">3400 <span class="small">руб.</span></span>
+													<span class="count">за 1 м<sup>2</sup></span>
+													<input type="radio" name="type" value="3400" data-mass="0.7" data-unit="м<sup>2</sup>" data-item="7-2">
+												</label>
 											</div>
 										</div>
 									</div>
@@ -375,13 +685,13 @@
 									<p class="amount">
 										<label>
 											<span class="up"></span>
-											<input type="text" maxlength="2" value="15">
+											<input class="n" type="text" maxlength="4" value="1">
 											<span class="down"></span>
 										</label> шт.
 									</p>
 									<a class="button-orange" href="#">Отправить в заявку</a>
 								</div>
-								<p class="sum">На сумму:&nbsp;&nbsp;&nbsp;&nbsp;<span class="number">160 000 руб.</span></p>
+								<p class="total">На сумму:&nbsp;&nbsp;&nbsp;&nbsp;<span class="number"><span class="t">119</span> руб.</span></p>
 								<div class="links">
 									<span class="col"><a class="left fancybox-popup" href="#cheap"><span>А дешевле?</span></a></span>
 									<span class="col">или</span>
@@ -425,7 +735,7 @@
 						</div>
 						<div class="describe">
 							<p class="h">Описание:</p>
-							<p>Теплый, желто-бежевый цвет , который создают окисы железа на поверхности, этой гранитной плиты гармоничен любому ландшафту. Мощеные дорожки из нее, облицовка подпорных стен, накрывочные доски - везде эта плитка найдет свое применение. Дополнительные элементы - колотые гранитные бордюры и ступени дадут необходимый ресурс для решения любых задач мощения. Мощеные дорожки из нее, облицовка подпорных стен, накрывочные доски - везде эта плитка найдет свое применение.</p>
+							<code>Теплый, желто-бежевый цвет, который создают окисы железа на поверхности, этой гранитной плиты гармоничен любому ландшафту. Мощеные дорожки из нее, облицовка подпорных стен, накрывочные доски - везде эта плитка найдет свое применение. Дополнительные элементы - колотые гранитные бордюры и ступени дадут необходимый ресурс для решения любых задач мощения. Мощеные дорожки из нее, облицовка подпорных стен, накрывочные доски - везде эта плитка найдет свое применение.</code>
 						</div>
 						<div class="contact-us">
 							<img class="photo" src="img/temp/user-1.png" alt="">
