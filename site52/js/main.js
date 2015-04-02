@@ -244,6 +244,10 @@ $(document).ready(function () {
 		$(this).html(event.strftime('<div class="col"><div class="number"><span>%D</span><span>%D</span></div><p class="legend">дни</p></div><div class="col"><div class="number"><span>%H</span><span>%H</span></div><p class="legend">часы</p></div><div class="col"><div class="number"><span>%M</span><span>%M</span></div><p class="legend">минуты</p></div>'));
 	});
 
+	$('.list .toggle-list').click(function () {
+		$(this).closest('li').toggleClass('open');
+		return false;
+	});
 
 	/* IE fixes */
 	if ($.browser.msie) {
