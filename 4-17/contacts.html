@@ -9,7 +9,6 @@
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
-	<link rel="shortcut icon" href="img/favicon.png">
 
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 	<!--[if lte IE 9]>
@@ -63,7 +62,7 @@
 
 	<div class="breadcrumbs">
 		<div class="wrapper">
-			<p class="line"> <a class="home" href="#"><span></span></a> <a href="#">Каталог</a> <a href="#">Натуральный камень</a> <a href="#">Природные гальки</a> Природная галька "Адыгея" желтая 200-400мм</p>
+			<p class="line"><a class="home" href="#"><span></span></a> <a href="#">Каталог</a> <a href="#">Натуральный камень</a> <a href="#">Природные гальки</a> Природная галька "Адыгея" желтая 200-400мм</p>
 		</div>
 	</div>
 
@@ -126,53 +125,68 @@
 				</div>
 			</aside>
 			<section class="content">
-				<h2 class="h1">Декоративные щебни</h2>
-				<ul class="catalog">
-					<li>
-						<a class="link" href="#">
-							<img class="pic" src="img/temp/catalog-1.jpg" alt="">
-							<span class="name">Подраздел Гравий "Горный"</span>
-						</a>
-					</li>
-					<li>
-						<a class="link" href="#">
-							<img class="pic" src="img/temp/catalog-2.jpg" alt="">
-							<span class="name">Подраздел Гравий морской</span>
-						</a>
-					</li>
-					<li>
-						<a class="link" href="#">
-							<img class="pic" src="img/temp/catalog-3.jpg" alt="">
-							<span class="name">Подраздел Гравий название</span>
-						</a>
-					</li>
-					<li>
-						<a class="link" href="#">
-							<img class="pic" src="img/temp/catalog-1.jpg" alt="">
-							<span class="name">Подраздел Гравий "Горный"</span>
-						</a>
-					</li>
-					<li>
-						<a class="link" href="#">
-							<img class="pic" src="img/temp/catalog-2.jpg" alt="">
-							<span class="name">Подраздел Гравий морской</span>
-						</a>
-					</li>
-					<li>
-						<a class="link" href="#">
-							<img class="pic" src="img/temp/catalog-3.jpg" alt="">
-							<span class="name">Подраздел Гравий название</span>
-						</a>
-					</li>
-					<li>
-						<a class="link" href="#">
-							<img class="pic" src="img/temp/catalog-3.jpg" alt="">
-							<span class="name">Подраздел Гравий название</span>
-						</a>
-					</li>
+				<h1 class="h1">Контактная информация</h1>
+				<ul class="tabs">
+					<li class="active"><a href="#contacts">Наш склад</a></li>
+					<li><a href="#">Наш офис</a></li>
+					<li><a href="#callback">Форма обратной связи</a></li>
 				</ul>
-				<div class="unit">
-					<p>Это мелкие камушки разных пород и форм, размерами 1-70 мм. Декоративные отсыпки подразделяются на гравий, крошки (щебень) и песок. Гравий – это мелкие фракции натурального камня с округлыми, окатанными в разной степени формами: попадаются камни гладких, галечных форм, но могут попасться и камни с острыми краями. Гравий может быть ледникового происхождения (добывается на карьерах) и окатанный горными реками. По составу гравий может быть из одной породы (гранитный) или из смеси разных пород. Размеры камушков в гравии варьируют от 2 мм до 30 мм, причем он, как правило, отсортирован на фракции. Цвет гравия зависит от цвета входящих в него пород.</p>
+				<div class="tab tab-contacts" id="contacts">
+					<div class="cols-in">
+						<div class="col-50">
+							<p class="line line-adr">143080, Московская область <br>Одинцовский район <br>пос. Дубки <br>база ВНИИ ССОК</p>
+							<p class="line line-time">с 10.00 д0 20.00</p>
+						</div>
+						<div class="col-50">
+							<p class="line line-tel"><a href="tel:+7495-989-7677">+7(495)989-7677</a></p>
+							<p class="line line-mail"><a href="mailto:info@4-7.ru">info@4-7.ru</a></p>
+						</div>
+					</div>
+					<div class="map" id="map">
+						<script type="text/javascript">
+							function fid_14211551600804933022(ymaps) {
+								var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+									center: [37.764285, 55.749202],
+									zoom: 16,
+									type: "yandex#map"
+								});
+								map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
+								myGeoObject = new ymaps.GeoObject({
+									geometry: {
+										type: "Point",
+										coordinates: [37.764285, 55.749202]
+									}
+								});
+								map.geoObjects.add(myGeoObject);
+							}
+						</script>
+						<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
+					</div>
+				</div>
+				<div class="tab tab-callback tab-hidden" id="callback">
+					<form class="form" action="#">
+						<div class="send">
+							<p class="h2 h2-orange">Есть вопросы?</p>
+							<p class="legend">Равным образом сложившаяся структура организации представляет собой интересный эксперимент проверки системы обучения кадров.</p>
+							<p class="line">
+								<label class="required">Ваше имя</label>
+								<input title="" type="text">
+							</p>
+							<p class="line">
+								<label class="required">Телефон:</label>
+								<input title="" type="text">
+							</p>
+							<p class="line">
+								<label class="required">Mail:</label>
+								<input type="text" title="">
+							</p>
+							<p class="line">
+								<label>Комментарий:</label>
+								<textarea title=""></textarea>
+							</p>
+							<p class="submit"><input type="submit" value="Отправить"></p>
+						</div>
+					</form>
 				</div>
 			</section>
 			<aside class="sideblock">
@@ -197,7 +211,9 @@
 					<p class="h">Подпишись на акции и спецпредложения!</p>
 					<form class="form" action="#">
 						<p class="line"><input type="text" placeholder="ваш mail"></p>
-						<p class="submit"><button>Подписаться!</button></p>
+						<p class="submit">
+							<button>Подписаться!</button>
+						</p>
 					</form>
 				</div>
 				<p class="h2">Статьи</p>
@@ -241,7 +257,7 @@
 				<p>
 					ООО &quot;Четыре Седьмых&quot; <br>
 					Офис: Москва, ул. Маршала Вершинина, д.8, кор. 2 <br>
-					т. <a class="tel" href="tel:+7499-194-83-13">(499) 194-83-13</a>, 
+					т. <a class="tel" href="tel:+7499-194-83-13">(499) 194-83-13</a>,
 					<a class="tel" href="tel:+7499-194-30-92">(499) 194-30-92</a> <br>
 					Склад: М.О.Одинцовский район, пос. Дубки, база ВНИИ ССОК; <br>
 					т. <a class="tel" href="tel:+7495-989-76-77">(495) 989-76-77</a>
@@ -268,7 +284,7 @@
 				</p>
 				<p class="line">
 					<label>
-						Комментарий: 
+						Комментарий:
 						<textarea></textarea>
 					</label>
 				</p>

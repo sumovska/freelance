@@ -8,16 +8,14 @@ $(document).ready(function () {
 	$('input, select').styler();
 
 	/* Gallery */
-	$('.gallery').each(function () {
-		$('.fancybox-gallery', this).fancybox({
-			autoSize: false,
-			fitToView: false,
-			padding: 0,
-			cyclic: false,
-			helpers: {
-				media: {}
-			}
-		});
+	$('.fancybox-gallery', this).fancybox({
+		autoSize: false,
+		fitToView: false,
+		padding: 0,
+		cyclic: false,
+		helpers: {
+			media: {}
+		}
 	});
 
 	/* Fancybox script */
@@ -156,5 +154,17 @@ $(document).ready(function () {
 		$(this).fadeToggle(200).siblings('.in').slideDown(200);
 		return false;
 	});
+
+	/* Tabs */
+	$('.tabs').each(function () {
+		var _self = this;
+		$('a', this).click(function () {
+			var where = $(this).prop('href').replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li').removeClass('active');
+			$(_self).siblings('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			return false;
+		});
+	});
+
 
 });
