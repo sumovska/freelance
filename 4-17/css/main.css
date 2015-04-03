@@ -152,11 +152,6 @@ audio, canvas, img, video {
 /* ==========================================================================
    _FORMS
    ========================================================================== */
-fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
 .jq-checkbox { top: -1px; width: 13px; height: 13px; border: 1px solid #c3c3c3; border-radius: 3px; background: #f6f6f6 url('data:image/gif;base64,R0lGODlhAQAMALMAAPHx8f7+/vv7+/j4+PX19fLy8vz8/Pn5+fb29vPz8/39/ff39wAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAABAAwAAAQJMCgjzliIpAIiADs=') repeat-x; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), inset -1px -1px #fff, inset 1px -1px #fff; vertical-align: middle; cursor: pointer }
 .jq-checkbox.checked .jq-checkbox__div { width: 9px; height: 9px; margin: 2px 0 0 2px; border-radius: 2px; background: #666; box-shadow: inset 0 -3px 6px #aaa }
 .jq-checkbox.focused { border: 1px solid #08c }
@@ -945,6 +940,27 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	margin-bottom: 6px;
 	font-weight: 500;
 }
+.block-item-simple .picture {
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+.block-item-simple .picture img {
+	max-width: 100%;
+}
+.block-item-simple .table {
+	margin-bottom: 20px;
+}
+.block-item-simple .table th {
+	font-weight: normal;
+	background: #f6f6f6;
+}
+.block-item-simple .table th, .block-item-simple .table td {
+	padding: 11px 16px;
+	text-align: center;
+	border: 1px solid #e8e8e8;
+}
+.block-item-simple .gallery-simple {
+}
 /* ==========================================================================
    _PRODUCT
    ========================================================================== */
@@ -1174,42 +1190,44 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background-color: #fff;
 }
 .product .to-cart {
-	padding: 16px 18px 13px 20px;
 	background: #f5f5f5;
 }
-.product .to-cart:after {
+.to-cart {
+	padding: 16px 18px 13px 20px;
+}
+.to-cart:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.product .amount {
+.to-cart .amount {
 	margin-bottom: 0;
 	float: left;
 	font-weight: normal;
 }
-.product .amount label {
+.to-cart .amount label {
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
 }
-.product .amount input[type="text"] {
+.to-cart .amount input[type="text"] {
 	width: 51px;
 	padding-top: 4px;
 	padding-right: 15px;
 	padding-bottom: 4px;
 	box-shadow: 0 0 4px 1px rgba(255, 151, 0, .27);
 }
-.product .amount .up, .product .amount .down {
+.to-cart .amount .up, .to-cart .amount .down {
 	width: 18px;
 	height: 50%;
 	cursor: pointer;
 	position: absolute;
 	right: 0;
 }
-.product .amount .up { top: 0; }
-.product .amount .down { bottom: 0; }
-.product .amount .up:before, .product .amount .down:before {
+.to-cart .amount .up { top: 0; }
+.to-cart .amount .down { bottom: 0; }
+.to-cart .amount .up:before, .to-cart .amount .down:before {
 	width: 0;
 	height: 0;
 	display: block;
@@ -1219,16 +1237,16 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	right: 5px;
 	border-style: solid;
 }
-.product .amount .up:before { top: 6px; border-width: 0 4px 6px 4px; border-color: transparent transparent #232323 transparent; }
-.product .amount .down:before { top: 2px; border-width: 6px 4px 0 4px; border-color: #232323 transparent transparent transparent; }
-.product .button-orange {
+.to-cart .amount .up:before { top: 6px; border-width: 0 4px 6px 4px; border-color: transparent transparent #232323 transparent; }
+.to-cart .amount .down:before { top: 2px; border-width: 6px 4px 0 4px; border-color: #232323 transparent transparent transparent; }
+.to-cart .button-orange {
 	width: 200px;
 	height: 30px;
 	padding-right: 40px;
 	float: right;
 	position: relative;
 }
-.product .button-orange:before {
+.to-cart .button-orange:before {
 	width: 20px;
 	height: 17px;
 	display: block;
@@ -2347,8 +2365,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .gallery-simple {
 	margin-bottom: 20px;
 	padding: 14px 12px;
-	list-style: none;
 	background: #f8f7f5;
+}
+.gallery-simple .h2 {
+	text-align: center;
+}
+.gallery-simple ul {
+	padding: 0;
+	list-style: none;
 }
 .gallery-simple li {
 	margin: 0 4px;
@@ -2542,68 +2566,67 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 /* ==========================================================================
    _TABS
    ========================================================================== */
-.tabs {
+.tabs-content {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	font-size: 18px;
 }
-.tabs:after {
+.tabs-content:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.tabs li {
+.tabs-content li {
 	margin: 0;
 	display: inline-block;
 	vertical-align: middle;
 	border: 1px solid #ecb200;
 }
-.tabs li.active {
-	font-weight: 500;
+.tabs-content li.active {
 	background: #fbfbfb;
 	border-color: #c4c4c4;
 	border-bottom: none;
 }
-.tabs li a {
+.tabs-content li a {
 	height: 38px;
 	padding: 10px 24px;
 	display: block;
 	color: #7d7d7d;
 	text-decoration: none;
 }
-.tabs li.active a {
+.tabs-content li.active a {
 	height: 46px;
 	padding-top: 13px;
 	color: #000;
 }
-.tab {
+.tab-content {
 	margin-top: -1px;
 	padding: 46px 28px;
 	background: #fbfbfb;
 	border: 1px solid #c4c4c4;
 }
-.tab-hidden {
+.tab-content-hidden {
 	display: none;
 }
-.tab-contacts .cols-in:after {
+.contacts-list:after {
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 }
-.tab-contacts .col-50 {
+.contacts-list .col-50 {
 	width: 42%;
 	float: left;
 }
-.tab-contacts .line {
+.contacts-list .line {
 	margin-bottom: 16px;
 	padding: 0 20px;
 	line-height: 17px;
 	position: relative;
 }
-.tab-contacts .line:before {
+.contacts-list .line:before {
 	width: 15px;
 	height: 15px;
 	display: block;
@@ -2615,14 +2638,14 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: url("../img/sprite.png") 0 -265px no-repeat;
 	background-size: 100px auto;
 }
-.tab-contacts .line-adr:before { background-position: 0 -265px; }
-.tab-contacts .line-time:before { background-position: -20px -265px; }
-.tab-contacts .line-mail:before { background-position: -60px -265px; }
-.tab-contacts .line-tel:before { background-position: -40px -265px; }
-.tab-contacts .line-tel {
+.contacts-list .line-adr:before { background-position: 0 -265px; }
+.contacts-list .line-time:before { background-position: -20px -265px; }
+.contacts-list .line-mail:before { background-position: -60px -265px; }
+.contacts-list .line-tel:before { background-position: -40px -265px; }
+.contacts-list .line-tel {
 	margin-bottom: 8px;
 }
-.tab-contacts .line-tel a {
+.contacts-list .line-tel a {
 	color: #000;
 	font-weight: 500;
 	font-size: 16px;
@@ -2633,26 +2656,26 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	width: 100%;
 	height: 512px;
 }
-.tab-callback {
+.tab-content-callback {
 	padding-top: 18px;
 }
-.tab-callback .send {
+.tab-content-callback .send {
 	padding-left: 150px;
 	padding-right: 180px;
 	text-align: left;
 }
-.tab-callback .legend {
+.tab-content-callback .legend {
 	color: #888;
 	font-style: italic;
 	font-weight: 300;
 }
-.tab-callback label {
+.tab-content-callback label {
 	width: 116px;
 	margin-left: -150px;
 	display: inline-block;
 	text-align: right;
 }
-.tab-callback .submit {
+.tab-content-callback .submit {
 	position: relative;
 	bottom: 0;
 	text-align: left;
@@ -2745,6 +2768,106 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .block-video .pic img {
 	max-width: 100%;
+}
+/* ==========================================================================
+   _BLOCK-TYPE
+   ========================================================================== */
+.block-type {
+	padding: 16px 22px;
+	position: relative;
+	border: 1px solid #e8e8e8;
+}
+.block-type .h2 {
+	margin-bottom: 20px;
+}
+.block-type .price {
+	margin-bottom: 0;
+	padding: 14px 4px 14px 14px;
+	display: inline-block;
+	font-size: 22px;
+	position: absolute;
+	top: 14px;
+	right: 18px;
+	background: #f7f7f7;
+}
+.block-type .price .sum {
+	font-size: 26px;
+}
+.block-type .inside:after, .block-type .colors .list:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.block-type .big {
+	width: 135px;
+	height: 258px;
+	margin-top: 2px;
+	float: left;
+	border: 3px solid #eee;
+}
+.block-type .colors {
+	width: 478px;
+	float: right;
+}
+.block-type .colors .list {
+	margin: 0 -11px;
+	padding: 0;
+	list-style: none;
+}
+.block-type .colors li {
+	margin: 0 10px 10px;
+	float: left;
+	position: relative;
+}
+.block-type .colors li.active:before {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	border: 5px solid #ff9b00;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.block-type .colors li a {
+	display: block;
+	color: #000;
+	text-decoration: none;
+}
+.block-type .colors .fn {
+	padding: 7px 32px 10px 14px;
+	display: none;
+	font-weight: 500;
+	white-space: nowrap;
+	border-radius: 4px;
+	position: absolute;
+	left: 20px;
+	background: #fff5d9;
+	box-shadow: 0 0 4px 1px rgba(0, 0, 0, .4);
+	z-index: 10;
+}
+.block-type .colors li:hover .fn {
+	display: block;
+}
+.block-type .colors .fn:before {
+	width: 0;
+	height: 0;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: 20px;
+	top: -26px;
+	border-style: solid;
+	border-width: 26px 0 0 26px;
+	border-color: transparent transparent transparent #fff5d9;
+}
+.block-type .to-cart {
+	width: 320px;
+	padding-right: 0;
+	float: right;
 }
 /* ==========================================================================
    fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license
