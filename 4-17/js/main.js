@@ -7,27 +7,18 @@ $(document).ready(function () {
 	/* Init forms */
 	$('input:not(:radio):not(:checkbox), select').styler();
 
-	/* Gallery */
-	$('.fancybox-gallery', this).fancybox({
-		autoSize: false,
-		fitToView: false,
-		padding: 0,
-		cyclic: false,
-		helpers: {
-			media: {}
-		}
-	});
-
 	/* Fancybox script */
-	$('.fancybox, .fancybox-popup').fancybox({
+	$('.fancybox-popup').fancybox({
+		padding: 0,
 		margin: 40,
 		nextEffect: 'fade',
 		prevEffect: 'fade',
 		helpers: {
 			overlay: {
+				media: {},
 				speedIn: 250,
 				css: {
-					'background': 'rgba(255, 255, 255, 0.7)'
+					'background': 'rgba(255, 255, 255, 0.95)'
 				}
 			}
 		}
