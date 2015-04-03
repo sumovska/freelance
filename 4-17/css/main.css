@@ -249,6 +249,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	padding: 20px;
 	float: left;
 }
+.content-main {
+	padding-top: 0;
+}
 .wrapper:after, .content:after, .container:after {
 	display: block;
 	content: ' ';
@@ -284,7 +287,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .nav .list > li:hover {
 	background: linear-gradient(to bottom, rgba(240, 190, 98, 1) 0%, rgba(232, 159, 53, 1) 100%);
 }
-.nav .list > li:hover span:before {
+.nav .list > li.sub:hover span:before {
 	display: block;
 }
 .nav .list > li > a {
@@ -837,6 +840,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .last-news .date {
 	margin-bottom: 5px;
+	display: block;
 }
 .last-news .pic {
 	margin-bottom: 10px;

@@ -183,7 +183,7 @@ $(document).ready(function () {
 
 	$('.catalog-main').each(function () {
 		$('.item', this).hover(function() {
-			$(this).find('.links', this).fadeToggle();
+			$(this).find('.links', this).fadeToggle(200);
 		});
 	});
 
