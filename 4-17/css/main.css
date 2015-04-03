@@ -231,7 +231,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .form .line:last-child { margin-bottom: 0; }
 .form:after, .form .line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .form .required { position: relative; }
-.form .required:before { display: block; content: '*'; overflow: hidden; color: #c00; position: absolute; top: 0; right: 10px; }
+.form .required:before { display: block; content: '*'; overflow: hidden; color: #c00; position: absolute; top: 0; right: -14px; }
 /* ==========================================================================
    _LAYOUT
    ========================================================================== */
@@ -1710,6 +1710,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	float: left;
 	text-align: right;
 }
+.form-callback .required:before {
+	right: 6px;
+}
 .form-callback input[type="text"],
 .form-callback textarea {
 	width: 240px;
@@ -2510,7 +2513,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	position: relative;
 }
 .send label {
-	margin-right: 17px;
+	margin-right: 20px;
 	display: inline-block;
 }
 .send .submit {
