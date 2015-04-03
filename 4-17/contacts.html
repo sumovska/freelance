@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Four Sevenths</title>
 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2.0">
 
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -160,28 +160,14 @@
 					</div>
 				</div>
 				<div class="tab-content tab-content-callback tab-content-hidden" id="callback">
-					<form class="form" action="#">
-						<div class="send">
-							<p class="h2 h2-orange">Есть вопросы?</p>
-							<p class="legend">Равным образом сложившаяся структура организации представляет собой интересный эксперимент проверки системы обучения кадров.</p>
-							<p class="line">
-								<label class="required">Ваше имя</label>
-								<input title="" type="text">
-							</p>
-							<p class="line">
-								<label class="required">Телефон:</label>
-								<input title="" type="text">
-							</p>
-							<p class="line">
-								<label class="required">Mail:</label>
-								<input type="text" title="">
-							</p>
-							<p class="line">
-								<label>Комментарий:</label>
-								<textarea title=""></textarea>
-							</p>
-							<p class="submit"><input type="submit" value="Отправить"></p>
-						</div>
+					<form class="form form-callback" action="#" method="post">
+						<p class="h2 h2-orange">Есть вопросы?</p>
+						<p class="legend">Равным образом сложившаяся структура организации представляет собой интересный эксперимент проверки системы обучения кадров.</p>
+						<p class="line"><label class="for required" for="callback-name">Ваше имя:</label> <input id="callback-name" type="text" value=""></p>
+						<p class="line"><label class="for required" for="callback-phone">Телефон:</label> <input id="callback-phone" type="text" value=""></p>
+						<p class="line"><label class="for required" for="callback-mail">Mail:</label> <input id="callback-mail" type="text" value=""></p>
+						<p class="line"><label class="for" for="callback-comment">Комментарий:</label> <textarea id="callback-comment"></textarea></p>
+						<p class="line submit"><input type="submit" value="Отправить"></p>
 					</form>
 				</div>
 			</section>
