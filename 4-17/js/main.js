@@ -128,7 +128,7 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.block-type').each(function () {
+	$('.block-type, .table-order').each(function () {
 		var _self = this;
 		$('.colors', this).each(function () {
 			$('a', this).click(function () {
@@ -137,7 +137,7 @@ $(document).ready(function () {
 				return false;
 			})
 		});
-		$('.amount', this).each(function () {
+		$('.amount, .number', this).each(function () {
 			var input = $('input', this), up = $('.up', this), down = $('.down', this);
 			input.keydown(function (e) {
 				if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||

@@ -437,7 +437,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .header .phone:focus, .header .phone:focus span {
 	color: #dd8e1b;
 }
-.header .work-time {
+.header .working-hours {
 	margin-bottom: 0;
 	padding-left: 23px;
 	text-align: right;
@@ -446,7 +446,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	top: 64px;
 	right: 20px;
 }
-.header .work-time:before {
+.header .working-hours:before {
 	width: 12px;
 	height: 12px;
 	display: block;
@@ -519,6 +519,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	font-size: 13px;
 	line-height: 15px;
 	font-weight: 300;
+	cursor: default;
 	background: #e1dfde;
 	background: linear-gradient(to bottom, rgba(238, 236, 235, 1) 0%, rgba(225, 223, 222, 1) 100%);
 	border-top: 7px solid #e79c31;
@@ -564,7 +565,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	top: 30px;
 	right: 252px;
 }
-.footer .count {
+.footer .counter img {
 	width: 80px;
 	height: 33px;
 	margin: 0 5px;
@@ -602,6 +603,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-bottom: 3px solid #e79c31;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .22);
 	z-index: 10;
+	cursor: default;
 }
 .breadcrumbs .wrapper {
 	padding-top: 3px;
@@ -674,7 +676,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .submenu {
 	margin-bottom: 36px;
-	padding: 17px 7px 17px 20px;
+	padding: 17px 10px 17px 20px;
 	background: url(../img/submenu-bg.jpg) 50% 50% repeat;
 	border: 1px solid #f1f1f1;
 }
@@ -684,8 +686,8 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #8f8f8f;
 }
 .submenu .list {
-	margin: 0 -7px 0 -20px;
-	padding: 17px 7px 14px 20px;
+	margin: 0 -10px 0 -20px;
+	padding: 17px 10px 14px 20px;
 	list-style: none;
 	position: relative;
 }
@@ -707,7 +709,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .submenu .list > li > a {
 	padding-left: 21px;
-	display: block;
+	display: inline-block;
 	color: #000;
 	text-decoration: none;
 	letter-spacing: .03em;
@@ -740,7 +742,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 .submenu .list li.open > a:before, .submenu .list li.open > a:after, .submenu .list li > a:hover:before, .submenu .list li > a:hover:after {
 	border-color: transparent transparent transparent #e57405;
 }
-.submenu .list li.open > a, .submenu .list li a:hover {
+.submenu .list li.open > a, .submenu .list li.active > a, .submenu .list li a:hover {
 	color: #e57405;
 }
 .submenu .list li.open > a:after {
@@ -785,6 +787,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	border-style: solid;
 	border-width: 2px 0 2px 2px;
 	border-color: transparent transparent transparent #000;
+}
+.submenu .list > li > ul li a:hover {
+	text-decoration: underline;
 }
 .submenu .list > li > ul li a:hover:before {
 	border-color: transparent transparent transparent #e57405;
@@ -899,7 +904,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _BUTTON-ORANGE
    ========================================================================== */
 .button-orange {
-	padding: 4px 10px 4px 10px;
+	padding: 5px 10px 3px 10px;
 	display: inline-block;
 	color: #523711;
 	font-weight: 700;
@@ -2001,7 +2006,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .sideblock .action {
 	margin-bottom: 12px;
-	padding: 10px 10px 16px;
+	padding: 14px 10px;
 	display: block;
 	color: #000;
 	text-align: center;
@@ -2010,9 +2015,6 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: rgb(240, 194, 0);
 	background: linear-gradient(to bottom, rgba(240, 194, 0, 1) 0%, rgba(231, 163, 0, 1) 100%);
 	transition: color .3s ease;
-}
-.sideblock .action:hover {
-	color: #fff;
 }
 .last-articles {
 	margin-bottom: 20px;
@@ -2719,6 +2721,9 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	color: #999;
 	font-weight: normal;
 	font-style: italic;
+}
+.page-error .search .submit {
+	position: relative;
 }
 /* ==========================================================================
    _TABS
