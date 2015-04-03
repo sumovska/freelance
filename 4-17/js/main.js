@@ -48,6 +48,13 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.index').each(function () {
+		$('.carousel', this).bxSlider({
+			controls: false,
+			adaptiveHeight: true
+		});
+	});
+
 	$('.form-item').each(function () {
 		var _self = $(this), _total = $('.t', _self), _triggers = $('.triggers', _self), _amount = $('.amount .n', _self);
 		_triggers.each(function () {
@@ -173,4 +180,11 @@ $(document).ready(function () {
 			return false;
 		});
 	});
+
+	$('.catalog-main').each(function () {
+		$('.item', this).hover(function() {
+			$(this).find('.links', this).fadeToggle();
+		});
+	});
+
 });

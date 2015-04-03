@@ -1706,6 +1706,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 }
 .catalog .link {
 	display: block;
+	color: #000;
 }
 .catalog .pic {
 	width: 100%;
@@ -1718,6 +1719,176 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	display: block;
 	font-size: 16px;
 	font-weight: 500;
+}
+/* ==========================================================================
+   _CATALOG-MAIN
+   ========================================================================== */
+.catalog-main {
+	margin: 0 -10px 10px;
+}
+.catalog-main:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.catalog-main .item {
+	width: 212px;
+	margin: 0 10px 10px;
+	float: left;
+	position: relative;
+}
+.catalog-main .link {
+	color: #000;
+	text-decoration: none;
+	font-weight: 500;
+}
+.catalog-main .name {
+	height: 36px;
+	padding: 9px;
+	display: block;
+	text-align: center;
+	overflow: hidden;
+	background: #ededed;
+	position: relative;
+}
+.catalog-main .name .toggle {
+	width: 12px;
+	height: 12px;
+	display: block;
+	border: 1px solid #d3d3d3;
+	border-radius: 50%;
+	position: absolute;
+	top: 12px;
+	right: 8px;
+}
+.catalog-main .name .toggle:before {
+	width: 0;
+	height: 0;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	top: 4px;
+	left: 2px;
+	border-style: solid;
+	border-width: 3px 3px 0 3px;
+	border-color: #d3d3d3 transparent transparent transparent;
+}
+.catalog-main .links {
+	margin-bottom: 0;
+	padding: 22px 22px 22px 32px;
+	display: none;
+	list-style: none;
+	background: #fe9024;
+	position: absolute;
+	top: 36px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.catalog-main .links li {
+	margin-bottom: 6px;
+	position: relative;
+}
+.catalog-main .links li:before {
+	width: 0;
+	height: 0;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	left: -6px;
+	top: 6px;
+	border-style: solid;
+	border-width: 2px 0 2px 2px;
+	border-color: transparent transparent transparent #000;
+	transition: border-color .2s;
+}
+.catalog-main .links li:hover:before {
+	border-color: transparent transparent transparent #fff;
+}
+.catalog-main .links li a {
+	color: #000;
+	transition: color .2s;
+}
+.catalog-main .links li:hover a {
+	color: #fff;
+	text-decoration: underline;
+}
+/* ==========================================================================
+   _INDEX
+   ========================================================================== */
+.index .carousel {
+	padding: 0;
+	list-style: none;
+}
+.index .carousel li {
+	height: 400px;
+}
+.index .carousel .text {
+	width: 760px;
+	margin: 0 auto;
+	padding: 64px 20px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+}
+.index .text .title {
+	margin-bottom: 6px;
+	font-size: 40px;
+	font-weight: 500;
+	color: #000;
+}
+.index .text .title span {
+	padding: 18px 28px 24px;
+	display: inline-block;
+	background: rgba(231, 156, 49, .9);
+}
+.index .text .slogan {
+	margin-bottom: 24px;
+	font-size: 30px;
+	font-weight: 500;
+}
+.index .text .more {
+	width: 180px;
+	height: 50px;
+	margin-top: 50px;
+	padding: 11px 34px 11px 8px;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	border: 3px solid #fff;
+	position: relative;
+	transition: border-color .2s, background-color .2s;
+}
+.index .text .more:hover {
+	border-color: #fe9024;
+	background-color: #fe9024;
+}
+.index .text .more:before {
+	width: 20px;
+	height: 20px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	right: 15px;
+	top: 12px;
+	background: url("../img/sprite.png") 0 -180px no-repeat;
+	background-size: 100px auto;
+}
+.index .bx-pager {
+	position: absolute;
+	bottom: 25px;
+	right: 20px;
+}
+/* ==========================================================================
+   _ABOUT
+   ========================================================================== */
+.about .h2 {
+	border-bottom: 1px dotted #a2a2a2;
 }
 /* ==========================================================================
    _GOODS
@@ -2033,7 +2204,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: url(../img/sprite.png) 0 -180px no-repeat;
 	background-size: 100px auto;
 }
-.slider .bx-wrapper {
+.bx-wrapper {
 	position: relative;
 }
 .slider .bx-pager {
@@ -2046,12 +2217,12 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	text-align: center;
 	z-index: 1;
 }
-.slider .bx-pager-item {
+.bx-pager-item {
 	margin: 0 3px;
 	display: inline-block;
 	vertical-align: middle;
 }
-.slider .bx-pager-item a {
+.bx-pager-item a {
 	width: 18px;
 	height: 18px;
 	display: block;
@@ -2062,7 +2233,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: transparent;
 	border-radius: 50%;
 }
-.slider .bx-pager-item a:before {
+.bx-pager-item a:before {
 	width: 12px;
 	height: 12px;
 	display: block;
@@ -2072,10 +2243,10 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 	background: #fff;
 	border-radius: 50%;
 }
-.slider .bx-pager-item a.active {
+.bx-pager-item a.active {
 	background: #fff;
 }
-.slider .bx-pager-item a.active:before {
+.bx-pager-item a.active:before {
 	width: 8px;
 	height: 8px;
 	margin: 5px 0 0 5px;
@@ -2759,6 +2930,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
    _BLOCK-TYPE
    ========================================================================== */
 .block-type {
+	margin-bottom: 26px;
 	padding: 16px 22px;
 	position: relative;
 	border: 1px solid #e8e8e8;
