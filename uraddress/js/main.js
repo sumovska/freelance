@@ -10,7 +10,10 @@ $(document).ready(function () {
 	/* Всплывающее окно */
 	$('.fancybox-popup').fancybox({
 		padding: 0,
-		margin: 50
+		margin: 50,
+		helpers: {
+			media: {}
+		}
 	});
 
 	/* Анимация спецпредложений */
