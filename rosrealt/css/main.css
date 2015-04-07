@@ -138,14 +138,14 @@ button:not([disabled]):active, input[type="button"]:not([disabled]):active, inpu
 button[disabled], input[type="button"][disabled], input[type="submit"][disabled] { cursor: default; opacity: .75; background: #8d8d8d !important; }
 button[disabled]:before, input[type="button"][disabled]:before, input[type="submit"][disabled]:before { text-shadow: none; background: #585858 !important; }
 /* === CHECKBOX === */
-.jq-checkbox { width: 18px; height: 18px; border: 1px solid #d6d6d6; border-radius: 1px; margin: 0 10px 0 0; position: relative; top: -1px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
+.jq-checkbox { width: 18px; height: 18px; border: 1px solid #d6d6d6; border-radius: 1px; margin: 0 10px 0 0; position: relative; top: -2px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
 .jq-checkbox .jq-checkbox__div { border-radius: 1px; position: absolute; top: 0; right: 0; bottom: 0; left: 1px; opacity: 0; background: url('../img/sprite.png') no-repeat -60px -45px; background-size: 150px auto; transition: opacity .1s; }
 .jq-checkbox.checked .jq-checkbox__div { opacity: 1; }
 .jq-checkbox.focused { border-color: #a09f9e; }
 .jq-checkbox.disabled { cursor: default; background: #f6f5f3; }
 .jq-checkbox.disabled.checked .jq-checkbox__div { opacity: .5; }
 /* === RADIO === */
-.jq-radio { width: 18px; height: 18px; border: 1px solid #d6d6d6; border-radius: 1px; margin: 0 10px 0 0; position: relative; top: -1px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
+.jq-radio { width: 18px; height: 18px; border: 1px solid #d6d6d6; border-radius: 1px; margin: 0 10px 0 0; position: relative; top: -2px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
 .jq-radio .jq-radio__div { border-radius: 1px; position: absolute; top: 2px; right: 2px; bottom: 2px; left: 2px; opacity: 0; background: #b9b9b9; transition: opacity .1s; }
 .jq-radio.checked .jq-radio__div { opacity: 1; }
 .jq-radio.focused { border-color: #a09f9e; }
@@ -1130,7 +1130,7 @@ a.icon-delete:hover:before { opacity: 1; }
 .icon-edit:after { background-position: 0 -120px; }
 /* Мегафон */
 .icon-mega:before { background-position: -30px -90px; }
-.icon-mega:after { background-position: -30px -120px; }
+.icon-mega:after, a.icon-mega.active:before { background-position: -30px -120px; }
 /* Открыть в новом окне */
 .icon-window:before { background-position: -60px -90px; }
 .icon-window:after { background-position: -60px -120px; }
@@ -1150,13 +1150,18 @@ a.icon-delete:hover:before { opacity: 1; }
 .icon-photo:after { background-position: -240px -120px; }
 /* Восклицательный знак */
 .icon-alert:before { background-position: -270px -90px; }
-.icon-alert:after { background-position: -270px -120px; }
+.icon-alert:after, a.icon-alert.active:before { background-position: -270px -120px; }
+/* Настройки */
+.icon-settings:before { background-position: 0 -150px; }
+.icon-settings:after, a.icon-settings.active:before { background-position: 0 -180px; }
 /* Тег */
 .icon-tag:before { background-position: -150px -150px; }
 .icon-tag:after { background-position: -150px -180px; }
 /* Прелоадер */
 .icon-preloader:before { background: url('../img/preloader.gif') no-repeat 50% 50%; background-size: 24px 24px; }
 .icon-preloader:after { display: none; }
+/* Зеленый play */
+.icon-play-green:before, .icon-play-green:after, a.icon-play-green.active:before { background-position: -120px -180px; }
 /* ==========================================================================
    _Таблица (дефолтная)
    ========================================================================== */
@@ -1171,28 +1176,26 @@ a.icon-delete:hover:before { opacity: 1; }
 }
 .table {
 	width: 100%;
-	display: table;
 	border-left: 1px solid #d6d6d6;
 	border-right: 1px solid #d6d6d6;
 	border-collapse: collapse;
 	line-height: 14px;
 	color: #676767;
 }
-.table .tr {
-	display: table-row;
-}
-.table .td {
+.table td {
 	padding: 10px;
 	border-top: 1px solid #d6d6d6;
 	border-bottom: 1px solid #d6d6d6;
-	display: table-cell;
 	vertical-align: top;
-	background: #fff;
+	/* background: #fff; */
 	transition: background-color .1s;
 }
-.table .tr:nth-child(2n) .td { background: #f9f9f9; }
-.table .tr:hover .td, .table .tr.active .td { background: #f6f5f3; }
-.table p {
+/*
+.table tr:nth-child(2n) td { background: #f9f9f9; }
+.table tr:hover td, .table tr.active td { background: #f6f5f3; }
+*/
+.table tr:hover td, .table tr.active td { background: #fff; }
+.table p.space {
 	padding: 4px 0;
 	margin: -4px 0;
 	display: block;
@@ -1205,15 +1208,15 @@ a.icon-delete:hover:before { opacity: 1; }
 	overflow: hidden;
 }
 .table a { color: #676767; }
-.table a:hover { color: #ff7c20; }
-.table .td.td-icon {
+.table a:hover, .table a:focus { color: #ff7c20; }
+.table .td-icon {
 	width: 35px;
 	min-width: 35px;
 	max-width: 35px;
 	border: 1px solid #d6d6d6;
 }
-.table .td.td-icon:hover { background: #fff; }
-.table .td.td-space {
+.table .td-icon:hover { background: #fff; }
+.table .td-space {
 	width: 20px;
 	min-width: 20px;
 	border: none;
@@ -1229,13 +1232,65 @@ a.icon-delete:hover:before { opacity: 1; }
 	position: relative;
 	background: none;
 }
-.table .td input[type="text"], .filter .td .jq-selectbox {
+.table input[type="text"], .filter .jq-selectbox {
 	width: 100%;
 }
-.table-owners {
-	position: relative;
-	bottom: 0;
+.table .tr-active {
+	background: #fff;
 }
+.table .tr-action td {
+	padding: 0;
+	background: #fff;
+}
+.table .tr-action .space {
+	height: 34px;
+	position: relative;
+	display: none;
+}
+.table .tr-action .message {
+	height: 34px;
+	padding: 10px;
+	margin: 0;
+	display: none;
+	position: absolute;
+	top: 35px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	cursor: default;
+	font-size: 14px;
+	line-height: 14px;
+	text-transform: uppercase;
+	text-align: center;
+	background: rgba(255, 255, 255, .9);
+}
+.table .tr-action .message a { color: #ff9540; }
+.table .tr-action .message a:hover, .table .tr-action .message a:focus { color: #676767; }
+/* Кнопка 'Пожаловаться' */
+.table .tr-report td .labels { height: 34px; padding: 10px; margin: 0; text-align: right; }
+.table .tr-report td .labels .checkbox { margin: 0 10px; }
+.table .tr-report td .labels .checkbox .jq-checkbox { top: -3px; }
+.table .tr-report td .labels .checkbox .jq-checkbox .jq-checkbox__div { top: 2px; right: 2px; bottom: 2px; left: 2px; background: #ff9540; }
+/* Кнопка 'Настройки' */
+.table .tr-settings td .links { padding: 10px; margin: 0; text-align: right; }
+.table .tr-settings td .links a { margin: 0 10px; display: inline-block; }
+.table .tr-settings td .delete { color: #e06400; }
+.table .tr-settings td .delete:hover, .table .tr-report td .delete:focus { color: #ff7c20; }
+/* Кнопка 'Продвижение' */
+.table .tr-advert td .labels { height: 34px; padding: 0; margin: 0; overflow: hidden; }
+.table .tr-advert td .labels .checkbox { padding: 10px 40px 10px 35px; border-left: 1px solid #d8d8d8; display: block; float: right; transition: background-color .1s; }
+.table .tr-advert td .labels .checkbox.actual { padding-left: 10px; color: #fff; text-transform: uppercase; background: #ff9540 !important; }
+.table .tr-advert td .labels .checkbox.checked.color-1 { background: #eeffe1; }
+.table .tr-advert td .labels .checkbox.checked.color-2 { background: #fffadb; }
+.table .tr-advert td .labels .checkbox.checked.color-3 { background: #ebebeb; }
+.table .tr-advert td .labels .checkbox.checked.color-4 { background: #e9f9ff; }
+.table .tr-advert td .labels .checkbox:hover { background: #ebebeb; }
+.table .tr-advert td .labels .checkbox .jq-checkbox { position: absolute !important; top: 8px; right: 12px; left: auto; }
+.table .tr-advert td .labels .checkbox .jq-checkbox .jq-checkbox__div { top: 2px; right: 2px; bottom: 2px; left: 2px; background: #ff9540; }
+.table .tr-advert td .labels .checkbox .question { width: 16px; height: 16px; display: block; position: absolute; top: 9px; left: 10px; background: #bdbdbd; text-align: center; color: #fff; text-decoration: none; font-size: 11px; line-height: 16px; }
+.table .tr-advert td .labels .checkbox .question:hover { background: #fcaa60; }
+.table-owners { position: relative; bottom: 0; z-index: 5; }
 /* ==========================================================================
    _Инпут с редактированием
    ========================================================================== */

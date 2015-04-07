@@ -8,11 +8,15 @@
 	}
 }(document));
 
+function initForms() {
+	$('input, select').styler();
+}
+
 /* On document ready */
 $(document).ready(function () {
 
 	/* Формы */
-	$('input, select').styler();
+	initForms();
 	/* input:file с подгрузкой превью */
 	$('input.file-photo').change(function () {
 		if ($(this).prop('files') && $(this).prop('files')[0]) {
@@ -322,17 +326,140 @@ $(document).ready(function () {
 		cbChange.call($('.checkbox-top'));
 	});
 
+
 	$('.table-owners').each(function () {
-		/* Иконка 'добавить в закладки' */
-		$(this).on('click', '.link-pin', function () {
-			$(this).toggleClass('icon-pinhover').toggleClass('active').closest('.tr').toggleClass('active');
-			return false;
-		});
-		$(this).on('click', '.icon-phone', function () {
+		function closeLine(target) {
+			$(this).nextAll(target).eq(0).find('.space').slideUp(100, function () {
+				$(this).closest('tr').remove();
+			});
+		}
+
+		/* Просмотр телефона */
+		$(this).on('click', '.js-phone', function () {
 			$(this).toggleClass('active');
 			return false;
 		});
+
+		/* Просмотр изображения */
+		$('.js-photo', this).fancybox({
+			padding: 0,
+			margin: 50
+		});
+
+		/* Иконка 'добавить в закладки' */
+		$(this).on('click', '.js-pin', function () {
+			$(this).toggleClass('icon-pinhover').toggleClass('active').closest('.tr').toggleClass('active');
+			return false;
+		});
+
+		/* Иконка 'Открыть в новом окне' */
+		$(this).on('click', '.js-window', function () {
+			window.open(this.href, '_blank');
+			return false;
+		});
+
+		/* Иконка 'Пожаловаться' */
+		$(this).on('click', '.js-report', function () {
+			var _this = $(this), closest = _this.closest('tr');
+			if (_this.is('.active')) {
+				_this.removeClass('active');
+				closeLine.apply(closest, ['.tr-report']);
+			} else {
+				var tr = $('<tr class="tr-action tr-report"/>');
+				_this.addClass('active');
+				$('<td/>').attr('colspan', $('td', closest).length).appendTo(tr);
+				$('<div class="space"/>').appendTo($('td', tr));
+				$('<form action="#" method="post" class="labels"/>').appendTo($('.space', tr));
+				$('<label class="checkbox"><input type="checkbox" name="check-report" value="4">Другое</label>').appendTo($('.labels', tr));
+				$('<label class="checkbox"><input type="checkbox" name="check-report" value="3">Неправильный адрес</label>').appendTo($('.labels', tr));
+				$('<label class="checkbox"><input type="checkbox" name="check-report" value="2">Неправильная площадь</label>').appendTo($('.labels', tr));
+				$('<label class="checkbox"><input type="checkbox" name="check-report" value="1">Это агентство</label>').appendTo($('.labels', tr));
+				$('<label class="checkbox"><input type="checkbox" name="check-report" value="0">Не актуальное</label>').appendTo($('.labels', tr));
+				$('<p class="message">Отправить жалобу? <a href="#" class="yes">ДА</a> / <a href="#" class="no">НЕТ</a></p>').appendTo($('.space', tr));
+				tr.insertAfter(closest);
+				initForms();
+				$(':checkbox', tr).on('change', function () {
+					$('.message', tr).not('message-visible').fadeIn();
+				});
+				$('.yes', tr).on('click', function () {
+					closeLine.apply(closest, ['.tr-report']);
+					return false;
+				});
+				$('.no', tr).on('click', function () {
+					_this.removeClass('active');
+					closeLine.apply(closest, ['.tr-report']);
+					return false;
+				});
+				$('.space', tr).slideDown(100);
+			}
+			return false;
+		});
+
+		/* Иконка 'Настройки' */
+		$(this).on('click', '.js-settings', function () {
+			var _this = $(this), closest = _this.closest('tr');
+			if (_this.is('.active')) {
+				_this.removeClass('active');
+				closeLine.apply(closest, ['.tr-settings']);
+			} else {
+				var tr = $('<tr class="tr-action tr-settings"/>');
+				_this.addClass('active');
+				$('<td/>').attr('colspan', $('td', closest).length).appendTo(tr);
+				$('<div class="space"/>').appendTo($('td', tr));
+				$('<p class="links"/>').appendTo($('.space', tr));
+				$('<a href="#">Редактировать</a>').appendTo($('.links', tr));
+				$('<a class="delete" href="#">Удалить</a>').appendTo($('.links', tr));
+				tr.insertAfter(closest);
+				initForms();
+				$('.space', tr).slideDown(100);
+			}
+			return false;
+		});
+
+		/* Иконка 'Продвижение' */
+		$(this).on('click', '.js-advert', function () {
+			var _this = $(this), closest = _this.closest('tr');
+			if (_this.is('.active')) {
+				_this.removeClass('active');
+				closeLine.apply(closest, ['.tr-advert']);
+			} else {
+				var tr = $('<tr class="tr-action tr-advert"/>');
+				_this.addClass('active');
+				$('<td/>').attr('colspan', $('td', closest).length).appendTo(tr);
+				$('<div class="space"/>').appendTo($('td', tr));
+				$('<form action="#" method="post" class="labels"/>').appendTo($('.space', tr));
+				$('<label class="checkbox actual"><input type="checkbox" name="check-advert" value="0">Актуально</label>').appendTo($('.labels', tr));
+				$('<label class="checkbox color-1"><input type="checkbox" name="check-advert" value="1">Бесплатно на портал<a href="#" class="question">?</a></label>').appendTo($('.labels', tr));
+				$('<label class="checkbox color-2"><input type="checkbox" name="check-advert" value="2">На привилегию - 250 руб.<a href="#" class="question">?</a></label>').appendTo($('.labels', tr));
+				$('<label class="checkbox color-3"><input type="checkbox" name="check-advert" value="3">Поднять - 50 руб.<a href="#" class="question">?</a></label>').appendTo($('.labels', tr));
+				$('<label class="checkbox color-4"><input type="checkbox" name="check-advert" value="4">Выделить цветом - 30 руб.<a href="#" class="question">?</a></label>').appendTo($('.labels', tr));
+				$('<p class="message">Поднять объявление на портале? <a href="#" class="yes">ДА</a> / <a href="#" class="no">НЕТ</a></p>').appendTo($('.space', tr));
+				tr.insertAfter(closest);
+				initForms();
+				$(':checkbox', tr).on('change', function () {
+					if ($(this).is(':checked')) {
+						$(this).closest('.checkbox').addClass('checked');
+					} else {
+						$(this).closest('.checkbox').removeClass('checked');
+					}
+					$('.message', tr).not('message-visible').fadeIn();
+				});
+				$('.yes', tr).on('click', function () {
+					_this.removeClass('active').addClass('icon-play-green');
+					closeLine.apply(closest, ['.tr-advert']);
+					return false;
+				});
+				$('.no', tr).on('click', function () {
+					_this.removeClass('active');
+					closeLine.apply(closest, ['.tr-advert']);
+					return false;
+				});
+				$('.space', tr).slideDown(100);
+			}
+			return false;
+		});
 	});
+
 
 	/* Всплывающее окно */
 	$('.fancybox-popup').fancybox({
