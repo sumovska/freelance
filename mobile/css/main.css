@@ -624,7 +624,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	position: absolute;
 	top: 113px;
 	left: 6px;
-	z-index: 20;
+	z-index: 40;
 	font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
 	background: transparent;
 }
@@ -635,14 +635,18 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	text-decoration: none;
 	font-size: 24px;
 	border-bottom: 1px dashed #fff;
-	transition: border-bottom-color .2s ease;
+	transition: border-bottom-color .2s ease, color .2s ease;
 	z-index: 51;
 }
-.header .nav-catalog:hover .link {
+.header .nav-catalog.open .link {
 	color: #000;
 	border-bottom-color: #000;
 }
-.header .nav-catalog .toggle {
+.header .nav-catalog .link:hover {
+	color: #f26c4f;
+	border-bottom-color: #f26c4f;
+}
+.header .nav-catalog .link .toggle {
 	width: 17px;
 	height: 15px;
 	display: block;
@@ -651,8 +655,21 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	top: 6px;
 	border-top: 3px solid #fff;
 	border-bottom: 3px solid #fff;
+	transition: border-bottom-color .2s ease, border-top-color .2s ease;
 }
-.header .nav-catalog .toggle:before {
+.header .nav-catalog.open .link .toggle {
+	border-top-color: #000;
+	border-bottom-color: #000;
+}
+.header .nav-catalog.open .link .toggle {
+	border-top-color: #000;
+	border-bottom-color: #000;
+}
+.header .nav-catalog .link:hover .toggle {
+	border-top-color: #f26c4f;
+	border-bottom-color: #f26c4f;
+}
+.header .nav-catalog .link .toggle:before {
 	height: 3px;
 	display: block;
 	content: "\0020";
@@ -662,16 +679,17 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	left: 0;
 	right: 0;
 	background: #fff;
+	transition: background .2s ease;
 }
-.header .nav-catalog:hover .toggle {
-	border-top-color: #000;
-	border-bottom-color: #000;
-}
-.header .nav-catalog:hover .toggle:before {
+.header .nav-catalog.open .link .toggle:before {
 	background: #000;
+}
+.header .nav-catalog .link:hover .toggle:before {
+	background: #f26c4f;
 }
 .header .nav-catalog .inside {
 	display: none;
+	opacity: 0;
 	padding: 66px 0 20px;
 	position: absolute;
 	top: -15px;
@@ -679,10 +697,10 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	background: #f9f9f9;
 	box-shadow: 0 0 8px rgba(0, 0, 0, .26);
 	z-index: 50;
+	transition: opacity .2s ease;
 }
-.header .nav-catalog:hover .inside {
-	display: block;
-}
+.header .nav-catalog.open .inside { display: block;}
+.header .nav-catalog.open.visible .inside { opacity: 1;}
 .header .nav-catalog .list {
 	width: 300px;
 	margin: 0;
@@ -804,15 +822,16 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	margin-bottom: 10px;
 	font-weight: normal;
 }
-.header .nav-catalog .list .in ul {
+.header .nav-catalog .list .in .list-in {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.header .nav-catalog .list .in ul li {
+.header .nav-catalog .list .in .list-in:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.header .nav-catalog .list .in .list-in li {
 	margin-bottom: 16px;
 }
-.header .nav-catalog .list .in ul li:last-child {
+.header .nav-catalog .list .in .list-in li:last-child {
 	margin-bottom: 0;
 }
 .header .nav-catalog .list .in .name {
@@ -828,6 +847,23 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	display: block;
 	color: #b0b0b0;
 	font-size: 11px;
+}
+.header .nav-catalog .list .mobile-section {
+	padding-right: 38px;
+}
+.header .nav-catalog .list .mobile-section .info {
+	width: 322px;
+	float: left;
+}
+.header .nav-catalog .list .mobile-section .pic {
+	max-width: 278px;
+	margin-top: 10px;
+	float: right;
+}
+.header .nav-catalog .list .mobile-section .list-in-2 li {
+	width: 50%;
+	margin-bottom: 20px;
+	float: left;
 }
 .header .login {
 	width: 223px;
@@ -1013,7 +1049,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	width: 100%;
 	height: 435px;
 	float: left;
-	background: #f3fae4;
+	background: #f4fbe4;
 }
 .index .carousel .wrapper {
 	padding: 10px 20px;
@@ -2599,7 +2635,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .block-item .photo .cap {
 	top: -28px;
 	text-align: left;
-	z-index: 20;
+	z-index: 4;
 }
 .block-item .photo .slider-for {
 	margin-bottom: 30px;

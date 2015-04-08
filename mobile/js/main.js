@@ -51,6 +51,23 @@ $(document).ready(function () {
 				}
 			});
 		});
+		$('.nav-catalog', this).each(function () {
+			var _self = $(this);
+			$('.link', this).on('click', function () {
+				_self.toggleClass('open');
+				setTimeout(function () {
+					_self.toggleClass('visible');
+				}, 100);
+				return false;
+			});
+			$(document).on('click touchstart', function (event) {
+				var target = $(event.target);
+				console.log(event.target);
+				if ((target.closest('.nav-catalog').length === 0) && (!target.is('.nav-catalog'))) {
+					$(_self).removeClass('open').removeClass('visible');
+				}
+			});
+		});
 	});
 
 
