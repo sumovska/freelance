@@ -139,7 +139,7 @@ input[type="email"]:not([disabled]):focus, input[type="number"]:not([disabled]):
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled] { cursor: default; background: #f6f5f3; opacity: 1; }
 /* === BUTTON === */
 button, .button, input[type="button"], input[type="submit"], input[type="reset"] { height: 42px; padding: 12px 30px; border: none; border-radius: 4px; box-shadow: none; outline: none; cursor: pointer; overflow: visible; color: #000; font: bold 20px/20px 'PT Sans Narrow', Arial, sans-serif; background: #cbf17a; transition: background-color .5s .1s ease, color .5s .1s ease, box-shadow .2s ease; }
-.button { display: block; text-decoration: none; }
+.button { display: inline-block; text-decoration: none; }
 button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner { padding: 0; border: 0; }
 button:after { content: ''; }
 .button:hover, .button:focus,
@@ -1161,10 +1161,10 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	border-radius: 2px;
 	transition: background-color .1s, border-color .1s, box-shadow .2s ease;
 }
-@media (min-width: 401px) {
+@media (min-width: 999px) {
 	.catalog .item:hover { overflow: visible; z-index: 99; }
 	.catalog .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
-	.catalog .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
+	.catalog:not(.catalog-small) .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
 	.catalog .item.visible:hover .describe { display: block; }
 }
 .catalog .pic {
@@ -1266,8 +1266,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	margin: 10px 0 0 0;
 }
 .catalog .more {
-	width: 200px;
-	padding-top: 100px;
+	width: 320px;
+	padding-top: 80px;
 	float: left;
 	text-align: center;
 }
@@ -1277,13 +1277,11 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .catalog-small .item {
 	width: 320px;
-}
-.catalog-small:not(.catalog-small) .item:nth-child(3n+1) {
-	clear: left;
+	margin-bottom: 10px;
 }
 .catalog-small .in {
-	margin: 0;
-	padding: 6px 14px 8px;
+	margin: -6px -6px 0;
+	padding: 12px 20px 8px;
 }
 .catalog-small .product {
 	margin: 0 -18px 12px;
@@ -1317,19 +1315,28 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .catalog-small .price {
 	width: 100%;
-	padding: 20px 4px 6px 4px;
+	padding: 14px 4px 5px 3px;
 }
 .catalog-small .price .old {
+	margin: -14px 0 2px 0;
 	font-size: 14px;
-	position: absolute;
-	top: 2px;
-	left: 6px;
+	position: relative;
+	top: auto;
+	left: auto;
 }
 .catalog-small .to-cart {
-	margin-left: 2px;
+	width: auto;
+	padding: 7px 12px 4px;
 	float: none;
+	right: auto;
 }
-.catalog .item:hover .describe { display: block; }
+.catalog-small .to-cart:before {
+	display: none;
+}
+.catalog-small .describe {
+	padding-top: 4px;
+	border-top: 1px solid #e1e1e1;
+}
 /* ==========================================================================
    _Оценка товара
    ========================================================================== */
@@ -1803,7 +1810,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .breadcrumbs a:hover, .breadcrumbs a:focus { color: #f26c4f; }
 .breadcrumbs a:before { border-color: transparent transparent transparent #898989; }
 .breadcrumbs a:hover:before, .breadcrumbs a:focus:before { border-color: transparent transparent transparent #f26c4f; }
-.breadcrumbs a { padding-left: 4px; }
+.breadcrumbs a.hover { padding-left: 4px; }
 .top .h1 {
 	margin-bottom: 0;
 	font-size: 33px;
@@ -2328,7 +2335,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .columns .h2 {
 	font-family: "PT Sans", Arial, sans-serif;
-	color: #000;
 }
 /* ==========================================================================
    _Список с тире
@@ -2433,7 +2439,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	cursor: default;
 }
 .featured .wrapper {
-	padding-top: 11px;
+	padding-top: 10px;
 }
 .featured-list {
 	margin: 0 -8px;
@@ -2468,30 +2474,14 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 /* ==========================================================================
    _Кнопка (основная)
    ========================================================================== */
+.center { margin: 15px 0 0 0; text-align: center; }
 .button-main {
-	margin-bottom: 20px;
-	padding: 15px 20px;
-	display: inline-block;
-	color: #fff;
-	text-align: center;
-	text-decoration: none;
-	font: bold 16px 'PT Sans Narrow', Arial, sans-serif;
-	background-color: #f26c4f;
-	border-radius: 2px;
-	transition: background-color .2s ease, color .2s ease;
+	height: 54px;
+	padding: 17px 26px 15px;
+	font-size: 18px;
 }
-.button-main:hover {
-	color: #000;
-	background-color: #cbf17a;
-}
-.button-main-green { color: #000; background-color: #cbf17a; }
-.button-main-green:hover { color: #fff; background-color: #f26c4f; }
-.sideblock .button-main {
-	display: block;
-}
-.button-larger { font-size: 18px; }
-.button-smaller { margin-bottom: 0; padding: 3px 10px; background-color: #dcf2af; }
-.center { text-align: center; }
+.button-main:hover, .button-main:focus { box-shadow: inset 0 27px 0 0 #f58972; }
+.button-main:active { box-shadow: inset 0 54px 0 0 #f58972; }
 /* ==========================================================================
    _Навигация (боковая)
    ========================================================================== */
@@ -3239,6 +3229,10 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .article p:last-of-type {
 	margin-bottom: 0;
 }
+.ask .button {
+	width: 100%;
+	display: block;
+}
 /* ==========================================================================
    _Отзывы
    ========================================================================== */
@@ -3385,9 +3379,11 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.index .slick-dots { bottom: 20px; }
 	.index .slick-dots li { width: 16px; height: 16px; margin: 0 5px; }
 	/* Заголовки */
-	h2, .h2 { font-size: 28px; line-height: 34px; }
+	/*h2, .h2 { font-size: 28px; line-height: 34px; }*/
 	h4, .h4 { font-size: 14px; }
+	.h4-divide { margin-left: -30px; margin-right: -30px; }
 	/* О компании */
+	.index-info { padding-left: 30px; padding-right: 30px; margin-left: -30px; margin-right: -30px; }
 	.about .h2 { font-size: 28px; line-height: 33px; }
 	.about p:first-of-type { margin-bottom: 8px; }
 	.about .cols { margin: 0; }
@@ -3411,19 +3407,14 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.catalog .item:nth-child(3n+1) { clear: none; }
 	.catalog:not(.catalog-small) .item { width: 33.3%; }
 	.catalog .pic img { width: 100%; height: auto; }
+	.catalog .more { width: 33.3%; }
 	/* Каталог (маленький) */
 	.catalog-small:not(.catalog-small-carousel) .item { width: 33.33%; height: auto; }
 	.catalog-small .describe { display: none !important; }
 	/* Каталог-карусель */
 	.catalog-small-carousel { margin: 0 -30px; }
-	.catalog-small-carousel .item { opacity: .6; }
-	.catalog-small-carousel .slick-active { opacity: 1; }
-	.catalog-small-carousel { height: 300px; padding-top: 10px; }
-	.catalog-small-carousel .item { max-width: 290px !important; margin-bottom: 0; }
-	.catalog-small-carousel .item .in { margin: 0; padding: 0; }
-	.catalog-small-carousel .product { margin: 0; }
-	.catalog-small-carousel .pic { width: 52%; }
-	.catalog-small-carousel .about { width: 48%; }
+	.catalog-small-carousel .item { margin-bottom: 20px; opacity: .6; transition: opacity .3s ease; }
+	.catalog-small-carousel .item.slick-center { opacity: 1; }
 	/* Верхний блок */
 	.top { padding-top: 12px; padding-bottom: 16px; }
 	.breadcrumbs { margin-bottom: 13px; }
@@ -3479,15 +3470,14 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	/* Фильтр */
 	.filter { padding: 9px 15px; }
 	.filter .price-slider input[type="text"] { margin: 0; }
-	/* Колонки */
-	.columns { margin-bottom: 0; }
-	.columns .col { width: 100%; float: none; margin: 0; padding: 0; }
 	/* Таблицы */
 	.table-compare td { max-width: 140px; }
 	/* Блок сравнения */
 	.details .unit { margin-left: -30px; margin-right: -30px; }
 	.details .scroll { margin-left: -30px; margin-right: -30px; padding-left: 30px; padding-right: 30px; }
 	.goods .featured { padding-left: 140px; }
+	.featured { padding-left: 30px; padding-right: 30px; }
+	.featured .wrapper { padding-left: 0; padding-right: 0; }
 }
 @media (max-width: 840px) {
 	.catalog:not(.catalog-small) .item { width: 50%; }
@@ -3572,7 +3562,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.list-check li { margin-bottom: 20px; }
 	/* Текстовые стили */
 	big { font-size: 16px; }
-	.h4-divide { margin-left: -20px; margin-right: -20px; }
 	h1, .h1 { font-size: 30px; line-height: 34px; }
 	h3, .h3 { font-size: 18px; }
 	.h4-divide { margin-right: 0; margin-left: 0; }
@@ -3596,7 +3585,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.catalog:not(.catalog-small) .item:nth-child(3n+1) { clear: none; }
 	.catalog:not(.catalog-small) .item:nth-child(2n+1) { clear: left; }
 	.catalog:not(.catalog-small) .in { margin-left: 0; margin-right: 0; padding-left: 20px; padding-right: 20px; }
-	.catalog .more { width: 100%; padding-top: 0; float: none; text-align: center; }
 	/* Каталог (маленький) */
 	.catalog-small { height: auto; padding-bottom: 20px; }
 	.catalog-small:not(.catalog-small-carousel) .item { width: 100%; float: none; }

@@ -115,18 +115,8 @@ $(document).ready(function () {
 		});
 	});
 
-
 	/* Каталог */
 	$('.catalog').each(function () {
-		$('.item', this).on('mouseenter', function () {
-			$(this).height($(this).height());
-			$(this).addClass('visible');
-		}).on('mouseleave', function () {
-			var _self = $(this);
-			setTimeout(function () {
-				_self.removeAttr('style').removeClass('visible');
-			}, 250);
-		});
 		if ($(this).is('.catalog-small-carousel')) {
 			$(this).slick({
 				infinite: true,
@@ -145,6 +135,15 @@ $(document).ready(function () {
 				]
 			});
 		}
+		$('.item', this).on('mouseenter', function () {
+			$(this).height($(this).height());
+			$(this).addClass('visible');
+		}).on('mouseleave', function () {
+			var _self = $(this);
+			setTimeout(function () {
+				_self.removeAttr('style').removeClass('visible');
+			}, 250);
+		});
 	});
 
 
