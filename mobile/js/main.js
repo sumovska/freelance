@@ -95,6 +95,27 @@ $(document).ready(function () {
 	});
 
 
+	/* Карусель статей */
+	$('.articles').each(function () {
+		$('.carousel', this).slick({
+			infinite: true,
+			variableWidth: true,
+			mobileFirst: true,
+			arrows: false,
+			centerMode: true,
+			slidesToShow: 2,
+			swipeToSlide: true,
+			touchThreshold: 10,
+			responsive: [
+				{
+					breakpoint: 999,
+					settings: 'unslick'
+				}
+			]
+		});
+	});
+
+
 	/*  Всплывающие окна (Fancybox) */
 	$('.fancybox').fancybox({
 		padding: 0
@@ -146,31 +167,10 @@ $(document).ready(function () {
 
 	function runSlider() {
 		if ($(window).width() > 999) {
-			$('.catalog-small-carosel').unslick();
-			$('.articles .carousel').unslick();
-			$('.tabs-list-carousel').unslick();
-			$('.featured-list-carousel').unslick();
 		} else {
 			$('.catalog-small-carousel').slick({
 				slidesToScroll: 1,
 				slidesToShow: 2,
-				variableWidth: true,
-				centerMode: true,
-				arrows: false,
-				responsive: [
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 1,
-							centerMode: true
-						}
-					}
-				]
-			});
-			$('.offers .carousel').slick({
-				slidesToScroll: 1,
-				slidesToShow: 2,
-				infinite: true,
 				variableWidth: true,
 				centerMode: true,
 				arrows: false,
