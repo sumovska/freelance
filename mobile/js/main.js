@@ -116,6 +116,20 @@ $(document).ready(function () {
 	});
 
 
+	/* Каталог */
+	$('.catalog').each(function () {
+		$('.item', this).on('mouseenter', function () {
+			$(this).height($(this).height());
+		}).on('mouseleave', function () {
+			var _self = $(this);
+			setTimeout(function () {
+				_self.removeAttr('style');
+			}, 250);
+		});
+
+	});
+
+
 	/*  Всплывающие окна (Fancybox) */
 	$('.fancybox').fancybox({
 		padding: 0

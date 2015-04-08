@@ -151,8 +151,8 @@ button:not([disabled]):focus, input[type="button"]:not([disabled]):focus, input[
 button[disabled], input[type="button"][disabled], input[type="submit"][disabled] { cursor: default; opacity: .75; background: #8d8d8d !important; }
 button[disabled]:before, input[type="button"][disabled]:before, input[type="submit"][disabled]:before { text-shadow: none; background: #585858 !important; }
 /* === CHECKBOX === */
-.jq-checkbox { width: 12px; height: 12px; border: 1px solid #959595; border-radius: 1px; margin: 0 10px 0 0; position: relative; top: -1px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
-.jq-checkbox .jq-checkbox__div { border-radius: 1px; position: absolute; top: 0; right: 0; bottom: 0; left: 1px; opacity: 0; background: url('../img/sprite-old.png') no-repeat -15px -45px; background-size: 150px auto; transition: opacity .1s; }
+.jq-checkbox { width: 12px; height: 12px; border: 1px solid #959595; border-radius: 1px; margin: 0 4px 0 0; position: relative; top: -1px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
+.jq-checkbox .jq-checkbox__div { border-radius: 1px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0; background: url('../img/sprite-old.png') no-repeat -15px -45px; background-size: 150px auto; transition: opacity .1s; }
 .jq-checkbox.checked .jq-checkbox__div { opacity: 1; }
 .jq-checkbox.focused { border-color: #a09f9e; }
 .jq-checkbox.disabled { cursor: default; background: #f6f5f3; }
@@ -1152,19 +1152,19 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	position: relative;
 	z-index: 1;
 }
-.catalog:not(.catalog-small) .item:nth-last-child(-n+3) { margin-bottom: 0; }
+.catalog:not(.catalog-small) .item:nth-last-child(3n) { clear: left; }
 .catalog .in {
 	margin: -20px -20px 0;
-	padding: 20px 36px;
+	padding: 18px 34px;
 	cursor: default;
-	border: 1px solid #fff;
+	border: 2px solid #fff;
 	border-radius: 2px;
 	transition: background-color .1s, box-shadow .2s ease;
 }
 @media (min-width: 401px) {
 	.catalog:not(.catalog-small) .item:hover { overflow: visible; z-index: 99; }
 	.catalog:not(.catalog-small) .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
-	.catalog:not(.catalog-small) .item:hover .bottom { padding-top: 12px; padding-bottom: 11px; border-top: 1px solid #e1e1e1; border-bottom: 1px solid #e1e1e1; }
+	.catalog:not(.catalog-small) .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
 }
 .catalog .pic {
 	width: 100%;
@@ -1184,20 +1184,20 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	background: #f26c4f;
 	background: linear-gradient(to bottom, rgba(245, 137, 114, 1) 0%, rgba(245, 137, 114, 1) 50%, rgba(242, 108, 79, 1) 50%, rgba(242, 108, 79, 1) 100%);
 }
-.catalog .about {
+.catalog .info {
 	width: 100%;
-	padding: 34px 0 0;
+	padding: 33px 0 0;
 	position: relative;
 }
 .catalog .rating {
 	position: absolute;
-	top: 5px;
-	left: 0;
+	top: 6px;
+	left: 3px;
 }
 .catalog .to-reviews {
 	display: inline-block;
 	vertical-align: middle;
-	font: 12px/14px 'Calibri', Arial, sans-serif;
+	font: 12px/13px 'Calibri', Arial, sans-serif;
 	color: #8e8e8e;
 	transition: color .2s ease;
 }
@@ -1206,7 +1206,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	text-decoration: underline;
 }
 .catalog .name {
-	height: 36px;
 	margin-bottom: 11px;
 	font-weight: bold;
 	line-height: 18px;
@@ -1214,8 +1213,11 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	transition: color .2s ease;
 }
 .catalog .bottom {
-	margin: 0 -20px;
 	padding: 0 20px;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	margin: 0 -20px;
+	transition: padding .1s, border-color .1s;
 }
 .catalog .price {
 	margin-bottom: 0;
@@ -1225,14 +1227,14 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	position: relative;
 }
 .catalog .describe {
-	margin: 0 -24px 0 -12px;
-	padding: 12px;
+	margin: 12px -12px 0;
+	padding: 0 12px;
 	font-size: 12px;
 	line-height: 18px;
 }
 .catalog .describe label {
-	margin-bottom: 10px;
-	display: block;
+	margin-bottom: 0;
+	display: inline-block;
 	font-family: 'Calibri', Arial, sans-serif;
 	color: #8e8e8e;
 }
@@ -1329,6 +1331,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .rate {
 	width: 45px;
 	height: 10px;
+	margin-right: 1px;
 	display: inline-block;
 	vertical-align: middle;
 	background: url(../img/sprite-old.png) 0 -65px no-repeat;
@@ -2393,7 +2396,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .featured .link {
 	margin-bottom: 10px;
 	display: block;
-	color: #010101;
 	font-weight: bold;
 	line-height: 18px;
 }
