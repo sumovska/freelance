@@ -115,7 +115,7 @@ h1, .h1 { margin-bottom: 30px; font-size: 34px; line-height: 36px; font-weight: 
 h2, .h2 { margin-bottom: 20px; font-size: 24px; line-height: 26px; font-weight: bold; }
 h3, .h3 { margin-bottom: 20px; font-size: 20px; line-height: 22px; font-weight: bold; }
 h4, .h4 { margin-bottom: 20px; font-size: 16px; line-height: 18px; font-weight: bold; }
-h5, .h5 { margin-bottom: 10px; font: bold 14px/16px 'PT Sans', Arial, sans-serif; }
+h5, .h5 { margin-bottom: 10px; font-size: 12px; line-height: 16px; font-weight: bold; }
 h6, .h6 { margin-bottom: 10px; font: bold 12px/14px 'PT Sans', Arial, sans-serif; }
 .h4-divide { text-transform: uppercase; position: relative; text-align: center; z-index: 1; }
 .h4-divide .in { padding: 0 30px; display: inline-block; background: #fff; }
@@ -152,7 +152,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 button[disabled]:before, input[type="button"][disabled]:before, input[type="submit"][disabled]:before { text-shadow: none; background: #585858 !important; }
 /* === CHECKBOX === */
 .jq-checkbox { width: 12px; height: 12px; border: 1px solid #959595; border-radius: 1px; margin: 0 4px 0 0; position: relative; top: -1px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
-.jq-checkbox .jq-checkbox__div { border-radius: 1px; position: absolute; top: 0; right: 0; bottom: 0; left: 1px; opacity: 0; background: url('../img/sprite.png') no-repeat -120px -45px; background-size: 145px auto; transition: opacity .1s; }
+.jq-checkbox .jq-checkbox__div { border-radius: 1px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0; background: url('../img/sprite.png') no-repeat -120px -45px; background-size: 145px auto; transition: opacity .1s; }
 .jq-checkbox.checked .jq-checkbox__div { opacity: 1; }
 .jq-checkbox.focused { border-color: #a09f9e; }
 .jq-checkbox.disabled { cursor: default; background: #f6f5f3; }
@@ -1146,7 +1146,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .catalog:after, .catalog .product:after, .catalog .bottom:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .catalog .item {
 	width: 240px;
-	margin-bottom: 5px;
+	margin-bottom: 20px;
 	overflow: hidden;
 	float: left;
 	position: relative;
@@ -1154,18 +1154,18 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .catalog:not(.catalog-small) .item:nth-last-child(3n) { clear: left; }
 .catalog .in {
-	margin: -20px -20px 0;
-	padding: 18px 34px;
+	margin: -26px -20px 0;
+	padding: 24px 36px;
 	cursor: default;
 	border: 2px solid #fff;
 	border-radius: 2px;
-	transition: background-color .05s, box-shadow .2s ease;
+	transition: background-color .1s, border-color .1s, box-shadow .2s ease;
 }
 @media (min-width: 401px) {
 	.catalog .item:hover { overflow: visible; z-index: 99; }
 	.catalog .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
 	.catalog .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
-	.catalog .item.visible:hover .describe .text { display: block; }
+	.catalog .item.visible:hover .describe { display: block; }
 }
 .catalog .pic {
 	width: 100%;
@@ -1187,13 +1187,13 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .catalog .info {
 	width: 100%;
-	padding: 33px 0 0;
+	padding: 31px 0 0;
 	position: relative;
 }
 .catalog .rating {
 	position: absolute;
-	top: 6px;
-	left: 3px;
+	top: 4px;
+	left: 0;
 }
 .catalog .to-reviews {
 	display: inline-block;
@@ -1221,26 +1221,37 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	transition: padding .1s, border-color .1s;
 }
 .catalog .price {
+	width: 100px;
 	margin-bottom: 0;
-	padding-right: 16px;
 	display: inline-block;
-	vertical-align: middle;
+	float: left;
 	position: relative;
+}
+.catalog .price span {
+	margin-top: 5px;
+	display: block;
 }
 .catalog .price .old {
-	margin: -4px 0;
-	position: relative;
-	top: 2px;
+	margin: -2px 0 0 0;
 }
 .catalog .price .old + span {
+	margin: -2px 0 0 0;
+}
+.catalog .price .old span {
+	margin: 0;
+	display: inline-block;
+}
+.catalog .to-cart {
+	float: right;
 	position: relative;
-	top: 4px;
+	right: -10px;
 }
 .catalog .describe {
 	margin: 12px -12px 0;
 	padding: 0 12px;
 	font-size: 12px;
 	line-height: 18px;
+	display: none;
 }
 .catalog .describe label {
 	margin-bottom: 0;
@@ -1253,7 +1264,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .catalog .describe .text {
 	margin: 10px 0 0 0;
-	display: none;
 }
 .catalog .more {
 	width: 200px;
@@ -1391,7 +1401,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    _Кнопка "В корзину"
    ========================================================================== */
 .to-cart {
-	width: 102px;
+	width: 100px;
 	height: 34px;
 	padding: 7px 4px 4px 32px;
 	display: inline-block;
@@ -1401,10 +1411,12 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	text-decoration: none;
 	background: #cbf17a;
 	font: bold 16px 'PT Sans Narrow', Arial, sans-serif;
-	border-radius: 2px;
+	border-radius: 3px;
+	transition: none;
 }
-.to-cart:hover {
+.to-cart:hover, .to-cart:focus {
 	color: #fff;
+	text-decoration: none;
 	background: #f58972 linear-gradient(to bottom, rgba(245, 137, 114, 1) 0%, rgba(245, 137, 114, 1) 50%, rgba(242, 108, 79, 1) 50%, rgba(242, 108, 79, 1) 100%);
 }
 .to-cart:before {
@@ -1752,16 +1764,18 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .top {
 	margin-bottom: 20px;
 	padding-top: 16px;
-	padding-bottom: 15px;
+	padding-bottom: 13px;
 	box-shadow: 0 0 3px 2px rgba(0, 0, 0, .11);
 	cursor: default;
+	position: relative;
+	z-index: 10;
 }
 .top-article {
 	width: 940px;
 	margin-right: -240px;
 }
 .breadcrumbs {
-	margin-bottom: 18px;
+	margin-bottom: 20px;
 	font: 12px/16px 'Calibri', Arial, sans-serif;
 }
 .breadcrumbs a {
@@ -1787,8 +1801,10 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .breadcrumbs a:hover, .breadcrumbs a:focus { color: #f26c4f; }
 .breadcrumbs a:before { border-color: transparent transparent transparent #898989; }
 .breadcrumbs a:hover:before, .breadcrumbs a:focus:before { border-color: transparent transparent transparent #f26c4f; }
+.breadcrumbs a { padding-left: 4px; }
 .top .h1 {
 	margin-bottom: 0;
+	font-size: 33px;
 }
 .top .h1-inline {
 	margin-right: 10px;
@@ -1808,7 +1824,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    _Сортировка
    ========================================================================== */
 .sort {
-	margin-bottom: 20px;
+	margin: -20px 0 26px;
 	font: 12px/16px 'Calibri', Arial, sans-serif;
 	background: #f6f6f6;
 }
@@ -1938,8 +1954,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    _Страницы
    ========================================================================== */
 .pages {
-	margin-bottom: 24px;
+	margin-bottom: 30px;
 	font: 12px 'Calibri', Arial, sans-serif;
+	cursor: default;
 }
 .pages:after {
 	display: block;
@@ -1965,6 +1982,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	clear: both;
 	position: absolute;
 	background: #000;
+	transition: background-color .2s ease;
 }
 .pages .page:hover:before, .pages .page:hover:after {
 	background: #f26c4f;
@@ -1988,12 +2006,12 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	padding-left: 24px;
 }
 .pages .page-prev:before, .pages .page-prev:after {
-	left: 17px;
+	left: 12px;
 }
-.pages .page-prev:before {
-	top: 7px;
+.pages .page-prev:before, .pages .page-next:after {
+	top: 6px;
 }
-.pages .page-prev:after {
+.pages .page-prev:after, .pages .page-next:before {
 	top: 1px;
 }
 .pages .page-next {
@@ -2002,12 +2020,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .pages .page-next:before, .pages .page-next:after {
 	right: 11px;
-}
-.pages .page-next:before {
-	top: 1px;
-}
-.pages .page-next:after {
-	top: 7px;
 }
 .pages .list {
 	margin: 0 120px;
@@ -2053,13 +2065,35 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    ========================================================================== */
 .filter {
 	margin-bottom: 20px;
-	padding: 7px 13px;
+	padding: 10px 13px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, .10);
 	border: 1px solid #e6e6e6;
 	font: 12px 'Calibri', Arial, sans-serif;
 }
+.filter button.reset {
+	width: auto;
+	height: auto;
+	padding: 3px 16px 3px 0;
+	border: none;
+	margin-bottom: 10px;
+	box-shadow: none;
+	outline: none;
+	font: 12px 'Calibri', Arial, sans-serif;
+	color: #000;
+	text-align: left;
+	text-decoration: underline;
+	display: inline-block;
+	background: none;
+	transition: color .3s ease;
+}
+.filter button.reset:hover, .filter button.reset:focus { color: #f26c4f; text-decoration: underline; }
+.filter button.reset { padding-right: 16px; position: relative; }
+.filter button.reset:before, .filter button.reset:after { width: 2px; height: 8px; display: block; content: "\0020"; overflow: hidden; position: absolute; right: 6px; top: 7px; cursor: default; background: #000; transition: background-color .3s ease; }
+.filter button.reset:before { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+.filter button.reset:after { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+.filter button.reset:hover:before, .filter button.reset:focus:before, .filter button.reset:hover:after, .filter button.reset:focus:after { background: #f26c4f; }
 .filter .toggle {
-	margin: -7px -13px 0;
+	margin: -7px -14px 0;
 	padding: 19px 32px;
 	display: none;
 	text-transform: uppercase;
@@ -2102,13 +2136,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .filter .toggle-active .close {
 	display: block;
 }
-.filter .toggle .close:before, .filter .toggle .close:after, .filter .h5 .switch:before, .filter .h5 .switch:after {
-	display: block;
-	content: "\0020";
-	overflow: hidden;
-	position: absolute;
-	background: #000;
-}
+.filter .toggle .close:before, .filter .toggle .close:after, .filter .h5 .switch:before, .filter .h5 .switch:after { display: block; content: "\0020"; overflow: hidden; position: absolute; background: #000; }
 .filter .toggle .close:before, .filter .toggle .close:after {
 	width: 2px;
 	height: 8px;
@@ -2148,29 +2176,37 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	width: 1px;
 	height: 10px;
 	top: 4px;
-	right: 13px;
+	right: 14px;
 }
 .filter .h5 .switch:after { right: 6px; }
 .filter .h5-active .switch:after { right: 13px; }
 .filter .h5-active .switch:before { right: 6px; }
 .filter .entry {
-	margin: 0 -13px;
-	padding: 11px 13px 7px;
+	margin: 0 -14px;
+	padding: 12px 14px 6px;
 	border-top: 3px solid #f6f6f6;
 }
 .filter .list {
-	margin: 0 -7px;
 	padding: 0;
+	margin: 0;
 	list-style: none;
+	color: #999;
+	cursor: default;
+}
+.filter .list li {
+	padding: 4px 7px;
+	margin: 0 -7px 1px;
 }
 .filter .list li a {
-	padding: 4px 6px;
+	padding: 4px 5px;
+	margin: -4px -7px;
 	display: inline-block;
 	color: #000;
 	text-decoration: none;
 	position: relative;
 	border: 2px solid transparent;
 	border-radius: 1px;
+	transition: none;
 }
 .filter .list li a:hover {
 	border-color: #cbf17a;
@@ -2239,11 +2275,14 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .filter .price-slider input[type="text"]:focus {
 	border-color: #f26c4f;
 	box-shadow: 0 0 1px #f26c4f;
+	cursor: default;
 }
 .filter .price-slider input[type="submit"] {
 	width: 32px;
-	height: 32px;
+	height: auto;
 	padding: 8px 0 6px;
+	border-radius: 2px;
+	box-shadow: none;
 	vertical-align: top;
 	color: #fff;
 	background-color: #000;
@@ -2251,7 +2290,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	font-size: 12px;
 	line-height: 16px;
 }
-.filter .price-slider input[type="submit"]:hover, .filter .price-slider input[type="submit"]:focus { box-shadow: inset 0 32px 0 0 #f58972; }
+.filter .price-slider input[type="submit"]:hover {
+	background-color: #f26c4f;
+}
 /* ==========================================================================
    _Колонки
    ========================================================================== */
@@ -3184,17 +3225,20 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    _Статья
    ========================================================================== */
 .article {
-	margin-bottom: 16px;
 	padding: 33px 30px 24px;
+	margin-bottom: 30px;
 	box-shadow: 0 0 5px 1px rgba(0, 0, 0, .26);
+	clear: both;
 }
-.article .title {
-	margin-bottom: 18px;
-	font: bold 20px "PT Sans", Arial, sans-serif;
-}
-.article .pic {
+.article .pic-left {
 	margin: -3px 23px 12px 0;
 	float: left;
+	display: block;
+}
+.article .pic-right {
+	margin: -3px 0 12px 23px;
+	float: right;
+	display: block;
 }
 .article p:last-of-type {
 	margin-bottom: 0;
@@ -3318,6 +3362,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	/* Основные стили */
 	.wrapper { width: 100%; padding-left: 30px; padding-right: 30px; }
 	.content { width: 460px; }
+	.wrapper-fixed { width: auto; padding: 0; margin: 30px; display: table; }
+	.wrapper-fixed .aside { margin-right: 0; display: table-cell; float: none; vertical-align: top; }
+	.wrapper-fixed .content { width: auto; padding-left: 20px; padding-right: 10px; display: table-cell; float: none; vertical-align: top; }
 	figure { margin: 0 0 20px 0; }
 	figcaption { width: 60%; }
 	/* Навигация */
@@ -3355,7 +3402,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.articles .carousel { margin: 0 -30px; }
 	.articles .carousel .item { width: 320px; opacity: .6; transition: opacity .5s ease; }
 	.articles .carousel .item.slick-center { opacity: 1; }
-	.article { display: none; }
 	/* Последние новости */
 	.news .item { margin-bottom: 16px; }
 	.news .date { margin-bottom: 0; }
@@ -3366,8 +3412,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	/* Формы */
 	.form-callback .form-submit { margin-top: 20px; }
 	/* Каталог */
-	.catalog:not(.catalog-small) .item:nth-child(3n+1) { clear: none; }
-	.catalog:not(.catalog-small) .item:nth-child(2n+1) { clear: left; }
+	.catalog .item:nth-child(3n+1) { clear: none; }
+	.catalog:not(.catalog-small) .item { width: 33.3%; }
+	.catalog .pic img { width: 100%; height: auto; }
 	/* Каталог (маленький) */
 	.catalog-small:not(.catalog-small-carousel) .item { width: 33.33%; height: auto; }
 	.catalog-small .describe { display: none !important; }
@@ -3381,9 +3428,13 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.catalog-small-carousel .product { margin: 0; }
 	.catalog-small-carousel .pic { width: 52%; }
 	.catalog-small-carousel .about { width: 48%; }
+	/* Верхний блок */
+	.top { padding-top: 12px; padding-bottom: 16px; }
+	.breadcrumbs { margin-bottom: 13px; }
 	/* Сортировка */
 	.sort { margin-bottom: 30px; }
-	.sort .wrapper { padding-top: 14px; padding-bottom: 10px; }
+	.sort .link { padding-top: 8px; padding-bottom: 7px; }
+	.sort .wrapper { padding-top: 14px; padding-bottom: 12px; }
 	.sort .amount, .sort .type, .sort .view { padding: 0 16px; }
 	.sort .amount { display: none; }
 	.sort .view { padding-right: 8px; }
@@ -3403,9 +3454,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.block-item .describe .like { padding-top: 10px; padding-bottom: 10px; position: absolute; top: 0; }
 	.block-item .add-to { margin-bottom: 10px; }
 	.block-item .add-to li { margin-bottom: 4px; }
-	/* Верхний блок */
-	.breadcrumbs { margin-bottom: 7px; }
-	.top .code { display: block; }
 	/* Акции */
 	.action { padding: 14px 24px 20px; }
 	.action-2-col { width: 66%; margin-bottom: 0; padding-top: 10px; padding-left: 15px; padding-bottom: 14px; display: none; float: left; }
@@ -3429,6 +3477,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.tabs-list { margin-left: -14px; margin-right: -8px; }
 	.tabs-list .link { margin: 0 25px; }
 	.tabs-list .link a { padding-left: 17px; padding-right: 17px; }
+	/* Статьи */
 	/* Фильтр */
 	.filter { padding: 9px 15px; }
 	.filter .price-slider input[type="text"] { margin: 0; }
@@ -3441,6 +3490,11 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.details .unit { margin-left: -30px; margin-right: -30px; }
 	.details .scroll { margin-left: -30px; margin-right: -30px; padding-left: 30px; padding-right: 30px; }
 	.goods .featured { padding-left: 140px; }
+}
+@media (max-width: 840px) {
+	.catalog:not(.catalog-small) .item { width: 50%; }
+	.catalog:not(.catalog-small) .item:nth-last-child(2n) { clear: left; }
+	.catalog:not(.catalog-small) .item:nth-last-child(3n) { clear: none; }
 }
 @media (max-width: 767px) {
 	/* Основные стили */
@@ -3474,11 +3528,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	/* Каталог, обзоры */
 	.catalog-small-carousel, .offers-carousel { margin-left: -20px; margin-right: -20px; }
 	.catalog-small:not(.catalog-small-carousel) .item { width: 50%; }
-	/* Контакты */
 	/* Фильтр */
 	.filter .toggle { margin: -9px -15px; display: block; }
 	.filter .toggle-active { margin-bottom: -4px; }
-	.filter .reset { display: none; }
 	.filter form { display: none; }
 	.filter .h5 .switch { display: block; }
 	.filter .entry-in { display: none; }
