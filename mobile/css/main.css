@@ -580,8 +580,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	width: 100%;
 	height: 40px;
 	padding: 10px 40px 10px 15px;
-	background: transparent url(../img/temp/search-white.png) 95% 50% no-repeat;
-	background-size: 20px 20px;
+	background: transparent;
 	border: 1px solid #898989;
 	box-shadow: none;
 	border-radius: 0;
@@ -593,7 +592,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .header .search input[type="text"]:focus {
 	border-color: #cbf17a;
 	background-color: #cbf17a;
-	background-image: url('../img/temp/search-black.png');
 }
 .header .search input[type="text"]::-webkit-input-placeholder { color: #fff; opacity: 1; }
 .header .search input[type="text"]:-moz-placeholder { color: #fff; opacity: 1; }
@@ -603,22 +601,37 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .header .search input[type="text"]:focus:-moz-placeholder { color: #000; opacity: 1; }
 .header .search input[type="text"]:focus::-moz-placeholder { color: #000; opacity: 1; }
 .header .search input[type="text"]:focus:-ms-input-placeholder { color: #000; opacity: 1; }
-.header .search input[type="submit"] {
+.header .search button {
 	width: 40px;
 	padding: 0;
 	display: block;
 	cursor: pointer;
+	background: transparent;
 	border: none;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background: transparent;
 }
-.header .search input[type="submit"]:hover,
-.header .search input[type="submit"]:focus {
-	box-shadow: none;
+.header .search button:hover { background: transparent; box-shadow: none; }
+.header .search button:before, .header .search button:after {
+	width: 20px;
+	height: 20px;
+	margin: -10px 0 0 -10px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: transparent url(../img/sprite.png) -125px 0 no-repeat;
+	background-size: 145px auto;
+	transition: opacity .2s ease;
 }
+.header .search button:after { background-position: -100px 0; opacity: 0; }
+.header .search input[type="text"]:focus~button:before { opacity: 0; }
+.header .search input[type="text"]:focus~button:after { opacity: 1; }
 .header .nav-catalog {
 	padding-left: 23px;
 	position: absolute;
