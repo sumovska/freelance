@@ -152,7 +152,7 @@ button[disabled], input[type="button"][disabled], input[type="submit"][disabled]
 button[disabled]:before, input[type="button"][disabled]:before, input[type="submit"][disabled]:before { text-shadow: none; background: #585858 !important; }
 /* === CHECKBOX === */
 .jq-checkbox { width: 12px; height: 12px; border: 1px solid #959595; border-radius: 1px; margin: 0 4px 0 0; position: relative; top: -1px; display: inline-block; vertical-align: middle; cursor: pointer; background: #fff; transition: border-color .2s; }
-.jq-checkbox .jq-checkbox__div { border-radius: 1px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0; background: url('../img/sprite-old.png') no-repeat -15px -45px; background-size: 150px auto; transition: opacity .1s; }
+.jq-checkbox .jq-checkbox__div { border-radius: 1px; position: absolute; top: 0; right: 0; bottom: 0; left: 1px; opacity: 0; background: url('../img/sprite.png') no-repeat -120px -45px; background-size: 145px auto; transition: opacity .1s; }
 .jq-checkbox.checked .jq-checkbox__div { opacity: 1; }
 .jq-checkbox.focused { border-color: #a09f9e; }
 .jq-checkbox.disabled { cursor: default; background: #f6f5f3; }
@@ -1239,7 +1239,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	color: #8e8e8e;
 }
 .catalog .describe .jq-checkbox.checked .jq-checkbox__div {
-	background-position: 0 -45px;
+	background-position: -135px -45px;
 }
 .catalog .describe .text {
 	margin-bottom: 0;
@@ -1334,24 +1334,24 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	margin-right: 1px;
 	display: inline-block;
 	vertical-align: middle;
-	background: url(../img/sprite-old.png) 0 -65px no-repeat;
-	background-size: 150px auto;
+	background: url(../img/sprite.png) 0 -90px no-repeat;
+	background-size: 145px auto;
 }
-.rate-5 { background-position: 0 -65px; }
-.rate-4 { background-position: -9px -65px; }
-.rate-3 { background-position: -18px -65px; }
-.rate-2 { background-position: -27px -65px; }
-.rate-1 { background-position: -36px -65px; }
+.rate-5 { background-position: 0 -90px; }
+.rate-4 { background-position: -9px -90px; }
+.rate-3 { background-position: -18px -90px; }
+.rate-2 { background-position: -27px -90px; }
+.rate-1 { background-position: -36px -90px; }
 .rate-big {
 	width: 72px;
 	height: 15px;
-	background-position: 0 -150px;
+	background-position: 0 -105px;
 }
-.rate-big-5 { background-position: 0 -150px; }
-.rate-big-4 { background-position: -15px -150px; }
-.rate-big-3 { background-position: -30px -150px; }
-.rate-big-2 { background-position: -45px -150px; }
-.rate-big-1 { background-position: -60px -150px; }
+.rate-big-5 { background-position: 0 -105px; }
+.rate-big-4 { background-position: -15px -105px; }
+.rate-big-3 { background-position: -30px -105px; }
+.rate-big-2 { background-position: -45px -105px; }
+.rate-big-1 { background-position: -60px -105px; }
 /* ==========================================================================
    _Прайс товара
    ========================================================================== */
@@ -1410,11 +1410,11 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	position: absolute;
 	left: 8px;
 	top: 7px;
-	background: url(../img/sprite-old.png) -30px 0 no-repeat;
-	background-size: 150px auto;
+	background: url(../img/sprite.png) -25px 0 no-repeat;
+	background-size: 145px auto;
 }
 .to-cart:hover:before {
-	background-position: -60px 0;
+	background-position: 0 0;
 }
 /* ==========================================================================
    _Флажок
@@ -1914,16 +1914,16 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	text-decoration: underline;
 }
 .load .link:before {
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	display: block;
 	content: "\0020";
 	overflow: hidden;
 	position: absolute;
-	left: 7px;
-	top: 5px;
-	background: url(../img/sprite-old.png) 0 -25px no-repeat;
-	background-size: 150px auto;
+	left: 4px;
+	top: 4px;
+	background: url(../img/sprite.png) -125px -25px no-repeat;
+	background-size: 145px auto;
 }
 /* ==========================================================================
    _Страницы
@@ -2315,15 +2315,15 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .list-check li:before {
 	width: 10px;
-	height: 20px;
+	height: 10px;
 	display: block;
 	content: "\0020";
 	overflow: hidden;
 	position: absolute;
 	left: 2px;
 	top: 2px;
-	background: url("../img/sprite-old.png") -15px -45px no-repeat;
-	background-size: 150px auto;
+	background: url("../img/sprite.png") -120px -45px no-repeat;
+	background-size: 145px auto;
 }
 .list-check li a {
 	color: #000;
@@ -2628,9 +2628,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	height: 25px;
 	left: 24px;
 	top: 10px;
-	background-position: -85px 0;
+	background-position: -30px -25px;
 }
-.block-item .to-cart:hover:before { background-position: -115px 0; }
+.block-item .to-cart:hover:before { background-position: 0 -25px; }
 .block-item .left .button-main {
 	margin-bottom: 13px;
 	padding-top: 10px;
@@ -2660,8 +2660,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	position: absolute;
 	left: -13px;
 	top: 4px;
-	background: url("../img/sprite-old.png") -30px -45px no-repeat;
-	background-size: 150px auto;
+	background: url("../img/sprite.png") -135px -60px no-repeat;
+	background-size: 145px auto;
 }
 .block-item .rating {
 	text-align: center;
