@@ -462,7 +462,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	height: 166px;
 	border-bottom: 3px solid #c2c8b6;
 	position: relative;
-	z-index: 5;
+	z-index: 40;
 	cursor: default;
 	background: #000;
 }
@@ -1329,7 +1329,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	margin-left: 2px;
 	float: none;
 }
-.catalog .item:hover .describe { display: block;}
+.catalog .item:hover .describe { display: block; }
 /* ==========================================================================
    _Оценка товара
    ========================================================================== */
@@ -2792,6 +2792,10 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .block-item .delivery a:hover {
 	border-color: transparent;
 }
+.block-item .action-2-col {
+	width: 40%;
+	float: right;
+}
 .block-item .describe {
 	width: 40%;
 	float: right;
@@ -2808,9 +2812,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .block-item .links a {
 	padding: 0 10px;
 	color: #000;
-}
-.block-item .right .button-smaller {
-	margin-top: 20px;
 }
 /* ==========================================================================
    _Блок описания
@@ -2909,9 +2910,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	line-height: 18px;
 	cursor: default;
 }
-.action-hidden {
-	display: none;
-}
 .action:after {
 	display: block;
 	content: "\0020";
@@ -2953,22 +2951,13 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	height: 10px;
 	display: block;
 	position: absolute;
-}
-.action .arrow:before, .action .arrow:after { width: 0; height: 0; display: block; content: "\0020"; overflow: hidden; clear: both; border-style: solid; position: absolute; top: 0; left: 0; }
-.action .arrow-left {
 	margin-top: -5px;
 	top: 50%;
 	left: -10px;
 }
-.action .arrow-left:before { border-width: 5px 10px 5px 0; border-color: transparent #f26c4f transparent transparent; }
-.action .arrow-left:after { left: 2px; border-width: 5px 10px 5px 0; border-color: transparent #fff transparent transparent; }
-.action .arrow-top {
-	margin-left: -5px;
-	top: -10px;
-	left: 50%;
-}
-.action .arrow-top:before { border-width: 0 5px 10px 5px; border-color: transparent transparent #f26c4f transparent; }
-.action .arrow-top:after { left: 0; top: 2px; border-width: 0 5px 10px 5px; border-color: transparent transparent #fff transparent; }
+.action .arrow:before, .action .arrow:after { width: 0; height: 0; display: block; content: "\0020"; overflow: hidden; clear: both; border-style: solid; position: absolute; top: 0; left: 0; }
+.action .arrow:before { border-width: 5px 10px 5px 0; border-color: transparent #f26c4f transparent transparent; }
+.action .arrow:after { left: 2px; border-width: 5px 10px 5px 0; border-color: transparent #fff transparent transparent; }
 .action .icon {
 	width: 30px;
 	height: 30px;
@@ -3010,6 +2999,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .action .h5 {
 	margin-bottom: 6px;
 	color: #f26c4f;
+	font-size: 14px;
+	text-transform: uppercase;
 	text-align: center;
 }
 .action .pic, .action .text {
@@ -3171,6 +3162,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .tabs-list .link-active a:before, .tabs-list .link-active a:after { display: block }
 .tab-hidden {
 	display: none;
+}
+.tab-video {
+	margin-bottom: 20px;
 }
 .tab-characteristic .table {
 	width: 680px;
@@ -3456,12 +3450,14 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.block-item .describe .like { padding-top: 10px; padding-bottom: 10px; position: absolute; top: 0; }
 	.block-item .add-to { margin-bottom: 10px; }
 	.block-item .add-to li { margin-bottom: 4px; }
+	.block-item .action-2-col { width: 66%; margin-bottom: 0; padding-top: 10px; padding-left: 15px; padding-bottom: 14px; float: left; }
+	.block-item .action-2-col .col { padding: 0 4px; }
+	.block-item .action-2-col .col:nth-child(1) { width: 46%; }
+	.block-item .action .arrow { top: -10px; margin-top: 0; left: 50%; margin-left: -5px; }
+	.block-item .action .arrow-top:before { border-width: 0 5px 10px 5px; border-color: transparent transparent #f26c4f transparent; }
+	.block-item .action .arrow-top:after { left: 0; top: 2px; border-width: 0 5px 10px 5px; border-color: transparent transparent #fff transparent; }
 	/* Акции */
 	.action { padding: 14px 24px 20px; }
-	.action-2-col { width: 66%; margin-bottom: 0; padding-top: 10px; padding-left: 15px; padding-bottom: 14px; display: none; float: left; }
-	.action-hidden { display: block; }
-	.action-2-col .col { padding: 0 4px; }
-	.action-2-col .col:nth-child(1) { width: 46%; }
 	.action-3-col .col { width: 40%; padding-right: 20px; }
 	.action-3-col .col:nth-child(2) { padding-left: 10px; }
 	.action-3-col .col:nth-child(3) { width: 19%; padding: 40px 8px 0; vertical-align: top; }
