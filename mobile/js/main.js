@@ -120,13 +120,32 @@ $(document).ready(function () {
 	$('.catalog').each(function () {
 		$('.item', this).on('mouseenter', function () {
 			$(this).height($(this).height());
+			$(this).addClass('visible');
 		}).on('mouseleave', function () {
 			var _self = $(this);
 			setTimeout(function () {
-				_self.removeAttr('style');
+				_self.removeAttr('style').removeClass('visible');
 			}, 250);
 		});
 
+	});
+
+
+	$('.catalog-small-carousel').slick({
+		infinite: true,
+		variableWidth: true,
+		mobileFirst: true,
+		arrows: false,
+		centerMode: true,
+		slidesToShow: 2,
+		swipeToSlide: true,
+		touchThreshold: 10,
+		responsive: [
+			{
+				breakpoint: 999,
+				settings: 'unslick'
+			}
+		]
 	});
 
 
@@ -182,22 +201,7 @@ $(document).ready(function () {
 	function runSlider() {
 		if ($(window).width() > 999) {
 		} else {
-			$('.catalog-small-carousel').slick({
-				slidesToScroll: 1,
-				slidesToShow: 2,
-				variableWidth: true,
-				centerMode: true,
-				arrows: false,
-				responsive: [
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 1,
-							centerMode: true
-						}
-					}
-				]
-			});
+
 			$('.tabs-list-carousel').slick({
 				slidesToScroll: 1,
 				slidesToShow: 4,

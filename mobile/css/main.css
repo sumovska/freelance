@@ -630,8 +630,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	transition: opacity .2s ease;
 }
 .header .search button:after { background-position: -100px 0; opacity: 0; }
-.header .search input[type="text"]:focus~button:before { opacity: 0; }
-.header .search input[type="text"]:focus~button:after { opacity: 1; }
+.header .search input[type="text"]:focus ~ button:before { opacity: 0; }
+.header .search input[type="text"]:focus ~ button:after { opacity: 1; }
 .header .nav-catalog {
 	padding-left: 23px;
 	position: absolute;
@@ -1146,7 +1146,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .catalog:after, .catalog .product:after, .catalog .bottom:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .catalog .item {
 	width: 240px;
-	margin-bottom: 50px;
+	margin-bottom: 5px;
 	overflow: hidden;
 	float: left;
 	position: relative;
@@ -1159,12 +1159,13 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	cursor: default;
 	border: 2px solid #fff;
 	border-radius: 2px;
-	transition: background-color .1s, box-shadow .2s ease;
+	transition: background-color .05s, box-shadow .2s ease;
 }
 @media (min-width: 401px) {
-	.catalog:not(.catalog-small) .item:hover { overflow: visible; z-index: 99; }
-	.catalog:not(.catalog-small) .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
-	.catalog:not(.catalog-small) .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
+	.catalog .item:hover { overflow: visible; z-index: 99; }
+	.catalog .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
+	.catalog .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
+	.catalog .item.visible:hover .describe .text { display: block; }
 }
 .catalog .pic {
 	width: 100%;
@@ -1226,6 +1227,15 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	vertical-align: middle;
 	position: relative;
 }
+.catalog .price .old {
+	margin: -4px 0;
+	position: relative;
+	top: 2px;
+}
+.catalog .price .old + span {
+	position: relative;
+	top: 4px;
+}
 .catalog .describe {
 	margin: 12px -12px 0;
 	padding: 0 12px;
@@ -1242,7 +1252,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	background-position: -135px -45px;
 }
 .catalog .describe .text {
-	margin-bottom: 0;
+	margin: 10px 0 0 0;
 	display: none;
 }
 .catalog .more {
@@ -1257,13 +1267,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .catalog-small .item {
 	width: 320px;
-	height: 264px;
-	margin-bottom: 27px;
-}
-@media (min-width: 999px) {
-	.catalog-small .item:hover { overflow: visible; z-index: 200; }
-	.catalog-small .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); }
-	.catalog-small .item:hover .bottom { padding-top: 12px; padding-bottom: 11px; border-top: 1px solid #e1e1e1; border-bottom: 1px solid #e1e1e1; }
 }
 .catalog-small:not(.catalog-small) .item:nth-child(3n+1) {
 	clear: left;
@@ -1284,7 +1287,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	height: 250px;
 	display: block;
 }
-.catalog-small .about {
+.catalog-small .info {
 	width: 50%;
 	padding: 41px 10px 10px;
 	float: left;
@@ -1314,13 +1317,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 }
 .catalog-small .to-cart {
 	margin-left: 2px;
-}
-.catalog-small .describe {
-	margin: 0 -2px;
-	padding: 11px 8px 8px;
-	font-size: 14px;
-	line-height: 20px;
-	border-top: 1px solid #e1e1e1;
 }
 /* ==========================================================================
    _Оценка товара
@@ -1538,6 +1534,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    ========================================================================== */
 .info-side {
 	padding: 24px 16px 12px;
+	color: #000;
+	cursor: default;
 	background: #f3fae4;
 }
 .info-side .title, .info-side .h {
@@ -1757,8 +1755,10 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	font: 12px/16px 'Calibri', Arial, sans-serif;
 }
 .breadcrumbs a {
-	padding: 0 10px;
+	padding: 0 10px 0 0;
+	margin-right: 1px;
 	position: relative;
+	color: #8e8e8e;
 }
 .breadcrumbs a:before {
 	width: 0;
@@ -1774,10 +1774,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	border-color: transparent transparent transparent #000;
 	transition: border-color .2s ease;
 }
-.breadcrumbs a.home { padding-left: 4px; color: #8e8e8e; }
-.breadcrumbs a.home:hover, .breadcrumbs a.home:focus { color: #f26c4f; }
-.breadcrumbs a.home:before { border-color: transparent transparent transparent #898989; }
-.breadcrumbs a.home:hover:before, .breadcrumbs a.home:focus:before { border-color: transparent transparent transparent #f26c4f; }
+.breadcrumbs a:hover, .breadcrumbs a:focus { color: #f26c4f; }
+.breadcrumbs a:before { border-color: transparent transparent transparent #898989; }
+.breadcrumbs a:hover:before, .breadcrumbs a:focus:before { border-color: transparent transparent transparent #f26c4f; }
 .top .h1 {
 	margin-bottom: 0;
 }
@@ -2305,8 +2304,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .list-check {
 	padding: 0;
 	list-style: none;
-	color: #000;
 	font: 12px/14px 'Calibri', Arial, sans-serif;
+	cursor: default;
 }
 .list-check li {
 	margin-bottom: 12px;
@@ -2325,9 +2324,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	background: url("../img/sprite.png") -120px -45px no-repeat;
 	background-size: 145px auto;
 }
-.list-check li a {
-	color: #000;
-}
+.list-check li a { color: #000; }
+.list-check li a:hover { text-decoration: none; }
 /* ==========================================================================
    _Таблица (default)
    ========================================================================== */
@@ -2376,6 +2374,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 /* ==========================================================================
    _Просмотренные или дополнительные товары
    ========================================================================== */
+.featured {
+	cursor: default;
+}
 .featured .wrapper {
 	padding-top: 11px;
 }
@@ -2589,6 +2590,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	width: 55%;
 	padding: 20px 18px 14px;
 	float: left;
+	cursor: default;
 	background: #f3fae4;
 }
 .block-item .right {
@@ -2685,16 +2687,13 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 .block-item .list-simple li {
 	margin-bottom: 6px;
 }
-.block-item .list-simple li a {
-	color: #000;
-}
 .block-item .list-simple-add li a {
 	text-decoration: none;
 	border-bottom: 1px dashed #000;
-	transition: border-color .2s;
+	transition: color .2s ease, border-color .2s ease;
 }
 .block-item .list-simple-add li a:hover {
-	border-color: transparent;
+	border-color: #f26c4f;
 }
 .block-item .text {
 	margin-bottom: 12px;
@@ -2744,8 +2743,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	font: 12px/18px 'Calibri', Arial, sans-serif;
 }
 .block-item .describe .text {
-	margin-bottom: 16px;
-	padding-bottom: 11px;
+	margin-bottom: 18px;
+	padding-bottom: 18px;
 	border-bottom: 1px solid #999;
 }
 .block-item .links {
@@ -2848,11 +2847,12 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    _Акции
    ========================================================================== */
 .action {
-	margin-bottom: 22px;
 	padding: 13px 30px 20px;
+	border: 1px solid #f26c4f;
+	margin-bottom: 22px;
 	font-size: 12px;
 	line-height: 18px;
-	border: 1px solid #f26c4f;
+	cursor: default;
 }
 .action-hidden {
 	display: none;
@@ -3312,11 +3312,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.catalog-small-carousel .product { margin: 0; }
 	.catalog-small-carousel .pic { width: 52%; }
 	.catalog-small-carousel .about { width: 48%; }
-	/* Обзоры */
-	.offers-carousel .item { width: auto; max-width: 300px !important; height: auto; }
-	/* Контакты */
-}
-@media (max-width: 768px) {
 	/* Сортировка */
 	.sort { margin-bottom: 30px; }
 	.sort .wrapper { padding-top: 14px; padding-bottom: 10px; }
