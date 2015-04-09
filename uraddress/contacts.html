@@ -55,7 +55,7 @@
 			<div class="call">
 				<a class="tel" href="tel:+7495-953-71-29">+7 (495) <span class="color">953-71-29</span></a>
 				<a class="tel" href="tel:+7964-721-09-74">+7 (964) <span class="color">721-09-74</span></a>
-				<a class="callback" href="#">Поговорить бесплатно</a>
+				<a class="callback fancybox-popup" data-fancybox-type="ajax" href="./popup-callback.html">Поговорить бесплатно</a>
 			</div>
 		</div>
 	</header>
@@ -67,7 +67,7 @@
 		<div class="wrapper">
 			<p class="breadcrumbs"><a href="news.html">Главная</a> Контакты</p>
 			<section>
-				<h2 class="h2">Офис продаж «Юрадрес-центр 77», Москва, метро Полянка, Третьяковская</h2>
+				<h2 class="h2 h-divide"><span class="in">Офис продаж «Юрадрес-центр 77», Москва, метро Полянка, Третьяковская</span></h2>
 				<div class="contact-us">
 					<p>Фирма &laquo;Юрадрес-центр 77&raquo;</p>
 					<p>Пыжевский пер., д. 7, стр. 2, Почвенный институт, этаж 4, офис 77</p>
@@ -83,6 +83,10 @@
 				<p>Предоставляем юридические адреса непосредственно лицам, желающим зарегистрировать ООО, некоммерческую организацию, представительство и т.д. Работаем и с фирмами-регистраторами.</p>
 				<br>
 
+				<p class="addition">
+					<a href="#">Распечатать схему прохода</a>
+				</p>
+
 				<!-- Map -->
 				<div class="map" id="ymaps-map-id_14211551600804933022"></div>
 				<script type="text/javascript">
@@ -93,16 +97,14 @@
 							type: "yandex#map"
 						});
 						map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
-						myGeoObject = new ymaps.GeoObject({
-							geometry: {
-								type: "Point",
-								coordinates: [37.620438, 55.738495]
-							}
+						var myGeoObject = new ymaps.GeoObject({
+							type: 'Point',
+							coordinates: [37.620438, 55.738495]
 						});
-						map.geoObjects.add(myGeoObject);
+						myMap.geoObjects.add(myGeoObject);
 					}
 				</script>
-				<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
+				<script type="text/javascript" src="http://api-maps.yandex.ru/2.1/?lang=RU&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
 				<!-- Map End -->
 
 				<div class="photo-info">
