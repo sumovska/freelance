@@ -74,7 +74,10 @@ $(document).ready(function () {
 	/* Контакты */
 	$('.contacts').each(function () {
 		$('.list', this).eq(0).each(function () {
-			$('.list', this).clone().addClass('list-additional').insertAfter(this);
+			var tmp;
+			tmp = $('.list', this).closest('li').clone();
+			tmp = $('<ul class="list"></ul>').append(tmp);
+			tmp.addClass('list-additional').insertAfter(this);
 		});
 	});
 
