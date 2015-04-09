@@ -7,12 +7,24 @@ $(document).ready(function () {
 	/* Формы */
 	$('input, select').styler();
 
-	/* Всплывающее окно */
+	/* Всплывающее окно (попапы) */
 	$('.fancybox-popup').fancybox({
 		padding: 0,
 		margin: 50,
 		helpers: {
 			media: {}
+		}
+	});
+
+	/* Всплывающее окно (галерея) */
+	$('.fancybox-gallery').fancybox({
+		padding: 0,
+		margin: 50,
+		helpers: {
+			media: {}
+		},
+		tpl: {
+			closeBtn : '<span title="Close" class="fancybox-close fancybox-close-top"></span>'
 		}
 	});
 
@@ -31,6 +43,7 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Навигация */
 	$('.nav').each(function () {
 		var _self = $(this);
 		$(this).append('<span class="toggle"></span>');
@@ -44,13 +57,35 @@ $(document).ready(function () {
 		});
 	});
 
-	$('body').click(function() {
+	/* Выпадающее меню в мобильной версии */
+	$('body').click(function () {
 		if ($(this).hasClass('body-nav-open')) {
 			if (($(e.target).is('.nav .list'))) {
 				$(e.target).closest('.nav-space').fadeOut(200);
 				$('body').removeClass('body-nav-open');
 			}
 		}
+	});
+
+	/* Выпадающая форма заказа */
+	$('.address-order').each(function () {
+		$('.button-default', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).toggleClass('open');
+			$('#' + where).slideToggle('slow');
+			return false;
+		});
+	});
+
+	/* Табы */
+	$('.tab-hidden').css("display", "none");
+	$('.pages-tabs').each(function () {
+		$('a', this).click(function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li').removeClass('active');
+			$('.tab-' + where).css("display", "block").siblings('.tab').css("display", "none");
+			return false;
+		});
 	});
 
 

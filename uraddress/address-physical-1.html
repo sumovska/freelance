@@ -55,7 +55,7 @@
 			<div class="call">
 				<a class="tel" href="tel:+7495-953-71-29">+7 (495) <span class="color">953-71-29</span></a>
 				<a class="tel" href="tel:+7964-721-09-74">+7 (964) <span class="color">721-09-74</span></a>
-				<a class="callback" href="#">Поговорить бесплатно</a>
+				<a class="callback fancybox-popup" data-fancybox-type="ajax" href="./popup-callback.html">Поговорить бесплатно</a>
 			</div>
 		</div>
 	</header>
@@ -67,7 +67,7 @@
 		<div class="wrapper">
 			<p class="breadcrumbs"><a href="news.html">Главная</a> <a href="address-legal.html">Фактические адреса</a> 14 ифнс Магистральный 1-й тупик</p>
 			<section>
-				<h2 class="h2 h-divide h-lighter"><span class="in">Фактический адрес Магистральный 1-й тупик</span></h2>
+				<h2 class="h2 h-divide"><span class="in">Фактический адрес Магистральный 1-й тупик</span></h2>
 				<div class="address-inner">
 					<div class="info">
 						<p class="price">Стоимость на 6 мес. <span class="sum">10 000</span></p>
@@ -108,75 +108,77 @@
 								type: "yandex#map"
 							});
 							map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
-							myGeoObject = new ymaps.GeoObject({
-								geometry: {
-									type: "Point",
-									coordinates: [37.620438, 55.738495]
-								}
+							var myGeoObject = new ymaps.GeoObject({
+								type: 'Point',
+								coordinates: [37.620438, 55.738495]
 							});
-							map.geoObjects.add(myGeoObject);
+							myMap.geoObjects.add(myGeoObject);
 						}
 					</script>
-					<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=en-US&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
+					<script type="text/javascript" src="http://api-maps.yandex.ru/2.1/?lang=RU&amp;coordorder=longlat&amp;load=package.full&amp;wizard=constructor&amp;onload=fid_14211551600804933022"></script>
 					<!-- Map End -->
 
 				</div>
 				<p>Фактический адрес в престижном бизнес-центре  «Магистраль плаза». Адрес: 1-й Магистральный тупик, дом 5 А. От метро  «Полежаевская» можно доехать на маршрутке за 10 минут, от метро  «Беговая» можно дойти пешком за 12 минут. Офис оборудован.</p>
-				<p class="center"><a class="button-default" href="#">заказать этот адрес</a></p>
 
-				<!-- Form -->
-				<form class="form form-signup" action="#" method="post">
-					<h2 class="h2 center">Заполните форму</h2>
-					<div class="line">
-						<label for="address" class="for">Адрес:</label>
-						<p class="form-line"><input id="address" type="text" value="Магистральный 1-й тупик"></p>
-					</div>
-					<div class="line">
-						<label for="type" class="for">Организационно-правовая форма: <span class="small">(ООО, иное)</span></label>
-						<p class="form-line"><input id="type" type="text"></p>
-					</div>
-					<div class="line">
-						<label for="name" class="for">Название организации полное: <span class="small">(ставьте кавычки, пробелы, заглавные буквы точно, чтоб не исправлять потом)</span></label>
-						<p class="form-line"><textarea id="name"></textarea></p>
-					</div>
-					<div class="line">
-						<label for="name-short" class="for">Название сокращённое: <span class="small">(ставьте кавычки, пробелы, заглавные буквы точно, чтоб не исправлять потом)</span></label>
-						<p class="form-line"><textarea id="name-short"></textarea></p>
-					</div>
-					<div class="line">
-						<label for="post" class="for">Как называется исполнительный орган: <span class="small">(Генеральный директор, Директор, иное)</span></label>
-						<p class="form-line"><textarea id="post"></textarea></p>
-					</div>
-					<div class="line">
-						<label for="chief-name" class="for">Его полные имя, фамилия, отчество:</label>
-						<p class="form-line"><input id="chief-name" type="text"></p>
-					</div>
-					<div class="line">
-						<label for="phone" class="for">Ваш телефон:</label>
-						<p class="form-line"><input id="phone" type="tel"></p>
-					</div>
-					<div class="line">
-						<label for="mail" class="for">Ваш e-mail:</label>
-						<p class="form-line"><input id="mail" type="email"></p>
-					</div>
-					<div class="line">
-						<label for="info" class="for">Ваши дополнительные пояснения:</label>
-						<p class="form-line"><input id="info" type="text"></p>
-					</div>
-					<div class="line">
-						<p class="form-line form-submit">
-							<input type="submit" value="Отправить заявку">
-							<input type="reset" value="Отменить">
-						</p>
-					</div>
-				</form>
-				<!-- Form End -->
+				<div class="address-order">
+					<p class="center"><a class="button-default" href="#form-signup">заказать этот адрес</a></p>
+
+					<!-- Form -->
+					<form class="form form-signup" id="form-signup" action="#" method="post">
+						<h2 class="h2 center">Заполните форму</h2>
+						<div class="line">
+							<label for="address" class="for">Адрес:</label>
+							<p class="form-line"><input id="address" type="text" value="Магистральный 1-й тупик"></p>
+						</div>
+						<div class="line">
+							<label for="type" class="for">Организационно-правовая форма: <span class="small">(ООО, иное)</span></label>
+							<p class="form-line"><input id="type" type="text"></p>
+						</div>
+						<div class="line">
+							<label for="name" class="for">Название организации полное: <span class="small">(ставьте кавычки, пробелы, заглавные буквы точно, чтоб не исправлять потом)</span></label>
+							<p class="form-line"><textarea id="name"></textarea></p>
+						</div>
+						<div class="line">
+							<label for="name-short" class="for">Название сокращённое: <span class="small">(ставьте кавычки, пробелы, заглавные буквы точно, чтоб не исправлять потом)</span></label>
+							<p class="form-line"><textarea id="name-short"></textarea></p>
+						</div>
+						<div class="line">
+							<label for="post" class="for">Как называется исполнительный орган: <span class="small">(Генеральный директор, Директор, иное)</span></label>
+							<p class="form-line"><textarea id="post"></textarea></p>
+						</div>
+						<div class="line">
+							<label for="chief-name" class="for">Его полные имя, фамилия, отчество:</label>
+							<p class="form-line"><input id="chief-name" type="text"></p>
+						</div>
+						<div class="line">
+							<label for="phone" class="for">Ваш телефон:</label>
+							<p class="form-line"><input id="phone" type="tel"></p>
+						</div>
+						<div class="line">
+							<label for="mail" class="for">Ваш e-mail:</label>
+							<p class="form-line"><input id="mail" type="email"></p>
+						</div>
+						<div class="line">
+							<label for="info" class="for">Ваши дополнительные пояснения:</label>
+							<p class="form-line"><input id="info" type="text"></p>
+						</div>
+						<div class="line">
+							<p class="form-line form-submit">
+								<input type="submit" value="Отправить заявку">
+								<input type="reset" value="Отменить">
+							</p>
+						</div>
+					</form>
+					<!-- Form End -->
+
+				</div>
 
 			</section>
 
 			<aside>
 				<hr class="hr-blue">
-				<h2 class="h2 h-divide h-lighter"><span class="in">Можно купить еще юр.адреса по 1 ифнс</span></h2>
+				<h2 class="h2 h-divide"><span class="in">Можно купить еще юр.адреса по 1 ифнс</span></h2>
 
 				<!-- Table End -->
 				<table class="table">
