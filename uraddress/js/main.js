@@ -51,7 +51,7 @@ $(document).ready(function () {
 			if ($('.nav-space', _self).length === 0) {
 				$('.list', _self).wrap('<div class="nav-space"></div>')
 			}
-			$('.nav-space', _self).fadeToggle(200);
+			$('.nav-space', _self).fadeToggle();
 			$('body').toggleClass('body-nav-open');
 			return false;
 		});

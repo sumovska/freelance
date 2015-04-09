@@ -89,9 +89,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 h1, .h1 { margin-bottom: 20px; font-size: 20px; line-height: 22px; font-weight: bold; }
 h2, .h2 { margin-bottom: 20px; font-size: 18px; line-height: 20px; font-weight: bold; letter-spacing: .026em; }
-.h-divide { margin-left: -22px; position: relative; }
+.h-divide { position: relative; }
 .h-divide:before { height: 1px; margin-top: -1px; display: block; content: ' '; overflow: hidden; position: absolute; left: 0; right: 0; top: 50%; background: #c9c9c9; z-index: 1; }
-.h-divide .in { padding: 0 22px; display: inline-block; background: #fff; position: relative; z-index: 2; }
+.h-divide .in { padding-right: 22px; display: inline-block; background: #fff; position: relative; z-index: 2; }
+.h-divide .in-center { padding-left: 22px; }
 .h-divide .in:after, .h-divide .in-center:before { width: 5px; height: 5px; margin-top: -3px; display: block; content: ' '; overflow: hidden; position: absolute; right: 0; top: 50%; background: #5087bd; border-radius: 50%; }
 .h-divide .in-center:before { left: 0; right: auto; }
 h3, .h3 { margin-bottom: 20px; font-size: 16px; line-height: 18px; font-weight: bold; text-transform: uppercase; }
@@ -1378,11 +1379,13 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	.nav .wrapper { padding: 0; }
 	.nav { height: 44px; border-bottom: 1px solid #cacaca; z-index: 100; position: relative; }
 	.nav .list { display: none; }
-	.nav .nav-space { padding: 25px 50px; display: none; position: fixed; top: 43px; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, .98); overflow: hidden; overflow-y: scroll; z-index: 200; }
+	.nav .nav-space { padding: 25px 50px; display: none; position: fixed; top: 44px; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, .98); overflow: hidden; overflow-y: scroll; z-index: 200; }
 	.nav .nav-space .list li { display: block; text-align: center; }
 	.nav .toggle { margin: 0 auto; cursor: pointer; display: block; width: 26px; height: 22px; border-top: 4px solid #5087bd; border-bottom: 4px solid #5087bd; position: relative; top: 10px; }
 	.nav .toggle:before, .nav .toggle:after { height: 4px; display: block; content: ' '; overflow: hidden; clear: both; background: #5087bd; position: absolute; top: 2px; left: 0; right: 0; }
 	.nav .toggle:after { top: 8px; }
+	.body-nav-open { padding-top: 44px; }
+	.body-nav-open .nav { position: fixed; top: 0; left: 0; right: 0; background: #fff; }
 	.body-nav-open .nav-space { width: 100%; height: 100%; display: table !important; }
 	.body-nav-open .nav .nav-space .list { display: table-cell; vertical-align: middle; }
 	/* Шапка */
@@ -1452,7 +1455,10 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	.photo-info figure img { height: 316px; }
 	.pictures { margin-left: 0; margin-right: 0; }
 	.pictures li { margin: 0 0 20px; }
-	
+	.news .item { padding-left: 42px; }
+	.news .date { width: 32px; height: 30px; font-size: 8px; line-height: 10px; padding-top: 7px; }
+	.news .date:before { border-width: 7px 16px 0 16px; bottom: -7px; }
+	.news .day { font-size: 10px; }
 }
 /* ==========================================================================
    _Стили для печати
