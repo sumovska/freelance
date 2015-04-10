@@ -24,7 +24,7 @@ $(document).ready(function () {
 			media: {}
 		},
 		tpl: {
-			closeBtn : '<span title="Close" class="fancybox-close fancybox-close-top"></span>'
+			closeBtn: '<span title="Close" class="fancybox-close fancybox-close-top"></span>'
 		}
 	});
 
@@ -48,23 +48,9 @@ $(document).ready(function () {
 		var _self = $(this);
 		$(this).append('<span class="toggle"></span>');
 		$('.toggle', this).click(function () {
-			if ($('.nav-space', _self).length === 0) {
-				$('.list', _self).wrap('<div class="nav-space"></div>')
-			}
-			$('.nav-space', _self).fadeToggle();
-			$('body').toggleClass('body-nav-open');
+			$('.list', _self).slideToggle();
 			return false;
 		});
-	});
-
-	/* Выпадающее меню в мобильной версии */
-	$('body').click(function () {
-		if ($(this).hasClass('body-nav-open')) {
-			if (($(e.target).is('.nav .list'))) {
-				$(e.target).closest('.nav-space').fadeOut(200);
-				$('body').removeClass('body-nav-open');
-			}
-		}
 	});
 
 	/* Выпадающая форма заказа */
@@ -88,5 +74,17 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.address-inner').each(function () {
+		$('.tabs').each(function () {
+			$('a', this).click(function () {
+				var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+				$(this).closest('li').addClass('active').siblings('li').removeClass('active');
+				$('.tab-in-' + where).css("display", "block").siblings('.tab-in').css("display", "none");
+				return false;
+			})
+		})
+	})
+
+	setTimeout();
 
 });
