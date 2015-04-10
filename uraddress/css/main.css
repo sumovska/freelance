@@ -1555,8 +1555,9 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
 	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
 	thead { display: table-header-group; }
-	tr, img { page-break-inside: avoid; }
+	/*tr, img { page-break-inside: avoid; }*/
 	img { max-width: 100% !important; }
 	p, h2, h3 { orphans: 3; widows: 3; }
 	h2, h3 { page-break-after: avoid; }
+    aside, nav, .footer, .header .address, .header .call .callback, .breadcrumbs  { display: none;}
 }
