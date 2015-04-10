@@ -91,16 +91,16 @@
 				<div class="map" id="ymaps-map-id_14211551600804933022"></div>
 				<script type="text/javascript">
 					function fid_14211551600804933022(ymaps) {
-						var map = new ymaps.Map("ymaps-map-id_14211551600804933022", {
-							center: [37.620438, 55.738495],
-							zoom: 16,
-							type: "yandex#map"
-						});
-						map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid"]));
-						var myGeoObject = new ymaps.GeoObject({
-							type: 'Point',
-							coordinates: [37.620438, 55.738495]
-						});
+						var myMap = new ymaps.Map("ymaps-map-id_14211551600804933022", {
+									center: [37.620438, 55.738495],
+									zoom: 16
+								}),
+								myGeoObject = new ymaps.GeoObject({
+									geometry: {
+										type: "Point",// geometry type - point
+										coordinates: [37.620438, 55.738495] // point coordinates
+									}
+								});
 						myMap.geoObjects.add(myGeoObject);
 					}
 				</script>

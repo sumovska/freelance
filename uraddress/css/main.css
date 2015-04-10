@@ -103,8 +103,8 @@ h6, .h6 { margin-bottom: 20px; font-size: 12px; line-height: 16px; font-weight: 
    Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
 /* === INPUT === */
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 394px; height: 45px; padding: 4px 16px 6px; border: 1px solid #e2e1e1; border-radius: 0; box-shadow: none; outline: none; -webkit-appearance: none; color: #020202; font: 14px 'Open Sans', Arial, sans-serif; background: #e2e1e1; transition: background-color .1s, border-color .1s; }
-textarea { width: 394px; height: 100px; max-height: 300px; overflow: auto; resize: none; }
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 394px; padding: 12px 16px; border: 1px solid #e2e1e1; border-radius: 0; box-shadow: none; outline: none; -webkit-appearance: none; color: #020202; font: 14px 'Open Sans', Arial, sans-serif; background: #e2e1e1; transition: background-color .1s, border-color .1s; }
+textarea { width: 394px; height: 100px; max-height: 300px; padding-top: 12px; padding-bottom: 12px; overflow: auto; resize: none; }
 input[type="email"]:not([disabled]):focus, input[type="number"]:not([disabled]):focus, input[type="password"]:not([disabled]):focus, input[type="search"]:not([disabled]):focus, input[type="tel"]:not([disabled]):focus, input[type="text"]:not([disabled]):focus, input[type="url"]:not([disabled]):focus, textarea:not([disabled]):focus { border-color: #5087bd; }
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled] { cursor: default; background: #f6f5f3; opacity: 1; }
 /* === BUTTON === */
@@ -141,9 +141,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox:not(.disabled):hover .jq-selectbox__select, .jq-selectbox.focused .jq-selectbox__select { border-color: #5087bd; }
 .jq-selectbox__trigger { width: 46px; position: absolute; top: -1px; right: -1px; bottom: -1px; background: #5087bd; }
 .jq-selectbox__trigger-arrow { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-.jq-selectbox__trigger-arrow:before, .jq-selectbox__trigger-arrow:after { width: 2px; height: 12px; border-radius: 2px; margin: -7px 0 0 0; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: #fff; transition: background-color .2s; }
+.jq-selectbox__trigger-arrow:before, .jq-selectbox__trigger-arrow:after { width: 2px; height: 12px; border-radius: 2px; margin: -6px 0 0 0; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: #fff; transition: background-color .2s; }
 .jq-selectbox__trigger-arrow:before { margin-left: -4px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.jq-selectbox__trigger-arrow:after { margin-left: 4px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+.jq-selectbox__trigger-arrow:after { margin-left: 3px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
 .jq-selectbox.disabled .jq-selectbox__trigger-arrow:before, .jq-selectbox.disabled .jq-selectbox__trigger-arrow:after { background: #a09f9e; }
 .jq-selectbox__dropdown { width: 100%; padding: 0; border: 1px solid #5087bd; border-radius: 0; margin: 0; top: 44px; color: #020202; font: 14px/18px 'Open Sans', Arial, sans-serif; background: #e2e1e1; }
 .jq-selectbox ul { padding: 0; margin: 0; }
@@ -340,6 +340,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .header {
 	height: 124px;
 	border-bottom: 8px solid #5087bd;
+	cursor: default;
 }
 .header .wrapper {
 	position: relative;
@@ -538,6 +539,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	height: 128px;
 	color: #666;
 	font-size: 14px;
+	cursor: default;
 	background: #ededed;
 }
 .footer .wrapper {
@@ -643,7 +645,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .button-default {
 	min-width: 270px;
 	height: 53px;
-	padding: 18px 10px;
+	padding: 20px 10px;
 	display: inline-block;
 	font-weight: bold;
 	color: #fff;
@@ -702,6 +704,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 }
 .special .text {
 	position: absolute;
+	top: 6px;
 	letter-spacing: .03em;
 }
 /* ==========================================================================
@@ -1347,6 +1350,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
    _Попапы
    ========================================================================== */
 .popup {
+	width: 100%;
 	padding: 40px;
 	border: 1px solid #ccc;
 }
@@ -1499,6 +1503,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	.form-signup .form-line { width: 100%; }
 	.form-signup input[type="submit"], .form-signup input[type="reset"] { width: 100%; max-width: 300px; display: block; margin: 0 auto 20px; }
 	.form-signup input[type="reset"] { float: none; }
+	.fancybox-close { top: 0; right: 0; }
 }
 @media (max-width: 479px) {
 	input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { max-width: 100%; }
@@ -1548,16 +1553,14 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
    _Стили для печати
    ========================================================================== */
 @media print {
-	* { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+	* { color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+	body { width: auto; min-width: 0; max-width: none; }
 	a, a:visited { text-decoration: underline; }
-	a[href]:after { content: " (" attr(href) ")"; }
-	abbr[title]:after { content: " (" attr(title) ")"; }
 	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
 	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
 	thead { display: table-header-group; }
-	/*tr, img { page-break-inside: avoid; }*/
 	img { max-width: 100% !important; }
 	p, h2, h3 { orphans: 3; widows: 3; }
 	h2, h3 { page-break-after: avoid; }
-    aside, nav, .footer, .header .address, .header .call .callback, .breadcrumbs  { display: none;}
+	aside, nav, .footer, .header .address, .header .call .callback, .breadcrumbs { display: none; }
 }

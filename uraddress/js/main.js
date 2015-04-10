@@ -10,7 +10,9 @@ $(document).ready(function () {
 	/* Всплывающее окно (попапы) */
 	$('.fancybox-popup').fancybox({
 		padding: 0,
-		margin: 50,
+		margin: 20,
+		autoResize: true,
+		autoCenter: true,
 		helpers: {
 			media: {}
 		}
@@ -19,7 +21,7 @@ $(document).ready(function () {
 	/* Всплывающее окно (галерея) */
 	$('.fancybox-gallery').fancybox({
 		padding: 0,
-		margin: 50,
+		margin: 30,
 		helpers: {
 			media: {}
 		},
@@ -32,13 +34,13 @@ $(document).ready(function () {
 	$('.special li').hover(function () {
 		$(this).find('.text', this).eq(0).stop().animate({
 			top: (+$(this).outerHeight() - +$('.text', this).outerHeight() - 6) + 'px'
-		}, "slow", function () {
+		}, function () {
 		});
 	}, function () {
 		$(this).find('.text', this).stop().animate({
 			bottom: 'auto',
 			top: '6px'
-		}, "slow", function () {
+		}, function () {
 			$(this).removeAttr('style');
 		});
 	});
@@ -50,6 +52,12 @@ $(document).ready(function () {
 		$('.toggle', this).click(function () {
 			$('.list', _self).slideToggle();
 			return false;
+		});
+		$(document).on('click touchstart', function (event) {
+			var target = $(event.target);
+			if ((target.closest('.nav').length === 0) && (!target.is('.nav'))) {
+				$('.list', _self).slideUp();
+			}
 		});
 	});
 
@@ -83,8 +91,6 @@ $(document).ready(function () {
 				return false;
 			})
 		})
-	})
-
-	setTimeout();
+	});
 
 });
