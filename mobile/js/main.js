@@ -134,6 +134,62 @@ $(document).ready(function () {
 	});
 
 
+	/* Каталог + карусель */
+	$('.catalog').each(function () {
+		var _catalog = $(this);
+		if ($(this).is('.catalog-small-carousel')) {
+			$(this).on('init', function (slick) {
+				_catalog.prevAll('.h4-divide').addClass('h4-divide-prevnext').each(function () {
+					var w = +Math.floor($(this).find('.in').width() / 2) - 13;
+					$('.slick-prev', _catalog).css('margin-left', w + 'px');
+					$('.slick-next', _catalog).css('margin-left', w + 29 + 'px');
+				});
+			}).slick({
+				variableWidth: true,
+				adaptiveHeight: true,
+				swipeToSlide: true,
+				touchThreshold: 10,
+				slidesToShow: 5,
+				infinite: false,
+				arrows: true,
+				prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
+				nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>',
+				responsive: [
+					{
+						breakpoint: 1599,
+						settings: {
+							slidesToShow: 4
+						}
+					}, {
+						breakpoint: 1279,
+						settings: {
+							slidesToShow: 3
+						}
+					}, {
+						breakpoint: 999,
+						settings: {
+							slidesToShow: 1,
+							infinite: true,
+							arrows: false,
+							centerMode: true
+						}
+					}
+				]
+			});
+		} else {
+			$('.item', this).on('mouseenter', function () {
+				$(this).height($(this).height());
+				$(this).addClass('visible');
+			}).on('mouseleave', function () {
+				var _item = $(this);
+				setTimeout(function () {
+					_item.removeAttr('style').removeClass('visible');
+				}, 250);
+			});
+		}
+	});
+
+
 	/* Карусель статей */
 	$('.articles').each(function () {
 		$('.carousel', this).slick({
@@ -151,37 +207,6 @@ $(document).ready(function () {
 					settings: 'unslick'
 				}
 			]
-		});
-	});
-
-	/* Каталог */
-	$('.catalog').each(function () {
-		if ($(this).is('.catalog-small-carousel')) {
-			$(this).slick({
-				infinite: true,
-				variableWidth: true,
-				mobileFirst: true,
-				arrows: false,
-				centerMode: true,
-				slidesToShow: 2,
-				swipeToSlide: true,
-				touchThreshold: 10,
-				responsive: [
-					{
-						breakpoint: 999,
-						settings: 'unslick'
-					}
-				]
-			});
-		}
-		$('.item', this).on('mouseenter', function () {
-			$(this).height($(this).height());
-			$(this).addClass('visible');
-		}).on('mouseleave', function () {
-			var _self = $(this);
-			setTimeout(function () {
-				_self.removeAttr('style').removeClass('visible');
-			}, 250);
 		});
 	});
 
