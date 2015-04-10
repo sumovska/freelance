@@ -62,11 +62,47 @@ $(document).ready(function () {
 			});
 			$(document).on('click touchstart', function (event) {
 				var target = $(event.target);
-				console.log(event.target);
 				if ((target.closest('.nav-catalog').length === 0) && (!target.is('.nav-catalog'))) {
 					$(_self).removeClass('open').removeClass('visible');
 				}
 			});
+		});
+		$('.search', this).each(function () {
+			var _self = $(this);
+			var search = new Bloodhound({
+				datumTokenizer: function (datum) {
+					return Bloodhound.tokenizers.whitespace(datum.value);
+				},
+				queryTokenizer: Bloodhound.tokenizers.whitespace,
+				remote: {
+					url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=470fd2ec8853e25d2f8d86f685d2270e',
+					filter: function (movies) {
+						// Map the remote source JSON array to a JavaScript object array
+						return $.map(movies.results, function (movie) {
+							return {
+								value: movie.original_title
+							};
+						});
+					}
+				}
+			});
+
+			search.initialize();
+
+			$('.typeahead', this).typeahead({
+					hint: true,
+					highlight: true,
+					minLength: 1
+				},
+				{
+					name: 'search',
+					displayKey: 'value',
+					source: search.ttAdapter()
+				}).on('focus', function () {
+					_self.addClass('focus');
+				}).on('blue', function () {
+					_self.removeClass('focus');
+				});
 		});
 	});
 
@@ -98,6 +134,62 @@ $(document).ready(function () {
 	});
 
 
+	/* Каталог + карусель */
+	$('.catalog').each(function () {
+		var _catalog = $(this);
+		if ($(this).is('.catalog-small-carousel')) {
+			$(this).on('init', function (slick) {
+				_catalog.prevAll('.h4-divide').addClass('h4-divide-prevnext').each(function () {
+					var w = +Math.floor($(this).find('.in').width() / 2) - 13;
+					$('.slick-prev', _catalog).css('margin-left', w + 'px');
+					$('.slick-next', _catalog).css('margin-left', w + 29 + 'px');
+				});
+			}).slick({
+				variableWidth: true,
+				adaptiveHeight: true,
+				swipeToSlide: true,
+				touchThreshold: 10,
+				slidesToShow: 5,
+				infinite: false,
+				arrows: true,
+				prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
+				nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>',
+				responsive: [
+					{
+						breakpoint: 1599,
+						settings: {
+							slidesToShow: 4
+						}
+					}, {
+						breakpoint: 1279,
+						settings: {
+							slidesToShow: 3
+						}
+					}, {
+						breakpoint: 999,
+						settings: {
+							slidesToShow: 1,
+							infinite: true,
+							arrows: false,
+							centerMode: true
+						}
+					}
+				]
+			});
+		} else {
+			$('.item', this).on('mouseenter', function () {
+				$(this).height($(this).height());
+				$(this).addClass('visible');
+			}).on('mouseleave', function () {
+				var _item = $(this);
+				setTimeout(function () {
+					_item.removeAttr('style').removeClass('visible');
+				}, 250);
+			});
+		}
+	});
+
+
 	/* Карусель статей */
 	$('.articles').each(function () {
 		$('.carousel', this).slick({
@@ -118,35 +210,56 @@ $(document).ready(function () {
 		});
 	});
 
-	/* Каталог */
-	$('.catalog').each(function () {
-		if ($(this).is('.catalog-small-carousel')) {
-			$(this).slick({
-				infinite: true,
-				variableWidth: true,
-				mobileFirst: true,
-				arrows: false,
-				centerMode: true,
-				slidesToShow: 2,
-				swipeToSlide: true,
-				touchThreshold: 10,
-				responsive: [
-					{
-						breakpoint: 999,
-						settings: 'unslick'
-					}
-				]
+	/* Табы */
+	$('.tabs').each(function () {
+		$('.tabs-list .link', this).each(function () {
+			$('a', this).click(function () {
+				var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+				$(this).closest('.link').addClass('link-active').siblings('.link-active').removeClass('link-active');
+				$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+				return false;
 			});
-		}
-		$('.item', this).on('mouseenter', function () {
-			$(this).height($(this).height());
-			$(this).addClass('visible');
-		}).on('mouseleave', function () {
-			var _self = $(this);
-			setTimeout(function () {
-				_self.removeAttr('style').removeClass('visible');
-			}, 250);
 		});
+		$('.tabs-list-carousel', this).slick({
+			slidesToScroll: 1,
+			slidesToShow: 4,
+			infinite: true,
+			variableWidth: true,
+			mobileFirst: true,
+			arrows: false,
+			swipeToSlide: true,
+			touchThreshold: 10,
+			responsive: [
+				{
+					breakpoint: 999,
+					settings: 'unslick'
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2
+					}
+				}
+			],
+			prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
+			nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>'
+		});
+	});
+
+
+	$('.featured-list-carousel').slick({
+		infinite: true,
+		variableWidth: true,
+		mobileFirst: true,
+		arrows: false,
+		swipeToSlide: true,
+		touchThreshold: 10,
+		responsive: [
+			{
+				breakpoint: 999,
+				settings: 'unslick'
+			}
+		]
 	});
 
 
@@ -214,28 +327,6 @@ $(document).ready(function () {
 		if ($(window).width() > 999) {
 		} else {
 
-			$('.tabs-list-carousel').slick({
-				slidesToScroll: 1,
-				slidesToShow: 4,
-				variableWidth: true,
-				responsive: [
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 2
-						}
-					}
-				],
-				prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
-				nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>'
-			});
-			$('.featured-list-carousel').slick({
-				slidesToScroll: 1,
-				slidesToShow: 4,
-				arrows: false,
-				variableWidth: true
-			});
-			$('.slick-cloned').removeClass('slick-active');
 			$('.sidenav').each(function () {
 				$('li.active').click(function () {
 					$(this).siblings('li').toggle();
@@ -251,16 +342,6 @@ $(document).ready(function () {
 	$(window).resize(function () {
 		clearTimeout(r);
 		r = setTimeout(runSlider, 500);
-	});
-
-	/* Табы */
-	$('.tabs-list .link').each(function () {
-		$('a', this).click(function () {
-			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
-			$(this).closest('.link').addClass('link-active').siblings('.link-active').removeClass('link-active');
-			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
-			return false;
-		});
 	});
 
 });
