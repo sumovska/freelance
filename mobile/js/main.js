@@ -1,5 +1,5 @@
-/*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true */
-/*global window, console, document, $, jQuery, PIE */
+/*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true, node: true */
+/*global window, console, document, $, jQuery, PIE, initialize, styler */
 
 /* On document ready */
 $(document).ready(function () {
@@ -10,65 +10,83 @@ $(document).ready(function () {
 
 	/* Выпадающее меню */
 	$('.nav').each(function () {
-		var _self = $(this);
-		$(this).find('.sub > a').click(function () {
+		function closeMenu(event) {
+			var target = $(event.target);
+			if ((target.closest('.nav').length === 0) && (!target.is('.nav'))) {
+				$('.open', _nav).removeClass('open').removeClass('visible');
+				$(document).off('click touchstart', closeMenu);
+			}
+		}
+
+		var _nav = $(this);
+
+		_nav.on('click', '.sub > a', function (event) {
 			$(this).closest('li').each(function () {
 				var _this = $(this);
 				_this.toggleClass('open');
+				if (_this.is('.open')) {
+					$(document).on('click touchstart', closeMenu);
+				}
 				setTimeout(function () {
 					_this.toggleClass('visible');
 				}, 100);
 			});
-			return false;
-		});
-		$(document).on('click touchstart', function (event) {
-			var target = $(event.target);
-			if ((target.closest('.nav').length === 0) && (!target.is('.nav'))) {
-				$('.open', _self).removeClass('open').removeClass('visible');
-			}
+			event.preventDefault();
 		});
 	});
 
 
 	/* Шапка */
 	$('.header').each(function () {
-		$('.login', this).each(function () {
-			var _self = $(this);
-			$('.sub > a', this).on('click', function () {
+		function closeLogin(event) {
+			var target = $(event.target);
+			if ((target.closest('.login').length === 0) && (!target.is('.login'))) {
+				$('.open', _login).removeClass('open').removeClass('visible');
+				$(document).off('click touchstart', closeLogin);
+			}
+		}
+
+		function closeNav(event) {
+			var target = $(event.target);
+			if ((target.closest('.nav-catalog').length === 0) && (!target.is('.nav-catalog'))) {
+				$(_nav).removeClass('open').removeClass('visible');
+				$(document).off('click touchstart', closeNav);
+			}
+		}
+
+		var _login = $('.login', this), _nav = $('.nav-catalog', this), _search = $('.search', this);
+
+		_login.each(function () {
+			$(this).on('click', '.sub > a', function (event) {
 				$(this).closest('li').each(function () {
 					var _this = $(this);
 					_this.toggleClass('open');
+					if (_this.is('.open')) {
+						$(document).on('click touchstart', closeLogin);
+					}
 					setTimeout(function () {
 						_this.toggleClass('visible');
 					}, 100);
 				});
-				return false;
-			});
-			$(document).on('click touchstart', function (event) {
-				var target = $(event.target);
-				if ((target.closest('.login').length === 0) && (!target.is('.login'))) {
-					$('.open', _self).removeClass('open').removeClass('visible');
-				}
+				event.preventDefault();
 			});
 		});
-		$('.nav-catalog', this).each(function () {
-			var _self = $(this);
-			$('.link', this).on('click', function () {
-				_self.toggleClass('open');
+
+		_nav.each(function () {
+			$(this).on('click', '.link', function (event) {
+				_nav.toggleClass('open');
+				if (_nav.is('.open')) {
+					$(document).on('click touchstart', closeNav);
+				}
 				setTimeout(function () {
-					_self.toggleClass('visible');
+					_nav.toggleClass('visible');
 				}, 100);
-				return false;
-			});
-			$(document).on('click touchstart', function (event) {
-				var target = $(event.target);
-				if ((target.closest('.nav-catalog').length === 0) && (!target.is('.nav-catalog'))) {
-					$(_self).removeClass('open').removeClass('visible');
-				}
+				event.preventDefault();
 			});
 		});
-		$('.search', this).each(function () {
-			var _self = $(this);
+
+		_search.each(function () {
+			//noinspection JSUnusedGlobalSymbols
 			var search = new Bloodhound({
 				datumTokenizer: function (datum) {
 					return Bloodhound.tokenizers.whitespace(datum.value);
@@ -99,9 +117,9 @@ $(document).ready(function () {
 					displayKey: 'value',
 					source: search.ttAdapter()
 				}).on('focus', function () {
-					_self.addClass('focus');
-				}).on('blue', function () {
-					_self.removeClass('focus');
+					_search.addClass('focus');
+				}).on('blur', function () {
+					_search.removeClass('focus');
 				});
 		});
 	});
@@ -120,6 +138,7 @@ $(document).ready(function () {
 
 	/* Карусель на главной */
 	$('.index').each(function () {
+		//noinspection JSUnusedGlobalSymbols
 		$('.carousel', this).slick({
 			dots: true,
 			arrows: false,
