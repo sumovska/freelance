@@ -590,8 +590,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	transition: border-color .2s ease, background-color .2s, color .2s;
 }
 .header .search input[type="text"]:focus {
-	border-color: #cbf17a;
-	background-color: #cbf17a;
+	border-color: #cbf17a !important;
+	background-color: #cbf17a !important;
 }
 .header .search input[type="text"]::-webkit-input-placeholder { color: #fff; opacity: 1; }
 .header .search input[type="text"]:-moz-placeholder { color: #fff; opacity: 1; }
@@ -630,8 +630,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	transition: opacity .2s ease;
 }
 .header .search button:after { background-position: -100px 0; opacity: 0; }
-.header .search input[type="text"]:focus ~ button:before { opacity: 0; }
-.header .search input[type="text"]:focus ~ button:after { opacity: 1; }
+.header .search.focus button:before { opacity: 0; }
+.header .search.focus button:after { opacity: 1; }
 .header .nav-catalog {
 	padding-left: 23px;
 	position: absolute;
@@ -640,6 +640,30 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	z-index: 40;
 	font: bold 18px 'PT Sans Narrow', Arial, sans-serif;
 	background: transparent;
+}
+/* ==================== typeahead.js v0.10.5 ==================== */
+.header .search .twitter-typeahead { width: 100%; display: block; }
+.header .search .tt-dropdown-menu {
+	max-height: 300px;
+	min-width: 100%;
+	padding: 4px 8px;
+	margin-top: 1px;
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, .25);
+	overflow-y: auto;
+	background: #f7fbed;
+}
+.header .search .tt-suggestion {
+	padding: 8px;
+	border-top: 1px solid #c6c9be;
+	font-size: 14px;
+	line-height: normal;
+	transition: background-color .1s;
+}
+.header .search .tt-suggestion:first-child { border: none; }
+.header .search .tt-suggestion.tt-cursor { background: #cbf17a; }
+.header .search .tt-suggestion p { margin: 0; }
+.header .search .gist {
+	font-size: 14px;
 }
 .header .nav-catalog .link {
 	margin: 0;
@@ -1281,6 +1305,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	width: 320px;
 	padding-top: 80px;
 	float: left;
+	white-space: nowrap;
 	text-align: center;
 }
 /* Каталог маленький */
@@ -1653,6 +1678,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
    ========================================================================== */
 .contacts {
 	min-height: 350px;
+	cursor: default;
 	background: #000;
 }
 .contacts:after, .contacts .col:after, .contacts .space:after, .contacts .navigation:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
@@ -3396,7 +3422,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	/* Заголовки */
 	/*h2, .h2 { font-size: 28px; line-height: 34px; }*/
 	h4, .h4 { margin-bottom: 10px; font-size: 14px; }
-	.h4-divide { margin-left: -30px; margin-right: -30px; }
+	.h4-divide { margin-left: -20px; margin-right: -20px; }
 	/* О компании */
 	.index-info { padding-left: 30px; padding-right: 30px; margin-left: -30px; margin-right: -30px; }
 	.about .h2 { font-size: 28px; line-height: 33px; }
@@ -3428,7 +3454,8 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.catalog-small:not(.catalog-small-carousel) .item { width: 33.33%; height: auto; }
 	.catalog-small .describe { display: none !important; }
 	/* Каталог-карусель */
-	.catalog-small-carousel { margin: 0 -30px; }
+	.catalog-small-carousel { height: 300px; margin: 0 -30px; overflow: hidden; }
+	.catalog-small-carousel.slick-initialized { height: auto; overflow: visible; }
 	.catalog-small-carousel .item { margin-bottom: 20px; opacity: .6; transition: opacity .3s ease; }
 	.catalog-small-carousel .item.slick-center { opacity: 1; }
 	/* Верхний блок */
@@ -3499,6 +3526,7 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.catalog:not(.catalog-small) .item { width: 50%; }
 	.catalog:not(.catalog-small) .item:nth-last-child(2n) { clear: left; }
 	.catalog:not(.catalog-small) .item:nth-last-child(3n) { clear: none; }
+	.catalog-small:not(.catalog-small-carousel) .item { width: 50%; }
 }
 @media (max-width: 767px) {
 	/* Основные стили */
@@ -3522,33 +3550,6 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.index .carousel .wrapper { width: 600px; padding: 20px 0 40px; }
 	.index .carousel .pic { width: 300px; height: 240px; }
 	.index .carousel .title { width: 300px; top: 40px; }
-	/* Контакты */
-	.contacts .wrapper { padding: 0 20px; }
-	.contacts .col { width: 266px; padding: 35px 5px 20px; margin: 0 auto; float: none; }
-	.contacts .navigation .list { width: 140px; padding-right: 10px; }
-	.contacts .navigation .list li { margin-bottom: 18px; }
-	.contacts .navigation .list:not(.list-additional) li.mobile-only .list { display: block; }
-	.contacts .navigation .list:not(.list-additional) li.mobile-none { display: none; }
-	.contacts .navigation .list:not(.list-additional) .list { margin-bottom: 12px; }
-	.contacts .navigation .list .list li a { color: #a1a1a1; }
-	.contacts .navigation .list .list li a:hover, .contacts .navigation .list .list li a:focus { color: #f26c4f; }
-	.contacts .navigation .list.list-additional { width: 116px; padding: 0; margin: 0 -20px 0 0; float: right; display: block; }
-	.contacts .navigation .list.list-additional > li { margin-bottom: 7px; }
-	.contacts .navigation .list.list-additional > li.mobile-only { display: none; }
-	.contacts .navigation .list.list-additional > li > a { margin-bottom: 8px; display: block; }
-	.contacts .navigation .list.list-additional .list { margin-left: 18px; }
-	.contacts .col ~ .col { display: none; }
-	.contacts .space { width: 266px; padding: 20px 10px 6px; margin: 0 auto; position: relative; left: auto; top: auto; bottom: auto; }
-	.contacts .space:before { width: 0; height: 0; display: block; content: "\0020"; overflow: hidden; position: absolute; top: 100%; left: 0; right: 0; border-style: solid; border-width: 17px 133px 0 133px; border-color: #cbf17a transparent transparent transparent; z-index: 5; -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden; }
-	.contacts .space .logo { width: 114px; height: auto; margin-bottom: 20px; }
-	.contacts .space .callback { margin-bottom: 16px; font-size: 12px; line-height: 14px; }
-	.contacts .space .callback .tel { margin-bottom: 2px; font-size: 20px; line-height: 20px; }
-	.contacts .socials { position: relative; top: auto; left: auto; right: auto; bottom: auto; font-size: 12px; line-height: 13px; }
-	.contacts .social-small { margin-bottom: 10px; }
-	/* Подвал */
-	.footer .wrapper { padding-top: 15px; }
-	.footer .counters { margin-bottom: 24px; }
-	.footer .copyright { max-width: 230px; margin: 0 auto; line-height: 14px; }
 	/* Блок (информационный на главной) */
 	.index-info { padding: 10px 15px 0; margin: -12px -15px 20px; }
 	.index-info .about, .index-info .news { width: 100%; margin-left: 0; margin-right: 0; float: none; padding: 0; }
@@ -3562,6 +3563,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.news .item .date { margin: 0; font-size: 10px; line-height: 12px; }
 	.index-info .news .item { margin-bottom: 14px; }
 	.articles .carousel { margin: 0 -20px; }
+	.articles .list:not(.carousel) .item { width: 50%; }
+	.articles .list:not(.carousel) .item:nth-child(2n+1) { clear: left; }
+	.articles .list:not(.carousel) .item:nth-child(3n+1) { clear: none; }
 	/* Каталог */
 	.catalog:not(.catalog-small) .item { width: 33.33%; min-height: 415px; }
 	.catalog:not(.catalog-small) .bottom { min-height: 76px; }
@@ -3570,13 +3574,16 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	/* Каталог (маленький) */
 	.catalog-small-carousel { height: 216px; padding-bottom: 20px; margin-left: -20px; margin-right: -20px; overflow: hidden; }
 	.catalog-small-carousel.slick-initialized { height: auto; }
-	.catalog-small:not(.catalog-small-carousel) .item { width: 100%; float: none; }
 	.catalog-small-carousel .item { width: 250px !important; height: auto; margin-bottom: 0; }
 	.catalog-small .pic { width: 42%; }
 	.catalog-small .rating { top: -6px; left: 15px; }
 	.catalog-small .info { width: 58%; padding: 23px 6px 10px 16px; }
 	.catalog-small .price { padding-top: 16px; }
 	.catalog-small .product { margin-bottom: 0; }
+	/* Контакты */
+	.contacts .space { width: 240px; margin-left: -120px; }
+	.contacts .col { padding-right: 120px; }
+	.contacts .col ~ .col { padding-left: 140px; padding-right: 0; }
 	/* Навигация (боковая) */
 	.sidenav li:not(.active) { display: none; }
 	.sidenav > li > a:before, .sidenav > li > a:after { display: none; }
@@ -3662,6 +3669,33 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	.catalog:not(.catalog-small) .item:nth-child(3n+1) { clear: none; }
 	.catalog:not(.catalog-small) .item:nth-child(2n+1) { clear: left; }
 	.catalog:not(.catalog-small) .in { margin-left: 0; margin-right: 0; padding-left: 20px; padding-right: 20px; }
+	/* Контакты */
+	.contacts .wrapper { padding: 0 20px; }
+	.contacts .col { width: 266px; padding: 35px 5px 20px; margin: 0 auto; float: none; }
+	.contacts .navigation .list { width: 140px; padding-right: 10px; }
+	.contacts .navigation .list li { margin-bottom: 18px; }
+	.contacts .navigation .list:not(.list-additional) li.mobile-only .list { display: block; }
+	.contacts .navigation .list:not(.list-additional) li.mobile-none { display: none; }
+	.contacts .navigation .list:not(.list-additional) .list { margin-bottom: 12px; }
+	.contacts .navigation .list .list li a { color: #a1a1a1; }
+	.contacts .navigation .list .list li a:hover, .contacts .navigation .list .list li a:focus { color: #f26c4f; }
+	.contacts .navigation .list.list-additional { width: 116px; padding: 0; margin: 0 -20px 0 0; float: right; display: block; }
+	.contacts .navigation .list.list-additional > li { margin-bottom: 7px; }
+	.contacts .navigation .list.list-additional > li.mobile-only { display: none; }
+	.contacts .navigation .list.list-additional > li > a { margin-bottom: 8px; display: block; }
+	.contacts .navigation .list.list-additional .list { margin-left: 18px; }
+	.contacts .col ~ .col { display: none; }
+	.contacts .space { width: 266px; padding: 20px 10px 6px; margin: 0 auto; position: relative; left: auto; top: auto; bottom: auto; }
+	.contacts .space:before { width: 0; height: 0; display: block; content: "\0020"; overflow: hidden; position: absolute; top: 100%; left: 0; right: 0; border-style: solid; border-width: 17px 133px 0 133px; border-color: #cbf17a transparent transparent transparent; z-index: 5; -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden; }
+	.contacts .space .logo { width: 114px; height: auto; margin-bottom: 20px; }
+	.contacts .space .callback { margin-bottom: 16px; font-size: 12px; line-height: 14px; }
+	.contacts .space .callback .tel { margin-bottom: 2px; font-size: 20px; line-height: 20px; }
+	.contacts .socials { position: relative; top: auto; left: auto; right: auto; bottom: auto; font-size: 12px; line-height: 13px; }
+	.contacts .social-small { margin-bottom: 10px; }
+	/* Подвал */
+	.footer .wrapper { padding-top: 15px; }
+	.footer .counters { margin-bottom: 24px; }
+	.footer .copyright { max-width: 230px; margin: 0 auto; line-height: 14px; }
 	/* Блок товара */
 	.block-item .left, .block-item .right { width: 100%; float: none; }
 	.block-item .slick-slide img { max-width: 250px; margin: 0 auto; }
@@ -3702,7 +3736,9 @@ button.small:not([disabled]):active, input[type="button"].small:not([disabled]):
 	/* Обзоры */
 }
 @media (max-width: 480px) {
-
+	.catalog-small:not(.catalog-small-carousel) .item { width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; float: none; }
+	.articles .list:not(.carousel) .item { width: 100%; float: none; }
+	.articles .list:not(.carousel) .item:nth-child(2n+1) { clear: none; }
 }
 @media (max-width: 400px) {
 

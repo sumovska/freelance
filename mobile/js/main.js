@@ -62,11 +62,47 @@ $(document).ready(function () {
 			});
 			$(document).on('click touchstart', function (event) {
 				var target = $(event.target);
-				console.log(event.target);
 				if ((target.closest('.nav-catalog').length === 0) && (!target.is('.nav-catalog'))) {
 					$(_self).removeClass('open').removeClass('visible');
 				}
 			});
+		});
+		$('.search', this).each(function () {
+			var _self = $(this);
+			var search = new Bloodhound({
+				datumTokenizer: function (datum) {
+					return Bloodhound.tokenizers.whitespace(datum.value);
+				},
+				queryTokenizer: Bloodhound.tokenizers.whitespace,
+				remote: {
+					url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=470fd2ec8853e25d2f8d86f685d2270e',
+					filter: function (movies) {
+						// Map the remote source JSON array to a JavaScript object array
+						return $.map(movies.results, function (movie) {
+							return {
+								value: movie.original_title
+							};
+						});
+					}
+				}
+			});
+
+			search.initialize();
+
+			$('.typeahead', this).typeahead({
+					hint: true,
+					highlight: true,
+					minLength: 1
+				},
+				{
+					name: 'search',
+					displayKey: 'value',
+					source: search.ttAdapter()
+				}).on('focus', function () {
+					_self.addClass('focus');
+				}).on('blue', function () {
+					_self.removeClass('focus');
+				});
 		});
 	});
 
@@ -149,6 +185,58 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Табы */
+	$('.tabs').each(function () {
+		$('.tabs-list .link', this).each(function () {
+			$('a', this).click(function () {
+				var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+				$(this).closest('.link').addClass('link-active').siblings('.link-active').removeClass('link-active');
+				$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+				return false;
+			});
+		});
+		$('.tabs-list-carousel', this).slick({
+			slidesToScroll: 1,
+			slidesToShow: 4,
+			infinite: true,
+			variableWidth: true,
+			mobileFirst: true,
+			arrows: false,
+			swipeToSlide: true,
+			touchThreshold: 10,
+			responsive: [
+				{
+					breakpoint: 999,
+					settings: 'unslick'
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2
+					}
+				}
+			],
+			prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
+			nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>'
+		});
+	});
+
+
+	$('.featured-list-carousel').slick({
+		infinite: true,
+		variableWidth: true,
+		mobileFirst: true,
+		arrows: false,
+		swipeToSlide: true,
+		touchThreshold: 10,
+		responsive: [
+			{
+				breakpoint: 999,
+				settings: 'unslick'
+			}
+		]
+	});
+
 
 	/* Сворачивание/разворачивание фильтра */
 	$('.filter').each(function () {
@@ -214,28 +302,6 @@ $(document).ready(function () {
 		if ($(window).width() > 999) {
 		} else {
 
-			$('.tabs-list-carousel').slick({
-				slidesToScroll: 1,
-				slidesToShow: 4,
-				variableWidth: true,
-				responsive: [
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 2
-						}
-					}
-				],
-				prevArrow: '<span data-role="none" class="slick-prev" aria-label="previous"></span>',
-				nextArrow: '<span data-role="none" class="slick-next" aria-label="next"></span>'
-			});
-			$('.featured-list-carousel').slick({
-				slidesToScroll: 1,
-				slidesToShow: 4,
-				arrows: false,
-				variableWidth: true
-			});
-			$('.slick-cloned').removeClass('slick-active');
 			$('.sidenav').each(function () {
 				$('li.active').click(function () {
 					$(this).siblings('li').toggle();
@@ -251,16 +317,6 @@ $(document).ready(function () {
 	$(window).resize(function () {
 		clearTimeout(r);
 		r = setTimeout(runSlider, 500);
-	});
-
-	/* Табы */
-	$('.tabs-list .link').each(function () {
-		$('a', this).click(function () {
-			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
-			$(this).closest('.link').addClass('link-active').siblings('.link-active').removeClass('link-active');
-			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
-			return false;
-		});
 	});
 
 });
