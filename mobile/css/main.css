@@ -237,6 +237,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line-col .col-50 { width: 50%; }
 .form-line-col .col-25 { width: 25%; }
 .form .select { width: 100%; display: block; }
+.form-submit { margin: 20px 0 0 0; }
 input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, textarea.large { height: 50px; padding: 17px 14px 10px; font-size: 16px; }
 button.large, input[type="button"].large, input[type="submit"].large, input[type="reset"].large { min-width: 250px; }
 .button.small, button.small, input[type="button"].small, input[type="submit"].small, input[type="reset"].small { height: 30px; min-width: 0; padding: 7px 30px 8px; border-radius: 3px; font-size: 16px; line-height: 16px; }
@@ -3643,6 +3644,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	padding: 0;
 	box-shadow: none;
 }
+.popup-large {
+	width: 940px;
+}
 /* Попап самовывоза */
 .popup-pickup .list {
 	padding: 0;
@@ -3688,6 +3692,28 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 }
 .popup-login .social .h3 {
 	text-align: center;
+}
+/* Попап дополнительных товаров */
+.popup-additional .action {
+	border: none;
+}
+.popup-additional .action .pic {
+	width: auto;
+	padding-right: 12px;
+}
+.popup-additional .links:after {
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+}
+.popup-additional .links .back {
+	padding: 10px 0;
+	display: inline-block;
+}
+.popup-additional .links .button {
+	margin-left: 50px;
+	float: right;
 }
 .fn-error {
 	padding: 7px 14px;
