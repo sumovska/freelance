@@ -217,7 +217,7 @@ $(document).ready(function () {
 			mobileFirst: true,
 			arrows: false,
 			centerMode: true,
-			slidesToShow: 2,
+			slidesToShow: 5,
 			swipeToSlide: true,
 			touchThreshold: 10,
 			responsive: [
