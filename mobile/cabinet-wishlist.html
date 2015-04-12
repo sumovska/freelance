@@ -176,74 +176,147 @@
 	<main class="container">
 		<header class="top">
 			<div class="wrapper">
-				<p class="breadcrumbs"><a class="home" href="index.html">Главная</a> Мои настройки</p>
+				<p class="breadcrumbs"><a class="home" href="index.html">Главная</a> Мой кабинет</p>
 				<h1 class="h1">Личный кабинет</h1>
 			</div>
 		</header>
 		<div class="wrapper">
 			<nav class="aside">
 				<ul class="sidenav">
-					<li class="active"><a href="cabinet.html">Мои настройки</a></li>
+					<li><a href="cabinet.html">Мои настройки</a></li>
 					<li><a href="cabinet-orders.html">Мои заказы</a></li>
 					<li><a href="cabinet-cart.html">Корзина</a></li>
-					<li><a href="cabinet-wishlist.html">Список желаний</a></li>
-					<li><a href="cabinet-subscribe.html">Подсписка</a></li>
+					<li class="active"><a href="cabinet-wishlist.html">Список желаний</a></li>
+					<li><a href=cabinet-subscribe.html#">Подсписка</a></li>
 				</ul>
 			</nav>
 			<section class="content">
-				<form class="form-profile" action="#">
-					<h2 class="h2">Мои настройки</h2>
-					<p class="mail">info@name.ru <span class="fn">Вы не можете сменить e-mail</span></p>
-					<div class="unit">
-						<p class="form-line"><input type="text" placeholder="Ваш телефон"></p>
-						<p class="form-line"><input type="text" placeholder="Катерина Ларина"></p>
-					</div>
-					<div class="unit">
-						<p class="form-line">
-							<span class="h4">Адрес доставки</span>
-							<a class="add" href="#">Добавить адрес</a>
-						</p>
-						<p class="form-line">
-							<label>
-								<select data-placeholder="Выберите город">
-									<option>Выберите город</option>
-									<option>Балашиха</option>
-									<option>Видное</option>
-									<option>Воскресенск</option>
-									<option>Дмитров</option>
-									<option>Долгопрудный</option>
-									<option>Железнодорожный</option>
-									<option>Жуковский</option>
-								</select>
-							</label>
-						</p>
-						<p class="form-line form-line-col">
-							<span class="col col-50"><input type="text" placeholder="Улица"></span>
-							<span class="col col-25"><input type="text" placeholder="Дом"></span>
-							<span class="col col-25"><input type="text" placeholder="Квартира"></span>
-						</p>
-						<p class="form-line"><textarea placeholder="Дополнительная информация"></textarea></p>
-						<div>
-							<p class="h4"><a class="password" href="#">Сменить пароль</a></p>
-							<div class="form-in">
-								<p class="form-line"><label><input type="text" placeholder="Старый пароль"></label></p>
-								<p class="form-line"><label><input type="text" placeholder="Новый пароль"></label></p>
-								<p class="form-line"><label><input type="text" placeholder="Новый пароль"></label></p>
-							</div>
+				<form class="form" action="#">
+					<h2 class="h2">Мои заказы</h2>
+					<div class="tabs tabs-orders">
+						<div class="tabs-list">
+							<div class="link link-active"><a href="#gift-1">На день рождения</a></div>
+							<div class="link"><a href="#gift-2">Маме</a></div>
+							<div class="link"><a href="#gift-3">Подарки на НГ</a></div>
 						</div>
+
+						<div class="tab tab-gift-1" id="gift-1">
+							<table class="table table-order">
+							<tr>
+								<th colspan="2"><p class="h3">Поделитесь с друзьями</p></th>
+								<th colspan="2">
+									<div class="social">
+										<ul class="list">
+											<li><a href="#"><img src="img/temp/social/default/vk.png"></a></li>
+											<li><a href="#"><img src="img/temp/social/default/od.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/fb.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/ya.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/go.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/mr.png" alt=""></a></li>
+										</ul>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<td class="td-pic"><img src="img/temp/featured/1.jpg" alt=""></td>
+								<td class="td-name"><p>Samsung S 7562 Galaxy S Duos Chic White La Fleur</p></td>
+								<td class="td-price"><p>248 999 руб.</p></td>
+								<td class="td-action">
+									<a href="#">Удалить</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td-pic"><img src="img/temp/featured/2.jpg" alt=""></td>
+								<td class="td-name"><p>HTC One X White S720e UACRF 16GB</p></td>
+								<td class="td-price"><p>4 000 руб.</p></td>
+								<td class="td-action">
+									<a href="#">Удалить</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td-pic"><img src="img/temp/featured/3.jpg" alt=""></td>
+								<td class="td-name"><p>HTC Windows Phone 8S Domino A620e</p></td>
+								<td class="td-price"><p>6 900 руб.</p></td>
+								<td class="td-action">
+									<a href="#">Удалить</a>
+								</td>
+							</tr>
+							</table>
+						</div>
+
+						<div class="tab tab-gift-2 tab-hidden" id="gift-2">
+							<table class="table table-order">
+							<tr>
+								<th colspan="2"><p class="h3">Поделитесь с друзьями</p></th>
+								<th colspan="2">
+									<div class="social">
+										<ul class="list">
+											<li><a href="#"><img src="img/temp/social/default/vk.png"></a></li>
+											<li><a href="#"><img src="img/temp/social/default/od.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/fb.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/ya.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/go.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/mr.png" alt=""></a></li>
+										</ul>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<td class="td-pic"><img src="img/temp/featured/1.jpg" alt=""></td>
+								<td class="td-name"><p>Samsung S 7562 Galaxy S Duos Chic White La Fleur</p></td>
+								<td class="td-price"><p>248 999 руб.</p></td>
+								<td class="td-action">
+									<a href="#">Удалить</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td-pic"><img src="img/temp/featured/2.jpg" alt=""></td>
+								<td class="td-name"><p>HTC One X White S720e UACRF 16GB</p></td>
+								<td class="td-price"><p>4 000 руб.</p></td>
+								<td class="td-action">
+									<a href="#">Удалить</a>
+								</td>
+							</tr>
+							</table>
+						</div>
+
+						<div class="tab tab-gift-3 tab-hidden" id="gift-3">
+							<table class="table table-order">
+							<tr>
+								<th colspan="2"><p class="h3">Поделитесь с друзьями</p></th>
+								<th colspan="2">
+									<div class="social">
+										<ul class="list">
+											<li><a href="#"><img src="img/temp/social/default/vk.png"></a></li>
+											<li><a href="#"><img src="img/temp/social/default/od.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/fb.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/ya.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/go.png" alt=""></a></li>
+											<li><a href="#"><img src="img/temp/social/default/mr.png" alt=""></a></li>
+										</ul>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<td class="td-pic"><img src="img/temp/featured/1.jpg" alt=""></td>
+								<td class="td-name"><p>Samsung S 7562 Galaxy S Duos Chic White La Fleur</p></td>
+								<td class="td-price"><p>248 999 руб.</p></td>
+								<td class="td-action">
+									<a href="#">Удалить</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td-pic"><img src="img/temp/featured/3.jpg" alt=""></td>
+								<td class="td-name"><p>HTC Windows Phone 8S Domino A620e</p></td>
+								<td class="td-price"><p>6 900 руб.</p></td>
+								<td class="td-action">
+									<a href="#">Удалить</a>
+								</td>
+							</tr>
+							</table>
+						</div>
+
 					</div>
-					<div class="social">
-						<p class="h4">Свяжите свой профиль с профилями социальных сетей</p>
-						<ul class="list">
-							<li><a href="#"><img src="img/temp/social/default/vk.png"></a></li>
-							<li><a href="#"><img src="img/temp/social/default/od.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/fb.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/ya.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/go.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/mr.png" alt=""></a></li>
-						</ul>
-					</div>
-					<p class="form-submit"><label><input type="submit" value="Сохранить изменения"></label></p>
 				</form>
 			</section>
 		</div>

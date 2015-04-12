@@ -323,6 +323,31 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Count */
+	$('.count').each(function () {
+		var input = $('input', this), up = $('.up', this), down = $('.down', this);
+		input.keydown(function (e) {
+			if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+				(e.keyCode == 65 && e.ctrlKey === true) ||
+				(e.keyCode >= 35 && e.keyCode <= 39)) {
+				return;
+			}
+			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+				e.preventDefault();
+			}
+		});
+		up.click(function () {
+			if (+input.val() < 10) {
+				input.val(+input.val() + 1);
+			}
+		});
+		down.click(function () {
+			if (+input.val() > 0) {
+				input.val(+input.val() - 1);
+			}
+		});
+	});
+
 
 	/* Ценовая прокрутка */
 	$('.price-slider').each(function () {
@@ -362,6 +387,28 @@ $(document).ready(function () {
 		clearTimeout(r);
 		r = setTimeout(runSlider, 500);
 	});
+
+	/* Форма доставки */
+	$('.block-delivery').each(function () {
+		$('label.radio', this).click(function () {
+			var _self = $(this);
+			$(this).parent(this).siblings('.delivery-in', this).slideToggle(200);
+			_self.parentsUntil().siblings('.block-delivery').find('.delivery-in', this).slideUp(200);
+		});
+	});
+
+	/* Изменение пароля */
+	$('.password', this).click(function () {
+		$(this).parent(this).siblings('.form-in').slideToggle(200);
+		return false;
+	});
+
+	/* Таблица заказов */
+	$('tr.order', this).click(function(){
+		var _self =  $(this);
+		$(this).toggleClass('open');
+		$(this).nextUntil('.order', '.hidden').slideToggle(200);
+	})
 
 });
 

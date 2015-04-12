@@ -57,7 +57,7 @@
 				</div>
 				<div class="nav-in">
 					<ul>
-						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="#">Контакты</a></li>
 						<li><a href="#">Новости</a></li>
 						<li><a href="#">Отзывы</a></li>
 						<li class="hide"><a href="#">Статьи</a></li>
@@ -105,21 +105,21 @@
 							<div class="in" style="background-image:url('img/temp/catalog-nav-bg-1.jpg')">
 								<p class="h1">Электронные книги</p>
 								<p>Благодаря мультисенсорному дисплею и уникальному интуитивно понятному интерфейсу управлять PocketBook Touch Lux невероятно просто! В новой модели тщательно проработано пользовательское меню, улучшена работа с аудиофайлами (добавлена опция составления плейлистов).</p>
-								<ul class="list-in">
+								<ul>
 									<li>
-										<a class="name" href="item.html">Amazon Kindle 5 Black with Special Offers</a>
+										<a class="name" href="catalog.html">Amazon Kindle 5 Black with Special Offers</a>
 										<span class="note">6.0&quot; E-Ink PEARL, инфракрасный сенсорный дисплей</span>
 									</li>
 									<li>
-										<a class="name" href="item.html">Texet TB-506 White</a>
+										<a class="name" href="catalog.html">Texet TB-506 White</a>
 										<span class="note">6&quot;, E-Ink, 800х600</span>
 									</li>
 									<li>
-										<a class="name" href="item.html">EvroMedia Е-Учебник Classic Lite (C63)</a>
+										<a class="name" href="catalog.html">EvroMedia Е-Учебник Classic Lite (C63)</a>
 										<span class="note">6&quot;, E-Ink, 800х600 </span>
 									</li>
 									<li>
-										<a class="name" href="item.html">Amazon Kindle 5 Black with Special Offers</a>
+										<a class="name" href="catalog.html">Amazon Kindle 5 Black with Special Offers</a>
 										<span class="note">6.0&quot; E-Ink PEARL, инфракрасный сенсорный дисплей</span>
 									</li>
 								</ul>
@@ -135,18 +135,19 @@
 			<!-- login -->
 			<ul class="login">
 				<li class="name sub">
-					<a href="cabinet.html">Имя пользователя</a>
+					<a href="profile.html">Имя пользователя</a>
 					<div class="inside">
 						<ul>
-							<li><a href="cabinet.html">Ваши настройки</a></li>
-							<li><a href="cabinet-orders.html">Ваши заказы</a></li>
-							<li><a href="cabinet-cart.html">Ваши покупки</a></li>
-							<li><a href="cabinet-wishlist.html">Список желаний</a></li>
-							<li><a href="cabinet-subscribe.html">Подписка</a></li>
+							<li><a href="profile.html">Личный кабинет</a></li>
+							<li><a href="#">Ваши заказы</a></li>
+							<li><a href="#">Ваши покупки</a></li>
+							<li><a href="#">Список желаний</a></li>
+							<li><a href="#">Личные данные</a></li>
+							<li><a href="#">Смена пароля</a></li>
 						</ul>
 					</div>
 				</li>
-				<li class="out"><a href="index-anonymous.html">Выход</a></li>
+				<li class="out"><a href="notlogged.html">Выход</a></li>
 			</ul>
 
 			<!-- cart link -->
@@ -155,7 +156,7 @@
 			<!-- search box -->
 			<div class="search">
 				<form action="search.html" method="get">
-					<input type="text" class="typeahead" name="s" autocomplete="off" placeholder="Введите запрос" value="">
+					<input type="text" name="s" autocomplete="off" placeholder="Введите запрос" value="">
 					<button title="Искать"></button>
 				</form>
 			</div>
@@ -176,33 +177,31 @@
 	<main class="container">
 		<header class="top">
 			<div class="wrapper">
-				<p class="breadcrumbs"><a class="home" href="index.html">Главная</a> Мои настройки</p>
-				<h1 class="h1">Личный кабинет</h1>
+				<p class="breadcrumbs"><a class="home" href="index.html">Главная</a> Оформление заказа</p>
+				<h1 class="h1">Оформление заказа</h1>
 			</div>
 		</header>
+
 		<div class="wrapper">
-			<nav class="aside">
-				<ul class="sidenav">
-					<li class="active"><a href="cabinet.html">Мои настройки</a></li>
-					<li><a href="cabinet-orders.html">Мои заказы</a></li>
-					<li><a href="cabinet-cart.html">Корзина</a></li>
-					<li><a href="cabinet-wishlist.html">Список желаний</a></li>
-					<li><a href="cabinet-subscribe.html">Подсписка</a></li>
-				</ul>
-			</nav>
-			<section class="content">
-				<form class="form-profile" action="#">
-					<h2 class="h2">Мои настройки</h2>
-					<p class="mail">info@name.ru <span class="fn">Вы не можете сменить e-mail</span></p>
-					<div class="unit">
-						<p class="form-line"><input type="text" placeholder="Ваш телефон"></p>
-						<p class="form-line"><input type="text" placeholder="Катерина Ларина"></p>
-					</div>
-					<div class="unit">
-						<p class="form-line">
-							<span class="h4">Адрес доставки</span>
-							<a class="add" href="#">Добавить адрес</a>
-						</p>
+			<form class="form" action="#" method="post">
+
+				<p>Вы оформляете заказ без регистрации <br>
+					<span class="fn">Если у вас уже есть аккаунт, <a class="fancybox" data-fancybox-type="ajax" href="./popup-login.html">войдите</a> или <a href="#">зарегистрируйтесь</a></span>
+				</p>
+
+				<hr class="large">
+
+				<p><label><input type="text" placeholder="Ваш телефон"></label></p>
+				<p><label><input type="text" placeholder="Ваше имя"></label></p>
+
+				<hr class="large">
+
+				<h3 class="h3">Способ доставки</h3>
+				<div class="block-delivery">
+					<p class="form-line">
+						<label class="radio"><input type="radio" name="delivery"> <span class="h">Самовывоз</span> <br> <span class="fn">200 пунктов по всей территории Москвы и МО</span></label>
+					</p>
+					<div class="delivery-in">
 						<p class="form-line">
 							<label>
 								<select data-placeholder="Выберите город">
@@ -217,36 +216,94 @@
 								</select>
 							</label>
 						</p>
-						<p class="form-line form-line-col">
-							<span class="col col-50"><input type="text" placeholder="Улица"></span>
-							<span class="col col-25"><input type="text" placeholder="Дом"></span>
-							<span class="col col-25"><input type="text" placeholder="Квартира"></span>
-						</p>
-						<p class="form-line"><textarea placeholder="Дополнительная информация"></textarea></p>
-						<div>
-							<p class="h4"><a class="password" href="#">Сменить пароль</a></p>
-							<div class="form-in">
-								<p class="form-line"><label><input type="text" placeholder="Старый пароль"></label></p>
-								<p class="form-line"><label><input type="text" placeholder="Новый пароль"></label></p>
-								<p class="form-line"><label><input type="text" placeholder="Новый пароль"></label></p>
-							</div>
-						</div>
-					</div>
-					<div class="social">
-						<p class="h4">Свяжите свой профиль с профилями социальных сетей</p>
 						<ul class="list">
-							<li><a href="#"><img src="img/temp/social/default/vk.png"></a></li>
-							<li><a href="#"><img src="img/temp/social/default/od.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/fb.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/ya.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/go.png" alt=""></a></li>
-							<li><a href="#"><img src="img/temp/social/default/mr.png" alt=""></a></li>
+							<li><a href="#">Боровское шоссе, д.51, стр.1</a></li>
+							<li><a href="#">Дмитровское шоссе, д.163а</a></li>
+							<li><a href="#">Лермонтовский проспект, д.19, к.2</a></li>
+							<li><a href="#">ул. Бутакова, д.4</a></li>
+							<li><a href="#">м.Бибирево, ул. Пришвина, д.22</a></li>
+							<li><a href="#">м.Бабушкинская, ул. Менжинского, д.27</a></li>
+							<li><a href="#">м.Беговая, ул. Хорошевсеок шоссе, д.7</a></li>
 						</ul>
 					</div>
-					<p class="form-submit"><label><input type="submit" value="Сохранить изменения"></label></p>
-				</form>
-			</section>
+				</div>
+				<div class="block-delivery">
+					<p class="form-line">
+						<label class="radio"><input type="radio" name="delivery"> <span class="h">Доставка курьером</span> <br> <span class="fn">Только в пределах МКАД. Цена 500 руб.</span></label>
+					</p>
+					<div class="delivery-in">
+						<h4 class="h4">Адрес доставки</h4>
+						<p class="form-line"><label class="radio"><input type="radio" name="type"> <span class="h">Создать новый</span></label></p>
+						<div class="delivery-in">
+							<p class="form-line"><label><input type="text" placeholder="Название адреса"></label></p>
+							<p class="form-line">
+								<label>
+									<select data-placeholder="Выберите город">
+										<option>Выберите город</option>
+										<option>Балашиха</option>
+										<option>Видное</option>
+										<option>Воскресенск</option>
+										<option>Дмитров</option>
+										<option>Долгопрудный</option>
+										<option>Железнодорожный</option>
+										<option>Жуковский</option>
+									</select>
+								</label>
+							</p>
+							<p class="form-line form-line-col">
+								<span class="col col-50"><input type="text" placeholder="Волкова"></span>
+								<span class="col col-25"><input type="text" placeholder="14"></span>
+								<span class="col col-25"><input type="text" placeholder="345"></span>
+							</p>
+							<p class="form-line"><label><textarea placeholder="10 этаж, домофон"></textarea></label></p>
+						</div>
+					</div>
+				</div>
+
+				<hr class="large">
+
+				<h3 class="h3">Способ оплаты</h3>
+				<p><label class="radio"><input type="radio" name="pay"> Яндекс.Деньги <br> <span class="fn">Все комиссии оплачивает покупатель</span></label></p>
+				<p><label class="radio"><input type="radio" name="pay"> Наличные курьеру</label></p>
+
+				<hr class="large">
+
+				<!-- table-cart -->
+				<table class="table table-order">
+				<tr>
+					<td class="td-pic"><img src="img/temp/featured/1.jpg" alt=""></td>
+					<td class="td-name"><p>Samsung S 7562 Galaxy S Duos Chic White La Fleur</p></td>
+					<td class="td-amount"><p>2 шт.</p></td>
+					<td class="td-price"><p class="price">248 999 руб.</p></td>
+				</tr>
+				<tr>
+					<td class="td-pic"><img src="img/temp/featured/2.jpg" alt=""></td>
+					<td class="td-name"><p>HTC One X White S720e UACRF 16GB</p></td>
+					<td class="td-amount"><p>2 шт.</p></td>
+					<td class="td-price"><p class="price">4 000 руб.</p></td>
+				</tr>
+				<tr>
+					<td class="td-pic"><img src="img/temp/featured/3.jpg" alt=""></td>
+					<td class="td-name"><p>HTC Windows Phone 8S Domino A620e</p></td>
+					<td class="td-amount"><p>2 шт.</p></td>
+					<td class="td-price"><p class="price">6 900 руб.</p></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="td-name"><p class="price">Всего</p></td>
+					<td class="td-price" colspan="2"><p class="price">1 456 999 руб.</p></td>
+
+				</tr>
+				</table>
+				<!-- /table-cart end -->
+
+				<h3 class="h3">Комментарии к заказу</h3>
+				<p><label><textarea></textarea></label></p>
+
+				<p class="submit"><input class="large" type="submit" value="Подтвердить"></p>
+			</form>
 		</div>
+
 	</main>
 	<!-- /main end -->
 
