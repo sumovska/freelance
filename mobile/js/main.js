@@ -408,7 +408,7 @@ $(document).ready(function () {
 
 	/* Добавлено в корзину */
 	$('.block-item .to-cart', this).click(function(){
-		$(this).html("В корзине").addClass('added');
+		$(this).addClass('added').find('.in').html("В корзине");
 		return false;
 	});
 
