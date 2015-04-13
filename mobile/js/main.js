@@ -1,11 +1,15 @@
 /*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true, node: true */
 /*global window, console, document, $, jQuery, PIE, initialize, styler */
 
+function initForms() {
+	$('input, select').styler();
+}
+
 /* On document ready */
 $(document).ready(function () {
 
 	/* Формы */
-	$('input, select').styler();
+	initForms();
 
 
 	/* Выпадающее меню */
@@ -303,7 +307,16 @@ $(document).ready(function () {
 
 	/*  Всплывающие окна (Fancybox) */
 	$('.fancybox').fancybox({
-		padding: 0
+		padding: 0,
+		margin: 20,
+		autoResize: true,
+		autoCenter: true,
+		helpers: {
+			media: {}
+		},
+		beforeShow: function () {
+			initForms();
+		}
 	});
 
 
@@ -350,7 +363,7 @@ $(document).ready(function () {
 			}
 		});
 		down.click(function () {
-			if (+input.val() > 0) {
+			if (+input.val() > 1) {
 				input.val(+input.val() - 1);
 			}
 		});
