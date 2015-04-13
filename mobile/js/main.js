@@ -281,14 +281,24 @@ $(document).ready(function () {
 		]
 	});
 
+	/* Хлебные крошки */
+	$('.breadcrumbs').each(function () {
+		$(this).on('click', '.back', function () {
+			history.back();
+			return false;
+		});
+	});
+
 
 	/* Сворачивание/разворачивание фильтра */
 	$('.filter').each(function () {
+		_filter = $(this);
 		$('.toggle', this).on('click', function () {
-			$(this).toggleClass('toggle-active').siblings('form').toggle(200);
+			$(this).toggleClass('toggle-active');
+			_filter.toggleClass('open');
 		});
-		$('.h5 .switch', this).on('click', function () {
-			$(this).closest('.h5').toggleClass('h5-active').siblings('.entry-in').fadeToggle(200);
+		$('.h5', this).on('click', function () {
+			$(this).closest('.entry').toggleClass('open');
 		});
 	});
 
@@ -404,8 +414,8 @@ $(document).ready(function () {
 	});
 
 	/* Таблица заказов */
-	$('tr.order', this).click(function(){
-		var _self =  $(this);
+	$('tr.order', this).click(function () {
+		var _self = $(this);
 		$(this).toggleClass('open');
 		$(this).nextUntil('.order', '.hidden').slideToggle(200);
 	})
