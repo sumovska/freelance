@@ -375,25 +375,12 @@ $(document).ready(function () {
 		$('.item', this).Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
 	});
 
-	function runSlider() {
-		if ($(window).width() > 999) {
-		} else {
-
-			$('.sidenav').each(function () {
-				$('li.active').click(function () {
-					$(this).siblings('li').toggle();
-					return false;
-				});
-			});
-		}
-	}
-
-	runSlider();
-	var r;
-
-	$(window).resize(function () {
-		clearTimeout(r);
-		r = setTimeout(runSlider, 500);
+	/* Боковая навигация */
+	$('.sidenav').each(function () {
+		$(this).on('click', 'li.active a', function () {
+			$(this).siblings('li').toggle();
+			return false;
+		});
 	});
 
 	/* Форма доставки */
@@ -416,7 +403,7 @@ $(document).ready(function () {
 		var _self = $(this);
 		$(this).toggleClass('open');
 		$(this).nextUntil('.order', '.hidden').slideToggle(200);
-	})
+	});
 
 	/* Добавлено в корзину */
 	$('.block-item .to-cart', this).click(function(){
