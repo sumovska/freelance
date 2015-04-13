@@ -4286,10 +4286,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	/* Контент */
 	.form .unsubscribe { margin-top: 20px; display: block; }
 	.table-scroll { width: auto; padding: 0 20px; margin: 0 -20px; }
-}
-@media (max-width: 480px) {
-	.header .nav-catalog .link { position: relative; left: -15px; }
-	.articles .list:not(.carousel) .item { width: 100%; float: none; }
 	/* Акции */
 	.action { width: 75%; margin-left: auto; margin-right: auto; }
 	.action .pic, .action .text { width: 100%; margin: 0 auto; display: block; }
@@ -4305,7 +4301,13 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.header .nav-catalog .link { position: relative; left: -15px; }
 	.articles .list:not(.carousel) .item { width: 100%; float: none; }
 	/* Акции */
-	.action { width: 100%; }
+	.action .pic, .action .text { width: 100%; margin: 0 auto; display: block; }
+	.action .text { margin-bottom: 20px; }
+	.action-2-col, .block-item .action-2-col, .block-item .describe, .block-item .about, .block-item .action-2-col .col:nth-child(1), .block-item .action-2-col .col { width: 100%; padding-top: 10px; padding-bottom: 10px; float: none; text-align: center; }
+	.action-3-col .col, .action-3-col.set .col, .action-3-col .col:nth-child(3), .action-3-col.set .col:nth-child(3) { width: 100%; text-align: center; padding: 20px 0; }
+	.action .button-main { padding-left: 30px; padding-right: 30px; }
+	.action .icon { left: 50%; right: auto; top: auto; bottom: -18px; margin-left: -10px; }
+	.action .icon-equal { top: -10px; bottom: auto; }
 }
 @media (max-width: 400px) {
 	.catalog:not(.catalog-small) .item:nth-child(2n+1) { clear: none; }
