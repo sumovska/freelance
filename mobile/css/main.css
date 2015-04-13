@@ -188,8 +188,8 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox__trigger { width: 39px; height: 100%; position: absolute; top: 0; right: 0; }
 .jq-selectbox__trigger-arrow { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 .jq-selectbox__trigger-arrow:before, .jq-selectbox__trigger-arrow:after { content: "\0020"; display: block; position: absolute; top: 50%; left: 50%; transition: background-color .2s; }
-.jq-selectbox__trigger-arrow:before { margin: -11px 0 0 -5px; width: 0; height: 0; border-style: solid; border-width: 0 4px 7px 4px; border-color: transparent transparent #000 transparent; }
-.jq-selectbox__trigger-arrow:after { margin: -1px 0 0 -5px; width: 0; height: 0; border-style: solid; border-width: 7px 4px 0 4px; border-color: #000 transparent transparent transparent; }
+.jq-selectbox__trigger-arrow:before { margin: -8px 0 0 -5px; width: 0; height: 0; border-style: solid; border-width: 0 4px 7px 4px; border-color: transparent transparent #000 transparent; }
+.jq-selectbox__trigger-arrow:after { margin: 2px 0 0 -5px; width: 0; height: 0; border-style: solid; border-width: 7px 4px 0 4px; border-color: #000 transparent transparent transparent; }
 .jq-selectbox:not(.disabled):hover .jq-selectbox__trigger-arrow:before, .jq-selectbox.focused .jq-selectbox__trigger-arrow:before { border-color: transparent transparent #a09f9e transparent; }
 .jq-selectbox:not(.disabled):hover .jq-selectbox__trigger-arrow:after, .jq-selectbox.focused .jq-selectbox__trigger-arrow:after { border-color: #a09f9e transparent transparent transparent; }
 .jq-selectbox.disabled .jq-selectbox__trigger-arrow:before, .jq-selectbox.disabled .jq-selectbox__trigger-arrow:after { background: #a09f9e; }
@@ -3484,10 +3484,15 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	text-align: right;
 }
 .table-order {
-	width: 100%;
+	width: 100% !important;
 	position: relative;
-	white-space: nowrap;
+	table-layout: fixed;
 }
+.table-order .col-number { width: 100px; }
+.table-order .col-date { width: 105px; }
+.table-order .col-actions { width: 120px; }
+.table-order .col-quanity { width: 90px; }
+.table-order .col-total { width: 130px; }
 .table-order tr:nth-child(2n+1) {
 	background: transparent;
 }
@@ -3525,7 +3530,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	border-bottom: 3px solid #f5f5f5;
 }
 .table-order .td-pic {
-	padding-left: 45px;
+	padding: 15px;
 }
 .table-order .td-pic img {
 	margin: 0 auto;
@@ -3534,11 +3539,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 }
 .table-order .td-name {
 	width: 100%;
-	padding-left: 44px;
 	white-space: normal;
-}
-.table-order tr.hidden .td-name {
-	padding-left: 6px;
 }
 .table-order .td-code {
 	padding-left: 0;
@@ -3557,14 +3558,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	text-align: center;
 	display: block;
 }
-.table-order .td-price {
-	padding-right: 40px;
-	padding-left: 26px;
-	text-align: center;
-}
-.table-order .td-price .price {
-	text-align: right;
-}
 .table-order .td-count {
 	padding-left: 54px;
 }
@@ -3578,14 +3571,14 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	width: 1px;
 	height: 8px;
 	top: 5px;
-	left: -9px;
+	left: -7px;
 	background: #000;
 	transition: background .2s ease;
 }
 .table-order .number:hover:before, .table-order .number:hover:after {
 	background: #f26c4f;
 }
-.table-order .number:before { left: -14px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+.table-order .number:before { left: -12px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
 .table-order .number:after { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
 .table-order tr.order.open .number:before { left: -9px; }
 .table-order tr.order.open .number:after { left: -14px; }
@@ -3888,6 +3881,8 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.wrapper-catalog { padding-left: 250px; }
 	.wrapper-catalog .aside { margin-left: -220px; }
 	.wrapper-catalog .content { width: auto; }
+	.wrapper-cabinet .aside { width: 100%; float: none; }
+	.wrapper-cabinet .content { width: 100%; padding-left: 0; padding-bottom: 30px; float: none; }
 	figure { margin: 0 0 20px 0; }
 	figcaption { width: 60%; }
 	/* Навигация */
@@ -3895,6 +3890,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.nav .nav-in > ul > li > a { padding: 10px; }
 	.nav .nav-in:first-of-type { padding-right: 125px; margin-left: -25px; }
 	.nav .nav-in:last-of-type { padding-left: 125px; margin-right: -25px; }
+	/* Навигация (боковая) */
+	.sidenav li:not(.active) { display: none; }
+	.sidenav > li > a:before, .sidenav > li > a:after { display: none; }
 	/* Шапка */
 	.header .search { width: 172px; left: 34px; }
 	.header .login { width: 162px; right: 40px; }
@@ -4093,9 +4091,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.contacts .space { width: 240px; margin-left: -120px; }
 	.contacts .col { padding-right: 120px; }
 	.contacts .col ~ .col { padding-left: 140px; padding-right: 0; }
-	/* Навигация (боковая) */
-	.sidenav li:not(.active) { display: none; }
-	.sidenav > li > a:before, .sidenav > li > a:after { display: none; }
 	/* Сортировка */
 	.sort { margin-bottom: 5px; }
 	.sort .link { padding-top: 8px; padding-bottom: 7px; }
@@ -4147,6 +4142,10 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.tab .h1 { padding-left: 0; font-size: 20px; line-height: 20px; text-align: center; }
 	.featured { padding-left: 20px; padding-right: 20px; }
 	.featured-list { padding-left: 20px; padding-right: 0; margin: 0 -20px; }
+	.social { max-width: 450px; margin-left: auto; margin-right: auto; }
+	.social .h4 { text-align: center; }
+	.form-subscribe .labels { padding-left: 10px; }
+	.form-submit { text-align: center; }
 }
 /* ==========================================================================
    _Адаптивность (мобильная)
