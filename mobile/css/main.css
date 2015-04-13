@@ -3073,7 +3073,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	clear: both;
 }
 .action .in {
-	margin: 0 -10px;
+	margin: 0;
+	display: inline-block;
+	text-align: left;
 }
 .action .in:after {
 	display: block;
@@ -3094,14 +3096,11 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	width: 50%;
 }
 .action-3-col .col {
-	width: 33%;
 	display: inline-block;
 	float: none;
 	vertical-align: middle;
 	position: relative;
 }
-.action-3-col .col:nth-child(2) { padding-left: 22px; }
-.action-3-col .col:nth-child(3) { padding-left: 18px; padding-right: 0; }
 .action .arrow {
 	width: 10px;
 	height: 10px;
@@ -3115,12 +3114,11 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 .action .arrow:before { border-width: 5px 10px 5px 0; border-color: transparent #f26c4f transparent transparent; }
 .action .arrow:after { left: 2px; border-width: 5px 10px 5px 0; border-color: transparent #fff transparent transparent; }
 .action .icon {
-	width: 30px;
-	height: 30px;
-	margin-top: -20px;
-	position: absolute;
-	top: 50%;
-	right: -6px;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
 }
 .action .icon:before, .action .icon:after {
 	display: block;
@@ -3129,18 +3127,13 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	clear: both;
 	position: absolute;
 	top: 8px;
-	left: 8px;
+	left: 2px;
 	background: #3c3c3c;
 }
 .action .icon-plus:before { width: 16px; height: 4px; }
-.action .icon-plus:after { width: 4px; height: 16px; left: 14px; top: 2px; }
-.action .icon-equal {
-	margin-top: -26px;
-	left: -6px;
-	right: auto;
-}
-.action .icon-equal:before { width: 16px; height: 4px; top: 6px; }
-.action .icon-equal:after { width: 16px; height: 4px; top: 15px; }
+.action .icon-plus:after { width: 4px; height: 16px; left: 8px; top: 2px; }
+.action .icon-equal:before { width: 16px; height: 4px; top: 4px; }
+.action .icon-equal:after { width: 16px; height: 4px; top: 12px; }
 .action .title {
 	padding: 5px;
 	color: #f26c4f;
@@ -3171,7 +3164,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	padding-right: 26px;
 }
 .action .text {
-	width: 48%;
+	max-width: 250px;
 }
 .action .name {
 	margin-top: 6px;
@@ -3543,10 +3536,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	margin: 0 auto;
 	height: 86px;
 	display: block;
-}
-.table-order .td-name {
-	width: 100%;
-	white-space: normal;
 }
 .table-order .td-code {
 	padding-left: 0;
