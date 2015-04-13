@@ -246,9 +246,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line-col .col-50 { width: 50%; }
 .form-line-col .col-25 { width: 25%; }
 .form .select { width: 100%; display: block; }
-.form-submit { margin: 20px 0 0 0; }
-input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, textarea.large { height: 50px; padding: 17px 14px 10px; font-size: 16px; }
-button.large, input[type="button"].large, input[type="submit"].large, input[type="reset"].large { min-width: 250px; }
+.form-submit { margin: 20px 0 0 0; text-align: center; }
+input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, textarea.large { height: 50px; padding: 14px; font-size: 16px; }
+button.large, input[type="button"].large, input[type="submit"].large, input[type="reset"].large { min-width: 100px; }
 .button.small, button.small, input[type="button"].small, input[type="submit"].small, input[type="reset"].small { height: 30px; min-width: 0; padding: 7px 30px 8px; border-radius: 3px; font-size: 16px; line-height: 16px; }
 .button.small:not([disabled]):hover, button.small:not([disabled]):hover, input[type="button"].small:not([disabled]):hover, input[type="submit"].small:not([disabled]):hover, input[type="reset"]:hover,
 .button.small:not([disabled]):focus, button.small:not([disabled]):focus, input[type="button"].small:not([disabled]):focus, input[type="submit"].small:not([disabled]):focus, input[type="reset"]:focus { box-shadow: inset 0 15px 0 0 #f58972; }
@@ -380,8 +380,8 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	display: table;
 	float: left;
 }
-.nav .nav-in:first-of-type { padding-right: 295px; margin-left: -15px; }
-.nav .nav-in:last-of-type { padding-left: 295px; margin-right: -15px; float: right; text-align: right; }
+.nav .nav-in:first-of-type { padding-right: 295px; margin-left: -10px; }
+.nav .nav-in:last-of-type { padding-left: 295px; margin-right: -10px; float: right; text-align: right; }
 .nav .nav-in > ul {
 	width: 100%;
 	padding: 0;
@@ -2533,28 +2533,27 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
    _Таблица сравнения
    ========================================================================== */
 .table-compare {
+	width: auto !important;
 	margin: 0 0 24px;
 	font-size: 12px;
 	line-height: 20px;
 	border-bottom: 3px solid #f6f6f6;
+	table-layout: fixed;
 }
 .table-compare td {
-	min-width: 160px;
+	width: 150px;
 	padding: 8px 20px;
-	white-space: nowrap;
 }
 .table-compare .td-name {
+	width: 162px;
+	max-width: none;
 	white-space: normal;
-}
-.table-compare .td-last {
-	width: 100%;
 }
 .table-compare .price {
 	font-size: 14px;
 }
 .table-compare .price .old {
-	padding-right: 4px;
-	display: inline-block;
+	display: block;
 	font-size: 12px;
 }
 /* ==========================================================================
@@ -3370,14 +3369,10 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	height: 20px;
 	cursor: pointer;
 	position: absolute;
-	top: 8px;
+	top: 7px;
 }
-.tabs-list .slick-prev {
-	left: -13px;
-}
-.tabs-list .slick-next {
-	right: -13px;
-}
+.tabs-list .slick-prev { left: -7px; }
+.tabs-list .slick-next { right: -7px; }
 .tabs-list .slick-prev:before, .tabs-list .slick-prev:after, .tabs-list .slick-next:before, .tabs-list .slick-next:after {
 	width: 1px;
 	height: 10px;
@@ -3386,25 +3381,16 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	overflow: hidden;
 	clear: both;
 	position: absolute;
-	top: 1px;
-	left: 7px;
+	top: 50%;
+	left: 50%;
 	background: #000;
 }
-.tabs-list .slick-prev:after, .tabs-list .slick-next:after { top: 7px; }
-.tabs-list .slick-prev:after, .tabs-list .slick-next:before {
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-.tabs-list .slick-prev:before, .tabs-list .slick-next:after {
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
+.tabs-list .slick-prev:before { margin-left: -1px; margin-top: -8px; }
+.tabs-list .slick-prev:after { margin-left: -1px; margin-top: -2px; }
+.tabs-list .slick-next:before { margin-top: -8px; }
+.tabs-list .slick-next:after { margin-top: -2px; }
+.tabs-list .slick-prev:after, .tabs-list .slick-next:before { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+.tabs-list .slick-prev:before, .tabs-list .slick-next:after { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
 .tab .wrapper { padding-top: 28px; }
 .tab .h1 { padding-left: 20px; }
 /* ==========================================================================
@@ -3478,9 +3464,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
    ========================================================================== */
 .block-cart {
 	margin-top: -20px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
-.block-cart .submit {
+.form-cart .form-submit {
 	text-align: right;
 }
 .table-order {
@@ -3532,29 +3518,41 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 .table-order .td-pic {
 	padding: 15px;
 }
+.table-order .td-pic { width: 150px; }
 .table-order .td-pic img {
 	margin: 0 auto;
 	height: 86px;
 	display: block;
 }
-.table-order .td-code {
-	padding-left: 0;
-	padding-top: 24px;
-}
 .table-order .td-code input {
 	width: 200px;
 	height: 38px;
 }
+.table-order .td-price {
+	text-align: center;
+}
+.table-order .td-price {
+	width: 140px;
+}
 .table-order .td-action {
 	padding-right: 30px;
 	font-size: 12px;
+}
+.table-order .td-action {
+	width: 120px;
 }
 .table-order .td-action a {
 	text-align: center;
 	display: block;
 }
 .table-order .td-count {
-	padding-left: 54px;
+	width: 115px;
+}
+.table-order .td-discount {
+	width: 80px;
+}
+.table-order .td-amount {
+	width: 150px;
 }
 .table-order .td-amount { padding-right: 70px; }
 .table-order .number, .table-order .status {
@@ -3652,10 +3650,10 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
-.count .up:before { left: 9px; top: 2px; }
-.count .up:after { left: 14px; top: 2px; }
-.count .down:before { left: 14px; bottom: 4px; }
-.count .down:after { left: 9px; bottom: 4px; }
+.count .up:before { left: 9px; top: 4px; }
+.count .up:after { left: 14px; top: 4px; }
+.count .down:before { left: 14px; top: 5px; }
+.count .down:after { left: 9px; top: 5px; }
 .count .down {
 	top: auto;
 	border-top: none;
@@ -3667,9 +3665,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 .count input {
 	width: 100%;
 	height: 35px;
-	padding-left: 9px;
-	padding-right: 9px;
-	padding-top: 9px;
+	padding: 9px;
 	text-align: right;
 	font-size: 12px;
 }
@@ -3743,14 +3739,17 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 .popup-login label, .popup-login .password, .popup-login .signin {
 	display: table-cell;
 }
+.popup-login .line-links a:hover, .popup-login .line-links a:focus {
+	color: #f26c4f !important;
+}
 .popup-login .signin {
 	text-align: right;
 	color: #8bc807;
 }
 .popup-login .form-submit { margin-top: 25px; }
 .popup-login .social {
-	margin: 0 -37px;
-	padding: 24px 37px;
+	margin: 30px -30px 0;
+	padding: 30px;
 	text-align: center;
 	box-shadow: none;
 	border-top: 1px dashed #b9b5bd;
@@ -4010,7 +4009,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.filter { padding: 9px 15px; }
 	.filter .price-slider input[type="text"] { margin: 0; }
 	/* Таблицы */
-	.table-compare td { max-width: 140px; }
 	/* Блок сравнения */
 	.details .unit { margin-left: -30px; margin-right: -30px; }
 	.details .scroll { margin-left: -30px; margin-right: -30px; padding-left: 30px; padding-right: 30px; }
@@ -4022,6 +4020,11 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.featured .wrapper { width: auto; margin: 0; }
 	.featured-list { padding-left: 30px; padding-right: 0; margin: 0 -30px; }
 	.featured-list .item:nth-child(n+7) { display: block !important; }
+	.block-cart .table-order th.td-pic { width: 0; overflow: hidden; }
+	.block-cart .table-order .td-pic a { display: none; }
+	.block-cart .table-order .td-name { width: 100%; }
+	.block-cart .table-order .td-code input { width: 100%; }
+	.form-cart .form-submit { text-align: center; }
 }
 @media (max-width: 840px) {
 	.catalog:not(.catalog-small-carousel) .item { width: 50%; }
@@ -4130,7 +4133,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	/* Формы */
 	.form-profile { width: 100%; margin: 0 0 20px; }
 	/* Таблица сравнения */
-	.table-compare td { min-width: 120px; }
 	.details .unit { margin-left: -20px; margin-right: -20px; }
 	.details .scroll { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
 	/* Блок (информационный на главной) */
@@ -4251,8 +4253,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.table:not(.table-compare):not(.table-order) tr { padding-top: 12px; padding-bottom: 12px; }
 	.table:not(.table-compare):not(.table-order) td { padding-bottom: 0; padding-top: 0; }
 	.table:not(.table-compare):not(.table-order) .td-heading { padding-right: 22px; font-weight: bold; font-size: 12px; line-height: 14px; }
-	.table-compare td { white-space: normal; }
-	.table-compare .td-last { display: none; }
 	/* Блок информативный боковой */
 	.info-side { margin-bottom: 10px; }
 	.info-side .title { font-size: 20px; text-align: left; padding-bottom: 0; border-bottom: none; }
@@ -4289,6 +4289,11 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 @media (max-width: 480px) {
 	.header .nav-catalog .link { position: relative; left: -15px; }
 	.articles .list:not(.carousel) .item { width: 100%; float: none; }
+	.popup { width: auto; min-width: 260px; padding: 20px; }
+	.fancybox-skin .fancybox-close { top: 10px; right: 10px; }
+	.popup-login .line-links { display: block; text-align: center; }
+	.popup-login label, .popup-login .password, .popup-login .signin { display: block; }
+	.popup-login .signin { text-align: center; }
 }
 @media (max-width: 400px) {
 	/* Акции */
