@@ -243,7 +243,7 @@ $(document).ready(function () {
 			infinite: false,
 			variableWidth: true,
 			mobileFirst: true,
-			arrows: false,
+			arrows: true,
 			swipeToSlide: true,
 			touchThreshold: 10,
 			responsive: [
