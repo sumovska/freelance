@@ -2522,6 +2522,13 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	box-shadow: none;
 	background: none;
 }
+.table-scroll {
+	width: 100%;
+	overflow-x: scroll;
+}
+.table-scroll .table {
+	min-width: 700px;
+}
 /* ==========================================================================
    _Таблица сравнения
    ========================================================================== */
@@ -3881,7 +3888,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.wrapper-catalog { padding-left: 250px; }
 	.wrapper-catalog .aside { margin-left: -220px; }
 	.wrapper-catalog .content { width: auto; }
-	.wrapper-cabinet .aside { width: 100%; float: none; }
+	.wrapper-cabinet .aside { width: 100%; margin-bottom: 20px; float: none; }
 	.wrapper-cabinet .content { width: 100%; padding-left: 0; padding-bottom: 30px; float: none; }
 	figure { margin: 0 0 20px 0; }
 	figcaption { width: 60%; }
@@ -3893,6 +3900,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	/* Навигация (боковая) */
 	.sidenav { max-width: 500px; margin: 0 auto 20px; }
 	.sidenav li:not(.active) { display: none; }
+	.sidenav.open li:not(.active) { display: block; }
 	.sidenav > li > a:before, .sidenav > li > a:after { display: none; }
 	/* Шапка */
 	.header .search { width: 172px; left: 34px; }
@@ -4132,7 +4140,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.action-3-col.set .col { width: 36%; }
 	.action-3-col.set .col:nth-child(3) { width: 26%; padding-top: 10px; }
 	/* Формы */
-	.form-profile { width: 100%; margin: 20px 0; }
+	.form-profile { width: 100%; margin: 0 0 20px; }
 	/* Таблица сравнения */
 	.table-compare td { min-width: 120px; }
 	.details .unit { margin-left: -20px; margin-right: -20px; }
@@ -4150,7 +4158,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.featured-list { padding-left: 20px; padding-right: 0; margin: 0 -20px; }
 	.social { max-width: 450px; margin-left: auto; margin-right: auto; }
 	.social .h4 { text-align: center; }
-	.form-profile { width: 100%; margin: 20px 0; }
+	.form-profile { width: 100%; margin: 0 0 20px; }
 	.form-subscribe .labels { padding-left: 10px; }
 	.form-submit { text-align: center; }
 }
@@ -4250,11 +4258,11 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	/* Блок описания */
 	.block-describe { padding: 0; }
 	/* Таблицы */
-	.table:not(.table-compare) { width: auto; margin: 0 -20px 20px; }
-	.table:not(.table-compare), .table:not(.table-compare) tbody, .table:not(.table-compare) tr, .table:not(.table-compare) td { display: block; }
-	.table:not(.table-compare) tr { padding-top: 12px; padding-bottom: 12px; }
-	.table:not(.table-compare) td { padding-bottom: 0; padding-top: 0; }
-	.table:not(.table-compare) .td-heading { padding-right: 22px; font-weight: bold; font-size: 12px; line-height: 14px; }
+	.table:not(.table-compare):not(.table-order) { width: auto; margin: 0 -20px 20px; }
+	.table:not(.table-compare):not(.table-order), .table:not(.table-compare):not(.table-order) tbody, .table:not(.table-compare):not(.table-order) tr, .table:not(.table-compare):not(.table-order) td { display: block; }
+	.table:not(.table-compare):not(.table-order) tr { padding-top: 12px; padding-bottom: 12px; }
+	.table:not(.table-compare):not(.table-order) td { padding-bottom: 0; padding-top: 0; }
+	.table:not(.table-compare):not(.table-order) .td-heading { padding-right: 22px; font-weight: bold; font-size: 12px; line-height: 14px; }
 	.table-compare td { white-space: normal; }
 	.table-compare .td-last { display: none; }
 	/* Блок информативный боковой */
@@ -4276,6 +4284,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.tab-modification .catalog-small .item { margin-bottom: 20px; }
 	.tab-modification .catalog .item { width: 50%; }
 	.tab-modification .catalog .item:nth-child(2n + 1) { clear: left; }
+	/* Контент */
+	.form .unsubscribe { margin-top: 20px; display: block; }
+	.table-scroll { width: auto; padding: 0 20px; margin: 0 -20px; }
 }
 @media (max-width: 480px) {
 	.header .nav-catalog .link { position: relative; left: -15px; }

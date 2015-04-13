@@ -240,7 +240,7 @@ $(document).ready(function () {
 		$('.tabs-list-carousel', this).slick({
 			slidesToScroll: 1,
 			slidesToShow: 4,
-			infinite: true,
+			infinite: false,
 			variableWidth: true,
 			mobileFirst: true,
 			arrows: false,
@@ -377,8 +377,9 @@ $(document).ready(function () {
 
 	/* Боковая навигация */
 	$('.sidenav').each(function () {
+		_nav = $(this);
 		$(this).on('click', 'li.active a', function () {
-			$(this).siblings('li').toggle();
+			_nav.toggleClass('open');
 			return false;
 		});
 	});
