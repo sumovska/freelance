@@ -231,13 +231,11 @@ $(document).ready(function () {
 
 	/* Табы */
 	$('.tabs').each(function () {
-		$('.tabs-list .link', this).each(function () {
-			$('a', this).click(function () {
-				var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
-				$(this).closest('.link').addClass('link-active').siblings('.link-active').removeClass('link-active');
-				$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
-				return false;
-			});
+		$(this).on('click', '.tabs-list .link a', function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('.link').addClass('link-active').siblings('.link-active').removeClass('link-active');
+			$('.tab-' + where).removeClass('tab-hidden').siblings('.tab').addClass('tab-hidden');
+			return false;
 		});
 		$('.tabs-list-carousel', this).slick({
 			slidesToScroll: 1,
@@ -404,11 +402,17 @@ $(document).ready(function () {
 	});
 
 	/* Таблица заказов */
-	$('tr.order', this).click(function(){
-		var _self =  $(this);
+	$('tr.order', this).click(function () {
+		var _self = $(this);
 		$(this).toggleClass('open');
 		$(this).nextUntil('.order', '.hidden').slideToggle(200);
 	})
+
+	/* Добавлено в корзину */
+	$('.block-item .to-cart', this).click(function(){
+		$(this).html("В корзине").addClass('added');
+		return false;
+	});
 
 });
 
