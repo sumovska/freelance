@@ -146,7 +146,7 @@ fieldset { border: 0; margin: 0; padding: 0; }
    Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
 /* === INPUT === */
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 45px; padding: 12px 14px 7px; border: 1px solid #898989; border-radius: 0; box-shadow: none; outline: none; -webkit-appearance: none; color: #000; font: 14px 'PT Sans', Arial, sans-serif; background: #fff; transition: border-color .3s ease, box-shadow .3s ease; }
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea { width: 270px; height: 45px; padding: 14px; border: 1px solid #898989; border-radius: 0; box-shadow: none; outline: none; -webkit-appearance: none; color: #000; font: 14px 'PT Sans', Arial, sans-serif; background: #fff; transition: border-color .3s ease, box-shadow .3s ease; }
 textarea { width: 400px; height: 148px; max-height: 300px; overflow: auto; resize: none; }
 input[type="email"]:not([disabled]):focus, input[type="number"]:not([disabled]):focus, input[type="password"]:not([disabled]):focus, input[type="search"]:not([disabled]):focus, input[type="tel"]:not([disabled]):focus, input[type="text"]:not([disabled]):focus, input[type="url"]:not([disabled]):focus, textarea:not([disabled]):focus { border-color: #8bc807; box-shadow: 0 0 4px 1px rgba(163, 221, 37, .75); }
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled] { cursor: default; background: #f6f5f3; opacity: 1; }
@@ -233,8 +233,8 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 :-ms-input-placeholder { color: #000; opacity: 1; }
 .form { cursor: default; display: block; }
 .form:after, .form-line:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
-.checkbox, .radio { padding-left: 20px; display: inline-block; vertical-align: middle; position: relative; outline: none; -webkit-appearance: none; }
-.checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
+.checkbox, .radio { padding-left: 18px; display: inline-block; vertical-align: middle; position: relative; outline: none; -webkit-appearance: none; }
+.checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; top: 50%; left: 0; margin: -8px 0 0 0; }
 .for { font: 12px 'Calibri', Arial, sans-serif; color: #000; }
 .for .jq-checkbox { margin: 0 2px 0 0; }
 .form-line { width: 100%; margin-bottom: 12px; clear: left; }
@@ -1210,6 +1210,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
    ========================================================================== */
 .catalog {
 	margin: 0 -16px 20px;
+}
+.catalog-section {
+	margin-bottom: 30px;
 }
 .catalog:after, .catalog .product:after, .catalog .bottom:after, .article:after { width: 100%; content: "\0020"; display: block; clear: both; overflow: hidden; }
 .catalog .item {
@@ -2673,7 +2676,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	border-bottom: none;
 }
 .sidenav > li > a {
-	padding: 21px 21px 17px;
+	padding: 20px;
 	display: block;
 	color: #010101;
 	text-decoration: none;
@@ -2729,6 +2732,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	margin: 0 -6px;
 	padding: 0;
 	list-style: none;
+	text-align: center;
 }
 .social .list li {
 	margin: 0 6px;
@@ -3480,6 +3484,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	text-align: right;
 }
 .table-order {
+	width: 100%;
 	position: relative;
 	white-space: nowrap;
 }
@@ -4002,8 +4007,8 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.tabs-list .link { margin: 0 25px; }
 	.tabs-list .link a { padding-left: 17px; padding-right: 17px; }
 	.tab-in { width: 100%; }
-    .tab-video iframe { width: 100%; height: 350px; }
-    .tab-describe .sideblock { display: none; }
+	.tab-video iframe { width: 100%; height: 350px; }
+	.tab-describe .sideblock { display: none; }
 	/* Статьи */
 	/* Фильтр */
 	.filter { padding: 9px 15px; }
