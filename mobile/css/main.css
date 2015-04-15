@@ -1325,7 +1325,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 .catalog .describe {
 	margin: 12px -12px 0;
 	padding: 0 12px;
-	font-size: 12px;
+	font-size: 13px;
 	line-height: 18px;
 	display: none;
 }
@@ -1335,8 +1335,18 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	font-family: 'Calibri', Arial, sans-serif;
 	color: #8e8e8e;
 }
-.catalog .describe .jq-checkbox.checked .jq-checkbox__div {
-	background-position: -135px -45px;
+.catalog .describe label.checked {
+	display: block;
+	color: #000;
+} 
+.catalog .describe a.add {
+	display: none;
+	font-family: 'Calibri', Arial, sans-serif;
+	font-style: italic;
+	color: #f26c4f;
+}
+.catalog .describe a.add:hover {
+	text-decoration: none;
 }
 .catalog .describe .text {
 	margin: 10px 0 0 0;
@@ -1383,9 +1393,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 		position: relative;
 	}
 	.catalog-list .describe label {
-		min-width: 100px;
+		width: 120px;
 		position: absolute;
-		right: 0;
+		right: -10px;
 		top: 86px;
 	}
 	.catalog-list .bottom {
