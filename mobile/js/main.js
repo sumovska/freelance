@@ -84,18 +84,21 @@ $(document).ready(function () {
 			});
 		});
 
-		_nav.each(function () {
-			$(this).on('click', '.link', function (event) {
-				_nav.toggleClass('open');
+			_nav.on('mouseenter', function (event) {
+				_nav.addClass('open');
+				/*
 				if (_nav.is('.open')) {
 					$(document).on('click touchstart', closeNav);
 				}
+				*/
 				setTimeout(function () {
 					_nav.toggleClass('visible');
 				}, 100);
 				event.preventDefault();
+				$(this).on('mouseleave', function (event) {
+					$(this).removeClass('open').removeClass('visible');
+				});
 			});
-		});
 
 		_search.each(function () {
 			//noinspection JSUnusedGlobalSymbols
