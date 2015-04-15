@@ -329,15 +329,26 @@ $(document).ready(function () {
 
 	$('.table-owners').each(function () {
 		function closeLine(target) {
-			$(this).nextAll(target).eq(0).find('.space').slideUp(100, function () {
-				$(this).closest('tr').remove();
-			});
+			$(this).nextAll(target).eq(0).remove();
 		}
+
+		var _table = $(this);
+
+		/* Просмотр телефона */
+		$(this).on('click', 'td', function () {
+			var _closest = $(this).closest('tr');
+			if (_closest.is('.white')) {
+				_closest.removeClass('white');
+			} else {
+				_closest.addClass('white').siblings('.white').removeClass('white');
+			}
+			event.preventDefault();
+		});
 
 		/* Просмотр телефона */
 		$(this).on('click', '.js-phone', function () {
-			$(this).toggleClass('active');
-			return false;
+			$(this).toggleClass('open');
+			event.preventDefault();
 		});
 
 		/* Просмотр изображения */
@@ -349,13 +360,13 @@ $(document).ready(function () {
 		/* Иконка 'добавить в закладки' */
 		$(this).on('click', '.js-pin', function () {
 			$(this).toggleClass('icon-pinhover').toggleClass('active').closest('.tr').toggleClass('active');
-			return false;
+			event.preventDefault();
 		});
 
 		/* Иконка 'Открыть в новом окне' */
 		$(this).on('click', '.js-window', function () {
 			window.open(this.href, '_blank');
-			return false;
+			event.preventDefault();
 		});
 
 		/* Иконка 'Пожаловаться' */
@@ -363,8 +374,11 @@ $(document).ready(function () {
 			var _this = $(this), closest = _this.closest('tr');
 			if (_this.is('.active')) {
 				_this.removeClass('active');
+				closest.removeClass('white');
 				closeLine.apply(closest, ['.tr-report']);
 			} else {
+				closest.addClass('white').find('.active').removeClass('active');
+				closest.next('.tr-action').remove();
 				var tr = $('<tr class="tr-action tr-report"/>');
 				_this.addClass('active');
 				$('<td/>').attr('colspan', $('td', closest).length).appendTo(tr);
@@ -390,7 +404,6 @@ $(document).ready(function () {
 					closeLine.apply(closest, ['.tr-report']);
 					return false;
 				});
-				$('.space', tr).slideDown(100);
 			}
 			return false;
 		});
@@ -400,8 +413,11 @@ $(document).ready(function () {
 			var _this = $(this), closest = _this.closest('tr');
 			if (_this.is('.active')) {
 				_this.removeClass('active');
+				closest.removeClass('white');
 				closeLine.apply(closest, ['.tr-settings']);
 			} else {
+				closest.addClass('white').find('.active').removeClass('active');
+				closest.next('.tr-action').remove();
 				var tr = $('<tr class="tr-action tr-settings"/>');
 				_this.addClass('active');
 				$('<td/>').attr('colspan', $('td', closest).length).appendTo(tr);
@@ -411,7 +427,6 @@ $(document).ready(function () {
 				$('<a class="delete" href="#">Удалить</a>').appendTo($('.links', tr));
 				tr.insertAfter(closest);
 				initForms();
-				$('.space', tr).slideDown(100);
 			}
 			return false;
 		});
@@ -421,14 +436,17 @@ $(document).ready(function () {
 			var _this = $(this), closest = _this.closest('tr');
 			if (_this.is('.active')) {
 				_this.removeClass('active');
+				closest.removeClass('white');
 				closeLine.apply(closest, ['.tr-advert']);
 			} else {
+				closest.addClass('white').find('.active').removeClass('active');
+				closest.next('.tr-action').remove();
 				var tr = $('<tr class="tr-action tr-advert"/>');
 				_this.addClass('active');
 				$('<td/>').attr('colspan', $('td', closest).length).appendTo(tr);
 				$('<div class="space"/>').appendTo($('td', tr));
 				$('<form action="#" method="post" class="labels"/>').appendTo($('.space', tr));
-				$('<label class="checkbox actual"><input type="checkbox" name="check-advert" value="0">Актуально</label>').appendTo($('.labels', tr));
+				$('<label class="checkbox actual">Актуально&nbsp;|&nbsp; <a class="yes" href="#">ДА</a>&nbsp;/&nbsp;<a class="no" href="#">НЕТ</a></label>').appendTo($('.labels', tr));
 				$('<label class="checkbox color-1"><input type="checkbox" name="check-advert" value="1">Бесплатно на портал<a href="#" class="question">?</a></label>').appendTo($('.labels', tr));
 				$('<label class="checkbox color-2"><input type="checkbox" name="check-advert" value="2">На привилегию - 250 руб.<a href="#" class="question">?</a></label>').appendTo($('.labels', tr));
 				$('<label class="checkbox color-3"><input type="checkbox" name="check-advert" value="3">Поднять - 50 руб.<a href="#" class="question">?</a></label>').appendTo($('.labels', tr));
@@ -447,6 +465,10 @@ $(document).ready(function () {
 				$('.yes', tr).on('click', function () {
 					_this.removeClass('active').addClass('icon-play-green');
 					closeLine.apply(closest, ['.tr-advert']);
+					setTimeout(function () {
+						closest.clone().prependTo(_table);
+						closest.remove();
+					}, 10);
 					return false;
 				});
 				$('.no', tr).on('click', function () {
@@ -454,7 +476,6 @@ $(document).ready(function () {
 					closeLine.apply(closest, ['.tr-advert']);
 					return false;
 				});
-				$('.space', tr).slideDown(100);
 			}
 			return false;
 		});
