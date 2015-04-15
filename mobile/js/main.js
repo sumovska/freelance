@@ -33,10 +33,9 @@ $(document).ready(function () {
 			 }
 			 */
 			setTimeout(function () {
-				_this.toggleClass('visible');
-			}, 100);
-		});
-		$(this).on('mouseleave', '.sub', function (event) {
+				_this.addClass('visible');
+			}, 20);
+		}).on('mouseleave', '.sub', function (event) {
 			$(this).removeClass('open').removeClass('visible');
 		});
 	});
@@ -77,28 +76,27 @@ $(document).ready(function () {
 				 */
 				setTimeout(function () {
 					_this.toggleClass('visible');
-				}, 100);
-			});
-			$(this).on('mouseleave', '.sub', function (event) {
+				}, 20);
+			}).on('mouseleave', '.sub', function (event) {
 				$(this).removeClass('open').removeClass('visible');
 			});
 		});
 
-			_nav.on('mouseenter', function (event) {
+		_nav.each(function () {
+			$(this).on('mouseenter', function (event) {
 				_nav.addClass('open');
 				/*
-				if (_nav.is('.open')) {
-					$(document).on('click touchstart', closeNav);
-				}
-				*/
+				 if (_nav.is('.open')) {
+				 $(document).on('click touchstart', closeNav);
+				 }
+				 */
 				setTimeout(function () {
 					_nav.toggleClass('visible');
-				}, 100);
-				event.preventDefault();
-				$(this).on('mouseleave', function (event) {
-					$(this).removeClass('open').removeClass('visible');
-				});
+				}, 20);
+			}).on('mouseleave', function (event) {
+				$(this).removeClass('open').removeClass('visible');
 			});
+		});
 
 		_search.each(function () {
 			//noinspection JSUnusedGlobalSymbols
@@ -237,7 +235,16 @@ $(document).ready(function () {
 			var _item = $(this);
 			setTimeout(function () {
 				_item.removeAttr('style').removeClass('visible');
-			}, 250);
+			}, 110);
+		});
+		/* Добавить к сравнению */
+		$('.describe', this).on('change', 'label', function () {
+			var _self = $(this);
+			if ($('input', this).is(':checked')) {
+				$(this).addClass('checked').find('.check').text("Добавлено к сравнению.");
+			} else {
+				$(this).removeClass('checked').find('.check').text("К сравнению");
+			}
 		});
 	});
 
@@ -467,18 +474,6 @@ $(document).ready(function () {
 				}
 			});
 			return false;
-		});
-	});
-
-	/* Добавить к сравнению */
-	$('.catalog .describe').each(function () {
-		$('label', this).on('change', function () {
-			var _self = $(this);
-			if ($('input', this).is(':checked')) {
-				$(this).addClass('checked').find('.check').text("Добавлено к сравнению.");
-			} else {
-				$(this).removeClass('checked').find('.check').text("К сравнению");
-			}
 		});
 	});
 

@@ -443,7 +443,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	top: 3px;
 	z-index: 60;
 	background: #fff;
-	transition: opacity .2s;
+	transition: opacity .1s;
 }
 .nav .nav-in > ul > li.sub.open .in { display: block; }
 .nav .nav-in > ul > li.sub.open.visible .in { opacity: 1; }
@@ -769,7 +769,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	background: #f9f9f9;
 	box-shadow: 0 0 8px rgba(0, 0, 0, .26);
 	z-index: 50;
-	transition: opacity .2s ease;
+	transition: opacity .1s;
 }
 .header .nav-catalog.open .inside { display: block; }
 .header .nav-catalog.open.visible .inside { opacity: 1; }
@@ -1001,7 +1001,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	background: #fff;
 	box-shadow: 0 0 3px rgba(0, 0, 0, .23);
 	opacity: 0;
-	transition: opacity .2s;
+	transition: opacity .1s;
 }
 .header .login li.open .inside {
 	display: block;
@@ -1349,7 +1349,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 .catalog .describe label.checked {
 	display: block;
 	color: #000;
-} 
+}
 .catalog .describe a.add {
 	display: none;
 	font-family: 'Calibri', Arial, sans-serif;
@@ -1498,6 +1498,12 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	top: auto;
 	left: auto;
 }
+.catalog-small .bottom {
+	padding-left: 10px;
+	padding-right: 0;
+	margin-left: -10px;
+	margin-right: 0;
+}
 .catalog-small .to-cart {
 	width: auto;
 	float: none;
@@ -1621,6 +1627,10 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
+	transition: none;
+}
+.to-cart:hover, .to-cart:focus {
+	transition: none;
 }
 .to-cart:before, .to-cart:after {
 	width: 20px;
@@ -1630,15 +1640,15 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	overflow: hidden;
 	position: absolute;
 	top: 7px;
-	left: 10px;
+	left: 8px;
 	opacity: 0;
 	background: url("../img/sprite.png") -25px 0 no-repeat;
 	background-size: 145px auto;
-	transition: opacity .5s ease;
+	transition: none;
 }
 .to-cart:before { opacity: 1; }
 .to-cart:after { opacity: 0; background-position: 0 0; }
-.to-cart:hover:before { opacity: 0; }
+.to-cart:hover:before { opacity: 1; }
 .to-cart:hover:after { opacity: 1; }
 /* ==========================================================================
    _Кнопка "В корзину" (большая)
@@ -4205,7 +4215,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.content { width: 100%; padding-right: 0; float: none; }
 	.sideblock { width: 100%; max-width: 300px; margin: 0 auto 30px; font-variant: normal; position: static; top: auto; right: auto; float: none; }
 	.aside { width: 100%; float: none; margin-right: 0; margin-left: 0; }
-	.wrapper-catalog .aside { margin: 0; }
+	.wrapper-catalog .aside { margin: 0; float: none; }
 	.wrapper-catalog .content { padding: 0; float: none; }
 	/* Навигация */
 	.nav { display: none; }
