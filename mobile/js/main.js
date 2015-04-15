@@ -42,6 +42,10 @@ $(document).ready(function () {
 
 	/* Шапка */
 	$('.header').each(function () {
+		function openLogin(event) {
+
+		}
+
 		function closeLogin(event) {
 			var target = $(event.target);
 			if ((target.closest('.login').length === 0) && (!target.is('.login'))) {
@@ -61,18 +65,20 @@ $(document).ready(function () {
 		var _login = $('.login', this), _nav = $('.nav-catalog', this), _search = $('.search', this);
 
 		_login.each(function () {
-			$(this).on('click', '.sub > a', function (event) {
-				$(this).closest('li').each(function () {
-					var _this = $(this);
-					_this.toggleClass('open');
-					if (_this.is('.open')) {
-						$(document).on('click touchstart', closeLogin);
-					}
-					setTimeout(function () {
-						_this.toggleClass('visible');
-					}, 100);
-				});
-				event.preventDefault();
+			$(this).on('mouseenter', '.sub', function (event) {
+				var _this = $(this);
+				_this.addClass('open');
+				/*
+				 if (_this.is('.open')) {
+				 $(document).on('click touchstart', closeLogin);
+				 }
+				 */
+				setTimeout(function () {
+					_this.toggleClass('visible');
+				}, 100);
+			});
+			$(this).on('mouseleave', '.sub', function (event) {
+				$(this).removeClass('open').removeClass('visible');
 			});
 		});
 
@@ -420,9 +426,24 @@ $(document).ready(function () {
 	});
 
 	/* Добавлено в корзину */
-	$('.block-item .to-cart', this).click(function(){
+	$('.block-item .to-cart', this).click(function () {
 		$(this).addClass('added').find('.in').html("В корзине");
 		return false;
+	});
+
+	$('.sort .view').each(function () {
+		$('a', this).click(function () {
+			var _self = $(this);
+			$(this).addClass('link-active').siblings('a').removeClass('link-active');
+			_self.parentsUntil().find('.catalog').each(function(){
+				if($(this).hasClass('catalog-list')){
+					$(this).removeClass('catalog-list');
+				} else {
+					$(this).addClass('catalog-list');
+				}
+			});
+			return false;
+		});
 	});
 
 });
