@@ -205,17 +205,35 @@ $(document).ready(function () {
 					}
 				]
 			});
-		} else {
-			$('.item', this).on('mouseenter', function () {
-				$(this).height($(this).height());
-				$(this).addClass('visible');
-			}).on('mouseleave', function () {
-				var _item = $(this);
-				setTimeout(function () {
-					_item.removeAttr('style').removeClass('visible');
-				}, 250);
+		}
+		if ($(this).is('.catalog-small-index')) {
+			$(this).slick({
+				variableWidth: true,
+				adaptiveHeight: true,
+				swipeToSlide: true,
+				touchThreshold: 10,
+				slidesToShow: 1,
+				infinite: true,
+				arrows: false,
+				centerMode: true,
+				mobileFirst: true,
+				responsive: [
+					{
+						breakpoint: 999,
+						settings: 'unslick'
+					}
+				]
 			});
 		}
+		$('.item', this).on('mouseenter', function () {
+			$(this).height($(this).height());
+			$(this).addClass('visible');
+		}).on('mouseleave', function () {
+			var _item = $(this);
+			setTimeout(function () {
+				_item.removeAttr('style').removeClass('visible');
+			}, 250);
+		});
 	});
 
 
@@ -435,8 +453,8 @@ $(document).ready(function () {
 		$('a', this).click(function () {
 			var _self = $(this);
 			$(this).addClass('link-active').siblings('a').removeClass('link-active');
-			_self.parentsUntil().find('.catalog').each(function(){
-				if($(this).hasClass('catalog-list')){
+			_self.parentsUntil().find('.catalog').each(function () {
+				if ($(this).hasClass('catalog-list')) {
 					$(this).removeClass('catalog-list');
 				} else {
 					$(this).addClass('catalog-list');

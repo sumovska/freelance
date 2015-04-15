@@ -220,13 +220,16 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .checkbox .jq-checkbox, .radio .jq-radio { position: absolute !important; left: 0; margin: 0; }
 .jq-file.file-photo { width: 100%; max-width: 350px; border: 1px solid #d6d6d6; margin: 0 auto; display: block !important; background: #e3e3e3; transition: border-color .1s; }
 .jq-file.file-photo:hover { border-color: #a09f9e; }
-.jq-file.file-photo .jq-file__name { height: 191px; padding: 100px 9px 9px 9px; border-color: transparent; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: none; -webkit-transition: -webkit-transform .05s; -webkit-transform: scale(1); transition: transform .05s; transform: scale(1); }
+.jq-file.file-photo .jq-file__name { height: 191px; padding: 100px 99px 9px 99px; border-color: transparent; line-height: 21px; color: #bebebe; text-align: center; white-space: normal; text-transform: uppercase; background: none; -webkit-transition: -webkit-transform .05s; -webkit-transform: scale(1); transition: transform .05s; transform: scale(1); }
 .jq-file.file-photo.changed { overflow: hidden; }
 .jq-file.file-photo.changed:hover { border-color: #d6d6d6; }
-.jq-file.file-photo.changed .jq-file__name { height: auto; padding: 6px 9px; display: block; position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; font-size: 12px; line-height: 14px; color: #fff; white-space: nowrap; text-transform: none; text-align: left; background: rgba(0, 0, 0, .75); }
+.jq-file.file-photo.changed .jq-file__name { height: auto; padding: 6px 9px; display: block; overflow: hidden; text-indent: -1000px; position: absolute; bottom: 0; left: 0; right: 0; z-index: 0; font-size: 12px; line-height: 14px; color: #fff; white-space: nowrap; text-transform: none; text-align: left; background: rgba(0, 0, 0, .75); }
+.jq-file.file-photo .jq-file__img { display: none; }
 .jq-file.file-photo.changed .jq-file__img { max-width: 100%; display: block; margin: 0 auto; }
 .jq-file.file-photo .jq-file__name:before { width: 50px; height: 50px; margin: -50px 0 0 -25px; opacity: .2; content: ' '; display: block; position: absolute; top: 50%; left: 50%; background: url('../img/camera.png') no-repeat 0 0; background-size: 50px auto; }
 .jq-file.file-photo:not(.changed):hover .jq-file__name, .jq-file:not(.changed).file-photo.focused .jq-file__name { border-color: transparent; background: none; -webkit-transform: scale(.97); transform: scale(.97); }
+.jq-file.file-photo.changed .jq-file__name:before { display: none; }
+.jq-file.file-photo.changed .jq-file__name:after { display: block; position: absolute; top: 0; left: 0; padding: 6px 9px; text-indent: 0; content: 'заменить фото'; text-transform: uppercase; }
 .jq-file.file-photo .jq-file__browse { display: none; }
 /* */
 .file-uploaded .file { height: 75px; border: 1px solid #d6d6d6; position: relative; overflow: hidden; border-radius: 1px; margin-bottom: 15px; }
@@ -1125,6 +1128,9 @@ a.icon-save:hover:before { opacity: 1; }
 .icon-delete:before { background-position: -150px -120px; }
 a.icon-delete:hover:before { opacity: 1; }
 .icon-delete:after { display: none; }
+/* Мусорник */
+.icon-trash:before { background-position: -60px -150px; }
+.icon-trash:after { background-position: -60px -180px; }
 /* Редактирование */
 .icon-edit:before { background-position: 0 -90px; }
 .icon-edit:after { background-position: 0 -120px; }
@@ -1280,7 +1286,7 @@ a.icon-delete:hover:before { opacity: 1; }
 /* Кнопка 'Продвижение' */
 .table .tr-advert td .labels { height: 34px; padding: 0; margin: 0; overflow: hidden; }
 .table .tr-advert td .labels .checkbox { padding: 10px 40px 10px 35px; border-left: 1px solid #d8d8d8; display: block; float: right; transition: background-color .1s; }
-.table .tr-advert td .labels .checkbox.actual { padding-left: 10px; color: #fff; text-transform: uppercase; background: #ff9540 !important; }
+.table .tr-advert td .labels .checkbox.actual { padding: 10px; color: #fff; text-transform: uppercase; background: #ff9540 !important; }
 .table .tr-advert td .labels .checkbox.actual a { color: #fff; }
 .table .tr-advert td .labels .checkbox.actual a:hover { text-decoration: none; }
 .table .tr-advert td .labels .checkbox.checked.color-1 { background: #eeffe1; }
@@ -1370,6 +1376,9 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	position: relative;
 	background: #fff;
 }
+.task-create.hidden {
+	display: none;
+}
 .task-create .form-line { margin: -1px 0 0 0; position: static; }
 .task-create .form-line:first-child { margin: 0; }
 .task-create textarea {
@@ -1451,7 +1460,9 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 /* Невидимая область */
 .task-list .task .space { width: 100%; margin-top: -1px; position: relative; display: none; }
 .task-list .task .space .form-line { margin: -1px 0 0 0; }
-.task-list .task .space .form-line:first-child { margin: 0; }
+.task-list .task:not(.animating) .space .form-line:first-of-type { margin-top: 0; }
+.task-list .task .space.animating .form-line:first-child { margin-top: -1px; }
+.task-list .task.open:not(.disabled) .space .form-line:last-of-type { padding-right: 71px; }
 .task-list .task.open .space { display: block; overflow: hidden; }
 /* Область с кнопками */
 .task-list .task .actions { width: 149px; height: 35px; position: absolute; top: 1px; right: 35px; z-index: 15; transition: background-color .1s; }
@@ -1465,24 +1476,31 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .task-list .task.disabled .actions .datepicker .icon-calendar { cursor: default; }
 .task-list .task.disabled .actions .datepicker .icon-calendar:hover:before { opacity: 1; }
 .task-list .task.disabled .actions .datepicker .icon-calendar:hover:after { opacity: 0; }
+/* Сообщение */
+.task-list .task .message { height: 37px; padding: 10px; border: 1px solid #d9d9d9; margin: 0; position: absolute; left: 0; right: 35px; bottom: 0; z-index: 30; color: #676767; cursor: default; line-height: 17px; text-align: center; text-transform: uppercase; background: rgba(255, 255, 255, .85); }
 /* Иконка редактирования */
-.task-list .task .icon-edit { width: 35px; height: 35px; border-width: 0 0 0 1px; position: absolute; top: 1px; right: 185px; display: block; opacity: 0; z-index: 15; background: #f6f5f3; transition: none; }
-.task-list .task.disabled .icon-edit { cursor: pointer; transition: opacity .2s; z-index: 20; }
+.task-list .task .icon-edit { width: 35px; height: 35px; border-width: 0 0 0 1px; position: absolute; display: none; right: 1px; top: auto; bottom: 1px; opacity: 0; background: #f6f5f3; cursor: pointer; transition: opacity .2s; z-index: 12; }
+.task-list .task .icon-edit:hover:before { opacity: 0; }
+.task-list .task .icon-edit:hover:after { opacity: 1; }
+.task-list .task:hover .icon-edit { opacity: 1; }
 .task-list .task.disabled:hover .icon-edit { background: #f9f9f9; }
-.task-list .task.disabled .icon-edit:hover:before { opacity: 0; }
-.task-list .task.disabled .icon-edit:hover:after { opacity: 1; }
-.task-list .task.disabled:hover .icon-edit { opacity: 1; }
 .task-list .task.disabled .icon-edit:hover { background-color: #fff; }
+.task-list .task.open .icon-edit { display: block; }
 .task-list .task.animating .icon-edit { display: none; }
-.task-list .task.open .icon-edit { right: 1px; top: auto; bottom: 1px; }
-.task-list .task.animating .icon-edit { display: none; }
-.task-list .task.open:not(.disabled) .icon-edit { z-index: 1; }
+.task-list .task.open:not(.disabled) .icon-edit { z-index: 20; opacity: 1; background-color: #fff; }
 /* Иконка сохранения */
 .task-list .task .icon-save { width: 35px; height: 35px; margin-bottom: -37px; margin-right: 1px; display: none; cursor: pointer; float: right; position: relative; top: -36px; z-index: 15; border-width: 0 0 0 1px; }
 .task-list .task:not(.disabled) .icon-save { display: block; }
 /* Иконка удаления */
-.task-list .task .icon-delete { width: 35px; height: 35px; margin-bottom: -37px; margin-right: 36px; display: none; cursor: pointer; float: right; position: relative; top: -36px; z-index: 15; border-width: 0 0 0 1px; }
-.task-list .task:not(.disabled) .icon-delete { display: block; }
+.task-list .task .icon-trash { width: 35px; height: 35px; border-width: 0 0 0 1px; margin-right: 36px; position: absolute; display: none; right: 1px; top: auto; bottom: 1px; opacity: 0; background: #f6f5f3; cursor: pointer; transition: opacity .2s; z-index: 12; }
+.task-list .task .icon-trash:hover:before { opacity: 0; }
+.task-list .task .icon-trash:hover:after { opacity: 1; }
+.task-list .task:hover .icon-trash { opacity: 1; }
+.task-list .task.disabled:hover .icon-trash { background: #f9f9f9; }
+.task-list .task.disabled .icon-trash:hover { background-color: #fff; }
+.task-list .task.open .icon-trash { display: block; }
+.task-list .task.animating .icon-trash { display: none; }
+.task-list .task.open:not(.disabled) .icon-trash { width: 34px; border-left: none; z-index: 20; opacity: 1; background-color: #fff; }
 /* Иконка разворачивания */
 .task-list .task .toggle { width: 36px; height: 37px; border: 1px solid #d6d6d6; display: block; cursor: pointer; position: absolute; top: 0; right: 0; z-index: 5; background: #f6f5f3; transition: background-color .2s; }
 .task-list .task:not(.disabled) .toggle { background: #fff; }
@@ -1500,7 +1518,7 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 .stats {
 	width: 100%;
 	max-width: 450px;
-	margin: 0 auto;
+	margin: 20px auto 0;
 	position: relative;
 	z-index: 10;
 }
@@ -1518,9 +1536,73 @@ input.secure[disabled], textarea.secure[disabled], .jq-selectbox.secure.disabled
 	color: #676767;
 	background: #fff;
 }
-.stats .main p { margin: 0 0 7px; }
+.stats .main p { margin: 0 0 13px; }
 .stats .main p:nth-child(2n) { margin-bottom: 17px; }
 .stats .main p:last-of-type { margin: 0; }
+.stats .main p.account {
+	height: 37px;
+	padding: 6px 6px 5px 46px;
+	margin: -14px -16px 0 -16px;
+	line-height: 26px;
+	display: block;
+	position: relative;
+}
+.stats .main p.account:before {
+	width: 30px;
+	height: 30px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	z-index: 2;
+	background: url('../img/sprite.png') no-repeat -30px -150px;
+	background-size: 300px auto;
+}
+.stats .main p.account:after {
+	width: 34px;
+	height: 35px;
+	border: 1px solid #dadad9;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #f6f5f3;
+}
+.stats .main p.ads {
+	height: 37px;
+	padding: 6px 6px 5px 46px;
+	margin: -1px -16px 16px;
+	line-height: 26px;
+	display: block;
+	position: relative;
+}
+.stats .main p.ads:before {
+	width: 30px;
+	height: 30px;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	z-index: 2;
+	background: url('../img/sprite.png') no-repeat -150px -150px;
+	background-size: 300px auto;
+}
+.stats .main p.ads:after {
+	width: 34px;
+	height: 35px;
+	border: 1px solid #dadad9;
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #f6f5f3;
+}
 .stats .main strong { font-weight: normal; text-transform: uppercase; }
 .stats .date {
 	margin: -2px 0 0 0;

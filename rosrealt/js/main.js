@@ -123,7 +123,23 @@ $(document).ready(function () {
 
 	/* Показывает/прячет форму добавления задачи */
 	$('.button-task').click(function () {
-		$('.task-create').slideToggle(300, 'swing');
+		$('.task-create').each(function () {
+			var _self = $(this);
+			if ($(this).is('.hidden')) {
+				$(this).css('opacity', 0);
+				$(this).slideDown(200, function () {
+					$(this).animate({opacity: 1}, 200, function () {
+						_self.removeClass('hidden').removeAttr('style');
+					});
+				});
+			} else {
+				$(this).animate({opacity: 0}, 200, function () {
+					$(this).slideUp(200, function () {
+						_self.addClass('hidden').removeAttr('style');
+					});
+				});
+			}
+		});
 		return false;
 	});
 
@@ -174,12 +190,12 @@ $(document).ready(function () {
 				_self.addClass('animating');
 				if (status) {
 					toggle.removeClass('active');
-					$('.space', _self).slideUp(300, function () {
+					$('.space', _self).slideUp(200, function () {
 						_self.removeClass('open').removeClass('animating');
 					});
 				} else {
 					toggle.addClass('active');
-					$('.space', _self).slideDown(300, function () {
+					$('.space', _self).slideDown(200, function () {
 						_self.removeClass('animating');
 					});
 					_self.addClass('open');
@@ -205,20 +221,35 @@ $(document).ready(function () {
 				}
 			});
 			$('.icon-edit', this).click(function () {
-				_self.removeClass('disabled');
-				toggleSpace(false);
-				$(':input', _self).prop('disabled', false).trigger('refresh');
+				_self.toggleClass('disabled');
+				if (_self.is('.disabled')) {
+					//Save
+					toggleSpace();
+					$('.message', _self).remove();
+					$(':input', _self).prop('disabled', true).trigger('refresh');
+				} else {
+					toggleSpace(false);
+					$(':input', _self).prop('disabled', false).trigger('refresh');
+				}
 				return false;
 			});
-			$('.icon-save', this).click(function () {
-				_self.addClass('disabled');
-				toggleSpace();
-				$(':input', _self).prop('disabled', true).trigger('refresh');
+			$('.icon-trash', this).click(function () {
+				$('.message', _self).remove();
+				_self.append('<p class="message">Удалить задачу? &nbsp; <a href="#" class="trash-yes">Да</a> &nbsp;/&nbsp; <a href="#" class="trash-no">Нет</a></p>');
 				return false;
 			});
-			$('.icon-delete', this).click(function () {
-				_self.slideUp(300, function () {
+			$(this).on('click', '.trash-yes', function () {
+				$(this).closest('.message').fadeOut(200, 'swing', function () {
+					$(this).remove();
+				});
+				_self.slideUp('swing', function () {
 					_self.remove();
+				});
+				return false;
+			});
+			$(this).on('click', '.trash-no', function () {
+				$('.message').fadeOut(200, 'swing', function () {
+					$(this).remove();
 				});
 				return false;
 			});
@@ -377,7 +408,8 @@ $(document).ready(function () {
 				closest.removeClass('white');
 				closeLine.apply(closest, ['.tr-report']);
 			} else {
-				closest.addClass('white').find('.active').removeClass('active');
+				closest.find('.active').removeClass('active');
+				closest.addClass('white').siblings('.white').removeClass('white');
 				closest.next('.tr-action').remove();
 				var tr = $('<tr class="tr-action tr-report"/>');
 				_this.addClass('active');
@@ -416,7 +448,8 @@ $(document).ready(function () {
 				closest.removeClass('white');
 				closeLine.apply(closest, ['.tr-settings']);
 			} else {
-				closest.addClass('white').find('.active').removeClass('active');
+				closest.find('.active').removeClass('active');
+				closest.addClass('white').siblings('.white').removeClass('white');
 				closest.next('.tr-action').remove();
 				var tr = $('<tr class="tr-action tr-settings"/>');
 				_this.addClass('active');
@@ -439,7 +472,8 @@ $(document).ready(function () {
 				closest.removeClass('white');
 				closeLine.apply(closest, ['.tr-advert']);
 			} else {
-				closest.addClass('white').find('.active').removeClass('active');
+				closest.find('.active').removeClass('active');
+				closest.addClass('white').siblings('.white').removeClass('white');
 				closest.next('.tr-action').remove();
 				var tr = $('<tr class="tr-action tr-advert"/>');
 				_this.addClass('active');
