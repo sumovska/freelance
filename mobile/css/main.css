@@ -1237,8 +1237,19 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 @media (min-width: 999px) {
 	.catalog:not(.catalog-small-carousel) .item:hover { overflow: visible; z-index: 99; }
 	.catalog:not(.catalog-small-carousel) .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
+	.catalog:not(.catalog-small-carousel) .item-best:hover .in { border-color: #cdf07a; box-shadow: 0 1px 10px rgba(205, 240, 122, 1);}
 	.catalog:not(.catalog-small-carousel) .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
 	.catalog:not(.catalog-small-carousel) .item.visible:hover .describe { display: block; }
+}
+.catalog .item-best .in {
+	position: relative;
+}
+.catalog .item-best .in .cap {
+	top: 24px;
+	z-index: 20;
+}
+.catalog .item-best:hover .in .cap {
+	top: 0;
 }
 .catalog .pic {
 	width: 100%;
@@ -1705,6 +1716,8 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.badge-green-light {  background: #cbf17a; }
+.badge-green-light:before { background-image: url("../img/temp/badge/green-light.png") }
 .badge-green { background: #8bc807; }
 .badge-green:before { background-image: url("../img/temp/badge/green.png") }
 .badge-red { background: #f26c4f; }
@@ -1713,6 +1726,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 .badge-blue:before { background-image: url('../img/temp/badge/blue.png'); }
 .badge-orange { background: #fea700; }
 .badge-orange:before { background-image: url('../img/temp/badge/orange.png'); }
+.badge-best { color: #000; box-shadow: none; }
 /* ==========================================================================
    О компании
    ========================================================================== */
