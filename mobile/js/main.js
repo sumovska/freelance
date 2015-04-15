@@ -431,6 +431,7 @@ $(document).ready(function () {
 		return false;
 	});
 
+	/* Переключение каталога */
 	$('.sort .view').each(function () {
 		$('a', this).click(function () {
 			var _self = $(this);
@@ -443,6 +444,20 @@ $(document).ready(function () {
 				}
 			});
 			return false;
+		});
+	});
+
+	/*  */
+	$('.catalog .describe').each(function(){
+		$('label', this).on('change',function() {
+			var _self = $(this);
+			if($('input', this).is(':checked')) {
+				$(this).addClass('checked').find('.check').text("Добавлено к сравнению.");
+				_self.siblings('.add').show();
+			} else {
+				$(this).removeClass('checked').find('.check').text("К сравнению");
+				_self.siblings('.add').hide();
+			}
 		});
 	});
 
