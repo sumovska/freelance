@@ -24,18 +24,20 @@ $(document).ready(function () {
 
 		var _nav = $(this);
 
-		_nav.on('click', '.sub > a', function (event) {
-			$(this).closest('li').each(function () {
-				var _this = $(this);
-				_this.toggleClass('open');
-				if (_this.is('.open')) {
-					$(document).on('click touchstart', closeMenu);
-				}
-				setTimeout(function () {
-					_this.toggleClass('visible');
-				}, 100);
-			});
-			event.preventDefault();
+		_nav.on('mouseenter', '.sub', function (event) {
+			var _this = $(this);
+			_this.addClass('open');
+			/*
+			 if (_this.is('.open')) {
+			 $(document).on('click touchstart', closeMenu);
+			 }
+			 */
+			setTimeout(function () {
+				_this.toggleClass('visible');
+			}, 100);
+		});
+		$(this).on('mouseleave', '.sub', function (event) {
+			$(this).removeClass('open').removeClass('visible');
 		});
 	});
 
@@ -436,8 +438,8 @@ $(document).ready(function () {
 		$('a', this).click(function () {
 			var _self = $(this);
 			$(this).addClass('link-active').siblings('a').removeClass('link-active');
-			_self.parentsUntil().find('.catalog').each(function(){
-				if($(this).hasClass('catalog-list')){
+			_self.parentsUntil().find('.catalog').each(function () {
+				if ($(this).hasClass('catalog-list')) {
 					$(this).removeClass('catalog-list');
 				} else {
 					$(this).addClass('catalog-list');
@@ -447,16 +449,14 @@ $(document).ready(function () {
 		});
 	});
 
-	/*  */
-	$('.catalog .describe').each(function(){
-		$('label', this).on('change',function() {
+	/* Добавить к сравнению */
+	$('.catalog .describe').each(function () {
+		$('label', this).on('change', function () {
 			var _self = $(this);
-			if($('input', this).is(':checked')) {
+			if ($('input', this).is(':checked')) {
 				$(this).addClass('checked').find('.check').text("Добавлено к сравнению.");
-				_self.siblings('.add').show();
 			} else {
 				$(this).removeClass('checked').find('.check').text("К сравнению");
-				_self.siblings('.add').hide();
 			}
 		});
 	});
