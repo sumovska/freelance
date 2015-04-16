@@ -19,19 +19,27 @@ $(document).ready(function () {
 	initForms();
 	/* input:file с подгрузкой превью */
 	$('input.file-photo').change(function () {
+		var _this = $(this);
 		if ($(this).prop('files') && $(this).prop('files')[0]) {
 			var reader = new FileReader(), img = $(this).closest('.jq-file').find('.jq-file__img');
 			reader.onload = function (e) {
 				img.attr('src', e.target.result);
 			};
 			if (img.length === 0) {
-				$(this).closest('.jq-file').append('<img class="jq-file__img" alt=""/>');
+				$(this).closest('.jq-file').append('<img class="jq-file__img" alt=""/>').append('<span class="jq-file__del"></span>');
 				img = $(this).closest('.jq-file').find('.jq-file__img');
+				del = $(this).closest('.jq-file').find('.jq-file__del');
+				del.on('click', function () {
+					_this.wrap('<form>');
+					_this.closest('form').get(0).reset();
+					_this.unwrap();
+					_this.trigger('refresh');
+				});
 			}
 			reader.readAsDataURL($(this).prop('files')[0]);
 		}
 	});
-	$('textarea').flexible();
+	$('textarea').flexible().trigger('updateHeight');
 	$(document).on('click touchstart', '.file-uploaded .close', function (event) {
 		$(this).closest('.file').animate({opacity: 0}, function () {
 			$(this).slideUp(function () {
@@ -198,6 +206,7 @@ $(document).ready(function () {
 					$('.space', _self).slideDown(200, function () {
 						_self.removeClass('animating');
 					});
+					$('textarea', _self).trigger('resize');
 					_self.addClass('open');
 				}
 				return false;
