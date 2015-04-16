@@ -50,13 +50,13 @@ $(document).ready(function () {
 		var _self = $(this);
 		$(this).append('<span class="toggle"></span>');
 		$('.toggle', this).click(function () {
-			$('.list', _self).slideToggle();
+			$('.list', _self).toggleClass('open');
 			return false;
 		});
 		$(document).on('click touchstart', function (event) {
 			var target = $(event.target);
 			if ((target.closest('.nav').length === 0) && (!target.is('.nav'))) {
-				$('.list', _self).slideUp();
+				$('.list', _self).removeClass('open');
 			}
 		});
 	});
