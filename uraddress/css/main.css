@@ -135,7 +135,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .jq-selectbox__select { min-width: 394px; height: 45px; padding: 0 39px 0 14px; border: 1px solid #e2e1e1; border-radius: 0; color: #020202; font: 14px 'Open Sans', Arial, sans-serif; background: #e2e1e1; transition: border-color .2s; }
 .jq-selectbox.focused .jq-selectbox__select { border-color: #a09f9e; }
 .jq-selectbox.disabled .jq-selectbox__select { cursor: default; background: #f6f5f3; }
-.jq-selectbox__select-text { width: 100%; height: 36px; padding: 13px 0 0; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jq-selectbox__select-text { width: 100% !important; height: 36px; padding: 13px 0 0; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .jq-selectbox .placeholder { color: #676767; }
 .jq-selectbox.disabled .placeholder {; }
 .jq-selectbox:not(.disabled):hover .jq-selectbox__select, .jq-selectbox.focused .jq-selectbox__select { border-color: #5087bd; }
@@ -1445,7 +1445,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	/* Навигация */
 	body { padding-top: 44px; }
 	.nav .wrapper { padding: 0; }
-	.nav { height: 44px; border-bottom: 1px solid #cacaca; z-index: 100; position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, .98); }
+	.nav { height: 44px; border-bottom: 1px solid #cacaca; z-index: 105; position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, .98); }
 	.nav .list { padding: 25px 50px; display: none; position: absolute; top: 44px; left: 0; right: 0; background: rgba(255, 255, 255, .98); border-bottom: 1px solid #cacaca; overflow: hidden; overflow-y: scroll; z-index: 200; }
 	.nav .list.open { display: block; }
 	.nav .list li { display: block; text-align: center; }
