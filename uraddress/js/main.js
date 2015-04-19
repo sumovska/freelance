@@ -1,26 +1,6 @@
 /*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true */
 /*global window, console, document, $, jQuery, PIE */
 
-$.extend(true, $.magnificPopup.defaults, {
-	tClose: 'Закрыть (Esc)', // Alt text on close button
-	closeMarkup: '<div title="%title%" class="mfp-close">&times;</div>',
-	tLoading: 'Загрузка...', // Text that is displayed during loading. Can contain %curr% and %total% keys
-	gallery: {
-		tPrev: 'Назад', // Alt text on left arrow
-		tNext: 'Вперед', // Alt text on right arrow
-		tCounter: '%curr% из %total%', // Markup for "1 of 7" counter
-		arrowMarkup: '<div title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></div>', // markup of an arrow button
-		cursor: null
-	},
-	image: {
-		tError: '<a href="%url%">Изображение</a> не найдено.', // Error message when image could not be loaded
-		cursor: null
-	},
-	ajax: {
-		tError: '<a href="%url%">Контент</a> не найден.' // Error message when ajax request failed
-	}
-});
-
 
 /* On document ready */
 $(document).ready(function () {
@@ -127,3 +107,28 @@ function initForms() {
 	/* Формы */
 	$('input, select').styler();
 }
+
+$.extend(true, $.magnificPopup.defaults, {
+	tClose: 'Закрыть (Esc)', // Alt text on close button
+	closeMarkup: '<div title="%title%" class="mfp-close">&times;</div>',
+	tLoading: 'Загрузка...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+	gallery: {
+		tPrev: 'Назад', // Alt text on left arrow
+		tNext: 'Вперед', // Alt text on right arrow
+		tCounter: '%curr% из %total%', // Markup for "1 of 7" counter
+		arrowMarkup: '<div title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></div>', // markup of an arrow button
+		cursor: null
+	},
+	image: {
+		tError: '<a href="%url%">Изображение</a> не найдено.', // Error message when image could not be loaded
+		cursor: null
+	},
+	ajax: {
+		tError: '<a href="%url%">Контент</a> не найден.' // Error message when ajax request failed
+	},
+	callbacks: {
+		beforeOpen: function () {
+			initForms();
+		}
+	}
+});

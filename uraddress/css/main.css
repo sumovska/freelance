@@ -1380,8 +1380,6 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 .mfp-close {
 	width: 44px;
 	padding: 10px;
-	opacity: 1;
-	color: #f17979;
 	line-height: 26px;
 	text-align: center;
 	cursor: pointer;
@@ -1392,7 +1390,6 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 	right: -44px;
 	text-align: center;
 }
-.mfp-close-btn-in .mfp-close { color: #f17979; }
 .mfp-arrow { cursor: pointer; }
 /**
  * Simple fade transition,
@@ -1432,6 +1429,9 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 }
 .popup .form {
 	margin-bottom: 0;
+}
+.popup .form input {
+	min-width: 100%;
 }
 .popup iframe { width: 100%; }
 .popup ::-webkit-input-placeholder { color: #9b9a9a; opacity: 1; }
@@ -1623,6 +1623,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 	.address-inner .info .price { padding-left: 6px; padding-right: 6px; }
 	.address-inner .info .list .name, .address-inner .info .list .mean { max-width: 50%; }
 	.address-inner .tabs li { display: block; }
+	.popup { padding-left: 19px; padding-right: 19px; }
 }
 /* ==========================================================================
    _Стили для печати
