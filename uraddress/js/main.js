@@ -11,8 +11,6 @@ $(document).ready(function () {
 	$('.fancybox-popup').fancybox({
 		padding: 0,
 		margin: 20,
-		autoResize: true,
-		autoCenter: true,
 		helpers: {
 			media: {}
 		}
@@ -21,7 +19,7 @@ $(document).ready(function () {
 	/* Всплывающее окно (галерея) */
 	$('.fancybox-gallery').fancybox({
 		padding: 0,
-		margin: 30,
+		margin: 20,
 		helpers: {
 			media: {}
 		},
