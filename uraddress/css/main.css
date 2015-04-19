@@ -73,7 +73,7 @@ ul, ol {
 }
 ul { padding: 0; list-style: none; }
 ul li { margin-bottom: 4px; padding-left: 15px; position: relative; }
-ul li:before { width: 5px; height: 5px; display: block; content: ' '; overflow: hidden; background: #5087bd; border-radius: 50%; position: absolute; left: 1px; top: 7px; }
+ul li:before { width: 5px; height: 5px; display: block; content: ' '; overflow: hidden; background: #5087bd; border-radius: 50%; position: absolute; left: 1px; top: 6px; }
 a {
 	color: #5087bd;
 	outline: none;
@@ -306,6 +306,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	position: absolute;
 	top: 22px;
 	right: 28px;
+	cursor: default;
 }
 /* ==========================================================================
    _Иконки социальных сетей
@@ -440,7 +441,8 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 	cursor: default;
 }
 .breadcrumbs a {
-	padding-right: 7px;
+	padding-right: 9px;
+	margin-right: 3px;
 	display: inline-block;
 	color: #999;
 	text-decoration: none;
@@ -448,22 +450,19 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 }
 .breadcrumbs a:before, .breadcrumbs a:after {
 	width: 1px;
-	height: 6px;
+	height: 5px;
 	display: block;
 	content: ' ';
 	overflow: hidden;
 	clear: both;
 	position: absolute;
 	right: 1px;
-	top: 4px;
+	top: 5px;
 	background: #999;
 }
-.breadcrumbs a:last-of-type:before, .breadcrumbs a:last-of-type:after { background: #5087bd; }
 .breadcrumbs a:before { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.breadcrumbs a:after { top: 7px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
-.breadcrumbs a:hover {
-	text-decoration: underline;
-}
+.breadcrumbs a:after { top: 8px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+.breadcrumbs a:hover { text-decoration: underline; }
 /* ==========================================================================
    _Новости
    ========================================================================== */
@@ -796,6 +795,7 @@ input[type="email"].error, input[type="number"].error, input[type="password"].er
 .pages {
 	margin: 0 -4px 1px;
 	display: inline-block;
+	cursor: default;
 }
 .pages li {
 	margin: 3px 3px 6px 3px;
