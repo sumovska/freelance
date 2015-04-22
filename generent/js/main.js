@@ -8,6 +8,9 @@ function initForms() {
 /* On document ready */
 $(document).ready(function () {
 
+	/* Формы */
+	initForms();
+
 	$('.tabs').each(function () {
 		$('li a', this).click(function () {
 			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
