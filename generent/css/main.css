@@ -62,8 +62,10 @@ body {
 }
 .content {
 	width: 730px;
-	padding: 16px 30px;
 	float: right;
+}
+.unit {
+	padding: 28px 32px;
 	background: #fff;
 }
 .wrapper:after, .aside:after, .content:after { display: block; content: ' '; overflow: hidden; clear: both; }
@@ -71,7 +73,7 @@ body {
    _Текстовые стили
    ========================================================================== */
 p { margin: 0 0 20px; }
-p.large { margin-bottom: 28px; font-size: 18px; line-height: 26px; }
+p.large { margin-bottom: 28px; font-size: 18px; line-height: 28px; }
 ul, ol { margin: 0 0 20px 0; padding: 0 0 0 16px; }
 ul { list-style: none; }
 ul li, ol li { margin-bottom: 6px; }
@@ -182,61 +184,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form .line { margin-bottom: 17px; }
 .form-line { width: 100%; margin-bottom: 12px; clear: left; }
 .form-line input[type="email"], .form-line input[type="number"], .form-line input[type="password"], .form-line input[type="search"], .form-line input[type="tel"], .form-line input[type="text"], .form-line input[type="url"], .form-line textarea, .form-line .jq-selectbox, .form-line .jq-file { width: 100%; }
-/* ==========================================================================
-   Стили для плагина fancyBox v2.1.5 @homepage http://fancyapps.com/fancybox/
-   ========================================================================== */
-.fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox-image, .fancybox-wrap iframe, .fancybox-wrap object, .fancybox-nav, .fancybox-nav span, .fancybox-tmp { padding: 0; margin: 0; border: 0; outline: none; vertical-align: top; }
-.fancybox-wrap { position: absolute; top: 0; left: 0; z-index: 8020; }
-.fancybox-skin { position: relative; background: #fff; text-shadow: none; }
-.fancybox-opened { z-index: 8030; }
-.fancybox-opened .fancybox-skin { -webkit-box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.26); -moz-box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.26); box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.26); }
-.fancybox-outer, .fancybox-inner { position: relative; }
-.fancybox-inner { overflow: hidden; }
-.fancybox-error { color: #444; font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; padding: 15px; white-space: nowrap; }
-.fancybox-image, .fancybox-iframe { display: block; width: 100%; height: 100%; }
-.fancybox-image { max-width: 100%; max-height: 100%; }
-#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span { background-image: url(../img/fancybox/fancybox_sprite.png); }
-#fancybox-loading { position: fixed; top: 50%; left: 50%; margin-top: -22px; margin-left: -22px; background-position: 0 -108px; opacity: .8; cursor: pointer; z-index: 8060; }
-#fancybox-loading div { width: 44px; height: 44px; background: url(../img/fancybox/fancybox_loading.gif) center center no-repeat; }
-.fancybox-close { position: absolute; top: -18px; right: -18px; width: 36px; height: 36px; cursor: pointer; z-index: 8040; }
-.fancybox-nav { position: absolute; top: 0; width: 40%; height: 100%; cursor: pointer; text-decoration: none; background: transparent url(../img/fancybox/blank.gif); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 8040; }
-.fancybox-prev { left: 0; }
-.fancybox-next { right: 0; }
-.fancybox-nav span { position: absolute; top: 50%; width: 36px; height: 34px; margin-top: -18px; cursor: pointer; z-index: 8040; visibility: hidden; background: transparent !important; }
-.fancybox-prev span { left: 10px; background-position: 0 -36px; }
-.fancybox-next span { right: 10px; background-position: 0 -72px; }
-.fancybox-prev span:before, .fancybox-prev span:after, .fancybox-next span:before, .fancybox-next span:after { width: 3px; height: 20px; display: block; content: ' '; overflow: hidden; clear: both; position: absolute; top: 0; left: 10px; background: #e6e6e6; }
-.fancybox-next span:before, .fancybox-next span:after { left: auto; right: 10px; }
-.fancybox-prev span:before, .fancybox-next span:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
-.fancybox-prev span:after, .fancybox-next span:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.fancybox-prev span:after, .fancybox-next span:before { top: 12px; }
-.fancybox-nav:hover span { visibility: visible; }
-.fancybox-tmp { position: absolute; top: -99999px; left: -99999px; visibility: hidden; max-width: 99999px; max-height: 99999px; overflow: visible !important; }
-.fancybox-lock { overflow: hidden !important; width: auto; }
-.fancybox-lock body { overflow: hidden !important; }
-.fancybox-lock-test { overflow-y: hidden !important; }
-.fancybox-overlay { position: absolute; top: 0; left: 0; overflow: hidden; display: none; z-index: 8010; background: url(../img/fancybox/fancybox_overlay.png); }
-.fancybox-overlay-fixed { position: fixed; bottom: 0; right: 0; }
-.fancybox-lock .fancybox-overlay { overflow: auto; overflow-y: scroll; }
-.fancybox-title { visibility: hidden; font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif; position: relative; text-shadow: none; z-index: 8050; }
-.fancybox-opened .fancybox-title { visibility: visible; }
-.fancybox-title-float-wrap { position: absolute; bottom: 0; right: 50%; margin-bottom: -35px; z-index: 8050; text-align: center; }
-.fancybox-title-float-wrap .child { display: inline-block; margin-right: -100%; padding: 2px 20px; background: rgba(0, 0, 0, 0.8); -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; text-shadow: 0 1px 2px #222; color: #fff; font-weight: 700; line-height: 24px; white-space: nowrap; }
-.fancybox-title-outside-wrap { position: relative; margin-top: 10px; color: #fff; }
-.fancybox-title-inside-wrap { padding-top: 10px; }
-.fancybox-title-over-wrap { position: absolute; bottom: 0; left: 0; color: #fff; padding: 10px; background: #000; background: rgba(0, 0, 0, .8); }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-	#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span { background-image: url(../img/fancybox/fancybox_sprite@2x.png); background-size: 44px 152px; }
-	#fancybox-loading div { background-image: url(../img/fancybox/fancybox_loading@2x.gif); background-size: 24px 24px; }
-}
-/* Модификации */
-.fancybox-title-float-wrap .child { border-radius: 5px; cursor: default; background: rgba(0, 0, 0, .5); }
-.fancybox-skin .fancybox-close { width: 20px; height: 20px; top: 38px; right: 36px; background: transparent; }
-.fancybox-skin .fancybox-close:hover { opacity: 1; }
-.fancybox-skin .fancybox-close:before, .fancybox-skin .fancybox-close:after { width: 4px; height: 16px; margin: -7px 0 0 -1px; position: absolute; top: 50%; left: 50%; display: block; overflow: hidden; content: "\0020"; background: #000; transition: background-color .2s; }
-.fancybox-skin .fancybox-close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
-.fancybox-skin .fancybox-close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.fancybox-skin .fancybox-close:hover:before, .fancybox-skin .fancybox-close:hover:after { background-color: #8bc807; }
 /* ==========================================================================
    _Шапка
    ========================================================================== */
@@ -363,36 +310,67 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	min-height: 54px;
 	background: #1c5c97;
 }
+.nav .wrapper {
+	position: relative;
+	padding-right: 100px;
+}
 .nav .nav-in {
 	margin: 0 -18px;
 	padding: 0;
-	text-transform: uppercase;
-	font-weight: 900;
-	float: left;
 }
 .nav .nav-in:after { display: block; content: ' '; overflow: hidden; clear: both; }
-.nav .nav-in li {
+.nav .nav-in > li {
 	margin-bottom: 0;
 	float: left;
+	text-transform: uppercase;
+	font-weight: 900;
 	letter-spacing: .04em;
+	position: relative;
 }
 .nav .nav-in li:before { display: none; }
-.nav .nav-in li a {
+.nav .nav-in > li > a {
 	padding: 18px;
 	display: block;
 	color: #fff;
 	transition: color .2s ease;
 }
-.nav .nav-in li a:hover, .nav .nav-in li.active a {
+.nav .nav-in > li:hover > a, .nav .nav-in > li.active > a {
 	color: #64bcee;
 }
+.nav .nav-in li ul {
+	width: 270px;
+	padding: 2px 0;
+	display: none;
+	background: #fff;
+	position: absolute;
+	top: 56px;
+	left: 0;
+	z-index: 200;
+}
+.nav .nav-in li:hover ul {
+	display: block;
+}
+.nav .nav-in li ul li {
+	margin-bottom: 0;
+	text-transform: none;
+	font-weight: normal;
+	border-bottom: 1px solid #e3e3e3;
+}
+.nav .nav-in li ul li:last-child {
+	border-bottom: 0;
+}
+.nav .nav-in li ul li a {
+	padding: 6px 6px 6px 18px;
+	display: block;
+	letter-spacing: 0;
+}
 .nav .search {
-	float: right;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 900;
-	position: relative;
+	position: absolute;
 	top: 18px;
+	right: 0;
 	transition: color .2s ease;
 }
 .nav .search:hover {
@@ -406,7 +384,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	color: #fff;
 	position: relative;
 	background: #1b2534;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 .footer:before, .footer:after {
 	width: 146px;
@@ -443,17 +421,25 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	left: 0;
 	color: #dde8ec;
 }
+.footer .search .links a:not(:hover), .footer .callback a:not(:hover), .footer .address a:not(:hover) { color: #81bee0; }
 .footer .search {
-	width: 330px;
+	width: 350px;
 	position: absolute;
 	top: 30px;
-	right: 122px;
+	right: 102px;
 }
-.footer .search input[type="search"] {
+.footer .search .form {
+	margin-bottom: 8px;
+}
+.footer .search input[type="text"] {
 	width: 100%;
-	height: 26px;
-	padding: 4px 10px;
+	height: 36px;
+	padding: 4px 14px;
 	color: #fff;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 700;
+	letter-spacing: .05em;
 	border-color: #2776bd;
 	background: #14233a;
 }
@@ -477,6 +463,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .footer .link-selection:before {
 	background: url("../img/sprite/1.png") 0 0 no-repeat;
 	background-size: cover;
+}
+.footer .link-search {
+	width: 43%;
+	float: right;
 }
 .footer .link-search:before {
 	background: url("../img/sprite/3.png") 0 0 no-repeat;
@@ -715,7 +705,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .slider-small .pic {
 	max-width: 100%;
-	margin: 0 auto 18px;
+	margin: 0 auto 34px;
 	display: block;
 }
 .slider-small .name {
@@ -727,7 +717,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .slick-dots {
 	margin: 0 -4px;
-	padding: 14px 0 0 0;
+	padding: 6px 0 0 0;
 }
 .slick-dots li {
 	width: 14px;
@@ -784,14 +774,16 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _
    ========================================================================== */
 .actions {
+	min-height: 158px;
 	font-size: 24px;
 	line-height: 36px;
 	color: #fff;
-	background: url("../img/temp/fon/1.jpg") 50% 50% no-repeat;
+	background: #d62828 url("../img/temp/fon/1.jpg") 50% 50% no-repeat;
 	background-size: cover;
 }
 .actions .wrapper {
-	padding: 20px 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .actions-in:after { display: block; content: ' '; overflow: hidden; clear: both; }
 .actions-in {
@@ -817,12 +809,14 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Новости
    ========================================================================== */
 .news {
-	margin: 0 -30px;
+	margin-bottom: 16px;
+	padding: 12px 0;
+	background: #fff;
 }
 .news .entry {
 	min-height: 114px;
 	margin-bottom: 10px;
-	padding: 8px 50px 22px 140px;
+	padding: 8px 50px 22px 138px;
 	position: relative;
 	border-bottom: 1px solid #efefef;
 }
@@ -836,7 +830,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0;
 	position: absolute;
 	top: 16px;
-	left: 30px;
+	left: 28px;
 }
 .news .h3 {
 	margin-bottom: 4px;
@@ -846,16 +840,209 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	color: #b0b0b0;
 }
 /* ==========================================================================
-   _Адаптивность (до 1280px)
+   _Навигация
    ========================================================================== */
-@media (max-width: 1279px) {
-
+.navigation {
+	color: #fff;
+	background: #0c9598;
+}
+.navigation .wrapper {
+	padding: 6px 0;
+}
+.navigation .column {
+	width: 25%;
+	padding: 0 16px;
+	float: left;
+}
+.navigation .column:nth-child(1) { width: 24.4%; padding-left: 0; }
+.navigation .column:nth-child(2) { width: 28%; }
+.navigation .column:nth-child(3) { width: 23.4%; }
+.navigation .column:nth-child(4) { width: 22.6%; padding-right: 0; }
+.navigation .h3 {
+	margin-bottom: 0;
+	position: relative;
+}
+.navigation .h3:before, .navigation .h3:after {
+	width: 4px;
+	height: 9px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	top: 10px;
+}
+.navigation .h3:before { background: #2776bd; left: -16px; }
+.navigation .h3:after { background: #a53536; left: -12px; }
+.navigation ul {
+	margin-bottom: 24px;
+	padding: 0;
+	line-height: 24px;
+}
+.navigation ul li {
+	margin-bottom: 2px;
+}
+.navigation ul li:before { display: none; }
+.navigation ul li a {
+	color: #fff;
+}
+.navigation ul li a:hover {
+	color: #76c2eb;
+}
+/* ==========================================================================
+   _Страницы
+   ========================================================================== */
+.pages ul {
+	margin-bottom: 0;
+	padding: 16px 4px;
+	font-size: 18px;
+	background: #fff;
+}
+.pages ul:after { display: block; content: ''; overflow: hidden; clear: both; }
+.pages li {
+	float: left;
+}
+.pages li:before { display: none; }
+.pages li a {
+	padding: 0 12px;
+}
+.pages li a:hover, .pages li.active a {
+	color: #1b2534;
+}
+/* ==========================================================================
+   _Клиенты
+   ========================================================================== */
+.clients {
+	background: #fff;
+}
+.clients:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.clients .item {
+	width: 244px;
+	height: 244px;
+	overflow: hidden;
+	margin: -1px -1px 0 0;
+	float: left;
+	position: relative;
+}
+.clients .item:hover {
+	overflow: visible !important;
+	z-index: 20;
+}
+.clients .item:nth-child(3n+1) {
+	clear: left;
+}
+.clients .item-in {
+	padding: 16px;
+	position: relative;
+	background: #fff;
+	border: 1px solid #efefef;
+	transition: box-shadow .2s ease;
+}
+.clients .item:hover .item-in {
+	box-shadow: 0 0 24px 1px rgba(0, 0, 0, .2);
+}
+.clients .item-in.more {
+	width: 244px;
+	height: 244px;
+	color: #fff;
+	background: #3575af;
+}
+.clients .item-in.more a:not(:hover) {
+	color: #71b9e1;
+}
+.clients .item .link {
+	width: 244px;
+	height: 242px;
+	margin: -16px;
+	padding: 16px;
+	display: block;
+	color: #1b2534;
+	position: relative;
+}
+.clients .item .link:hover {
+	color: #3575af;
+}
+.clients .logo {
+	width: 175px;
+	height: 150px;
+	margin: 0 auto;
+	display: block;
+}
+.clients .name {
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	position: absolute;
+	bottom: 18px;
+	left: 16px;
+}
+.clients .text {
+	margin: 0;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+.clients .describe {
+	margin-top: 16px;
+	display: none;
+	cursor: default;
+	background: #fff;
+}
+.clients .item:hover .describe {
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+}
+.clients .item:hover .describe .color {
+	color: #7e7e7e;
+}
+/* ==========================================================================
+   _Контакты
+   ========================================================================== */
+.contacts {
+	background: #fff;
 }
 /* ==========================================================================
    _Адаптивность (планшет вертикально)
    ========================================================================== */
 @media (max-width: 999px) {
-
+	.wrapper { width: 768px; padding-left: 20px; padding-right: 20px; }
+	.header { height: 108px; }
+	.header .selection, .header .search { display: none; }
+	.header .logo { top: 40px; left: 20px; }
+	.header .callback { top: 22px; right: 372px; }
+	.header .address { top: 22px; right: 114px; }
+	.header .toggle { width: 23px; height: 20px; display: block; position: absolute; top: 44px; right: 23px; cursor: pointer; border-top: 4px solid #267dc1; border-bottom: 4px solid #267dc1; }
+	.header .toggle:before, .header .toggle:after { display: block; content: ' '; overflow: hidden; clear: both; position: absolute; background: #267dc1; }
+	.header .toggle:before { height: 4px; top: 4px; left: 0; right: 0; }
+	.header .toggle.open { border-top: none; border-bottom: none; }
+	.header .toggle.open:before, .header .toggle.open:after { width: 4px; height: 24px; top: -2px; left: 9px; }
+	.header .toggle.open:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+	.header .toggle.open:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+	.nav { display: none; position: absolute; top: 108px; left: 0; right: 0; z-index: 200; }
+	.nav.open { display: block; }
+	.nav .wrapper { padding: 0; }
+	.nav .search { display: none; }
+	.nav .nav-in { width: 100%; margin: 0; padding-top: 8px; padding-bottom: 8px; font-size: 18px; }
+	.nav .nav-in li { float: none; }
+	.nav .nav-in li a { padding: 5px 22px; }
+	.nav .nav-in li ul { width: auto; margin: 10px 0; position: relative; top: 0; left: 0; font-size: 16px; }
+	.nav .nav-in li:hover ul { display: none; }
+	.nav .nav-in li.open ul { display: block; }
+	.nav .nav-in li ul li a { padding: 11px 10px 10px 22px; }
+	.footer:before { margin-right: -286px; }
+	.footer:after { margin-right: -432px; }
+	.footer .search .links { display: none; }
+	.footer .callback { top: 28px; left: 22px; }
+	.footer .address { top: 28px; left: 222px; }
+	.footer .copyright { top: 126px; left: 20px; }
+	.footer .search { width: 267px; top: 33px; right: 20px; }
+	.footer .search input[type="text"] { padding-left: 20px; padding-right: 20px; }
+	.navigation .column { width: 33%; }
+	.actions { font-size: 18px; line-height: 24px; }
+	.actions-in { margin-left: -6px; margin-right: -4px; }
+	.actions .item { padding: 0 4px; }
+	.actions .in { padding-left: 10px; padding-right: 10px; }
 }
 @media (max-width: 840px) {
 }
