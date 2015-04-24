@@ -1237,7 +1237,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 @media (min-width: 999px) {
 	.catalog:not(.catalog-small-carousel) .item:hover { overflow: visible; z-index: 99; }
 	.catalog:not(.catalog-small-carousel) .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
-	.catalog:not(.catalog-small-carousel) .item-best:hover .in { border-color: #cdf07a; box-shadow: 0 1px 10px rgba(205, 240, 122, 1);}
+	.catalog:not(.catalog-small-carousel) .item-best:hover .in { border-color: #cdf07a; box-shadow: 0 1px 10px rgba(205, 240, 122, 1); }
 	.catalog:not(.catalog-small-carousel) .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
 	.catalog:not(.catalog-small-carousel) .item.visible:hover .describe { display: block; }
 }
@@ -1655,7 +1655,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
    ========================================================================== */
 .to-cart.large {
 	width: auto;
-	height: 50px;
+	height: 49px;
 	padding: 15px 10px;
 	display: block;
 	font-size: 22px;
@@ -1684,12 +1684,11 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	opacity: 1;
 	background: url("../img/sprite.png") -30px -25px no-repeat;
 	background-size: 145px auto;
-	transition: opacity .2s;
 }
-.to-cart.large .in:after { background-position: 0 -25px; opacity: 0; transition: opacity .3s .1s ease; }
+.to-cart.large .in:after { background-position: 0 -25px; opacity: 0; }
 .to-cart.large:hover .in:before, .to-cart.large:focus .in:before { opacity: 0; }
 .to-cart.large:hover .in:after { opacity: 1; }
-.to-cart.large:focus .in:after, .to-cart.large.added .in:after { background-position: -60px -25px; opacity: 1; }
+.to-cart.large:focus .in:after, .to-cart.large.added .in:after { background-position: -60px -25px; opacity: 1; left: 6px; }
 .to-cart.large.added .in:before { opacity: 0; }
 /* ==========================================================================
    _Флажки
@@ -1712,6 +1711,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	position: relative;
 	box-shadow: inset 0 13px 0 0 rgba(255, 255, 255, .2);
 }
+.badge.large {
+	min-width: 80px;
+}
 .badge:before {
 	height: 6px;
 	display: block;
@@ -1724,9 +1726,9 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	right: 0;
 	background-position: 50% 0;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 100%;
 }
-.badge-green-light {  background: #cbf17a; }
+.badge-green-light { background: #cbf17a; }
 .badge-green-light:before { background-image: url("../img/temp/badge/green-light.png") }
 .badge-green { background: #8bc807; }
 .badge-green:before { background-image: url("../img/temp/badge/green.png") }
@@ -2658,7 +2660,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
    _Таблица (default)
    ========================================================================== */
 .table {
-	width: auto;
+	width: 100%;
 	border-collapse: collapse;
 	margin-bottom: 20px;
 	font-family: 'Calibri', Arial, sans-serif;
@@ -2970,7 +2972,10 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	border-radius: 5px 5px 0 0;
 }
 .block-item .left .button.simple {
+	height: 46px;
 	margin-bottom: 13px;
+	padding-top: 12px;
+	padding-bottom: 12px;
 	display: block;
 	border-radius: 0 0 5px 5px;
 }
@@ -3086,10 +3091,12 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	border-bottom: 1px solid #999;
 }
 .block-item .links {
-	margin: 0 -10px;
+	margin: 18px 0 0;
+	padding-top: 14px;
+	border-top: 1px solid #999;
 }
 .block-item .links a {
-	padding: 0 10px;
+	padding: 0 20px 0 0;
 	color: #000;
 }
 /* ==========================================================================
@@ -3103,6 +3110,12 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 }
 .block-describe .table .td-heading {
 	padding-right: 0;
+}
+/* ==========================================================================
+   _Блок инструкций
+   ========================================================================== */
+.block-instruction {
+	padding-left: 20px;
 }
 /* ==========================================================================
    _Сравнение
@@ -3406,7 +3419,16 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
    ========================================================================== */
 .tabs {
 	box-shadow: 0 3px 2px -1px rgba(0, 0, 0, .11);
+}
+.tabs:before {
+	height: 1px;
+	display: block;
+	content: ' ';
 	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 .tabs-orders {
 	box-shadow: none;
@@ -3415,7 +3437,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	padding-top: 8px;
 }
 .tabs-list {
-	margin: 0 -34px;
+	margin: 0;
 	padding: 0;
 	list-style: none;
 	font: bold 16px "PT Sans Narrow", Arial, sans-serif;
@@ -3437,6 +3459,12 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	transition: color .2s ease;
 	position: relative;
 }
+.tabs-list .link:first-of-type a {
+	padding-left: 0;
+}
+.tabs-list .link:last-of-type a {
+	padding-right: 0;
+}
 .tabs-list .link a:hover, .tabs-list .link-active a {
 	color: #000;
 }
@@ -3454,6 +3482,8 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	border-width: 0 7px 10px 7px;
 	border-color: transparent transparent #e7e7e7 transparent;
 }
+.tabs-list .link:first-of-type a:before, .tabs-list .link:first-of-type a:after { margin-left: -24px; }
+.tabs-list .link:last-of-type a:before, .tabs-list .link:last-of-type a:after { margin-left: 14px; }
 .tabs-list .link a:before { border-color: transparent transparent #e7e7e7 transparent; }
 .tabs-list .link a:after { border-color: transparent transparent #fff transparent; bottom: -3px; }
 .tabs-list .link-active a:before, .tabs-list .link-active a:after { display: block }
@@ -3494,11 +3524,11 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	left: 26px;
 }
 .tab-modification .catalog-small .to-cart {
-	width: 50%;
+	width: 54%;
 	float: right;
 }
 .tab-modification .catalog-small .price {
-	width: 50%;
+	width: 44%;
 	padding: 0;
 	float: left;
 }
@@ -3514,6 +3544,20 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	padding-top: 34px;
 	padding-left: 26px;
 	padding-right: 26px;
+}
+.tab-instruction {
+	margin-bottom: 40px;
+}
+@media (min-width: 999px) {
+	.tab-accessories .featured {
+		text-align: center;
+	}
+	.tab-accessories .featured .item {
+		display: inline-block;
+		vertical-align: top;
+		float: none;
+		text-align: left;
+	}
 }
 .tabs-list .slick-prev, .tabs-list .slick-next {
 	display: block;
@@ -3572,6 +3616,8 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	padding-left: 10px;
 	padding-right: 10px;
 	display: block;
+	color: #fff;
+	background-color: #f26c4f;
 }
 /* ==========================================================================
    _Отзывы
@@ -4162,9 +4208,10 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.block-item .promo-1:before, .block-item .promo-1:after { left: 50%; top: -10px; margin-top: 0; margin-left: -5px; }
 	.block-item .promo-1:before { border-width: 0 5px 10px 5px; border-color: transparent transparent #f26c4f transparent; }
 	.block-item .promo-1:after { top: -8px; border-width: 0 5px 10px 5px; border-color: transparent transparent #fff transparent; }
+	.block-item .links { padding-top: 0; border-top: none; }
 	/* Табы */
 	.tabs .wrapper { padding-top: 0; }
-	.tabs-list { margin-left: -14px; margin-right: -8px; }
+	.tabs-list { margin-left: 0; margin-right: 0; }
 	.tabs-list .link { margin: 0 25px; }
 	.tabs-list .link a { padding-left: 17px; padding-right: 17px; }
 	.tab-in { width: 100%; }
@@ -4312,7 +4359,6 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	/* Блок (информационный на главной) */
 	.index-info .about .heading { margin-bottom: 8px; font-size: 20px; line-height: 24px; }
 	/* Табы */
-	.tabs-list { margin-left: 0; margin-right: 0; }
 	.tabs-list .link { margin: 0 12px; }
 	.tab .h1 { padding-left: 0; font-size: 20px; line-height: 20px; text-align: center; }
 	.tab-modification .catalog-small { margin-left: 0; margin-right: 0; }
@@ -4425,6 +4471,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.block-item .in-stock { margin-bottom: 14px; padding-bottom: 14px; }
 	.block-item .describe { padding-top: 10px; }
 	.block-item .describe .like { position: relative; }
+	.block-item .links { margin-top: 0; }
 	/* Блок описания */
 	.block-describe { padding: 0; }
 	/* Таблицы */
