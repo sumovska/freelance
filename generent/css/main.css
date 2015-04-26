@@ -72,7 +72,7 @@ body {
 }
 .unit-grey { background: #e7e7e7; }
 .unit-beige { background: #f8f8f8; }
-.wrapper:after, .aside:after, .content:after, .unit:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.wrapper:after, .aside:after, .content:after, .unit:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 /* ==========================================================================
    _Текстовые стили
    ========================================================================== */
@@ -87,10 +87,8 @@ a { color: #1c5c97; outline: none; text-decoration: none; transition: color .2s 
 a:hover, a:focus { color: #d62828; outline: none; }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h2, .h3, .h4, .h5, .h6 { margin: 0; font-family: 'Roboto', Arial, sans-serif; }
 h1, .h1 { margin-bottom: 30px; font-size: 48px; line-height: 68px; font-weight: bold; text-transform: uppercase; letter-spacing: .07em; }
-.h1-large { margin-bottom: 30px; font-size: 60px; line-height: 26px; }
 h2, .h2 { margin-bottom: 28px; font-size: 24px; line-height: 30px; font-weight: bold; }
 .h2-up { text-transform: uppercase; letter-spacing: -.005em; }
-.h-large { margin-bottom: 6px; display: block; font-size: 30px; line-height: 38px; }
 h3, .h3 { margin-bottom: 20px; font-size: 18px; line-height: 26px; font-weight: bold; }
 h4, .h4 { margin-bottom: 20px; font-size: 16px; line-height: 18px; font-weight: bold; }
 h5, .h5 { margin-bottom: 10px; font-size: 14px; line-height: 16px; font-weight: bold; }
@@ -102,6 +100,8 @@ figcaption { margin: 10px 0; color: #808080; font-size: 12px; line-height: 18px;
 .rub { font-family: 'Rouble', Arial, sans-serif; }
 .red { color: #d24850; }
 .text-center { text-align: center; }
+.h-big { margin-bottom: 6px; display: block; font-size: 30px; line-height: 38px; }
+.h-biggest { margin-bottom: 16px; font-size: 60px; line-height: 100px; }
 /* ==================================================================================================
    Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
@@ -327,7 +327,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0 -18px;
 	padding: 0;
 }
-.nav .nav-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.nav .nav-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .nav .nav-in > li {
 	margin-bottom: 0;
 	float: left;
@@ -459,7 +459,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .footer .search .links {
 	font-size: 12px;
 }
-.footer .search .links:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.footer .search .links:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .footer .link {
 	width: 50%;
 	margin-bottom: 0;
@@ -588,7 +588,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .features {
 	margin: 0 -20px;
 }
-.features:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.features:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .features .item {
 	width: 33.3%;
 	padding: 0 20px;
@@ -599,6 +599,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	height: 64px;
 	margin-bottom: 12px;
 	display: block;
+}
+.features .pic-left {
+	margin: 0 12px;
+	float: left;
 }
 .features.simple {
 	margin: 0;
@@ -635,7 +639,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .columns {
 	margin: 0 -10px 26px;
 }
-.columns:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.columns:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .columns .col {
 	width: 50%;
 	padding: 0 10px;
@@ -737,7 +741,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	height: auto;
 	overflow: visible;
 }
-.slider-small .slider-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.slider-small .slider-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .slider-small .item {
 	width: 190px;
 	height: 280px;
@@ -820,7 +824,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	height: 288px;
 	padding-top: 4px;
 	float: left;
-	overflow: hidden;
 }
 .slider .list .entry {
 	min-height: 71px;
@@ -860,6 +863,14 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .slider .list time {
 	color: #93959a;
 }
+.slider .slick-dots {
+	position: absolute;
+	left: -77%;
+	top: 94px;
+}
+.slider .slick-dots li {
+	margin: 7px;
+}
 /* ==========================================================================
    _Дефолтные стили слайдера ( Slick-slider )
    ========================================================================== */
@@ -895,7 +906,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	padding-top: 34px;
 	padding-bottom: 30px;
 }
-.actions-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.actions-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .actions-in {
 	margin: 0 -10px;
 }
@@ -1024,7 +1035,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .clients {
 	background: #fff;
 }
-.clients:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.clients:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .clients .item {
 	width: 244px;
 	height: 244px;
@@ -1114,7 +1125,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	background: #fff;
 	position: relative;
 }
-.block-contacts:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.block-contacts:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .block-contacts .h2 {
 	margin-bottom: 20px;
 	text-transform: uppercase;
@@ -1128,7 +1139,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .block-contacts .line:last-of-type {
 	border-bottom: none;
 }
-.block-contacts .line:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.block-contacts .line:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .block-contacts .tel {
 	display: block;
 	color: #182437;
@@ -1198,7 +1209,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0 -30px 38px;
 	background: #f8f8f8;
 }
-.menu:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.menu:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .menu .entry {
 	width: 33.3%;
 	float: left;
@@ -1252,7 +1263,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	background: #fff;
 	position: relative;
 }
-.pointer:before, .pointer:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.pointer:before, .pointer:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .pointer:before {
 	width: 12px;
 	position: absolute;
@@ -1361,7 +1372,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0 -30px;
 	padding-left: 0;
 }
-.projects:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.projects:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .projects li {
 	margin: 0 0 1px 1px;
 	float: left;
@@ -1447,7 +1458,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0;
 	padding: 0;
 }
-.table-color .list:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
+.table-color .list:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .table-color .list li {
 	width: 50%;
 	margin-bottom: 20px;
@@ -1525,6 +1536,62 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	top: -70px;
 	left: 50%;
 	z-index: -1;
+}
+/* ==========================================================================
+   _Карусель на главной
+   ========================================================================== */
+.index {
+	color: #fff;
+	background: #0c9598;
+}
+.index .carousel:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.index .carousel {
+	height: 334px;
+	overflow: hidden;
+}
+.index .item {
+	width: 980px;
+	height: 334px;
+	padding: 64px 72px;
+	float: left;
+	background-position: 102% 30px;
+	background-repeat: no-repeat;
+}
+.index .item .text {
+	width: 44%;
+}
+.index .h1 {
+	margin-bottom: 16px;
+	line-height: 50px;
+	letter-spacing: .06em;
+}
+.index .h3 {
+	margin-bottom: 0;
+	font-weight: normal;
+}
+.index .slick-prev {
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	margin-top: -22px;
+	position: absolute;
+	left: 14px;
+	top: 50%;
+	border-style: solid;
+	border-width: 22px 24px 22px 0;
+	border-color: transparent #005fa6 transparent transparent;
+}
+.index .slick-next {
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	margin-top: -22px;
+	position: absolute;
+	right: 14px;
+	top: 50%;
+	border-style: solid;
+	border-width: 22px 0 22px 24px;
+	border-color: transparent transparent transparent #005fa6;
 }
 /* ==========================================================================
    _Адаптивность (планшет вертикально)

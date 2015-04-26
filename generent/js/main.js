@@ -41,6 +41,17 @@ $(document).ready(function () {
 		$('.slick-dots li', this).append('<span class="dots"></span>');
 	});
 
+	/* Карусель на главной */
+	$('.index').each(function () {
+		$('.carousel').slick({
+			prevArrow: '<span class="slick-prev" aria-label="previous"></span>',
+			nextArrow: '<span class="slick-next" aria-label="next"></span>',
+			dots: true
+		});
+		$('.slick-dots button').remove();
+		$('.slick-dots li', this).append('<span class="dots"></span>');
+	});
+
 	/* Выпадающее меню */
 	$('.header', this).append('<span class="toggle"></span>');
 	$('.toggle', this).click(function (event) {
