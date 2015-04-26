@@ -65,16 +65,19 @@ body {
 	float: right;
 }
 .unit {
-	padding: 28px 30px;
+	padding: 20px 30px;
 	background: #fff;
+	position: relative;
+	z-index: 0;
 }
 .unit-grey { background: #e7e7e7; }
-.wrapper:after, .aside:after, .content:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.unit-beige { background: #f8f8f8; }
+.wrapper:after, .aside:after, .content:after, .unit:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 /* ==========================================================================
    _Текстовые стили
    ========================================================================== */
 p { margin: 0 0 20px; }
-p.large { margin-bottom: 28px; font-size: 18px; line-height: 28px; }
+p.large { margin-bottom: 34px; font-size: 18px; line-height: 26px; }
 ul, ol { margin: 0 0 20px 0; padding: 0 0 0 16px; }
 ul { list-style: none; }
 ul li, ol li { margin-bottom: 6px; }
@@ -84,8 +87,11 @@ a { color: #1c5c97; outline: none; text-decoration: none; transition: color .2s 
 a:hover, a:focus { color: #d62828; outline: none; }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h2, .h3, .h4, .h5, .h6 { margin: 0; font-family: 'Roboto', Arial, sans-serif; }
 h1, .h1 { margin-bottom: 30px; font-size: 48px; line-height: 68px; font-weight: bold; text-transform: uppercase; letter-spacing: .07em; }
-h2, .h2 { margin-bottom: 14px; font-size: 24px; line-height: 30px; font-weight: bold; }
-h3, .h3 { margin-bottom: 10px; font-size: 18px; line-height: 30px; font-weight: bold; }
+.h1-large { margin-bottom: 30px; font-size: 60px; line-height: 26px; }
+h2, .h2 { margin-bottom: 28px; font-size: 24px; line-height: 30px; font-weight: bold; }
+.h2-up { text-transform: uppercase; letter-spacing: -.005em; }
+.h-large { margin-bottom: 6px; display: block; font-size: 30px; line-height: 38px; }
+h3, .h3 { margin-bottom: 20px; font-size: 18px; line-height: 26px; font-weight: bold; }
 h4, .h4 { margin-bottom: 20px; font-size: 16px; line-height: 18px; font-weight: bold; }
 h5, .h5 { margin-bottom: 10px; font-size: 14px; line-height: 16px; font-weight: bold; }
 h6, .h6 { margin-bottom: 10px; font-size: 12px; line-height: 14px; font-weight: bold; }
@@ -95,6 +101,7 @@ figure { margin-right: 20px; margin-left: 20px; }
 figcaption { margin: 10px 0; color: #808080; font-size: 12px; line-height: 18px; }
 .rub { font-family: 'Rouble', Arial, sans-serif; }
 .red { color: #d24850; }
+.text-center { text-align: center; }
 /* ==================================================================================================
    Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
@@ -320,7 +327,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0 -18px;
 	padding: 0;
 }
-.nav .nav-in:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.nav .nav-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .nav .nav-in > li {
 	margin-bottom: 0;
 	float: left;
@@ -452,7 +459,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .footer .search .links {
 	font-size: 12px;
 }
-.footer .search .links:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.footer .search .links:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .footer .link {
 	width: 50%;
 	margin-bottom: 0;
@@ -559,16 +566,18 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Важный текст
    ========================================================================== */
 .important {
-	margin: 0 -30px 20px;
-	padding: 18px 30px;
+	margin: 0;
+	padding: 22px 0;
 	font-size: 18px;
 	line-height: 26px;
 	font-weight: 900;
-	background: #f8f8f8;
 }
 .important.red {
 	color: #fff;
 	background: #d24850;
+}
+.important.grey {
+	background: #efefef;
 }
 .important p:last-of-type {
 	margin-bottom: 0;
@@ -579,7 +588,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .features {
 	margin: 0 -20px;
 }
-.features:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.features:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .features .item {
 	width: 33.3%;
 	padding: 0 20px;
@@ -624,12 +633,12 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Колонки
    ========================================================================== */
 .columns {
-	margin: 0 -20px;
+	margin: 0 -10px 26px;
 }
-.columns:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.columns:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .columns .col {
 	width: 50%;
-	padding: 0 20px;
+	padding: 0 10px;
 	float: left;
 }
 .columns .col-2 {
@@ -638,15 +647,24 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .columns .col-1 {
 	width: 35%;
 }
+.columns .col-3 {
+	width: 33.3%;
+	padding: 0 10px;
+}
+.columns .col-3:nth-child(1) { padding-left: 20px; }
+.columns .col-3:nth-child(3) { padding-right: 20px; }
+.columns .col p:last-of-type {
+	margin-bottom: 0;
+}
 /* ==========================================================================
    _Текст с картинкой
    ========================================================================== */
-.pic-in-text:after { display: block; content: ' '; overflow: hidden; clear: both; }
-.pic-in-text .pic {
-	margin: 10px 30px 20px 0;
+.picture:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.picture .pic {
+	margin: 10px 28px 20px 6px;
 	float: left;
 }
-.pic-in-text .pic.right { float: right; margin-right: 0; margin-left: 30px; }
+.picture .pic.right { float: right; margin-right: 0; margin-left: 10px; }
 /* ==========================================================================
    _Таблица
    ========================================================================== */
@@ -704,7 +722,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin-bottom: 8px;
 }
 /* ==========================================================================
-   _Слайдер
+   _Слайдер маленький (в сайдбаре)
    ========================================================================== */
 .slider-small {
 	margin-bottom: 16px;
@@ -719,7 +737,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	height: auto;
 	overflow: visible;
 }
-.slider-small .slider-in:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.slider-small .slider-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .slider-small .item {
 	width: 190px;
 	height: 280px;
@@ -768,7 +786,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	height: 10px;
 	display: block;
 	border: 2px solid #a53536;
-	transition: background-color .2s, border-color .2s;
 }
 .slick-dots li:not(.slick-active):hover .dots {
 	background-color: #d62828;
@@ -776,6 +793,72 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .slick-dots li.slick-active .dots {
 	border-color: transparent;
+}
+/* ==========================================================================
+   _Слайдер
+   ========================================================================== */
+.slider {
+	color: #fff;
+	background: #1b2534;
+}
+.slider.blue {
+	background: #0b4277;
+}
+.slider .wrapper {
+	padding-top: 38px;
+	padding-bottom: 34px;
+}
+.slider .h2 {
+	width: 40%;
+	float: left;
+	font-size: 32px;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+.slider .list {
+	width: 52%;
+	height: 288px;
+	padding-top: 4px;
+	float: left;
+	overflow: hidden;
+}
+.slider .list .entry {
+	min-height: 71px;
+	margin-bottom: 16px;
+	padding-left: 90px;
+	position: relative;
+	float: left;
+}
+.slider .list .h3 {
+	margin-bottom: 8px;
+	line-height: 28px;
+	font-weight: normal;
+}
+.slider .list .h3 a {
+	color: #fff;
+}
+.slider .list .entry:hover a {
+	color: #cd2829;
+}
+.slider .list .pic {
+	width: 71px;
+	height: 71px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 6px;
+	border: 3px solid #2776bd;
+}
+.slider .list .entry:hover .pic {
+	border-color: #cd2829;
+}
+.slider .list .pic img {
+	width: 65px;
+	height: 65px;
+	display: block;
+}
+.slider .list time {
+	color: #93959a;
 }
 /* ==========================================================================
    _Дефолтные стили слайдера ( Slick-slider )
@@ -809,10 +892,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	background-size: cover;
 }
 .actions .wrapper {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 34px;
+	padding-bottom: 30px;
 }
-.actions-in:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.actions-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .actions-in {
 	margin: 0 -10px;
 }
@@ -822,14 +905,13 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	float: left;
 }
 .actions .item:first-of-type { width: 36.6%; }
-.actions .in {
+.actions .link {
+	display: block;
+	color: #fff;
 	padding: 8px 14px 20px;
 	border: 1px solid rgba(221, 232, 236, .5);
 }
-.actions a {
-	color: #fff;
-}
-.actions a:hover {
+.actions .link:hover {
 	color: #ff8791;
 }
 /* ==========================================================================
@@ -942,7 +1024,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .clients {
 	background: #fff;
 }
-.clients:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.clients:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .clients .item {
 	width: 244px;
 	height: 244px;
@@ -1032,7 +1114,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	background: #fff;
 	position: relative;
 }
-.block-contacts:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.block-contacts:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .block-contacts .h2 {
 	margin-bottom: 20px;
 	text-transform: uppercase;
@@ -1046,7 +1128,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .block-contacts .line:last-of-type {
 	border-bottom: none;
 }
-.block-contacts .line:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.block-contacts .line:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .block-contacts .tel {
 	display: block;
 	color: #182437;
@@ -1116,7 +1198,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0 -30px 38px;
 	background: #f8f8f8;
 }
-.menu:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.menu:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .menu .entry {
 	width: 33.3%;
 	float: left;
@@ -1170,7 +1252,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	background: #fff;
 	position: relative;
 }
-.pointer:before, .pointer:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.pointer:before, .pointer:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .pointer:before {
 	width: 12px;
 	position: absolute;
@@ -1191,13 +1273,20 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 /* ==========================================================================
    _Таблица-каталог
    ========================================================================== */
-.table-catalog {
-	width: auto;
+.wrap-table {
 	margin: 0 -30px;
+}
+.table-catalog {
+	width: 100%;
 }
 .table-catalog th {
 	font-size: 11px;
 	white-space: nowrap;
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+}
+.table-catalog th.active {
+	background: #fff;
 }
 .table-catalog th .heading {
 	display: inline-block;
@@ -1221,14 +1310,22 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .table-catalog td {
 	white-space: nowrap;
-	background: #e7e7e7;
 	border-bottom-color: #cfcfcf;
 }
 .table-catalog td:first-of-type, .table-catalog th:first-of-type {
 	padding-left: 30px;
+	padding-right: 16px;
 }
 .table-catalog td:last-of-type, .table-catalog th:last-of-type {
-	padding-right: 30px;
+	padding-left: 4px;
+	padding-right: 16px;
+}
+.table-catalog td.size, .table-catalog th.size {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.table-catalog td.name, .table-catalog th.name {
+	padding-left: 14px;
 }
 .table-catalog .icon {
 	width: 18px;
@@ -1244,6 +1341,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	display: block;
 	text-align: center;
 	background: #fff;
+}
+.show.border {
+	border: 1px solid #3575af;
 }
 /* ==========================================================================
    _Заголовок с указателем
@@ -1261,7 +1361,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0 -30px;
 	padding-left: 0;
 }
-.projects:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.projects:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .projects li {
 	margin: 0 0 1px 1px;
 	float: left;
@@ -1276,6 +1376,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	background: #3575af;
 }
 .projects li.all .h2 {
+	margin-bottom: 14px;
 	text-transform: uppercase;
 	line-height: 28px;
 }
@@ -1311,11 +1412,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 /* ==========================================================================
    _Цветной блок
    ========================================================================== */
-.block-color {
-	margin: 0 -30px;
-}
 .table-color {
-	width: 100%;
+	width: auto;
+	margin: 0 -30px 0;
 	display: table;
 	font-size: 18px;
 }
@@ -1323,7 +1422,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	display: table-row;
 }
 .table-color .td {
-	padding: 36px 30px 16px;
+	padding: 30px;
 	display: table-cell;
 	font-weight: 900;
 	vertical-align: middle;
@@ -1331,8 +1430,8 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .table-color .tr .td:nth-child(1) {
 	width: 26%;
-	padding-top: 20px;
-	padding-bottom: 28px;
+	padding-top: 70px;
+	padding-bottom: 76px;
 	font-size: 24px;
 	line-height: 28px;
 	text-transform: uppercase;
@@ -1345,10 +1444,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin-bottom: 0;
 }
 .table-color .list {
-	margin-bottom: 0;
+	margin: 0;
 	padding: 0;
 }
-.table-color .list:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.table-color .list:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; } 
 .table-color .list li {
 	width: 50%;
 	margin-bottom: 20px;
@@ -1394,6 +1493,38 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	top: 6px;
 	background: url("../img/temp/icons/tel.png") 0 0 no-repeat;
 	background-size: 100% 100%;
+}
+/* ==========================================================================
+   _Города
+   ========================================================================== */
+.cities {
+	min-height: 330px;
+	padding: 0 40px;
+	text-align: center;
+	position: relative;
+}
+.cities-in {
+	position: relative;
+	z-index: 2;
+}
+.cities .heading {
+	margin-bottom: 14px;
+	font-size: 36px;
+	line-height: 46px;
+	font-weight: 900;
+}
+.cities:before {
+	width: 680px;
+	height: 400px;
+	margin-left: -340px;
+	display: block;
+	content: "\0020";
+	overflow: hidden;
+	background: url("../img/temp/map.jpg") 0 0 no-repeat;
+	position: absolute;
+	top: -70px;
+	left: 50%;
+	z-index: -1;
 }
 /* ==========================================================================
    _Адаптивность (планшет вертикально)

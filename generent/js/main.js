@@ -28,7 +28,17 @@ $(document).ready(function () {
 			dots: true
 		});
 		$('.slick-dots button').remove();
-		$('.slick-dots li').append('<span class="dots"></span>');
+		$('.slick-dots li', this).append('<span class="dots"></span>');
+	});
+
+	/* Карусель на главной */
+	$('.slider').each(function () {
+		$('.list').slick({
+			arrows: false,
+			dots: true
+		});
+		$('.slick-dots button').remove();
+		$('.slick-dots li', this).append('<span class="dots"></span>');
 	});
 
 	/* Выпадающее меню */
