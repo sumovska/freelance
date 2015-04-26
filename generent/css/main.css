@@ -65,9 +65,10 @@ body {
 	float: right;
 }
 .unit {
-	padding: 28px 32px;
+	padding: 28px 30px;
 	background: #fff;
 }
+.unit-grey { background: #e7e7e7; }
 .wrapper:after, .aside:after, .content:after { display: block; content: ' '; overflow: hidden; clear: both; }
 /* ==========================================================================
    _Текстовые стили
@@ -93,6 +94,7 @@ fieldset { border: 0; margin: 0; padding: 0; }
 figure { margin-right: 20px; margin-left: 20px; }
 figcaption { margin: 10px 0; color: #808080; font-size: 12px; line-height: 18px; }
 .rub { font-family: 'Rouble', Arial, sans-serif; }
+.red { color: #d24850; }
 /* ==================================================================================================
    Стили форм для плагина Form Styler 1.6.2 @homepage https://github.com/Dimox/jQueryFormStyler
    ================================================================================================== */
@@ -438,7 +440,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	color: #fff;
 	font-size: 14px;
 	line-height: 16px;
-	font-weight: 700;
+	font-weight: 900;
 	letter-spacing: .05em;
 	border-color: #2776bd;
 	background: #14233a;
@@ -564,6 +566,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	font-weight: 900;
 	background: #f8f8f8;
 }
+.important.red {
+	color: #fff;
+	background: #d24850;
+}
 .important p:last-of-type {
 	margin-bottom: 0;
 }
@@ -585,17 +591,34 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin-bottom: 12px;
 	display: block;
 }
+.features.simple {
+	margin: 0;
+}
+.features.simple .item {
+	width: 100%;
+	padding: 0 0 0 60px;
+	float: none;
+	position: relative;
+}
+.features.simple .pic {
+	width: 32px;
+	height: 32px;
+	margin: 0;
+	position: absolute;
+	left: 12px;
+	top: 8px;
+}
 /* ==========================================================================
    _Сноска с картинкой
    ========================================================================== */
 .note {
 	margin: 0 10px;
+}
+.fn {
+	margin: 12px 4px;
 	color: #808080;
 	font-size: 12px;
 	line-height: 18px;
-}
-.note .fn {
-	padding: 12px 4px;
 }
 /* ==========================================================================
    _Колонки
@@ -605,6 +628,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .columns:after { display: block; content: ' '; overflow: hidden; clear: both; }
 .columns .col {
+	width: 50%;
 	padding: 0 20px;
 	float: left;
 }
@@ -622,6 +646,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 10px 30px 20px 0;
 	float: left;
 }
+.pic-in-text .pic.right { float: right; margin-right: 0; margin-left: 30px; }
 /* ==========================================================================
    _Таблица
    ========================================================================== */
@@ -712,8 +737,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	text-transform: uppercase;
 }
 .slider-small .name .icon {
-	margin: 0 6px;
+	width: 18px;
+	margin: 4px 6px;
 	display: inline-block;
+	vertical-align: top;
 }
 .slick-dots {
 	margin: 0 -4px;
@@ -970,7 +997,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .clients .name {
 	font-size: 18px;
-	font-weight: 700;
+	font-weight: 900;
 	text-transform: uppercase;
 	position: absolute;
 	bottom: 18px;
@@ -999,8 +1026,374 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 /* ==========================================================================
    _Контакты
    ========================================================================== */
-.contacts {
+.block-contacts {
+	margin-bottom: 24px;
+	padding: 24px 20px;
 	background: #fff;
+	position: relative;
+}
+.block-contacts:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.block-contacts .h2 {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: .046em;
+}
+.block-contacts .line {
+	margin-bottom: 0;
+	padding: 10px 0 12px;
+	border-bottom: 1px solid #efefef;
+}
+.block-contacts .line:last-of-type {
+	border-bottom: none;
+}
+.block-contacts .line:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.block-contacts .tel {
+	display: block;
+	color: #182437;
+	cursor: default;
+}
+.block-contacts .name {
+	width: 56%;
+	padding-right: 10px;
+	display: block;
+	float: left;
+}
+.block-contacts .link {
+	width: 44%;
+	float: left;
+}
+.block-contacts .map {
+	width: 430px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.block-contacts.main {
+	margin-bottom: 16px;
+	padding-top: 348px;
+	padding-bottom: 30px;
+	font-size: 36px;
+	line-height: 52px;
+	text-align: center;
+}
+.block-contacts.main .h4 {
+	margin-bottom: 0;
+	top: 283px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-transform: uppercase;
+	z-index: 20;
+}
+.block-contacts.main .h4 .h-in {
+	padding: 10px 34px;
+	display: inline-block;
+	background: #fff;
+}
+.block-contacts.main p {
+	margin-bottom: 11px;
+}
+.block-contacts.main .map {
+	width: 100%;
+	height: 320px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: auto;
+}
+.block-contacts.main .tel {
+	font-weight: bold;
+}
+.block-contacts.address {
+	min-height: 386px;
+	padding: 24px 440px 10px 30px;
+}
+/* ==========================================================================
+   _Меню
+   ========================================================================== */
+.menu {
+	margin: 0 -30px 38px;
+	background: #f8f8f8;
+}
+.menu:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.menu .entry {
+	width: 33.3%;
+	float: left;
+	text-align: center;
+	font-size: 18px;
+	border-right: 1px solid #e7e7e7;
+}
+.menu .entry:last-of-type {
+	border-right: none;
+}
+.menu .entry .link {
+	padding: 118px 10px 30px;
+	display: block;
+	position: relative;
+}
+.menu .entry .link:hover {
+	color: #d02727;
+}
+.menu .entry .icon {
+	width: 64px;
+	height: 64px;
+	display: block;
+	margin: 0 0 0 -32px;
+	position: absolute;
+	top: 38px;
+	left: 50%;
+	transition: opacity .2s ease;
+}
+.menu .entry .icon.black {
+	opacity: 1;
+}
+.menu .entry .icon.color {
+	opacity: 0;
+}
+.menu .entry .link:hover .icon.black {
+	opacity: 0;
+}
+.menu .entry .link:hover .icon.color {
+	opacity: 1;
+}
+.menu .entry .name {
+	display: block;
+}
+/* ==========================================================================
+   _Указатель
+   ========================================================================== */
+.pointer {
+	margin-left: 12px;
+	padding: 8px 30px 8px 10px;
+	display: inline-block;
+	background: #fff;
+	position: relative;
+}
+.pointer:before, .pointer:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.pointer:before {
+	width: 12px;
+	position: absolute;
+	left: -12px;
+	top: 0;
+	bottom: 0;
+	background: url("../img/temp/triangle.png") 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+.pointer .icon {
+	margin-right: 10px;
+	display: inline-block;
+	float: left;
+}
+.pointer .h {
+	display: inline-block;
+}
+/* ==========================================================================
+   _Таблица-каталог
+   ========================================================================== */
+.table-catalog {
+	width: auto;
+	margin: 0 -30px;
+}
+.table-catalog th {
+	font-size: 11px;
+	white-space: nowrap;
+}
+.table-catalog th .heading {
+	display: inline-block;
+	position: relative;
+}
+.table-catalog th .heading:before, .table-catalog th .heading:after { display: block; content: ' '; overflow: hidden; clear: both; cursor: pointer; position: absolute; right: -12px; top: 7px; }
+.table-catalog th .heading:before {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 3px 4px 3px;
+	border-color: transparent transparent #a7a7a7 transparent;
+}
+.table-catalog th .heading:after {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 4px 3px 0 3px;
+	border-color: #a7a7a7 transparent transparent transparent;
+	top: 12px;
+}
+.table-catalog td {
+	white-space: nowrap;
+	background: #e7e7e7;
+	border-bottom-color: #cfcfcf;
+}
+.table-catalog td:first-of-type, .table-catalog th:first-of-type {
+	padding-left: 30px;
+}
+.table-catalog td:last-of-type, .table-catalog th:last-of-type {
+	padding-right: 30px;
+}
+.table-catalog .icon {
+	width: 18px;
+	height: 11px;
+	margin-right: 8px;
+	margin-top: -2px;
+}
+/* ==========================================================================
+   _Показать
+   ========================================================================== */
+.show {
+	padding: 20px 10px;
+	display: block;
+	text-align: center;
+	background: #fff;
+}
+/* ==========================================================================
+   _Заголовок с указателем
+   ========================================================================== */
+.title .h2 {
+	width: 40%;
+	margin-bottom: 22px;
+	padding-right: 16px;
+	float: left;
+}
+/* ==========================================================================
+   _Работы
+   ========================================================================== */
+.projects {
+	margin: 0 -30px;
+	padding-left: 0;
+}
+.projects:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.projects li {
+	margin: 0 0 1px 1px;
+	float: left;
+}
+.projects li:before { display: none; }
+.projects li.all {
+	width: 258px;
+	height: 156px;
+	padding: 20px 24px;
+	cursor: default;
+	color: #fff;
+	background: #3575af;
+}
+.projects li.all .h2 {
+	text-transform: uppercase;
+	line-height: 28px;
+}
+.projects li.all a:not(:hover) {
+	color: #fff;
+}
+/* ==========================================================================
+   _Информационный список
+   ========================================================================== */
+.info-list {
+	list-style: none;
+}
+.info-list li {
+	position: relative;
+}
+.info-list .number {
+	color: #a6a6a6;
+	position: absolute;
+	left: -16px;
+	top: 0;
+}
+.info-list .heading {
+	display: block;
+}
+.info-list .heading.open {
+	margin-bottom: 8px;
+	color: #d24850;
+}
+.info-list .in {
+	margin-bottom: 15px;
+	display: none;
+}
+/* ==========================================================================
+   _Цветной блок
+   ========================================================================== */
+.block-color {
+	margin: 0 -30px;
+}
+.table-color {
+	width: 100%;
+	display: table;
+	font-size: 18px;
+}
+.table-color .tr {
+	display: table-row;
+}
+.table-color .td {
+	padding: 36px 30px 16px;
+	display: table-cell;
+	font-weight: 900;
+	vertical-align: middle;
+	color: #fff;
+}
+.table-color .tr .td:nth-child(1) {
+	width: 26%;
+	padding-top: 20px;
+	padding-bottom: 28px;
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: uppercase;
+	background: #3575af;
+}
+.table-color .tr .td:nth-child(2) {
+	background: #d24850;
+}
+.table-color .tr .td:nth-child(1) p {
+	margin-bottom: 0;
+}
+.table-color .list {
+	margin-bottom: 0;
+	padding: 0;
+}
+.table-color .list:after { display: block; content: ' '; overflow: hidden; clear: both; }
+.table-color .list li {
+	width: 50%;
+	margin-bottom: 20px;
+	padding-left: 50px;
+	padding-right: 10px;
+	float: left;
+}
+.table-color .list li:nth-child(2n+1) {
+	clear: left;
+}
+.table-color .list li:before {
+	display: none;
+}
+.table-color .list li .icon {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: 0;
+	top: 4px;
+}
+.table-color .tel {
+	margin-bottom: 0;
+	text-align: center;
+	font-size: 36px;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+.table-color .tel a {
+	padding-left: 10px;
+	display: inline-block;
+	position: relative;
+	color: #fff;
+	cursor: default;
+}
+.table-color .tel a:before {
+	width: 30px;
+	height: 30px;
+	display: block;
+	content: ' ';
+	overflow: hidden;
+	position: absolute;
+	left: -30px;
+	top: 6px;
+	background: url("../img/temp/icons/tel.png") 0 0 no-repeat;
+	background-size: 100% 100%;
 }
 /* ==========================================================================
    _Адаптивность (планшет вертикально)

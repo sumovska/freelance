@@ -71,5 +71,13 @@ $(document).ready(function () {
 		});
 	});*/
 
+	/*  Информационный список */
+	$('.info-list').each(function(){
+		$('.heading', this).click(function(){
+			$(this).toggleClass('open').siblings('.in').slideToggle(200);
+			return false;
+		});
+	});
+
 });
 
