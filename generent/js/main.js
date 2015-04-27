@@ -131,5 +131,36 @@ $(document).ready(function () {
 		});
 	});
 
+	/* Прокрутка */
+	$('.slider-energy').each(function () {
+		$('.item', this).noUiSlider({
+			start: [10, 1300],
+			step: 5,
+			behaviour: 'drag',
+			connect: true,
+			range: {
+				'min': 10,
+				'25%': 625,
+				'50%': 1250,
+				'75': 1875,
+				'max': 2500
+			},
+			format: wNumb({
+				decimals: 0
+			})
+		});
+		$('.item', this).Link('lower').to($('.from', this)).Link('upper').to($('.to', this));
+	});
+
+	/* К сравнению */
+	$('.describe', this).on('change', 'label', function () {
+		var _self = $(this);
+		if ($('input', this).is(':checked')) {
+			$(this).addClass('checked');
+		} else {
+			$(this).removeClass('checked');
+		}
+	});
+
 });
 

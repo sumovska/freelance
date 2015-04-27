@@ -69,19 +69,18 @@ body {
 .unit {
 	background: #fff;
 	position: relative;
-	z-index: 0;
 }
 .unit.unit-grey { background: #e7e7e7; }
 .unit.unit-beige { background: #f8f8f8; }
 .wrapper:after, .aside:after, .content:after, .unit:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
-.white {
-	background: #fff;
-}
+.white { padding-top: 20px; background: #fff; }
+.beige { background: #f8f8f8; }
+.grey { padding-top: 20px; background: #efefef; }
 /* ==========================================================================
    _Текстовые стили
    ========================================================================== */
 p { margin: 0 0 20px; }
-p.large { margin-bottom: 34px; font-size: 18px; line-height: 26px; }
+p.large { font-size: 18px; line-height: 26px; }
 ul, ol { margin: 0 0 20px 0; padding: 0 0 0 16px; }
 ul { list-style: none; }
 ul li, ol li { margin-bottom: 6px; }
@@ -198,12 +197,58 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .form-line { width: 100%; margin-bottom: 12px; clear: left; }
 .form-line input[type="email"], .form-line input[type="number"], .form-line input[type="password"], .form-line input[type="search"], .form-line input[type="tel"], .form-line input[type="text"], .form-line input[type="url"], .form-line textarea, .form-line .jq-selectbox, .form-line .jq-file { width: 100%; }
 /* ==========================================================================
+   Стили для плагина noUiSlider v7.0.10 @homepage http://refreshless.com/nouislider/
+   ========================================================================== */
+.noUi-target, .noUi-target * { -webkit-touch-callout: none; -webkit-user-select: none; -ms-user-select: none; -moz-user-select: none; -moz-box-sizing: border-box; box-sizing: border-box; }
+.noUi-base { width: 100%; height: 100%; position: relative; }
+.noUi-origin { position: absolute; right: 0; top: 0; left: 0; bottom: 0; }
+.noUi-handle { position: relative; z-index: 1; }
+.noUi-stacking .noUi-handle { z-index: 10; }
+.noUi-state-tap .noUi-origin { -webkit-transition: left 0.3s, top 0.3s; transition: left 0.3s, top 0.3s; }
+.noUi-state-drag * { cursor: inherit !important; }
+/* Размеры слайдера и расположение ручек; */
+.noUi-horizontal { height: 18px; }
+.noUi-horizontal .noUi-handle { width: 0; height: 0; border-style: solid; border-width: 0 10px 11px 10px; border-color: transparent transparent #1b2534 transparent; box-shadow: none; cursor: pointer; left: -10px; top: 8px; }
+.noUi-horizontal .noUi-handle:hover { border-color: transparent transparent #d62828 transparent; }
+.noUi-horizontal.noUi-extended { padding: 0 15px; }
+.noUi-horizontal.noUi-extended .noUi-origin { right: -15px; }
+.noUi-vertical { width: 18px; }
+.noUi-vertical .noUi-handle { width: 28px; height: 34px; left: -6px; top: -17px; }
+.noUi-vertical.noUi-extended { padding: 15px 0; }
+.noUi-vertical.noUi-extended .noUi-origin { bottom: -15px; }
+/* Кастомные стили */
+.noUi-background { background: #efefef; box-shadow: none; }
+.noUi-connect { background: #3575af; border: none; border-radius: 0; box-shadow: none; -webkit-transition: background 450ms; transition: background 450ms; }
+.noUi-origin { border-radius: 0; }
+.noUi-target { height: 14px; background: #efefef; border: 2px solid #efefef; border-radius: 0; box-shadow: none; }
+.noUi-target.noUi-connect { box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #efefef; }
+/* Ручки и курсоры; */
+.noUi-dragable { cursor: w-resize; }
+.noUi-vertical .noUi-dragable { cursor: n-resize; }
+.noUi-handle { border: none; border-radius: 0; background: transparent; cursor: default; box-shadow: none; }
+.noUi-active { box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ddd, 0 3px 6px -3px #bbb; }
+/* Отключенное состояние; */
+[disabled] .noUi-handle { cursor: not-allowed; }
+/* ==========================================================================
    _Шапка
    ========================================================================== */
 .header {
-	height: 112px;
+	height: 118px;
 	color: #fff;
+	position: relative;
 	background: #182437;
+}
+.header:after {
+	height: 9px;
+	display: block;
+	content: "\0020";
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: url("../img/header.jpg") 0 0 repeat-x;
 }
 .header .wrapper {
 	position: relative;
@@ -220,6 +265,11 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	left: 0;
 	background: url("../img/logo.png") 0 0 no-repeat;
 	background-size: cover;
+}
+.header .logo a {
+	width: 100%;
+	height: 100%;
+	display: block;
 }
 .header .selection {
 	width: 174px;
@@ -342,7 +392,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .nav .nav-in li:before { display: none; }
 .nav .nav-in > li > a {
-	padding: 18px;
+	padding: 12px 18px 18px;
 	display: block;
 	color: #fff;
 	transition: color .2s ease;
@@ -382,7 +432,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	text-transform: uppercase;
 	font-weight: 900;
 	position: absolute;
-	top: 18px;
+	top: 12px;
 	right: 0;
 	transition: color .2s ease;
 }
@@ -571,7 +621,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    ========================================================================== */
 .important {
 	margin: 0 -30px 20px;
-	padding: 22px 30px;
+	padding: 22px 30px 0;
 	font-size: 18px;
 	line-height: 26px;
 	font-weight: 900;
@@ -591,7 +641,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _ Преимущества
    ========================================================================== */
 .features {
-	margin: 0 -20px;
+	margin: 0 -20px 20px;
 }
 .features:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .features .item {
@@ -719,7 +769,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .sidenav ul li a {
 	color: #1b2534;
 }
-.sidenav ul li a:hover {
+.sidenav ul li a:hover, .sidenav ul li.active a {
 	color: #3575af;
 }
 .sidenav ul li ul {
@@ -1039,7 +1089,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Страницы
    ========================================================================== */
 .pages {
-	margin: 0 -30px;
+	margin: 0 -30px -20px;
 	border-top: 16px solid #efefef;
 }
 .pages ul {
@@ -1063,7 +1113,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Клиенты
    ========================================================================== */
 .clients {
-	background: #fff;
+	margin: 0 -30px -20px;
 }
 .clients:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .clients .item {
@@ -1150,10 +1200,16 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Контакты
    ========================================================================== */
 .block-contacts {
-	margin-bottom: 24px;
+	margin: 0 -30px;
 	padding: 24px 20px;
-	background: #fff;
+	border-bottom: 16px solid #efefef;
 	position: relative;
+}
+.block-contacts:first-of-type {
+	margin-top: -20px;
+}
+.block-contacts:last-of-type {
+	margin-bottom: -20px;
 }
 .block-contacts:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .block-contacts .h2 {
@@ -1350,6 +1406,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	white-space: nowrap;
 	border-bottom-color: #cfcfcf;
 }
+.table-catalog-grey td {
+	background: #e7e7e7;
+}
 .table-catalog td:first-of-type, .table-catalog th:first-of-type {
 	padding-left: 30px;
 	padding-right: 16px;
@@ -1379,9 +1438,17 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	display: block;
 	text-align: center;
 	background: #fff;
+	transition: background-color .2s ease, border-color .2s ease;
+}
+.show:hover {
+	color: #fff;
+	background-color: #d02727;
 }
 .show.border {
 	border: 1px solid #3575af;
+}
+.show.border:hover {
+	border-color: #d02727;
 }
 /* ==========================================================================
    _Заголовок с указателем
@@ -1396,7 +1463,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Работы
    ========================================================================== */
 .projects {
-	margin: 0 -30px;
+	margin: 0 -30px 20px;
 	padding-left: 0;
 }
 .projects:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
@@ -1452,6 +1519,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    ========================================================================== */
 .table-color {
 	width: 100%;
+	margin-bottom: 20px;
 	display: table;
 	font-size: 18px;
 }
@@ -1536,7 +1604,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    ========================================================================== */
 .cities {
 	min-height: 330px;
-	padding: 0 40px;
+	padding: 0 10px;
 	text-align: center;
 	position: relative;
 }
@@ -1711,13 +1779,15 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	-webkit-backface-visibility: hidden;
 	z-index: -1;
 }
-.section-hidden { display: none;}
+.section-hidden { display: none; }
+.section hr { margin-top: 0; margin-bottom: 20px; border-color: #d5d5d5; }
+.section .columns { margin-bottom: 20px; }
 /* ==========================================================================
    _Производители
    ========================================================================== */
 .maker {
 	height: 228px;
-	margin: 0 -10px;
+	margin: 0 -10px 14px;
 }
 .maker:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .maker .item {
@@ -1771,6 +1841,246 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .maker .item:hover .name {
 	opacity: 1;
+}
+/* ==========================================================================
+   _Список с иконками
+   ========================================================================== */
+.list-icons li {
+	margin-bottom: 20px;
+}
+.list-icons li:before, .list-icons li:after {
+	width: 4px;
+	height: 9px;
+	top: 6px;
+	left: -17px
+}
+.list-icons li:before { background: #2776bd; }
+.list-icons li:after {
+	display: block;
+	content: "\0020";
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	background: #a53536;
+	left: -13px
+}
+/* ==========================================================================
+   _Каталог товаров (в таблице)
+   ========================================================================== */
+.catalog-items {
+	margin: 0 -30px -20px;
+	padding: 20px 30px;
+	background: #e7e7e7;
+}
+/* ==========================================================================
+   _Блок с примером
+   ========================================================================== */
+.sample {
+	margin: 0 -30px;
+	padding: 20px 30px;
+	background: #f8f8f8;
+}
+/* ==========================================================================
+   _Информационный блок
+   ========================================================================== */
+.information {
+	margin: 0 -30px 20px;
+	padding: 20px 30px;
+	background: #f8f8f8 url("../img/temp/information.png") 100% 40px no-repeat;
+	background-size: 270px 365px;
+}
+.slider-energy {
+	margin-bottom: 10px;
+}
+.slider-energy .line {
+	margin-bottom: 20px;
+}
+.slider-energy input[type="text"] {
+	width: 70px;
+	height: 27px;
+	padding: 4px 8px;
+	font-size: 16px;
+}
+.tabs-search .type {
+	padding: 0 7px;
+}
+.tabs-search .type.active {
+	color: #d62828;
+}
+.tabs-search .h3 {
+	margin-bottom: 18px;
+}
+.slider-energy .item {
+	width: 70%;
+	margin: 28px 44px 20px -2px;
+	display: inline-block;
+}
+.slider-energy .submit {
+	margin-bottom: 0;
+	padding-top: 4px;
+	display: inline-block;
+	vertical-align: top;
+}
+.slider-energy .submit input[type="submit"] {
+	height: 38px;
+	padding: 8px 22px;
+	font-size: 16px;
+	line-height: 16px;
+}
+/* ==========================================================================
+   _Фильтр
+   ========================================================================== */
+.filter {
+	font-size: 16px;
+	background: #fff;
+}
+.filter .h3 {
+	margin-bottom: 12px;
+}
+.filter .entry {
+	padding: 12px 20px 20px;
+	border-bottom: 1px solid #efefef;
+}
+.filter .entry-in {
+	margin-bottom: 10px;
+}
+.filter .entry-in .line {
+	margin-bottom: 3px;
+}
+.filter .entry-in .checkbox {
+	font-size: 16px;
+}
+/* ==========================================================================
+   _Сортировка
+   ========================================================================== */
+.sort {
+	margin: 0 -30px;
+	padding: 0 12px 20px;
+	border-bottom: 16px solid #efefef;
+}
+.sort .link {
+	padding: 2px 12px 4px;
+	display: inline-block;
+	border: 1px solid transparent;
+}
+.sort .link:first-of-type {
+	margin-left: 12px;
+}
+.sort .link-active {
+	color: #1b2534;
+	border-color: #bebebe;
+}
+.sort .type, .sort .view {
+	margin-bottom: 0;
+	padding: 0 6px;
+	display: inline-block;
+}
+.sort .view {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+/* ==========================================================================
+   _Каталог
+   ========================================================================== */
+.catalog {
+	margin: 0 -40px -20px;
+	background: #efefef;
+}
+.catalog:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.catalog .item {
+	width: 230px;
+	height: 280px;
+	margin: 0 10px 24px;
+	float: left;
+	overflow: hidden;
+	transition: ovrflow .2s ease;
+}
+.catalog .item:hover {
+	position: relative;
+	overflow: visible;
+	z-index: 2;
+}
+.catalog .item-in {
+	background: #fff;
+}
+.catalog .item-in:hover {
+	box-shadow: 0 0 24px rgba(0,0,0,.2);
+}
+.catalog .link {
+	width: 100%;
+	height: 280px;
+	padding: 28px 16px 20px;
+	display: block;
+	color: #1b2534;
+}
+.catalog .pic {
+	margin: 0 auto 38px;
+	display: block;
+}
+.catalog .name, .catalog .price, .catalog .made {
+	display: block;
+	text-transform: uppercase;
+}
+.catalog .name {
+	margin-bottom: 6px;
+	font-size: 18px;
+	font-weight: 900;
+}
+.catalog .item:hover .name {
+	color: #3575af;
+}
+.catalog .made {
+	margin-bottom: 3px;
+}
+.catalog .made .icon {
+	margin: 0 6px;
+	display: inline-block;
+	position: relative;
+	top: -1px;
+}
+.catalog .describe {
+	padding: 12px 16px 16px;
+	border-top: 1px solid #eee;
+}
+.catalog .describe .list {
+	margin: 0 0 12px;
+	font-size: 12px;
+}
+.catalog .describe dt {
+	margin-right: 4px;
+	color: #7e7e7e;
+	float: left;
+	clear: left;
+}
+.catalog .describe dd {
+	margin-left: 0;
+	margin-bottom: 6px;
+}
+.catalog .describe .button {
+	height: 40px;
+	margin-bottom: 8px;
+	padding: 12px 10px;
+	font-weight: 900;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	color: #1b2534;
+	background: #e8e8e8;
+}
+.catalog .describe .button:hover {
+	color: #fff;
+	background-color: #d62828;
+}
+.catalog .describe .checkbox {
+	font-size: 12px;
+}
+.catalog .describe .checkbox:hover {
+	color: #d62828;
+}
+.catalog .describe .checkbox.checked {
+	color: #3575af;
 }
 /* ==========================================================================
    _Адаптивность (планшет вертикально)
