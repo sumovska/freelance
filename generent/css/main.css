@@ -62,17 +62,21 @@ body {
 }
 .content {
 	width: 730px;
+	padding: 20px 30px;
 	float: right;
+	background: #fff;
 }
 .unit {
-	padding: 20px 30px;
 	background: #fff;
 	position: relative;
 	z-index: 0;
 }
-.unit-grey { background: #e7e7e7; }
-.unit-beige { background: #f8f8f8; }
+.unit.unit-grey { background: #e7e7e7; }
+.unit.unit-beige { background: #f8f8f8; }
 .wrapper:after, .aside:after, .content:after, .unit:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.white {
+	background: #fff;
+}
 /* ==========================================================================
    _Текстовые стили
    ========================================================================== */
@@ -637,7 +641,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Колонки
    ========================================================================== */
 .columns {
-	margin: 0 -10px 26px;
+	margin: 0 -10px;
 }
 .columns:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .columns .col {
@@ -657,9 +661,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .columns .col-3:nth-child(1) { padding-left: 20px; }
 .columns .col-3:nth-child(3) { padding-right: 20px; }
-.columns .col p:last-of-type {
-	margin-bottom: 0;
-}
 /* ==========================================================================
    _Текст с картинкой
    ========================================================================== */
@@ -672,6 +673,9 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 /* ==========================================================================
    _Таблица
    ========================================================================== */
+.table-wrap {
+	margin: 0 -30px;
+}
 .table {
 	width: 100%;
 	font-size: 12px;
@@ -764,14 +768,90 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	display: inline-block;
 	vertical-align: top;
 }
-.slick-dots {
+.slider-small .slick-dots li {
+	margin: 6px;
+}
+.slider-small .slick-dots {
 	margin: 0 -4px;
 	padding: 6px 0 0 0;
+}
+/* ==========================================================================
+   _Слайдер
+   ========================================================================== */
+.slider {
+	color: #fff;
+	background: #1b2534;
+}
+.slider.blue {
+	background: #0b4277;
+}
+.slider .wrapper {
+	padding-top: 38px;
+	padding-bottom: 34px;
+}
+.slider .h2 {
+	width: 40%;
+	float: left;
+	font-size: 32px;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+.slider .slider-in {
+	width: 52%;
+	height: 288px;
+	padding-top: 4px;
+	float: left;
+}
+.slider .slider-in .entry {
+	min-height: 71px;
+	margin-bottom: 16px;
+	padding-left: 90px;
+	position: relative;
+	float: left;
+}
+.slider .slider-in .h3 {
+	margin-bottom: 8px;
+	line-height: 28px;
+	font-weight: normal;
+}
+.slider .slider-in .h3 a {
+	color: #fff;
+}
+.slider .slider-in .entry:hover a {
+	color: #cd2829;
+}
+.slider .slider-in .pic {
+	width: 71px;
+	height: 71px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 6px;
+	border: 3px solid #2776bd;
+}
+.slider .slider-in .entry:hover .pic {
+	border-color: #cd2829;
+}
+.slider .slider-in .pic img {
+	width: 65px;
+	height: 65px;
+	display: block;
+}
+.slider .slider-in time {
+	color: #93959a;
+}
+.slider .slick-dots {
+	position: absolute;
+	left: -77%;
+	top: 94px;
+}
+.slick-dots {
+	padding: 0 6px;
 }
 .slick-dots li {
 	width: 14px;
 	height: 14px;
-	margin: 6px;
+	margin: 7px;
 	padding: 2px;
 	display: inline-block;
 	cursor: pointer;
@@ -798,78 +878,24 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .slick-dots li.slick-active .dots {
 	border-color: transparent;
 }
-/* ==========================================================================
-   _Слайдер
-   ========================================================================== */
-.slider {
-	color: #fff;
-	background: #1b2534;
-}
-.slider.blue {
-	background: #0b4277;
-}
-.slider .wrapper {
-	padding-top: 38px;
-	padding-bottom: 34px;
-}
-.slider .h2 {
-	width: 40%;
-	float: left;
-	font-size: 32px;
-	line-height: 40px;
-	text-transform: uppercase;
-}
-.slider .list {
-	width: 52%;
-	height: 288px;
-	padding-top: 4px;
-	float: left;
-}
-.slider .list .entry {
-	min-height: 71px;
-	margin-bottom: 16px;
-	padding-left: 90px;
-	position: relative;
-	float: left;
-}
-.slider .list .h3 {
-	margin-bottom: 8px;
-	line-height: 28px;
-	font-weight: normal;
-}
-.slider .list .h3 a {
-	color: #fff;
-}
-.slider .list .entry:hover a {
-	color: #cd2829;
-}
-.slider .list .pic {
-	width: 71px;
-	height: 71px;
-	display: block;
+.slick-prev, .slick-next {
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	margin-top: -36px;
 	position: absolute;
-	left: 0;
-	top: 6px;
-	border: 3px solid #2776bd;
+	top: 50%;
+	border-style: solid;
 }
-.slider .list .entry:hover .pic {
-	border-color: #cd2829;
+.slick-prev {
+	left: -30px;
+	border-width: 15px 16px 15px 0;
+	border-color: transparent #005fa6 transparent transparent;
 }
-.slider .list .pic img {
-	width: 65px;
-	height: 65px;
-	display: block;
-}
-.slider .list time {
-	color: #93959a;
-}
-.slider .slick-dots {
-	position: absolute;
-	left: -77%;
-	top: 94px;
-}
-.slider .slick-dots li {
-	margin: 7px;
+.slick-next {
+	right: -30px;
+	border-width: 15px 0 15px 16px;
+	border-color: transparent transparent transparent #005fa6;
 }
 /* ==========================================================================
    _Дефолтные стили слайдера ( Slick-slider )
@@ -929,14 +955,13 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Новости
    ========================================================================== */
 .news {
-	margin-bottom: 16px;
-	padding: 12px 0;
+	margin: 0 -30px;
 	background: #fff;
 }
 .news .entry {
-	min-height: 114px;
-	margin-bottom: 10px;
-	padding: 8px 50px 22px 138px;
+	min-height: 106px;
+	margin-bottom: 20px;
+	padding: 0 50px 0 138px;
 	position: relative;
 	border-bottom: 1px solid #efefef;
 }
@@ -949,7 +974,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	height: 70px;
 	margin: 0;
 	position: absolute;
-	top: 16px;
+	top: 6px;
 	left: 28px;
 }
 .news .h3 {
@@ -1012,6 +1037,10 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 /* ==========================================================================
    _Страницы
    ========================================================================== */
+.pages {
+	margin: 0 -30px;
+	border-top: 16px solid #efefef;
+}
 .pages ul {
 	margin-bottom: 0;
 	padding: 16px 4px;
@@ -1284,9 +1313,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 /* ==========================================================================
    _Таблица-каталог
    ========================================================================== */
-.wrap-table {
-	margin: 0 -30px;
-}
 .table-catalog {
 	width: 100%;
 }
@@ -1424,8 +1450,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Цветной блок
    ========================================================================== */
 .table-color {
-	width: auto;
-	margin: 0 -30px 0;
+	width: 100%;
 	display: table;
 	font-size: 18px;
 }
@@ -1543,18 +1568,46 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .index {
 	color: #fff;
 	background: #0c9598;
+	position: relative;
+	overflow: hidden;
+}
+.index:before, .index:after {
+	width: 300px;
+	margin-right: -110px;
+	display: block;
+	content: "\0020";
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	background: #2776bd;
+	top: 0;
+	bottom: 0;
+	right: 50%;
+	-webkit-transform: skew(-34deg);
+	-moz-transform: skew(-34deg);
+	-o-transform: skew(-34deg);
+	transform: skew(-34deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	z-index: 1;
+}
+.index:after {
+	margin-right: -406px;
+	background: #a53536;
 }
 .index .carousel:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .index .carousel {
 	height: 334px;
 	overflow: hidden;
+	position: relative;
+	z-index: 2;
 }
 .index .item {
 	width: 980px;
 	height: 334px;
 	padding: 64px 72px;
 	float: left;
-	background-position: 102% 30px;
+	background-position: 98% 30px;
 	background-repeat: no-repeat;
 }
 .index .item .text {
@@ -1570,28 +1623,153 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	font-weight: normal;
 }
 .index .slick-prev {
-	width: 0;
-	height: 0;
-	cursor: pointer;
+	left: 9px;
 	margin-top: -22px;
-	position: absolute;
-	left: 14px;
-	top: 50%;
-	border-style: solid;
 	border-width: 22px 24px 22px 0;
 	border-color: transparent #005fa6 transparent transparent;
 }
 .index .slick-next {
-	width: 0;
-	height: 0;
-	cursor: pointer;
+	right: 9px;
 	margin-top: -22px;
-	position: absolute;
-	right: 14px;
-	top: 50%;
-	border-style: solid;
 	border-width: 22px 0 22px 24px;
 	border-color: transparent transparent transparent #005fa6;
+}
+.index .slick-dots {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 32px;
+	left: 72px;
+}
+.index .slick-dots li {
+	width: 22px;
+	height: 22px;
+	margin: 10px;
+	padding: 4px;
+}
+.index .slick-dots li .dots {
+	width: 14px;
+	height: 14px;
+}
+/* ==========================================================================
+   _Разделы
+   ========================================================================== */
+.sections {
+	font-size: 16px;
+	font-weight: 900;
+	background: #1b2534;
+}
+.sections .wrapper {
+	padding-top: 1px;
+}
+.sections-in {
+	width: auto;
+	margin: 0 -22px;
+	display: table;
+}
+.sections .list {
+	margin: 0;
+	padding: 0;
+	display: table-row;
+}
+.sections .list li {
+	display: table-cell;
+}
+.sections .list li:before {
+	display: none;
+}
+.sections .list li a {
+	padding: 14px 27px 16px;
+	display: block;
+	color: #7cb7d7;
+	white-space: nowrap;
+}
+.sections .list li a:hover {
+	color: #d62828;
+}
+.sections .list li.active a {
+	color: #1b2534;
+	position: relative;
+	z-index: 1;
+}
+.sections .list li.active a:before {
+	display: block;
+	content: "\0020";
+	overflow: hidden;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	-webkit-transform: skew(-5deg);
+	-moz-transform: skew(-5deg);
+	-o-transform: skew(-5deg);
+	transform: skew(-5deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	z-index: -1;
+}
+.section-hidden { display: none;}
+/* ==========================================================================
+   _Производители
+   ========================================================================== */
+.maker {
+	height: 228px;
+	margin: 0 -10px;
+}
+.maker:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.maker .item {
+	width: 120px;
+	height: 170px;
+	margin: 10px 14px;
+	float: left;
+	position: relative;
+}
+.maker .item:before {
+	display: block;
+	content: "\0020";
+	overflow: hidden;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	-webkit-transform: skew(-5deg);
+	-moz-transform: skew(-5deg);
+	-o-transform: skew(-5deg);
+	transform: skew(-5deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	transition: box-shadow .2s ease;
+}
+.maker .item:hover:before {
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
+}
+.maker .item .link {
+	width: 120px;
+	height: 170px;
+	display: block;
+	color: #182437;
+}
+.maker .item .logo {
+	width: 100px;
+	height: 100px;
+	margin: -50px 0 0 -50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.maker .item .name {
+	opacity: 0;
+	position: absolute;
+	left: 6px;
+	bottom: 12px;
+	transition: opacity .2s ease;
+}
+.maker .item:hover .name {
+	opacity: 1;
 }
 /* ==========================================================================
    _Адаптивность (планшет вертикально)
@@ -1634,6 +1812,8 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	.actions-in { margin-left: -6px; margin-right: -4px; }
 	.actions .item { padding: 0 4px; }
 	.actions .in { padding-left: 10px; padding-right: 10px; }
+	.tabs-in { margin: 0; }
+	.tabs .list li a { padding-left: 6px; padding-right: 6px; }
 }
 @media (max-width: 840px) {
 }

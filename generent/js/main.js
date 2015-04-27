@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 	/* Карусель на главной */
 	$('.slider').each(function () {
-		$('.list').slick({
+		$('.slider-in').slick({
 			arrows: false,
 			dots: true
 		});
@@ -47,6 +47,27 @@ $(document).ready(function () {
 			prevArrow: '<span class="slick-prev" aria-label="previous"></span>',
 			nextArrow: '<span class="slick-next" aria-label="next"></span>',
 			dots: true
+		});
+		$('.slick-dots button').remove();
+		$('.slick-dots li', this).append('<span class="dots"></span>');
+	});
+
+	/* Карусель производителей */
+	$('.maker').each(function () {
+		$(this).slick({
+			slidesToShow: 6,
+			slidesToScroll: 6,
+			prevArrow: '<span class="slick-prev" aria-label="previous"></span>',
+			nextArrow: '<span class="slick-next" aria-label="next"></span>',
+			dots: true,
+			responsive: [
+				{
+					breakpoint: 999,
+					settings: {
+						slidesToShow: 4
+					}
+				}
+			]
 		});
 		$('.slick-dots button').remove();
 		$('.slick-dots li', this).append('<span class="dots"></span>');
@@ -83,19 +104,29 @@ $(document).ready(function () {
 
 
 	/*$('.clients').each(function () {
-		$('.item', this).on('mouseenter', function () {
-			$(this).animate(
-				$(this).find('.describe').fadeIn()
-			)
-		}).on('mouseleave', function () {
-			$(this).removeClass('visible').find('.describe').fadeOut();
-		});
-	});*/
+	 $('.item', this).on('mouseenter', function () {
+	 $(this).animate(
+	 $(this).find('.describe').fadeIn()
+	 )
+	 }).on('mouseleave', function () {
+	 $(this).removeClass('visible').find('.describe').fadeOut();
+	 });
+	 });*/
 
 	/*  Информационный список */
-	$('.info-list').each(function(){
-		$('.heading', this).click(function(){
+	$('.info-list').each(function () {
+		$('.heading', this).click(function () {
 			$(this).toggleClass('open').siblings('.in').slideToggle(200);
+			return false;
+		});
+	});
+
+	/* Разделы */
+	$('.sections').each(function () {
+		$(this).on('click', '.sections-in li a', function () {
+			var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+			$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+			$('#' + where).removeClass('section-hidden').siblings('.section').addClass('section-hidden');
 			return false;
 		});
 	});
