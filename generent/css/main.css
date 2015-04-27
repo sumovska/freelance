@@ -66,16 +66,16 @@ body {
 	float: right;
 	background: #fff;
 }
-.unit {
+/*.unit {
 	background: #fff;
 	position: relative;
 }
 .unit.unit-grey { background: #e7e7e7; }
-.unit.unit-beige { background: #f8f8f8; }
-.wrapper:after, .aside:after, .content:after, .unit:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.unit.unit-beige { background: #f8f8f8; }*/
 .white { padding-top: 20px; background: #fff; }
 .beige { background: #f8f8f8; }
 .grey { padding-top: 20px; background: #efefef; }
+.wrapper:after, .aside:after, .content:after, .unit:after, .white:after, .beige:after, .grey:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 /* ==========================================================================
    _Текстовые стили
    ========================================================================== */
@@ -229,6 +229,143 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .noUi-active { box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ddd, 0 3px 6px -3px #bbb; }
 /* Отключенное состояние; */
 [disabled] .noUi-handle { cursor: not-allowed; }
+/* ==========================================================================
+   _Общие стили
+   ========================================================================== */
+/* =================================
+   _Важный текст
+   ================================= */
+.important {
+	margin: 0 -30px 20px;
+	padding: 22px 30px 0;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 900;
+	background: #f8f8f8;
+}
+.important.red {
+	color: #fff;
+	background: #d24850;
+}
+.important.grey {
+	background: #efefef;
+}
+.important p:last-of-type {
+	margin-bottom: 0;
+}
+/* =================================
+   _Сноска с картинкой
+   ================================= */
+.note {
+	margin: 0 10px;
+}
+.fn {
+	margin: 12px 4px;
+	color: #808080;
+	font-size: 12px;
+	line-height: 18px;
+}
+/* =================================
+   _Колонки
+   ================================= */
+.columns {
+	margin: 0 -10px;
+}
+.columns:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.columns .col {
+	width: 50%;
+	padding: 0 10px;
+	float: left;
+}
+.columns .col-2 {
+	width: 65%;
+}
+.columns .col-1 {
+	width: 35%;
+}
+.columns .col-3 {
+	width: 33.3%;
+	padding: 0 10px;
+}
+.columns .col-3:nth-child(1) { padding-left: 20px; }
+.columns .col-3:nth-child(3) { padding-right: 20px; }
+/* =================================
+   _Текст с картинкой
+   ================================= */
+.picture:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
+.picture .pic {
+	margin: 10px 28px 20px 6px;
+	float: left;
+}
+.picture .pic.right { float: right; margin-right: 0; margin-left: 10px; }
+/* =================================
+   _Таблица
+   ================================= */
+.table-wrap {
+	margin: 0 -30px;
+}
+.table {
+	width: 100%;
+	font-size: 12px;
+}
+.table th {
+	padding: 16px 10px;
+	text-align: left;
+	font-weight: normal;
+	background: #efefef;
+}
+.table td {
+	padding: 20px 10px;
+	border-bottom: 1px solid #efefef;
+}
+.table tr:last-of-type td {
+	border-bottom: none;
+}
+.table p {
+	margin-bottom: 0;
+}
+/* =================================
+   _Кнопка "показать"
+   ================================= */
+.show {
+	padding: 20px 10px;
+	display: block;
+	text-align: center;
+	background: #fff;
+	transition: background-color .2s ease, border-color .2s ease;
+}
+.show:hover {
+	color: #fff;
+	background-color: #d02727;
+}
+.show.border {
+	border: 1px solid #3575af;
+}
+.show.border:hover {
+	border-color: #d02727;
+}
+/* =================================
+   _Список с иконками
+   ================================= */
+.list-icons li {
+	margin-bottom: 20px;
+}
+.list-icons li:before, .list-icons li:after {
+	width: 4px;
+	height: 9px;
+	top: 6px;
+	left: -17px
+}
+.list-icons li:before { background: #2776bd; }
+.list-icons li:after {
+	display: block;
+	content: "\0020";
+	overflow: hidden;
+	clear: both;
+	position: absolute;
+	background: #a53536;
+	left: -13px
+}
 /* ==========================================================================
    _Шапка
    ========================================================================== */
@@ -617,27 +754,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	color: #81bee0;
 }
 /* ==========================================================================
-   _Важный текст
-   ========================================================================== */
-.important {
-	margin: 0 -30px 20px;
-	padding: 22px 30px 0;
-	font-size: 18px;
-	line-height: 26px;
-	font-weight: 900;
-	background: #f8f8f8;
-}
-.important.red {
-	color: #fff;
-	background: #d24850;
-}
-.important.grey {
-	background: #efefef;
-}
-.important p:last-of-type {
-	margin-bottom: 0;
-}
-/* ==========================================================================
    _ Преимущества
    ========================================================================== */
 .features {
@@ -675,77 +791,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	position: absolute;
 	left: 12px;
 	top: 8px;
-}
-/* ==========================================================================
-   _Сноска с картинкой
-   ========================================================================== */
-.note {
-	margin: 0 10px;
-}
-.fn {
-	margin: 12px 4px;
-	color: #808080;
-	font-size: 12px;
-	line-height: 18px;
-}
-/* ==========================================================================
-   _Колонки
-   ========================================================================== */
-.columns {
-	margin: 0 -10px;
-}
-.columns:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
-.columns .col {
-	width: 50%;
-	padding: 0 10px;
-	float: left;
-}
-.columns .col-2 {
-	width: 65%;
-}
-.columns .col-1 {
-	width: 35%;
-}
-.columns .col-3 {
-	width: 33.3%;
-	padding: 0 10px;
-}
-.columns .col-3:nth-child(1) { padding-left: 20px; }
-.columns .col-3:nth-child(3) { padding-right: 20px; }
-/* ==========================================================================
-   _Текст с картинкой
-   ========================================================================== */
-.picture:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
-.picture .pic {
-	margin: 10px 28px 20px 6px;
-	float: left;
-}
-.picture .pic.right { float: right; margin-right: 0; margin-left: 10px; }
-/* ==========================================================================
-   _Таблица
-   ========================================================================== */
-.table-wrap {
-	margin: 0 -30px;
-}
-.table {
-	width: 100%;
-	font-size: 12px;
-}
-.table th {
-	padding: 16px 10px;
-	text-align: left;
-	font-weight: normal;
-	background: #efefef;
-}
-.table td {
-	padding: 20px 10px;
-	border-bottom: 1px solid #efefef;
-}
-.table tr:last-of-type td {
-	border-bottom: none;
-}
-.table p {
-	margin-bottom: 0;
 }
 /* ==========================================================================
    _Навигация (боковая)
@@ -969,7 +1014,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .slick-loading .slick-slide { visibility: hidden }
 .slick-vertical .slick-slide { display: block; height: auto; border: 1px solid transparent }
 /* ==========================================================================
-   _
+   _Акции
    ========================================================================== */
 .actions {
 	min-height: 158px;
@@ -1431,26 +1476,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin-top: -2px;
 }
 /* ==========================================================================
-   _Показать
-   ========================================================================== */
-.show {
-	padding: 20px 10px;
-	display: block;
-	text-align: center;
-	background: #fff;
-	transition: background-color .2s ease, border-color .2s ease;
-}
-.show:hover {
-	color: #fff;
-	background-color: #d02727;
-}
-.show.border {
-	border: 1px solid #3575af;
-}
-.show.border:hover {
-	border-color: #d02727;
-}
-/* ==========================================================================
    _Заголовок с указателем
    ========================================================================== */
 .title .h2 {
@@ -1674,13 +1699,30 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 .index .item {
 	width: 980px;
 	height: 334px;
-	padding: 64px 72px;
+	padding: 30px;
 	float: left;
+	position: relative;
 	background-position: 98% 30px;
 	background-repeat: no-repeat;
 }
 .index .item .text {
-	width: 44%;
+	width: 33%;
+	position: absolute;
+	top: 74px;
+	left: 72px;
+	z-index: 2;
+}
+.index .item .image {
+	width: 66%;
+	position: absolute;
+	top: 18px;
+	right: -14px;
+	z-index: 1;
+}
+.index .item .image img {
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: middle;
 }
 .index .h1 {
 	margin-bottom: 16px;
@@ -1707,8 +1749,8 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	bottom: 32px;
-	left: 72px;
+	bottom: 22px;
+	left: 70px;
 }
 .index .slick-dots li {
 	width: 22px;
@@ -1841,28 +1883,6 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 }
 .maker .item:hover .name {
 	opacity: 1;
-}
-/* ==========================================================================
-   _Список с иконками
-   ========================================================================== */
-.list-icons li {
-	margin-bottom: 20px;
-}
-.list-icons li:before, .list-icons li:after {
-	width: 4px;
-	height: 9px;
-	top: 6px;
-	left: -17px
-}
-.list-icons li:before { background: #2776bd; }
-.list-icons li:after {
-	display: block;
-	content: "\0020";
-	overflow: hidden;
-	clear: both;
-	position: absolute;
-	background: #a53536;
-	left: -13px
 }
 /* ==========================================================================
    _Каталог товаров (в таблице)
@@ -2086,8 +2106,11 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
    _Адаптивность (планшет вертикально)
    ========================================================================== */
 @media (max-width: 999px) {
+	/* Основные стили */
 	.wrapper { width: 768px; padding-left: 20px; padding-right: 20px; }
+	/* Шапка */
 	.header { height: 108px; }
+	.header:after { display: none;}
 	.header .selection, .header .search { display: none; }
 	.header .logo { top: 40px; left: 20px; }
 	.header .callback { top: 22px; right: 372px; }
@@ -2099,6 +2122,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	.header .toggle.open:before, .header .toggle.open:after { width: 4px; height: 24px; top: -2px; left: 9px; }
 	.header .toggle.open:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
 	.header .toggle.open:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+	/* Навигация */
 	.nav { display: none; position: absolute; top: 108px; left: 0; right: 0; z-index: 200; }
 	.nav.open { display: block; }
 	.nav .wrapper { padding: 0; }
@@ -2110,6 +2134,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	.nav .nav-in li:hover ul { display: none; }
 	.nav .nav-in li.open ul { display: block; }
 	.nav .nav-in li ul li a { padding: 11px 10px 10px 22px; }
+	/* Подвал */
 	.footer:before { margin-right: -286px; }
 	.footer:after { margin-right: -432px; }
 	.footer .search .links { display: none; }
@@ -2118,13 +2143,28 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	.footer .copyright { top: 126px; left: 20px; }
 	.footer .search { width: 267px; top: 33px; right: 20px; }
 	.footer .search input[type="text"] { padding-left: 20px; padding-right: 20px; }
+	/* Навигация нижняя */
 	.navigation .column { width: 33%; }
+	/* Акции */
 	.actions { font-size: 18px; line-height: 24px; }
 	.actions-in { margin-left: -6px; margin-right: -4px; }
 	.actions .item { padding: 0 4px; }
 	.actions .in { padding-left: 10px; padding-right: 10px; }
+	/* Табы */
 	.tabs-in { margin: 0; }
 	.tabs .list li a { padding-left: 6px; padding-right: 6px; }
+	/* Карусель на главной */
+	.index .carousel, .index .item { height: auto;}
+	.index .item .text, .index .item .image { width: 100%; position: relative; top: auto; left: auto; right: auto; }
+	.index .item .text { width: 480px; margin: 0 auto; text-align: center;}
+	.index .h1 { font-size: 36px; line-height: 48px; }
+	/* Разделы */
+	.sections-in {margin-left: -10px; margin-right: -10px;}
+	.sections .list li a { padding-left: 7px; padding-right: 7px;}
+	/* Производители */
+	.maker { margin-right: 30px; margin-left: 30px;}
+	/* Важное */
+	.important { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
 }
 @media (max-width: 840px) {
 }
