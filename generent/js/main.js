@@ -56,7 +56,7 @@ $(document).ready(function () {
 	$('.maker').each(function () {
 		$(this).slick({
 			slidesToShow: 6,
-			slidesToScroll: 6,
+			slidesToScroll: 1,
 			prevArrow: '<span class="slick-prev" aria-label="previous"></span>',
 			nextArrow: '<span class="slick-next" aria-label="next"></span>',
 			dots: true,
@@ -65,6 +65,11 @@ $(document).ready(function () {
 					breakpoint: 999,
 					settings: {
 						slidesToShow: 4
+					}
+				}, {
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 2
 					}
 				}
 			]
@@ -160,6 +165,42 @@ $(document).ready(function () {
 		} else {
 			$(this).removeClass('checked');
 		}
+	});
+
+	/* Слайдер товара */
+	$('.slider-item').each(function () {
+		$('.slider-for').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.slider-nav'
+		});
+		$('.slider-nav').each(function () {
+			$(this).slick({
+				slidesToScroll: 1,
+				centerPadding: '0',
+				slidesToShow: 3,
+				vertical: true,
+				asNavFor: '.slider-for',
+				arrows: false,
+				centerMode: true,
+				focusOnSelect: true
+			});
+			$('.slick-slide', this).removeClass('slick-active');
+			$('.slick-slide', this).eq(0).addClass('slick-active');
+		});
+	});
+
+	/* Фильтр */
+	$('.wrapper-catalog').each(function () {
+		$('.aside').append("<div class='toggle'><span class='toggle-in'>Cкрыть расширенный фильтр</span></div>");
+		$('.toggle', this).click(function () {
+			var _self = $(this);
+			$(this).parentsUntil().closest('.wrapper-container').toggleClass('open');
+			/*_self.closest('.aside').fadeToggle(200);*/
+
+		})
 	});
 
 });
