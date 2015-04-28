@@ -1971,6 +1971,7 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	font-size: 16px;
 	background: #fff;
 }
+.filter:after, .filter .entry-in:after { width: 100%; height: 0; display: block; content: "\0020"; clear: both; visibility: hidden; overflow: hidden; }
 .filter .h3 {
 	margin-bottom: 12px;
 }
@@ -2307,16 +2308,16 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	.catalog { margin-left: -5px; margin-right: -5px; }
 	.sort { padding-bottom: 12px; }
 	.content .catalog { margin-left: -35px; margin-right: -35px; }
+	.filter .entry { padding-left: 8px; padding-right: 8px; }
+	.filter { display: none; }
 	.catalog .item { width: 33.3%; padding-right: 5px; padding-left: 5px; margin-left: 0; margin-right: 0; }
 	.wrapper-catalog { position: relative; padding-left: 50px; padding-top: 20px; }
 	.wrapper-catalog.open { padding-left: 278px; }
 	.wrapper-catalog.open .aside { width: 230px; bottom: auto; }
-	.wrapper-catalog .aside { width: 0; position: absolute; top: 0; left: 0; bottom: 0; }
-	.wrapper-catalog .aside .filter { display: none; }
-	.wrapper-catalog.open .aside .filter { display: block; padding-top: 20px; }
-	.filter .entry { padding-left: 8px; padding-right: 8px; }
+	.wrapper-catalog .aside { width: 0; position: absolute; top: 0; left: 0; bottom: 0; float: none; }
+	.wrapper-catalog.open .filter { display: block; padding-top: 20px; }
 	.wrapper-catalog .aside .toggle { width: 34px; cursor: pointer; color: #fff; font-weight: 900; text-transform: uppercase; background: #182437; position: absolute; top: 0; right: -33px; bottom: 0; text-align: center; }
-	.wrapper-catalog.open .aside .toggle { background: #a73a39;}
+	.wrapper-catalog.open .aside .toggle { background: #a73a39; }
 	.wrapper-catalog .aside .toggle-in { padding-left: 38px; margin: 0 auto; display: block; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); position: absolute; top: 36px; left: -2px; right: 0; letter-spacing: .045em; white-space: nowrap; }
 	.wrapper-catalog .aside .toggle-in:before { width: 16px; height: 16px; display: block; content: '\0020'; overflow: hidden; position: absolute; left: 12px; top: 0; background: url("../img/sprite/toggle.png") 0 0 no-repeat; background-size: cover; -ms-transform: rotate(-90deg); -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
 	.wrapper-catalog .content { width: auto; padding-top: 14px; }
@@ -2339,6 +2340,16 @@ button[disabled]:before, input[type="button"][disabled]:before, input[type="subm
 	.sections .list { font-size: 24px; text-align: center; }
 	.sections .list li a { color: #fff; }
 	.sections .list li.active a:before { -webkit-transform: skew(0deg); -moz-transform: skew(0deg); -o-transform: skew(0deg); transform: skew(0deg); -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden; }
+	.wrapper-catalog { padding-left: 20px; }
+	.wrapper-catalog .aside { width: 100%; position: relative; top: auto; left: auto; margin-left: 0; margin-bottom: 20px; padding-top: 70px; }
+	.wrapper-catalog .aside .toggle { width: auto; cursor: pointer; color: #fff; font-weight: normal; text-transform: none; background: transparent; position: absolute; top: 0; right: 0; bottom: auto; left: 0; text-align: center; }
+	.wrapper-catalog .aside .toggle-in { display: inline-block; padding: 10px 20px; -ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg); position: relative; top: auto; left: auto; right: 0; background: #3575af; }
+	.wrapper-catalog .aside .toggle-in:before { display: none; }
+	.filter { display: block; }
+	.sort { font-size: 12px; }
+	.filter .entry { padding-left: 20px; padding-right: 20px; }
+	.filter .entry-in .line { width: 50%; float: left; }
+	
 }
 /* ==========================================================================
    _Адаптивность (мобильная)
