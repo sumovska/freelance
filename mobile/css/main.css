@@ -1238,7 +1238,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	.catalog:not(.catalog-small-carousel) .item:hover { overflow: visible; z-index: 99; }
 	.catalog:not(.catalog-small-carousel) .item:hover .in { border-color: #dedede; box-shadow: 0 1px 10px rgba(0, 0, 0, .26); background: #fff; }
 	.catalog:not(.catalog-small-carousel) .item-best:hover .in { border-color: #cdf07a; box-shadow: 0 1px 10px rgba(205, 240, 122, 1); }
-	.catalog:not(.catalog-small-carousel) .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
+	.catalog:not(.catalog-small-carousel):not(.catalog-small) .item:hover .bottom { padding-top: 11px; padding-bottom: 11px; border-color: #e1e1e1; }
 	.catalog:not(.catalog-small-carousel) .item.visible:hover .describe { display: block; }
 }
 .catalog .item-best .in {
@@ -3727,7 +3727,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	height: 38px;
 }
 .table-order .td-price {
-	text-align: center;
+	text-align: right;
 }
 .table-order .td-price {
 	width: 140px;
@@ -3885,7 +3885,7 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	display: none;
 }
 .delivery-in .list {
-	margin: 14px 0 0 0;
+	margin: 14px 0 30px 0;
 	padding: 0;
 	list-style: none;
 }
@@ -4029,6 +4029,8 @@ input[type="email"].error:focus, input[type="number"].error:focus, input[type="p
 	height: 476px;
 	margin-bottom: 34px;
 }
+/* Найденное */
+.found {margin-bottom: 50px;}
 /* ==========================================================================
    _Адаптивность (до 1599px)
    ========================================================================== */
