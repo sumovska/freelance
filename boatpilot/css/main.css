@@ -169,11 +169,13 @@ ul, ol {
 a {
 	color: #00b0dc;
 	text-decoration: none;
+	outline: none !important;
 	transition: color .2s ease;
 }
-a:hover, a:focus {
+a:hover {
 	color: #9e9e9e;
 	text-decoration: none;
+	outline: none !important;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin: 0 0 24px;
@@ -1328,6 +1330,7 @@ textarea {
 	line-height: 46px;
 }
 .submenu li a {
+	outline: none;
 	transition: color .3s ease;
 }
 .submenu li.active a {
@@ -1886,26 +1889,45 @@ textarea {
 }
 .map-main .wrapper {
 	height: 100%;
+	padding: 50px 0 30px;
 	position: relative;
 }
 .map-main .info {
 	width: 290px;
-	height: 60%;
-	padding: 36px 34px;
-	line-height: 24px;
+	height: 100%;
+	padding: 30px;
 	color: #fff;
 	background: #0f1f2a;
-	position: absolute;
-	top: 48px;
-	left: 0;
+	position: relative;
 	z-index: 100;
+	cursor: default;
 }
-.map-main .info .info-list {
-	max-height: 100% !important;
-	overflow-y: scroll;
+.map-main .scroll {
+	height: 100%;
+	padding-right: 30px;
+	margin-right: -30px;
+	overflow: hidden;
+	position: relative;
+}
+.map-main .info .ps-scrollbar-x-rail {
+	display: none !important;
+}
+.map-main .info .ps-scrollbar-y-rail {
+	width: 1px;
+	right: 15px;
+	background: #c3c9cc;
+}
+.map-main .info .ps-scrollbar-y {
+	width: 3px;
+	position: absolute;
+	background-color: #263547;
+}
+.map-main .info .ps-scrollbar-y:hover {
+	background-color: #263547;
 }
 .map-main .info .entry {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	line-height: 24px;
 }
 .map-main .info .h5 {
 	margin-bottom: 6px;
@@ -1953,6 +1975,15 @@ textarea {
 	top: 0;
 	bottom: 0;
 }
+#mp_google_map {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+}
+a[href^="http://maps.google.com/maps"] { display: none !important }
+.gmnoprint a, .gmnoprint span, .gm-style-cc { display: none; }
+.gmnoprint div { background: none !important; }
 /* ==========================================================================
    _PRINT STYLES
    ========================================================================== */
@@ -1991,6 +2022,7 @@ textarea {
 	.container-inner:before { display: none; }
 	.container-inner .sidebar { width: 100%; float: none; display: block; background: #0f1f2a; }
 	.container-inner .sidebar .map-small { width: 50%; height: auto; position: absolute; top: 0; right: 0; bottom: 0; }
+	.body-height-100 .footer-smaller .googleplay { display: none; }
 }
 @media (max-width: 920px) {
 	body:before { width: 740px; margin: 0 0 0 -370px; }
@@ -2089,6 +2121,7 @@ textarea {
 	.body.search-open { padding-top: 114px; }
 	.body .header-inner .search { left: 0; background: rgba(103, 218, 254, 1); }
 	.map-main .info { left: 20px; }
+	.body-height-100 .footer .navigation { display: none; }
 }
 @media (max-width: 576px) {
 	.header-inner .navigation { padding: 5px 0; display: none; top: 50px; left: 0; right: 0; text-align: center; background: rgba(103, 218, 254, .9); }
@@ -2107,6 +2140,11 @@ textarea {
 	.body .header .social { right: auto; left: 180px; }
 	.container-inner .sidebar .map-small { width: 100%; height: 300px; position: relative; top: auto; right: auto; bottom: auto; }
 	.container-inner .sidebar .contacts { padding-left: 40px; padding-right: 40px; }
+	.map-main .info { width: 100%; height: 50%; position: relative; top: 50%; left: auto; }
+	.map-main .info { padding: 10px 30px 10px 10px; }
+	.map-main .info .h5 a:before, .map-main .info .h5 a:after { display: none; }
+	.map-main .map { height: 500px; }
+	.map-main .wrapper { padding-bottom: 0; }
 }
 @media (max-width: 480px) {
 	.header:before { height: 90px; }
@@ -2151,9 +2189,6 @@ textarea {
 	.body .header .download { display: none; }
 	.gallery ul li { width: 100%; height: auto; margin-left: 0; margin-right: 0; float: none; }
 	.gallery ul li a { width: 100%; height: auto; }
-	.map-main .info { width: 100%; position: relative; top: 0; left: auto; }
-	.map-main .info .h5 a:before, .map-main .info .h5 a:after { display: none; }
-	.map-main .map { height: 500px; }
 	.banner-336 img { width: 100%; }
 	.body.search-open .header .social { top: 78px; }
 }

@@ -38,7 +38,7 @@
 	<div class="map-main">
 		<div class="wrapper">
 			<div class="info">
-				<div class="info-list">
+				<div class="scroll">
 					<div class="entry">
 						<h5 class="h5"><a href="#">Marina di Portoscuso</a></h5>
 						<p class="text">Porto turistico di Portoscuso - is a small modern marina. The village is pleasant despite its proximity to the industrial area of Portovesme. Call the direction via VHF before entering the port. ... <a href="#">More</a></p>
@@ -95,13 +95,14 @@
 			var map, pos, style, mapOptions;
 			pos = new google.maps.LatLng(42.436515, 18.694019);
 			style = [
-				{ "featureType": "road",
+				{
+					"featureType": "road",
 					"elementType": "labels.icon",
 					"stylers": [
-						{ "saturation": 1 },
-						{ "gamma": 1 },
-						{ "visibility": "on" },
-						{ "hue": "#e6ff00" }
+						{"saturation": 1},
+						{"gamma": 1},
+						{"visibility": "on"},
+						{"hue": "#e6ff00"}
 					]
 				}
 			];
@@ -117,7 +118,6 @@
 				scaleControl: false,
 				streetViewControl: false,
 				overviewMapControl: false,
-				scrollwheel: false,
 				navigationControl: false,
 				zoomControlOptions: {
 					style: google.maps.ZoomControlStyle.SMALL

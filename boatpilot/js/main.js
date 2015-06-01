@@ -82,6 +82,11 @@ $(document).ready(function () {
 		$('.list', this).perfectScrollbar();
 	});
 
+
+	$('.map-main .info .scroll').perfectScrollbar({
+		suppressScrollX: true
+	});
+
 	/* Toggle search panel on mobile devices */
 	$('.social .s a').click(function () {
 		$('body').toggleClass('search-open');
